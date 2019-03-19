@@ -1,0 +1,324 @@
+---
+title: Termux
+date: 2018-06-25 07:52:16
+tags:
+  - Termux
+  - Linux
+  - Android
+toc: true
+categories: notes
+icon:
+ - /images/Linux.png
+---
+# 简介
+Termux是一个Android下一个高级的终端模拟器, 开源且不需要root, 支持apt管理软件包，十分方便安装软件包, 完美支持Python,PHP,Ruby,Go,Nodejs,MySQL等。
+
+# 命令
+基本命令
+: ```
+  pkg search <query>              搜索包
+  pkg install <package>           安装包
+  pkg uninstall <package>         卸载包
+  pkg reinstall <package>         重新安装包
+  pkg update                      更新源
+  pkg upgrade                     升级软件包
+  pkg list-all                    列出可供安装的所有包
+  pkg list-installed              列出已经安装的包
+  pkg shoe <package>              显示某个包的详细信息
+  pkg files <package>             显示某个包的
+  ```
+# 换源
+设置默认编辑器
+:	```
+export EDITOR=vi
+	```
+编辑源文件
+:	```
+apt edit-sources
+	```
+	- 然后 https://mirrors.tuna.tsinghua.edu.cn/termux 代替原文中的 https://termux.net，保存退出
+
+# 修改启动问候语
+修改
+:	```
+vim $PREFIX/etc/motd
+	```
+不显示
+:	```
+	vim .hushlogin
+
+	然后输入:wq保存退出。
+	```
+# 管理员权限 root 问题
+虚拟管理员(未root)
+:	```
+	pkg install proot
+	termux-chroot # 启动命令
+	```
+	- 模拟root环境的同时，还会模拟linux的文件路径。
+	- 普通文件路径是【/data/data/com.termux/file/home】
+	- 开启后的文件路径是【/home】
+
+真实管理员(已root)
+:	```
+	pkg install tsu
+	tsu # 启动命令
+	```
+	- 执行后文件路径不变，因此可以进入手机的任何一个目录
+
+# 安装 SSH
+安装
+:	```
+	apt install openssh
+	```
+## 设置 SSH Key
+配置账户信息
+:	```
+	git config --global user.name "Vitan"
+	git config --global user.email "ivitan95@gmail.com"
+	```
+创建 SSH
+:	```
+	ssh-keygen -t rsa -C "ivtan95@gmail.com"
+	```
+复制 key
+:	```
+	cat ~/.ssh/id_rsa.pub
+	```
+验证 SSH
+:	```
+	ssh -T git@github.com
+	```
+## SSH 基础使用
+远程主机登录
+:	```sh
+	ssh root@host
+	ssh host
+	#本地用户名与远程用户名一致，登录时可以省略用户名
+	ssh -p 2222 root@host
+	# SSH 的默认端口是22，使用 p 参数，可以修改这个端口。
+	```
+公钥登录
+:	```sh
+	ssh-copy-id user@host
+	#将公钥传送到远程主机 host 上面
+	```
+	- 如果还是不行，就打开远程主机的 `/etc/ssh/sshd_config` 这个文件，检查下面几行前面"#"注释是否取掉。
+	```
+	RSAAuthentication yes
+	PubkeyAuthentication yes
+	AuthorizedKeysFile
+	.ssh/authorized_keys
+	```
+	- 然后，重启远程主机的ssh服务。
+    	+ Ubuntu系统 service ssh restart
+    	+ Debian系统 /etc/init.d/ssh restart
+
+# Oh-My-Zsh
+安装
+:	```
+apt install git
+apt install zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s zsh
+	```
+# 安装 OpenJDK
+下载
+:	- JDK1.8
+      - [aarch64谷歌云盘](https://drive.google.com/file/d/1PdNqmLrhFlBoRlpCW-mC6CHbVS_Lva9D/view?usp=drivesdk)
+      - [aarch64百度云盘密码: ryea](https://pan.baidu.com/s/14T-2L2j3gZaxfbwkZxJxqg)
+	- JDK1.9
+      - [aarch64下载](https://drive.google.com/file/d/1U3o34Z3aI_g8mvkJ2gP3YfBB6aaQS1xK/view?usp=drivesdk)
+
+安装
+:	```
+	cd storage/下载目录
+	dpkg -i openjdk9_9.2017.8.20_aarch64.deb
+	```
+
+# 安装Nodejs
+安装
+:	```
+pkg install nodejs
+
+pkg install nodejs-lts
+	```
+
+## 解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题
+步骤
+:	 - 复制下面内容
+  ```
+	(require('os').cpus() || { length: 1 }).length
+	```
+  ```sh
+vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
+	```
+	- 修改如下
+	![](https://i.loli.net/2018/06/25/5b3044e8a329d.jpg)
+
+# 安装Hexo
+步骤
+:	```
+mkdir blog
+cd blog
+npm install hexo-cli -g
+npm init
+npm install
+npm install hexo-deployer-git
+hexo g      #生成静态文件
+hexo s      #启动 Hexo
+hexo d      #部署到 Github
+hexo new "my blog" #新建文章
+hexo s      #开启本地服务
+hexo clean  #清除 public
+npm update -g #版本更新
+	```
+
+# 安装mariadb(MySQL)
+安装
+:	```sh
+pkg install mariadb
+	```
+安装基本数据
+:	```sh
+mysql_install_db
+	```
+	- mysqld: Can't read dir ofソdata/data/com . termux/files/usr/e tc/my.cnf.d' (Errcode: 2 "No such file or directory") Fatal error in defaults handling. Program aborted
+		- 先在`my.cnf`所在目录下新建`my.cnf.d`文件夹，然后执行`mysql_install_db`
+
+启动mariadb服务
+:	```sh
+mysqld
+	```
+	- 启动mysql后，该回话便无法进行任何操作，需要左滑唤醒会话菜单，开启新的回话。而倘若不在一个会话里启动mysqld，而是直接运行mysql，则会2002错误。
+
+修改mysql密码
+:	```sql
+mysql_secure_installation
+# 输入旧密码，空则直接回车
+Set root password? [Y/n] y
+New password:
+Re-enter new password:# 两次输入新密码
+
+Remove anonymous users? [Y/n] Y #是否移除匿名用户
+Disallow root login remotely? [Y/n] n #是否不允许root远程登录
+Remove test database and access to it? [Y/n] n #是否移除test数据库
+Reload privilege tables now? [Y/n] y #是否重新加载表的权限
+	```
+
+登录mysql
+:	```sql
+mysql -uroot -p
+Enter password: ***apache2
+	```
+  - 或者使用
+	```sql
+mysql -uroot -p******
+	```
+
+# Python 环境部署
+安装 python2.7
+:	```sh
+pkg install python2
+	```
+
+安装 python3
+:	```sh
+pkg install python
+```
+
+升级 pip 版本
+:	```sh
+python2 -m pip install --upgrade pip
+python -m pip install --upgrade pip
+	```
+pip 版本查看
+:	```sh
+pip -v
+pip3.6 -v
+	```
+## ipython
+简介
+:	ipython 是一个 python 的交互式 shell，支持变量自动补全，自动缩进，支持 bash shell 命令，内置了许多很有用的功能和函数。学习 ipython 将会让我们以一种更高的效率来使用 python。
+先安装clang, 否则直接使用pip安装ipython会失败报错.
+
+安装
+:	```sh
+pkg install clang
+pip install ipython
+pip3.6 install ipython
+	```
+使用
+:	别使用`ipython`和`ipython2`进入`py2`和`py3`控制台:
+
+# PHP部署
+安装
+:	```sh
+pkg install php # 可采用phpinfo进行测试
+php -S 127.0.0.1:8080 -t www/
+	```
+编写测试文件
+:	1. 在家目录下建一个www文件夹:`mkdir www`
+  2. 在www文件夹下新建一个`index.php`文件, 其内容为
+	```
+	<?php phpinfo();?>
+	```
+
+# Nmap(口扫描必备工具)
+安装
+: ```sh
+  pkg install nmap
+  ```
+
+# hydra
+简介
+:	Hydra 是著名的黑客组织 THC 的一款开源暴力破解工具这是一个验证性质的工具，主要目的是：展示安全研究人员从远程获取一个系统认证权限。
+
+安装
+:	```sh
+pkg install hydra
+	```
+
+# sslscan
+简介
+:	SSLscan 主要探测基于 ssl 的服务，如 https。SSLscan 是一款探测目标服务器所支持的 SSL 加密算法工具。
+
+安装
+:	```sh
+pkg install sslscan
+	```
+
+# whatportis
+简介
+:	whatportis 是一款可以通过服务查询默认端口，或者是通过端口查询默认服务的工具，简单易用。在渗透测试过程中，如果需要查询某个端口绑定什么服务器，或者某个应用绑定的默认端口，可以使用 whatportis 查询。
+
+安装
+:	```sh
+pip2 install whatportis
+	```
+
+# RouterSploit
+简介
+:	RouteSploit 框架是一款开源的路由器等嵌入式设备漏洞检测及利用框架。
+
+安装
+:	```sh
+pip2 install requests
+git clone https://github.com/reverse-shell/routersploit
+cd routersploit
+python2 rsf.py
+	```
+
+# Slowloris 低带宽的 DoS 工具
+安装
+:	```sh
+git clone https://github.com/gkbrk/slowloris.git
+cd slowloris
+chmod +x slowloris.py
+  ```
+---
+**参考**
+- [android上的终端——termux](http://www.liuxi.site/2018/05/16/android上的终端——termux/)
+- [Termux 高级终端安装使用配置教程](http://www.sqlsec.com/2018/05/termux.html)

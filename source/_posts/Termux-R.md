@@ -1,0 +1,37 @@
+---
+title: Termux 安装 R
+date: 2018-04-24 17:10:03
+tags:
+- Linux
+- Termux
+- R
+toc: true
+categories: notes
+icon:
+ - /images/Bash.png
+---
+Termux 安装 R
+# 步骤
+建立 storage
+:	```
+	termux-setup-storage
+	```
+添加镜像
+:	```
+export EDITOR=vi
+apt edit-sources
+	```
+	进入之后输入 i 进入编辑模式。
+	- 添加如下源
+	```
+	deb [trusted=yes] https://its-pointless.github.io/files/ termux extras
+	```
+环境更新
+:	```
+apt-get update
+apt-get upgrade
+	```
+安装 R
+:	```
+pkg install r-cran
+	```

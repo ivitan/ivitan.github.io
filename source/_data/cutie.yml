@@ -1,0 +1,68 @@
+logo: /images/favicon.png
+slogan:
+# Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
+# If menu is absent, only "archive", "search" and "more" menu items will be preserved
+# Configurable menu items should not exeed 4, otherwise the last ones will be ignored
+menu:
+  Projects:
+    link: /categories/projects/
+  Notes:
+    link: /categories/notes/
+  Vitan:
+    link: /about/
+
+# As long as the name matches the font awesome icon name, you can add even more social links
+# As the tip: the social link can be a QRCODE link
+social:
+  github: https://github.com/ivitan
+  weibo: https://weibo.com/ivitan
+
+maintainer:
+  url: https://ivitan.github.io
+  email: ivitan95@gmail.com
+
+global:
+  title: Vitan's 黑板报
+  subtitle: coding data, and more
+  author: Vitan
+  description:
+  favicon: /images/favicon.png
+  site_tracker: google # google
+  comment_system: valine
+  icon_set: blue-shadow
+  use_animation: true
+  scheme:
+    name: taurus
+    color: lime
+  announcement:
+    text: Welcome to my personal website.
+
+google_analytics:
+  track_id: UA-116899388-1
+
+google_adsense:
+  id: ca-pub-3388441726059687
+
+page_404:
+  tencent_404: true
+
+disqus:
+  shortname: vitans-blog
+
+valine:
+  appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
+  appKey: rG3tgBLm6WGpoU2895oVKXVU
+  placeholder: 评论一下吧！
+
+livere:
+  id: city
+  uid: MTAyMC8zODY0NS8xNTE3Mw==
+
+post:
+  allow_share: true
+  allow_modification: false
+  allow_commercial: false
+  use_lightgallery: true
+  allow_comment: true
+  toc_level: 2
+  enable_unread_badge: false
