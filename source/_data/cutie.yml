@@ -52,7 +52,7 @@ disqus:
 valine:
   appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
   appKey: rG3tgBLm6WGpoU2895oVKXVU
-  placeholder: 评论一下吧！
+  placeholder: 这边是评论区哟！
 
 livere:
   id: city
