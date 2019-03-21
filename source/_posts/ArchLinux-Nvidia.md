@@ -19,7 +19,7 @@ sudo pacman -S nvidia nvidia-settings xorg-xrandr
 ## 配置
 获取显卡 PCI 地址
 : ```sh
-  ispci | grep -E "VGA|3D"
+  lspci | grep -E "VGA|3D"
   ```
 地址转换
 : ```sh
