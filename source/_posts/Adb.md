@@ -17,7 +17,7 @@ Adb 与 Fastboot 常用命令
 刷机命令
 :   |解释|命令|
     |:---|:---|
-    |查看连接状态|adb device|
+    |查看连接状态|adb devices|
     |重启命令|adb reboot|
     |重启到Rec|adb reboot recovery
     |重启到Fastboot|adb reboot bootloader|
