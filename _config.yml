@@ -67,6 +67,14 @@ markdown:
     - markdown-it-deflist
     - markdown-it-container
     - markdown-it-mark
+        
+  anchors:
+    level: 1
+    collisionSuffix: 'v'
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSymbol: ""
+    permalinkBefore: false
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
