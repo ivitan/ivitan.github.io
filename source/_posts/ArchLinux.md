@@ -88,7 +88,6 @@ wifi-menu
 	```
 挂载分区
 :	```sh
-	swapon /dev/sddb6 # swap 分区
 	mount /dev/sdb3 /mnt # /分区
 	mkdir /mnt/home
 	mount /dev/sdb4 /mnt/home # home 分区
@@ -165,7 +164,11 @@ arch-chroot
 	```
 	- sudo 权限
 	```sh
-	nano /etc/sudoers
+	vim /etc/sudoers
+	```
+	- 取消注释
+	```
+	%wheel ALL=(ALL) ALL
 	```
 	- 在 root ALL=(ALL) ALL 下面添加
 	```sh
@@ -224,9 +227,9 @@ ADSL 宽带连接
 ## Gnome 桌面
 执行
 :	```sh
-	pacman -S gnome #gnome桌面：
-	pacman -S gnome-tweak-tool #安装gnome桌面优化工具
-	pacman -S alacarte # 安装gnome桌面菜单编辑器
+	sudo pacman -S gnome #gnome桌面：
+	sudo pacman -S gnome-tweak-tool #安装gnome桌面优化工具
+	sudo pacman -S alacarte # 安装gnome桌面菜单编辑器
 	systemctl enable gdm #启用gnome窗口管理器服务
 	systemctl enable NetworkManager # 启用网络管理器服务
 	reboot
@@ -235,10 +238,10 @@ ADSL 宽带连接
 ## Deepin 桌面
 执行
 :	```sh
-	pacman -S deepin
-	pacman -S deepin-extra
-	pacman S bash-completion
-	pacman -S networkmanager
+	sudo pacman -S deepin
+	sudo pacman -S deepin-extra
+	sudo pacman S bash-completion
+	sudo pacman -S networkmanager
 	systemctl enable NetworkManager # 注意大小写
 	systemctl start NetworkManager
 	```
@@ -258,15 +261,15 @@ ADSL 宽带连接
 ## KDE Plasma 桌面
 步骤
 :	```sh
-	pacman -S xorg
-	pacman -S xf86-input-synaptics
-	pacman -S ttf-dejavu wqy-microhei # 字体
-	pacman -S plasma kde-applications
+	sudo pacman -S xorg
+	sudo pacman -S xf86-input-synaptics
+	sudo pacman -S ttf-dejavu wqy-microhei # 字体
+	sudo pacman -S plasma kde-applications
 	systemctl enable sddm # 启用 sddm 显示管理器
-	pacman -S NetworkManager net-tools
+	sudo pacman -S NetworkManager net-tools
 	systemctl enable NetworkManager # 启用网络管理
 	systemctl enable dhcpcd
-	pacman -S kde-l10n-zh_cn # KDE 中文包
+	sudo pacman -S kde-l10n-zh_cn # KDE 中文包
 	```
 
 # 后续优化
@@ -291,19 +294,19 @@ ADSL 宽带连接
 ### 声卡
 安装
 :	```sh
-	pacman -S alsautils pulseaudio pulseaudio-alsa
+	sudo pacman -S alsautils pulseaudio pulseaudio-alsa
 	```
 
 ### 显卡
 安装
 :	```sh
-	pacman -S nvidia
-	pacman -S nvidia-settings
+	sudo pacman -S nvidia
+	sudo pacman -S nvidia-settings
 	```
 
 启动管理器编辑脚本(Plasma 桌面有效)
 :	```sh
-	vim /usr/share/sddm/scripts/Xsetup
+	sudo vim /usr/share/sddm/scripts/Xsetup
 	```
 	- 添加
 	```sh
