@@ -16,7 +16,7 @@ icon:
 ---
 Git Commit Emoji
 <!--more-->
-
+# Emoji-Log
 ## 配置
 .bash/.zshrc
 :	```shell
@@ -70,7 +70,19 @@ doc = "!f() { git cap \"📖 DOC: $@\"; }; f"
 tst = "!f() { git cap \"✅ TEST: $@\"; }; f"
 	```
 
+# gitmoji-cli
+install
+:	```shell
+	npm i -g gitmoji-cli
+	```
+usage
+:	```shell
+	gitmoji --help
+	gitmoji -c
+	```
+
 ---
 
 **Via**
 - [OpenSource.com](https://opensource.com/article/19/2/emoji-log-git-commit-messages)
+- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)
