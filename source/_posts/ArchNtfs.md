@@ -6,10 +6,13 @@ tags:
 - ArchLinux
 - Ubuntu
 - Notes
-categories: notes
+categories: 
+- notes
+author:
+name: Vitan
+enable_unread_badge: true
 icon:
 - /images/ArchLinux.png
-enable_unread_badge: true
 ---
 解决 ArchLInux 无法挂载 NTFS 的U盘和硬盘
 <!--more-->

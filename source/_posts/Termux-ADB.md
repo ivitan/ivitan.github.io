@@ -1,5 +1,5 @@
 ---
-title: Termux-ADB
+title: Termux ADB
 date: 2019-03-24 11:03:51
 tags:
 - Termux

@@ -8,6 +8,8 @@ tags:
   - Ubuntu
 categories:
   - notes
+author:
+name: Vitan
 enable_unread_badge: true
 icon:
   - /images/Python.png

@@ -1,5 +1,5 @@
 ---
-title: jQuerySelector
+title: jQuery Selector
 date: 2019-03-23 13:39:32
 tags:
 - jQuery

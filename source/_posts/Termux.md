@@ -11,37 +11,82 @@ icon:
  - /images/Linux.png
 ---
 # 简介
-Termux是一个Android下一个高级的终端模拟器, 开源且不需要root, 支持apt管理软件包，十分方便安装软件包, 完美支持Python,PHP,Ruby,Go,Nodejs,MySQL等。
+[Termux](https://wiki.termux.com/wiki/Main_Page)是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持apt 管理软件包，十分方便安装软件包, 完美支持 Python,PHP,Ruby,Go,Nodejs,MySQL 等。
 
 # 命令
 基本命令
-: ```
-  pkg search <query>              搜索包
-  pkg install <package>           安装包
-  pkg uninstall <package>         卸载包
-  pkg reinstall <package>         重新安装包
-  pkg update                      更新源
-  pkg upgrade                     升级软件包
-  pkg list-all                    列出可供安装的所有包
-  pkg list-installed              列出已经安装的包
-  pkg shoe <package>              显示某个包的详细信息
-  pkg files <package>             显示某个包的
+: ``` shell
+  pkg search <query>  #搜索包
+  pkg install <package> #安装包
+  pkg uninstall <package> #卸载包
+  pkg reinstall <package> #重新安装包
+  pkg update  #更新源
+  pkg upgrade #升级软件包
+  pkg list-all #列出可供安装的所有包
+  pkg list-installed  #列出已经安装的包
+  pkg shoe <package>  #显示某个包的详细信息
+  pkg files <package>  #显示某个包的
   ```
+
+手动安装 *.deb 文件
+:	```shell
+	dpkg -i ./package.deb #安装
+	dpkg --remove [package name] #卸载
+	dpkg --remove [package name] #列出所有已安装的包
+	```
+
 # 换源
+## 清华源
 设置默认编辑器
 :	```
-export EDITOR=vi
+	export EDITOR=vi
 	```
+
 编辑源文件
-:	```
-apt edit-sources
+:	```shell
+	apt edit-sources
 	```
 	- 然后 https://mirrors.tuna.tsinghua.edu.cn/termux 代替原文中的 https://termux.net，保存退出
+
+## 官方其他源
+添加
+:	```shell
+	pkg install root-repo
+	pkg install x11-repo
+	pkg install unstable-repo
+	```
+
+## [its-pointless](https://github.com/its-pointless/its-pointless.github.io)
+添加
+:	```shell
+	pkg install wget
+	$PREFIX/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh
+	bash setup-pointless-repo.sh
+	```
+	- 库包括 gcc-7，gfortran，octave，r-cran（R语言），rustc，scipy 和许多游戏.
+
+## [Extra](https://github.com/thioshp/termux-extra-packages)
+添加
+:	```shell
+	# 将PGP密钥添加到APT的密钥环中
+	pkg install dirmngr
+	apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0
+
+	# 手动下载公钥并添加它
+	curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc
+	apt-key add pubkey.asc
+	```
+	- `apt edit-sources` 加入下方内容
+	```shelll
+	# Xeffyr's Extra packages
+	deb https://termux.xeffyr.ml/ extra main x11
+	```
+	- 库有　OpenJDK
 
 # 修改启动问候语
 修改
 :	```
-vim $PREFIX/etc/motd
+	vim $PREFIX/etc/motd
 	```
 不显示
 :	```
@@ -49,6 +94,14 @@ vim $PREFIX/etc/motd
 
 	然后输入:wq保存退出。
 	```
+
+# 恢复双层键盘
+Termux在 0.66 取消了双层键盘
+:	```shell
+	mkdir $HOME/.termux
+	echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties
+	```
+
 # 管理员权限 root 问题
 虚拟管理员(未root)
 :	```
@@ -71,24 +124,29 @@ vim $PREFIX/etc/motd
 :	```
 	apt install openssh
 	```
+
 ## 设置 SSH Key
 配置账户信息
 :	```
 	git config --global user.name "Vitan"
 	git config --global user.email "ivitan95@gmail.com"
 	```
+
 创建 SSH
 :	```
 	ssh-keygen -t rsa -C "ivtan95@gmail.com"
 	```
+
 复制 key
 :	```
 	cat ~/.ssh/id_rsa.pub
 	```
+
 验证 SSH
 :	```
 	ssh -T git@github.com
 	```
+
 ## SSH 基础使用
 远程主机登录
 :	```sh
@@ -98,6 +156,7 @@ vim $PREFIX/etc/motd
 	ssh -p 2222 root@host
 	# SSH 的默认端口是22，使用 p 参数，可以修改这个端口。
 	```
+
 公钥登录
 :	```sh
 	ssh-copy-id user@host
@@ -114,16 +173,17 @@ vim $PREFIX/etc/motd
     	+ Ubuntu系统 service ssh restart
     	+ Debian系统 /etc/init.d/ssh restart
 
-# Oh-My-Zsh
+# Oh_My_ZSH
 安装
 :	```
-apt install git
-apt install zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.zshrc ~/.zshrc.orig
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-chsh -s zsh
+	apt install git
+	apt install zsh
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	cp ~/.zshrc ~/.zshrc.orig
+	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+	chsh -s zsh
 	```
+
 # 安装 OpenJDK
 下载
 :	- JDK1.8
@@ -138,12 +198,12 @@ chsh -s zsh
 	dpkg -i openjdk9_9.2017.8.20_aarch64.deb
 	```
 
-# 安装Nodejs
+# 安装 Nodejs
 安装
 :	```
-pkg install nodejs
+	pkg install nodejs
 
-pkg install nodejs-lts
+	pkg install nodejs-lts
 	```
 
 ## 解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题
@@ -153,37 +213,37 @@ pkg install nodejs-lts
 	(require('os').cpus() || { length: 1 }).length
 	```
   ```sh
-vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
+	vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 	```
 	- 修改如下
 	![](https://i.loli.net/2018/06/25/5b3044e8a329d.jpg)
 
-# 安装Hexo
+# 安装 Hexo
 步骤
 :	```
-mkdir blog
-cd blog
-npm install hexo-cli -g
-npm init
-npm install
-npm install hexo-deployer-git
-hexo g      #生成静态文件
-hexo s      #启动 Hexo
-hexo d      #部署到 Github
-hexo new "my blog" #新建文章
-hexo s      #开启本地服务
-hexo clean  #清除 public
-npm update -g #版本更新
+	mkdir blog
+	cd blog
+	npm install hexo-cli -g
+	npm init
+	npm install
+	npm install hexo-deployer-git
+	hexo g      #生成静态文件
+	hexo s      #启动 Hexo
+	hexo d      #部署到 Github
+	hexo new "my blog" #新建文章
+	hexo s      #开启本地服务
+	hexo clean  #清除 public
+	npm update -g #版本更新
 	```
 
 # 安装mariadb(MySQL)
 安装
 :	```sh
-pkg install mariadb
+	pkg install mariadb
 	```
 安装基本数据
 :	```sh
-mysql_install_db
+	mysql_install_db
 	```
 	- mysqld: Can't read dir ofソdata/data/com . termux/files/usr/e tc/my.cnf.d' (Errcode: 2 "No such file or directory") Fatal error in defaults handling. Program aborted
 		- 先在`my.cnf`所在目录下新建`my.cnf.d`文件夹，然后执行`mysql_install_db`
@@ -196,48 +256,48 @@ mysqld
 
 修改mysql密码
 :	```sql
-mysql_secure_installation
-# 输入旧密码，空则直接回车
-Set root password? [Y/n] y
-New password:
-Re-enter new password:# 两次输入新密码
+	mysql_secure_installation
+	# 输入旧密码，空则直接回车
+	Set root password? [Y/n] y
+	New password:
+	Re-enter new password:# 两次输入新密码
 
-Remove anonymous users? [Y/n] Y #是否移除匿名用户
-Disallow root login remotely? [Y/n] n #是否不允许root远程登录
-Remove test database and access to it? [Y/n] n #是否移除test数据库
-Reload privilege tables now? [Y/n] y #是否重新加载表的权限
+	Remove anonymous users? [Y/n] Y #是否移除匿名用户
+	Disallow root login remotely? [Y/n] n #是否不允许root远程登录
+	Remove test database and access to it? [Y/n] n #是否移除test数据库
+	Reload privilege tables now? [Y/n] y #是否重新加载表的权限
 	```
 
 登录mysql
 :	```sql
-mysql -uroot -p
-Enter password: ***apache2
+	mysql -uroot -p
+	Enter password: ***apache2
 	```
   - 或者使用
 	```sql
-mysql -uroot -p******
+	mysql -uroot -p******
 	```
 
 # Python 环境部署
 安装 python2.7
 :	```sh
-pkg install python2
+	pkg install python2
 	```
 
 安装 python3
 :	```sh
-pkg install python
+	pkg install python
 ```
 
 升级 pip 版本
 :	```sh
-python2 -m pip install --upgrade pip
-python -m pip install --upgrade pip
+	python2 -m pip install --upgrade pip
+	python -m pip install --upgrade pip
 	```
 pip 版本查看
 :	```sh
-pip -v
-pip3.6 -v
+	pip -v
+	pip3.6 -v
 	```
 ## ipython
 简介
@@ -246,9 +306,9 @@ pip3.6 -v
 
 安装
 :	```sh
-pkg install clang
-pip install ipython
-pip3.6 install ipython
+	pkg install clang
+	pip install ipython
+	pip3.6 install ipython
 	```
 使用
 :	别使用`ipython`和`ipython2`进入`py2`和`py3`控制台:
@@ -256,12 +316,12 @@ pip3.6 install ipython
 # PHP部署
 安装
 :	```sh
-pkg install php # 可采用phpinfo进行测试
-php -S 127.0.0.1:8080 -t www/
+	pkg install php # 可采用phpinfo进行测试
+	php -S 127.0.0.1:8080 -t www/
 	```
 编写测试文件
 :	1. 在家目录下建一个www文件夹:`mkdir www`
-  2. 在www文件夹下新建一个`index.php`文件, 其内容为
+  	2. 在www文件夹下新建一个`index.php`文件, 其内容为
 	```
 	<?php phpinfo();?>
 	```
@@ -305,20 +365,21 @@ pip2 install whatportis
 
 安装
 :	```sh
-pip2 install requests
-git clone https://github.com/reverse-shell/routersploit
-cd routersploit
-python2 rsf.py
+	pip2 install requests
+	git clone https://github.com/reverse-shell/routersploit
+	cd routersploit
+	python2 rsf.py
 	```
 
 # Slowloris 低带宽的 DoS 工具
 安装
 :	```sh
-git clone https://github.com/gkbrk/slowloris.git
-cd slowloris
-chmod +x slowloris.py
+	git clone https://github.com/gkbrk/slowloris.git
+	cd slowloris
+	chmod +x slowloris.py
   ```
 ---
 **参考**
+- [Termux Wike](https://wiki.termux.com/wiki/Package_Management)
 - [android上的终端——termux](http://www.liuxi.site/2018/05/16/android上的终端——termux/)
 - [Termux 高级终端安装使用配置教程](http://www.sqlsec.com/2018/05/termux.html)
