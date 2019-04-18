@@ -39,7 +39,7 @@ icon:
 ## 清华源
 设置默认编辑器
 :	```
-	export EDITOR=vi
+	export EDITOR=vim
 	```
 
 编辑源文件
