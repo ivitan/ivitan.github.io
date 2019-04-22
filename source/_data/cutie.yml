@@ -23,7 +23,7 @@ maintainer:
 
 global:
   title: Vitan's 黑板报
-  subtitle: coding data, and more
+  subtitle: ⁣⁣⁣⁣　
   author: Vitan
   description:
   favicon: /images/favicon.png
@@ -52,7 +52,7 @@ disqus:
 valine:
   appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
   appKey: rG3tgBLm6WGpoU2895oVKXVU
-  placeholder: 这边是评论区哟！
+  placeholder: 元芳你怎么看？！
 
 livere:
   id: city
