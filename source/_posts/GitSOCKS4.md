@@ -26,9 +26,18 @@ icon:
 解决方法
 : - 1. --depth 1
   ```shell
-  git clone http://github.com/large-repository --depth 1
+  # 关闭压缩
+  git config --global core.compression 0
+  # 部分克隆
+  git clone --depth 1 http://github.com/large-repository 
   cd large-repository
+  # 进入新目录并检索其余的克隆
   git fetch --unshallow
+
+  # 或者
+  git fetch --depth=2147483647
+  # 做一个定期拉
+  git pull --all
   ```
   - 2. 切换使用 ssh(git clone username@mydomain.com:my_group/my_repository.git) 
   - 3. 增加缓冲区大小

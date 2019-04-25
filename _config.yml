@@ -13,7 +13,7 @@ language:
   - zh-cn
   - en
   - it
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -125,6 +125,13 @@ archive_generator:
   yearly: true
   monthly: false
   daily: false
+
+# Google analytics
+google_analytics:
+  track_id: UA-116899388-1
+
+google_adsense:
+  id: ca-pub-3388441726059687
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
