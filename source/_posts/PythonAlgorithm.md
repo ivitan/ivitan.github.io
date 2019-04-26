@@ -34,7 +34,7 @@ code
         if not exchange:
             return
     ```
-     ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmd387i4dg20my075thy.gif)
+     ![](https://raw.githubusercontent.com/ivitan/Picture/master/maopao.gif)
 
 ## 选择排序
 code
@@ -49,7 +49,7 @@ code
                 min_index = j
         li[min_index], li[i] = li[i], li[min_index]
     ```
-     ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmd59l74bg20mj06wdsb.gif)
+     ![](https://raw.githubusercontent.com/ivitan/Picture/master/xuanze.gif)
 
 ## 插入排序
 code
@@ -70,7 +70,8 @@ code
         #         break
         li[j+1] = tmp   #将摸到的牌 插入到 往前挪过之后的 j 的后一位
     ```
-    ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmd6llbs8g20mj0e1n6v.gif)
+    ![](https://raw.githubusercontent.com/ivitan/Picture/master/charu.gif
+)
 
  ##  快速排序
  code 
@@ -121,7 +122,7 @@ print(li)
 quick(li, 0, len(li) - 1)
 print(li)
     ```
-    ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmdanwsgsg20mj070jyl.gif)
+    ![](https://raw.githubusercontent.com/ivitan/Picture/master/kuaisu.gif)
 
 ## 堆排序
 code
@@ -155,7 +156,8 @@ def heap_sort(li):
        # 现在堆的范围 0~i-1
        sift(li, 0, i-1)
     ```
-     ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmdmm0b4og20f70a4hdt.gif)
+     ![](https://raw.githubusercontent.com/ivitan/Picture/master/zengdui.gif
+)
 
 ## 归并排序
 code
@@ -195,7 +197,8 @@ def merge_sort(li, low, high):
 li = [10,4,6,3,8,2,5,7]
 merge_sort(li, 0, len(li)-1)
     ```
-    ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fzmdntnj2sg20mj0e1k05.gif)
+    ![](https://raw.githubusercontent.com/ivitan/Picture/master/guibing.gif
+)
 
 ---
 **Via**

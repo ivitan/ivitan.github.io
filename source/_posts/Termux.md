@@ -216,7 +216,7 @@ Termux在 0.66 取消了双层键盘
 	vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 	```
 	- 修改如下
-	![](https://i.loli.net/2018/06/25/5b3044e8a329d.jpg)
+	![](https://raw.githubusercontent.com/ivitan/Picture/master/5b3044e8a329d.jpg)
 
 # 安装 Hexo
 步骤

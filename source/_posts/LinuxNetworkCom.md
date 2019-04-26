@@ -15,4 +15,5 @@ icon:
 ---
 # Picture
 Pic
-:   ![network.jpg](https://i.loli.net/2019/02/14/5c64b1a602305.jpg)
+:   ![network.jpg](https://raw.githubusercontent.com/ivitan/Picture/master/networkcommand.jpg
+)
