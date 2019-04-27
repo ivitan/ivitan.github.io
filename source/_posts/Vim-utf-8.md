@@ -11,6 +11,8 @@ categories: notes
 icon:
  - /images/Vim.png
 ---
+Vim 设置默认中文并加行数
+<!--more-->
 # .vimrc
 配置文件
 :   ```
