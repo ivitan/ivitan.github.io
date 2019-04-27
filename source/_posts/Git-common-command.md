@@ -10,6 +10,11 @@ icon:
 - /images/Git.png
 enable_unread_badge: true
 ---
+# Git 常用命令
+速查表
+:	![](https://raw.githubusercontent.com/ivitan/Picture/master/GitCmd.jpg
+)
+
 # 配置
 基础配置
 :	```sh
