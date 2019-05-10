@@ -128,7 +128,7 @@ archive_generator:
 
 # Google analytics
 google_analytics:
-  track_id: UA-116899388-1
+  track_id: UA-139969785-1
 
 google_adsense:
   id: ca-pub-3388441726059687
