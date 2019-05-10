@@ -48,7 +48,7 @@ dhcpd.conf
   ```
 复制 dhcpd.conf.samplle
 :  ```
-  /usr/share/doc/dhcp-6.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
+  cp -p /usr/share/doc/dhcp-6.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
   ```
 
 配置文件设置
