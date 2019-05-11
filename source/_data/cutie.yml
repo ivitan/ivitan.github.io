@@ -23,9 +23,9 @@ maintainer:
 
 global:
   title: Vitan's 黑板报
-  subtitle: ⁣⁣⁣⁣　
+  subtitle: blog,note,linux and more...
   author: Vitan
-  description:
+  description: Personal website for Vitan, coder, programmer
   favicon: /images/favicon.png
   site_tracker: google # google
   comment_system: valine
@@ -36,6 +36,12 @@ global:
     color: lime
   announcement:
     text: Welcome to my personal website.
+
+google_analytics: 
+  track_id: UA-139969785-1
+
+google_adsense:
+  id: ca-pub-3388441726059687
 
 page_404:
   tencent_404: true
