@@ -17,7 +17,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ivitan.github.io
+url: https://vitan.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: :title/
@@ -126,13 +126,6 @@ archive_generator:
   monthly: false
   daily: false
 
-# Google analytics
-google_analytics:
-  track_id: UA-139969785-1
-
-google_adsense:
-  id: ca-pub-3388441726059687
-
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -141,6 +134,13 @@ theme: cutie
 lazyload:
   enable: false
   onlypost: false
+
+# Google analytics
+google_analytics:
+  track_id: UA-139969785-1
+
+google_adsense:
+  id: ca-pub-3388441726059687
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

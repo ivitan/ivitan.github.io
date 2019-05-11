@@ -18,7 +18,7 @@ social:
   weibo: https://weibo.com/ivitan
 
 maintainer:
-  url: https://ivitan.github.io
+  url: https://vitan.me
   email: ivitan95@gmail.com
 
 global:
@@ -37,12 +37,6 @@ global:
   announcement:
     text: Welcome to my personal website.
 
-google_analytics:
-  track_id: UA-139969785-1
-
-google_adsense:
-  id: ca-pub-3388441726059687
-
 page_404:
   tencent_404: true
 
@@ -53,7 +47,6 @@ valine:
   appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
   appKey: rG3tgBLm6WGpoU2895oVKXVU
   placeholder: 元芳你怎么看？！
-
 livere:
   id: city
   uid: MTAyMC8zODY0NS8xNTE3Mw==
