@@ -1,6 +1,6 @@
 ---
 date: 2019-05-08 20:20:00
-title: CentOs  DHCP
+title: CentOS  DHCP
 tags:
   - Linux
 categories:
@@ -13,19 +13,19 @@ icon:
 ---
 # 安装
 dhcp
-: ```
+: ```bash
   yum update
   yum install dhcp -y
   ```
 
 # 修改 ip
 network
-: ```
+: ```bash
   vim /etc/sysconfig/network-scripts/ifcfg-eth2
   ```
-  ```
+  ```bash
   DEVICE="eth2"
-  BOOTPROTO=dhcp
+  BOOTPROTO=static
   HWADDR="00:0D:29:G1:2D:3B"
   NM_CONTROLLED="yes"
   ONBOOT="yes"
@@ -35,24 +35,24 @@ network
   GATEWAY=192.168.22.1 
   ```
   - 重启网络
-  ```
+  ```bash
   service network restart
   systemctl network restart
   ```
 
-# 配置
+# 服务端配置
 dhcpd.conf
 : - 路径 
-  ```
+  ```bash
   /etc/dhcp/dhcpd.conf
   ```
 复制 dhcpd.conf.samplle
-:  ```
+:  ```bash
   cp -p /usr/share/doc/dhcp-6.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
   ```
 
 配置文件设置
-:  ``` 
+:  ``` bash /etc/dhcp/dhcpd.conf
   ddns-update-style interim;// dhcp 服务器和dns 服务器的动态信息更新模式     
   ignore client-updates;       
   default-lease-time           259200; #预设租约为 3 天
@@ -76,9 +76,39 @@ dhcpd.conf
   ```
 
 启动
-: ```
+: ```bash
   service dhcpd start
   systemctl start dhcp #CentOs 7
   dhcpd # 检测错误
   chkconfig --levels 235 dhcpd on # 开机启动
+  ```
+
+# 客户端配置
+ifcfg.eth2
+: ```bash
+  vim /etc/sysconfig/network-scripts/ifcfg-eth2
+  ```
+  ```bash 
+    DEVICE="eth2"
+    BOOTPROTO=dhcp
+    HWADDR="00:0D:29:G1:2D:3B"
+    NM_CONTROLLED="yes"
+    ONBOOT="yes"
+    BOOTPROTO="none"
+    IPADDR=192.168.22.100
+    NETMASK=255.255.255.0
+    GATEWAY=192.168.22.1 
+  ```
+  - 重启网络
+  ```bash
+  ifdown eth2
+  ifup eth2
+
+  service network restart
+  ```
+
+# 查看租约情况
+cmd
+: ```bash
+  cat /var/pib/dhcpd/dhcpd.leases
   ```
