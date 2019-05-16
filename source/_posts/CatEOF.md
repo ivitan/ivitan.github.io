@@ -41,7 +41,7 @@ cat <<EOF>>
 cat >>
 :  ```bash
   #!/bin/bash
-  cat >> $HOME/cat.txt << EOF
+  cat > $HOME/cat.txt << EOF
   vitan.me
   EOF
   ```
