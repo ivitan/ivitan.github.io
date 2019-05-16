@@ -20,7 +20,7 @@ Install
 Start Service
 : ```bash
   service named start
-  systemctl name start #CentOs 7
+  systemctl name start # CentOs 7
   systemctl enable named-chroot
   ```
 
@@ -121,7 +121,7 @@ named.conf
   ```
   ```bash /var/named/chroot/var/named/149.28.197.zone
   $TTL 1D
-  @       IN SOA  @ www.vitan.me. mail.vitan.me. (
+  @       IN SOA  www.vitan.me. mail.vitan.me. (
                   2007101100      ; serial
                   1D      ; refresh # 主从刷新时间
                   1H      ; retry # 主从通讯失败后重试间隔
@@ -144,7 +144,7 @@ CMD
 
 # 客户端配置与测试
 Install
-: - 以便能使用 nslookup、dig 和 host 工具
+: - 以便能使用 nslookup dig 和 host
   ```bash
   yum install bind-utils -y
   ```
@@ -154,13 +154,12 @@ Install
   vim /etc/resolv.conf
   ```
   ```bash /etc/resolv.conf
-  nameserver 192.168.22.2
-  nameserver 192.168.0.9
-  search long.com
+  search vitan.me
+  nameserver 149.28.197.1
   ```
 
 Test
 : ```bash
-  dig www.long.com
-  nslookup www.long.com
+  dig www.vitan.me
+  nslookup www.vitan.me
   ```
