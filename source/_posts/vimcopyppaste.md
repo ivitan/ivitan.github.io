@@ -1,5 +1,5 @@
 ---
-title: Vim 复制粘贴和寄存器的使用
+title: Vim 增删查改、翻页和寄存器
 date: 2019-04-28 08:52:31
 tags:
   - Vim
@@ -12,7 +12,9 @@ enable_unread_badge: true
 icon:
   - /images/Vim.png
 ---
-Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put
+- Vim 增删查改、复制捏贴、翻页和寄存器。
+- Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put
+<!--more-->
 
 # 复制粘贴
 Normal 模式下
@@ -39,6 +41,61 @@ Insert 模式下
   ```shell
   :set paste 
   :set nopaste # 取消
+  ```
+
+# 增删查改翻页移动
+## 增删查改
+增（大写相反）
+: ```bash
+  a# append 当前字母后面插入
+  i # insert 当前字母前面插入
+  o # open a line 向下打开新一行
+  ```
+
+删
+: ```bash
+  d  # 删除
+  dw # 删除单词
+  diw # delete inner word 删除不包含空格的一个单词
+  daw # delete around word
+  dd # 删除一行
+  x # 删除一个字符
+  ```
+
+改
+: ```bash 
+  c
+  ciw # Change inner word
+  ct  # 括号里面的内容（修改到右边括号）
+  ci” # 删除双引号里的内容
+  ```
+
+查
+: ```bash
+  fs # 查找当前行第一个出现的 s ，使用 ； 查找下一个
+  Fs # 往回查
+  /word # 查找所以单词 word
+  ?word #往回查
+  ```
+## 移动翻页
+移动
+: ```bash
+  hjkl # 上下左右
+  w # word 移动单词
+  b #back word 往回移动单词
+  :18 # 移动到18行
+  18G # 移动到14行
+  0 # 回到开头
+  $ # 行尾
+  gg # 文件开头
+  G # 文件结尾
+  Ctrl o # 返回刚刚的位置
+  ```
+
+翻页
+: ```bash
+  ctrl + f # forward
+  ctrl + u # upward
   ```
 
 # Vim 寄存器
