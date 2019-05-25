@@ -16,7 +16,7 @@ icon:
 cat <<EOF>>
 : ```bash
   #!/bin/bash
-  cat << EOF >> $HOME/cat.txt
+  cat << EOF >> cat.txt
   vitan.me
   EOF
   ```
@@ -24,7 +24,7 @@ cat <<EOF>>
 cat >>
 :  ```bash
   #!/bin/bash
-  cat >> $HOME/cat.txt << EOF
+  cat >> cat.txt << EOF
   vitan.me
   EOF
   ```
@@ -33,7 +33,7 @@ cat >>
 cat <<EOF>>
 : ```bash
   #!/bin/bash
-  cat << EOF > $HOME/cat.txt
+  cat << EOF > cat.txt
   vitan.me
   EOF
   ```
@@ -41,10 +41,11 @@ cat <<EOF>>
 cat >>
 :  ```bash
   #!/bin/bash
-  cat > $HOME/cat.txt << EOF
+  cat > cat.txt << EOF
   vitan.me
   EOF
   ```
+
 # 使用变量
 Warnning
 : 追加和覆盖若要使用变量必须加 `\` 如 **`\$var`**
