@@ -20,6 +20,11 @@ Inatall
   sudo pacman -S docker
   ```
 
+start server
+: ```bash
+  systemctl restart docker 
+  ```
+
 # 镜像
 image
 : ```bash
