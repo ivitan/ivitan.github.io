@@ -23,7 +23,7 @@ maintainer:
 
 global:
   title: Vitan's 黑板报
-  subtitle: blog,note,linux and more...
+  subtitle: Code,Linux,Shell,Web,Blog,Note,Daily...
   author: Vitan
   description: Personal website for Vitan, coder, programmer
   favicon: /images/favicon.png
@@ -53,6 +53,7 @@ valine:
   appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
   appKey: rG3tgBLm6WGpoU2895oVKXVU
   placeholder: 元芳你怎么看？！
+  
 livere:
   id: city
   uid: MTAyMC8zODY0NS8xNTE3Mw==

@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Vitan's 黑板报
-subtitle: ⁣⁣⁣⁣　
+title: Vitan's 
+subtitle: ⁣⁣⁣黑板报
 description: Vitan' Blog
-keywords: Code,Blog,Note,Daily
+keywords: Code,Linux,Shell,Web,Blog,Note,Daily...
 author: Vitan
-author_link: https://ivitan.github.io
+author_link: https://vitan.me
 language:
   - zh-cn
   - en
