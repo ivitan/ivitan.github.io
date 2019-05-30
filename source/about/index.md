@@ -12,8 +12,8 @@ toc: false
 
 # About
 **About Me**
-:	- 90年代出生
-	- 菜鸟 Programmer
+:	- [Github](https://github.com/ivitan)
+	- 数码科技爱好者
 	- Google，Andriod，OnePlus 粉
 	- 规则长方体固体物质空间移动工程师
 
@@ -25,7 +25,7 @@ toc: false
 
 # Contact Me
 **Email**
-:	- **<a href="mailto:ivitan95@gmail.com">ivitan95@gmail.com</a>**
+:	- <a href="mailto:me@vitan.me">me@vitan.me</a>
 
 **Telegram**
-:	- **[Telegram](http://t.me/ivitan)**
+:	- [Telegram](http://t.me/ivitan)
