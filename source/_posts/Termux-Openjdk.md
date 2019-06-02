@@ -18,7 +18,7 @@ JDK1.8
   - [aarch64百度云盘密码:ryea](https://pan.baidu.com/s/14T-2L2j3gZaxfbwkZxJxqg)
 
 JDK1.9
-: - [aarch64下载](https://mega.nz/#!aZgwVQpD!o8qNcQmObEEKn7qb5MZaDKbT3PUCAoCLwbHtAjDIKho)
+: - ~~[aarch64下载](https://mega.nz/#!aZgwVQpD!o8qNcQmObEEKn7qb5MZaDKbT3PUCAoCLwbHtAjDIKho)~~
 
 # 安装 Openjdk
 步骤
