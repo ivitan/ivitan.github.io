@@ -23,8 +23,7 @@ JDK1.9
 # 安装 Openjdk
 步骤
 : ```sh
-cd storage/downloads
-dpkg -i openjdk9_9.2017.8.20_aarch64.deb
+  cd storage/downloads
+  dpkg -i openjdk9_9.2017.8.20_aarch64.deb
   ```
-
   ![](https://s1.ax1x.com/2018/04/01/9zmkW9.png)

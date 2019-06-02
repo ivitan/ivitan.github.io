@@ -23,7 +23,7 @@ Installation
 
 Usage
 :	1. 远程连接设备（已开启USB网络调试）
-	```adb
+	```bash
 	adb connect ip
 	```
 ADB

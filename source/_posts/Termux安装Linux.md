@@ -12,41 +12,36 @@ icon:
 Termux安装Linux
 <!-- more -->
 
-# **安装脚本**
-`wget http://funs.ml/file/atilo`
+# 安装脚本
+添加源
+:   ```bash
+    echo "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
+    ```
 
-## **设置执行权限**
-`chmod +x  atilo`
+安装
+:   ```bash
+    pkg install atilo-cn -y
+    ```
 
+# 使用
 运行atilo
-`./atilo`
+:   ```bash    
+    atilo [命令] [参数]
+    ```
 
-# **安装Linux**
-`./atilo ubuntu`
+安装 Linux
+:   ```bash
+    atilo ubuntu
+    ```
 
-## **运行**
-`startubuntu`
+运行 linux
+:   ```bash
+    startubuntu
+    ```
 
-## **卸载**
-`./atilo -r ubuntu`
-
-## **设置中文**
-修改/etc/locale.gen文件
-去掉#zh_CN.UTF-8前面的#号
-保存后输入
-
-```
-locale-gen zh_CN.UTF-8
-export LC_ALL="zh_CN.UTF-8"
-```
-
-## **启动桌面**
-先安装xserver xsdl.apk
-打开xserver xsdl
-
-```
-pacman -S lxde
-export DISPLAY=:0
-export PULSE_SERVER=tcp:127.0.0.1:4712
-startlxde
-```
+## 设置中文
+修改/etc/locale.gen
+:   ```bash
+    locale-gen zh_CN.UTF-8
+    export LC_ALL="zh_CN.UTF-8"
+    ```

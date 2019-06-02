@@ -18,7 +18,7 @@ icon:
 (require('os').cpus() || { length: 1 }).length
   ```
   - 编辑
-  ```sh
+  ```bash
   vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
   ```
   - 修改如下保存即可

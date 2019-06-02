@@ -14,14 +14,14 @@ mathjax: true
 <!--more-->
 # 游戏
 月球车
-: ```
-pkg install moon-buggy
+: ```bash
+  pkg install moon-buggy
   ```
   - Start:`moon-buggy`
 
 fortz
-: ```
-pkg install fortz
+: ```bash
+  pkg install fortz
   ```
   - start: `zgames`
 
@@ -30,9 +30,10 @@ pkg install fortz
 : - 在ubuntu系统中使用 `sudo apt-get install tmux` 
   - ArchLinux `yacman -S tmux`
   - Termux安装：
-  ```
+  ```bash
   pkg install tumx
   ```
+  
 tmux主要包括以下几个模块：
 : |名词|含义|解析|
   |:----:|:----:|:----|
