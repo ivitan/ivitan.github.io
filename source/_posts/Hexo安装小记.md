@@ -23,14 +23,14 @@ Hexo 从零开始到搭建完整
 	下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选 Add to PATH ,这样你就不用自己去配置电脑上环境变量了，装完在按 win + r 快捷键调出运行，然后输入cmd确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量）
 
 npm 换源
-:	```
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+:	```bash
+	npm install -g cnpm --registry=https://registry.npm.taobao.org
 	```
 
 # 安装hexo
 本地安装
 :	先创建一个文件夹
-	```
+	```bash
 	cd d:\hexo
 	npm install hexo-cli -g
 	npm install
@@ -38,44 +38,42 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 	npm install hexo-deployer-git --save
 	```
 
-搭桥到Github
+Github
 :	1. 创建一个 repo，名称为 ivitan.github.io, 其中 ivitan 是你的 Github 用户名。
 	2. 回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）
 
 
 将博客与 Github 关联
 :	打开本地文件夹项目内的`_config.yml`配置文件，将其中的 type 设置为 git
-	```
-deploy:
-type: git
-repository: https://github.com/用户名/用户名.github.io.git
-branch: master
+	```bash
+	deploy:
+	type: git
+	repository: https://github.com/用户名/用户名.github.io.git
+	branch: master
 	```
 
 ## 创建 SSH Key
-```
-git config --global user.name "Vitan"
-git config --global user.email "ivitan95@gmail.com"
-ssh-keygen -t rsa -C "ivtan95@gmail.com"
-```
-复制`id_rsa.pub`内的密匙添加到 GitHub
+CMD
+:	```bash
+	git config --global user.name "Vitan"
+	git config --global user.email "ivitan95@gmail.com"
+	ssh-keygen -t rsa -C "ivtan95@gmail.com"
+	```
+	- 复制 `id_rsa.pub` 内的密匙添加到 GitHub
+		- 验证是否添加成功：`ssh -T git@github.com`
 
-验证是否添加成功：`ssh -T git@github.com`
-
-用编辑器打开你的blog项目，修改_config.yml文件的一些配置(冒号之后都是有一个半角空格的)：
-```
-deploy:
-type: git
-repo: https://github.com/YourgithubName/YourgithubName.github.io.git
-branch: master
-```
-回到 GitBash中，进入你的 blog 目录，分别执行以下命令：
-
-```
-hexo c
-hexo g
-hexo s
-hexo d
-```
----
-打开浏览器输入：http://localhost:4000
+修改_config.yml
+:	```bash
+	deploy:
+	type: git
+	repo: https://github.com/YourgithubName/YourgithubName.github.io.git
+	branch: master
+	```
+GitBash进入blog 目录
+:	```bash
+	hexo clean
+	hexo g
+	hexo s
+	hexo d
+	```
+	- 浏览器：http://localhost:4000
