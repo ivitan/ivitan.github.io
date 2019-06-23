@@ -13,6 +13,7 @@ toc: false
 # About
 **About Me**
 :	- [Github](https://github.com/ivitan)
+	- [Resume](https://vitan.me/resume/)
 	- 数码科技爱好者
 	- Google，Andriod，OnePlus 粉
 	- 规则长方体固体物质空间移动工程师
