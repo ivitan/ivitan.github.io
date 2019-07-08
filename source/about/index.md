@@ -11,10 +11,12 @@ toc: false
 </center>
 
 # About
+**My Resume**
+:	[Resume](https://vitan.me/resume/)
+
 **About Me**
 :	- [Github](https://github.com/ivitan)
-	- [Resume](https://vitan.me/resume/)
-	- 数码科技爱好者
+	- 数码爱好者
 	- Google，Andriod，OnePlus 粉
 	- 规则长方体固体物质空间移动工程师
 
@@ -26,7 +28,7 @@ toc: false
 
 # Contact Me
 **Email**
-:	- <a href="mailto:me@vitan.me">me@vitan.me</a>
+:	<a href="mailto:me@vitan.me">me@vitan.me</a>
 
 **Telegram**
-:	- [Telegram](http://t.me/ivitan)
+:	[Telegram](http://t.me/ivitan)
