@@ -28,7 +28,7 @@ global:
   description: Personal website for Vitan, coder, programmer
   favicon: /images/favicon.png
   site_tracker: google # google
-  comment_system: valine
+  comment_system: valine # disqus, valine, gitment
   icon_set: blue-shadow
   use_animation: true
   scheme:

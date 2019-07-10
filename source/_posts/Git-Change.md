@@ -30,10 +30,22 @@ CMD
 
 # 新仓库
 CMD
-: ```bashbash
+: ```bash
   git init()
   git remote add origin https://github.com/user/repo.git
   git add .
   git commit -m "Commit message"
   push origin master
+  ```
+
+# 建议
+拉取时
+: - 推荐
+  ```bash
+  git fetch origin master
+  git merge origin/master
+  ```
+  - 不推荐
+  ```bash
+  git pull
   ```
