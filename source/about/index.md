@@ -12,7 +12,7 @@ toc: false
 
 # About
 **My Resume**
-:	[Resume](https://vitan.me/resume/)
+:	[Resume](https://resume.vitan.me)
 
 **About Me**
 :	- [Github](https://github.com/ivitan)
