@@ -2,7 +2,7 @@
 layout: page
 title: vitan.me
 description: About
-comments: false     # 禁用评论，可选，默认开启
+comments: false  # 禁用评论，可选，默认开启
 toc: false
 ---
 <div align=center><img  src="/images/favicon.png" width="200px" height="200px"/></div>
@@ -15,8 +15,7 @@ toc: false
 :	[Resume](https://resume.vitan.me)
 
 **About Me**
-:	- [Github](https://github.com/ivitan)
-	- 数码爱好者
+:	- 数码爱好者
 	- Google，Andriod，OnePlus 粉
 	- 规则长方体固体物质空间移动工程师
 
@@ -24,7 +23,6 @@ toc: false
 :	- 本博客是采用 [Hexo](https://hexo.io) + [Cutie 主题](https://qutang.github.io/cutie/) 搭建
 	- 本博客主要是用来记录学习和生活的过程
 	- 本博客文章有些原创,有些来源自网络,若侵犯了您的版权,告知后会在第一时间删除
-
 
 # Contact Me
 **Email**
