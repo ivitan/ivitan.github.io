@@ -1,0 +1,753 @@
+---
+title: Shell
+date: 2019-07-20 18:59:04
+tags:
+  - Linux
+  - ArchLinux
+categories:
+  - notes
+author:
+  - Vitan
+enable_unread_badge: true
+icon:
+  - /images/Linux.png
+---
+# 变量替换和测试
+变量替换
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720191523.png)
+
+变量测试
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720191707.png)
+
+# 字符串处理
+## 长度
+计算字符串长度
+: - 方法一
+  ```bash
+  ${#string}
+  ```
+  - 方法二
+  ```bash
+  expr length "$string"
+  ```
+    - string 有空格，则必须加双引号
+## 子串
+获取子串在字符串中的索引位置
+: ```bash
+  expr index $string $substring
+  ```
+抽取子串
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720192503.png)
+
+## 总结
+计算字符串长度
+: ```bash
+  var1="This is a app"
+  len=${#$var1}
+  len=`expr length "$var1"`
+  ```
+
+子串索引
+: ```bash
+  var1="quicstart is a app"
+  ind=`expr index "$var1" start`
+  ```
+
+子串长度
+: ```bash
+  var1="quicstart is a app"
+  ind=`expr match "$$var1" app`
+  ```
+
+抽取字符串中的子串
+: ```bash
+  var1="quicstart is a app"
+  substr1=${var1:10}
+  substr2=${var1:10:6}
+  substr1=${var1:-5}
+  substr1=${var1:-10:4}
+  ```
+  - expr 索引1开始,${string:position}从0开始
+
+脚本
+: ```bash
+  #! /bin/bash
+  string="Bigdata process framework is Hadoop,Hadoop is an open source project"
+
+  function print_tips
+  {
+      echo "***********************"
+      echo "(1) 打印string长度"
+      echo "(2) 删除字符串中所有Hadoop"
+      echo "(3) 替换第一个Hadoop为Mapreduce"
+      echo "(4) 替换全部Hadoop为Mapreduce"
+      echo "**********************"
+    }
+
+  function len_of_string
+  {
+    echo "${#string}"
+  }
+
+  function del_hadoop
+  {
+    echo "${string/Hadoop/}"
+  }
+
+  function rep_hadoop_mapreduce_first
+  {
+    echo "${string/Hadoop/Mapreduce}" 
+  }
+
+  function rep_hadoop_mapreduce_all
+  {
+    echo "${string//Hadoop/Mapreduce}" 
+  }
+
+  while true
+  do 
+    echo "【string=$string】"
+    echo
+    print_tips
+    read -p "Pls input your choice(1|2|3|4|q|Q):" choice
+    case $choice in
+          1)  len_of_string
+              ;;
+          2)  del_hadoop
+              ;;
+          3)  rep_hadoop_mapreduce_first
+              ;;
+          4)  rep_hadoop_mapreduce_all
+              ;;
+          q|Q)  exit
+                ;;
+          *)
+              echo "Error,input only in {1|2|3|4|q|Q}"
+              ;;
+          esac
+  done
+  ```
+
+# 命令替换
+语法格式
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720194539.png)
+
+例题
+: - 获取系统所有用户并输出
+  ```bash
+  cat /etc/passwd | cut -d “:” -^C #分割的第一个
+  cat /etc/passwd | cut -d “:” -f 1 #分段
+  ```
+  ```bash
+  #! /bin/bash
+  # 判断进程是否存在，否则启动
+  nginx_process_num=$(ps -ef | grep nginx | grep -v grep | wc -l)
+
+  if [ $nginx_process_num -eq 0 ];then
+      systemctl start nginx
+  fi
+  ```
+## 总结
+``和$()
+: 1. ``和$()是等价的，但初学推荐$()
+  2. $(())用于进行整数运算，包括加减乘除
+  3. $(((100 + 30) / 12))
+
+# 有类型变量
+## declare 和 typeset 命令
+两者关系
+: 两者等价，都是用来定义变量类型
+
+declare参数表
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720195605.png)
+
+  ```bash
+  # 声明整数型变量
+  # declare -i ab //声明整数型变量
+  # ab=56 //改变变量内容
+  # echo $ab //显示变量内容
+  56
+
+  # 改变变量属性
+  # declare -i ef //声明整数型变量
+  # ef=1  //变量赋值（整数值）
+  # echo $ef //显示变量内容
+  1
+  # ef="wer" //变量赋值（文本值）
+  # echo $ef 
+  0
+  # declare +i ef //取消变量属性
+  # ef="wer"
+  # echo $ef
+  wer
+  # 设置变量只读
+
+  # declare -r ab //设置变量为只读
+  # ab=88 //改变变量内容
+  -bash: ab: 只读变量
+  # echo $ab //显示变量内容
+  56
+  # 声明数组变量
+
+  # declare -a cd='([0]="a" [1]="b" [2]="c")' //声明数组变量
+  # echo ${cd[1]}
+  b //显示变量内容
+
+  # echo ${cd[@]} //显示整个数组变量内容
+  a b c
+  ```
+  - `declare -x` 声明为环境变量，可在脚本中直接使用
+  - 取消声明的变量
+  ```bash
+  declare +r
+  declare +i
+  declare +a
+  declare +X
+  ```
+
+# 数学运算
+语法格式
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720200443.png)
+
+expr操作符对照表
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720200649.png)
+
+例子
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720201000.png)
+
+# Bash运算之bc
+bc 操作
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720201134.png)
+  ```bash
+  scale=2 #精确到小数点后两位
+  echo “20+22” | bc
+  echo “scale=3;23+33” | bc
+  ```
+
+# 函数定义和使用
+介绍
+: Linux Shell中的函数和大多数编程语言中的函数一样，将相似的任务或代码封装到函数中，供其他地方调用
+
+语法
+: - 一
+  ```bash
+  name()
+  {
+    command1
+    command2
+    ....
+    commandn
+  }
+  ```
+  - 二
+  ```bash
+  function name
+  {
+    command1
+    command2
+    ....
+    commandn
+  }
+  ```
+
+如何调用
+: 1. 直接使用函数名调用，可以将其想象成Shell中的一条命令
+  2. 函数内部可以直接使用函数$1,$2...$n
+  3. 调用函数：function_name $1 $2
+
+例题
+: ```bash
+  #!/bin/bash
+  # 判断进程是否存在，否则启动
+
+  #脚本名含有nginx会返回0
+  # echo $$ 运行脚本产生的进程id
+  this_pid=$$
+
+  while true
+  do
+  ps -eff | grep nginx | grep -v grep | grep -v $this_pid &> /dev/null
+
+  if [ $? -eq 0];then
+      echo "Nignx is running well"
+      sleepp 3
+  else 
+      systemctl start nginx
+      echo "Nginx is down,start it.."
+  fi
+  done
+  ```
+  - 判断进程
+  ```bash
+  netstat -tnlp | grep :80
+  curl localhost/index.html
+  ```
+
+# 向函数传递参数
+shell传参
+: ```bash
+  function name
+  {
+    echo "Hello $1"
+    echo "Hello $2"
+  }
+  ```
+
+# 函数返回值
+方式
+: 1. return
+  2. echo
+
+reutrn 返回值
+: 1. 只能返回1-255的整数
+  2. 通常智能用来供其他地方调用获取状态，因此仅返回0（成功)，1(失败)
+
+echo 返回值
+: 1. 可以返回任何字符串结果
+  2. 通常用于返回数据，如一个字符串值或列表值
+
+# 局部变量全局变量
+全局变量
+: 1. 不做特殊处理，shell 中变量为全局变量
+  2. 大型脚本程序慎用
+
+
+局部变量
+ :  1. 定义时，使用local关键字
+    2. 函数内外如果存在同名变量，册函数内部变量覆盖外部变量
+
+## 函数库
+为什么要定义函数库
+: 1. 经常使用的重复代码封装成函数文件
+  2. 一般不直接执行，而是由其他脚本调用
+
+实例
+: ```bash 库文件
+    function add
+  {
+      echo "`expr $1 + $2`"
+  }
+
+  function reduce
+  {
+      echo "`expr $1 - $2`"
+  }
+
+  function multiple
+  {
+      echo "`expr $1 \* $2`"
+  }
+
+  function diveid
+  {
+      echo "`expr $1 / $2`"
+  }
+
+  function sys_load
+  {
+      echo "Memory Info"
+      free -m
+      echo
+
+      echo "Disk Usage"
+      echo
+      df -h 
+  }
+  ```
+  ```bash 
+  #!/bin/bash
+  . /home/vitan/workplace/Shell/learn/function/base_function
+  add 122 3
+  reduce 9 3
+  multiple 22 11
+  diveid 12 3
+  sys_load
+  ```
+
+注意事项
+: 1. 库文件名的后缀是任意的，但一般用.lib
+  2. 库文件通常没有可执行权限
+  3. 库文件无需和脚本在同级目录，只需在脚本中引时指定
+  4. 第一行一般使用#!/bin/bash/echo，输出警告信息，避免用户执行
+
+# 文件查找之find命令
+语法
+: find [路径][选项][操作]
+
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720205155.png)
+
+实例
+: 1. 查找/etc目录下conf结尾的文件
+  ```bash
+  fing /etc -name '.conf'
+  ```
+  2. 查找当前目录下文件名为aa的文件，不区分大小写
+  ```bash
+  find . -name aa
+  ```
+  3. 查找文件属主为hdfs的所有文件
+  ```bash
+  find . -user hdfs
+  ```
+  4. 查找文件属组为yarn的所有文件
+  ```bash
+  find . -group yarm
+  ```
+  - -type
+    - f 文件 find . -type f
+    - d 目录 dind . -type d
+    - c 字符设备文件 dind . -type c
+    - b 块设备文件 dind . -type b
+    - l 链接文件 dind . -type l
+    - p 管道文件 dind . -type p
+  - -size
+    - -n 大小小于n的文件
+    - +n 大小大于n的文件
+    - n 大小等于n的文件
+    ```bash
+    # 小于10000字节的文件
+    find /etc -size -10000c
+    # 大于1M的文件
+    find /etc -size +1M
+    ``` 
+  - -mtime
+    - -n n天以内修改的文件
+    - +n n天以外修改的文件
+    - n 正好n天修改的文件
+    ```bash
+    #查找/etc下5天内修改的conf结尾的文件
+    find /etc -mtime -5 -name '*.conf'       
+    # 查找10天之前修改且属主为root的文件
+    find /etc -mtime +10 -user root
+    ```
+  - -mmin
+    - -n n分种内修改的文件
+    - +n n分钟外修改的文件
+    ```bash
+    # 30分钟前修改的文件
+    find /etc -mmin +30
+    # 30分钟内修改的目录
+    find /etc -mmin -3o -type d
+    ```
+  - -mindepth n
+    - 表示从n级子目录开始搜索
+    ```bash
+    find /etc -mindepth 3
+    ```
+  - -maxdepth n
+    - 表示最多搜索n-1级子目录
+    ```bash
+    find /etc -maxdepth 3 -name '*.conf'
+    find ./etc -type f -name '.*conf' -size +10k -maxdepth 2
+    find . -type f -nogroup
+    ```
+  - -perm
+    - find .perm 644
+  - -prune 
+    - 通常和-path一起用，用于将特定目录排除在搜索条件之外
+    ```bash
+    # 查找当前目录下所有普通文件，排除test目录
+    find . -path ./etc -prune -o -type f
+    # 查找当前目录下所有普通文件，但排除etc和opt目录
+    find . -path ./etc -prune -o -path ./opt -prune -o -type f
+    # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs
+    find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs
+    # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于
+    find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs -a -size +2M
+    ```
+  - -newer file1
+    ```bash
+    find /etc -newer a
+    ```
+  + 操作
+    - -print 打印输出
+    - -exec 对搜索的文件执行特定的操作
+    ```bash
+    # 搜索/etc下的文件非目录，以conf结尾，大于19k，然后删除
+    find ./etc -type -f -name '*.conf' -size +10k -exec rm -rf {} \;
+
+    find /var/log/ -name '*.log' -mtime +7 -exec rm -rf {} \;
+    find /etc -size +10k -type -f -name '*.conf' -exec cp {} /root/conf/ \;
+    ```
+    - -ok 和exec功能一样，但每次操作都会给用户提示
+  
+  + 逻辑运算符
+    - -a 与
+    - -o 或
+    - -not|! 非
+
+# find locate whereis和 which 总结及使用场景分析
+locate
+: 1. 文件查找命令，所属软件包mlocate
+  2. 不同于find命令是在整块磁盘中搜索，locate在数据库文件中查找
+  3. find默认全部匹配，locate默认部分匹配
+
+  - updatedb命令
+    1. 用于更新/var/lib/mlocate/mlocate.db
+    2. 所使用配置文件/etc/update.conf
+    3. 该命令在后台cron计划任务定期执行
+
+whereis选项和含义
+: - -b 只返回二进制文件
+  - -m 只返回帮助文档文件
+  - -s 只返回源码文件
+
+which
+: - 仅查找二进制程序文件
+  - 选项
+    - -b 只返回二进制文件
+
+## 各命令使用场景推荐
+表格
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721094218.png)
+
+
+# grep和egrep
+## grep
+grep语法
+: 1. grep [option] [pattern] [file1,file2...]
+  2. command | grep [option] [pattern]
+
+grep参数
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721094721.png)
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721094812.png)
+  - grep -E “python | PYTHON” file
+
+## egrep
+egrep语法
+: egrep(选项)(查找模式)(文件名1，文件名2，……)
+
+# sed
+Sed流编辑器
+: sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
+
+语法
+: 1. stdot | sed [option] "pattern command"
+  2. sed [option] "pattern command" file
+
+选项
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721095810.png)
+
+例子
+: ```bash
+  sed ‘p’ sed.tet # p打印出来
+  sed -n‘p’ sed.tet
+  # 不加参数，原行也会再打印一次
+  sed ‘/python/p’sed.txt  #查找行
+  sed -n‘/python/p’sed.txt  #查找行
+  # 多个匹配条件
+  sed -n -e ‘/python/p’ -e ‘/PYTHON/p’ sed.txt
+  #文件中的
+  Vim edit.sed
+  /python/p
+  Sed -n -f edit.sed sed.txt
+  Sed -n -r‘/python|PYTHON/p’ sed.txt #使用扩展正则表达式
+  # 修改
+  sed -n ‘s/love/like/g’ sed.txt # love替换为like
+  sed -i‘s/love/like/g’ sed.txt #修改源文件
+  ```
+
+## sed 的pattern详解
+用法
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100028.png)
+  ```bash
+  # 打印file的17行
+  sed -n "17p" file
+  # 打印10到20行
+  sed -n "10,20p" file
+  # 打印第10行开始，往后加5行的内容
+  sed -n "10,+5p" file
+  # 以root开头的行
+  sed -n "/^root/p" file
+  # 打印第一个匹配到ftp开头的行
+  sed -n "/^root/,/^ftp/p" file
+  # 打印第四行开始，到以hdgs开头的
+  sed -n "4,/^hdfs/p" file
+  # 匹配root的行，直到第10行结束
+  sed -n "/root/,10p" file
+
+## sed 中的编辑命令
+命令
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100852.png)
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100931.png)
+  ```bash
+  sed -i‘1d/ sed.txt # 删除第一行
+  sed -i ‘1,3d’sed.txt # 删除1-3行
+  sed -i ‘/\/sbin\/nologin/d’passwd # 把不可登录的账号删除
+  sed -i ‘/^mail,/^ftp/d’pssswd #mail到ftp
+  文本追加
+  sed -i ‘/\/bin\/bash/a This is user which can login to system’pssswd # 行后追加
+  sed -i ‘/^hdfs/,/&yarn/i AAAAAA’ pssswd # 行间追加
+  sed -i ‘/root/r list’ passwd #把list内容追加root行后面
+  sed -n‘/\/bin\/bash/w /tmp/user_login.txt’passwd #保存
+
+  sed -i ‘s/\/bin\/bash/\/BIN\/BASH/g’passwd # 小写的替换为大写
+  sed -i ‘a/root/ROOT/’passwd # 替换第一个root为大写
+  sed -i ‘a/root/ROOT/2’passwd # 替换前两个个root为大写
+  sed -i ‘s/hadoop/HADOOP/ig’str.txt #不区分大小写
+  sed -n ‘/\/sbin\/nologin/=’passwd # 查看行号,不显示内容
+
+  sed -i ‘s/had..p/hadoops/g’ sed.txt #.任意一个字符
+  sed -i ‘s/had..p/&s/g’ sed.txt #hadXXp后面加s，反向引用
+  sed -i ‘s\/(had..ps\)\/1O/g’ sed.txt #后加O
+  sed -i ‘s/\(had\)...../\1doop/g’sed.txt # had后面替换
+  ```
+
+### 反向引用
+是什么
+: 1. &和\1 引用模式匹配到的整个串
+  ```bash
+  # file中寻找1开头的后跟两任意字符以e结尾的字符
+  sed "s/1..e/&r/g" file
+  sed "s/\(1...e\)/\1r/g" file # 使用\1代表搜寻到的字符串
+  ```
+  - 上面两种方法实现一样的功能，分别使用&和\1代表搜寻到的整个字符串
+  - 区别在于&只能表示匹配到的完整字符串，只能引用整个字符串，而\1可以使用()对匹配到的
+  - 要替换匹配的字符串的一部分，name必须使用\1，不能使用&
+
+## sed 引用变量
+注意
+: 1. 匹配模式中存在变量，则建议使用双引号
+  2. sed中需要引入自定义变量时，如外面使用单引号，则自定义变量必须使用单引号
+
+## 用 sed 查询特定内容
+查询命令
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721102519.png)
+
+实例
+: ```bash
+  # 打印/etc/passwd中的第20行内容
+  sed -n "20p" /etc/passwd
+
+  sed -n "8,15p" /etc/passwd
+  sed -n "8,+5p" /etc/passwd
+  sed -n '/^hdfs/p' /etc/passwd
+  sed -n '^root/,/^hdfs/p' /etc/passwd
+  sed -n '8,/\sbin\/nologin/p' /etc/passwd
+  sed -n '\bin\/bash/,5p' /etc/passwd
+  ```
+
+  ---
+
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721103230.png)
+  ```bash
+  #!/bin/bash
+  FILE_NAME=/root/my.cnf
+
+  function get_all_segments
+  {
+      echo "`sed -n '/\[.*\]/p' $FILE_NAME | sed -e 's/\[//g' -e 's/\]//g'`"
+  }
+
+  function count_items_in_segment
+  {
+      items=`sed -n '/\['$1'\]/,/\[.*\]/p' $FILE_NAME | grep -v "^#" | grep -v ^$ | grep -v "\[.*\]"`
+      index=0
+      for item in $items
+      do
+          index=`expr $index +1`
+      done
+      echo $index
+  }
+
+  number=0
+  for segment in `get_all_segments`
+  do
+      num=`expr $number + 1`
+      items_count=`coubt_items_in_segment $segment`
+      echo "$number: $segment $items_count"
+  done
+  ```
+
+## sed 删除特定内容
+命令表格
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721103352.png)
+
+实例
+: ```bash
+  sed -i '15d' passwd
+  sed -i '8,14d' passwd
+  sed -i '/\sbin\/nologin/d' passwd
+  sed -i '/^mail/,/^yarn/d' passwd
+  sed -i '/\sbin\/nologin/,13d' passwd
+  sed -i '5,/^ftp/d' passwd
+  # yarn开头到最后
+  sed -i '/^yarn/,$' /etc/passwd
+  ```
+  - 1. 删除配置文件中所有的注释行和空行
+  - 2. 在配置文件中所有不以#开头的行前面加×符合，主要以#开头的行不添加
+  ```bash
+  sed -i ‘/^#/d;/^$/d’ nginx.conf #删除注释
+  sed -i ‘/[:blank:]*#/d’ nginx.conf #删除空行
+  sed -i ‘/^[^#]/\*&/g’nginx.conf  #非井号开头
+  ```
+
+## sed 修改文件内容
+命令表格
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721104309.png)
+
+实例
+: ```bash
+  #修改第一行的root为ROOT
+  sed -i '1s/root/ROOT/' passwd
+  #修改5到10行中所有的/sbin/nologin为/bin/bash
+  sed -i '5,10s/\/sbin\/nologin/\bin\/bash/g' passed
+  #修改匹配到/sbin/nologin的行，将匹配到行中的login改为LOGIN
+  sed -i '/\sbin\/nologin/s/login/LOGIN/g' passwd
+  #修改以root开头的行，到15行中的所有行，修改行中的nologin为SPARK
+  sed -i '/^root/,15s/nologin/SPARK/g' passwd
+  #从15行开始到匹配以yarn开头的所有行，修改行中的bin为BIN
+  sed -i '15,/^yarn/s/bin/BIN/g' passwd
+  
+  sed -i 's/[0-9]*//g' file.txt
+  ```
+
+## sed 追加文本内容
+语法
+: 1. a
+  ```bash
+  # 第十行后追加"Add lind behind"
+  sed -i '10a Add lind behind' passwd
+  # 第10到20行，每一行后面都追加"Test line behind"
+  sed -i '10,20a Test line behind' passws
+  # 匹配到/bin/bash的行后面追加"insert line for /bin/bash behind"
+  sed -i '/\bin\/bash/a insert line for /bin/bash behind' passws
+  ```
+  2. i
+  ```bash
+  # 匹配yarn开头的行，在匹配航后面追加"Add lind behind"
+  sed -i 'yarn/i Add lind behind' passwd
+  # 每一行前面都追加“insert line before every line"
+  sed -i 'i insert line before every line' passwd
+  ```
+  3. r
+  ```bash
+  #将/etc/fstab文件的内容追加到passwd的第20行后面
+  sed -i '20r /etc/fstab' passwd
+  #将/etc/inittab文件内容追加到passwd文件匹配/bin/bash行后面
+  sed -i '/\bin\/bash/r /etc/inittab' passwd
+  #将/etc/vconsol.conf文件内容追加到passwd文件中特定行的后面，匹配以ftp开头的行后面
+  sed -i /^ftp/,18r /etc.vconsole.conf’ pssswd
+  ```
+  4. w
+  ```bash
+  # 将passwd文件匹配到/bin/bash的行追加到/tmp/sed.txt文件中
+  sed -i '/\bin\/bash/w /tmp/sed.txt' passwd
+  # 将passwd文件从10行还是到匹配到hsfs开头的所有行内容追加到/tmp/sed-1.txt
+  sed -i '10,/^hsfs/w /tmp/sed-1.txt' passwd
+  ```
+
+# awk
+awk 的工作模式
+: 1. awk 为一个文本处理工具，通常用于处理数据并产生结果报告。
+  2. 命名是由三个创始人姓氏首字母组成
+  
+语法
+: 1. awk 'BEGIN{}pattern{commands}END{}' file_name
+  2. standard outpu | awk 'BEGIN{}pattern{commands}END{}' file_name
+  - 语法格式说明
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721124926.png)
+  
+## awk内置变量
+内置变量对照表
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721125045.png)
