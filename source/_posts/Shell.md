@@ -8,6 +8,7 @@ categories:
   - notes
 author:
   - Vitan
+mathjax: false
 enable_unread_badge: true
 icon:
   - /images/Linux.png
@@ -565,7 +566,7 @@ Sed流编辑器
   sed -n "4,/^hdfs/p" file
   # 匹配root的行，直到第10行结束
   sed -n "/root/,10p" file
-
+  ```
 ## sed 中的编辑命令
 命令
 : ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100852.png)
@@ -748,6 +749,419 @@ awk 的工作模式
   - 语法格式说明
   ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721124926.png)
   
-## awk内置变量
+## awk 内置变量
 内置变量对照表
 : ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721125045.png)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721130039.png)
+
+  ```bash
+  awk '{print $0}END{}' /etc/passwd
+  # 指定分隔符，输出第一个(既所有用户名)
+  awk 'BEGIN{FS=":"}{print $1}' /etc/passwd
+  # 默认空格为分割符
+  awk '{print $1' list.txt
+
+  # NF每一个行字段个数（number Filed）
+  awk '{print NF}' list.txt # 返回字段个数
+
+  # NR(Number Row)
+  awk '{print NR}' list.txt /etc/passwd # 返回行号
+
+  # FNR(File Number Row)对每一个文件单独计数
+  awk '{print FNR}' list.txt /etc/passwd
+
+  # FS(File Separator)
+  awk 'BEGIN{FS="|"}{print $2}' list.txt #指定分割符|
+
+  # RS(Row Separator) 行分隔符
+  awk 'BEGIN{FS="|";RS="--"}{print $2}' list.txt
+
+  # ORS(Output Row Separatot) 输出行分割符
+  awk 'BEGIN{FS="|";RS="--"；ORS="&"}{print $2}' list.txt
+
+  awk 'BEGIN{FS="|";RS="--"；ORS="&";OFS=":"}{print $2，$3}' list.txt
+
+  awk '{print FILENAME}' list.txt #对每一行输出文件名
+
+  awk '{print ARGC}' list.txt # 输出行参数个数
+
+  awk 'BEGIN{FS=":"}{print $NF}' /etc/passwd # 输出行最大自的断
+  ```
+
+## awk 格式化输出
+### printf(默认不带分隔符)
+语法
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721134349.png)
+
+修饰符
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721134554.png)
+
+实例
+: ```bash
+  # 不加任何修饰输出 
+  awk 'BEGIN{FS=":"}{printf $1}' /etc/passwd
+  # 换行输出
+  awk 'BEGIN{FS=":"}{printf "%s\n",$1}' /etc/passwd
+
+  # 输出两个变量
+  awk 'BEGIN{FS=":"}{printf "%s%s\n",$1,$7}' /etc/passwd
+
+  # 第一个第二个变量长度20(默认右对齐)
+  awk 'BEGIN{FS=":"}{printf "%20s %20s\n",$1,$7}' /etc/passwd
+
+  # 第一个第二个变量长度20(左对齐)
+  awk 'BEGIN{FS=":"}{printf "%-20s %-20s\n",$1,$7}' /etc/passwd
+  ```
+  ```bash
+  # 以字符串格式打印/etc/passwd中的第七个字段，以":"为分隔符
+  awk 'BEGIN{FS=":"}{printf "%s\n",$7}' /etc/passwd
+  # 以10进制格式打印/etc/passwd中的第3个字段，以":"为分隔符
+  awk 'BEGIN{FS=":"} {printf "%d\n",$3}' /etc/passwd #不指定位数默认左对齐（指定位数右对齐 %-d)
+  
+  # 浮点数
+  awk 'BEGIN{FS=":"} {printf "%o.3f\n",$3}' /etc/passwd 
+
+  # 16进制
+  awk 'BEGIN{FS=":"} {printf "%x\n",$3}' /etc/passwd 
+
+  # 8进制
+  awk 'BEGIN{FS=":"} {printf "%o\n",$3}' /etc/passwd
+
+  # 科学计数法
+  awk 'BEGIN{FS=":"} {printf "%e\n",$3}' /etc/passwd
+  ```
+
+## awk模式匹配的两种用法
+语法
+: 1. RegExp 含义：按正则表达式匹配
+  2. 关系运算 含义：按关系运算匹配
+
+实例
+: - RegExp
+  ```bash
+  # 匹配/etc/passwd文件中含有root字符串的所有行
+  awk 'BEGIN{FS=":"}/root/{print $0}' /etc/passwd
+
+  #匹配/etc/passwd中yarn开头的所有行
+  awk 'BEGIN{FS=":"}/^yarn/{print $0}' /etc/passwd
+  ```
+  - (运算符)关系运算
+    - 关系运算符：<,><=,>=,==,!=,~(匹配正则表达式),!~
+    ```bash
+    # 以：为分隔符，匹配第3个字段小于50的所有行信息
+    awk 'BEGIN{FS=":"}$3<50{print $0}' /etc/pssswd
+
+    awk 'BEGIN{FS=":"}$7=="/bin/bash"{print $0}' /etc/pssswd
+
+    awk 'BEGIN{FS=":"}$7!="/bin/bash"{print $0}' /etc/pssswd
+
+    # 第三个字符包含3个以上数字的所有行信息
+    awk 'BEGIN{FS=":"}$3~/[0-9]{3,}/{print $0}' /etc/passwd # {3,}重复3次
+
+    awk 'BEGIN{FS=":"}$0~/\sbin\/nologin/{print $0}' /etc/passwd 
+    ```
+    - 布尔运算:||(或),&&(与),!(非)
+    ```bash
+    # 以：为分隔符，匹配文件中包含hdfs或者yarn的所有行信息
+    awk 'BEGIN{FS=":"}$1=="hdfs" || $1=="yarn" {print $0}' /etc/passwd
+
+    # 第三字段小于50且第四字段大于50的所有行信息
+    awk 'BEGIN{FS=":"}$3<50 && $4>50 {print $0}' /etc/passwd
+
+    awk 'BEGIN{FS=":"}$3<50 && $7~/\bin\/bash/ {print $0}' /etc/passwd
+    ```
+## awk 动作中的表达式用法
+算术运算符
+: |运算符|含义|
+  |:---|:---|
+  |+|加|
+  |-|减|
+  |*|乘|
+  |/|除|
+  |%|模|
+  |^或**|乘方|
+  |++X|再返回X变量之前，X变量加1|
+  |X++|再返回X变量之后，X变量加1|
+
+  ---
+
+实例
+: ```bash
+  awk 'BEGIN{var=20;var1="hello";print var,var1}'
+  
+  awk 'BEGIN{num1=20;num2+=num1;print num2,num2}'
+
+  awk 'BEGIN{num1=20;num2+=num1;print num2+num2}'
+
+  awk 'BEGIN{num1=20;num2=30;printf "%0.2f\n",num1/num2}'
+
+  awk 'BEGIN{x=2;y=x++;print x,y}'
+
+  awk 'BEGIN{x=2;y=x--;print x,y}'
+  ```
+  ```bash
+  # 计算文件中空白行数量
+  awk '/^$/{sumx=0;sum++}END{print sum}' /etc/services
+  
+  # 计算课程的平均分
+  awk '{total=S2+$3+$5+$5;AVG=total/4;printf "%-8s,%-5d%-5d%-5d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG}' stu.txt
+
+  awk 'BEGIN{printf "%-8s%-8s%-8s%-8s%-8s%s\n","姓名","语文","数学","英语","物理","平均分"}{total=$2+$3+$4+$5;AVG=total/4;printf "%-8s%-8d%-8d%-8d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG}' stu.txt
+  ```
+
+## awk 动作中的条件及循环语句
+条件语句
+: ```bash
+  if(条件表达式)
+    动作1
+  else if(条件表达式)
+    动作2
+  else
+    动作3
+  ```
+实例
+: ```bash
+  # 以：为分隔符只打印第3个字段的数值在50-100范围内的行信息
+  awk 'BEFIN{FS=":"}{if($3>50 && $3<100>) print $0}' /etc/passwd
+  awk 'BEFIN{FS=":"}{if($3>50 || $3<100>) print $0}' /etc/passwd
+
+  # 小于50的UID
+  awk 'BEGIN{FS=":"}{if($3<50) printf "%-10s%-5d\n","小于50的UID:",$3}' /etc/passwd
+  
+  awk 'BEGIN{FS=":"}{if($3<50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3}' /etc/passwd
+
+  awk 'BEGIN{FS=":"}{if($3<50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3}' /etc/passwd
+  ```
+  - vim scripts.awk
+  ```bash
+  BEGIN{
+      FS=":"
+  }
+  {
+    if($3<50)
+    {
+      printf "%-30s%-20s%-5d\n","小于50的UID",$1,$3
+    }
+    else if($3>50 && $3<100)
+    {
+      printf "%-30s%-20s%-5d\n","大于50且小于100的UID",$1,$3
+    }
+    else
+    {
+      printf "%-30s%-20s%-5d\n","大于100的UID",$1,$3
+    }
+  }
+  ```
+  - 使用
+  ```bash
+  awk -f scripts.awk /etc/passed
+  ```
+
+循环语句
+: 1. do while 循环
+  ```bash
+  do while
+    do 
+        动作
+    while(条件表达式)
+  ```
+  - for 循环
+  ```bash
+  for (初始化计数器;测试计数器;计数器变更)
+    动作
+  ```
+
+实例
+: - 1+2+...100的和
+  1. while
+  ```bash
+  BEGIN{
+      while(i<=100)
+      {
+        sum+=1
+      }
+      print sum
+  }
+  ```
+    - awk -f while.wak
+  - for
+  ```bash
+  BEGIN{
+    for(i0;i<=100;i++)
+    {
+      sum+=1
+    }
+    print sum
+  }
+  ```
+    - awk -f for.awk
+  3. do while
+  ```bash
+  BEGIN{
+    do
+    {
+      sum+=1
+      i++
+    }while(i<=100)
+    print sum
+  }
+  ```
+    - awk -f do_while.awk
+  
+  - 计算每个同学平均分，仅显示大于90
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721185930.png)
+  ```bash student.awk
+  BEGIN{
+    printf "%-10s%-10s%-10s%-10s%-10s%-10s\n","Name","Chinese","English","Math","Physical","Average"
+  }
+  {
+    total=$2+$3+$4+$5
+    avg=total/4
+    if(avg>90)
+    {
+      printf "%-10s%-10d%-10d%-10d%-10d%-0.2f\n",$1,$2,$3,$4,$5,avg
+    }
+  }
+  ```
+
+  - 计算平均分大于90的各科总分
+  ```bash student.awk
+  BEGIN{
+      printf "%-10s%-10s%-10s%-10s%-10s%-10s\n","Name","Chinese","English","Math","Physical","Average"
+  }
+  {
+    total=$2+$3+$4+$5
+    avg=total/4
+    if(avg>90)
+    {
+      printf "%-10s%-10d%-10d%-10d%-10d%-0.2f\n",$1,$2,$3,$4,$5,avg
+      score_chinese+=$2
+      score_english+=$3
+      score_math+=$4
+      score_physical+=$5
+    }
+  }
+  END{
+    printf "%-10s%-10d%-10d%-10d%-10d\n","",score_chinese,score_english,score_math,score_physical
+  }
+  ```
+## awk 中的字符串函数
+字符串函数对照表
+: ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191406.png)
+  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191743.png)
+
+例子
+: 1. 以:为分隔符，返回文件中每行中的字段长度
+  ```bash 1.awk
+  # NF 字段个数
+  BEGIN{
+    FS=":"
+  }
+  {
+    i=1
+    while(i<=NF)
+    { 
+      if(i==NF)
+        printf "%d",length($i)
+      else
+        printf "%d:",length($i)
+      i++
+    }
+    print ""
+  } 
+  ```
+  2. 搜索字符串"I have a dream"中出现"ea"子串的位置
+  ```bash 
+  # 方法1
+  awk 'BEGIN{str="I have a dream";location=index(str,"ea");print location}'
+
+  #方法2
+  awk 'BEGIN{str="I have a dream";location=match(str,"ea");print location}'
+  ```
+  3. 将字符串"Hadoop is a bigdata Framework"全部转为小写
+  ```bash
+  awk 'BEGIN{str="Hadoop is a bigdata Framework";print tolower(str)}'
+  ```
+  4. 上一题转为大写
+  ```bash
+  awk 'BEGIN{str="Hadoop is a bigdata Framework";print toupper(str)}'
+  ```
+  5. 将字符串"Hadoop Kafka Spark Storm”按空格为分隔符，分割每一部分保存到数组arr中
+  ```bash
+  awk 'BEGIN{str="Hadoop Kafka Spark Storm";split(str,arr," ");print arr[0]}'
+
+  # 遍历(awk 下标从1开始)
+  awk 'BEGIN{str="Hadoop Kafka Spark Storm";split(str,arr," ");for(a in arr) print arr[a]}'
+  ```
+  6. 搜索字符串"Tranction 2345 start:select * from master"第一个数字出现的位置
+  ```bash
+  awk 'BEGIN{str="Tranction 2345 start:select * from master";location=match(str,/[0-9]/);print location}'
+  ```
+    - 正则表达式要用 `//` 引起来
+  7. 截图字符串”transaction start”的子串，条件从第4个字符开始，截取5为
+  ```bash
+  awk 'BEGIN{str="transaction start";print substr(str,4,5)}'
+  ```
+  8. 替换"Tranction 243 start，Event ID：9002"中第一个匹配到的数字为$符号
+  ```bash
+  awk 'BEGIN{str="Tranction 243 start，Event ID：9002";count=sub(/[0-9]+/,"$",str);print count,str}'
+  
+  # gsu所有
+  awk 'BEGIN{str="Tranction 243 start，Event ID：9002";count=gsub(/[0-9]+/,"$",str);print count,str}'
+  ```
+
+## awk中的常用选项
+选项
+: |选项|解释|
+  |:---|:---|
+  |-v|参数传递|
+  |-f|指定脚本文件|
+  |-F|指定分隔符|
+  |-V|查看awk的版本号|
+
+实例
+: - -v 把外部变量引入
+  ```bash 终端中
+  num1=20
+  var="Hello World"
+  awk -v num2="$num1" -v var1="$var" 'BEGIN{print num2,var1}'
+  ```
+  - -f 引入文件
+  ```bash
+  awk -f student.awk /etc/passws
+  ```
+  - -F
+  ```bash
+  awk -F ":" '{print $7}' /etc/passwd
+  awk -F : '{print $7}' /etc/passwd
+  # 等价于
+  awk 'BEGIN{FS=":"}{print $7}' /etc/passwd
+  ```
+
+## awk 数组的用法
+Shell 数组的用法
+: - array=("Mike","Bell","Hellen")
+    - 下面的 `井` 为 `#`
+
+  |解释|代码|
+  |:--|:--|
+  |打印元素| echo ${井array[2]}|
+  |打印元素个数 |echo ${井array[@]} / echo ${井array[*]}|
+  |打印元素长度 |echo ${井array[3]}| 
+  |给元素赋值  |array[3]="LI"|
+  |删除元素 |unset array[2];unset array|
+  |分片访问 |echo ${井array[@]:1:3}|
+  |元素内容替换 | \${array[@]/e/E} #只替换第一个e;${array[@]//e/E}替换全部e|
+
+  - 数组遍历 
+  ```bash
+  for a in array
+  do 
+    echo $a
+  done
+  ```
+
+awk 数组用法
+: ```
+  jjj
+  ```
