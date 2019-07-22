@@ -13,6 +13,8 @@ enable_unread_badge: true
 icon:
   - /images/Linux.png
 ---
+Shell 总结
+<!--more-->
 # 变量替换和测试
 变量替换
 : ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720191523.png)
@@ -216,7 +218,7 @@ expr操作符对照表
 例子
 : ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720201000.png)
 
-# Bash运算之bc
+## Bash运算之bc
 bc 操作
 : ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720201134.png)
   ```bash
@@ -224,8 +226,8 @@ bc 操作
   echo “20+22” | bc
   echo “scale=3;23+33” | bc
   ```
-
-# 函数定义和使用
+# 函数
+## 函数定义和使用
 介绍
 : Linux Shell中的函数和大多数编程语言中的函数一样，将相似的任务或代码封装到函数中，供其他地方调用
 
@@ -284,7 +286,7 @@ bc 操作
   curl localhost/index.html
   ```
 
-# 向函数传递参数
+## 向函数传递参数
 shell传参
 : ```bash
   function name
@@ -294,7 +296,7 @@ shell传参
   }
   ```
 
-# 函数返回值
+## 函数返回值
 方式
 : 1. return
   2. echo
@@ -1162,6 +1164,154 @@ Shell 数组的用法
   ```
 
 awk 数组用法
-: ```
-  jjj
+: - awk中使用数组时，不仅可以使用数字作为数组下标，也可以使用字符串作为数组下标
+  1. 统计主机上所有TCP连接状态，按照每个TCP状态分类
+  ```bash
+  netstat -an | grep tcp | awk '{arrary[$6]++}END{for(a in arrary) print a,arrary[a]}'
+  ```
+  2. 计算横向数总和，计算纵向数据总和
+  ```bash 数据
+  Allen 80 90 96 98
+  Mike  93 98 92 91
+  Zhang 78 76 87 92
+  Jerry 86 89 68 92
+  Han   85 95 75 90
+  Li    78 88 98 100
+  ```
+  ```bash stu.awk
+  BEGIN{
+    printf "%-10s%-10s%-10s%-10s%-10s%-10s\n","Name","Chinese","Math","English","Physical","Total"
+  }
+  {
+    total=$2+$3+$4+$5
+    yuwen_sum+=$2
+    math_sum+=$3
+    english_sum+=$4
+    physical_sum+=$5
+    printf "%-10s%-10d%-10d%-10d%-10d%-10d\n",$1,$2,$3,$4,$5,total
+  }
+  END{
+    printf "%-10s%-10d%-10d%-10d%-10d\n","",yuwen_sum,math_sum,english_sum,physical_sum
+  }
+  ```
+
+## awk 处理数据例子
+生成随机数据
+: ```bash
+  #!/bin/bash
+  function create_random()
+  {
+    min=$1
+    max=$(($2-$min+1))
+    num=$(date +%s%N)
+    echo $(($num%$max+$min))
+  }
+
+  INDEX=1
+
+  while true
+  do
+    for user in Allen Mike Jerry Tracy Hanmeimei Lilei
+    do
+      COUNT=$RANDOM
+      NUM1=`create_random 1 $COUNT`
+      NUM2=`expr $COUNT - $NUM1`
+      echo "`date '+%y-%m-%d %H:%M:%S'` $INDEX Batches: user $user insert $COUNT records into databases:product table:datail,insert $NUM1 records successfully,failed $NUM2 records" >> ./db.log.`date +%Y%m%d`
+      INDEX=`expr $INSEX + 1`
+    done
+  done
+  ```
+  1. 统计每个用户分别插入多少record  
+  ```bash tesst.awk
+  BEGIN{
+    printf "%-10s%-10s\n","User","Total Records"
+  }
+  {
+    USER[$6]+=$8
+  }
+  END{
+    for(u in USER)
+      printf "%-20s%-20d\n",u,USER[u]
+  }
+  ```
+  2. 统计每个用户分别插入成功和失败各多少record
+  ```bash 2.awk
+  BEGIN{
+    printf "%-10s%-20s%-20s\n","User,"Success_Records","Filed_records"
+  }
+  {
+    SUCCESS[$6]+=$14
+    FAILED[$6]+=$17
+  }
+  END{
+    for(u in SUCCESS)
+      printf "%-10s%-20d%-20d\n",u,SUCCESS[u],FAILED[u]
+  }
+  ```
+  3. 将例子1,2结合，一起输出每个用户分别插入多少条数据，成功失败各多少条
+  ```bash 3.awk
+    BEGIN{
+      printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
+  }
+  {
+      TOTAL_RECORDS[$6]+=$8
+      SUCCESS[$6]+=$14
+      FAILED[$6]+=$17
+  }
+  END{
+      for(u in TOTAL_RECORDS)
+          printf "%-30s%-30d%-30d%-30d\n",u,TOTAL_RECORDS[u],SUCCESS[u],FAILED[u]
+  }
+  ```
+  4. 在例子3的基础上，加上结尾，统计全部插入记录数，成功记录数，失败记录数
+  - 方法一
+  ```bash 3.awk
+  BEGIN{
+      printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
+  }
+  {
+      TOTAL_RECORDS[$6]+=$8
+      SUCCESS[$6]+=$14
+      FAILED[$6]+=$17
+  }
+  END{
+      for(u in TOTAL_RECORDS)
+      {
+          # 在统计出的结果数组中进行累加
+          records_sum+=TOTAL_RECORDS[u]
+          success_sum+=SUCCESS[u]
+          failed_sum+=FAILED[u]
+          printf "%-30s%-30d%-30d%-30d\n",u,TOTAL_RECORDS[u],SUCCESS[u],FAILED[u]
+      }
+  
+      printf "%-30s%-30d%-30d%-30d\n","",records_sum,success_sum,failed_sum
+  }
+  ```
+  - 方法二
+  ```bash
+  BEGIN{
+      printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
+  }
+  
+  {
+      RECORDS[$6]+=$8
+      SUCCESS[$6]+=$14
+      FAILED[$6]+=$17
+      
+      # 在原始数据中进行汇总计算
+      records_sum+=$8
+      success_sum+=$14
+      failed_sum+=$17   
+  }
+  
+  END{
+      for(u in RECORDS)
+          printf "%-30s%-30d%-30d%-30d\n",u,RECORDS[u],SUCCESS[u],FAILED[u]
+  
+      printf "%-30s%-30d%-30d%-30d\n","total",records_sum,success_sum,failed_sum
+  }
+  ```
+  5. 查找丢失数据的现象，也就是成功+失败的记录数不等于一共插入的记录数，找出这些数据并显示行号和对应行的日志信息
+  ```bash
+  awk '{if($8!=$14+$17) print NR,$0}' db.log.20190722
   ```
