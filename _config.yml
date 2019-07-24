@@ -110,10 +110,10 @@ lazyload:
   onlypost: false
 
 # Google analytics
-google_analytics: UA-139969785-1
+google_analytics: UA-144334903-1
 
 google_adsense:
-  id: ca-pub-3388441726059687
+  id: ca-pub-2581760538335948
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

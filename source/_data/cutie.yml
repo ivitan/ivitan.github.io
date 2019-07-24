@@ -38,10 +38,10 @@ global:
     text: Welcome to my personal website.
 
 google_analytics: 
-  track_id: UA-139969785-1
+  track_id: UA-144334903-1
 
 google_adsense:
-  id: ca-pub-3388441726059687
+  id: ca-pub-2581760538335948
 
 page_404:
   tencent_404: true
