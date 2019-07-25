@@ -1,5 +1,5 @@
 ---
-title: Vim Mooc
+title: Vim Summary
 date: 2019-05-19 09:30:42
 tags:
   - Vim
@@ -30,6 +30,7 @@ Command 模式
   :vs # vertical split 横向分频
   :sp # 纵向分频
   :% s/foo/bar/g # 全局替换
+  :h option-list # 查找所有设置选项
   ```
 
 Visual (可视)模式
@@ -219,12 +220,129 @@ How
   ```
 
 # 映射
-设置
+基本映射
+: - normal 模式下(leadser键即 `\` )
+  1. map 可以实现映射，`:map -x` 然后按下 - 就会删除一个字符
+  2. `:map <space> viw` 按下空格键时选中整个单词
+  3. `:map <c-d> dd 删除
+    - 消除映射 `unmap -`
+    - `imap <c-d> <Esc>ddi` insert 模式映射 ctrl+d 删除一行
+    
+  - 模式映射映射
+  1. 用 namap/vmap/imap 定义映射只在normal/visual/insert分别有效
+    - `:vmap \U` 把 visusal 模式下选中的文本大小(u/U转换大小写)
+
+递归与非递归映射
+: *map 系列有递归风险,如果安装了一个插件，插件映射了同一个按键的不同行为，有冲突就会有一个失效。
+
+非递归映射
+: 1. *map 对应的 nnoremap/vnoremao/inoremap
+  2. 任何时候都建议使用非递归映射
+
+示例
 : ```bash
   let mapleader = ","
   inoremap <leader>w <Esc>:w<cr> # 插入模式保存
+  inoremap jj <Esc> # 使用jj直接进入 normal
+  # 使用 leader+w 直接保存
+  inoremap <leader>w <Esc>:w<cr>
+  noremap <leader>w :w<cr>
+
+  # 切换 Buffer
+  nnoremap <slient> [b :bprevious<CR>
+  nnoremap <slient> [n :bnext<CR>
+
+  # 分屏
+  noremap <C-h> <C-w>h
+  noremap <C-j> <C-w>j
+  noremap <C-k> <C-w>k
+  noremap <C-l> <C-w>l
+
+  # json 格式化
+  comr FormatJSON %!python3 -m json.tool
+
+  # sudo to write
+  cnoremap w!! w !sudo tee % >/dev/null
+  ```
+
+# 插件
+常见的插件管理器
+: vim-plug,Vundle,Pathogen,Deim 
+
+[vim-plug](https://github.com/junegunn/vim-plug)
+: - 安装
+  ```bash
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
+  - 安装插件
+  ```bash .vimrc
+  call plug#begin('~/.vim/plugged')
+  Plug 'mhinz/vim-startify' # 插件
+  " Initialize plugin system
+  call plug#end()
+  ```
+  - `source ~/.vimrc` 并 `:PlugInstall`
+
+## vim 美观插件
+外观
+: 1. 修改启动界面: [vim-startify](https://github.com/mhinz/vim-startify)
+  2. 状态栏美化：[vim-airline](https://github.com/vim-airline)
+  3. 增加但代码缩进线条：[indentline](https://github.com/yggdroot/indentline)
+
+配色方案
+: 1. [vim-hybird](https://github.com/w0ng/vim-hybird)
+  2. [solarized](https://github.com/altercation/vim-colors-solarized)
+  3. [grubbox](https://github.com/morhetz/gruvbox)
+
+插件推荐网站
+: [vimawesome](https://vimawesome.com)
+
+## 文件目录和搜索插件
+文件目录
+: - [nerdtree](https://github.com/scrooloose/nerdtree)
+  ```vimrc
+  " 查找文件所在位置
+  nnoremap <leader>v :NERDTreeFind<cr>
+  " 切换设置
+  nnoremap <leader>g :NERDTreeToggle<cr>
+  ```
+
+模糊搜索器
+: - [ctrip.vim](https://github.com/ctrlpvim/ctrlp.vim)
+  ```vimrc
+  let g:ctrlp_map = '<c-p>'
+  let g:ctrlp_cmd = 'CtrlP'
+  ```
+    - Crtl + P 后输入要搜索的内容
+
+  - 模糊搜索[fzf.vim](https://github.com/junegunn/fzf.vim)
+  ```bash 
+  Files . # 搜索当前目录
+  :Ag content # 搜索字符串
+  ```
+
+快速跳转位置插件
+: [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+  - 映射
+  ```bash
+  unmap ss <Plus>(easymotion-s2)
+  ```
+
+修改成对内容
+: - [vim-surround](https://github.com/tpope/vim-surround)
+  ```bash
+  ds # delete a surrounding
+  cs # change a surrounding
+  ys # you add a surrounding
+  ```
+
+  - 替换　[far.vim](https://github.com/brooth/far.vim)
+  ```bash
+  vim duck.go gua.py
+  :Far [替换] [替换成的] **/*.py
   ```
 
 ---
-**视频**
+**学习视频**
 - [玩转Vim 从放弃到爱不释手](https://www.imooc.com/learn/1129)
