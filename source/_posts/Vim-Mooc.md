@@ -221,7 +221,7 @@ How
 
 # 映射
 基本映射
-: - normal 模式下(leadser键即 `\` )
+: - normal 模式下(leadser键即 `,` )
   1. map 可以实现映射，`:map -x` 然后按下 - 就会删除一个字符
   2. `:map <space> viw` 按下空格键时选中整个单词
   3. `:map <c-d> dd 删除
@@ -342,6 +342,57 @@ How
   vim duck.go gua.py
   :Far [替换] [替换成的] **/*.py
   ```
+
+## 代码
+### 浏览代码
+tagbar 
+: [targbar](https://github.com/majutsushi/tagbar)
+  ```bash vimrc
+  nonormal <leader>t :TagbarToggle<CR>
+  ```
+vim-interestingwords
+: [vim-interestingwords](https://github.com/lfv89/vim-interestingwords) 可以高亮单词
+
+### 补全
+补全插件
+: 1. [deoplete.nvim](https//github.com/shougo/deoplete.nvim) 多语言，模糊搜索
+  2. [coc.vim](https://github.com/neoclide/coc.nvim) 多语言插件支持
+
+快速注释
+: [vim-commentary](https://github.com/tpope/vim-commentary) `gc` 注释或取消注释
+
+## 格式化与静态检查
+格式化
+: [Neoformat](https://github.com/sbdchd/neoformat) 需要安装对应语言的格式化库，python的autopep8,js的prettier等
+
+静态检查Lint
+: neomake、[ale](https://github.com/w0rp/ale) 需要安装对应语言的 lint 库如 eslint/pylint/golint
+
+## Python 相关
+插件
+: [Python-mode](https://github.com/python-mode/python-mode) 具有基本的补全，跳转，重构，格式化功能
+  ```bash .vimer
+  " Python-mode
+  let g:pymode_python =  'python3'
+  let g:pymode_trim_whitespaces = 1
+  let g:pymode_doc = 1
+  let g:pymode_doc_bind = 'k'
+  let g:pymode_rope_goto_definition_bind = "<C-J>"
+  let g:pymode_lint = `
+  let g:pymode_lint_checkers = ['pyflakers','pep8','mccabe','plylint']
+  let g:pymode_options_max_line_length = 120
+  ```
+
+## Git
+Fugitive
+: [Fugitive](https://github.com/tppope/vim-fugitive)
+  - 命令 `:Gedit`,`:Gdiff`,`:Gblame`,`:Gcommit` 等
+
+vim-gitgutter
+：  [vim-gitgutter](https://github.com/airblade/vim-gitgutter) 显示文件变动
+
+gv.vim
+: [gv.vim](https://github.com/junegunn/gv.vim) `:GV` 查看提交记录
 
 ---
 **学习视频**

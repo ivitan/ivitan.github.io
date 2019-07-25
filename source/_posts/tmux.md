@@ -9,8 +9,14 @@ categories: notes
 icon:
  - /images/Bash.png
 ---
-运用 Tmux
+Tmux 可以复用终端、分屏、托管进程等
 <!--more-->
+# Tmux
+alias
+:   ```bash vimrc
+    alias tnew='tmux new =s'
+    ```
+
 # 模块
 模块
 :   |名词|含义|解析|
@@ -71,5 +77,3 @@ icon:
 	|Ctrl+b 0 ~ Ctrl+b 9 |立即移动到特定窗口|
 	|Ctrl+b l |移动到先前选择的窗口|
 	|Ctrl+b w |以交互方式选择当前窗口|
-
-
