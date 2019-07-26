@@ -389,7 +389,7 @@ Fugitive
   - 命令 `:Gedit`,`:Gdiff`,`:Gblame`,`:Gcommit` 等
 
 vim-gitgutter
-：  [vim-gitgutter](https://github.com/airblade/vim-gitgutter) 显示文件变动
+: [vim-gitgutter](https://github.com/airblade/vim-gitgutter) 显示文件变动
 
 gv.vim
 : [gv.vim](https://github.com/junegunn/gv.vim) `:GV` 查看提交记录

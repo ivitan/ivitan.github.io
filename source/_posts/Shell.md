@@ -396,58 +396,73 @@ echo 返回值
   ```bash
   find . -group yarm
   ```
-  - -type
+  ---
+
+  - 选项
+  1. -type
     - f 文件 find . -type f
     - d 目录 dind . -type d
     - c 字符设备文件 dind . -type c
     - b 块设备文件 dind . -type b
     - l 链接文件 dind . -type l
     - p 管道文件 dind . -type p
-  - -size
+
+  2. -size
     - -n 大小小于n的文件
     - +n 大小大于n的文件
     - n 大小等于n的文件
-    ```bash
-    # 小于10000字节的文件
-    find /etc -size -10000c
-    # 大于1M的文件
-    find /etc -size +1M
-    ``` 
-  - -mtime
+    
+  ```bash
+  # 小于10000字节的文件
+  find /etc -size -10000c
+  # 大于1M的文件
+  find /etc -size +1M
+  ```
+
+  3. -mtime
     - -n n天以内修改的文件
     - +n n天以外修改的文件
     - n 正好n天修改的文件
-    ```bash
-    #查找/etc下5天内修改的conf结尾的文件
-    find /etc -mtime -5 -name '*.conf'       
-    # 查找10天之前修改且属主为root的文件
-    find /etc -mtime +10 -user root
-    ```
-  - -mmin
+
+  ```bash
+  #查找/etc下5天内修改的conf结尾的文件
+  find /etc -mtime -5 -name '*.conf'       
+  # 查找10天之前修改且属主为root的文件
+  find /etc -mtime +10 -user root
+  ```
+
+  4. -mmin
     - -n n分种内修改的文件
     - +n n分钟外修改的文件
+
     ```bash
     # 30分钟前修改的文件
     find /etc -mmin +30
     # 30分钟内修改的目录
     find /etc -mmin -3o -type d
     ```
-  - -mindepth n
+
+  5. -mindepth n
     - 表示从n级子目录开始搜索
+
     ```bash
     find /etc -mindepth 3
     ```
-  - -maxdepth n
+
+  6. -maxdepth n
     - 表示最多搜索n-1级子目录
+
     ```bash
     find /etc -maxdepth 3 -name '*.conf'
     find ./etc -type f -name '.*conf' -size +10k -maxdepth 2
     find . -type f -nogroup
     ```
-  - -perm
+
+  7. -perm
     - find .perm 644
-  - -prune 
+  8. -prune 
     - 通常和-path一起用，用于将特定目录排除在搜索条件之外
+
     ```bash
     # 查找当前目录下所有普通文件，排除test目录
     find . -path ./etc -prune -o -type f
@@ -458,7 +473,8 @@ echo 返回值
     # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于
     find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs -a -size +2M
     ```
-  - -newer file1
+
+  9. -newer file1
     ```bash
     find /etc -newer a
     ```
