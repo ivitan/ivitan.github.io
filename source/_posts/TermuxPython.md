@@ -6,13 +6,14 @@ tags:
   - Termux
   - Python
   - WebCrawler
+  - Android
 categories:
   - notes
 author:
   name: Vitan
 enable_unread_badge: true
 icon:
-  - /images/Python.png
+  - /images/Termux.png
 ---
 # 依赖
 安装

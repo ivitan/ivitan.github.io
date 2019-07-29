@@ -7,7 +7,7 @@ tags:
 toc: true
 categories: notes
 icon:
- - /images/Bash.png
+ - /images/Termux.png
 mathjax: true
 ---
 分屏与游戏。

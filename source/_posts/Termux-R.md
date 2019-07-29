@@ -8,7 +8,7 @@ tags:
 toc: true
 categories: notes
 icon:
- - /images/Bash.png
+ - /images/Termux.png
 ---
 Termux 安装 R
 # 步骤

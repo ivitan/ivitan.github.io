@@ -10,7 +10,7 @@ author:
 name: Vitan
 enable_unread_badge: true
 icon:
-- /images/Bash.png
+- /images/Termux.png
 ---
 ## 下载 arm 版 ADB
 Download

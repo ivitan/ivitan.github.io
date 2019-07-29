@@ -1,9 +1,9 @@
 ---
-title: Grub 添加 Win10 & 美化
+title: Grub 双系统选项、美化
 date: 2019-06-27 14:26:38
 tags:
-  - ArchLinux
   - Linux
+  - Win
 categories:
   - notes
 author:

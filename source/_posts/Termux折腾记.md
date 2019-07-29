@@ -7,9 +7,9 @@ tags:
 toc: true
 categories: notes
 icon:
- - /images/Bash.png
+ - /images/Termux.png
 ---
-Termux oh-my-zsh主题设置，去欢迎字等。
+Termux oh-my-zsh 主题设置，去欢迎字等。
 <!--more-->
 
 # 软件下载

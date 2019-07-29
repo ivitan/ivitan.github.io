@@ -7,7 +7,7 @@ tags:
 toc: true
 categories: notes
 icon:
- - /images/Bash.png
+ - /images/Termux.png
 ---
 Termux安装Linux
 <!-- more -->
