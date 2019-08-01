@@ -5,7 +5,7 @@
 # Site
 title: vitan.me
 subtitle: ⁣⁣⁣Stay Hungry, Stay Foolish.
-description: Vitan'Blog
+description: Vitan's personal website.
 keywords: Coder,Linux,Shell,Web,Blog,Note,Daily...
 author: Vitan
 author_link: https://vitan.me
@@ -13,6 +13,7 @@ language:
   - zh-cn
   - en
   - it
+  
 timezone: Asia/Shanghai
 
 # URL
@@ -112,6 +113,7 @@ lazyload:
 # Google analytics
 google_analytics: UA-144334903-1
 
+# Google Adsense
 google_adsense:
   id: ca-pub-2581760538335948
 
