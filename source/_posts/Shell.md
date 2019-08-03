@@ -166,37 +166,37 @@ declare参数表
 
   ```bash
   # 声明整数型变量
-  # declare -i ab //声明整数型变量
-  # ab=56 //改变变量内容
-  # echo $ab //显示变量内容
+  declare -i ab #声明整数型变量
+  ab=56 #改变变量内容
+  echo $ab #显示变量内容
   56
 
   # 改变变量属性
-  # declare -i ef //声明整数型变量
-  # ef=1  //变量赋值（整数值）
-  # echo $ef //显示变量内容
+  declare -i ef #声明整数型变量
+  ef=1  #变量赋值（整数值）
+  echo $ef #显示变量内容
   1
-  # ef="wer" //变量赋值（文本值）
-  # echo $ef 
+  ef="wer" #变量赋值（文本值）
+  echo $ef 
   0
-  # declare +i ef //取消变量属性
-  # ef="wer"
-  # echo $ef
+
+  declare +i ef #取消变量属性
+  ef="wer"
+  echo $ef
   wer
+
   # 设置变量只读
-
-  # declare -r ab //设置变量为只读
-  # ab=88 //改变变量内容
-  -bash: ab: 只读变量
-  # echo $ab //显示变量内容
+  declare -r ab #设置变量为只读
+  ab=88 #改变变量内容
+  echo $ab #显示变量内容
   56
+
   # 声明数组变量
+  declare -a cd='([0]="a" [1]="b" [2]="c")' #声明数组变量
+  echo ${cd[1]}
+  b #显示变量内容
 
-  # declare -a cd='([0]="a" [1]="b" [2]="c")' //声明数组变量
-  # echo ${cd[1]}
-  b //显示变量内容
-
-  # echo ${cd[@]} //显示整个数组变量内容
+  echo ${cd[@]} #显示整个数组变量内容
   a b c
   ```
   - `declare -x` 声明为环境变量，可在脚本中直接使用
@@ -254,8 +254,8 @@ bc 操作
   ```
 
 如何调用
-: 1. 直接使用函数名调用，可以将其想象成Shell中的一条命令
-  2. 函数内部可以直接使用函数$1,$2...$n
+: 1. 直接使用函数名调用，可以将其想象成 Shell 中的一条命令
+  2. 函数内部可以直接使用函数 $1,$2...$n
   3. 调用函数：function_name $1 $2
 
 例题
@@ -326,7 +326,7 @@ echo 返回值
 
 实例
 : ```bash 库文件
-    function add
+  function add
   {
       echo "`expr $1 + $2`"
   }
@@ -368,10 +368,10 @@ echo 返回值
   ```
 
 注意事项
-: 1. 库文件名的后缀是任意的，但一般用.lib
+: 1. 库文件名的后缀是任意的，但一般用 `.lib`
   2. 库文件通常没有可执行权限
   3. 库文件无需和脚本在同级目录，只需在脚本中引时指定
-  4. 第一行一般使用#!/bin/bash/echo，输出警告信息，避免用户执行
+  4. 第一行一般使用 `#!/bin/bash/echo` ，输出警告信息，避免用户执行
 
 # 文件查找之find命令
 语法
@@ -380,19 +380,19 @@ echo 返回值
   ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720205155.png)
 
 实例
-: 1. 查找/etc目录下conf结尾的文件
+: 1. 查找 /etc 目录下 conf 结尾的文件
   ```bash
   fing /etc -name '.conf'
   ```
-  2. 查找当前目录下文件名为aa的文件，不区分大小写
+  2. 查找当前目录下文件名为 aa 的文件，不区分大小写
   ```bash
   find . -name aa
   ```
-  3. 查找文件属主为hdfs的所有文件
+  3. 查找文件属主为 hdfs 的所有文件
   ```bash
   find . -user hdfs
   ```
-  4. 查找文件属组为yarn的所有文件
+  4. 查找文件属组为 yarn 的所有文件
   ```bash
   find . -group yarm
   ```
