@@ -15,6 +15,7 @@ menu:
 # As the tip: the social link can be a QRCODE link
 social:
   github: https://github.com/ivitan
+  weibo: https://weibo.com/ivitan
 
 maintainer:
   url: https://vitan.me
@@ -22,7 +23,7 @@ maintainer:
 
 global:
   title: vitan.me
-  subtitle: Code,Linux,Shell,Web,Blog,Note,Daily...
+  subtitle: Coder,Linux,Web,Blog,Daily...
   author: Vitan
   description: Personal website for Vitan, coder, programmer
   favicon: /images/favicon.png
@@ -51,7 +52,7 @@ disqus:
 valine:
   appId: XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz
   appKey: rG3tgBLm6WGpoU2895oVKXVU
-  placeholder: 元芳你怎么看？！
+  placeholder: 快来做第一个评论的人吧！
   
 livere:
   id: city
