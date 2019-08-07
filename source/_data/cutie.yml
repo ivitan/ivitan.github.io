@@ -54,10 +54,6 @@ valine:
   appKey: rG3tgBLm6WGpoU2895oVKXVU
   placeholder: 快来做第一个评论的人吧！
   
-livere:
-  id: city
-  uid: MTAyMC8zODY0NS8xNTE3Mw==
-
 post:
   allow_share: true
   allow_modification: false
@@ -65,4 +61,4 @@ post:
   use_lightgallery: true
   allow_comment: true
   toc_level: 2
-  enable_unread_badge: false
+  enable_unread_badge: trues
