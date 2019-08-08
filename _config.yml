@@ -121,7 +121,5 @@ google_adsense:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: 
-    github: ssh://git@github.com/ivitan/ivitan.github.io,master
-    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master
+  repo: ssh://git@github.com/ivitan/ivitan.github.io.git
   branch: master

@@ -61,4 +61,4 @@ post:
   use_lightgallery: true
   allow_comment: true
   toc_level: 2
-  enable_unread_badge: trues
+  enable_unread_badge: true
