@@ -5,7 +5,7 @@ description: About
 comments: false  # 禁用评论，可选，默认开启
 toc: false
 ---
-<div align=center><img  src="/images/favicon.png" width="200px" height="200px"/></div>
+<div align=center><img  src="/images/favicon.png" width="250px" height="250px"/></div>
 <center>
 <iframe src="https://ghbtns.com/github-btn.html?user=ivitan&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
 </center>
