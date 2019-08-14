@@ -4,7 +4,7 @@ slogan:
 # If menu is absent, only "archive", "search" and "more" menu items will be preserved
 # Configurable menu items should not exeed 4, otherwise the last ones will be ignored
 menu:
-  Resume:
+  About:
     link: /about/
   Notes:
     link: /categories/notes/
