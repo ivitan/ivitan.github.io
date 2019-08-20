@@ -9,15 +9,15 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 Python SQL 操作
 <!--more-->
 # MonngoDB
-连接
-:   ```python
+## 连接
+```python
     import pymongo
 
     # 普通连接
@@ -28,11 +28,11 @@ Python SQL 操作
     client = MongoClient('mongodb://username:password@localhost:27017/dbname')
     db = client.mydatabase
     # db = client['mydatabase']
-    ```
+```
 
 ## 增删查改
-增(insert)
-:   ```python
+- 增(insert)
+```python
     # 增加一条记录
     person = {'name': 'zone','sex':'boy'}
     person_id = test.insert_one(person).inserted_id
@@ -42,10 +42,10 @@ Python SQL 操作
     persons = [{'name': 'zone', 'sex': 'boy'}, {'name': 'zone1', 'sex': 'boy1'}]
     result = test.insert_many(persons)
     print(result.inserted_ids)
-    ```
+```
 
- 删(delete)
- :  ```python
+ - 删(delete)
+```python
     import pymongo
 
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -60,9 +60,9 @@ Python SQL 操作
     myquery = { "address": {"$regex": "^S"} }
     x = mycol.delete_many(myquery)
     print(x.deleted_count, " documents deleted.")
-    ```
+```
  
-    ```python
+```python
     # 删除单条记录
     result1 = test.delete_one({'name': 'zone'})
     pprint.pprint(result1)
@@ -70,9 +70,10 @@ Python SQL 操作
     # 批量删除
     result1 = test.delete_many({'name': 'zone'})
     pprint.pprint(result1)
-    ```
- 改(update)
-:   ```python
+```
+
+- 改(update)
+```python
     # Valley 345”更改为“Canyon 123” 
     myquery = { "address": "Valley 345" }
     newvalues = { "$set": { "address": "Canyon 123" } }
@@ -90,18 +91,19 @@ Python SQL 操作
     x = mycol.update_many(myquery, newvalues)
 
     print(x.modified_count, "documents updated.")
-    ```
+  ```
 
-    ```python
+  ```python
     # 更新单条记录
     res = test.update_one({'name': 'zone'}, {'$set': {'sex': 'girl girl'}})
     print(res.matched_count)
 
     # 更新多条记录
     test.update_many({'name': 'zone'}, {'$set': {'sex': 'girl girl'}})
-    ```
-查(Querry)
-:    ```python
+  ```
+
+- 查(Querry)
+```python
     import pymongo
 
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -124,9 +126,9 @@ Python SQL 操作
 
     for x in mydoc:
         print(x)
-    ```
+  ```
 
-    ```python
+  ```python
     import pprint
 
     # 查找多条记录
@@ -134,18 +136,17 @@ Python SQL 操作
 
     # 添加查找条件
     pprint.pprint(test.find({"sex": "boy"}).sort("name"))
-    ```
+  ```
 
-## 排序
-sort()方法
-:   ```python
-    results = collection.find().sort('name', pymongo.ASCENDING)
-    print([result['name'] for result in results])
-    ```
+# 排序
+- sort()方法
+```python
+results = collection.find().sort('name', pymongo.ASCENDING)
+print([result['name'] for result in results])
+```
 
 ## 示例
-Code
-:   ```python
+```python
     client = pymongo.MongoClient('localhost')
     b = client['MaFengWoView']
 
@@ -156,12 +157,12 @@ Code
     return False
 
      save_to_mongo(view)
-    ```
+```
 
 # MySQL
 ## 连接创建
-创建一个名为“customers”的表
-:   ```python
+- 创建一个名为“customers”的表
+```python
     import mysql.connector
 
     mydb = mysql.connector.connect(
@@ -174,18 +175,18 @@ Code
     mycursor = mydb.cursor()
 
     mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
-    ```
+```
     - 检查表是否存在
-    ```python
+```python
     mycursor = mydb.cursor()
 
     mycursor.execute("SHOW TABLES")
 
     for x in mycursor:
         print(x)
-    ```
-    - 创建表时创建主键(存在用ALTER TABLE)
-    ```python
+```
+- 创建表时创建主键(存在用ALTER TABLE)
+```python
     import mysql.connector
 
     mydb = mysql.connector.connect(
@@ -198,10 +199,11 @@ Code
     mycursor = mydb.cursor()
 
     mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
-    ```
-## 插入
-单行
-:   ```python
+```
+
+# 插入
+- 单行
+```python
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
@@ -211,9 +213,9 @@ Code
     mydb.commit()
 
     print(mycursor.rowcount, "record inserted.")
-    ```
-多行
-:   ```python
+```
+- 多行
+```python
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
@@ -238,10 +240,11 @@ Code
     mydb.commit()
 
     print(mycursor.rowcount, "was inserted.")
-    ```
+```
+
 ## Select
-所有
-:    ```python
+- 所有
+```python
     mycursor = mydb.cursor()
 
     mycursor.execute("SELECT * FROM customers")
@@ -250,9 +253,10 @@ Code
 
     for x in myresult:
         print(x)
-    ```
-列
-:    ```python
+```
+
+- 列
+```python
     mycursor = mydb.cursor()
 
     mycursor.execute("SELECT name, address FROM customers")
@@ -261,7 +265,7 @@ Code
 
     for x in myresult:
          print(x)
-    ```
+```
 ---
 **参考**
 - [官方文档](https://api.mongodb.com/python/current/tutorial.html)

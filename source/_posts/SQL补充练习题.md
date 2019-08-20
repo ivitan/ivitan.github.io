@@ -4,12 +4,12 @@ date: 2018-06-29 11:13:57
 tags:
 - SQL
 categories: notes
-icon:
-- /images/SQL.png
+toc: true
+thumbnail: /images/SQL.png
 ---
 数据库单表查询
 
-
+<!--more-->
 
 # 一、实验目的
 

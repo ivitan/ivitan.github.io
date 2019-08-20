@@ -9,15 +9,14 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 Python Selenium 基础使用。
 <!--more-->
 # 基本使用
-示例
-:   ```Python
+```Python
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     from selenium.webdriver.common.keys import Keys
@@ -48,10 +47,10 @@ Python Selenium 基础使用。
     finally:
         #关闭浏览器
         browser.close()
-    ```
+```
 
-声明浏览器对象
-:   ```Python
+## 声明浏览器对象
+```Python
     from selenium import webdriver
 
     browser = webdriver.Chrome()
@@ -59,10 +58,10 @@ Python Selenium 基础使用。
     browser = webdriver.Edge()
     browser = webdriver.PhantomJS()
     browser = webdriver.Safari()
-    ```
+```
 
-访问页面
-:   ```Python
+## 访问页面
+```Python
     from selenium import webdriver
 
     #创建Chrome浏览器对象
@@ -73,10 +72,11 @@ Python Selenium 基础使用。
     print(browser.page_source)
     #关闭浏览器
     browser.close()
-    ```
+```
+
 # 查找元素
-单个
-:   ```Python
+## 单个
+```Python
     from selenium import webdriver
 
     #创建Chrome浏览器对象
@@ -93,8 +93,8 @@ Python Selenium 基础使用。
     print(input_first,input_second,input_third)
     #关闭浏览器
     browser.close()
-    ```
-    ```Python
+```
+```Python
     from selenium import webdriver
     from selenium.webdriver.common.by import By
 
@@ -103,10 +103,10 @@ Python Selenium 基础使用。
     input_first = browser.find_element(By.ID, 'q')
     print(input_first)
     browser.close()
-    ```
+```
 
-多个元素
-:   ```Python
+## 多个元素
+```Python
     from selenium import webdriver
 
     #创建Chrome浏览器对象 browser
@@ -119,8 +119,8 @@ Python Selenium 基础使用。
     print(lis)
     #关闭浏览器
     browser.close()
-    ```
-    ```Python
+```
+```Python
     from selenium import webdriver
     from selenium.webdriver.common.by import By
 
@@ -129,10 +129,11 @@ Python Selenium 基础使用。
     lis = browser.find_elements(By.CSS_SELECTOR, '.service-bd li')#作用同上
     print(lis)
     browser.close()
-    ```
+```
+
 # 元素交互操作
-对获取的元素调用交互方法
-:   ```Python
+## 对获取的元素调用交互方法
+```Python
     from selenium import webdriver
     import time
 
@@ -154,12 +155,12 @@ Python Selenium 基础使用。
     button = browser.find_element_by_class_name('btn-search')
     #调用click点击该按钮
     button.click()
-    ```
-    - [更多操作](http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement)
+```
+- [更多操作](http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement)
 
 # 交互动作
-将动作附加到动作链中串行执行
-:   ```python
+## 将动作附加到动作链中串行执行
+```python
     from selenium import webdriver
     from selenium.webdriver import ActionChains
 
@@ -183,11 +184,11 @@ Python Selenium 基础使用。
     actions.perform()
     #关闭浏览器
     browser.close()
-    ```
-    - [更多操作](http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains)
+```
+- [更多操作](http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains)
 
-执行 JavaScript
-:  ```python
+## 执行 JavaScript
+```python
     from selenium import webdriver
 
     #创建chrome()浏览器对象browser
@@ -198,10 +199,11 @@ Python Selenium 基础使用。
     browser.execute_script('window.scrollTo(0, document.body.scrollHeight)')
     ##利用execute_script执行js语句alert("To Bottom")警报信息,注意，execute_script('')里面的js加引号
     browser.execute_script('alert("To Bottom")')
-    ```
+```
+
 # 获取元素信息
-获取属性
-:   ```python
+## 获取属性
+```python
     from selenium import webdriver
     from selenium.webdriver import ActionChains
 
@@ -217,32 +219,32 @@ Python Selenium 基础使用。
     print(logo)
     #打印输出：用logo的get_attribute函数获得logo的class属性值
     print(logo.get_attribute('class'))
-    ```
+```
 
-获取文本值
-:  - 获取指定节点中的文本内容.
-    ```python
-    driver.find_element_by_xpath('').get_attribute('textContent') 
-    ```
-    - 获取a的href(多个则遍历)
-    ```python
-    broswer.find_element_by_css_selector('.houseListTitle a').get_attribute('href')
-    ```
-    - 输入框的文本
-    ```python
-    from selenium import webdriver
+## 获取文本值
+- 获取指定节点中的文本内容.
+```python
+driver.find_element_by_xpath('').get_attribute('textContent') 
+```
+- 获取a的href(多个则遍历)
+```python
+broswer.find_element_by_css_selector('.houseListTitle a').get_attribute('href')
+```
+- 输入框的文本
+```python
+from selenium import webdriver
 
-    browser = webdriver.Chrome()
-    url = 'https://www.zhihu.com/explore'
-    browser.get(url)
-    #利用by_class_name查找class属性值为zu-top-add-question的输入框input
-    input = browser.find_element_by_class_name('zu-top-add-question')
-    #输出打印该输入框的文本（text）
-    print(input.text)
-    ```
+browser = webdriver.Chrome()
+url = 'https://www.zhihu.com/explore'
+browser.get(url)
+#利用by_class_name查找class属性值为zu-top-add-question的输入框input
+input = browser.find_element_by_class_name('zu-top-add-question')
+#输出打印该输入框的文本（text）
+print(input.text)
+```
 
-获取ID、位置、标签名、大小
-:   ```python
+## 获取ID、位置、标签名、大小
+```python
     from selenium import webdriver
 
     browser = webdriver.Chrome()
@@ -260,9 +262,9 @@ Python Selenium 基础使用。
     print(input.tag_name)
     #打印输出input的对象几何大小size
     print(input.size)
-    ```
-Frame
-:   ```python
+```
+## Frame
+```python
     import time
     from selenium import webdriver
     from selenium.common.exceptions import NoSuchElementException
@@ -281,11 +283,11 @@ Frame
     logo = browser.find_element_by_class_name('logo')
     print(logo)
     print(logo.text)
-    ```
+```
 # 等待
-隐式等待
-:   - 当使用了隐式等待执行测试的时候，如果 WebDriver 没有在 DOM 中找到元素，将继续等待，超出设定时间后则抛出找不到元素的异常, 换句话说，当查找元素或元素并没有立即出现的时候，隐式等待将等待一段时间再查找 DOM，默认的时间是 0
-    ```python
+## 隐式等待
+- 当使用了隐式等待执行测试的时候，如果 WebDriver 没有在 DOM 中找到元素，将继续等待，超出设定时间后则抛出找不到元素的异常, 换句话说，当查找元素或元素并没有立即出现的时候，隐式等待将等待一段时间再查找 DOM，默认的时间是 0
+```python
     from selenium import webdriver
 
     browser = webdriver.Chrome()
@@ -294,11 +296,11 @@ Frame
     browser.get('https://www.zhihu.com/explore')
     input = browser.find_element_by_class_name('zu-top-add-question')
     print(input)
-    ```
+```
 
-显式等待
-:   - 显示等待则打指定等待不固定，具体时间受指定的元素出现或其他条件实现的时间限制
-    ```python
+## 显式等待
+- 显示等待则打指定等待不固定，具体时间受指定的元素出现或其他条件实现的时间限制
+```python
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.ui import WebDriverWait
@@ -316,10 +318,9 @@ Frame
     button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.btn-search')))
     #打印输出input,button
     print(input,button)
-    ```
+```
 # 前进后退
-示例
-:   ```python
+```python
     import time
     from selenium import webdriver
 
@@ -338,10 +339,9 @@ Frame
     browser.forward()
     #关闭浏览器
     browser.close()
-    ```
+```
 # Cookies
-示例
-:   ```python
+```python
     from selenium import webdriver
     ​
     browser = webdriver.Chrome()
@@ -358,10 +358,10 @@ Frame
     browser.delete_all_cookies()
     #重新获取cookies并输出打印
     print(browser.get_cookies())
-    ```
+```
+
 # 选项卡管理
-示例
-:   ```python
+```python
     import time
     from selenium import webdriver
 
@@ -383,30 +383,32 @@ Frame
     browser.switch_to.window(browser.window_handles[0])
     #访问百度
     browser.get('https://www.vitan.me')
-    ```
-# 异常处理
-未处理
-:   ```python
-    from selenium import webdriver
-    ​
-    browser = webdriver.Chrome()
-    browser.get('https://www.baidu.com')
-    browser.find_element_by_id('hello')
-    ```
-处理后
-:   ```python
-    from selenium import webdriver
-    from selenium.common.exceptions import TimeoutException, NoSuchElementException
+```
 
-    browser = webdriver.Chrome()
-    try:
-        browser.get('https://www.baidu.com')
-    except TimeoutException:
-        print('Time Out')
-    try:
-        browser.find_element_by_id('hello')
-    except NoSuchElementException:
-        print('No Element')
-    finally:
-        browser.close()
-    ```
+# 异常处理
+## 未处理
+```python
+from selenium import webdriver
+    ​
+browser = webdriver.Chrome()
+browser.get('https://www.baidu.com')
+browser.find_element_by_id('hello')
+```
+
+## 处理后
+```python
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+
+browser = webdriver.Chrome()
+try:
+    browser.get('https://www.baidu.com')
+except TimeoutException:
+    print('Time Out')
+try:
+    browser.find_element_by_id('hello')
+except NoSuchElementException:
+    print('No Element')
+finally:
+    browser.close()
+```

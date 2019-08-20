@@ -5,11 +5,10 @@ tags:
 - SQL
 toc: true
 categories: notes
-icon:
- - /images/SQL.png
+thumbnail: /images/SQL.png
 ---
 SQL 上机习题与练习
-
+<!--more-->
 # 实验一   SQL SERVER 2008的基本知识与操作
 实验日期：
 

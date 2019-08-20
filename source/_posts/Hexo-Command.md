@@ -7,9 +7,10 @@ tags:
 - Termux
 toc: true
 categories: notes
-icon:
- - /images/hexo.svg
+thumbnail: /images/Hexo.png
 ---
+Hexo 常用命令
+<!--more-->
 # Hexo 用命令
 1. [新建文章]`hexo new "my blog"`
 新建的文件在hexo/source/_posts/my-blog.md

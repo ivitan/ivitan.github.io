@@ -9,9 +9,9 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 Selenium Qunar.com
 <!---more-->

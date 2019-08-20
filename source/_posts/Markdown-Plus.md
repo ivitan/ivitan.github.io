@@ -9,27 +9,25 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Note.png
+thumbnail: /images/Note.png
 mermaid: true
 ---
 Markdown 流程图，干特图。
-
+<!--more-->
 # 流程图 (Flowchart)
-语法
-: ```mermaid
+```mermaid
 graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[Car]
-  ```
+```
 
 # 序列图  (Sequence diagram)
-语法
-: ```mermaid
+```mermaid
 sequenceDiagram
     loop every day
         Alice->>John: Hello John, how are you?
@@ -38,8 +36,7 @@ sequenceDiagram
 ```
 
 # 甘特图 (Gantt diagram)
-语法
-: ```mermaid
+```mermaid
 gantt
     dateFormat  YYYY-MM-DD
     title Adding GANTT diagram functionality to mermaid
@@ -67,7 +64,7 @@ gantt
     Describe gantt syntax               :after doc1, 3d
     Add gantt diagram to demo page      : 20h
     Add another diagram to demo page    : 48h
-  ```
+```
 ---
 **参考**
 - [Mermaidjs](https://mermaidjs.github.io/)

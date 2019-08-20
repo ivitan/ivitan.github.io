@@ -9,13 +9,15 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Linux.png
+thumbnail: /images/Linux.png
 ---
+Linux sudo  显示** 
+<!--more-->
 # 方法
 修改 /etc/sudoers
-:   ```sh
+```sh
     sudo cp /etc/sudoers /etc/sudoers.bak # 备份
     sudo visudo
     ```
@@ -30,4 +32,4 @@ icon:
     - 重启终端
     ```sh
     reset
-    ```
+```

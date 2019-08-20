@@ -5,11 +5,10 @@ tags:
 - SQL
 toc: true
 categories: notes
-icon:
- - /images/SQL.png
+thumbnail: /images/SQL.png
 ---
 SQL数据库原理练习题
-
+<!--more-->
 # 第一章 绪论
 ## 一,选择题
 1. DBS是采用了数据库技术的计算机系统,DBS是一个集合体,包含数据库,计算机硬件,软件和( C ).

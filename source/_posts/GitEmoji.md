@@ -10,9 +10,9 @@ categories:
 - notes
 author:
 name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-- /images/Git.png
+thumbnail: /images/Git.png
 ---
 Git Commit Emoji
 <!--more-->
@@ -57,8 +57,8 @@ emoji                                   | emoji 代码                   | commi
 
 # Emoji-Log
 ## 配置
-.bash/.zshrc
-:	```bash
+
+```bash .bash/.zshrc
     #.# Better Git Logs.
     ### Using EMOJI-LOG (https://github.com/ahmadawais/Emoji-Log).
     # Git Commit, Add all and Push — in one step.
@@ -89,10 +89,10 @@ emoji                                   | emoji 代码                   | commi
     function gtst() {
         gcap "✅ TEST: $@"
     }
-	```
+```
 
-别名到 ~/.gitconfig
-:	```bash
+## 别名到 ~/.gitconfig
+```bash
     # Git Commit, Add all and Push — in one step.
     cap = "!f() { git add .; git commit -m \"$@\"; git push; }; f"
     # NEW.
@@ -107,18 +107,18 @@ emoji                                   | emoji 代码                   | commi
     doc = "!f() { git cap \"📖 DOC: $@\"; }; f"
     # TEST.
     tst = "!f() { git cap \"✅ TEST: $@\"; }; f"
-	```
+```
 
 # gitmoji-cli
-install
-:	```bash
-	npm i -g gitmoji-cli
-	```
-usage
-:	```bash
-	gitmoji --help
-	gitmoji -c
-	```
+## install
+```bash
+npm i -g gitmoji-cli
+```
+## usage
+```bash
+gitmoji --help
+gitmoji -c
+```
 
 ---
 

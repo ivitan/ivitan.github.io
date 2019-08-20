@@ -10,22 +10,20 @@ categories:
 author:
   name: Vitan
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+toc: true
+thumbnail: /images/Python.png
 ---
 回归分析
 <!--more-->
 # 导入数据
-Code
-:   ```python
-    import pandas 
-    df = pandas.read_csv('house-prices.csv')
-    df.head()
-    ```
+```python
+import pandas 
+df = pandas.read_csv('house-prices.csv')
+df.head()
+```
 
 # one-hot 处理
-Code 
-:   ```python
+```python
     #对Brick与Neighborhood两列数据进行one-hot处理
     house =  pandas.concat([df,pandas.get_dummies(df['Brick']),pandas.get_dummies(df['Neighborhood'])] ,axis=1)
     #删除No列
@@ -39,10 +37,9 @@ Code
     #删除Home列
     del house['Home']
     house.head()
-    ```
+```
 # statsmodels.api
-Code
-:   ```python
+```python
     #X为house的'SqFt', 'Bedrooms', 'Bathrooms', 'Offers', 'Yes', 'East', 'North'列
     X = house[['SqFt', 'Bedrooms', 'Bathrooms', 'Offers', 'Yes', 'East', 'North']]
     #Y为house的Price列的values
@@ -62,17 +59,17 @@ Code
     #输出打印est2的概要信息
     print(est2.summary())
     est2.aic
-    ```
+```
 
-最优组合
-:   ```python
+## 最优组合
+```python
     predictorcols = ['SqFt', 'Bedrooms', 'Bathrooms', 'Offers', 'Yes', 'East', 'North']
     import itertools
     for i in range(1,len(predictorcols)+1):
         for variables in itertools.combinations(predictorcols,i):
             print(variables)
-    ```
-    ```python
+  ```
+  ```python
     import itertools#导入itertools库
     #创建字典AICs ，用于保存每个列名组合的aic结果
     AICs = {}
@@ -91,13 +88,12 @@ Code
             print(res.aic) # 每种组合的aic值
         #将res.aic的结果赋值给 AICs的每一个var   
             AICs[var] =  res.aic
-    ```
-    ```python
+  ```
+  ```python
     #导入collections的Counter
     from collections import Counter
     #调用Counter，对AICs进行降序排序
     c = Counter(AICs)
     #调用排序后的c倒数10个数据对象
     c.most_common()[::-10]
-    ```
-
+  ```

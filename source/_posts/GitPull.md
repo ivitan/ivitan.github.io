@@ -10,15 +10,14 @@ categories:
 - notes
 author:
 name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-- /images/Git.png
+thumbnail: /images/Git.png
 ---
-- 放弃对于本地的项目中修改，Git pull强制覆盖
-
-Code
-:	```git
-	git fetch --all
-	git reset --hard origin/master
-	git pull
-	```
+放弃对于本地的项目中修改，Git pull强制覆盖
+<!--more-->
+```git
+git fetch --all
+git reset --hard origin/master
+git pull
+```

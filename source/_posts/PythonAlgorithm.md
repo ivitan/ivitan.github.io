@@ -9,13 +9,14 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
+Python 排序
+<!--more-->
 ## 冒泡排序
-code
-:   ```python
+```python
     def bubble_sort(li):
     for i in range(len(li)-1): # i表示第几趟
         for j in range(len(li)-i-1): # j表示图中的箭头
@@ -33,12 +34,11 @@ code
                 exchange = True
         if not exchange:
             return
-    ```
-     ![](https://raw.githubusercontent.com/ivitan/Picture/master/maopao.gif)
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/maopao.gif)
 
 ## 选择排序
-code
-:   ```python
+```python
     def select(li):
     for i in range(len(li)):
         # 第i趟开始时 无序区：li[i:]
@@ -48,12 +48,11 @@ code
             if li[j] < li[min_index]:
                 min_index = j
         li[min_index], li[i] = li[i], li[min_index]
-    ```
-     ![](https://raw.githubusercontent.com/ivitan/Picture/master/xuanze.gif)
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/xuanze.gif)
 
 ## 插入排序
-code
-:   ```python
+```python
     def insert_sort(li):
     for i in range(1, len(li)): # i是摸到的牌的下标
         tmp = li[i]     # tmp是摸到牌的值
@@ -69,13 +68,12 @@ code
         #     else:
         #         break
         li[j+1] = tmp   #将摸到的牌 插入到 往前挪过之后的 j 的后一位
-    ```
-    ![](https://raw.githubusercontent.com/ivitan/Picture/master/charu.gif
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/charu.gif
 )
 
  ##  快速排序
- code 
- :  ```python
+```python
     def quick_sort(lists, left, right):
         # 快速排序
         if left >= right:
@@ -94,8 +92,8 @@ code
         quick_sort(lists, low, left - 1)
         quick_sort(lists, left + 1, high)
         return lists
-    ```
-    ```python
+```
+```python
     def part(li, left, right):  # 列表,最左索引,最右索引
         tmp = li[left]  # 先找个临时变量把第一个元素存起来
         while left < right:  # 当最左小于最右
@@ -121,12 +119,11 @@ print(li)
 
 quick(li, 0, len(li) - 1)
 print(li)
-    ```
-    ![](https://raw.githubusercontent.com/ivitan/Picture/master/kuaisu.gif)
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/kuaisu.gif)
 
 ## 堆排序
-code
-:   ```python
+```python
 def sift(li, low, high):
    tmp = li[low]
    i = low
@@ -155,13 +152,12 @@ def heap_sort(li):
        li[i], li[0] = li[0], li[i]
        # 现在堆的范围 0~i-1
        sift(li, 0, i-1)
-    ```
-     ![](https://raw.githubusercontent.com/ivitan/Picture/master/zengdui.gif
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/zengdui.gif
 )
 
 ## 归并排序
-code
-:   ```python
+```python
     def merge(li, low, mid, high):
    i = low
    j = mid + 1
@@ -196,8 +192,8 @@ def merge_sort(li, low, high):
 # print(li)
 li = [10,4,6,3,8,2,5,7]
 merge_sort(li, 0, len(li)-1)
-    ```
-    ![](https://raw.githubusercontent.com/ivitan/Picture/master/guibing.gif
+```
+![](https://raw.githubusercontent.com/ivitan/Picture/master/guibing.gif
 )
 
 ---

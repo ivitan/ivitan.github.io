@@ -5,13 +5,12 @@ tags:
 - SQL
 toc: true
 categories: notes
-icon:
- - /images/SQL.png
+thumbnail: /images/SQL.png
 ---
 SQL存储过程
-
+<!--more-->
 建立
-:	```sql
+```sql
 create procedure lianxi66
 @arel char(20)
 @x1 int output,@x2 float output
@@ -19,18 +18,18 @@ as
 select @x1=count(*),@x2=avg(年龄)
 from S
 where 所在系=@arel
-	```
+```
 引用
-:	```
+```
 declare @ok int, @ck float
 exec lianxi66 "会计系",@ok output,@ck output
 print @ok
 print @ck
-	```
+```
 ---------------------------------------------------------
 
 建立
-:	```sql
+```sql
 CREATE PROCEDURE lianxi3511
 
 @varl char(10), @var3 int output
@@ -38,32 +37,32 @@ as
 select @var3=S.年龄
 frоm ѕ
 where s.学号=@varl
-	```
+```
 引用
-:	```sql
+```sql
 Declare @res int
 Execute liarixi3511 '101101', @res output
 Print @res
-	```
+```
 ----------------------------------------------------------
 建立
-:	```sql
+```sql
 CREATE PROCEDURE lianxi2511
 @var1 int, @var2 int, var3 int output
 As
 Set @var3 = @vari*@var2
 ```
 引用
-:	```sql
+```sql
 Declare @res int
 Execute liarxi2511 5, 7, @res output
 Print @res
 
 exec liarxi2511 3,4
-	```
+```
 ----------------------------------------------------------
 建立
-:	```sql
+```sql
 CREATE PROCEDURE lianxi1511
 @student_no char (10),
 @course_no char (20)
@@ -73,16 +72,16 @@ FROM S JOIN SC  ON S.学号=SC.学号
 INNER JOIN C  ON C.课程号=SC.课程号
 WHERE S.学号=@student_no
 ANO SC.课程号=@course_no
-	```
+```
 引用
-:	```sql
+```sql
 exec lianxi1511 '101101','101'
-	```
+```
 -----------------------------------------------------------
 # 习题
 若输入的学号存在则删除
-: - 创建
-  ```sql
+- 创建
+```sql
 create procedure del_cno1
 @cno char(20)
 as
@@ -92,16 +91,16 @@ if exists (select  * from xkgx where 课程号=@cno)
 rollback tran t1
 else
 commit tran t1
-  ```
-  - 引用与验证
-  ```sql
+```
+- 引用与验证
+```sql
 exec del_cno1 '305'
 select * from xkgx
 select * from kcgx
-  ```
+```
 # 存储过程使用事务
 实例
-: ```sql
+```sql
 Create Procedure  MyProcedure
 AS
 Begin
@@ -119,9 +118,9 @@ end
 else  --没有出错
 commit  tran ok --提交事务
 End
-  ```
-  ---
-  ```sql
+```
+---
+```sql
 create proc 1
 @si chark20),@pi char(20),@Ji chark20),@shu int
 insert into SPJ values(@si,@pi,@Ji,@shu)
@@ -130,4 +129,4 @@ if exists (select * from p where Pno=@Pi)
 commit tran t1
 else
 rollback tran t1
-  ```
+```

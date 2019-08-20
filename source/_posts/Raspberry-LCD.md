@@ -8,54 +8,55 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/RaspberryPi.png
+thumbnail: /images/RaspberryPi.png
 ---
 Raspberry Pi 屏幕触控驱动安装及分辨率设置。
+<!--more-->
 # 触摸驱动
-下载链接
-: - [GitHub 中获取](https://github.com/goodtft/LCD-show)
-## 安装(3.5寸为例)
-修改 config 配置文件
-: 1. 烧写系统完成后,将 `LCD-show.tar.gz` 拷贝到 TF 卡根目录,
-  2. 打开 TF 卡根目录的 `config.txt` 文件并在文件末端加入以下代码,保存并安全弹出 TF 卡:
-  ```bash
-  hdmi_drive=2
-  hdmi_force_hotplug=1
-  hdmi_group=2
-  hdmi_mode=87
-  hdmi_cvt 480 320 60 6 0 0 0
-  ```
+## 下载链接
+- [GitHub 中获取](https://github.com/goodtft/LCD-show)
+
+# 安装(3.5寸为例)
+## 修改 config 配置文件
+1. 烧写系统完成后,将 `LCD-show.tar.gz` 拷贝到 TF 卡根目录,
+2. 打开 TF 卡根目录的 `config.txt` 文件并在文件末端加入以下代码,保存并安全弹出 TF 卡:
+```bash
+hdmi_drive=2
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt 480 320 60 6 0 0 0
+```
+
 ## 配置
-Terminal 终端中
-: ```shell
+```shell
   cd /boot
   cp LCD-show.tar.gz ~
   cd ~
   sudo tar zxvf LCD-show.tar.gz
   cd LCD-show/
   sudo ./MPI3508_480_320-show
-  ```
+```
+
 # 修改分辨率
-方法
-: - 终端输入
-  ```sh
-  sudo vim /boot/config.txt
-  ```
-  - 修改
-  ```
-  hdmi_drive=2
-  hdmi_force_hotplug=1
-  hdmi_group=2
-  hdmi_mode=87
-  # 这里根据分辨率来设置
-  ```
+- 终端输入
+```sh
+sudo vim /boot/config.txt
+```
+- 修改
+```
+hdmi_drive=2
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=87
+# 这里根据分辨率来设置
+```
 ## 分辨率表
 ### CEA 分辨率(电视规格分辨率)
-分辨率表
-: - CEA 规定的电视规格分辨率，这些分辨率的 `hdmi_group = 1`
-  ```shell
+- CEA 规定的电视规格分辨率，这些分辨率的 `hdmi_group = 1`
+```shell
   hdmi_mode=1    VGA
   hdmi_mode=2    480p  60Hz
   hdmi_mode=3    480p  60Hz  H
@@ -118,12 +119,11 @@ Terminal 终端中
   H means 16:9 variant (of a normally 4:3 mode).
   2x means pixel doubled (i.e. higher clock rate, with each pixel repeated twice)
   4x means pixel quadrupled (i.e. higher clock rate, with each pixel repeated four times)
-  ```
+```
 
 ### DMT分辨率(计算机显示器)
-分辨率表
-: - 以下的英文计算机显示器使用的分辨率,这些分辨率的 `hdmi_group = 2`
-  ```shell
+- 以下的英文计算机显示器使用的分辨率,这些分辨率的 `hdmi_group = 2`
+```shell
   hdmi_mode=1    640x350   85Hz
   hdmi_mode=2    640x400   85Hz
   hdmi_mode=3    720x400   85Hz
@@ -210,4 +210,4 @@ Terminal 终端中
   hdmi_mode=84   2048x1152       reduced blanking
   hdmi_mode=85   720p      60Hz
   hdmi_mode=86   1366x768        reduced blanking
-  ```
+```

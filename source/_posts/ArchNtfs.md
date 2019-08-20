@@ -10,17 +10,15 @@ categories:
 - notes
 author:
 name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-- /images/ArchLinux.png
+thumbnail: /images/ArchLinux.png
 ---
 解决 ArchLInux 无法挂载 NTFS 的U盘和硬盘
 <!--more-->
 
 ## 方法
-
-安装
-:   ```sh
-    sudo pacman -Syu 
-    sudo pacman -S ntfs-3g 
-    ```  
+```bash
+sudo pacman -Syu 
+sudo pacman -S ntfs-3g 
+```  

@@ -9,14 +9,13 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 K-means 图片压缩
 <!---more--->
-Code
-:    ```python
+```python
         #!/usr/bin/env python
         # -*- coding: utf-8 -*-
         # @Time    : 18-11-12 10:10
@@ -54,4 +53,4 @@ Code
         plt.imshow(new_img)
         img.imsave('E://zip.jpg',new_img)
         plt.show()
-    ```
+```

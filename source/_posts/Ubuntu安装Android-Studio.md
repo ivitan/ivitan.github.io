@@ -7,12 +7,11 @@ tags:
 - Android
 toc: true
 categories: notes
-icon:
- - /images/Ubuntu.png
+thumbnail: /images/Ubuntu.png
 ---
 
 Ubuntu安装Android Studio
-
+<!--more-->
 
 # SDK
 ## 安装 Android SDK

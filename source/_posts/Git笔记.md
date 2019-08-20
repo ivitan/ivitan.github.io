@@ -7,55 +7,55 @@ tags:
 - Termux
 toc: true
 categories: notes
-icon:
- - /images/Git.png
+thumbnail: /images/Git.png
 ---
 Git 配置笔记。
+<!--more-->
 # 基础命令
-文件管理
-: |命令|解析|
-  |:---|:---|
-  |pwd|查看当前文件目录|
-  |mkdir|创建文件|
-  |touch xxx.xx|创建文件|
-  |git rm xxx|从git删除文件|
+- 文件管理
+
+|命令|解析|
+|:---|:---|
+|pwd|查看当前文件目录|
+|mkdir|创建文件|
+|touch xxx.xx|创建文件|
+|git rm xxx|从git删除文件|
 
 # 设置 SSH Key
-配置github账户信息
-:	```sh
+- 配置github账户信息
+```sh
 git config --global user.name "Vitan"
-git config --global user.email "ivitan95@gmail.com"
+git config --global user.email "vitan.me@gmail.com"
+```
 
-	```
+- 创建 SSH
+```sh
+ssh-keygen -t rsa -C "vitan.me@gmail.com"
+```
+```sh
+ssh-keygen -t rsa -C "vitan.me@gmail.com" -f ~/.ssh/vitan-github
+```
+- 参数含义：
+  - t 指定密钥类型，默认即 rsa ，可以省略
+  - C 设置注释文字，比如你的邮箱
+  - f 指定密钥文件存储文件名，会生成 vitan-github 和 vitan-github.pub 两个密钥文件
 
-创建 SSH
-:	```sh
-ssh-keygen -t rsa -C "ivtan95@gmail.com"
-	```
-  ```sh
-  ssh-keygen -t rsa -C "ivtan95@gmail.com" -f ~/.ssh/vitan-github
-  ```
-  - 参数含义：
-    - t 指定密钥类型，默认即 rsa ，可以省略
-    - C 设置注释文字，比如你的邮箱
-    - f 指定密钥文件存储文件名，会生成 vitan-github 和 vitan-github.pub 两个密钥文件
-
-复制 Key
-:	```sh
+- 复制 Key
+```sh
 cd ~/.ssh
 cat id_rsa.pub
-	```
+```
 
-验证 SSH
-:	```sh
-	ssh -T git@github.com
-	git config --list  #查看key配置
-	```
+- 验证 SSH
+```sh
+ssh -T git@github.com
+git config --list  #查看key配置
+```
 
-查看 Git 配置
-: ```sh
-  git config --list
-  ```
+- 查看 Git 配置
+```sh
+git config --list
+```
 
 # 其他
 ```sh

@@ -6,10 +6,13 @@ tags:
 - Ubuntu
 - ArchLinux
 categories: notes
-icon:
-- /images/Linux.png
+toc: true
+thumbnail: /images/Linux.png
 enable_unread_badge: true
 ---
+Linux 常见目录
+<!--more-->
+
 |目录|解释|
 |:---|:---|
 |/|根目录|

@@ -8,34 +8,31 @@ categories:
   - notes
 author:
   - Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Docker.png
+thumbnail: /images/Docker.png
 ---
 ArchLinux 安装 Docker
 <!--more-->
 # 安装
-Inatall
-: ```bash
-  sudo pacman -S docker
-  ```
+```bash
+sudo pacman -S docker
+```
 
 start server
-: ```bash
-  systemctl restart docker 
-  ```
+```bash
+systemctl restart docker 
+```
 
 # 镜像
-image
-: ```bash
-  docker pull ubuntu:18.04
-  docker pull centos # latest
-  dicker pull centos:6
-  ```
+```bash
+docker pull ubuntu:18.04
+docker pull centos # latest
+dicker pull centos:6
+```
 
 # 运行
-usage
-: ```bash
-  sudo docker run -i -t centos /bin/bash
-  ```
-  - -it, -i：交互式操作， -t 终端
+```bash
+sudo docker run -i -t centos /bin/bash
+```
+- -it, -i：交互式操作， -t 终端

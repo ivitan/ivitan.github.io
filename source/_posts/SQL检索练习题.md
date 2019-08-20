@@ -5,10 +5,10 @@ tags:
 - SQL
 toc: true
 categories: notes
-icon:
- - /images/SQL.png
+thumbnail: /images/SQL.png
 ---
 检索，存储过程，触发器相关练习。
+<!--more-->
 
 |仓库号|城市|面积|
 |:---|:---|:---|

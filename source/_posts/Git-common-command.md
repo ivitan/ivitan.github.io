@@ -6,18 +6,18 @@ tags:
 - Github
 - Note
 categories: notes
-icon:
-- /images/Git.png
+toc: true
+thumbnail: /images/Git.png
 enable_unread_badge: true
 ---
-# Git 常用命令
-速查表
-:	![](https://raw.githubusercontent.com/ivitan/Picture/master/GitCmd.jpg
+Git 常用命令
+<!--more-->
+![](https://raw.githubusercontent.com/ivitan/Picture/master/GitCmd.jpg
 )
 
 # 配置
-基础配置
-:	```sh
+- 基础配置
+```sh
 git config --global user.name "Vitan"
 git config --global user.email "ivitan95@gmail.com"
 ssh-keygen -t rsa -C "ivitan95@gmail.com"
@@ -30,10 +30,10 @@ git config --global core.editor "vim"
 # 设置Editor使用vim
 git config --global core.quotepath false
 # 设置显示中文文件名
-	```
+```
 # 常用命令
 查看、添加、提交、删除、找回，重置修改文件
-:	```sh
+```sh
 git co  -- <file>
 # 抛弃工作区修改
 git co  .
@@ -68,10 +68,10 @@ git revert <$id>
 # 恢复某次提交的状态，恢复动作本身也创建了一次提交对象
 git revert HEAD
 # 恢复最后一次提交的状态
-	```
+```
 
 查看文件 diff
-:	```sh
+```sh
 git diff <file>
 # 比较当前文件和暂存区文件差异
 git diff
@@ -85,9 +85,10 @@ git diff --cached
 # 比较暂存区和版本库差异
 git diff --stat
 # 仅仅比较统计信息
-	```
+```
+
 查看提交记录
-:	```sh
+```sh
 git log
 git log <file>
 # 查看该文件每次提交记录
@@ -95,13 +96,13 @@ git log -p <file>
 # 查看每次详细修改内容的diff
 git log -p -2
 # 查看最近两次详细
-	```
+```
 	- Mac 上可以使用 tig 代替 diff 和 log，brew install tig
 
 # 分支管理
 ## 本地分支管理
 查看、切换、创建和删除分支
-:	```sh
+```sh
 git br -r
 # 查看远程分支
 git br <new_branch>
@@ -129,10 +130,10 @@ git br -d <branch>
 # 删除某个分支
 git br -D <branch>
 # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)
-	```
+```
 
 分支合并和 rebase
-:	```sh
+```sh
 git merge <branch>
 # 将branch分支合并到当前分支
 git merge origin/master --no-ff
@@ -142,27 +143,27 @@ git rebase master <branch>
 # 将master rebase到branch，相当于：
 
 git co <branch> && git rebase master && git co master && git merge <branch>
-	```
+```
 
 补丁管理 (方便在多台机器上开发同步时用)
-:	```
+```
 git diff > ../sync.patch # 生成补丁
 git apply ../sync.patch # 打补丁
 git apply --check ../sync.patch # 测试补丁能否成功
-	```
+```
 
 暂存管理
-:	```
+```
 git stash # 暂存
 git stash list # 列所有stash
 git stash apply # 恢复暂存的内容
 git stash drop  # 删除暂存区
 git stash clear
-	```
+```
 
 ## 远程分支管理
 基础命令
-:	```sh
+```sh
 git pull
 # 抓取远程仓库所有分支更新并合并到本地
 git pull --no-ff
@@ -191,7 +192,7 @@ git push origin :<remote_branch>
 ```
 
 远程仓库管理
-:	```sh
+```sh
 git remote -v
 # 查看远程服务器地址和仓库名称
 git remote show origin
@@ -200,10 +201,10 @@ git remote add origin git@github:stormzhang/demo.git
 # 添加远程仓库地址
 git remote set-url origin git@github.com:stormzhang/demo.git
 # 设置远程仓库地址(用于修改远程仓库地址
-	```
+```
 
 创建远程仓库
-:	```sh
+```sh
 git clone --bare robbin_site robbin_site.git
 # 用带版本的项目创建纯版本仓库
 scp -r my_project.git git@git.csdn.net:~
@@ -220,12 +221,12 @@ git push -u origin develop
 
 git remote set-head origin master
 # 设置远程仓库的HEAD指向master分支
-	```
-	- 也可以命令设置跟踪远程库和本地库
-	```sh
-	git branch --set-upstream master origin/master
-	git branch --set-upstream develop origin/develop
-	```
+```
+  - 也可以命令设置跟踪远程库和本地库
+  ```sh
+  git branch --set-upstream master origin/master
+  git branch --set-upstream develop origin/develop
+  ```
 ---
 **Via**
 - [stormzhang](http://stormzhang.com/git/2014/01/27/git-common-command/)

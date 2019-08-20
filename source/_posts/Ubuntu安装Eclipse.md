@@ -7,11 +7,10 @@ tags:
 - Eclipse
 toc: true
 categories: notes
-icon:
- - /images/Ubuntu.png
+thumbnail: /images/Ubuntu.png
 ---
  Ubuntu 安装 Eclipse
-
+<!--more-->
 **前提**
 已经安装Java JDK
 # **下载**

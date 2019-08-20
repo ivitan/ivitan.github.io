@@ -8,14 +8,13 @@ tags:
 - Ubuntu
 toc: true
 categories: notes
-icon:
- - /images/Vim.png
+thumbnail: /images/Vim.png
 ---
 Vim 设置默认中文并加行数
 <!--more-->
 # .vimrc
 配置文件
-:   ```
+ ```
     " 设置行号显示
     set number
 
@@ -72,27 +71,27 @@ Vim 设置默认中文并加行数
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     call vundle#end()
-    ```
+```
+
 # Vim 设置默认中文编码
 .vimrc 添加下面内容即可
-:   ```
-    set encoding=utf-8
-    set fileencodings=ucs-bom,utf-8,cp936
-    set fileencoding=gb2312
-    set termencoding=utf-8
-    ```
+```
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936
+set fileencoding=gb2312
+set termencoding=utf-8
+```
 # 设置行数
-添加如下内容
-:   ```
-    set nu
-    set nobackup
-    set noswapfile
-    syntax on
-    set tabstop=4
-    set shiftwidth:4
-    set expandtab
-    set smarttab
-    set hlsearch
-    set showmatch
-    set matchtime=2
-    ```
+```
+set nu
+set nobackup
+set noswapfile
+syntax on
+set tabstop=4
+set shiftwidth:4
+set expandtab
+set smarttab
+set hlsearch
+set showmatch
+set matchtime=2
+```

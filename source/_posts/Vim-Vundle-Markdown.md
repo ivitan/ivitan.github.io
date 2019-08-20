@@ -6,91 +6,93 @@ tags:
 - Linux
 - Win
 categories: notes
-icon:
-- /images/Vim.png
+toc: true
+thumbnail: /images/Vim.png
 ---
+Vim 插件 主题
+<!--more-->
 # SpaceVim
-安装
-:   ```sh
-    curl -sLf https://spacevim.org/install.sh | bash
-    ```
+```sh
+curl -sLf https://spacevim.org/install.sh | bash
+```
 # Vundle 插件管理器
-简介
-:   Vundle 是Vim bundle 的简称,是一个 Vim 插件管理器.
+Vundle 是Vim bundle 的简称,是一个 Vim 插件管理器.
 
 Vundle 允许你做
-:   1. 在.vimrc中跟踪和管理插件
-    2. 安装特定格式的插件(a.k.a. scripts/bundle)
-    3. 更新特定格式插件
-    4. 通过插件名称搜索Vim scripts中的插件
-    5. 清理未使用的插件
-    6. 可以通过单一按键完成以上操作,详见[interactive mode](https://github.com/VundleVim/Vundle.vim/blob/v0.10.2/doc/vundle.txt#L319-L360)
+
+1. 在.vimrc中跟踪和管理插件
+2. 安装特定格式的插件(a.k.a. scripts/bundle)
+3. 更新特定格式插件
+4. 通过插件名称搜索Vim scripts中的插件
+5. 清理未使用的插件
+6. 可以通过单一按键完成以上操作,详见[interactive mode](https://github.com/VundleVim/Vundle.vim/blob/v0.10.2/doc/vundle.txt#L319-L360)
 
 安装
-:   ```git
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    ```
+```git
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
-配置
-:   1. 编辑
-    ```
-    vim .vimrc
-    ```
-    2. 添加下列内容
-    ```
-    set nocompatible   " be iMproved, required
-    filetype off   " required
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    call vundle#end()   " required
-    filetype plugin indent on  " required
-    ```
+- 配置
+1. 编辑
+```
+ vim .vimrc
+```
+2. 添加下列内容
+```
+set nocompatible   " be iMproved, required
+filetype off   " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()   " required
+filetype plugin indent on  " required
+```
 
 安装需要的插件
-:  - bash 下：
-    ```
-    vim +PluginInstall +qall
-    ```
-    - vim 下
-    ```
-    :PluginInstall
-    ```
+- bash 下：
+```
+vim +PluginInstall +qall
+```
+- vim 下
+```
+:PluginInstall
+```
 
 # 安装 Markdown 插件
 修改vimrc配置文件,添加
-:   ```
-    Plugin 'godlygeek/tabular'
-    Plugin 'plasticboy/vim-markdown'
-    ```
+```
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+```
 
 下一步
-:   ```bash
-    vim
-    :PluginInstall
-    ```
+```bash
+vim
+:PluginInstall
+```
 # 安装 gruvbox 主题
 在 .vimrc 添加
-:	```
-    Plugin 'morhetz/gruvbox'
-    Plugin 'vim-airline/vim-airline'
-	```
+```
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+```
+
 配置主题
-:	```
-    set bg=dark "设置背景为黑色
-    colorscheme gruvbox "设置主题为 gruvbox
-    set guioptions=  "去掉两边的scrollbar
-    set guifont=Monaco:h17 "设置字体和字的大小
-    ```
+```
+set bg=dark "设置背景为黑色
+colorscheme gruvbox "设置主题为 gruvbox
+set guioptions=  "去掉两边的scrollbar
+set guifont=Monaco:h17 "设置字体和字的大小
+```
 # Vim-airline
 .vimrc 添加插件
-:	```
-    Plugin 'vim-airline/vim-airline
-    Plugin 'vim-airline/vim-airline-themes'
-    ```
+```
+Plugin 'vim-airline/vim-airline
+Plugin 'vim-airline/vim-airline-themes'
+```
 
 配置
-:	```
+```
     "" airline settings.
     let g:airline_theme = 'simple'
     let g:airline_powerline_fonts = 1
@@ -111,10 +113,10 @@ Vundle 允许你做
     let g:airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
     " show tab number in tab line
     let g:airline#extensions#tabline#tab_nr_type = 1
-	```
+```
 
 支持主题
-:	```
+```
     badwolf
     base16
     behelit
@@ -147,48 +149,48 @@ Vundle 允许你做
     understated
     wombat
     zenburn
-	```
+```
 
 # NERD Tree 文件浏览插件
 .vimrc 添加插件
-:	```
-    Plugin 'scrooloose/nerdtree'
-	```
+```
+Plugin 'scrooloose/nerdtree'
+```
 
 打开/关闭 NERD Tree
-:	```
-    :NERDTreeToggle
-	```
+```
+:NERDTreeToggle
+```
 
 NERD Tree 配置
-:	```
-    "当 vim 启动没指定文件时，自动打开 NERDTree
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    "在 normal 下按 ,d 打开关闭文件浏览
-    nmap ,d :NERDTreeToggle<CR>
-    ```
+```
+"当 vim 启动没指定文件时，自动打开 NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"在 normal 下按 ,d 打开关闭文件浏览
+nmap ,d :NERDTreeToggle<CR>
+```
 使用技巧
-:	1. 按 `?`可以打开 NERD tree 帮助文档
-	2. 按 `j` ,`k` 在 NERD tree上下移动,`<c-r>` 打开关闭文件夹或文件
-	3. `:vsp` 在右侧打开一个分屏，`:sp` 在下面打开一个分屏
-	4. `<c-w>j` ，`<c-w>k`, `<c-w>h`, `<c-w>l`按键分别向上、下、左、右分屏移动。 `<c-w>=`均分屏幕
+1. 按 `?`可以打开 NERD tree 帮助文档
+2. 按 `j` ,`k` 在 NERD tree上下移动,`<c-r>` 打开关闭文件夹或文件
+3. `:vsp` 在右侧打开一个分屏，`:sp` 在下面打开一个分屏
+4. `<c-w>j` ，`<c-w>k`, `<c-w>h`, `<c-w>l`按键分别向上、下、左、右分屏移动。 `<c-w>=`均分屏幕
 
 改默的切换分屏按键方式
-:	```
-    "--------- Split Mapping --------------------"
-    nmap <c-j> <c-w>j
-    nmap <c-k> <c-w>k
-    nmap <c-h> <c-w>h
-    nmap <c-l> <c-w>l
-    ```
+```
+"--------- Split Mapping --------------------"
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+```
 
-官网文档
-:	[GitHub Repo](https://github.com/scrooloose/nerdtree)
+- 官网文档
+[GitHub Repo](https://github.com/scrooloose/nerdtree)
 
 # .vimrc 配置文件
 vimrc
-:   ```
+```
     "设置行号显示
     set number
 
@@ -287,7 +289,7 @@ vimrc
     let g:airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
     " show tab number in tab line
     let g:airline#extensions#tabline#tab_nr_type = 1
-    ```
+```
 ---
 **参考**
 - [Vim](https://blog.csdn.net/zhangpower1993/article/details/52184581)

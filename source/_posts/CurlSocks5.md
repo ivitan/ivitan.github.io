@@ -7,65 +7,62 @@ categories:
   - notes
 author:
   - Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Linux.png
+thumbnail: /images/Linux.png
 ---
 Some Socks5 Proxy setting
+<!--more-->
 # Git
-CMD
-: ```bash
+```bash
   git config --global http.proxy socks5://127.0.0.1:1080
   git config --global https.proxy socks5://127.0.0.1:1080
   git config --global --unset http.proxy
   git config --global --unset https.proxy
-  ```
+```
 
 # Curl
-.curlrc
-: ```bash
-  echo 'socks5 = "127.0.0.1:1080"' >> ~/.curlrc
-  ```
+```bash .curlrc
+echo 'socks5 = "127.0.0.1:1080"' >> ~/.curlrc
+```
 
-ALL_PROXY
-: ```bash
-  export ALL_PROXY=socks5://127.0.0.1:1080
-  ```
+- ALL_PROXY
+```bash
+export ALL_PROXY=socks5://127.0.0.1:1080
+```
 
 # Wget
-EVN Config
-: ```bash
-  xport http_proxy=http://127.0.0.1:1080
-  xport http_proxy=httpS://127.0.0.1:1080
-  ```
-.wgetrc
-: ```bash ~/.wgetrc
-  https_proxy = http://127.0.0.1:8087/
-  http_proxy = http://127.0.0.1:8087/
-  ftp_proxy = http://127.0.0.1:8087/
+```bash EVN Config
+ xport http_proxy=http://127.0.0.1:1080
+ xport http_proxy=httpS://127.0.0.1:1080
+ ```
+## .wgetrc
+```bash ~/.wgetrc
+https_proxy = http://127.0.0.1:8087/
+http_proxy = http://127.0.0.1:8087/
+ftp_proxy = http://127.0.0.1:8087/
 
-  # If you do not want to use proxy at all, set this to off.
-  use_proxy = on
-  ```
+# If you do not want to use proxy at all, set this to off.
+use_proxy = on
+```
 -e
-: ```bash
-  wget -c -r -np -k -L -p -e "http_proxy=http://127.0.0.1:1080" url
-  ```
+```bash
+wget -c -r -np -k -L -p -e "http_proxy=http://127.0.0.1:1080" url
+```
 
 # Pip
-install
-: ```bash
-  sudo pacman -S proxychains
-  ```
-  - vim /etc/proxychains.conf
-  ```bash /etc/proxychains.conf
-  [ProxyList]
-  socks5  127.0.0.1 1080
-  ```
-usage
-: ```bash
-  proxychains pip install <package_name>
-  ```
+```bash
+sudo pacman -S proxychains
+```
+- vim /etc/proxychains.conf
+```bash /etc/proxychains.conf
+[ProxyList]
+socks5  127.0.0.1 1080
+```
+- usage
+```bash
+proxychains pip install <package_name>
+```
 
 ---
 **参考**

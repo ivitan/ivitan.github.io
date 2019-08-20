@@ -9,9 +9,9 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 猫眼电影 Top100
 <!--more-->
@@ -25,7 +25,7 @@ icon:
 
 # 步骤
 获取单页网页源代码并返回源代码
-:   ```Python
+```Python
     import requests
     import re
     import json
@@ -41,14 +41,15 @@ icon:
             return None
         except RequestException:
             return None
-    ```
-    - 打印第一页源码
-    ```Python
-    print(get_one_page('http://maoyan.com/board/4'))
-    ```
+```
+
+- 打印第一页源码
+```Python
+print(get_one_page('http://maoyan.com/board/4'))
+```
 
 解析单页网页源代码，提取title、actor、time、score数据并存储为生成器
-:   ```Python
+```Python
     def parse_one_page(html):
         pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>'
         + '.*?<p.*?title="(.*?)".*?</p>.*?star">(.*?)</p>'
@@ -63,24 +64,22 @@ icon:
                 '上映时间':item[3][5:],
                 '评分':item[4]+item[5]
             }
-    ```
-    ---
-
-    > 注意一下，这里需要用 yield，而不是return。yield函数返回的是一个生成器（一种特殊的迭代器，可以用for循环进行遍历）
-    > 如果用return，那么在第一轮循环结束就会跳出，只能获取到一部影片的信息
+```
+> 注意一下，这里需要用 yield，而不是return。yield函数返回的是一个生成器（一种特殊的迭代器，可以用for循环进行遍历）
+> 如果用return，那么在第一轮循环结束就会跳出，只能获取到一部影片的信息
 
 将生成器数据写入 txt 文档
-:   ```Python
+```Python
     def write_to_txt(content):
         # 采用 append 追加模式，字符集为utf8
         with open('movies.txt','a',encoding='utf8') as f:
             # 采用json的dumps方法来初始化字符串
             f.write(json.dumps(content,ensure_ascii=False) + '\n')
             f.close()
-    ```
+```
 
 研究第1-10页
-:   ```Python
+```Python
     # 第1-10页url
     for i in range(0,10):
         url = 'https://maoyan.com/board/4?offset=' + str(i * 10)
@@ -89,10 +88,11 @@ icon:
         movies= parse_one_page(html)
         for item in movies:
             write_to_txt(item)
-    ```
+```
+
 ## 多线程保持为 txt
-第一步
-:   ```Python
+- 第一步
+```Python
     import requests
     import re
     import json
@@ -109,9 +109,9 @@ icon:
             return None
         except RequestException:
             return None
-    ```
-第四步
-:   ```Python
+```
+- 第二步
+```Python
     def main(offset):
         url = 'http://maoyan.com/board/4?offset=' + str(offset)
         html = get_one_page(url)
@@ -124,11 +124,11 @@ icon:
         pool.map(main, [i*10 for i in range(10)])
         pool.close()
         pool.join()
-    ```
+```
 
 # 保持为 CSV
-单线程
-:   ```Python
+## 单线程
+```Python
     import requests
     import re
     import json
@@ -166,10 +166,10 @@ icon:
         ary = ary + pageary
     df = pandas.DataFrame(ary)
     df.to_csv('movies.csv')
-    ```
+```
 
-多线程
-:   ```Python
+## 多线程
+```Python
     import requests
     import re
     import json
@@ -222,4 +222,4 @@ icon:
         pool.map(main, [i*10 for i in range(10)])
         pool.close()
         pool.join()
-    ```
+```

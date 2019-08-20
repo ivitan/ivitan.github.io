@@ -9,14 +9,13 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 PySpider 爬猫途鹰网排名景点并保存至 MongoDB
 <!--more-->
-code
-:   ```Python
+```Python
     #!/usr/bin/env python
     # -*- encoding: utf-8 -*-
     # Created on 2018-10-30 18:01:28
@@ -69,4 +68,4 @@ code
         def save_to_mongo(self,result):
                     if self.db['MaoTU_HongKong'].insert(result):
                         print('savinf to mongo',result)
-    ```
+```

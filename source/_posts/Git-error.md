@@ -7,11 +7,10 @@ tags:
 - Termux
 toc: true
 categories: notes
-icon:
- - /images/Git.png
+thumbnail: /images/Git.png
 ---
 git push用法和常见问题分析
-
+<!--more-->
 # Git push
 ```git
 git push origin test:master

@@ -5,11 +5,10 @@ tags:
 - Java
 toc: true
 categories: notes
-icon:
- - /images/Java.png
+thumbnail: /images/Java.png
 ---
 Java基本数据类型。
-
+<!--more-->
 # Java 的两大数据类型:
 
 - 内置数据类型

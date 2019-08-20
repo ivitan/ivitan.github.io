@@ -9,15 +9,14 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 Python 中英文词频统计，并制作词云。
 <!-- more -->
 # 英文词频
-示例
-:   ```Python
+```Python
     # -*- coding: UTF-8 -*-
     # Author: Vitan
     with open('cp.txt','r') as f:
@@ -67,10 +66,9 @@ Python 中英文词频统计，并制作词云。
     # 前20个
     for i in range(20):
         print(hist[i])
-    ```
+```
 # 中文词频
-示例
-:   ```Python
+```Python
     # -*- coding: UTF-8 -*-
     # Author: Vitan
     import jieba
@@ -115,7 +113,7 @@ Python 中英文词频统计，并制作词云。
     plt.axis("off")
     plt.show()
     wc.to_file('mywor.png')  # 保存图片文件
-    ```
-    ---
+```
+---
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fw934tx7mcj20b405kgno.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fw934tx7mcj20b405kgno.jpg)

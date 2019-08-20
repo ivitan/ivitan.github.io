@@ -6,42 +6,40 @@ tags:
 - Termux
 toc: true
 categories: notes
-icon:
- - /images/Termux.png
+thumbnail: /images/Termux.png
 ---
 Termux安装Linux
 <!-- more -->
 
 # 安装脚本
 添加源
-:   ```bash
-    echo "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
-    ```
+```bash
+echo "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
+```
 
 安装
-:   ```bash
-    pkg install atilo-cn -y
-    ```
+```bash
+pkg install atilo-cn -y
+```
 
 # 使用
-运行atilo
-:   ```bash    
-    atilo [命令] [参数]
-    ```
+```bash    
+atilo [命令] [参数]
+```
 
 安装 Linux
-:   ```bash
-    atilo ubuntu
-    ```
+```bash
+atilo ubuntu
+```
 
 运行 linux
-:   ```bash
-    startubuntu
-    ```
+```bash
+startubuntu
+```
 
 ## 设置中文
 修改/etc/locale.gen
-:   ```bash
-    locale-gen zh_CN.UTF-8
-    export LC_ALL="zh_CN.UTF-8"
-    ```
+```bash
+locale-gen zh_CN.UTF-8
+export LC_ALL="zh_CN.UTF-8"
+```

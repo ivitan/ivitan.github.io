@@ -8,6 +8,6 @@ categories:
 author:
 - Vitan
 enable_unread_badge: true
-icon:
-- /images/Linux.png
+toc: true
+thumbnail: /images/Linux.png
 ---

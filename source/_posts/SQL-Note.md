@@ -5,11 +5,10 @@ tags:
 - SQL
 toc: true
 categories: notes
-icon:
- - /images/SQL.png
+thumbnail: /images/SQL.png
 ---
 SQL笔记
-
+<!--more-->
 1. 从职工关系中检索所有工资值。
 ```sql
 select 月工资

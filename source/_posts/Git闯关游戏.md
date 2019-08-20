@@ -7,11 +7,10 @@ tags:
 - Termux
 toc: true
 categories: notes
-icon:
- - /images/Git.png
+thumbnail: /images/Git.png
 ---
 Git闯关游戏
-
+<!--more-->
 # 安装
 ```
 apt install ruby

@@ -9,15 +9,14 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 PySpider 马蜂窝景点信息
 <!--more-->
 # PySpider
-cdoe
-:   ```Python
+```Python
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 # Created on 2018-11-06 11:52:31
@@ -93,4 +92,4 @@ class Handler(BaseHandler):
         "website":response.doc('.content > a').text(),
 
         }
-    ```
+```

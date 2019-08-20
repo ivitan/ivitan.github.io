@@ -5,33 +5,32 @@ tags:
 - Java
 toc: true
 categories: notes
-icon:
- - /images/Java.png
+thumbnail: /images/Java.png
 ---
 Java控制语句
-
+<!--more-->
 # 简介
 Java流程控制语句（顺序结构、if条件语句、switch条件语句、循环语句与跳转语句）
 
 # 顺序语句
-表达式语句
-:   ```Java
+## 表达式语句
+```Java
 i++;
 i--;
 x=10;
 sum=sum+1;
 new JFrame(); //实例化对象
 this.setVisible(true); //方法调用
-    ```
-空语句
-:   ```Java
-for(int i=0;i<10;i++); //空语句一个分号
-    ```
+```
 
-    ```Java
+## 空语句
+```Java
+for(int i=0;i<10;i++); //空语句一个分号
+```
+```Java
 int x=6;; //两连续分号，第二个是空语句
-    ```
-    ```Java
+```
+```Java
 if (a>b) {
          ;   //条件为真，执行空语句
 }
@@ -39,21 +38,21 @@ else {
 
             //条件为假，执行本部分
 }
-    ```
+```
 
-复合语句
-:	```Java
+## 复合语句
+```Java
 {
     int i=5;//又称代码块语句，一对大括号括起来的语句，中间可有多个变量或语句
     int a;
     a=i;
     System.out.orint(a);
 }
-    ```
+```
 
 # 选择语句
-if语句
-:	```Java
+## if语句
+```Java
 /*
  * "if条件语句"示例代码
  * 功能：输入三个数，输出最大值
@@ -79,10 +78,10 @@ public class Program {
 		input.close();
 	}
 }
-    ```
+```
 
-switch语句
-:	```Java
+## switch语句
+```Java
 import java.unit.Scanner;
 public class Switchweek
     public static void main(String[]args) {
@@ -102,9 +101,9 @@ public class Switchweek
             }
       }
 }
-    ```
+```
 
-    ```Java
+```Java
 public class Switch{
     public static void main(String[] args) {
 		char today='日';
@@ -124,19 +123,19 @@ public class Switch{
 		}
 	}
 }
-    ```
+```
 
 # 循环语句(主要有while/do-while/for和foreach)
-while
-:	```Java
+## while
+```Java
 while(判断条件)
 {
     语句;
 }
-    ```
+```
 
-扩展格式
-:	```java
+## 扩展格式
+```java
 初始化语句;
 while(判断条件语句) {
       循环体语句;
@@ -147,9 +146,8 @@ while(判断条件语句) {
         for(初始化语句;判断条件语句;控制条件语句) {
             循环体语句;
         }
-    ```
-
-    ```Java
+```
+```Java
 public class WhileSun {
     public static void main(String[] args) {
         int i = 1;
@@ -163,21 +161,19 @@ public class WhileSun {
         System.out.println("循环后变量i但值是:"+i);
     }
 }
-    ```
+```
 
-
-do-while
-:	 1. 对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。
-    2. do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。
-
-    ```java
+## do-while
+1. 对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。
+2. do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。
+```java
 do {
        //代码语句
 }while(布尔表达式);
-    ```
+```
 
-    注意：布尔表达式在循环体的后面，所以语句块在检测布尔表达式之前已经执行了。 如果布尔表达式的值为 true，则语句块一直执行，直到布尔表达式的值为 false。
-    ```Java
+注意：布尔表达式在循环体的后面，所以语句块在检测布尔表达式之前已经执行了。 如果布尔表达式的值为 true，则语句块一直执行，直到布尔表达式的值为 false。
+```Java
 public class Test {
    public static void main(String args[]){
       int x = 10;
@@ -188,21 +184,21 @@ public class Test {
       }while( x < 20 );
    }
 }
-    ```
+```
 
-for循环
-:   ```
+## for循环
+```
 for(初始化; 布尔表达式; 更新) {
     //代码语句
 }
-    ```
+```
 
-    最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。
-    然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。
-   执行一次循环后，更新循环控制变量。
-    再次检测布尔表达式。循环执行上面的过程。
+最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。
+然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。
+执行一次循环后，更新循环控制变量。
+再次检测布尔表达式。循环执行上面的过程。
 
-    ```Java
+```Java
 public class Test {
    public static void main(String args[]) {
       for(int x = 10; x < 20; x = x+1) {
@@ -211,7 +207,7 @@ public class Test {
       }
    }
 }
-    ```
+```
 # Java 增强 for 循环
 Java5 引入了一种主要用于数组的增强型 for 循环。
 

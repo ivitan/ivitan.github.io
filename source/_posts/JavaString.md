@@ -5,10 +5,10 @@ tags:
 - Java
 toc: true
 categories: notes
-icon:
- - /images/Java.png
+thumbnail: /images/Java.png
 ---
 Java 中 Srting 常用方法。
+<!--more-->
 #  `length()`字符串长度
 ```Java
 public class Test {

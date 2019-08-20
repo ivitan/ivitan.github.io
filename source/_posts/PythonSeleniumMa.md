@@ -9,14 +9,13 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
  Selenium 马蜂窝评论内容
 <!--more-->
-Code
-:   ```python
+```python
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
     # @Time    : 18-11-13 上午11:56
@@ -124,4 +123,4 @@ Code
 
     if __name__=='__main__':
         main()
-    ```
+```

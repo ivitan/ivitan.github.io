@@ -9,10 +9,7 @@ description: Vitan's personal website.
 keywords: Coder,Linux,Web,Blog...
 author: Vitan
 author_link: https://vitan.me
-language:
-  - zh-cn
-  - en
-  - it
+language: zh-CN
   
 timezone: Asia/Shanghai
 
@@ -104,7 +101,7 @@ archive_generator:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: cutie
+theme: icarus
 
 lazyload:
   enable: false

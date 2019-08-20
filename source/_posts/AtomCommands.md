@@ -8,10 +8,12 @@ categories:
   - notes
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Atom.png
+thumbnail: /images/Atom.png
 ---
+Atom 快捷键
+<!--more-->
 
 |英文	|中文	|快捷键|	功能|
 |:---|:---|:---|:---|

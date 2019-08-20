@@ -9,15 +9,14 @@ categories:
   - projects
 author:
   name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Python.png
+thumbnail: /images/Python.png
 ---
 Scrapy anjuke.com 广州二手房数据(保存为 csv)
 <!--more-->
 # Spiders
-Code
-:   ```python
+```python
     # -*- coding: utf-8 -*-
     from scrapy import Spider,Request
     from anjuke.items import AnjukeItem
@@ -55,10 +54,10 @@ Code
             item['zhuangxiu'] = houseInfo[-6].strip().split()
             print(item)
         return item
-    ```
+```
 
-items
-:   ```python
+## items
+```python
     from scrapy import Item,Field
 
     class AnjukeItem(Item):
@@ -74,10 +73,10 @@ items
         leixing = Field()
         date = Field()
         built = Field()
-    ```
+```
 
-settings
-:   ```python
+## settings
+```python
     BOT_NAME = 'anjuke'
 
     SPIDER_MODULES = ['anjuke.spiders']
@@ -103,8 +102,8 @@ settings
     }
 ```
 
-pipelines
-:   ```python
+## pipelines
+```python
     import csv
     import os
 
@@ -121,10 +120,10 @@ pipelines
                 self.csvwriter.writerow(row)
 
             return item
-    ```
+```
+
 # Selenium
-Code
-:   ```python
+```python
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
     # @Time    : 18-12-28 下午6:48
@@ -206,4 +205,4 @@ Code
 
     if __name__ == '__main__':
         main()
-    ```
+```

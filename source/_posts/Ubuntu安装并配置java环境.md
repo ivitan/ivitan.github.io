@@ -6,11 +6,10 @@ tags:
 - Java
 toc: true
 categories: notes
-icon:
- - /images/Ubuntu.png
+thumbnail: /images/Ubuntu.png
 ---
 Ubuntu 安装并配置 java 环境
-
+<!--more-->
 # 下载
 
 [链接](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm)

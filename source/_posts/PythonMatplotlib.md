@@ -9,16 +9,15 @@ categories:
 - notes
 author:
 name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-- /images/Python.png
+thumbnail: /images/Python.png
 ---
 Matplotlib 各种图
 <!--more-->
 
 # 垂直条形图
-Code
-:   ```Python
+```Python
     # 导入绘图模块
     import matplotlib.pyplot as plt
     # 构建数据
@@ -45,18 +44,18 @@ Code
     plt.savefig('垂直条形图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg)
 
-    - 解析
-        1. 由于matplotlib对中文的支持并不是很友好，所以需要提前对绘图进行字体的设置，即通过rcParams来设置字体，这里将字体设置为微软雅黑，同时为了避免坐标轴不能正常的显示负号，也需要进行设置；
-        2. bar 函数指定了条形图的x轴、y轴值，设置x轴刻度标签为水平居中，条形图的填充色color为铁蓝色，同时设置透明度alpha为0.8；
-        3. 添加y轴标签、标题、x轴刻度标签值，为了让条形图显示各柱体之间的差异，将y轴范围设置在5000~15000；
-        4. 通过循环的方式，添加条形图的数值标签；
+- 解析
+    1. 由于matplotlib对中文的支持并不是很友好，所以需要提前对绘图进行字体的设置，即通过rcParams来设置字体，这里将字体设置为微软雅黑，同时为了避免坐标轴不能正常的显示负号，也需要进行设置；
+    2. bar 函数指定了条形图的x轴、y轴值，设置x轴刻度标签为水平居中，条形图的填充色color为铁蓝色，同时设置透明度alpha为0.8；
+    3. 添加y轴标签、标题、x轴刻度标签值，为了让条形图显示各柱体之间的差异，将y轴范围设置在5000~15000；
+    4. 通过循环的方式，添加条形图的数值标签；
+
 # 水平条形图
-Code
-:   ```Python
+```Python
     # 导入绘图模块
     import matplotlib.pyplot as plt
     # 构建数据
@@ -83,13 +82,11 @@ Code
     plt.savefig('水平条形图.png')
     # 显示图形    
     plt.show()
-    ```
-
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j4ktleuj20c00800ss.jpg)
+```
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j4ktleuj20c00800ss.jpg)
 
 # 水平交错条形图
-Code
-:   ```Python
+```Python
     # 导入绘图模块
     import matplotlib.pyplot as plt
     import numpy as np
@@ -127,12 +124,11 @@ Code
     plt.savefig('水平交错条形图.png')
     # 显示图形
     plt.show()
-    ```
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jcakoz3j20c0080mxb.jpg)
+```
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jcakoz3j20c0080mxb.jpg)
 
 # 垂直堆叠条形图
-Code
-:   ```Python
+```Python
     # 导入模块
     import matplotlib.pyplot as plt
     import numpy as np
@@ -170,42 +166,42 @@ Code
     plt.legend(loc='upper center', ncol=4)
     # 显示图形    
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0k3zz5g9j20b907utae.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0k3zz5g9j20b907utae.jpg)
 
 # matplotlib(饼图)
-pie 函数参数解读
-:   饼图的绘制可以使用matplotlib库中的pie函数
-    ```Python
+## pie 函数参数解读
+饼图的绘制可以使用matplotlib库中的pie函数
+```Python
     plt.pie(x, explode=None, labels=None, colors=None,
         autopct=None, pctdistance=0.6, shadow=False,
         labeldistance=1.1, startangle=None,
         radius=None, counterclock=True, wedgeprops=None,
         textprops=None, center=(0, 0), frame=False)
-    ```
-    ---
+```
+---
 
-    |参数|说明|
-    |:---|:---|
-    |x|指定绘图的数据|
-    |explode|指定饼图某些部分的突出显示，即呈现爆炸式|
-    |labels|为饼图添加标签说明，类似于图例说明|
-    |colors|指定饼图的填充色|
-    |autopct|自动添加百分比显示，可以采用格式化的方法显示|
-    |pctdistance|设置百分比标签与圆心的距离|
-    |shadow|是否添加饼图的阴影效果|
-    |labeldistance|设置各扇形标签（图例）与圆心的距离|
-    |startangle|设置饼图的初始摆放角度|
-    |radius|设置饼图的半径大小|
-    |counterclock|是否让饼图按逆时针顺序呈现|
-    |wedgeprops|设置饼图内外边界的属性，如边界线的粗细、颜色等|
-    |textprops|设置饼图中文本的属性，如字体大小、颜色等|
-    |center|定饼图的中心点位置，默认为原点|
-    |frame|是否要显示饼图背后的图框，如果设置为True的话，需要同时控制图框x轴、y轴的范围和饼图的中心位置|
+|参数|说明|
+|:---|:---|
+|x|指定绘图的数据|
+|explode|指定饼图某些部分的突出显示，即呈现爆炸式|
+|labels|为饼图添加标签说明，类似于图例说明|
+|colors|指定饼图的填充色|
+|autopct|自动添加百分比显示，可以采用格式化的方法显示|
+|pctdistance|设置百分比标签与圆心的距离|
+|shadow|是否添加饼图的阴影效果|
+|labeldistance|设置各扇形标签（图例）与圆心的距离|
+|startangle|设置饼图的初始摆放角度|
+|radius|设置饼图的半径大小|
+|counterclock|是否让饼图按逆时针顺序呈现|
+|wedgeprops|设置饼图内外边界的属性，如边界线的粗细、颜色等|
+|textprops|设置饼图中文本的属性，如字体大小、颜色等|
+|center|定饼图的中心点位置，默认为原点|
+|frame|是否要显示饼图背后的图框，如果设置为True的话，需要同时控制图框x轴、y轴的范围和饼图的中心位置|
 
-绘制
-:   ```Python
+## 绘制
+```Python
     # 导入第三方模块
     import matplotlib.pyplot as plt
 
@@ -254,13 +250,13 @@ pie 函数参数解读
     plt.savefig('饼图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jh2r431j20c00800t2.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jh2r431j20c00800t2.jpg)
 
 # matplotlib(箱线图)
-boxplot函数的参数解读
-:   ```Python
+## boxplot函数的参数解读
+```Python
     plt.boxplot(x, notch=None, sym=None, vert=None,
                 whis=None, positions=None, widths=None,
                 patch_artist=None, meanline=None, showmeans=None,
@@ -268,34 +264,33 @@ boxplot函数的参数解读
                 boxprops=None, labels=None, flierprops=None,
                 medianprops=None, meanprops=None,
                 capprops=None, whiskerprops=None)
-    ```
-    ---
+```
 
-    |参数|说明|
-    |:---|:---|
-    |x|指定要绘制箱线图的数据|
-    |notch|是否是凹口的形式展现箱线图，默认非凹口|
-    |sym|指定异常点的形状，默认为+号显示|
-    |vert|是否需要将箱线图垂直摆放，默认垂直摆放；
-    |whis|指定上下须与上下四分位的距离，默认为1.5倍的四分位差|
-    |positions|指定箱线图的位置，默认为[0,1,2…]|
-    |widths|指定箱线图的宽度，默认为0.5|
-    |patch_artist|是否填充箱体的颜色|
-    |meanline|是否用线的形式表示均值，默认用点来表示|
-    |showmeans|是否显示均值，默认不显示|
-    |showcaps|是否显示箱线图顶端和末端的两条线，默认显示|
-    |showbox|是否显示箱线图的箱体，默认显示|
-    |showfliers|是否显示异常值，默认显示|
-    |boxprops|设置箱体的属性，如边框色，填充色等|
-    |labels|为箱线图添加标签，类似于图例的作用|
-    |filerprops|设置异常值的属性，如异常点的形状、大小、填充色等|
-    |medianprops|设置中位数的属性，如线的类型、粗细等|
-    |meanprops|设置均值的属性，如点的大小、颜色等|
-    |capprops|设置箱线图顶端和末端线条的属性，如颜色、粗细等|
-    |whiskerprops|设置须的属性，如颜色、粗细、线的类型等|
+|参数|说明|
+|:---|:---|
+|x|指定要绘制箱线图的数据|
+|notch|是否是凹口的形式展现箱线图，默认非凹口|
+|sym|指定异常点的形状，默认为+号显示|
+|vert|是否需要将箱线图垂直摆放，默认垂直摆放；
+|whis|指定上下须与上下四分位的距离，默认为1.5倍的四分位差|
+|positions|指定箱线图的位置，默认为[0,1,2…]|
+|widths|指定箱线图的宽度，默认为0.5|
+|patch_artist|是否填充箱体的颜色|
+|meanline|是否用线的形式表示均值，默认用点来表示|
+|showmeans|是否显示均值，默认不显示|
+|showcaps|是否显示箱线图顶端和末端的两条线，默认显示|
+|showbox|是否显示箱线图的箱体，默认显示|
+|showfliers|是否显示异常值，默认显示|
+|boxprops|设置箱体的属性，如边框色，填充色等|
+|labels|为箱线图添加标签，类似于图例的作用|
+|filerprops|设置异常值的属性，如异常点的形状、大小、填充色等|
+|medianprops|设置中位数的属性，如线的类型、粗细等|
+|meanprops|设置均值的属性，如点的大小、颜色等|
+|capprops|设置箱线图顶端和末端线条的属性，如颜色、粗细等|
+|whiskerprops|设置须的属性，如颜色、粗细、线的类型等|
 
-绘制
-:   ```Python
+## 绘制
+```Python
     # 导入第三方模块
     import pandas as pd
     import matplotlib.pyplot as plt
@@ -329,13 +324,12 @@ boxplot函数的参数解读
     plt.tick_params(top='off', right='off')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0khch6l1j20c00800sl.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0khch6l1j20c00800sl.jpg)
 
-    ---
 
-    ```Python
+```Python
     # 按舱级排序，为了后面正常显示分组盒形图的顺序
     titanic.sort_values(by = 'Pclass', inplace=True)
 
@@ -357,40 +351,39 @@ boxplot函数的参数解读
 
     # 显示图形
     plt.show()
-    ```
-
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kkhvvshj20c0080747.jpg)
+```
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kkhvvshj20c0080747.jpg)
 
 # matplotlib(直方图)
-hist函数的参数解读
-:   ```Python
-    plt.hist(x, bins=10, range=None, normed=False,
-            weights=None, cumulative=False, bottom=None,
-            histtype='bar', align='mid', orientation='vertical',
-            rwidth=None, log=False, color=None,
-            label=None, stacked=False)
-     ```
-    |参数|说明|
-    |:---|:---|
-    |x|指定要绘制直方图的数据|
-    |bins|指定直方图条形的个数|
-    |range|指定直方图数据的上下界，默认包含绘图数据的最大值和最小值|
-    |normed|是否将直方图的频数转换成频率|
-    |weights|该参数可为每一个数据点设置权重|
-    |cumulative|是否需要计算累计频数或频率|
-    |bottom|可以为直方图的每个条形添加基准线，默认为0|
-    |histtype|指定直方图的类型，默认为bar，除此还有’barstacked’, ‘step’,  ‘stepfilled’|
-    |align|设置条形边界值的对其方式，默认为mid，除此还有’left’和’right’|
-    |orientation|设置直方图的摆放方向，默认为垂直方向|
-    |rwidth|设置直方图条形宽度的百分比|
-    |log|是否需要对绘图数据进行log变换|
-    |color|设置直方图的填充色|
-    |label|设置直方图的标签，可通过legend展示其图例|
-    |stacked|当有多个数据时，是否需要将直方图呈堆叠摆放，默认水平摆放|
+## hist函数的参数解读
+```Python
+plt.hist(x, bins=10, range=None, normed=False,
+        weights=None, cumulative=False, bottom=None,
+        histtype='bar', align='mid', orientation='vertical',
+        rwidth=None, log=False, color=None,
+        label=None, stacked=False)
+```
+
+|参数|说明|
+|:---|:---|
+|x|指定要绘制直方图的数据|
+|bins|指定直方图条形的个数|
+|range|指定直方图数据的上下界，默认包含绘图数据的最大值和最小值|
+|normed|是否将直方图的频数转换成频率|
+|weights|该参数可为每一个数据点设置权重|
+|cumulative|是否需要计算累计频数或频率|
+|bottom|可以为直方图的每个条形添加基准线，默认为0|
+|histtype|指定直方图的类型，默认为bar，除此还有’barstacked’, ‘step’,  ‘stepfilled’|
+|align|设置条形边界值的对其方式，默认为mid，除此还有’left’和’right’|
+|orientation|设置直方图的摆放方向，默认为垂直方向|
+|rwidth|设置直方图条形宽度的百分比|
+|log|是否需要对绘图数据进行log变换|
+|color|设置直方图的填充色|
+|label|设置直方图的标签，可通过legend展示其图例|
+|stacked|当有多个数据时，是否需要将直方图呈堆叠摆放，默认水平摆放|
 
 ## 一元直方图的绘制
-Code
-:   ```python
+```python
     # 导入第三方包
     import numpy as np
     import pandas as pd
@@ -423,14 +416,14 @@ Code
     plt.savefig('直方图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mm4l1gvj20c00803ye.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mm4l1gvj20c00803ye.jpg)
 
-累计频率直方图
-:   - 上图绘制的是年龄的频数直方图，从整体的分布来看，有点像正态分布，两边低中间高的倒钟形状。除此，我们还可以绘制累计频率直方图，并且设置5岁为组距，如下代码可以表示成：
+## 累计频率直方图
+- 上图绘制的是年龄的频数直方图，从整体的分布来看，有点像正态分布，两边低中间高的倒钟形状。除此，我们还可以绘制累计频率直方图，并且设置5岁为组距，如下代码可以表示成：
 
-    ```python
+```python
     # 绘图：乘客年龄的累计频率直方图
     plt.hist(titanic.Age, # 绘图数据
             bins = np.arange(titanic.Age.min(),titanic.Age.max(),5), # 指定直方图的组距
@@ -453,15 +446,14 @@ Code
     plt.savefig('乘客年龄的累计频率直方图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0knyeutbj20c0080mx8.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0knyeutbj20c0080mx8.jpg)
 
-## 正太分布图
-说明
-:   - 通过累计频率直方图就可以快速的发现什么年龄段的人数占了多少比重，例如35岁以下的乘客占了7成，这种图的解读有点像帕累托图。为了测试数据集是否近似服从正态分布，需要在直方图的基础上再绘制两条线，一条表示理论的正态分布曲线，另一条为核密度曲线，目的就是比较两条曲线的吻合度，越吻合就说明数据越近似于正态分布。接下来我们就在直方图的基础上再添加两条曲线：
+# 正太分布图
+- 通过累计频率直方图就可以快速的发现什么年龄段的人数占了多少比重，例如35岁以下的乘客占了7成，这种图的解读有点像帕累托图。为了测试数据集是否近似服从正态分布，需要在直方图的基础上再绘制两条线，一条表示理论的正态分布曲线，另一条为核密度曲线，目的就是比较两条曲线的吻合度，越吻合就说明数据越近似于正态分布。接下来我们就在直方图的基础上再添加两条曲线：
 
-    ```python
+```python
     # 正太分布图
     plt.hist(titanic.Age, # 绘图数据
             bins = np.arange(titanic.Age.min(),titanic.Age.max(),5), # 指定直方图的组距
@@ -494,15 +486,14 @@ Code
     plt.savefig('正太分布图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kp9cxanj20c0080jrt.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kp9cxanj20c0080jrt.jpg)
 
-## 二元直方图的绘制
-Code
-:   - 上面绘制的直方图都是基于所有乘客的年龄，如果想对比男女乘客的年龄直方图的话，我们可以通过两个hist将不同性别的直方图绘制到一张图内，具体代码如下：
+# 二元直方图的绘制
+- 上面绘制的直方图都是基于所有乘客的年龄，如果想对比男女乘客的年龄直方图的话，我们可以通过两个hist将不同性别的直方图绘制到一张图内，具体代码如下：
 
-    ```Python
+```Python
     # 提取不同性别的年龄数据
     age_female = titanic.Age[titanic.Sex == 'female']
     age_male = titanic.Age[titanic.Sex == 'male']
@@ -527,34 +518,33 @@ Code
     plt.savefig('二元直方图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0krsx0j5j20c0080t8q.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0krsx0j5j20c0080t8q.jpg)
 
 # matplotlib(折线图)
-plot函数的参数解读
-:   ```python
-    plt.hist(x,y,linestyle,
-            linewidth,color,marker,
-            markersize,markeredgecolor,
-            markerfactcolor,label,alpha)
-    ```
+## plot函数的参数解读
+```python
+plt.hist(x,y,linestyle,
+    linewidth,color,marker,
+    markersize,markeredgecolor,
+    markerfactcolor,label,alpha)
+```
 
-    |参数|说明|
-    |:---|:---|
-    |x|指定折线图的x轴数据|
-    |y|指定折线图的y轴数据|
-    |linestyle|指定折线的类型，可以是实线、虚线、点虚线、点点线等，默认文实线|
-    |linewidth|指定折线的宽度|
-    |marker|可以为折线图添加点，该参数是设置点的形状|
-    |markersize|设置点的大小|
-    |markeredgecolor|设置点的边框色|
-    |markerfactcolor|设置点的填充色|
-    |label|为折线图添加标签，类似于图例的作用|
+|参数|说明|
+|:---|:---|
+|x|指定折线图的x轴数据|
+|y|指定折线图的y轴数据|
+|linestyle|指定折线的类型，可以是实线、虚线、点虚线、点点线等，默认文实线|
+|linewidth|指定折线的宽度|
+|marker|可以为折线图添加点，该参数是设置点的形状|
+|markersize|设置点的大小|
+|markeredgecolor|设置点的边框色|
+|markerfactcolor|设置点的填充色|
+|label|为折线图添加标签，类似于图例的作用|
 
-## 一元折线图的绘制
-Code
-:   ```python
+# 一元折线图的绘制
+```python
     # 导入模块
     import pandas as pd
     import matplotlib.pyplot as plt
@@ -596,11 +586,11 @@ Code
 
     # 显示图形
     plt.show()
-    ```
-    - 由于x轴是日期型数据，当数据量一多的时候，就会导致刻度标签的重叠或拥挤，为了防止重叠的产生，我们需要让日期型的x轴刻度标签自动展现，从而避免重叠的现象
-### 图形优化
-Code
-    :   ```Python
+```
+- 由于x轴是日期型数据，当数据量一多的时候，就会导致刻度标签的重叠或拥挤，为了防止重叠的产生，我们需要让日期型的x轴刻度标签自动展现，从而避免重叠的现象
+
+## 图形优化
+```Python
     # 导入模块
     import matplotlib as mpl
 
@@ -641,12 +631,11 @@ Code
     fig.autofmt_xdate(rotation = 45)
 
     # 显示图形
-    plt.show()
-    ```
-## 多元折线图的绘制
-Code
-:   - 如果你需要在一张图形中画上两条折线图，也很简单，只需要在代码中写入两次plot函数即可，其他都不需要改动了。具体可以参考下面的代码逻辑：
-    ```python
+```
+
+# 多元折线图的绘制
+- 如果你需要在一张图形中画上两条折线图，也很简单，只需要在代码中写入两次plot函数即可，其他都不需要改动了。具体可以参考下面的代码逻辑：
+```python
     # 设置图框的大小
     fig = plt.figure(figsize=(10,6))
 
@@ -701,35 +690,34 @@ Code
     plt.legend()
     # 显示图形
     plt.show()
-    ```
+```
 # matplotlib(散点图)
-scatter函数的参数解读
-:   ```python
+## scatter函数的参数解读
+```python
     lt.scatter(x, y, s=20,
                 c=None, marker='o',
                 cmap=None, norm=None,
                 vmin=None, vmax=None,
                 alpha=None, linewidths=None,
                 edgecolors=None)
-     ```
+```
 
-     |参数|说明|
-     |:---|:---|
-     |x|指定散点图的x轴数据|
-     |y|指定散点图的y轴数据|
-     |s|指定散点图点的大小，默认为20，通过传入新的变量，实现气泡图的绘制|
-     |c|指定散点图点的颜色，默认为蓝色|
-     |marker|指定散点图点的形状，默认为圆形|
-     |cmap|指定色图，只有当c参数是一个浮点型的数组的时候才起作用|
-     |norm|设置数据亮度，标准化到0~1之间，使用该参数仍需要c为浮点型的数组|
-     |vmin、vmax|亮度设置，与norm类似，如果使用了norm则该参数无效|
-     |alpha|设置散点的透明度|
-     |linewidths|设置散点边界线的宽度|
-     |edgecolors|设置散点边界线的颜色|
+|参数|说明|
+|:---|:---|
+|x|指定散点图的x轴数据|
+|y|指定散点图的y轴数据|
+|s|指定散点图点的大小，默认为20，通过传入新的变量，实现气泡图的绘制|
+|c|指定散点图点的颜色，默认为蓝色|
+|marker|指定散点图点的形状，默认为圆形|
+|cmap|指定色图，只有当c参数是一个浮点型的数组的时候才起作用|
+|norm|设置数据亮度，标准化到0~1之间，使用该参数仍需要c为浮点型的数组|
+|vmin、vmax|亮度设置，与norm类似，如果使用了norm则该参数无效|
+|alpha|设置散点的透明度|
+|linewidths|设置散点边界线的宽度|
+|edgecolors|设置散点边界线的颜色|
 
-## 一般散点图的绘制
-Code
-:   ```python
+# 一般散点图的绘制
+```python
     # 导入模块
     import pandas as pd
     import matplotlib.pyplot as plt
@@ -764,13 +752,12 @@ Code
     plt.savefig('一般散点图.png')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mqe23jgj20c0080q2w.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mqe23jgj20c0080q2w.jpg)
 
-## 分组散点图的绘制
-Code
-:   ```Python
+# 分组散点图的绘制
+```Python
     # 读取数据
     iris = pd.read_csv('iris.csv')
 
@@ -802,12 +789,11 @@ Code
     plt.savefig('分组散点图.png')
     # 显示图形
     plt.show()
-    ```
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mt6kcxgj20c0080q35.jpg)
+```
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mt6kcxgj20c0080q35.jpg)
 
 # 气泡图的绘制
-Code
-:   ```python
+ ```python
     # 导入第三方包
     import numpy as np
 
@@ -842,13 +828,12 @@ Code
     plt.tick_params(top = 'off', right = 'off')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mvachvuj20c0080dg0.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mvachvuj20c0080dg0.jpg)
 
 # 散点图+线性回归线
-Code
-:   ```Python
+```Python
     # 导入第三方模块
     from sklearn.linear_model import LinearRegression
 
@@ -882,10 +867,9 @@ Code
     plt.legend(loc = 'upper left')
     # 显示图形
     plt.show()
-    ```
+```
 # matplotlib(雷达图)
-Code
-:   ```Python
+```Python
     # 导入第三方模块
     import numpy as np
     import matplotlib.pyplot as plt
@@ -927,13 +911,12 @@ Code
     ax.grid(True)
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m6gdokgj20c0080aai.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m6gdokgj20c0080aai.jpg)
 
-## 多条线的雷达图
-Code
-:   ```python
+# 多条线的雷达图
+```python
     # 导入第三方模块
     import numpy as np
     import matplotlib.pyplot as plt
@@ -982,13 +965,12 @@ Code
     plt.legend(loc = 'best')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m7o9accj20c0080mxt.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m7o9accj20c0080mxt.jpg)
 
-## pygal模块则提供了更加简单的雷达图函数
-Code
-:   ```python
+# pygal模块则提供了更加简单的雷达图函数
+```python
     # 导入第三方模块
     import pygal
 
@@ -1005,29 +987,28 @@ Code
 
     # 保存图像
     radar_chart.render_to_file('radar_chart.svg')
-    ```
+```
 # matplotlib(面积图)
-stackplot函数语法及参数含义
-:   ```python
-    stackplot(x,*args,**kargs)
-    ```
-    |参数|说明|
-    |:---|:---|
-    |x|指定面积图的x轴数据|
-    |*args|为可变参数，可以接受任意多的y轴数据，即各个拆分的数据对象|
-    |**kargs|为关键字参数，可以通过传递其他参数来修饰面积图，如标签、颜色|
+## stackplot函数语法及参数含义
+```python
+stackplot(x,*args,**kargs)
+```
+|参数|说明|
+|:---|:---|
+|x|指定面积图的x轴数据|
+|*args|为可变参数，可以接受任意多的y轴数据，即各个拆分的数据对象|
+|**kargs|为关键字参数，可以通过传递其他参数来修饰面积图，如标签、颜色|
 
-    ---
+---
 
-    - 可用的关键字参数：
+- 可用的关键字参数：
 
-    |参数|说明|
-    |:---|:---|
-    |labels|以列表的形式传递每一块面积图包含的标签，通过图例展现|
-    |colors|设置不同的颜色填充面积图|
+|参数|说明|
+|:---|:---|
+|labels|以列表的形式传递每一块面积图包含的标签，通过图例展现|
+|colors|设置不同的颜色填充面积图|
 
-Code
-:    ```python
+```python
     # ========== Python3 + Jupyter ========== #
     # 导入第三方模块
     import pandas as pd
@@ -1073,9 +1054,9 @@ Code
     plt.legend(loc = 'best')  
     # 显示图形
     plt.show()
-    ```
-    - 这就是绘制分组的折线图思想，虽然折线图能够反映各个渠道的运输量随月份的波动趋势，但无法观察到1月份到8月份的各自总量。接下来我们看看面积图的展现。
-    ```python
+```
+- 这就是绘制分组的折线图思想，虽然折线图能够反映各个渠道的运输量随月份的波动趋势，但无法观察到1月份到8月份的各自总量。接下来我们看看面积图的展现。
+```python
     x = N
     # 将铁路运输、公路运输和水路运输各月的值提取出来，存储到y1~y3
     # 千万千万记得，提取出数据框的一列时，需要将序列的数据类型进行强制转换，否则会报错
@@ -1107,33 +1088,33 @@ Code
     plt.legend(loc = 'upper left')
     # 显示图形
     plt.show()
-    ```
+```
+
 # matplotlib(树地图)
-squarify.plot函数
-:   ```python
-    squarify.plot(sizes,
-                norm_x=100,
-                norm_y=100,
-                color=None,
-                label=None,
-                value=None,
-                alpha,
-                **kwargs)
-    ```
+## squarify.plot函数
+```python
+squarify.plot(sizes,
+        norm_x=100,
+        norm_y=100,
+        color=None,
+        label=None,
+        value=None,
+        alpha,
+        **kwargs)
+```
 
-    |参数|说明|
-    |:---|:---|
-    |sizes|指定离散变量各水平对应的数值，即反映树地图子块的面积大小|
-    |norm_x|默认将x轴的范围限定在0-100之内|
-    |norm_y|默认将y轴的范围限定在0-100之内|
-    |color|自定义设置树地图子块的填充色|
-    |label|为每个子块指定标签|
-    |value|为每个子块添加数值大小的标签|
-    |alpha|设置填充色的透明度|
-    |**kwargs|关键字参数，与条形图的关键字参数类似，如设置边框色、边框粗细等|
+|参数|说明|
+|:---|:---|
+|sizes|指定离散变量各水平对应的数值，即反映树地图子块的面积大小|
+|norm_x|默认将x轴的范围限定在0-100之内|
+|norm_y|默认将y轴的范围限定在0-100之内|
+|color|自定义设置树地图子块的填充色|
+|label|为每个子块指定标签|
+|value|为每个子块添加数值大小的标签|
+|alpha|设置填充色的透明度|
+|**kwargs|关键字参数，与条形图的关键字参数类似，如设置边框色、边框粗细等|
 
-Code
-:   ```python
+```python
     # 导入第三方包
     import matplotlib.pyplot as plt
     import squarify
@@ -1170,14 +1151,12 @@ Code
     plt.tick_params(top = 'off', right = 'off')
     # 显示图形
     plt.show()
-    ```
+```
 
-    ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0miksd7jj20c0080jro.jpg)
+![](https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0miksd7jj20c0080jro.jpg)
 
 # 数据文件
-
-链接
-:   [链接提取码: u6rg](https://pan.baidu.com/s/1hMRJAz0OvsAtYhsbjY4njw)
+[链接提取码: u6rg](https://pan.baidu.com/s/1hMRJAz0OvsAtYhsbjY4njw)
 
 ---
 

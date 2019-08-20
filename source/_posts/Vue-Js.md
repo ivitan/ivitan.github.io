@@ -10,26 +10,26 @@ categories:
 - notes
 author:
 name: Vitan
+toc: true
 enable_unread_badge: true
-icon:
-- /images/Vue.png
+thumbnail: /images/Vue.png
 ---
+Vue 安装与新建项目
+<!--more-->
 ## Vue 安装
-command
-:	```sh
-	# 安裝 Vue CLI 到全局
-	npm i vue-cli -g
+```sh
+# 安裝 Vue CLI 到全局
+npm i vue-cli -g
 
-	# 创建一个基于 webpack 模板的新项目
-	vue init webpack <Project>
+# 创建一个基于 webpack 模板的新项目
+vue init webpack <Project>
 
-	# 进入项目,安装依赖
-	npm install
+# 进入项目,安装依赖
+npm install
 
-	# 运行
-	npm run dev
-	```
-	
+# 运行
+npm run dev
+```
+---
 ## 参考
-文档
-:	- [Vue.js](https://cn.vuejs.org/)`
+- [Vue.js](https://cn.vuejs.org/)`

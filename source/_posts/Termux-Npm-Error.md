@@ -7,23 +7,22 @@ tags:
 - Android
 toc: true
 categories: notes
-icon:
- - /images/Bash.png
+thumbnail: /images/Bash.png
 ---
 解决 Termux出现npm err! cannot read property 'length' of undefined 问题
+<!--more-->
 # 方法
 步骤
-: - 复制以下内容
-  ```js
+- 复制以下内容
+```js
 (require('os').cpus() || { length: 1 }).length
-  ```
-  - 编辑
-  ```bash
-  vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
-  ```
-  - 修改如下保存即可
-  ![修改.jpg](https://s1.ax1x.com/2018/03/11/9WmxIA.jpg)
+```
+- 编辑
+```bash
+vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
+```
+- 修改如下保存即可
+![修改.jpg](https://s1.ax1x.com/2018/03/11/9WmxIA.jpg)
 
 # 已知问题
-Npm
-: - Npm 无法升级。
+- Npm 无法升级。

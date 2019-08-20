@@ -9,11 +9,12 @@ categories:
   - notes
 author:
   name: Qu Tang
+toc: true
 enable_unread_badge: true
-icon:
-  - /images/Typography.png
+thumbnail: /images/Typography.png
 ---
-
+Hexo Cutie 主题 Markdown 语法
+<!--more-->
 # 安装
 
 文章使用 `hexo-renderer-markdown-it`作为渲染器,因此需要安装此渲染器以达到效果。

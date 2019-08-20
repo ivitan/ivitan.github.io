@@ -5,9 +5,10 @@ tags:
 - Java
 toc: true
 categories: notes
-icon:
- - /images/Java.png
+thumbnail: /images/Java.png
 ---
+Java 变量类型
+<!--more-->
 # Java变量类型
 
 在Java语言中，所有的变量在使用前必须声明。声明变量的基本格式如下：
