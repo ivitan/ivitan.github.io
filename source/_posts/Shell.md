@@ -17,63 +17,68 @@ Shell 总结
 <!--more-->
 # 变量替换和测试
 ## 变量替换
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720191523.png)
 
 ## 变量测试
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720191707.png)
 
 # 字符串处理
-## 长度
-计算字符串长度
-- 方法一
+## 计算字符串长度
+方法一
 ```bash
 ${#string}
 ```
-- 方法二
+
+方法二
 ```bash
 expr length "$string"
 ```
   - string 有空格，则必须加双引号
 
 ## 子串
-- 获取子串在字符串中的索引位置
+获取子串在字符串中的索引位置
+
 ```bash
 expr index $string $substring
 ```
-- 抽取子串
+
+抽取子串
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720192503.png)
 
 ## 总结
-- 计算字符串长度
+计算字符串长度
 ```bash
-  var1="This is a app"
-  len=${#$var1}
-  len=`expr length "$var1"`
+var1="This is a app"
+len=${#$var1}
+len=`expr length "$var1"`
 ```
 
-- 子串索引
+子串索引
 ```bash
-  var1="quicstart is a app"
-  ind=`expr index "$var1" start`
+var1="quicstart is a app"
+ind=`expr index "$var1" start`
 ```
 
-- 子串长度
+子串长度
 ```bash
 var1="quicstart is a app"
 ind=`expr match "$$var1" app`
 ```
 
-- 抽取字符串中的子串
+抽取字符串中的子串
 ```bash
-  var1="quicstart is a app"
-  substr1=${var1:10}
-  substr2=${var1:10:6}
-  substr1=${var1:-5}
-  substr1=${var1:-10:4}
+var1="quicstart is a app"
+substr1=${var1:10}
+substr2=${var1:10:6}
+substr1=${var1:-5}
+substr1=${var1:-10:4}
 ```
-- expr 索引1开始,${string:position}从0开始
+  - expr 索引1开始,${string:position}从0开始
 
-脚本
+实例
 ```bash
   #! /bin/bash
   string="Bigdata process framework is Hadoop,Hadoop is an open source project"
@@ -133,15 +138,17 @@ ind=`expr match "$$var1" app`
 ```
 
 # 命令替换
-- 语法格式
+语法格式
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720194539.png)
 
 ## 例题
-- 获取系统所有用户并输出
+获取系统所有用户并输出
 ```bash
 cat /etc/passwd | cut -d “:” -^C #分割的第一个
 cat /etc/passwd | cut -d “:” -f 1 #分段
 ```
+
 ```bash
 #! /bin/bash
 # 判断进程是否存在，否则启动
@@ -151,8 +158,9 @@ if [ $nginx_process_num -eq 0 ];then
     systemctl start nginx
 fi
 ```
+
 ## 总结
-= ``和$()
+`\`\`` 和 `$()`
 1. ``和$()是等价的，但初学推荐$()
 2. $(())用于进行整数运算，包括加减乘除
 3. $(((100 + 30) / 12))
@@ -162,6 +170,7 @@ fi
 两者关系:两者等价，都是用来定义变量类型
 
 ## declare参数表
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720195605.png)
 
 ```bash
@@ -199,8 +208,9 @@ b #显示变量内容
 echo ${cd[@]} #显示整个数组变量内容
 a b c
 ```
-- `declare -x` 声明为环境变量，可在脚本中直接使用
-- 取消声明的变量
+  - `declare -x` 声明为环境变量，可在脚本中直接使用
+
+## 取消声明的变量
 ```bash
 declare +r
 declare +i
@@ -209,10 +219,10 @@ declare +X
 ```
 
 # 数学运算
-- 语法格式
-(https://raw.githubusercontent.com/ivitan/Picture/master/20190720200443.png)
+语法格式
+![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720200443.png)
 
-- expr操作符对照表
+expr操作符对照表
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720200649.png)
 
 ## 例子
@@ -231,8 +241,7 @@ echo “scale=3;23+33” | bc
 ## 函数定义和使用
 Linux Shell中的函数和大多数编程语言中的函数一样，将相似的任务或代码封装到函数中，供其他地方调用
 
-- 语法
-- 一
+语法一
 ```bash
   name()
   {
@@ -242,7 +251,8 @@ Linux Shell中的函数和大多数编程语言中的函数一样，将相似的
     commandn
   }
 ```
-- 二
+
+语法二
 ```bash
   function name
   {
@@ -280,7 +290,8 @@ Linux Shell中的函数和大多数编程语言中的函数一样，将相似的
   fi
   done
 ```
-- 判断进程
+
+判断进程
 ```bash
 netstat -tnlp | grep :80
 curl localhost/index.html
@@ -323,7 +334,7 @@ curl localhost/index.html
 1. 经常使用的重复代码封装成函数文件
 2. 一般不直接执行，而是由其他脚本调用
 
-- 实例
+实例
 ```bash 库文件
   function add
   {
@@ -377,7 +388,7 @@ find [路径][选项][操作]
 
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190720205155.png)
 
-- 实例
+## 实例
 1. 查找 /etc 目录下 conf 结尾的文件
 ```bash
 fing /etc -name '.conf'
@@ -396,65 +407,65 @@ find . -group yarm
 ```
 ---
 
-- 选项
-  1. -type
-    - f 文件 find . -type f
-    - d 目录 dind . -type d
-    - c 字符设备文件 dind . -type c
-    - b 块设备文件 dind . -type b
-    - l 链接文件 dind . -type l
-    - p 管道文件 dind . -type p
+## 选项
+1. -type
+  - f 文件 find . -type f
+  - d 目录 dind . -type d
+  - c 字符设备文件 dind . -type c
+  - b 块设备文件 dind . -type b
+  - l 链接文件 dind . -type l
+  - p 管道文件 dind . -type p
 
-  2. -size
-    - -n 大小小于n的文件
-    - +n 大小大于n的文件
-    - n 大小等于n的文件
+2. -size
+  - -n 大小小于n的文件
+  - +n 大小大于n的文件
+  - n 大小等于n的文件
     
-```bash
-# 小于10000字节的文件
-find /etc -size -10000c
-# 大于1M的文件
-find /etc -size +1M
-```
+  ```bash
+  # 小于10000字节的文件
+  find /etc -size -10000c
+  # 大于1M的文件
+  find /etc -size +1M
+  ```
 
 3. -mtime
    - -n n天以内修改的文件
    - +n n天以外修改的文件
    - n 正好n天修改的文件
 
-```bash
-#查找/etc下5天内修改的conf结尾的文件
-find /etc -mtime -5 -name '*.conf'       
-# 查找10天之前修改且属主为root的文件
-find /etc -mtime +10 -user root
-```
+  ```bash
+  #查找/etc下5天内修改的conf结尾的文件
+  find /etc -mtime -5 -name '*.conf'       
+  # 查找10天之前修改且属主为root的文件
+  find /etc -mtime +10 -user root
+  ```
 
 4. -mmin
    - -n n分种内修改的文件
    - +n n分钟外修改的文件
 
-```bash
-# 30分钟前修改的文件
-find /etc -mmin +30
-# 30分钟内修改的目录
-find /etc -mmin -3o -type d
-```
+  ```bash
+  # 30分钟前修改的文件
+  find /etc -mmin +30
+  # 30分钟内修改的目录
+  find /etc -mmin -3o -type d
+  ```
 
 5. -mindepth n
    - 表示从n级子目录开始搜索
 
-```bash
-find /etc -mindepth 3
-```
+  ```bash
+  find /etc -mindepth 3
+  ```
 
 6. -maxdepth n
    - 表示最多搜索n-1级子目录
 
-```bash
-find /etc -maxdepth 3 -name '*.conf'
-find ./etc -type f -name '.*conf' -size +10k -maxdepth 2
-find . -type f -nogroup
-```
+  ```bash
+  find /etc -maxdepth 3 -name '*.conf'
+  find ./etc -type f -name '.*conf' -size +10k -maxdepth 2
+  find . -type f -nogroup
+  ```
 
 7. -perm
    - find .perm 644
@@ -462,24 +473,22 @@ find . -type f -nogroup
 8. -prune 
     - 通常和-path一起用，用于将特定目录排除在搜索条件之外
 
-```bash
-    # 查找当前目录下所有普通文件，排除test目录
-    find . -path ./etc -prune -o -type f
-    # 查找当前目录下所有普通文件，但排除etc和opt目录
-    find . -path ./etc -prune -o -path ./opt -prune -o -type f
-    # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs
-    find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs
-    # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于
-    find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs -a -size +2M
-```
+  ```bash
+  # 查找当前目录下所有普通文件，排除test目录
+  find . -path ./etc -prune -o -type f
+  # 查找当前目录下所有普通文件，但排除etc和opt目录
+  find . -path ./etc -prune -o -path ./opt -prune -o -type f
+  # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs
+  find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs
+  # 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于
+  find . -path ./etc -prune -o -path ./opt -prune -o -type -f -a -user hdfs -a -size +2M
+  ```
 
 9. -newer file1
 ```bash
 find /etc -newer a
 ```
 + 操作
-  - -print 打印输出
-  - -exec 对搜索的文件执行特定的操作
   ```bash
   # 搜索/etc下的文件非目录，以conf结尾，大于19k，然后删除
   find ./etc -type -f -name '*.conf' -size +10k -exec rm -rf {} \;
@@ -487,6 +496,8 @@ find /etc -newer a
   find /var/log/ -name '*.log' -mtime +7 -exec rm -rf {} \;
   find /etc -size +10k -type -f -name '*.conf' -exec cp {} /root/conf/ \;
   ```
+  - -print 打印输出
+  - -exec 对搜索的文件执行特定的操作
   - -ok 和exec功能一样，但每次操作都会给用户提示
   
 + 逻辑运算符
@@ -521,27 +532,30 @@ find /etc -newer a
 
 # grep和egrep
 ## grep
-- grep语法
- 1. grep [option] [pattern] [file1,file2...]
- 2. command | grep [option] [pattern]
+语法
+1. grep [option] [pattern] [file1,file2...]
+2. command | grep [option] [pattern]
 
-- grep参数
+grep参数
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721094721.png)
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721094812.png)
   - grep -E “python | PYTHON” file
 
 ## egrep
-### egrep语法
-- egrep(选项)(查找模式)(文件名1，文件名2，……)
-
+egrep语法
+```bash
+egrep(选项)(查找模式)(文件名1，文件名2，……)
+```
 # sed
 sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 
-- 语法
+## 语法
 1. stdot | sed [option] "pattern command"
 2. sed [option] "pattern command" file
 
-- 选项
+## 选项
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721095810.png)
 
 ```bash
@@ -564,6 +578,7 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 
 ## sed 的pattern详解
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100028.png)
+
 ```bash
   # 打印file的17行
   sed -n "17p" file
@@ -584,6 +599,7 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 ## sed 中的编辑命令
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100852.png)
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721100931.png)
+
 ```bash
   sed -i‘1d/ sed.txt # 删除第一行
   sed -i ‘1,3d’sed.txt # 删除1-3行
@@ -607,9 +623,10 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
   sed -i ‘s/\(had\)...../\1doop/g’sed.txt # had后面替换
 ```
 
-### 反向引用
+## 反向引用
 - 是什么
 1. &和\1 引用模式匹配到的整个串
+
 ```bash
 # file中寻找1开头的后跟两任意字符以e结尾的字符
 sed "s/1..e/&r/g" file
@@ -620,15 +637,16 @@ sed "s/\(1...e\)/\1r/g" file # 使用\1代表搜寻到的字符串
 - 要替换匹配的字符串的一部分，name必须使用\1，不能使用&
 
 ## sed 引用变量
-= 注意
+- 注意
 1. 匹配模式中存在变量，则建议使用双引号
 2. sed中需要引入自定义变量时，如外面使用单引号，则自定义变量必须使用单引号
 
 ## 用 sed 查询特定内容
-### 查询命令
+查询命令
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721102519.png)
 
-- 实例
+实例
 ```bash
 # 打印/etc/passwd中的第20行内容
 sed -n "20p" /etc/passwd
@@ -642,6 +660,7 @@ sed -n '\bin\/bash/,5p' /etc/passwd
 ```
 
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721103230.png)
+
 ```bash
   #!/bin/bash
   FILE_NAME=/root/my.cnf
@@ -684,8 +703,10 @@ sed -i '5,/^ftp/d' passwd
 # yarn开头到最后
 sed -i '/^yarn/,$' /etc/passwd
 ```
+
 - 1. 删除配置文件中所有的注释行和空行
- - 2. 在配置文件中所有不以#开头的行前面加×符合，主要以#开头的行不添加
+- 2. 在配置文件中所有不以#开头的行前面加×符合，主要以#开头的行不添加
+
 ```bash
 sed -i ‘/^#/d;/^$/d’ nginx.conf #删除注释
 sed -i ‘/[:blank:]*#/d’ nginx.conf #删除空行
@@ -695,7 +716,7 @@ sed -i ‘/^[^#]/\*&/g’nginx.conf  #非井号开头
 ## sed 修改文件内容
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721104309.png)
 
-- 实例
+实例
 ```bash
   #修改第一行的root为ROOT
   sed -i '1s/root/ROOT/' passwd
@@ -754,11 +775,14 @@ sed -i '10,/^hsfs/w /tmp/sed-1.txt' passwd
 ## 语法
 1. awk 'BEGIN{}pattern{commands}END{}' file_name
 2. standard outpu | awk 'BEGIN{}pattern{commands}END{}' file_name
+
 - 语法格式说明
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721124926.png)
   
 ## awk 内置变量
-### 内置变量对照表
+内置变量对照表
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721125045.png)
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721130039.png)
 
@@ -797,14 +821,15 @@ awk 'BEGIN{FS=":"}{print $NF}' /etc/passwd # 输出行最大自的断
 ```
 
 ## awk 格式化输出
-### printf(默认不带分隔符)
-= 语法
+printf(默认不带分隔符) 语法
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721134349.png)
 
-= 修饰符
-[](https://raw.githubusercontent.com/ivitan/Picture/master/20190721134554.png)
+修饰符
 
-= 实例
+![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721134554.png)
+
+实例
 ```bash
 # 不加任何修饰输出 
 awk 'BEGIN{FS=":"}{printf $1}' /etc/passwd
@@ -844,8 +869,10 @@ awk 'BEGIN{FS=":"} {printf "%e\n",$3}' /etc/passwd
 1. RegExp 含义：按正则表达式匹配
 2. 关系运算 含义：按关系运算匹配
 
-### 实例
+实例
+
 - RegExp
+
 ```bash
 # 匹配/etc/passwd文件中含有root字符串的所有行
 awk 'BEGIN{FS=":"}/root/{print $0}' /etc/passwd
@@ -853,8 +880,10 @@ awk 'BEGIN{FS=":"}/root/{print $0}' /etc/passwd
 #匹配/etc/passwd中yarn开头的所有行
 awk 'BEGIN{FS=":"}/^yarn/{print $0}' /etc/passwd
 ```
+
 - (运算符)关系运算
-  - 关系运算符：<,><=,>=,==,!=,~(匹配正则表达式),!~
+  - 关系运算符：<,><=,>=,==,!=,\~(匹配正则表达式),!\~
+
   ```bash
   # 以：为分隔符，匹配第3个字段小于50的所有行信息
   awk 'BEGIN{FS=":"}$3<50{print $0}' /etc/pssswd
@@ -868,7 +897,9 @@ awk 'BEGIN{FS=":"}/^yarn/{print $0}' /etc/passwd
 
   awk 'BEGIN{FS=":"}$0~/\sbin\/nologin/{print $0}' /etc/passwd 
   ```
+
   - 布尔运算:||(或),&&(与),!(非)
+
   ```bash
   # 以：为分隔符，匹配文件中包含hdfs或者yarn的所有行信息
   awk 'BEGIN{FS=":"}$1=="hdfs" || $1=="yarn" {print $0}' /etc/passwd
@@ -879,7 +910,8 @@ awk 'BEGIN{FS=":"}/^yarn/{print $0}' /etc/passwd
   awk 'BEGIN{FS=":"}$3<50 && $7~/\bin\/bash/ {print $0}' /etc/passwd
   ```
 ## awk 动作中的表达式用法
-### 算术运算符
+算术运算符
+
 |运算符|含义|
 |:---|:---|
 |+|加|
@@ -892,7 +924,8 @@ awk 'BEGIN{FS=":"}/^yarn/{print $0}' /etc/passwd
 |X++|再返回X变量之后，X变量加1|
 
 
-= 实例
+- 实例
+
 ```bash
 awk 'BEGIN{var=20;var1="hello";print var,var1}'
   
@@ -917,7 +950,8 @@ awk 'BEGIN{printf "%-8s%-8s%-8s%-8s%-8s%s\n","姓名","语文","数学","英语"
 ```
 
 ## awk 动作中的条件及循环语句
-= 条件语句
+- 条件语句
+
 ```bash
 if(条件表达式)
   动作1
@@ -926,7 +960,9 @@ else if(条件表达式)
 else
   动作3
 ```
-= 实例
+
+- 实例
+
 ```bash
 # 以：为分隔符只打印第3个字段的数值在50-100范围内的行信息
 awk 'BEFIN{FS=":"}{if($3>50 && $3<100>) print $0}' /etc/passwd
@@ -959,26 +995,31 @@ BEGIN{
   }
 }
 ```
+
 - 使用
+
 ```bash
 awk -f scripts.awk /etc/passed
 ```
 
 - 循环语句
+
 1. do while 循环
 ```bash
-  do while
-    do 
-        动作
-    while(条件表达式)
-```
-  - for 循环
-```bash
-  for (初始化计数器;测试计数器;计数器变更)
-    动作
+do while
+  do 
+      动作
+  while(条件表达式)
 ```
 
-### 实例
+2. for 循环
+
+```bash
+for (初始化计数器;测试计数器;计数器变更)
+  动作
+```
+
+实例
 - 1+2+...100的和
 1. while
 ```bash
@@ -1018,7 +1059,9 @@ awk -f scripts.awk /etc/passed
   - awk -f do_while.awk
   
 - 计算每个同学平均分，仅显示大于90
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721185930.png)
+
 ```bash student.awk
   BEGIN{
     printf "%-10s%-10s%-10s%-10s%-10s%-10s\n","Name","Chinese","English","Math","Physical","Average"
@@ -1034,6 +1077,7 @@ awk -f scripts.awk /etc/passed
 ```
 
 - 计算平均分大于90的各科总分
+
 ```bash student.awk
   BEGIN{
       printf "%-10s%-10s%-10s%-10s%-10s%-10s\n","Name","Chinese","English","Math","Physical","Average"
@@ -1055,12 +1099,14 @@ awk -f scripts.awk /etc/passed
   }
 ```
 ## awk 中的字符串函数
-### 字符串函数对照表
-![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191406.png)
-  ![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191743.png)
+字符串函数对照表
 
-- 例子
+![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191406.png)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/20190721191743.png)
+
+例子
 1. 以:为分隔符，返回文件中每行中的字段长度
+
 ```bash 1.awk
   # NF 字段个数
   BEGIN{
@@ -1079,7 +1125,9 @@ awk -f scripts.awk /etc/passed
     print ""
   } 
 ```
+
 2. 搜索字符串"I have a dream"中出现"ea"子串的位置
+
 ```bash 
 # 方法1
 awk 'BEGIN{str="I have a dream";location=index(str,"ea");print location}'
@@ -1087,31 +1135,43 @@ awk 'BEGIN{str="I have a dream";location=index(str,"ea");print location}'
 #方法2
 awk 'BEGIN{str="I have a dream";location=match(str,"ea");print location}'
 ```
+
 3. 将字符串"Hadoop is a bigdata Framework"全部转为小写
+
 ```bash
 awk 'BEGIN{str="Hadoop is a bigdata Framework";print tolower(str)}'
 ```
+
 4. 上一题转为大写
+
 ```bash
 awk 'BEGIN{str="Hadoop is a bigdata Framework";print toupper(str)}'
 ```
+
 5. 将字符串"Hadoop Kafka Spark Storm”按空格为分隔符，分割每一部分保存到数组arr中
+
 ```bash
 awk 'BEGIN{str="Hadoop Kafka Spark Storm";split(str,arr," ");print arr[0]}'
 
 # 遍历(awk 下标从1开始)
 awk 'BEGIN{str="Hadoop Kafka Spark Storm";split(str,arr," ");for(a in arr) print arr[a]}'
 ```
+
 6. 搜索字符串"Tranction 2345 start:select * from master"第一个数字出现的位置
+
 ```bash
 awk 'BEGIN{str="Tranction 2345 start:select * from master";location=match(str,/[0-9]/);print location}'
 ```
   - 正则表达式要用 `//` 引起来
+
 7. 截图字符串”transaction start”的子串，条件从第4个字符开始，截取5为
+
 ```bash
 awk 'BEGIN{str="transaction start";print substr(str,4,5)}'
 ```
+
 8. 替换"Tranction 243 start，Event ID：9002"中第一个匹配到的数字为$符号
+
 ```bash
 awk 'BEGIN{str="Tranction 243 start，Event ID：9002";count=sub(/[0-9]+/,"$",str);print count,str}'
   
@@ -1127,27 +1187,31 @@ awk 'BEGIN{str="Tranction 243 start，Event ID：9002";count=gsub(/[0-9]+/,"$",s
 |-F|指定分隔符|
 |-V|查看awk的版本号|
 
-### 实例
+实例
 - -v 把外部变量引入
+
 ```bash 终端中
 num1=20
 var="Hello World"
 awk -v num2="$num1" -v var1="$var" 'BEGIN{print num2,var1}'
 ```
+
 - -f 引入文件
+
 ```bash
 awk -f student.awk /etc/passws
 ```
 - -F
- ```bash
+
+```bash
 awk -F ":" '{print $7}' /etc/passwd
 awk -F : '{print $7}' /etc/passwd
 # 等价于
 awk 'BEGIN{FS=":"}{print $7}' /etc/passwd
 ```
 
-## awk 数组的用法
-### Shell 数组的用法
+## Shell 数组的用法
+
 - array=("Mike","Bell","Hellen")
   - 下面的 `井` 为 `#`
 
@@ -1162,6 +1226,7 @@ awk 'BEGIN{FS=":"}{print $7}' /etc/passwd
 |元素内容替换 | \${array[@]/e/E} #只替换第一个e;${array[@]//e/E}替换全部e|
 
 - 数组遍历 
+
 ```bash
 for a in array
 do 
@@ -1169,13 +1234,17 @@ do
 done
 ```
 
-### awk 数组用法
+## awk 数组用法
 - awk中使用数组时，不仅可以使用数字作为数组下标，也可以使用字符串作为数组下标
+
 1. 统计主机上所有TCP连接状态，按照每个TCP状态分类
+
 ```bash
 netstat -an | grep tcp | awk '{arrary[$6]++}END{for(a in arrary) print a,arrary[a]}'
 ```
+
 2. 计算横向数总和，计算纵向数据总和
+
 ```bash 数据
 Allen 80 90 96 98
 Mike  93 98 92 91
@@ -1202,7 +1271,7 @@ Li    78 88 98 100
 ```
 
 ## awk 处理数据例子
-### 生成随机数据
+生成随机数据
 ```bash
   #!/bin/bash
   function create_random()
@@ -1227,7 +1296,9 @@ Li    78 88 98 100
     done
   done
 ```
-1. 统计每个用户分别插入多少record  
+
+1. 统计每个用户分别插入多少record 
+
 ```bash tesst.awk
   BEGIN{
     printf "%-10s%-10s\n","User","Total Records"
@@ -1240,7 +1311,9 @@ Li    78 88 98 100
       printf "%-20s%-20d\n",u,USER[u]
   }
 ```
+
 2. 统计每个用户分别插入成功和失败各多少record
+
 ```bash 2.awk
   BEGIN{
     printf "%-10s%-20s%-20s\n","User,"Success_Records","Filed_records"
@@ -1254,7 +1327,9 @@ Li    78 88 98 100
       printf "%-10s%-20d%-20d\n",u,SUCCESS[u],FAILED[u]
   }
 ```
+
 3. 将例子1,2结合，一起输出每个用户分别插入多少条数据，成功失败各多少条
+
 ```bash 3.awk
     BEGIN{
       printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
@@ -1269,8 +1344,11 @@ Li    78 88 98 100
           printf "%-30s%-30d%-30d%-30d\n",u,TOTAL_RECORDS[u],SUCCESS[u],FAILED[u]
   }
 ```
+
 4. 在例子3的基础上，加上结尾，统计全部插入记录数，成功记录数，失败记录数
+
 - 方法一
+
 ```bash 3.awk
 BEGIN{
     printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
@@ -1293,7 +1371,9 @@ END{
     printf "%-30s%-30d%-30d%-30d\n","",records_sum,success_sum,failed_sum
 }
 ```
+
 - 方法二
+
 ```bash
   BEGIN{
       printf "%-30s%-30s%-30s%-30s\n","Name","total records","success records","failed records"
@@ -1317,7 +1397,9 @@ END{
       printf "%-30s%-30d%-30d%-30d\n","total",records_sum,success_sum,failed_sum
   }
 ```
+
 5. 查找丢失数据的现象，也就是成功+失败的记录数不等于一共插入的记录数，找出这些数据并显示行号和对应行的日志信息
+
 ```bash
-  awk '{if($8!=$14+$17) print NR,$0}' db.log.20190722
+awk '{if($8!=$14+$17) print NR,$0}' db.log.20190722
 ```
