@@ -36,14 +36,21 @@ sudo pacman -S netease-cloud-music
 ```
 - ArchLinux 系发行版包括 ArchLinux、Manjaro、Antergos 等.
 
+## 配置分辨率
+```bash
+env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" winecfg
+env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg
+env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg
+```
+
 # Ubuntu
 ## Deepin-wine 环境
-- 方法一
+方法一
 ```sh
 git clone 'https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
 # 克隆到本地，用图形界面的软件包管理器安装所有 deb 文件
 ```
-- 方法二
+方法二
 ```sh
 git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
 sudo sh ./install.sh
