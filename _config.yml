@@ -114,6 +114,13 @@ google_analytics: UA-144334903-1
 google_adsense:
   id: ca-pub-2581760538335948
 
+# 打赏
+donate:
+  enable: true
+  donate_message: 赏
+  alipay: /images/alipay.png
+  wechat: /images/wechat.png
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
