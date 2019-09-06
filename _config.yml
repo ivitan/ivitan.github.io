@@ -114,6 +114,12 @@ google_analytics: UA-144334903-1
 google_adsense:
   id: ca-pub-2581760538335948
 
+#hexo sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: bdmap.xml
+
 # 打赏
 donate:
   enable: true
