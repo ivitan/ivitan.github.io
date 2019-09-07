@@ -1,7 +1,7 @@
 ---
 title: Hexo SEO 优化
 tags:
-  - Linux
+  - Hexo 
 categories:
   - notes
 author:
