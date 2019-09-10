@@ -56,7 +56,7 @@ df.ix[1:2,['name','age']]
 df['gender']
 df.gender
 ```
-8.判断每行的gender列数据是否为M
+8. 判断每行的gender列数据是否为M
 ```python
 df.gender=='M'
 ```
@@ -125,7 +125,9 @@ df['userid'] = range(101,107)
 ```python
 df = df.set_index('userid')
 ```
+
 - oc——通过行（行名字）标签索引行数据 iloc——通过行号（行序号，从0开始）索引行数据 ix——通过行标签或者行号索引行数据（基于loc和iloc 的混合）
+
 ```python
 #分别利用行名与行序号返回第一条行数据
 df.loc[101]
@@ -157,22 +159,31 @@ df.columns = ['name', 'gender', 'age']
 
 ## 数据操作
 - 判断df的gender列每个单元格是否为空
+
 ```python
 df.gender.isnull()
 ```
+
 - 判断df的age列是否存在空的单元格（结果只需知道有没有存在）
+
 ```python
 df.age.isnull().any()
 ```
+
 - 判断df整个数据框是否存在空的单元格（结果只需知道有没有存在）
+
 ```python
 df.isnull().values.any()
 ```
+
 - 求df的age列空的单元格的总数
+
 ```python
 df.age.isnull().sum()
 ```
+
 - 求df所有列空单元格的总数
+
 ```
 df.isnull().sum().sum()
 ```
@@ -190,7 +201,9 @@ df = pd.DataFrame([\
              ['lisa' , 'F',    20]])
 df.columns = ['name', 'gender', 'age']
 ```
+
 - 删除
+
 ```python
 #删除df具有Nan值的行
 df.dropna()
@@ -207,12 +220,14 @@ df.dropna(axis=1,how='all')
 ```
 
 - 增加
+
 ```python
 #在df中增加一新列employee，且值为空（np.nan）
  df['employee']=np.nan
 ```
 
 - 填补
+
 ```python
 #填补df里任意空单元格的值为0
 df.fillna(0)
@@ -231,6 +246,7 @@ df.fillna(method='pad')
 ```
 
 - 数据2
+
  ```python
 df2 = pd.DataFrame([[1, 870],\
             [2, 900],\
@@ -247,6 +263,7 @@ df2.columns = ['time', 'val']
 
 # 实例
 - 读取数据
+
 ```python
 import pandas
 df = pandas.read_csv('house_data.csv')
@@ -258,24 +275,33 @@ df.head(3)
 
 ## 检视
 - 检视前几行资料
+
 ```python
 df.head(5)
 ```
+
 - 检视后三行资料
+
 ```python
 df.tail(3)
- ```
+```
+
 - 检视DataFrame 信息
+
 ```python
 #查看df所有的信息(列名，各列非空计数，数据类型)
 df.info()
 ```
+
 - 检视字段名称
+
 ```python 
 #查看df所有列名
 df.columns
 ```
+
 - 检视字段型态
+
 ```python
 #查看df各列数据类型
 df.dtypes
@@ -313,7 +339,7 @@ df.describe()
 ```python
 #对事个数据框df每个单元格进行缺失值判断
 df.isnull()
- ```
+```
 ## 缺失值
 ```python
 #对数据框各列分别进行判断，返回每列是否有缺失值
@@ -326,7 +352,9 @@ df.isnull().sum()
 df.count() # 所有非空单元格
 df.isnull().sum()/df.count()
 ```
+
 - 删除有缺失值的字段
+
 ```python
  #用drop删除df的“参考月供”列数据
  df = df.drop('参考月供',axis=1)

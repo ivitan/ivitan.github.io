@@ -17,18 +17,21 @@ Hexo 独立域名
 <!-- more -->
 
 # 购买域名
-比较服务商
-: 可以到 [Nazhumi](https://www.nazhumi.com/) 查看比较。
+比较服务商可以到 [Nazhumi](https://www.nazhumi.com/) 查看比较。
 
 # 解析域名
+
 - 添加 A 记录
+
 ```bash
 A @ 185.199.108.153
 A @ 185.199.109.153
 A @ 185.199.110.153
 A @ 185.199.111.153
 ```
+
 - 添加 CNAME 记录
+
 ```bash
 CNAME www ivitan.github.io
 ```

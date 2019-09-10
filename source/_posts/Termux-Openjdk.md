@@ -20,7 +20,6 @@ JDK1.9
 - ~~[aarch64下载](https://mega.nz/#!aZgwVQpD!o8qNcQmObEEKn7qb5MZaDKbT3PUCAoCLwbHtAjDIKho)~~
 
 # 安装 Openjdk
-步骤
 ```sh
 cd storage/downloads
 dpkg -i openjdk9_9.2017.8.20_aarch64.deb

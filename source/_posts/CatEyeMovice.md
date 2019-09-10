@@ -16,11 +16,10 @@ thumbnail: /images/Python.png
 猫眼电影 Top100
 <!--more-->
 # 思路
-思路分析
-:   1. 获取单页网页源代码并返回源代码
-    2. 解析单页网页源代码，提取 title、actor、time、score 等数据并存储为生成器
-    3. 将生成器里每一部电影的数据写入txt文档中
-    4. 研究第 1-10 页 url 的规律，构建 url，调用 1、2、3 步骤
+1. 获取单页网页源代码并返回源代码
+2. 解析单页网页源代码，提取 title、actor、time、score 等数据并存储为生成器
+3. 将生成器里每一部电影的数据写入txt文档中
+4. 研究第 1-10 页 url 的规律，构建 url，调用 1、2、3 步骤
 
 
 # 步骤
@@ -44,6 +43,7 @@ thumbnail: /images/Python.png
 ```
 
 - 打印第一页源码
+
 ```Python
 print(get_one_page('http://maoyan.com/board/4'))
 ```
@@ -65,6 +65,7 @@ print(get_one_page('http://maoyan.com/board/4'))
                 '评分':item[4]+item[5]
             }
 ```
+
 > 注意一下，这里需要用 yield，而不是return。yield函数返回的是一个生成器（一种特殊的迭代器，可以用for循环进行遍历）
 > 如果用return，那么在第一轮循环结束就会跳出，只能获取到一部影片的信息
 
@@ -92,6 +93,7 @@ print(get_one_page('http://maoyan.com/board/4'))
 
 ## 多线程保持为 txt
 - 第一步
+
 ```Python
     import requests
     import re
@@ -110,7 +112,9 @@ print(get_one_page('http://maoyan.com/board/4'))
         except RequestException:
             return None
 ```
+
 - 第二步
+
 ```Python
     def main(offset):
         url = 'http://maoyan.com/board/4?offset=' + str(offset)

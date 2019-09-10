@@ -31,6 +31,7 @@ Header 部分只有一行，包括三个字段：type（必需）、scope（可�
 
 ## type
 - type用于说明 commit 的类别，只允许使用下面7个标识。
+
 ```
 feat：新功能（feature）
 fix：修补bug
@@ -54,6 +55,7 @@ scope用于说明 commit 影响的范围，比如数据层、控制层、视图�
 
 ## Body
 - Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例。
+
 ```
 More detailed explanatory text, if necessary.  Wrap it to
 about 72 characters or so.
@@ -92,18 +94,22 @@ Further paragraphs come after blank lines.
     The removed `inject` wasn't generaly useful for directives so there should be no code using it.
   ```
 
-  2. 关闭 issue
-  - 如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。
-  ```git
-  Closes #234
-  ```
-  - 一次关闭多个 issue
-  ```git
-  Closes #123, #245, #992
-  ```
+2. 关闭 issue
+- 如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。
+
+```git
+Closes #234
+```
+
+- 一次关闭多个 issue
+
+```git
+Closes #123, #245, #992
+```
 
 ## Revert
 - 还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以 `revert:` 开头，后面跟着被撤销 Commit 的 Header。
+
 ```
 revert: feat(pencil): add 'graphiteWidth' option
 
@@ -116,6 +122,7 @@ This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```git 公式
 <type>(<scope>): <subject>
 ```
+
 - type
   - 用于说明 commit 的类别，只允许使用下面7个标识。
 - feat：新功能（feature）

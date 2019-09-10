@@ -37,11 +37,14 @@ agnoster 主题不正常
 - 修改字体即可
 
 - 错误提示
+
 ```sh
 zsh compinit: insecure directories, run compaudit for list.
 Ignore insecure directories and continue [y] or abort compinit [n]?
 ```
+
 - 解决方法
+
 ```
 compaudit
 //会显示如下内容

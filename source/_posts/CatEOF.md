@@ -16,6 +16,7 @@ Cat  追加与覆盖
 <!--more-->
 # 追加
 - cat <<EOF>>
+
 ```bash
 #!/bin/bash
 cat << EOF >> cat.txt
@@ -24,6 +25,7 @@ EOF
 ```
 
 - cat >>
+
 ```bash
 #!/bin/bash
 cat >> cat.txt << EOF
@@ -33,6 +35,7 @@ EOF
 
 # 覆盖
 - cat <<EOF>>
+
 ```bash
 #!/bin/bash
 cat << EOF > cat.txt
@@ -41,6 +44,7 @@ EOF
 ```
 
 - cat >>
+
 ```bash
 #!/bin/bash
 cat > cat.txt << EOF

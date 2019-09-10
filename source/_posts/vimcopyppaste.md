@@ -18,14 +18,18 @@ thumbnail: /images/Vim.png
 
 # 复制粘贴
 ## Normal 模式下
+
 - yp dp vp
+
 ```shell
 y # 复制(yank)
 p # 粘贴(put)
 d # 剪贴
 vp # v(visual) 命令选中要复制的地方，后 p
 ```
+
 - 配合文本对象
+
 ```shell
 yyiw # 复制一个单词
 yy   # 复制一行
@@ -36,8 +40,11 @@ v    #　选择文本
 ```
 
 ## Insert 模式下
+
 - 保留复制内容的缩进
+
 1. vimrc 设置了自动缩进 `:set autoindent` 会使复制的代码缩进错乱
+
 ```shell
 :set paste 
 :set nopaste # 取消
@@ -99,9 +106,10 @@ ctrl + u # upward
 ```
 
 # Vim 寄存器
-What
 使用 d 删除或者 y 复制的内容都放在了 "无名寄存器"
+
 - 调换两字符
+
 ```shell
 x  # 删除一个字符放到无名寄存器
 p  # 粘贴
@@ -138,4 +146,4 @@ p  # 粘贴
 ```shell
 :echo has('clipboard')
 ```
-- 1 支持
+- 1 为支持

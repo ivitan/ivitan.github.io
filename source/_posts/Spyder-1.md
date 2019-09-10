@@ -36,7 +36,9 @@ os.chdir('/home/vitan/Python/Python/HW4')
 auto = pd.read_csv('auto_ins.csv',encoding='gbk')
 ```
 # 数据处理
+
 -  定义codeMy(x)函数，其作用是对auto里的loss重新编码为1/0，有数值为1，命名为loss_flag
+
 ```python
 def codeMy(x):
     if x > 0:
@@ -54,23 +56,30 @@ def codeMy(x):
 ```
 
 # 画图
-分析
+## 分析
 - 对loss_flag列进行描述分析（计数计频次）
+
 ```python
 auto.loss_flag.value_counts()
 ```
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5e60z7gj20ao06wwec.jpg)
+
 - 对loss_flag出险情况进行百分比统计
+
 ```python
 auto.loss_flag.value_counts()/auto.loss_flag.count()
 ```
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5ev4yt8j20ao06wwec.jpg)
+
 - 绘制是否出险柱形图
+
 ```python
 auto.loss_flag.value_counts().plot(kind="bar")
 ```
 ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5u8ajf7j20aj06vjr7.jpg)
+
 - 分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系
+
 ```python
 #设置画布fig
 fig = plt.figure()
@@ -88,6 +97,7 @@ sns.boxplot(x="loss_flag",y="exp",data=auto,ax =ax2)
 ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5nop9tvj20aq07faa2.jpg)
 
 - 是否出险和性别：绘制面积堆积柱形图，分析出险和性别的关系
+
 ```python
 from stack2dim import *
 stack2dim(auto,"Gender","loss_flag")
@@ -95,6 +105,7 @@ stack2dim(auto,"Gender","loss_flag")
 ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5odvgqgj20ar07at8m.jpg)
     
 - 是否出险和婚姻状态：绘制面积堆积柱形图，分析出险和婚姻的关系
+
 ```python
 stack2dim(auto,"Marital","loss_flag")
 ```

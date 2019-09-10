@@ -222,15 +222,21 @@ Python Selenium 基础使用。
 ```
 
 ## 获取文本值
-- 获取指定节点中的文本内容.
+
+- 获取指定节点中的文本内容
+
 ```python
 driver.find_element_by_xpath('').get_attribute('textContent') 
 ```
+
 - 获取a的href(多个则遍历)
+
 ```python
 broswer.find_element_by_css_selector('.houseListTitle a').get_attribute('href')
 ```
+
 - 输入框的文本
+
 ```python
 from selenium import webdriver
 
@@ -287,6 +293,7 @@ print(input.text)
 # 等待
 ## 隐式等待
 - 当使用了隐式等待执行测试的时候，如果 WebDriver 没有在 DOM 中找到元素，将继续等待，超出设定时间后则抛出找不到元素的异常, 换句话说，当查找元素或元素并没有立即出现的时候，隐式等待将等待一段时间再查找 DOM，默认的时间是 0
+
 ```python
     from selenium import webdriver
 
@@ -300,6 +307,7 @@ print(input.text)
 
 ## 显式等待
 - 显示等待则打指定等待不固定，具体时间受指定的元素出现或其他条件实现的时间限制
+
 ```python
     from selenium import webdriver
     from selenium.webdriver.common.by import By
@@ -319,6 +327,7 @@ print(input.text)
     #打印输出input,button
     print(input,button)
 ```
+
 # 前进后退
 ```python
     import time

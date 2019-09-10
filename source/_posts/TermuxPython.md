@@ -31,7 +31,7 @@ Termux Puthon
   ```
 
 # Jupyter Notebook
- ```bash
+```bash
 apt install clang python python-dev
 apt install fftw libzmq libzmq-dev freetype freetype-dev
 apt install libpng libpng-dev pkg-config

@@ -50,14 +50,18 @@ time = end - now
 print(time.days,'天')
 ```
 ## 获取本周/本月/上月最后一天
+
 - 本周最后一天
+
 ```Python
 import datetime
 today = datetime.date.today()
 sunday = today + datetime.timedelta(6 - today.weekday())
 sunday
 ```
+
 - 本月最后一天
+
 ```Python
 import calendar
 today = datetime.date.today()
@@ -65,7 +69,9 @@ last_day_num = calendar.monthrange(today.year, today.month)
 last_day = datetime.date(today.year, today.month, last_day_num)
 last_day
 ```
+
 - 上月最后一天
+
 ```Python
 import datetime
 today = datetime.date.today()
@@ -74,35 +80,47 @@ lastMonth = first - datetime.timedelta(days=1)
 ```
 # 转换
 ## datetime <=> string
+
 - datetime -> string
+
 ```Python
 import datetime
 datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 ```
+
 - string -> datetime
+
 ```Python
 import datetime
 datetime.datetime.strptime("2018-10-22 12:50:46", "%Y-%m-%d %H:%M:%S")
 ```
 
 ## datetime <=> timetuple
+
 - datetime -> timetuple
+
 ```Python
 import datetime
 datetime.datetime.now().timetuple()
- ```
+```
+
 - timetuple -> datetime
+
 ```Python
 timetuple => timestamp => datetime [看后面datetime<=>timestamp]
 ```
 
 ## datetime <=> date
+
 - datetime -> date
+
 ```Python
 import datetime
 datetime.datetime.now().date()
 ```
+
 - date -> datetime
+
 ```Python
 datetime.date.today()
 today = datetime.date.today()
@@ -110,7 +128,9 @@ datetime.datetime.combine(today, datetime.time())
 datetime.datetime.combine(today, datetime.time.min)
 ```
 ## datetime <=> timestamp
+
 - datetime -> timestamp
+
 ```Python
 now = datetime.datetime.now()
 timestamp = time.mktime(now.timetuple())

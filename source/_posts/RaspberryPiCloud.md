@@ -18,8 +18,10 @@ RaspberryPi 搭建云
 ```sh
 sudo nano /etc/apt/sources.list
 ```
+
 - 改为
- ```sh
+
+```sh
 deb https://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
 ```
 
@@ -32,13 +34,15 @@ sudo apt-get install apache2
 sudo apt-get install mysql-server
 ```
 
-= 配置mysql
+## 配置mysql
 ```sh
 sudo vim /etc/apache2/apache2.conf
 ```
   - None改成All
 
+
 - 设置 MySQL 账户密码
+
 ```sh
 sudo mysql -u root -p
 update mysql.user set plugin='mysql_native_password';
@@ -57,13 +61,15 @@ sudo apt-get install phpmyadmin
 ```
 
 ## 下载ownCloud
-``sh
+```sh
 sudo wget https://download.owncloud.org/community/owncloud-9.1.4.zip
 sudo unzip owncloud-9.1.4.zip -d /var/www/html/
 cd /var/www/html/owncloud
 sudo mkdir data
 ```
+
 - 修改目录权限
+
 ```sh
 sudo chown -R www-data:www-data data
 sudo chown -R www-data:www-data config
@@ -71,7 +77,9 @@ sudo chown -R www-data:www-data apps
 ```
 
 # 配置 OwnCloud
+
 - 浏览器打开
+
 ```sh
 raspberryIP/owncloud
 ```

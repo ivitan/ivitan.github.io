@@ -16,6 +16,7 @@ thumbnail: /images/Python.png
 Python BeautifulSoup 库基础使用
 <!--more-->
 # 解析库
+
 |解析器|使用方法|优势|劣势|
 |:--|:--|:--|:--|
 |Python标准库|	BeautifulSoup(markup, "html.parser")|	Python的内置标准库、执行速度适中 、文档容错能力强|	Python 2.7.3 or 3.2.2)前的版本中文容错能力差|
@@ -48,7 +49,6 @@ Python BeautifulSoup 库基础使用
 - 根据标签名（获取名称、属性、文本内容）、继承关系（children/descendants/parent/parents，这种继承返回结果为迭代器，需用enumerate来获取）选择元素
 - 优点：速度快
 - 缺点：对于标签名相同的标签，其属性值可能不同，这种方法无法筛选出目标标签
--
 
 ## 选择元素
 ```Python
@@ -233,6 +233,7 @@ Python BeautifulSoup 库基础使用
     #用enumerate获取以上迭代器，用i,child分别表示索引号与内容，遍历它们并输出
         print(i, child)
 ```
+
 ## 父节点和祖先节点
 ```Python
     html = """
@@ -312,14 +313,18 @@ Python BeautifulSoup 库基础使用
     print(list(enumerate(soup.a.previous_siblings)))
     #第一个a节点之前的兄弟节点previous_siblings，并用enumerate获取迭代器，最终转换成list类型
 ```
+
 # 标准选择器
 ## find_all 返回所有元素
+
 - 可根据标签名、属性、内容查找文档
+
 ```Python
 find_all( name , attrs , recursive , text , **kwargs )
 ```
 
 - name
+
 ```Python
     html='''
     <div class="panel">
@@ -372,7 +377,9 @@ find_all( name , attrs , recursive , text , **kwargs )
     #遍历输出所有ul节点下的li节点
         print(ul.find_all('li'))
 ```
+
 - attrs
+
 ```Python
     html='''
     <div class="panel">
@@ -425,7 +432,9 @@ find_all( name , attrs , recursive , text , **kwargs )
     print(soup.find_all(class_='element'))
     #获取class='element'的节点
 ```
+
 - text
+
 ```Python
     html='''
     <div class="panel">
@@ -450,6 +459,7 @@ find_all( name , attrs , recursive , text , **kwargs )
     print(soup.find_all(text='Foo'))
     #获取所有文本内容='Foo'的节点文本值，用text表示,
 ```
+
 ## find 返回单个元素
 ```Python
 find( name , attrs , recursive , text , **kwargs )
@@ -484,36 +494,49 @@ find( name , attrs , recursive , text , **kwargs )
 ```
 # 其他
 - find_parents()返回所有祖先节点，find_parent()返回直接父节点。
+
 ```Python
 find_parents()
 find_parent()
 ```
+
 - find_next_siblings()返回后面所有兄弟节点，find_next_sibling()返回后面第一个兄弟节点。
+
 ```Python
- find_next_siblings()
+find_next_siblings()
 find_next_sibling()
- ```
+```
+
 - find_previous_siblings()返回前面所有兄弟节点，find_previous_sibling()返回前面第一个兄弟节点。
+
 ```Python
 find_previous_siblings() find_previous_sibling()
 ```
+
 - find_all_next()返回节点后所有符合条件的节点, find_next()返回第一个符合条件的节点
+
 ```Python
 find_all_next()
 find_next()
 ```
+
 - find_all_next()返回节点后所有符合条件的节点, find_next()返回第一个符合条件的节点
+
 ```Python
 find_all_next()
 find_next()
 ```
+
 - find_all_previous()返回节点后所有符合条件的节点, find_previous()返回第一个符合条件的节点
+
 ```Python
 find_all_previous()
 find_previous()
 ```
 # CSS 选择器
+
 - 通过select()直接传入CSS选择器即可完成选择
+
 ```Python
         html='''
     <div class="panel">
@@ -635,6 +658,7 @@ requests类库请求网页获取响应内容
     print(res.text)
     #打印输出网页文本内容
 ```
+
 BeautifulSoup 类库解析文档树
 ```Python
     from bs4 import BeautifulSoup
@@ -652,6 +676,7 @@ BeautifulSoup 类库解析文档树
     soup.text
     #输出打印soup的文本内容
 ```
+
 找出含有特定的 html 标签
 ```Python
     soup.select('h1')[0].text
@@ -664,13 +689,15 @@ BeautifulSoup 类库解析文档树
         print(alink.text)
     #利用循环打印输出所有的a标签的文本内容，用alink表示循环变量名
 ```
+
 找出含有特定的 CSS 属性
- ```Python
+```Python
     soup.select('#title')[0].text
     #找出id为title的属性所在节点的文本
     soup.select('.link')[0].text
     #找出class为link的第一个节点的文本
 ```
+
 查找指定标签节点的某一属性
 ```Python
     for link in soup.select('a'):
@@ -707,13 +734,17 @@ BeautifulSoup 类库解析文档树
           newsary.append({'title':news.select('.linkto')[0].text,'url':news.select('.linkto')[0]['href']})
           #将用key为title,url分别保存每条新闻的标题与访问网址,并追加到newsary列表里面
 ```
+
 - 将newsary转换成dataFrame
+
 ```Python
 import pandas
 newsdf = pandas.DataFrame(newsary)
 newsdf
- ```
+```
+
 - 将 newsdf 保存为 excel 文档,文件命名为 news
+
 ```Python
 newsdf.to_excel('news.xlsx')
 ```

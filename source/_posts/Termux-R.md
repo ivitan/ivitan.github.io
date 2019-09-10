@@ -22,8 +22,11 @@ termux-setup-storage
 export EDITOR=vi
 apt edit-sources
 ```
+
 进入之后输入 i 进入编辑模式。
+
 - 添加如下源
+
 ```bash
 deb [trusted=yes] https://its-pointless.github.io/files/ termux extras
 ```

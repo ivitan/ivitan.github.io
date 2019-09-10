@@ -24,25 +24,30 @@ data = pandas.read_csv('file.csv')
 ```
 
 - 查看前10行
+
 ```python
 print(data.head[10])
 ```
 
 - 数据集中有多少个列(columns)
+
 ```python
 print(data.shape[1])
 ```
 
 - 打印出全部的列名称
+
 ```python
 print(data.columns)
 ```
 
 - 数据集的索引
+
 ```python
 print(data.index)
 ```
 - panadas.DataFrame 构造函数
+
 ```python
 pandas.DataFrame( data, index, columns, dtype, copy)
 ```
@@ -57,7 +62,9 @@ pandas.DataFrame( data, index, columns, dtype, copy)
 
 # 创建数据帧
 ## 列表创建数据框
+
 - 空数据帧 
+
 ```python
  # 空数据帧 
 import pandas as pd
@@ -66,6 +73,7 @@ print(df)
 ```
 
 - 有数据   
+
 ```python
 import pandas as pd
 data = [1,2,3,4,5]
@@ -74,6 +82,7 @@ print(df)
 ```
 
 - 有表头
+
 ```python
 import pandas as pd
 data = [['Alex',10],['Bob',12],['Clarke',13]]
@@ -106,7 +115,9 @@ data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
 df = pd.DataFrame(data)
 print(df)
 ```
+
 - 字典，行索引和列索引列表创建数据帧
+
 ```python
 import pandas as pd
 data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
@@ -127,6 +138,7 @@ d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
 
 df = pd.DataFrame(d)
 ```
+
 - 字典的系列可以传递以形成一个DataFrame。 所得到的索引是通过的所有系列索引的并集。
 
 # 列操作
@@ -231,7 +243,7 @@ df = df.append(df2)
 ```
 
 ## 删除行
- ```python
+```python
 import pandas as pd
 
 df = pd.DataFrame([[1, 2], [3, 4]], columns = ['a','b'])

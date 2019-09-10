@@ -22,7 +22,9 @@ thumbnail: /images/ArchLinux.png
 
 # 配置
 ## Linux
+
 - 方法一
+
 ```sh
 sudo mv chromedriver /usr/bin
 sudo mv geckodriver /usr/bin
@@ -35,7 +37,9 @@ vim ~/.profile
 export PATH="$PATH:/usr/local/chromedriver"
 export PATH="$PATH:/usr/local/geckodriver"
 ```
+
 - 验证
+
 ```sh terminal
 chromedriver
 geckodriver

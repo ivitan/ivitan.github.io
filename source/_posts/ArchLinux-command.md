@@ -187,12 +187,15 @@ pacman数据库通常位于 `/var/lib/pacman/sync`. 对于每一个在 `/etc/pac
 ```bash
 pacman -Sc
 ```
+
 - pacman 提供的 paccache 命令默认会删除近3个版本前的软件包
+
 ```bash
 paccache -r
 ```
 - Tip: 可以使用 pacman hooks 自动执行清理，这里是[参考示例](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743)。
 - 也可以自己设置保留最近几个版本：
+
 ```bash
 paccache -rk 1
 ```

@@ -174,7 +174,9 @@ for index, link in enumerate(links):
 
 # 定义 Item
 Item 是保存爬取到的数据的容器；其使用方法和python字典类似.
+
 - 编辑 tutorial 目录中的 items.py 文件:
+
 ```python
 import scrapy
 

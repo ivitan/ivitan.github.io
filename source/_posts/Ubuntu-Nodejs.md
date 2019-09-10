@@ -28,15 +28,21 @@ sudo make
 sudo make install
 $ node -v
 ```
+
 - 如果 Node 不是最新的，Node 有一个模块叫 Npm，是专门用来管理 Node.Js的版本的。使用 npm安装 Npm 模块
+
 ```sh
 sudo npm install -g n
 ```
+
 - 然后，升级node.js到最新稳定版
+
 ```sh
 sudo n stable
 ```
+
 - 旧版本的 npm，也可以很容易地通过 npm 命令来升级，命令如下：
+
 ```sh
 sudo npm install npm -g
 ```

@@ -34,6 +34,7 @@ ln -s /usr/java/jdk1.8.0_121/ /usr/jdk #创建快捷方式
 # 环境配置
 - `sudo vim /etc/profile`
 - 在最后加入
+
 ```
 export JAVA_HOME=/usr/jdk
 export CLASSPATH=.:$JAVA_HOME/lib/

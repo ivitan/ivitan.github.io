@@ -157,7 +157,9 @@ ssh -p 2222 root@host
 ssh-copy-id user@host
 #将公钥传送到远程主机 host 上面
 ```
+
 - 如果还是不行，就打开远程主机的 `/etc/ssh/sshd_config` 这个文件，检查下面几行前面"#"注释是否取掉。
+
 ```bash
 RSAAuthentication yes
 PubkeyAuthentication yes
@@ -196,14 +198,18 @@ pkg install nodejs-lts
 ```
 
 ## 解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题
+
 - 复制下面内容
+
 ```bash
 (require('os').cpus() || { length: 1 }).length
 ```
 ```bash
 vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 ```
+
 - 修改如下
+
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/5b3044e8a329d.jpg)
 
 # 安装 Hexo
@@ -227,10 +233,12 @@ npm update -g #版本更新
 ```bash
 pkg install mariadb
 ```
+
 安装基本数据
 ```bash
 mysql_install_db
 ```
+
 - mysqld: Can't read dir ofソdata/data/com . termux/files/usr/e tc/my.cnf.d' (Errcode: 2 "No such file or directory") Fatal error in defaults handling. Program aborted
 	- 先在`my.cnf`所在目录下新建`my.cnf.d`文件夹，然后执行`mysql_install_db`
 
@@ -259,7 +267,9 @@ Reload privilege tables now? [Y/n] y #是否重新加载表的权限
 mysql -uroot -p
 Enter password: ***apache2
 ```
+
 - 或者使用
+
 ```bash
 mysql -uroot -p******
 ```
@@ -291,6 +301,7 @@ ipython 是一个 python 的交互式 shell，支持变量自动补全，自动�
 先安装clang, 否则直接使用pip安装ipython会失败报错.
 
 - 安装
+
 ```bash
 pkg install clang
 pip install ipython
@@ -298,6 +309,7 @@ pip3.6 install ipython
 ```
 
 - 使用
+
 别使用`ipython`和`ipython2`进入`py2`和`py3`控制台:
 
 # PHP部署
@@ -306,6 +318,7 @@ pip3.6 install ipython
 pkg install php # 可采用phpinfo进行测试
 php -S 127.0.0.1:8080 -t www/
 ```
+
 - 编写测试文件
 
 1. 在家目录下建一个www文件夹:`mkdir www`
@@ -323,6 +336,7 @@ pkg install nmap
 Hydra 是著名的黑客组织 THC 的一款开源暴力破解工具这是一个验证性质的工具，主要目的是：展示安全研究人员从远程获取一个系统认证权限。
 
 - 安装
+
 ```bash
 pkg install hydra
 ```
@@ -331,6 +345,7 @@ pkg install hydra
 SSLscan 主要探测基于 ssl 的服务，如 https。SSLscan 是一款探测目标服务器所支持的 SSL 加密算法工具。
 
 - 安装
+
 ```bash
 pkg install sslscan
 ```
@@ -339,6 +354,7 @@ pkg install sslscan
 whatportis 是一款可以通过服务查询默认端口，或者是通过端口查询默认服务的工具，简单易用。在渗透测试过程中，如果需要查询某个端口绑定什么服务器，或者某个应用绑定的默认端口，可以使用 whatportis 查询。
 
 - 安装
+
 ```bash
 pip2 install whatportis
 ```
@@ -347,6 +363,7 @@ pip2 install whatportis
 RouteSploit 框架是一款开源的路由器等嵌入式设备漏洞检测及利用框架。
 
 - 安装
+
 ```bash
 pip2 install requests
 git clone https://github.com/reverse-shell/routersploit

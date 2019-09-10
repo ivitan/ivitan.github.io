@@ -22,7 +22,9 @@ sudo pacman -S wine wine_gecko wine-mono winetricks
 ```shell
 touch zh.reg
 ```
+
 - 内容
+
 ```shell
 REGEDIT4
 
@@ -39,7 +41,9 @@ REGEDIT4
   "宋体"="SourceHanSansCN-Medium.otf"
   "新细宋体"="SourceHanSansCN-Medium.otf"
 ```
+
 - Run
+
 ```shell
 egedit zh.reg
 ```

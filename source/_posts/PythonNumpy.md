@@ -51,6 +51,7 @@ print(npSum(10))
 
 
 - 对比两种方法实现的效率，给定一个较大的参数n，用运行函数前后的timedelta表示
+
 ```python
 from datetime import datetime
 start = datetime.now()
@@ -65,6 +66,7 @@ print(delta)
 ```
 
 - 尝试把 a,b 定义为三层嵌套列表和三维数组
+
 ```python
 	import numpy
 	def liSum(n):

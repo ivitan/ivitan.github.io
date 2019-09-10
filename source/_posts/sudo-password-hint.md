@@ -17,19 +17,26 @@ Linux sudo  显示**
 <!--more-->
 # 方法
 修改 /etc/sudoers
+
 ```sh
-    sudo cp /etc/sudoers /etc/sudoers.bak # 备份
-    sudo visudo
-    ```
-    - 搜索
-    ```sh
-    Defaults env_reset
-    ```
-    - 添加 pwfeedback
-    ```sh
-    Defaults env_reset,pwfeedback
-    ```
-    - 重启终端
-    ```sh
-    reset
+sudo cp /etc/sudoers /etc/sudoers.bak # 备份
+sudo visudo
+```
+
+- 搜索
+
+```sh
+Defaults env_reset
+```
+
+- 添加 pwfeedback
+    
+```sh
+Defaults env_reset,pwfeedback
+```
+
+- 重启终端
+
+```sh
+reset
 ```

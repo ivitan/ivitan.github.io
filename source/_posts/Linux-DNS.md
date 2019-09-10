@@ -14,12 +14,14 @@ thumbnail: /images/Linux.png
 CentOS DNS 
 <!--more-->
 # Bind
-- Install
+Install
+
 ```bash
 yum install bind bind bind-chroot -y
 ```
 
-- Start Service
+Start Service
+
 ```bash
 service named start
 systemctl name start # CentOs 7
@@ -90,6 +92,7 @@ zone "197.28.149.in-addr.arpa" IN {
 
 ## 区域配置文件
 - 正向解析域
+
 ```bash
 cd /var/named/chroot/var/named
 cp -p named.localhost vitan.me.zone
@@ -112,6 +115,7 @@ www1    IN      CNAME           www.vitan.me.
 ```
 
 - 反向向解析域
+
 ```bash
 cd /var/named/chroot/var/named
 cp -p named.loopback 149.28.197.zone
@@ -140,7 +144,9 @@ systemctl named restart # CentOs 7
 ```
 
 # 客户端配置与测试
+
 - 以便能使用 nslookup dig 和 host
+
 ```bash
 yum install bind-utils -y
 ```

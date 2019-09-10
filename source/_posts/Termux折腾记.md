@@ -145,7 +145,9 @@ hexo init
 npm install
 npm install hexo-deployer-git –save
 ```
+
 - 在站点配置文件_config.yml的Deployment字段处添加并修改
+
 ```bash
 deploy:
 type: git

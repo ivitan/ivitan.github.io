@@ -16,7 +16,7 @@ thumbnail: /images/Python.png
 Python PyQuery 库基础
 <!--more-->
 # 初始化
-字符串初始化
+## 字符串初始化
 ```Python
     !pip install pyquery
     html = '''
@@ -38,7 +38,7 @@ Python PyQuery 库基础
     #输出打印所有的li标签
 ```
 
-URL初始化
+## URL初始化
 ```Python
     from pyquery import PyQuery as pq
     doc = pq(url='https://www.baidu.com')
@@ -47,7 +47,7 @@ URL初始化
     #输出打印doc下面的head节点
 ```
 
-文件初始化
+## 文件初始化
 ```Python
     from pyquery import PyQuery as pq
     doc = pq(filename='demo.html')
@@ -55,8 +55,9 @@ URL初始化
     print(doc('li'))
     #输出打印doc下面的所有li标签
 ```
-## 基本CSS选择器
- ```Python
+
+# 基本CSS选择器
+```Python
     html = '''
     <div id="container">
         <ul class="list">
@@ -73,8 +74,8 @@ URL初始化
     print(doc('#container .list li'))
     #查找id为container下面class为list下面的li节点
 ```
-## 查找元素
-子元素
+# 查找元素
+## 子元素
 ```Python
     html = '''
     <div id="container">
@@ -102,22 +103,26 @@ URL初始化
     print(lis)
     #输出lis
 ```
-- children
+
+## children
 ```Python
-    lis = items.children()
-    #lis为items的孩子标签
-    print(type(lis))
-    #输出返回lis的类型
-    print(lis)
-    #输出lis
-    ```
-    - 返回items孩子节点中class为active为标签
-    ```Python
-    lis = items.children('')
-    #返回items孩子节点中class为active为标签
-    print(lis)#输出打印lis
+lis = items.children()
+#lis为items的孩子标签
+print(type(lis))
+#输出返回lis的类型
+print(lis)
+#输出lis
 ```
-父元素
+
+- 返回items孩子节点中class为active为标签
+
+```Python
+lis = items.children('')
+#返回items孩子节点中class为active为标签
+print(lis)#输出打印lis
+```
+
+## 父元素
 ```Python
     html = '''
     <div id="container">
@@ -141,7 +146,8 @@ URL初始化
     print(container)
     #输出打印container
 ```
-- parent
+
+## parent
 ```python
 Pythonhtml = '''
     <div class="wrap">
@@ -165,15 +171,18 @@ Pythonhtml = '''
     #输出打印parents的类型
     print(parents)
     #输出打印parents
-    ```
-    - 查找返回items祖先节点里class为wrap的祖先标签
-    ```Python
-    parent = items('.wrap')
-    #查找返回items祖先节点里class为wrap的祖先标签
-    print(parents)
-    #打印输出parent
 ```
-兄弟元素
+
+- 查找返回items祖先节点里class为wrap的祖先标签
+
+```Python
+parent = items('.wrap')
+#查找返回items祖先节点里class为wrap的祖先标签
+print(parents)
+#打印输出parent
+```
+
+## 兄弟元素
 ```Python
     html = '''
     <div class="wrap">
@@ -216,8 +225,9 @@ Pythonhtml = '''
     print(li.siblings('.active'))
     #返回li兄弟节点中class为active的标签
 ```
+
 # 遍历
-单个元素
+## 单个元素
 ```Python
     html = '''
     <div class="wrap">
@@ -263,8 +273,9 @@ Pythonhtml = '''
     #for循环遍历打印输出所有li标签
         print(li)
 ```
+
 # 获取信息
-获取属性
+## 获取属性
 ```Python
     html = '''
     <div class="wrap">
@@ -290,7 +301,8 @@ Pythonhtml = '''
     print(a.attr.href)
     #利用attr.调用输出a节点的href属性值
 ```
-获取文本
+
+## 获取文本
 ```Python
     html = '''
     <div class="wrap">
@@ -312,7 +324,8 @@ Pythonhtml = '''
     print(a)
     #打印输出a节点
 ```
-获取 HTML
+
+## 获取 HTML
 ```Python
     html = '''
     <div class="wrap">
@@ -338,7 +351,7 @@ Pythonhtml = '''
 ```
 
 # DOM 操作
-addClass、removeClass
+## addClass、removeClass
 ```Python
     html = '''
     <div class="wrap">
@@ -368,7 +381,7 @@ addClass、removeClass
     #打印输出li
 ```
 
-attr、css
+## attr、css
 ```Python
     html = '''
     <div class="wrap">
@@ -395,7 +408,7 @@ attr、css
     print(li)
     #输出打印li
 ```
-remove
+## remove
 ```Python
     html = '''
     <div class="wrap">
@@ -453,5 +466,4 @@ remove
 - [更多CSS选择器可以查看](http://www.w3school.com.cn/css/index.asp)
 
 # 官方文档
-链接
-:   [官方文档](http://pyquery.readthedocs.io/)
+- [官方文档](http://pyquery.readthedocs.io/)

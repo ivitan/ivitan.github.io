@@ -19,6 +19,7 @@ Python 小技巧
 对列表，数列打印他们的 index
 
 - 一般方法
+
 ```Python
     cities = ['Shanghai','beijing','Chengdu']
     i = 0
@@ -28,6 +29,7 @@ Python 小技巧
 ```
 
 - 更好的方法(使用 enumerate)
+
 ```Python
     cities = ['Shanghai','beijing','Chengdu']
     for i,city in enumerate(cities):
@@ -40,6 +42,7 @@ Python 小技巧
 对两个序列进行计算或处理
 
 - 一般方法
+
 ```Python
     names = ['leo','jack','james']
     colors = ['red','green','blue','yellow']
@@ -49,6 +52,7 @@ Python 小技巧
 ```
 
 - 更好的方法(使用 zip)
+
 ```Python
     names = ['leo','jack','james']
     colors = ['red','green','blue','yellow']
@@ -62,6 +66,7 @@ Python 小技巧
 多个变量之间的交换，如冒泡排序法
 
 - 一般方法
+
 ```Python
     x = 1
     y = 2
@@ -73,6 +78,7 @@ Python 小技巧
 ```
 
 - 更好的方法
+
 ```Python
     x = 1
     y= 2
@@ -87,6 +93,7 @@ Python 小技巧
 对字典的访问和读取，读取的字典 key 为空，需要一个缺省值
 
 - 一般方法
+
 ```Python
     students = {'Lili':18,'Sam':25}
     if 'Susan' in students:
@@ -97,6 +104,7 @@ Python 小技巧
 ```
 
 - 更好的方法
+
 ```Python
     students = {'Lili':18,'San':25}
     student = students.get('Susan','unknow')
@@ -108,6 +116,7 @@ Python 小技巧
 在一个大的循环中作搜索，如在文件中搜索关键字，从文件名列表中查找特殊的文件名
 
 - 一般方法
+
 ```Python
     target_letter = 'd'
     letters = ['a','b','c']
@@ -123,6 +132,7 @@ Python 小技巧
 ```
 
 - 更好的方法
+
 ```Python
     target_letter = 'd'
     letters = ['a','b','c']
@@ -139,6 +149,7 @@ Python 小技巧
 打开以文件，对内容进行循环读取处理
 
 - 一般方法
+
 ```Python
     f = open('data.txt')
     try:
@@ -150,6 +161,7 @@ Python 小技巧
 ```
 
 - 更好的方法
+
 ```Python
     with open('data.txt') as f:
         for line in f:
@@ -160,6 +172,7 @@ Python 小技巧
 对于并发操作尤其是多线程的操作，对同一内存进行读写操作时，加锁保护
 
 - 一般方法
+
 ```Python
     import threading
 
@@ -172,6 +185,7 @@ Python 小技巧
 ```
 
 - 更好的方法
+
 ```Python
     import threading
     lock = threading.Lock()

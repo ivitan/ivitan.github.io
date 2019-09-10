@@ -34,10 +34,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 - 配置
 1. 编辑
+
 ```
- vim .vimrc
+vim .vimrc
 ```
+
 2. 添加下列内容
+
 ```
 set nocompatible   " be iMproved, required
 filetype off   " required
@@ -49,11 +52,15 @@ filetype plugin indent on  " required
 ```
 
 安装需要的插件
+
 - bash 下：
+
 ```
 vim +PluginInstall +qall
 ```
+
 - vim 下
+
 ```
 :PluginInstall
 ```

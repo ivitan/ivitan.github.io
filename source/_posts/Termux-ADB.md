@@ -15,8 +15,7 @@ thumbnail: /images/Termux.png
 Termux ADB
 <!--more-->
 ## 下载 arm 版 ADB
-- Download
-[提取码: 9ej2](https://pan.baidu.com/s/1wv_i6qUTLRL94pp-bnkyWw)
+- Download [提取码: 9ej2](https://pan.baidu.com/s/1wv_i6qUTLRL94pp-bnkyWw)
 
 - Installation
 1. 解压后 `mv arm/adb $PREFIX/bin`
@@ -24,7 +23,9 @@ Termux ADB
 
 
 - Usage
+
 1. 远程连接设备（已开启USB网络调试）
+
 ```bash
 adb connect ip
 ```

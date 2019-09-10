@@ -40,11 +40,13 @@ push origin master
 
 # 建议
 - 拉取时推荐
+
 ```bash
 git fetch origin master
 git merge origin/master
 ```
 - 不推荐
+
 ```bash
 git pull
 ```

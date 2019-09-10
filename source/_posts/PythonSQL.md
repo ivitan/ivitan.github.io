@@ -31,7 +31,9 @@ Python SQL 操作
 ```
 
 ## 增删查改
+
 - 增(insert)
+
 ```python
     # 增加一条记录
     person = {'name': 'zone','sex':'boy'}
@@ -44,7 +46,8 @@ Python SQL 操作
     print(result.inserted_ids)
 ```
 
- - 删(delete)
+- 删(delete)
+
 ```python
     import pymongo
 
@@ -73,6 +76,7 @@ Python SQL 操作
 ```
 
 - 改(update)
+
 ```python
     # Valley 345”更改为“Canyon 123” 
     myquery = { "address": "Valley 345" }
@@ -91,18 +95,19 @@ Python SQL 操作
     x = mycol.update_many(myquery, newvalues)
 
     print(x.modified_count, "documents updated.")
-  ```
+```
 
-  ```python
+```python
     # 更新单条记录
     res = test.update_one({'name': 'zone'}, {'$set': {'sex': 'girl girl'}})
     print(res.matched_count)
 
     # 更新多条记录
     test.update_many({'name': 'zone'}, {'$set': {'sex': 'girl girl'}})
-  ```
+```
 
 - 查(Querry)
+
 ```python
     import pymongo
 
@@ -126,9 +131,9 @@ Python SQL 操作
 
     for x in mydoc:
         print(x)
-  ```
+```
 
-  ```python
+```python
     import pprint
 
     # 查找多条记录
@@ -136,10 +141,12 @@ Python SQL 操作
 
     # 添加查找条件
     pprint.pprint(test.find({"sex": "boy"}).sort("name"))
-  ```
+```
 
 # 排序
+
 - sort()方法
+
 ```python
 results = collection.find().sort('name', pymongo.ASCENDING)
 print([result['name'] for result in results])
@@ -161,7 +168,9 @@ print([result['name'] for result in results])
 
 # MySQL
 ## 连接创建
+
 - 创建一个名为“customers”的表
+
 ```python
     import mysql.connector
 
@@ -176,7 +185,9 @@ print([result['name'] for result in results])
 
     mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
 ```
-    - 检查表是否存在
+
+- 检查表是否存在
+
 ```python
     mycursor = mydb.cursor()
 
@@ -185,7 +196,9 @@ print([result['name'] for result in results])
     for x in mycursor:
         print(x)
 ```
+
 - 创建表时创建主键(存在用ALTER TABLE)
+
 ```python
     import mysql.connector
 
@@ -202,7 +215,9 @@ print([result['name'] for result in results])
 ```
 
 # 插入
+
 - 单行
+
 ```python
     mycursor = mydb.cursor()
 
@@ -214,7 +229,9 @@ print([result['name'] for result in results])
 
     print(mycursor.rowcount, "record inserted.")
 ```
+
 - 多行
+
 ```python
     mycursor = mydb.cursor()
 
@@ -243,7 +260,9 @@ print([result['name'] for result in results])
 ```
 
 ## Select
+
 - 所有
+
 ```python
     mycursor = mydb.cursor()
 
@@ -256,6 +275,7 @@ print([result['name'] for result in results])
 ```
 
 - 列
+
 ```python
     mycursor = mydb.cursor()
 

@@ -262,16 +262,18 @@ cnoremap w!! w !sudo tee % >/dev/null
 ```
 
 # 插件
-- 常见的插件管理器
+## 常见的插件管理器
 vim-plug,Vundle,Pathogen,Deim 
 
 ## [vim-plug](https://github.com/junegunn/vim-plug)
-- 安装
+- 安装 vim-plug
+
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-安装插件
+
+## 安装插件
 ```bash .vimrc
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify' # 插件
@@ -281,22 +283,25 @@ call plug#end()
 - `source ~/.vimrc` 并 `:PlugInstall`
 
 ## vim 美观插件
-外观
+- 外观
+
 1. 修改启动界面: [vim-startify](https://github.com/mhinz/vim-startify)
 2. 状态栏美化：[vim-airline](https://github.com/vim-airline)
 3. 增加但代码缩进线条：[indentline](https://github.com/yggdroot/indentline)
 
-配色方案
+- 配色方案
+
 1. [vim-hybird](https://github.com/w0ng/vim-hybird)
 2. [solarized](https://github.com/altercation/vim-colors-solarized)
 3. [grubbox](https://github.com/morhetz/gruvbox)
 
-插件推荐网站
+## 插件推荐网站
 [vimawesome](https://vimawesome.com)
 
 ## 文件目录和搜索插件
-文件目录
-- [nerdtree](https://github.com/scrooloose/nerdtree)
+
+- 文件目录 [nerdtree](https://github.com/scrooloose/nerdtree)
+
 ```vimrc
 " 查找文件所在位置
 nnoremap <leader>v :NERDTreeFind<cr>
@@ -304,8 +309,7 @@ nnoremap <leader>v :NERDTreeFind<cr>
 nnoremap <leader>g :NERDTreeToggle<cr>
 ```
 
-模糊搜索器
-- [ctrip.vim](https://github.com/ctrlpvim/ctrlp.vim)
+- 模糊搜索器 [ctrip.vim](https://github.com/ctrlpvim/ctrlp.vim)
 ```vimrc
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -318,15 +322,15 @@ Files . # 搜索当前目录
 :Ag content # 搜索字符串
 ```
 
-快速跳转位置插件
-[vim-easymotion](https://github.com/easymotion/vim-easymotion)
-- 映射
+- 快速跳转位置插件 [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+
+映射
 ```bash
 unmap ss <Plus>(easymotion-s2)
 ```
 
-修改成对内容
-- [vim-surround](https://github.com/tpope/vim-surround)
+- 修改成对内容 [vim-surround](https://github.com/tpope/vim-surround)
+
 ```bash
 ds # delete a surrounding
 cs # change a surrounding

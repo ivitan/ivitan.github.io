@@ -34,7 +34,9 @@ df -l
 ```sh
 umount /home
 ```
+
 - 提示 busy 不能卸载
+
 ```sh
 # 终止占用进程
 fuser -m /home
@@ -46,21 +48,29 @@ resize2fs -p /dev/sdb3  30G
 # resize2fs 为重新设定磁盘大小
 # 只是重新指定一下大小，并不对结果有影响
 ```
+
 - 先设置一下 Home 的大小,进行这一步的时候会提醒让先运行下面的命令进行检查
+
 ```sh
 e2fsck -f /dev/sdb3
 ```
+
 - 强制检查一下磁盘并修复错误，接下来再次运行这个命令把 home大小设置为20G
+
 ```sh
 resize2fs -p /dev/sdb3 30G
 ```
+
 - 收缩逻辑卷空间为 30G
+
 ```sh
 # 使用lvreduce指令用于减少LVM逻辑卷占用的空间大小
 # -L 是设为，-l 是减小的值
 lvreduce -L 30G /dev/sdb3
 ```
+
 - 然后挂载 `/home` 并 `df -h` 查看一下 Home 大小分配是否成功
+
 ```sh
 mount /home
  ```
@@ -69,7 +79,9 @@ mount /home
 ```sh
 lvextend -l +100%FREE /dev/sdb4
 ```
+
 - 执行调整根目录的空间大小,并耐心等待,不要操作
+
 ```sh
 resize2fs -p /dev/sdb4
 ```

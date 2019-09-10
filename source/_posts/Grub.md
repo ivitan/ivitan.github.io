@@ -27,7 +27,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 下载主题 [Gnome-Look](https://www.gnome-look.org/browse/cat/109/ord/latest/)
 
 ## 配置
-- 有的主题有安装脚本，运行即可。
+有的主题有安装脚本，运行即可
+
 ```bash
 sudo cp -r 主题包名 /boot/grub/themes/  
 sudo vim /etc/grub.d/00_header

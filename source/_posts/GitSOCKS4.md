@@ -24,7 +24,9 @@ git config --global https.proxy 'socks5://127.0.0.1:1080'
 > error: RPC failed; curl 18 transfer closed with outstanding read data remaining
 
 # 解决方法
+
 - 1. --depth 1
+
 ```shell
 # 关闭压缩
 git config --global core.compression 0
@@ -41,6 +43,7 @@ git pull --all
 ```
 - 2. 切换使用 ssh(git clone username@mydomain.com:my_group/my_repository.git) 
 - 3. 增加缓冲区大小
+
 ```shell
 git config --global http.postBuffer 524288000
 ```

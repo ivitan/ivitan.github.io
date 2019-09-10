@@ -62,7 +62,7 @@ df['物 业 费'].map(lambda e:e.split('元')[0])
 ```
 
 ## 其他
- ```python
+```python
 def square(e):
     return e * e 
 square(2)
@@ -70,7 +70,9 @@ square(2)
 square2 = lambda e: e * e
 square2(2)  
 ```
+
 - 行列最值
+
 ```python
 df = pandas.DataFrame([
                 [60,70,50],\
@@ -94,7 +96,7 @@ df.head()
 ```
 
 实操
- ```python
+```python
 import numpy as np
 def convertNaN(e):
     if e == '暂无资料':
@@ -118,6 +120,7 @@ current_time = datetime.now()
 
 type(current_time)
 ```
+
 ## 时间<---->String
 ```python
 #将时间转换成字符串
@@ -127,6 +130,7 @@ s = '2017/04-22'
 #将字符串转换成时间
 print(datetime.strptime(s,'%Y/%m-%d'))
 ```
+
 ## 时间回溯
 ```python
 from datetime import timedelta
@@ -170,14 +174,18 @@ df['张贴日期'] =pandas.to_datetime(df['张贴日期'],format='西元%Y年%m�
 ```
 
 # 数据重塑
-- 数据导入
+
+## 数据导入
+
 ```python
 import pandas as pd
 df = pd.read_excel('house_sample.xlsx')
 df.head()
 ```
-- 数据操作
-one-hot
+
+## 数据操作
+- one-hot
+
 ```python
 #将df的"朝向"列数据进行one-hot处理，即转换成虚拟变量
 pd.get_dummies(df['朝向'])
@@ -189,6 +197,7 @@ df.head()
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2qy19bzvj203k08pa9y.jpg)
 
 - 删除数据
+
 ```python
 #删除df的'朝向'数据
 df = df.drop('朝向',axis=1)
@@ -204,6 +213,7 @@ df2.head()
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r0yfipgj208p077dg7.jpg)
 
 - 转换
+
 ```python
 #将上面表格的行索引与列索引进行对换
 df3 = df.pivot_table(index='产权性质',columns='张贴日期',values='总价',aggfunc=sum,fill_value=0)
@@ -211,13 +221,14 @@ df3.head()
 ```
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r25wh3fj20hq067wen.jpg)
 
-- #利用转置函数实现上面的行索引与列索引对换
+# 利用转置函数实现上面的行索引与列索引对换
 ```python
 df2.T
 ```
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r3aj8ejj20ho065wen.jpg)
 
 - 表
+
 ```python
 #调整上面的参数，绘制以下表格
 df_multi_idx = df.pivot_table(index=['装修','楼层'],columns='张贴日期',values='总价',aggfunc=sum,fill_value=0)
@@ -226,6 +237,7 @@ df_multi_idx.head()
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r4alq9qj20fm08lwet.jpg)
 
 - unstack函数
+
 ```python
 #利用unstack函数转换成宽表格
 df_wide = df_multi_idx.unstack()
@@ -234,6 +246,7 @@ df_wide.head()
 ![](http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r5crzljj20hc08mt95.jpg)
 
 - stack函数
+
 ```python
 #利用stack转换成长表格
 df_long = df_wide.stack()
@@ -297,12 +310,13 @@ df[['datetime','from']] = df['source'].str.extract('(\d+年\d+月\d+日) \d+:\d+
 df['datetime'] = pandas.to_datetime(df['datetime'],format='%Y年%m月%d日')
 df['datetime'].head()
 ```
+
 刪除Source
 ```python
 #删除source列数据
 del df['source']
 
- df.head(3)
+df.head(3)
 ```
 ----
 **数据**

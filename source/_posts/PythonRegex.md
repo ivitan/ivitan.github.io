@@ -16,7 +16,9 @@ thumbnail: /images/Python.png
 Python 正则表达式
 <!--more-->
 # 常见匹配模式
+
 - 模式表
+
 |模式	|描述|
 |:---|:---|
 |`\w`	|匹配字母数字及下划线|
@@ -51,7 +53,9 @@ re.match 尝试从字符串的起始位置匹配一个模式，如果不是起�
 re.match(pattern, string, flags=0)
 ```
 ## 匹配模式
+
 - 最常规的匹配
+
 ```Python
 import re
 
@@ -172,6 +176,7 @@ print(result.group(1))#输出数字字符串
 
 # 匹配演练
 - 一
+
 ```Python
     import re
 
@@ -199,7 +204,9 @@ print(result.group(1))#输出数字字符串
     result = re.search('<li.*?active.*?singer="(\w+)">(\w+)</a>',html,re.S)
     print(result.group(1),result.group(2))
 ```
+
 - 二
+
 ```Python
     import re
 
@@ -231,7 +238,9 @@ print(result.group(1))#输出数字字符串
     #同时输出任贤齐，沧海一声笑这两串目标字符
     print(result.group(1),result.group(2))
 ```
+
 - 三
+
 ```Python
     import re
 
@@ -402,6 +411,7 @@ result = re.match(pattern,content)
 #result = re.match('Hello.*Demo', content, re.S)
 print(result)#输出匹配结果
 ```
+
 # 练习题
 ```Python
     import requests

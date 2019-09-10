@@ -42,10 +42,13 @@ hdmi_cvt 480 320 60 6 0 0 0
 
 # 修改分辨率
 - 终端输入
+
 ```sh
 sudo vim /boot/config.txt
 ```
+
 - 修改
+
 ```
 hdmi_drive=2
 hdmi_force_hotplug=1
@@ -55,7 +58,9 @@ hdmi_mode=87
 ```
 ## 分辨率表
 ### CEA 分辨率(电视规格分辨率)
+
 - CEA 规定的电视规格分辨率，这些分辨率的 `hdmi_group = 1`
+
 ```shell
   hdmi_mode=1    VGA
   hdmi_mode=2    480p  60Hz
@@ -123,6 +128,7 @@ hdmi_mode=87
 
 ### DMT分辨率(计算机显示器)
 - 以下的英文计算机显示器使用的分辨率,这些分辨率的 `hdmi_group = 2`
+
 ```shell
   hdmi_mode=1    640x350   85Hz
   hdmi_mode=2    640x400   85Hz

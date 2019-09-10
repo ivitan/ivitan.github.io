@@ -29,6 +29,7 @@ import matplotlib.pyplot as plt
 data = load_iris()
 print(data)
 ```
+
 ## 查看data类型，包含哪些数据
 ```Python
 print(type(data))
@@ -63,7 +64,7 @@ print(iris_len)
 
 ## 取出某朵花的四个特征及其类别。
 ```Python
- print('四个特征',data.data[1],data.target[1])
+print('四个特征',data.data[1],data.target[1])
 ```
 
 ## 将所有花的特征和类别分成三组，每组50个
@@ -98,6 +99,7 @@ print(iris_len)
 iris_result = np.array([iris_set, iris_ver, iris_vir])
 print("分组:", iris_result)
 ```
+
 ## 计算鸢尾花花瓣长度的最大值，平均值，中值，均方差。
 ```Python
 #鸢尾花花瓣长度的数据
@@ -111,6 +113,7 @@ print('均方差：',np.std(petal_length))
 
 ## 显示鸢尾花某一特征的曲线图，散点图。
 - 曲线图
+
 ```Python
 iris_feature = data.feature_names,data.data
 
@@ -119,14 +122,18 @@ plt.plot(x,iris_feature)
 plt.savefig("特征曲线图.png")
 plt.show()
 ```
+
 - 散点图
+
 ```Python
 plt.scatter(x,iris_feature)
 plt.savefig("特征散点图.png")
 plt.show()
 ```
+
 ## np.random
 - 用 np.random.normal() 产生一个正态分布的随机数组，并显示出来。
+
 ```Python
 mu = 50
 sigma = 0.6
@@ -139,6 +146,7 @@ plt.show()
 ```
 
 - np.random.randn()产生一个正态分布的随机数组，并显示出来。
+
 ```Python
 '''
 np.random.rand(n) 产生标准正态分布， 即均值为0 标准差为1 的高斯分布
@@ -160,6 +168,7 @@ plt.show()
 
 ## 显示鸢尾花花瓣长度的正态分布图，曲线图，散点图
 - 正态分布图
+
 ```Python
 mu = np.mean(petal_length) # 期望值
 sigma = np.std(petal_length) # 标准差
@@ -173,6 +182,7 @@ plt.show()
 ```
 
 - 曲线图
+
 ```Python
 x = np.linspace(0,150,num=150)
 plt.plot(x,petal_len)
@@ -181,6 +191,7 @@ plt.show()
 ```
 
 - 散点图
+
 ```Python
 plt.scatter(x,petal_len,)
 plt.savefig("花瓣长度散点图.png")

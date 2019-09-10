@@ -16,7 +16,9 @@ thumbnail: /images/Python.png
 Python Kmeans
 <!--more-->
 # KMeans
+
 - K - means是一个反复迭代的过程，算法分为四个步骤：
+
 ```Python
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
@@ -82,7 +84,9 @@ Python Kmeans
 ```
 
 # 鸢尾花
+
 - 鸢尾花花瓣长度数据做聚类并用散点图显示
+
 ```python
     iris = load_iris()
     data = iris.data
@@ -107,6 +111,7 @@ Python Kmeans
 ```
 
 - 用sklearn.cluster.KMeans，花瓣长度数据做聚类
+
 ```python
     iris_length = data[:, 2:3]
     kmeans = KMeans(n_clusters = 4 )
@@ -120,6 +125,7 @@ Python Kmeans
 ```
 
 - 鸢尾花完整数据做聚类
+
 ```python
     k_means1 = KMeans(n_clusters = 4)
     result1 = k_means1.fit(data)

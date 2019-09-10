@@ -17,14 +17,15 @@ thumbnail: /images/CSS.png
 Css 选择器与权重
 <!--more-->
 # 引入 CSS
-- 行间引入
+
+## 行间引入
 ```css
 <div style = "width:100px;height:100px;>
 </div>
  ```
-- 页面级引入(内嵌式)
-	- `<head>` 和 `</head>` 之间
-    ```css
+## 页面级引入(内嵌式)
+- `<head>` 和 `</head>` 之间
+```css
     <style type="css/text">
     .text{
         font-size: 20px;
@@ -32,9 +33,12 @@ Css 选择器与权重
         margin: 0 auto;
     } 
     </style> 
-    ```
-- 导入式
+ ```
+
+## 导入式
+
 1. 在style元素中导入CSS文件
+
 ```css
 <style type="text/css">    
 @import "CSS样式文件的绝对地址";
@@ -42,6 +46,7 @@ Css 选择器与权重
 </style>        
 ```
 2. 在CSS文件中再导入CSS文件
+
 ```css
 /*某个CSS文件*/
 @import "另一个CSS文件的地址";
@@ -53,11 +58,12 @@ Css 选择器与权重
 }
 ```
 
-- 链接式
-	- 网页的 `<head></head>` 标签对中使用`<link>` 标记来引入外部样式表文件
-    ```css
-    <link type="text/css" rel="stylesheet" href="CSS样式文件的地址">
-    ```
+## 链接式
+- 网页的 `<head></head>` 标签对中使用`<link>` 标记来引入外部样式表文件
+
+```css
+<link type="text/css" rel="stylesheet" href="CSS样式文件的地址">
+ ```
 # 选择器
 ## 基础选择器
 |选择器|	含义|	实例|
@@ -69,6 +75,7 @@ Css 选择器与权重
 
 
 - id(唯一)
+
 ```html
 <div id="only>
 123
@@ -81,6 +88,7 @@ Css 选择器与权重
 ```
 
 - class
+
 ```html
 <div class="only>
 123
@@ -95,6 +103,7 @@ Css 选择器与权重
 
 ## 标准选择器
 - 会选择所有相同元素
+
 ```html
 <div>123
 </div>
@@ -113,6 +122,7 @@ span{
 
 通配符选择器 
 - 会匹配所有的元素
+
 ```html
 <div></div>
 ...
@@ -135,6 +145,7 @@ span{
 
 
 - 父子选择器/派生选择器
+
 ```html
 <div>
     <span>
@@ -148,6 +159,7 @@ div span{
 ```
 
 - 直接子元素选择器
+
 ```html
 <div>
    <em>134</em>
@@ -163,6 +175,7 @@ div > em{
 ```
 
 - 并列选择器
+
 ```html
 <div>1</div>
 <div class ="demo">2</div>
@@ -174,7 +187,8 @@ div.demo{
 }
 ```
 
-分组选择器
+- 分组选择器
+
 ```html
 <em>1</em>
 <strong>2</strong>
@@ -245,7 +259,8 @@ color: red
  color: #ff4040
 ```
 - 两位相同可以缩写
- ```css
+
+```css
  color: # f40;
 ```
 

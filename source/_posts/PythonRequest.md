@@ -49,7 +49,9 @@ print(response.text)
 ```
 
 ## 带参数 GET 请求
+
 - ?
+
 ```Python
 import requests
 response=requests.get('http://httpbin.org/get?name=germey&age=22')
@@ -57,7 +59,9 @@ response=requests.get('http://httpbin.org/get?name=germey&age=22')
 print(response.text)
 #输出网页源代码
 ```
+
 - params
+
 ```python
 import requests
 response=requests.get('http://httpbin.org/get',params={'name':'germery','age':22})
@@ -77,6 +81,7 @@ response=requests.get('https://www.zhihu.com/explore',headers=headers)
 response.text
 #输出网页源代码
 ```
+
 ## 基本POST请求
 ```Python
 import requests
@@ -87,6 +92,7 @@ response=requests.post('http://httpbin.org/post',data=data)
 print(response.text)
 #输出网页源代码
 ```
+
 ```Python
 import requests
 
@@ -99,6 +105,7 @@ response=requests.post('http://httpbin.org/post',headers=headers,data=data)
 response.json()
 #输出访问结果的json格式数据
 ```
+
 # 响应
 ## reponse 属性
 ```Python
@@ -161,7 +168,9 @@ response.cookies.items()
 #输出以上response结果的网页源代码
 #观察运行结果，思考为什么没法获取number：123456789的cookies数据？
 ```
+
 - requests.Session()
+
 ```Python
 import requests
 
@@ -247,4 +256,4 @@ print(response.text)
     #以json.loads函数输出json（dict数据结构）格式数据
     print(response.json())
     #打印输出response.json()返回结果的数据类型
-    ```
+```

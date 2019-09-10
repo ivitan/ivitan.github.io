@@ -25,16 +25,22 @@ sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf
 注释掉 
 bind-address = 127.0.0.1
 ```
+
 - 修改 root 密码
+
 ```bash
 sudo mysqladmin -u root -p password 
 ```
+
 - 新建 gogs 数据库
+
 ```bash
 mysql -h127.0.0.1 -uroot -p123456
 create database gogs;
 ```
+
 - 重启 MySQL
+
 ```bash
 sudo service mysql restart
 ```

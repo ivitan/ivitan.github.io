@@ -27,14 +27,18 @@ hostname -I
 - 电脑需要连 WiFi
 - 在 设置->网络->Wlan->网络与共享中心->Wlan->属性->共享->允许​其它用户通过它来连接->确定。
 - CMD 查看 IP
+
 ```sh
 ping raspberrypi.local
 ```
+
 - 改变了树莓派的主机名字，Avahi 也将改变 .local 的 DNS 多播地址
+
 ```sh
 arp -a
 # 通常以192.168开头，最后一位是1
 ```
+
 # 只有手机（安卓）
 - USB 共享的网络
 - 开启热点
