@@ -6,6 +6,7 @@ tags:
 - Linux
 - Termux
 toc: true
+permalink: GitGame
 categories: notes
 thumbnail: /images/Git.png
 ---

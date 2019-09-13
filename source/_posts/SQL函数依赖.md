@@ -4,6 +4,7 @@ date: 2018-05-21 18:58:02
 tags:
 - SQL
 toc: true
+permalink: SQLfunDep
 categories: notes
 thumbnail: /images/SQL.png
 ---

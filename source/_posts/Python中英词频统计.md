@@ -10,6 +10,7 @@ categories:
 author:
   name: Vitan
 toc: true
+permalink: PythonWorldFrequency
 enable_unread_badge: true
 thumbnail: /images/Python.png
 ---

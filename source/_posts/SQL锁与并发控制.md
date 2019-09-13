@@ -4,6 +4,7 @@ date: 2018-06-12 15:19:36
 tags:
 - SQL
 toc: true
+permalink: SQLlock
 categories: notes
 thumbnail: /images/SQL.png
 ---

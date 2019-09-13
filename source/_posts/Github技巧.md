@@ -6,6 +6,7 @@ tags:
 - Git
 categories: notes
 toc: true
+permalink: GithubTips
 enable_unread_badge: true
 thumbnail: /images/Github.png
 ---

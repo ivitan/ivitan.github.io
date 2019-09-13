@@ -4,6 +4,7 @@ date: 2018-05-11 11:51:20
 tags:
 - SQL
 toc: true
+permalink: SQLconstraint
 categories: notes
 thumbnail: /images/SQL.png
 ---
@@ -45,11 +46,11 @@ alter table orders
 add constraint FK_Orders_Customerld
 foreign key(customerid)  references customer(customerld)
 --外键约束, 外键列名, 被引用列名
-	```
+```
 
 # 级联动
 语法
- ```sql
+```sql
 alter table orders
 add constraint FK_Orders_Customerld  --添加约束 名称
 foreign key (customerid) references customer(customerld)

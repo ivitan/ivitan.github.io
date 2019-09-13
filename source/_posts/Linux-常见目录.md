@@ -7,6 +7,7 @@ tags:
 - ArchLinux
 categories: notes
 toc: true
+permalink: LinuxDir
 thumbnail: /images/Linux.png
 enable_unread_badge: true
 ---

@@ -6,6 +6,7 @@ tags:
 - Linux
 - Termux
 toc: true
+permalink: GitNote
 categories: notes
 thumbnail: /images/Git.png
 ---

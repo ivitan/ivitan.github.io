@@ -5,6 +5,7 @@ tags:
 - SQL
 categories: notes
 toc: true
+permalink: SQLmode
 thumbnail: /images/SQL.png
 mathjax: true
 ---

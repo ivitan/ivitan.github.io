@@ -7,6 +7,7 @@ tags:
 - Android
 toc: true
 categories: notes
+permalink: UbuntuAndroidStudio
 thumbnail: /images/Ubuntu.png
 ---
 

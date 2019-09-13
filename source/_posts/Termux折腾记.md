@@ -6,6 +6,7 @@ tags:
 - Termux
 toc: true
 categories: notes
+permalink: TermuxNote
 thumbnail: /images/Termux.png
 ---
 Termux oh-my-zsh 主题设置，去欢迎字等。

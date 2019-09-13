@@ -6,6 +6,7 @@ tags:
 - Linux
 - Termux
 toc: true
+permalink: HexoInstall
 categories: notes
 thumbnail: /images/Hexo.png
 ---

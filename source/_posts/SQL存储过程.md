@@ -5,6 +5,7 @@ tags:
 - SQL
 toc: true
 categories: notes
+permalink: SQLprocedure
 thumbnail: /images/SQL.png
 ---
 SQL存储过程

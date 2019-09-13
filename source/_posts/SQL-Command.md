@@ -194,13 +194,14 @@ SQL: select * from 日程安排 where datediff('minute',f开始时间,getdate())
 select top 10 b.* from (select top 20 主键字段,排序字段 from 表名 order by 排序字段 desc) a,表名 b where b.主键字段 = a.主键字段 order by a.排序字段
 ```
 - 具体实现：
-- 关于数据库分页：
+- 关于数据库分页
+
 ```sql
     declare @start int,@end int
     @sql  nvarchar(600)
     set @sql=’select top’+str(@end-@start+1)+’+from T where rid not in(select top’+str(@str-1)+’Rid from T where Rid>-1)’
     exec sp_executesql @sql
-  ```
+```
   - 注意：在top后不能直接跟一个变量，所以在实际应用中只有这样的进行特殊的处理。Rid为一个标识列，如果top后还有具体的字段，这样做是非常有好处的。因为这样可以避免 top的字段如果是逻辑索引的，查询的结果后实际表中的不一致（逻辑索引中的数据有可能和数据表中的不一致，而查询时如果处在索引则首先查询索引）
 
 ## 第三部分
@@ -237,10 +238,13 @@ insert into tablename select * from temp
 ```
 - 评价：这种操作牵连大量的数据的移动，这种做法不适合大容量但数据操作
 - 例如:在一个外部表中导入数据，由于某些原因第一次只导入了一部分，但很难判断具体位置，这样只有在下一次全部导入，这样也就产生好多重复的字段，怎样删除重复字段
+
 ```
 alter table tablename
 ```
+
 - 加一个自增列
+
 ```sql
   add  column_b int identity(1,1)
    delete from tablename where column_b not in(
@@ -281,6 +285,7 @@ select top 5 * from (select top 15 * from table order by id asc) table_别名 or
 - 技巧
 - 1=1，1=2的使用，在SQL语句组合时用的较多
 - “where 1=1” 是表示选择全部    “where 1=2”全部不选，如：
+
 ```sql
     if @strWhere !=''
     begin
@@ -504,6 +509,7 @@ Select Top N * From 表 Order by ID Desc
 ```
 - 案例
   - 例如1：一张表有一万多条记录，表的第一个字段 RecID 是自增长字段，写一个SQL语句， 找出表的第31到第40个记录。
+
   ```sql
   select top 10 recid from A where recid not  in(select top 30 recid from A)
   ```
@@ -512,6 +518,7 @@ Select Top N * From 表 Order by ID Desc
   - 用`order by select top 30 recid from A order by ricid `如果该字段不是自增长，就会出现问题
   - 在那个子查询中也加条件：`select top 30 recid from A where recid>-1`
 - 例2：查询表中的最后以条记录，并不知道这个表共有多少数据,以及表结构。
+
 ```sql
 set @s = 'select top 1 * from T   where pid not in (select top ' + str(@count-1) + ' pid  from  T)'
 print @s      exec  sp_executesql  @s
@@ -555,14 +562,18 @@ exec sp_addlinkedserver   'ITSV ', ' ', 'SQLOLEDB ', '远程服务器名或ip地
 exec sp_addlinkedsrvlogin  'ITSV ', 'false ',null, '用户名 ', '密码 '
 ```
   - 查询示例
+
   ```sql
   select * from ITSV.数据库名.dbo.表名
   ```
+
   - 导入示例
+
   ```sql
   select * into 表 from ITSV.数据库名.dbo.表名
   ```
   - 以后不再使用时删除链接服务器
+
   ```sql
   exec sp_dropserver  'ITSV ', 'droplogins '
   ```
@@ -570,43 +581,58 @@ exec sp_addlinkedsrvlogin  'ITSV ', 'false ',null, '用户名 ', '密码 '
   - 连接远程/局域网数据(openrowset/openquery/opendatasource)
 
   --1、openrowset
+
   - 查询示例
+
   ```sql
   select * from openrowset( 'SQLOLEDB ', 'sql服务器名 '; '用户名 '; '密码 ',数据库名.dbo.表名)
   ```
+
   - 生成本地表
+
   ```sql
   select * into 表 from openrowset( 'SQLOLEDB ', 'sql服务器名 '; '用户名 '; '密码 ',数据库名.dbo.表名)
   ```
+
   - 把本地表导入远程表
+
   ```sql
   insert openrowset( 'SQLOLEDB ', 'sql服务器名 '; '用户名 '; '密码 ',数据库名.dbo.表名)
   select *from 本地表
   ```
+
   - 更新本地表
+
   ```sql
   update b
   set b.列A=a.列A
   from openrowset( 'SQLOLEDB ', 'sql服务器名 '; '用户名 '; '密码 ',数据库名.dbo.表名)as a inner join 本地表 b
   on a.column1=b.column1
   ```
+
   - openquery用法需要创建一个连接
+
   ```sql
   --首先创建一个连接创建链接服务器
   exec sp_addlinkedserver   'ITSV ', ' ', 'SQLOLEDB ', '远程服务器名或ip地址 '
   ```
+
   - 查询
+
   ```sql
   select *
   FROM openquery(ITSV,  'SELECT *  FROM 数据库.dbo.表名 ')
   ```
+
   --把本地表导入远程表
+
   ```sql
   insert openquery(ITSV,  'SELECT *  FROM 数据库.dbo.表名 ')
   select * from 本地表
   ```
 
   - 更新本地表
+
   ```sqk
     update b
     set b.列B=a.列B
@@ -614,11 +640,14 @@ exec sp_addlinkedsrvlogin  'ITSV ', 'false ',null, '用户名 ', '密码 '
     inner join 本地表 b on a.列A=b.列A
   ```
   - 3、opendatasource/openrowset
+
   ```sql
     SELECT   *
     FROM   opendatasource( 'SQLOLEDB ',  'Data Source=ip/ServerName;User ID=登陆名;Password=密码 ' ).test.dbo.roy_ta
   ```
+
   - 把本地表导入远程表
+  
   ```sql
     insert opendatasource( 'SQLOLEDB ',  'Data Source=ip/ServerName;User ID=登陆名;Password=密码 ').数据库.dbo.表名
     select * from 本地表

@@ -7,6 +7,7 @@ tags:
 - Ubuntu
 - ArchLinux
 toc: true
+permalink: delLinuxEFI
 categories: notes
 thumbnail: /images/Linux.png
 enable_unread_badge: true

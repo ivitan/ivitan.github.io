@@ -6,6 +6,7 @@ tags:
 - SQL
 categories: notes
 toc: true
+permalink: MySQLbasic
 thumbnail: /images/MySQL.png
 enable_unread_badge: true
 ---

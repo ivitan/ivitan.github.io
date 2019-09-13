@@ -7,6 +7,7 @@ tags:
 - Eclipse
 toc: true
 categories: notes
+permalink: UbuntuEclipse
 thumbnail: /images/Ubuntu.png
 ---
  Ubuntu 安装 Eclipse

@@ -5,6 +5,7 @@ tags:
 - SQL
 toc: true
 categories: notes
+permalink: SQlprocEx
 thumbnail: /images/SQL.png
 ---
 SQL储存过程练习题

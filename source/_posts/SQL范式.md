@@ -4,6 +4,7 @@ date: 2018-05-22 14:50:05
 tags:
 - SQL
 toc: true
+permalink: SQLnfs
 categories: notes
 thumbnail: /images/SQL.png
 ---

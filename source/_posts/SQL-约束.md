@@ -4,6 +4,7 @@ date: 2018-05-08 15:16:19
 tags:
 - SQL
 toc: true
+permalink: SQLconstraint
 categories: notes
 thumbnail: /images/SQL.png
 ---
@@ -18,7 +19,8 @@ SQL：约束
 
 ## CREATE TABLE 时的 UNIQUE 约束
 - 在 "Persons" 表创建时在 "P_Id" 列上创建 UNIQUE 约束
-- MySQL：
+- MySQL
+
 ```sql
 CREATE TABLE Persons
 (
@@ -30,7 +32,9 @@ City varchar(255),
 UNIQUE (P_Id)
 )
 ```
-- SQL Server/Oracle/MS Access：
+
+- SQL Server/Oracle/MS Access
+
 ```sql
 CREATE TABLE Persons
 (
@@ -42,7 +46,9 @@ City varchar(255)
 )
 ```
 ## 命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束
-- MySQL/SQL Server/Oracle/MS Access：
+
+- MySQL/SQL Server/Oracle/MS Access
+
 ```sql
 CREATE TABLE Persons
 (
@@ -57,14 +63,18 @@ CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)
 
 ## ALTER TABLE 时的 UNIQUE 约束
 语法
-- 当表已被创建时，如需在 "P_Id" 列创建 UNIQUE 约束，
+
+- 当表已被创建时，如需在 "P_Id" 列创建 UNIQUE 约束
+
 ```sql
 ALTER TABLE Persons
 ADD UNIQUE (P_Id)
 ```
 ## 如需命名 UNIQUE 约束，并添加 UNIQUE 约束，
-语法：
+语法
+
 MySQL / SQL Server / Oracle / MS Access：
+
 ```sql
 ALTER TABLE Persons
 ADD CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)
@@ -72,12 +82,15 @@ ADD CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)
 
 ## 撤销 UNIQUE 约束
 撤销 UNIQUE 约束
-MySQL：
+MySQL
+
 ```sql
 ALTER TABLE Persons
 DROP INDEX uc_PersonID
 ```
+
 SQL Server / Oracle / MS Access：
+
 ```sql
 ALTER TABLE Persons
 DROP CONSTRAINT uc_PersonID
@@ -90,7 +103,8 @@ PRIMARY KEY 约束唯一标识数据库表中的每条记录。
   - 每个表都应该有一个主键，并且每个表只能有一个主键。
 
 ## CREATE TABLE 时的 PRIMARY KEY 约束
-下面的 SQL 在 "Persons" 表创建时在 "P_Id" 列上创建 PRIMARY KEY 约束：
+下面的 SQL 在 "Persons" 表创建时在 "P_Id" 列上创建 PRIMARY KEY 约束
+
 ```sql
 CREATE TABLE Persons
 (
@@ -102,7 +116,9 @@ City varchar(255),
 PRIMARY KEY (P_Id)
 )
 ```
-SQL Server / Oracle / MS Access：
+
+SQL Server / Oracle / MS Access
+
 ```sql
 CREATE TABLE Persons
 (
@@ -113,7 +129,9 @@ Address varchar(255),
 City varchar(255)
 )
 ```
+
 - 如需命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束
+
 ```sql
 CREATE TABLE Persons
 (
@@ -129,11 +147,14 @@ CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)
 
 ## ALTER TABLE 时的 PRIMARY KEY 约束
 - 当表已被创建时，如需在 "P_Id" 列创建 PRIMARY KEY 约束
+
 ```sql
 ALTER TABLE Persons
 ADD PRIMARY KEY (P_Id)
 ```
+
 - 如需命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束
+
 ```sql
 ALTER TABLE Persons
 ADD CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)
@@ -146,7 +167,7 @@ MySQL
 ALTER TABLE Persons
 DROP PRIMARY KEY
 ```
-SQL Server / Oracle / MS Access：
+SQL Server / Oracle / MS Access
 ```sql
 ALTER TABLE Persons
 DROP CONSTRAINT pk_PersonID
@@ -193,6 +214,7 @@ PRIMARY KEY (O_Id),
 FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
 )
 ```
+
 SQL Server / Oracle / MS Access：
 ```sql
 CREATE TABLE Orders
@@ -202,7 +224,9 @@ OrderNo int NOT NULL,
 P_Id int FOREIGN KEY REFERENCES Persons(P_Id)
 )
 ```
+
 - 如需命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束
+
 ```sql
 CREATE TABLE Orders
 (
@@ -214,14 +238,18 @@ CONSTRAINT fk_PerOrders FOREIGN KEY (P_Id)
 REFERENCES Persons(P_Id)
 )
 ```
+
 ALTER TABLE 时的 FOREIGN KEY 约束
 - 当 "Orders" 表已被创建时，如需在 "P_Id" 列创建 FOREIGN KEY 约束
+
 ```sql
 ALTER TABLE Orders
 ADD FOREIGN KEY (P_Id)
 REFERENCES Persons(P_Id)
 ```
+
 - 如需命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束
+
 ```sql
 ALTER TABLE Orders
 ADD CONSTRAINT fk_PerOrders
@@ -230,7 +258,9 @@ REFERENCES Persons(P_Id)
 ```
 ## 撤销 FOREIGN KEY 约束
 撤销 FOREIGN KEY 约束：
+
 - MySQL
+
 ```sql
 ALTER TABLE Orders
 DROP FOREIGN KEY fk_PerOrders
@@ -250,7 +280,8 @@ DROP CONSTRAINT fk_PerOrders
 CREATE TABLE 时的 CHECK 约束
 - 下面的 SQL 在 "Persons" 表创建时在 "P_Id" 列上创建 CHECK 约束。CHECK 约束规定 "P_Id" 列必须只包含大于 0 的整数。
 
-- MySQL：
+- MySQL
+
 ```sql
 CREATE TABLE Persons
 (
@@ -273,7 +304,9 @@ Address varchar(255),
 City varchar(255)
 )
 ```
+
 - 如需命名 CHECK 约束，并定义多个列的 CHECK 约束
+
 ```sql
 CREATE TABLE Persons
 (
@@ -286,13 +319,17 @@ CONSTRAINT chk_Person CHECK (P_Id>0 AND City='Sandnes')
 )
 ```
 ALTER TABLE 时的 CHECK 约束
-- 当表已被创建时，如需在 "P_Id" 列创建 CHECK 约束，请使用下面的 SQL：
+
+- 当表已被创建时，如需在 "P_Id" 列创建 CHECK 约束，请使用下面的 SQL
+
 MySQL / SQL Server / Oracle / MS Access:
 ```sql
 ALTER TABLE Persons
 ADD CHECK (P_Id>0)
 ```
+
 - 如需命名 CHECK 约束，并定义多个列的 CHECK 约束
+
 ```sql
 ALTER TABLE Persons
 ADD CONSTRAINT chk_Person CHECK (P_Id>0 AND City='Sandnes')
@@ -317,7 +354,7 @@ DROP CHECK chk_Person
 
 CREATE TABLE 时的 DEFAULT 约束
 下面的 SQL 在 "Persons" 表创建时在 "City" 列上创建 DEFAULT 约束：
-My SQL / SQL Server / Oracle / MS Access：
+My SQL / SQL Server / Oracle / MS Access
 ```sql
 CREATE TABLE Persons
 (
@@ -328,7 +365,9 @@ Address varchar(255),
 City varchar(255) DEFAULT 'Sandnes'
 )
 ```
+
 - 通过使用类似 GETDATE() 这样的函数，DEFAULT 约束也可以用于插入系统值：
+
 ```sql
 CREATE TABLE Orders
 (
@@ -338,31 +377,41 @@ P_Id int,
 OrderDate date DEFAULT GETDATE()
 )
 ```
+
 ALTER TABLE 时的 DEFAULT 约束
 - 当表已被创建时，如需在 "City" 列创建 DEFAULT 约束
-- MySQL：
+- MySQL
+
 ```sql
 ALTER TABLE Persons
 ALTER City SET DEFAULT 'SANDNES'
 ```
-- SQL Server / MS Access：
+
+- SQL Server / MS Access
+
 ```sql
 ALTER TABLE Persons
 ALTER COLUMN City SET DEFAULT 'SANDNES'
 ```
-- Oracle：
+
+- Oracle
+
 ```sql
 ALTER TABLE Persons
 MODIFY City DEFAULT 'SANDNES'
 ```
 ## 撤销 DEFAULT 约束
 撤销 DEFAULT 约束
-- MySQL：
+
+- MySQL
+
 ```sql
 ALTER TABLE Persons
 ALTER City DROP DEFAULT
 ```
-- SQL Server / Oracle / MS Access：
+
+- SQL Server / Oracle / MS Access
+
 ```sql
 ALTER TABLE Persons
 ALTER COLUMN City DROP DEFAULT

@@ -4,6 +4,7 @@ date: 2018-06-09 10:15:14
 tags:
 - SQL
 toc: true
+permalink: SQLstyle
 categories: notes
 thumbnail: /images/SQL.png
 ---

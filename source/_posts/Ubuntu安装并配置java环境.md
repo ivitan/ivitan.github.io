@@ -6,6 +6,7 @@ tags:
 - Java
 toc: true
 categories: notes
+permalink: UbuntuJava
 thumbnail: /images/Ubuntu.png
 ---
 Ubuntu 安装并配置 java 环境

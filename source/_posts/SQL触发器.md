@@ -5,6 +5,7 @@ tags:
 - SQL
 toc: true
 categories: notes
+permalink: SQLtrigger
 thumbnail: /images/SQL.png
 ---
 SQL触发器

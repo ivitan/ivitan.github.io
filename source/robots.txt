@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /posts/
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
 Allow: /about/
+Allow: /xml/
 
 Disallow: /vendors/
 Disallow: /js/
@@ -12,5 +14,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://vitan.me/sitemap.xml
-Sitemap: https://vitan.me/bdmap.xml
+Sitemap: https://vitan.me/xml/sitemap.xml
+Sitemap: https://vitan.me/xml/bdmap.xml

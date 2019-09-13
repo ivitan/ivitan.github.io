@@ -7,6 +7,7 @@ tags:
 - Termux
 - Win
 toc: true
+permalink: HexoDevices
 categories: notes
 thumbnail: /images/Hexo.png
 ---

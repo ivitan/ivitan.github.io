@@ -4,6 +4,7 @@ date: 2018-06-30 21:58:04
 tags:
 - SQL
 categories: notes
+permalink: SQLrelAlg
 toc: true
 thumbnail: /images/SQL.png
 ---

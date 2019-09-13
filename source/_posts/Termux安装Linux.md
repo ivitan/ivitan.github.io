@@ -5,6 +5,7 @@ tags:
 - Linux
 - Termux
 toc: true
+permalink: TermuxLinux
 categories: notes
 thumbnail: /images/Termux.png
 ---
