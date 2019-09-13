@@ -114,11 +114,14 @@ google_analytics: UA-144334903-1
 google_adsense:
   id: ca-pub-2581760538335948
 
-#hexo sitemap
+#Rss Sitemap
+feed:
+  type: atom
+  path: /xml/atom.xml
 sitemap:
-  path: sitemap.xml
+  path: /xml/sitemap.xml
 baidusitemap:
-  path: bdmap.xml
+  path: /xml/bdmap.xml
 
 # 打赏
 donate:
