@@ -4,7 +4,7 @@ date: 2018-04-13 8:18:38
 tags:
 - SQL
 toc: true
-permalink: /posts/SQLExam.html
+permalink: SQLexam
 categories: notes
 thumbnail: /images/SQL.png
 ---
