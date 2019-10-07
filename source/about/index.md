@@ -12,7 +12,6 @@ share: false
 </center>
 
 # Vitan
-> - [Resume](https://resume.vitan.me)
 > - 数码爱好者
 > - Google，Andriod，OnePlus 粉
 > - 规则长方体固体物质空间移动工程师

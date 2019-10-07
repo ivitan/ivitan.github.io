@@ -120,8 +120,6 @@ feed:
   path: /xml/atom.xml
 sitemap:
   path: /xml/sitemap.xml
-baidusitemap:
-  path: /xml/bdmap.xml
 
 # 打赏
 donate:
