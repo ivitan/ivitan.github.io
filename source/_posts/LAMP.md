@@ -115,9 +115,6 @@ service apachectl start
 yum -y remove boost
 yum -y remove mysql
 ```
-
-
-
 ## Install
 ### 添加用户和组
 ```bash
@@ -159,7 +156,6 @@ cd mysql-5.7.11
 -DDOWNLOAD_BOOST=1 \
 DWITH_BOOST=/server/boost
 ```
-编译参数详情:https://dev.mysql.com/doc/refman
 
 安装
 
