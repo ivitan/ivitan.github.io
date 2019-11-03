@@ -9,7 +9,7 @@ author:
 enable_unread_badge: true
 toc: true
 thumbnail: /images/Linux.png
-date: 2019-10-19 10:12:16
+date: 2019-10-20 10:12:16
 ---
 HCNA
 <!--more-->
