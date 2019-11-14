@@ -1,5 +1,5 @@
 ---
-title: cmd
+title: CMD
 tags:
   - Win
 categories:
@@ -11,7 +11,8 @@ toc: true
 thumbnail: /images/Typography.png
 date: 2019-11-03 09:53:23
 ---
-转载自:https://www.cnblogs.com/kekec/p/3662125.html
+CMD 基础
+转载自:[可可西](https://www.cnblogs.com/kekec/p/3662125.html)
 <!--more-->
 # 基础命令
 ```cmd

@@ -11,9 +11,8 @@ toc: true
 thumbnail: /images/Linux.png
 date: 2019-10-20 10:12:16
 ---
-HCNA
+HCNA 学习笔记
 <!--more-->
-
 # 网络整体架构
 ## 企业网络
 企业网络：包括小型办公室、教育、政府、银行等行业或机构

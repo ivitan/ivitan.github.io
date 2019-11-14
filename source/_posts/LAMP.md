@@ -12,9 +12,8 @@ toc: true
 thumbnail: /images/Linux.png
 date: 2019-10-15 12:32:16
 ---
-编译安装 LAMP 
+Linux 编译安装 LAMP 
 <!--more-->
-
 # Apache
 # 准备
 编译工具&开发包
