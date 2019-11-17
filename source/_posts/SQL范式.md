@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLnfs
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL范式

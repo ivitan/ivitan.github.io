@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLtest
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL数据库原理练习题

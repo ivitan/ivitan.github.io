@@ -4,7 +4,7 @@ date: 2018-04-15 18:12:22
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL 中 EXISTS

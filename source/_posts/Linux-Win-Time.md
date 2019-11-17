@@ -7,7 +7,7 @@ tags:
   - Ubuntu
   - Win
 categories:
-  - notes
+  - Linux
 author:
   name: Vitan
 toc: true

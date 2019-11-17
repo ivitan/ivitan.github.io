@@ -5,7 +5,7 @@ tags:
   - Linux
   - Shell
 categories:
-  - notes
+  - Coding
 author:
   - Vitan
 toc: true

@@ -5,7 +5,7 @@ tags:
   - WebCrawler
   - Linux
 categories:
-  - notes
+  - Coding
 author:
   - Vitan
 enable_unread_badge: true

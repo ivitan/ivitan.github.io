@@ -7,7 +7,7 @@ tags:
 - Ubuntu
 - Termux
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Bash.png
 ---
 Oh-my-zsh插件

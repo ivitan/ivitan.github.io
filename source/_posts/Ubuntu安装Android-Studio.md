@@ -6,7 +6,7 @@ tags:
 - Ubuntu
 - Android
 toc: true
-categories: notes
+categories: Linux
 permalink: UbuntuAndroidStudio
 thumbnail: /images/Ubuntu.png
 ---

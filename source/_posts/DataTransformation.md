@@ -6,7 +6,7 @@ tags:
   - Python
   - WebCrawler
 categories:
-  - notes
+  - Coding
 author:
   name: Vitan
 toc: true

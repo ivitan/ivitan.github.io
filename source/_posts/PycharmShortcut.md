@@ -8,7 +8,7 @@ tags:
   - Win
   - Note
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

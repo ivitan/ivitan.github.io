@@ -5,7 +5,7 @@ tags:
 - Linux
 - Termux
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Bash.png
 ---
 Tmux 可以复用终端、分屏、托管进程等

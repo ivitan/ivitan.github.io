@@ -5,7 +5,7 @@ tags:
   - Linux
   - Docker
 categories:
-  - notes
+  - Coding
 author:
   - Vitan
 toc: true

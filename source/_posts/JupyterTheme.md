@@ -6,7 +6,7 @@ tags:
     - WebCrawler
     - Note
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

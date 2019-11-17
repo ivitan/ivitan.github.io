@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLfull
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL实现数据完整性约束

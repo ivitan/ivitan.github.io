@@ -6,7 +6,7 @@ tags:
   - Linux
   - Termux
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

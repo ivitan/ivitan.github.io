@@ -5,7 +5,7 @@ tags:
   - Linux
   - Android
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

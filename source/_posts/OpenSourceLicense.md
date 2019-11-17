@@ -7,7 +7,7 @@ tags:
   - Android
   - Win
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

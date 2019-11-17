@@ -4,7 +4,9 @@ date: 2018-03-22 15:16:22
 tags:
 - Java
 toc: true
-categories: notes
+categories: 
+ - Coding
+ - Java
 thumbnail: /images/Java.png
 ---
 Java 变量类型

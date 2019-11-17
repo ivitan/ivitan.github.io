@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLselect
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 检索，存储过程，触发器相关练习。

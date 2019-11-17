@@ -4,7 +4,7 @@ tags:
   - Linux
   - Web
 categories:
-  - notes
+  - Linux
 author:
   - Vitan
 enable_unread_badge: true

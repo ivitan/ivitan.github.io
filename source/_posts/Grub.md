@@ -5,7 +5,7 @@ tags:
   - Linux
   - Win
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

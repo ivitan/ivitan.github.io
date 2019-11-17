@@ -3,7 +3,7 @@ title: CMD
 tags:
   - Win
 categories:
-  - notes
+  - Coding
 author:
   - Vitan
 enable_unread_badge: true

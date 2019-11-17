@@ -3,7 +3,7 @@ title: Hexo SEO 优化
 tags:
   - Hexo 
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 enable_unread_badge: true

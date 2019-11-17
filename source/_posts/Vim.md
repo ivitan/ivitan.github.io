@@ -8,7 +8,7 @@ tags:
 - Vim
 - Ubuntu
 toc: true
-categories: notes
+categories: Coding
 thumbnail: /images/Vim.png
 ---
 Vim 基础

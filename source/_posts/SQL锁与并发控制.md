@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLlock
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL锁与并发控制

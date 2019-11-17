@@ -5,7 +5,7 @@ tags:
 - Atom
 - Note
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

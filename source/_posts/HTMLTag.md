@@ -6,7 +6,7 @@ tags:
   - Note
   - Web
 categories:
-  - notes
+  - [Coding,Web]
 author:
   name: Vitan
 toc: true

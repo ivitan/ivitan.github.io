@@ -5,7 +5,7 @@ tags:
 - Linux
 - Ubuntu
 - ArchLinux
-categories: notes
+categories: Linux
 toc: true
 permalink: LinuxDir
 thumbnail: /images/Linux.png

@@ -4,7 +4,9 @@ date: 2018-03-21 14:47:14
 tags:
 - Java
 toc: true
-categories: notes
+categories: 
+ - Coding
+ - Java
 thumbnail: /images/Java.png
 ---
 Java基本数据类型。

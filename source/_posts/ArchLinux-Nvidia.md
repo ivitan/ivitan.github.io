@@ -4,7 +4,7 @@ date: 2018-08-01 09:14:56
 tags:
 - Linux
 - ArchLinux
-categories: notes
+categories: Linux
 toc: true
 thumbnail: /images/ArchLinux.png
 enable_unread_badge: true

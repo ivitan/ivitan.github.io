@@ -9,7 +9,7 @@ tags:
   - Ubuntu
   - Win
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

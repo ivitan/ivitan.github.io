@@ -3,7 +3,7 @@ title: SQL 补充练习题
 date: 2018-06-29 11:13:57
 tags:
 - SQL
-categories: notes
+categories: Database
 toc: true
 permalink: SQLexercise
 thumbnail: /images/SQL.png

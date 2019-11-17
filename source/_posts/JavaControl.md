@@ -4,7 +4,9 @@ date: 2018-03-14 08:29:27
 tags:
 - Java
 toc: true
-categories: notes
+categories:
+ - Coding
+ - Java
 thumbnail: /images/Java.png
 ---
 Java控制语句

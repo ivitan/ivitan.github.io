@@ -6,7 +6,7 @@ tags:
 - Node.Js
 - Ubuntu
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Ubuntu.png
 ---
 Ubuntu 下 nodejs 安装与版本升级

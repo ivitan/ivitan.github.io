@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLfunDep
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 # 函数依赖 Functional Dependency

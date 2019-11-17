@@ -6,7 +6,7 @@ tags:
 - Ubuntu
 - Termux
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Linux.png
 ---
 Linux 基础命令

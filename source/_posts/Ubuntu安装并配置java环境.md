@@ -5,7 +5,7 @@ tags:
 - Linux
 - Java
 toc: true
-categories: notes
+categories: Linux
 permalink: UbuntuJava
 thumbnail: /images/Ubuntu.png
 ---

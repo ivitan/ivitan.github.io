@@ -5,7 +5,7 @@ tags:
   - Excel
   - Note
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

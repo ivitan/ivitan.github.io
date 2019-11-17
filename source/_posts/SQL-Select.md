@@ -4,7 +4,7 @@ date: 2018-03-27 15:14:46
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SELECT 语句用于从数据库中选取数据。结果被存储在一个结果表中，称为结果集。

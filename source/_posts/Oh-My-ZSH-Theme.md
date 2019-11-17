@@ -6,7 +6,7 @@ tags:
 - Ubuntu
 - Termux
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Bash.png
 ---
 自定义主题shell提示符.

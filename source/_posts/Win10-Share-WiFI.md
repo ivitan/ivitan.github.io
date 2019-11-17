@@ -1,10 +1,11 @@
 ---
 title: Win10 v2ray/SSR/SS 开热点给手机翻墙
+top: 101
 date: 2018-05-04 19:03:13
 tags:
 - Note
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Note.png
 ---
 v2ray/SSR/SS局域网共享到手机翻墙,刷机后，Rom 刷了  pengapps，此方法用来开机登录 Google 账号。

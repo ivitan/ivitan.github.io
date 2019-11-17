@@ -5,7 +5,7 @@ tags:
   - Vim
   - Linux
 categories:
-  - notes
+  - Coding
 author:
   - Vitan
 toc: true

@@ -4,7 +4,7 @@ date: 2018-03-24 23:43:05
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 经典SQL语句大全

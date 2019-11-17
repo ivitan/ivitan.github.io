@@ -5,7 +5,7 @@ tags:
 - Linux
 - Win
 - Termux
-categories: notes
+categories: Diary
 toc: true
 thumbnail: /images/Note.png
 ---

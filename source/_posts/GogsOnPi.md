@@ -5,7 +5,7 @@ tags:
   - Linux
   - Git
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

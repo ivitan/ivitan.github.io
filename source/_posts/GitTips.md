@@ -6,7 +6,7 @@ tags:
 - Git
 - Note
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

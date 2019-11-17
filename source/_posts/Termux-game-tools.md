@@ -5,7 +5,7 @@ tags:
 - Linux
 - Termux
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Termux.png
 mathjax: true
 ---

@@ -7,7 +7,7 @@ tags:
   - Note
   - Web
 categories:
-  - notes
+  - Coding
 author:
   name: Vitan
 toc: true

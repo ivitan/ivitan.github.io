@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLexam
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL 上机习题与练习

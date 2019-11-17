@@ -4,7 +4,7 @@ date: 2019-04-18 20:14:32
 tags:
   - Hexo
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

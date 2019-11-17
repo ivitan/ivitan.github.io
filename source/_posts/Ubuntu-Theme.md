@@ -4,7 +4,7 @@ date: 2018-04-05 11:21:24
 tags:
 - Linux
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Ubuntu.png
 ---
 Ubuntu美化

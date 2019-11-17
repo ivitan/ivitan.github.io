@@ -4,7 +4,7 @@ date: 2018-06-08 14:01:40
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 permalink: SQLtrigger
 thumbnail: /images/SQL.png
 ---

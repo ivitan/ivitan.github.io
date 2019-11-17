@@ -4,7 +4,7 @@ date: 2018-06-01 11:38:04
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 permalink: SQlprocEx
 thumbnail: /images/SQL.png
 ---

@@ -7,7 +7,7 @@ tags:
 - ArchLinux
 - Ununtu
 categories:
-- notes
+- Diary
 author:
 name: Vitan
 toc: true

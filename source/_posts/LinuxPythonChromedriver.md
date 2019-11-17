@@ -7,7 +7,7 @@ tags:
 - ArchLinux
 - WebCrawler
 categories:
-- notes
+- Coding
 author:
 name: Vitan
 toc: true

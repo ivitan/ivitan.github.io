@@ -6,7 +6,7 @@ tags:
   - ArchLinux
   - Ubuntu
 categories:
-  - notes
+  - Linux
 toc: true
 enable_unread_badge: true
 thumbnail: /images/ArchLinux.png

@@ -4,7 +4,7 @@ date: 2018-07-25 09:55:05
 tags:
 - Linux
 - Ubuntu
-categories: notes
+categories: Linux
 toc: true
 enable_unread_badge: true
 thumbnail: /images/Ubuntu.png

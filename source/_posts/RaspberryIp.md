@@ -5,7 +5,7 @@ tags:
   - RaspberryPi
   - Linux
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

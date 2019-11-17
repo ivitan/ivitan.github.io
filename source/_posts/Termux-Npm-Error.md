@@ -6,7 +6,7 @@ tags:
 - Termux
 - Android
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Bash.png
 ---
 解决 Termux出现npm err! cannot read property 'length' of undefined 问题

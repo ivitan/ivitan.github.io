@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLgrant
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
  SQL授权

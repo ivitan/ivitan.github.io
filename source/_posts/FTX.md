@@ -6,7 +6,7 @@ tags:
     - WebCrawler
     - Note
 categories:
-  - projects
+  - Coding
 author:
   name: Vitan
 toc: true

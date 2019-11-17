@@ -7,7 +7,7 @@ tags:
 - Ubuntu
 - Termux
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Markdown.png
 ---
 Markdown 建表格。

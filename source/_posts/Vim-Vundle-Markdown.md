@@ -5,7 +5,7 @@ tags:
 - Vim
 - Linux
 - Win
-categories: notes
+categories: Coding
 toc: true
 thumbnail: /images/Vim.png
 ---

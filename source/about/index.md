@@ -6,7 +6,7 @@ comment: false
 toc: false
 share: false
 ---
-<div align=center><img  src="/images/ivitan.png" width="250px" height="250px"/></div>
+<div align=center><img  src="/images/ivitan.png" style="border-radius:50%" width="250px" height="250px"/></div>
 <center>
 <iframe src="https://ghbtns.com/github-btn.html?user=ivitan&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
 </center>

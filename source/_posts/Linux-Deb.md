@@ -6,7 +6,7 @@ tags:
 - Ubuntu
 - Termux
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Linux.png
 ---
 Lineu中 `.deb` 包的使用，修改。

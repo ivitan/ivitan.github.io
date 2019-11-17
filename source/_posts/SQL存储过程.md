@@ -4,7 +4,7 @@ date: 2018-05-12 08:08:58
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 permalink: SQLprocedure
 thumbnail: /images/SQL.png
 ---

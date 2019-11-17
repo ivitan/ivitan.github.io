@@ -7,7 +7,7 @@ tags:
 - Termux
 toc: true
 permalink: GitNote
-categories: notes
+categories: Diary
 thumbnail: /images/Git.png
 ---
 Git 配置笔记。

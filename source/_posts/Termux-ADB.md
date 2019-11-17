@@ -5,7 +5,7 @@ tags:
 - Termux
 - ADB
 categories:
-- notes
+- Diary
 author:
 name: Vitan
 toc: true

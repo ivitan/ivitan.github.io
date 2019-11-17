@@ -1,12 +1,13 @@
 ---
 title: Termux
+top: 102
 date: 2018-06-25 07:52:16
 tags:
   - Termux
   - Linux
   - Android
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Termux.png
 ---
 # 简介

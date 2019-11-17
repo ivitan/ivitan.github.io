@@ -8,7 +8,7 @@ tags:
 - Win
 toc: true
 permalink: HexoDevices
-categories: notes
+categories: Diary
 thumbnail: /images/Hexo.png
 ---
 Hexo 多设备源码同步

@@ -5,7 +5,7 @@ tags:
   - Git
   - Github
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

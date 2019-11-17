@@ -7,7 +7,7 @@ tags:
 - Termux
 - Notes
 categories:
-- notes
+- Diary
 author:
 name: Vitan
 toc: true

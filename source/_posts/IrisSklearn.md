@@ -6,7 +6,7 @@ tags:
   - Python
   - Note
 categories:
-  - notes
+  - Coding
 author:
   name: Vitan
 toc: true

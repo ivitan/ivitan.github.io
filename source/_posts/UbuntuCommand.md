@@ -5,7 +5,7 @@ tags:
 - Linux
 - Ubuntu
 toc: true
-categories: notes
+categories: Linux
 thumbnail: /images/Ubuntu.png
 ---
 Ununtu常用命令。

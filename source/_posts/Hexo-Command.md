@@ -6,7 +6,7 @@ tags:
 - Linux
 - Termux
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Hexo.png
 ---
 Hexo 常用命令

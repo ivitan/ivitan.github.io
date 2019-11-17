@@ -6,7 +6,7 @@ tags:
 - Termux
 toc: true
 permalink: TermuxLinux
-categories: notes
+categories: Diary
 thumbnail: /images/Termux.png
 ---
 Termux安装Linux

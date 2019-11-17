@@ -6,7 +6,7 @@ tags:
 - Java
 - Eclipse
 toc: true
-categories: notes
+categories: Linux
 permalink: UbuntuEclipse
 thumbnail: /images/Ubuntu.png
 ---

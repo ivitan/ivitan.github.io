@@ -6,7 +6,7 @@ tags:
 - ArchLinux
 - Ununtu
 categories:
-- notes
+- Linux
 author:
 name: Vitan
 toc: true

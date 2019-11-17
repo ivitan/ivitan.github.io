@@ -3,7 +3,7 @@ title: SQL 模式分解
 date: 2018-07-03 20:58:18
 tags:
 - SQL
-categories: notes
+categories: Database
 toc: true
 permalink: SQLmode
 thumbnail: /images/SQL.png

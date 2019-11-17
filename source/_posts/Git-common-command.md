@@ -5,7 +5,7 @@ tags:
 - Git
 - Github
 - Note
-categories: notes
+categories: Diary
 toc: true
 thumbnail: /images/Git.png
 enable_unread_badge: true

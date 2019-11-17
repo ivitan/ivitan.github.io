@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLconstraint
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL级联

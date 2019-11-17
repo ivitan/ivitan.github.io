@@ -5,7 +5,8 @@ tags:
   - Note
   - Python
 categories:
-  - notes
+  - Coding
+  - Python
 author:
   name: Vitan
 toc: true

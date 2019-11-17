@@ -8,7 +8,7 @@ tags:
   - Ubuntu
   - Win
 categories:
-  - notes
+  - Database
 author:
   name: Vitan
 toc: true

@@ -6,7 +6,7 @@ tags:
 - Termux
 - R
 toc: true
-categories: notes
+categories: Diary
 thumbnail: /images/Termux.png
 ---
 Termux 安装 R

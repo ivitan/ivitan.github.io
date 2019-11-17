@@ -4,7 +4,7 @@ title: CentOS  DHCP
 tags:
   - Linux
 categories:
-  - notes
+  - Linux
 author:
   - Vitan
 toc: true

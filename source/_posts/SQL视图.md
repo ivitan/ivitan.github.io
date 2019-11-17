@@ -5,7 +5,7 @@ tags:
 - SQL
 toc: true
 permalink: SQLview
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL视图

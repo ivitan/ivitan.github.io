@@ -4,7 +4,7 @@ date: 2018-03-16 15:17:27
 tags:
 - SQL
 toc: true
-categories: notes
+categories: Database
 thumbnail: /images/SQL.png
 ---
 SQL笔记

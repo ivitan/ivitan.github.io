@@ -7,7 +7,7 @@ tags:
 - Termux
 toc: true
 permalink: HexoInstall
-categories: notes
+categories: Diary
 thumbnail: /images/Hexo.png
 ---
 Hexo 从零开始到搭建完整

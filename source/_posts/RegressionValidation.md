@@ -6,7 +6,7 @@ tags:
   - Python
   - Note
 categories:
-  - projects
+  - Coding
 author:
   name: Vitan
 enable_unread_badge: true

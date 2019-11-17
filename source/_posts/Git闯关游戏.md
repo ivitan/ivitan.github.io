@@ -7,7 +7,7 @@ tags:
 - Termux
 toc: true
 permalink: GitGame
-categories: notes
+categories: Diary
 thumbnail: /images/Git.png
 ---
 Git闯关游戏

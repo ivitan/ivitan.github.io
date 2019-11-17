@@ -5,7 +5,7 @@ tags:
 - Linux
 - Termux
 toc: true
-categories: notes
+categories: Diary
 permalink: TermuxNote
 thumbnail: /images/Termux.png
 ---

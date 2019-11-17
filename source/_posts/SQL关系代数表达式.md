@@ -3,7 +3,7 @@ title: SQL 关系代数表达式
 date: 2018-06-30 21:58:04
 tags:
 - SQL
-categories: notes
+categories: Database
 permalink: SQLrelAlg
 toc: true
 thumbnail: /images/SQL.png

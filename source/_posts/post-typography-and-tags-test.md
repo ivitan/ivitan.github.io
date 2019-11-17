@@ -6,7 +6,7 @@ tags:
   - Markdown
   - Hexo
 categories:
-  - notes
+  - Diary
 author:
   name: Qu Tang
 toc: true

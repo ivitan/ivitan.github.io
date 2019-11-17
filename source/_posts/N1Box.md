@@ -6,7 +6,7 @@ tags:
   - Android
   - TvBox
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

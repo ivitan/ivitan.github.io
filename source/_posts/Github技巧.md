@@ -4,7 +4,7 @@ date: 2018-07-17 13:39:22
 tags: 
 - Github
 - Git
-categories: notes
+categories: Diary
 toc: true
 permalink: GithubTips
 enable_unread_badge: true

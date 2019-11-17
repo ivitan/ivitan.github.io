@@ -4,7 +4,9 @@ date: 2018-03-21 12:09:10
 tags:
 - Java
 toc: true
-categories: notes
+categories: 
+ - Coding
+ - Java
 thumbnail: /images/Java.png
 ---
 Java 中 Srting 常用方法。

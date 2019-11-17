@@ -5,7 +5,7 @@ tags:
   - Linux
   - ArchLinux
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 enable_unread_badge: true

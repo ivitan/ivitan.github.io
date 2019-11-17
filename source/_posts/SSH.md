@@ -7,7 +7,7 @@ tags:
 - Termux
 - SSH
 toc: true
-categories: notes
+categories: Coding
 thumbnail: /images/SSH.png
 ---
 SSH的简单运用

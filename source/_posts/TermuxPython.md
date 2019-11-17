@@ -8,7 +8,7 @@ tags:
   - WebCrawler
   - Android
 categories:
-  - notes
+  - Diary
 author:
   name: Vitan
 toc: true

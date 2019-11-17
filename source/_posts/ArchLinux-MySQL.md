@@ -6,7 +6,7 @@ tags:
   - MySQL
   - ArchLinux
 categories:
-  - notes
+  - Linux
 author:
   name: Vitan
 toc: true

@@ -4,7 +4,7 @@ date: 2018-07-12 15:51:25
 tags:
 - MySQL
 - SQL
-categories: notes
+categories: Database
 toc: true
 permalink: MySQLbasic
 thumbnail: /images/MySQL.png

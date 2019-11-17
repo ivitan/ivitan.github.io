@@ -5,7 +5,7 @@ tags:
   - Win
   - Hexo
 categories:
-  - notes
+  - Diary
 author:
   - Vitan
 toc: true

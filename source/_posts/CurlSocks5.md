@@ -4,7 +4,7 @@ date: 2019-05-14 22:17:52
 tags:
   - Linux
 categories:
-  - notes
+  - Linux
 author:
   - Vitan
 toc: true
