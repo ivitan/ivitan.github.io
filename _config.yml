@@ -132,5 +132,5 @@ donate:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: ssh://git@github.com/ivitan/ivitan.github.io.git
+  repo: https://github.com/ivitan/ivitan.github.io.git
   branch: master
