@@ -8,29 +8,43 @@ toc: true
 categories: Diary
 thumbnail: /images/Note.png
 ---
-v2ray/SSR/SS局域网共享到手机翻墙,刷机后，Rom 刷了  pengapps，此方法用来开机登录 Google 账号。
+在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
 <!--more-->
-# 方法一
+# 方法
+
 - 电脑端
-1. 右键SSR/SS--选项设置--勾选 `允许来自局域网连接`
-2. cmd--输入`ipconfig`获取`无线的IPV4地址`
+
+1. 右键SSR/SS-->选项设置-->勾选 `允许来自局域网连接`,V2ray同样在设置中勾选 `允许来自局域网的连接`
+2. cmd-->输入 `ipconfig` 获取 `无线的IPV4地址`
 3. 正常开启热点
 
 - 手机端
-1. 长按连接的WiFi名,点修改网络
+
+1. 长按连接的 WiFi 名,点修改网络
 2. 显示高级选项
 3. 代理
 4. 手动
-5. 服务器主机IP输入刚刚获取的`IPV4地址`,端口`1080`
+5. 服务器主机IP输入刚刚获取的 `IPV4地址`, 端口 `1080`
 6. 保存
 
-# 方法二(跳过)
-顺时针方向，从左上角开始,连点屏幕四角
+---
 
-# 方法三(跳过)
-- 适用于 Android 7/8/9/10
+# 跳过谷歌验证
+- 方法一
+
+即上述 Windows 10 开热点的方法
+
+- 方法二
 
 ```adb
 adb shell settings put secure user_setup_complete 1
 adb shell settings put global device_provisioned 1
 ```
+
+- 方法三
+
+开机前不插入 SIM 卡,开机后不连接 WIFI,在开机导向时可以有选择跳过登录 Google 账号
+
+- 方法四
+
+顺时针方向，从左上角开始,连点屏幕四角
