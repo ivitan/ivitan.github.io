@@ -15,6 +15,7 @@ Hexo 多设备源码同步
 <!--more-->
 # 主设备操作
 ## 部署 Hexo
+
 ```bash
 # 在本地博客根目录下安装 hexo
 npm install -g  hexo-cli
@@ -27,7 +28,9 @@ npm install hexo-deployer-git
 ```
 
 ## Push 源码
+
 - 新建分支后,在本地博客根目录下使用 git 指令上传项目到 Github
+
 ```bash
 # git初始化
 git init
@@ -45,11 +48,13 @@ git push origin hexo
 
 # 其他设备操作
 克隆Github分支上的文件:
+
 ```bash
 git clone -b hexo  https://github.com/iVitan/ivitan.github.io.git
 ```
 
 安装 Hexo
+
 ```bash
 # 安装hexo
 npm install -g hexo-cli
@@ -62,25 +67,29 @@ npm install hexo-deployer-git
 
 主题 cutie
 - [下载](https://github.com/qutang/hexo-theme-cutie/releases/latest)
-  - 相关 npm
-  ```bash
-	npm un hexo-renderer-marked --save
-	npm i hexo-renderer-markdown-it --save
-	npm i markdown-it-emoji --save
-	npm i markdown-it-mark --save
-	npm i markdown-it-deflist --save
-	npm i markdown-it-container --save
-  ```
+
+- 相关 npm
+
+```bash
+npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it --save
+npm i markdown-it-emoji --save
+npm i markdown-it-mark --save
+npm i markdown-it-deflist --save
+npm i markdown-it-container --save
+```
 
 更新文章
+
 ```bash
 hexo new "tittle"
 ```
+
 - 分别同步到master,hexo分支
 
 
 ## 后续 Push
-```
+```bash
 # 添加源文件
 git add .
 # Git 提交
@@ -91,13 +100,18 @@ git pull origin hexo --allow-unrelated-histories
 # 比较解决前后版本冲突后，push源文件到Github的分支
 git push origin hexo
 ```
+
 # 问题
 无法Push
+
 1. 强制 Push
+
 ```bash
 git push -f origin hexo
 ```
+
 2. 根目录的.gitconfig文件一般写上需要忽略的文件及文件夹
+
 ```bash
 .DS_Store      
 Thumbs.db      
