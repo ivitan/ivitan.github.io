@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>CentOS  DHCP - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="CentOS  DHCP" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="CentOS  DHCP" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Linux.png" alt="CentOS  DHCP">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>CentOS  DHCP
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    2 分钟 读完 (约 283 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2019-05-08T12:20:00.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-05-08</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.153Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>CentOS DHCP</p>
+<a id="more"></a>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum install dhcp -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改-ip"><a href="#修改-ip" class="headerlink" title="修改 ip"></a>修改 ip</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=<span class="hljs-string">"eth2"</span></span><br><span class="line">BOOTPROTO=static</span><br><span class="line">HWADDR=<span class="hljs-string">"00:0D:29:G1:2D:3B"</span></span><br><span class="line">NM_CONTROLLED=<span class="hljs-string">"yes"</span></span><br><span class="line">ONBOOT=<span class="hljs-string">"yes"</span></span><br><span class="line">BOOTPROTO=<span class="hljs-string">"none"</span></span><br><span class="line">IPADDR=192.168.22.11</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.22.1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启网络</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br><span class="line">systemctl network restart</span><br></pre></td></tr></table></figure>
+
+<h1 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h1><ul>
+<li>路径 </li>
+</ul>
+<figure class="highlight bash hljs"><figcaption><span>dhcpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制 dhcpd.conf.samplle</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -p /usr/share/doc/dhcp-6.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置文件设置</li>
+</ul>
+<figure class="highlight bash hljs"><figcaption><span>/etc/dhcp/dhcpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ddns-update-style interim;// dhcp 服务器和dns 服务器的动态信息更新模式     </span><br><span class="line">ignore client-updates;       </span><br><span class="line">default-lease-time           259200; <span class="hljs-comment">#预设租约为 3 天</span></span><br><span class="line">max-lease-time               518400; <span class="hljs-comment"># 最大租约为 6 天</span></span><br><span class="line"></span><br><span class="line">subnet 192.168.22.0 netmask 255.255.255.0 &#123;</span><br><span class="line">      option routers                  192.168.22.254;<span class="hljs-comment">#预设路由</span></span><br><span class="line">      option subnet-mask              255.255.255.0;</span><br><span class="line">      option domain-search            <span class="hljs-string">"vitan.me"</span>; <span class="hljs-comment"># 给予一个领域名</span></span><br><span class="line">      option domain-name-servers      192.168.22.1;</span><br><span class="line">      option time-offset              -18000; <span class="hljs-comment">#时区</span></span><br><span class="line">      range   192.168.1.10   192.168.1.100;</span><br><span class="line"></span><br><span class="line">      <span class="hljs-comment"># 关于固定的 IP </span></span><br><span class="line">      host win7 &#123;</span><br><span class="line">        hardware ethernet    08:00:27:11:EB:C2; <span class="hljs-comment">#客户端网卡 MAC</span></span><br><span class="line">        fixed-address        192.168.100.30;    <span class="hljs-comment">#给予固定的 IP</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service dhcpd start</span><br><span class="line">systemctl start dhcp <span class="hljs-comment">#CentOs 7</span></span><br><span class="line">dhcpd <span class="hljs-comment"># 检测错误</span></span><br><span class="line">chkconfig --levels 235 dhcpd on <span class="hljs-comment"># 开机启动</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h1><figure class="highlight bash hljs"><figcaption><span>ifcfg.eth2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=<span class="hljs-string">"eth2"</span></span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">HWADDR=<span class="hljs-string">"00:0D:29:G1:2D:3B"</span></span><br><span class="line">NM_CONTROLLED=<span class="hljs-string">"yes"</span></span><br><span class="line">ONBOOT=<span class="hljs-string">"yes"</span></span><br><span class="line">BOOTPROTO=<span class="hljs-string">"none"</span></span><br><span class="line">IPADDR=192.168.22.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.22.1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启网络</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ifdown eth2</span><br><span class="line">ifup eth2</span><br><span class="line"></span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+
+<h1 id="查看租约情况"><a href="#查看租约情况" class="headerlink" title="查看租约情况"></a>查看租约情况</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/pib/dhcpd/dhcpd.leases</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Linux-DHCP.html">https://vitan.me/posts/Linux-DHCP.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Linux-DNS.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">CentOS DNS</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/vimcopyppaste.html">
+                <span class="level-item">Vim 增删查改、翻页和寄存器</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#安装">
+            <span class="has-mr-6">1</span>
+            <span>安装</span>
+            </a></li><li>
+            <a class="is-flex" href="#修改-ip">
+            <span class="has-mr-6">2</span>
+            <span>修改 ip</span>
+            </a></li><li>
+            <a class="is-flex" href="#服务端配置">
+            <span class="has-mr-6">3</span>
+            <span>服务端配置</span>
+            </a></li><li>
+            <a class="is-flex" href="#客户端配置">
+            <span class="has-mr-6">4</span>
+            <span>客户端配置</span>
+            </a></li><li>
+            <a class="is-flex" href="#查看租约情况">
+            <span class="has-mr-6">5</span>
+            <span>查看租约情况</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="CentOS  DHCP" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

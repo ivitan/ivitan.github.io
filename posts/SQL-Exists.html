@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>SQL EXISTS - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="SQL EXISTS" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="SQL EXISTS" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/SQL.png" alt="SQL EXISTS">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>SQL EXISTS
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Database/">Database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    2 分钟 读完 (约 276 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-04-15T10:12:22.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-04-15</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.185Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>SQL 中 EXISTS</p>
+<a id="more"></a>
+<h1 id="三点概念"><a href="#三点概念" class="headerlink" title="三点概念"></a>三点概念</h1><p>概念</p>
+<ul>
+<li><code>EXISTS</code> 子查询找到的提交</li>
+<li><code>NOT EXISTS</code>子查询中 找不到的提交</li>
+</ul>
+<p>说明</p>
+<ul>
+<li>不要去翻译为存在和不存在，把脑袋搞晕。</li>
+<li><code>exists</code>代表存在量词<code>ョ</code>，该查询结果没有值，只有逻辑值真true和逻辑假false两个值。<ul>
+<li>建立程序循环的概念，这是一个动态的查询过程。如 FOR循环.</li>
+<li><code>Exists</code>执行的流程<code>Exists</code>首先执行外层查询，再执行内存查询,与<code>IN</code>相反。 流程为首先取出外层中的第一元组，再执行内层查询，将外层表的第一元组代入,若内层查询为真，即有结果时。返回外层表中的第一元 组，接着取出第二元组，执行相同的算法。一直到扫描完外层整表。<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i =0;  i&lt;&gt;EOFout;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  for (int j = 0 ; j&lt;EOFint,j++)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>表<br>学生表student (Sno,Sname)</p>
+<p>课程表course (Cno,Cname)</p>
+<p>选课表SC(Sno,Cno)</p>
+<p>要求查询出 ：选修了全部课程的学生姓名</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>思路一<br>首先学生的选课信息存在于SC表中， 要想知道某个学生是否选修了全部课程，至少我们需要知道一共有几门课程，这是首要的条件。其次，学生选修了与否，我们又要扫描SC全表，统计出选修了所有课程的学生号，最后在STUDENT表中根据学生号打出姓名 。</p>
+<ul>
+<li>语句如下：<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> Sno <span class="hljs-keyword">IN</span></span><br><span class="line">(<span class="hljs-keyword">select</span> Sno <span class="hljs-keyword">from</span> SC</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Sno</span><br><span class="line"> //根据Sno分组，统计每个学生选修了几门课程。如果等于course的总数，就是我们要找的Sno</span><br><span class="line"><span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(*) = (<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> course ))</span><br><span class="line">//统计course中共有几门课程</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>另一种思路：</p>
+<ul>
+<li><p>引入：将题目换为 查找学号为 00003 没有选修的科目</p>
+<ul>
+<li>思路：我们可以将已知学号代入，把每一个科目代入（循环），这将形成<code>1*count(*)</code>种组合。将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交.<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Cname <span class="hljs-keyword">from</span> course  <span class="hljs-keyword">where</span></span><br><span class="line"><span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span>  //找不到的组合，提交course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span> course.cno = cno <span class="hljs-keyword">and</span> sno = <span class="hljs-string">''</span><span class="hljs-number">00002</span><span class="hljs-string">''</span>)</span><br><span class="line">//在SC中匹配</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>查找没有 没有选修科目的学生姓名</p>
+<ul>
+<li><p>思路：</p>
+<ul>
+<li>学号未知,科目未知，说明有两个未知变量。应该有两个EXISTS。我们可以扫描student 和 course共有 s * c 中组合，将这些组合与SC的每一项进行匹配，注意s*c组合已经包含所有可能。如果全部找到 ，就说明已经选修了全部课程。找不到就说明有课程没选修 。再将没选修的的提交给上一exists 循环 。若上一exists 不存在的再提交给外循环。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>        //</span><br><span class="line">(<span class="hljs-keyword">select</span>  * <span class="hljs-keyword">from</span> course</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>      //不存在的提交给course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span></span><br><span class="line">Sno = student.sno  <span class="hljs-keyword">and</span> cno = Course.Cno))   // 代入两个未知变量</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>选修了全部课程的学生姓名.<br>将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交 。</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Cname <span class="hljs-keyword">from</span> course <span class="hljs-keyword">where</span></span><br><span class="line"><span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span>  //找不到的组合，提交course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span> course.cno = cno <span class="hljs-keyword">and</span> sno = <span class="hljs-string">''</span><span class="hljs-number">00003</span><span class="hljs-string">''</span>)</span><br><span class="line">//在SC中匹配</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找没有选修科目的学生姓名</p>
+<ul>
+<li>思路：1. 学号未知 科目未知 说明有两个未知变量。2. 应该有两个<code>EXISTS</code>。我们可以扫描<code>student</code>和<code>course</code>共有<code>s*c</code>中组合，将这些组合与SC的每一项进行匹配，注意s*c组合已经包含所有可能。如果全部找到 ，就说明已经选修了全部课程。找不到就说明有课程没选修 。再将没选修的的提交给上一exists 循环 。若上一exists 不存在的再提交给外循环。</li>
+</ul>
+</li>
+<li><p>查询选修了全部课程的学生姓名。</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> Sname</span><br><span class="line"><span class="hljs-keyword">FROM</span> Student</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></span><br><span class="line">（<span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> Course</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></span><br><span class="line">(<span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC</span><br><span class="line"><span class="hljs-keyword">WHERE</span> Sno= Student.Sno</span><br><span class="line"><span class="hljs-keyword">AND</span> Cno= Course.Cno）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询所有选修了001课程的学生名单</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=b.sno <span class="hljs-keyword">and</span> cno=<span class="hljs-string">'001'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询没有选修了001课程的学生名单</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=b.sno <span class="hljs-keyword">and</span> cno=<span class="hljs-string">'001'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询选修了所有课程的学生名单。</p>
+</li>
+</ul>
+<p>由于SQL中没有全称量词，可以这样理解：查询这样的学生，没有一门课程他没有选</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> course b</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc c</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=c.sno <span class="hljs-keyword">and</span> c.cno=b.cno))</span><br></pre></td></tr></table></figure>
+
+<p>注意：SQL没有蕴涵谓词，可以使用等价变换进行转换<code>p→q ≡ ┑p∨q</code></p>
+<ul>
+<li>查询至少选修了学生95002选修的全部课程的学生名单。</li>
+</ul>
+<p>将查询进行变换： p表示的谓词：95002选修了课程y</p>
+<p>q表示的谓词：学生x选修了课程y</p>
+<p>该查询转换为：( y)p→q</p>
+<p>进一步转换：( y)p→q ≡</p>
+<p>┑(ョy( ┑(p→q))) ≡ ┑(ョy( ┑(┑p∨q)))</p>
+<p>≡ ┑ョy(p∧q) 德模根定律</p>
+<p>它所表达的含义为：不存在这样的课程y，95002选修了y而x没有选，SQL语句如下：</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname,sno</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> sno &lt;&gt; <span class="hljs-string">'95002'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> sno=<span class="hljs-string">'95002'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc c</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=c.sno <span class="hljs-keyword">and</span> c.cno=b.cno))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><a href="http://www.cnblogs.com/losesea/archive/2012/06/14/2549023.html" target="_blank" rel="noopener">参考：</a></p>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/SQL-Exists.html">https://vitan.me/posts/SQL-Exists.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Adb.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">ADB 与 Fastboot 常用命令</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Git-error.html">
+                <span class="level-item">Git Push 错误解决方法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#三点概念">
+            <span class="has-mr-6">1</span>
+            <span>三点概念</span>
+            </a></li><li>
+            <a class="is-flex" href="#例子">
+            <span class="has-mr-6">2</span>
+            <span>例子</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#思路">
+            <span class="has-mr-6">2.1</span>
+            <span>思路</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="SQL EXISTS" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

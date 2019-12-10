@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Python Request 库基础使用 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Python Request 库基础使用" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Python Request 库基础使用" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Python.png" alt="Python Request 库基础使用">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Python Request 库基础使用
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    9 分钟 读完 (约 1287 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-09-19T11:12:44.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-09-19</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.162Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Python Request </p>
+<a id="more"></a>
+<h1 id="实例引入"><a href="#实例引入" class="headerlink" title="实例引入"></a>实例引入</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="hljs-string">'https://www.baidu.com/'</span>)</span><br><span class="line">print(type(response))</span><br><span class="line">print(response.status_code)</span><br><span class="line">print(type(response.text))</span><br><span class="line">print(response.text)</span><br><span class="line">print(response.cookies)</span><br></pre></td></tr></table></figure>
+
+<h2 id="各种请求方式"><a href="#各种请求方式" class="headerlink" title="各种请求方式"></a>各种请求方式</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">requests.post(<span class="hljs-string">'http://httpbin.org/post'</span>)</span><br><span class="line">equests.put(<span class="hljs-string">'http://httpbin.org/put'</span>)</span><br><span class="line">requests.delete(<span class="hljs-string">'http://httpbin.org/delete'</span>)</span><br><span class="line">requests.head(<span class="hljs-string">'http://httpbin.org/get'</span>)</span><br><span class="line">requests.options(<span class="hljs-string">'http://httpbin.org/get'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h1><h2 id="基本-GET-请求"><a href="#基本-GET-请求" class="headerlink" title="基本 GET 请求"></a>基本 GET 请求</h2><figure class="highlight py hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response=requests.get(<span class="hljs-string">'http://httpbin.org/get'</span>)</span><br><span class="line"><span class="hljs-comment">#用get方式访问http://httpbin.org/get网页</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="带参数-GET-请求"><a href="#带参数-GET-请求" class="headerlink" title="带参数 GET 请求"></a>带参数 GET 请求</h2><ul>
+<li>?</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">response=requests.get(<span class="hljs-string">'http://httpbin.org/get?name=germey&amp;age=22'</span>)</span><br><span class="line"><span class="hljs-comment">#以?name=germey&amp;age=22方式在url后面添加参数信息</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>params</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">response=requests.get(<span class="hljs-string">'http://httpbin.org/get'</span>,params=&#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'germery'</span>,<span class="hljs-string">'age'</span>:<span class="hljs-number">22</span>&#125;)</span><br><span class="line"><span class="hljs-comment">#设置 params 参数，以key:value方式&#123;'name':''germery','age':22&#125;</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加headers"><a href="#添加headers" class="headerlink" title="添加headers"></a>添加headers</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers=&#123;<span class="hljs-string">'User-agent'</span>:<span class="hljs-string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36'</span>&#125;</span><br><span class="line"><span class="hljs-comment">#设置headers变量为本机浏览器请求头的user-agent</span></span><br><span class="line">response=requests.get(<span class="hljs-string">'https://www.zhihu.com/explore'</span>,headers=headers)</span><br><span class="line"><span class="hljs-comment">#添加headers信息访问https://www.zhihu.com/explore</span></span><br><span class="line">response.text</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="基本POST请求"><a href="#基本POST请求" class="headerlink" title="基本POST请求"></a>基本POST请求</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">data=&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'germey'</span>, <span class="hljs-string">'age'</span>: <span class="hljs-string">'22'</span>&#125;<span class="hljs-comment">#设置data变量值为：&#123;'name': 'germey', 'age': '22'&#125;</span></span><br><span class="line">response=requests.post(<span class="hljs-string">'http://httpbin.org/post'</span>,data=data)</span><br><span class="line"><span class="hljs-comment">#以post方式，data=data访问http://httpbin.org/post</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">data=&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'germey'</span>, <span class="hljs-string">'age'</span>: <span class="hljs-string">'22'</span>&#125;<span class="hljs-comment">#设置data变量值为：&#123;'name': 'germey', 'age': '22'&#125;</span></span><br><span class="line">headers=&#123;<span class="hljs-string">'User-agent'</span>:<span class="hljs-string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36'</span>&#125;</span><br><span class="line"><span class="hljs-comment">#设置headers变量为本机浏览器请求头的user-agent</span></span><br><span class="line"><span class="hljs-comment">#设置headers</span></span><br><span class="line">response=requests.post(<span class="hljs-string">'http://httpbin.org/post'</span>,headers=headers,data=data)</span><br><span class="line"><span class="hljs-comment">#添加data/headers信息以post方式访问http://httpbin.org/post</span></span><br><span class="line">response.json()</span><br><span class="line"><span class="hljs-comment">#输出访问结果的json格式数据</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h1><h2 id="reponse-属性"><a href="#reponse-属性" class="headerlink" title="reponse 属性"></a>reponse 属性</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="hljs-string">'http://www.jianshu.com'</span>)</span><br><span class="line">print(type(response.status_code), response.status_code)</span><br><span class="line">print(type(response.headers), response.headers)</span><br><span class="line">print(type(response.cookies), response.cookies)</span><br><span class="line">print(type(response.url), response.url)</span><br></pre></td></tr></table></figure>
+
+<h2 id="状态码判断"><a href="#状态码判断" class="headerlink" title="状态码判断"></a>状态码判断</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="hljs-string">'http://www.jianshu.com'</span>)</span><br><span class="line"><span class="hljs-comment">#用get方式访问简书网站http://www.jianshu.com</span></span><br><span class="line">response.status_code</span><br><span class="line"></span><br><span class="line">exit() <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> response.status_code==<span class="hljs-number">200</span> <span class="hljs-keyword">else</span> print(<span class="hljs-string">'Request Successfully'</span>)</span><br><span class="line"><span class="hljs-comment">#对响应体状态码进行判断，如果返回状态码不为200，则结束当前运行，否则打印输出“Request Successfully”</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a>高级操作</h1><h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">files=&#123;<span class="hljs-string">'files'</span>:open(<span class="hljs-string">'favicon.ico'</span>,<span class="hljs-string">'rb'</span>)&#125;</span><br><span class="line"><span class="hljs-comment">#设置files变量，其value值为操作系统open接口类型，对名为“favicon.ico”图片的二进制模式读取</span></span><br><span class="line">response=requests.post(<span class="hljs-string">'http://httpbin.org/post'</span>,files=files)</span><br><span class="line"><span class="hljs-comment">#以post方式上传该图片，即添加files=files参数</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="获取-cookie"><a href="#获取-cookie" class="headerlink" title="获取 cookie"></a>获取 cookie</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response=requests.get(<span class="hljs-string">'http://www.baidu.com/'</span>)</span><br><span class="line"><span class="hljs-comment">#get方式请求访问baidu</span></span><br><span class="line">response.cookies</span><br><span class="line"><span class="hljs-comment">#输出cookies信息</span></span><br><span class="line"><span class="hljs-keyword">for</span> key,value <span class="hljs-keyword">in</span> response.cookies.items():</span><br><span class="line"><span class="hljs-comment">#遍历所有cookies信息，以key=value形式输出</span></span><br><span class="line">print(key+<span class="hljs-string">'='</span>+value)</span><br></pre></td></tr></table></figure>
+
+<h2 id="会话维持"><a href="#会话维持" class="headerlink" title="会话维持"></a>会话维持</h2><h3 id="模拟登录"><a href="#模拟登录" class="headerlink" title="模拟登录"></a>模拟登录</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">requests.get(<span class="hljs-string">'http://httpbin.org/cookies/set/number/123456789'</span>)</span><br><span class="line"><span class="hljs-comment">#用requests.get访问http://httpbin.org/cookies/set/number/123456789设置cookies信息</span></span><br><span class="line">response=requests.get(<span class="hljs-string">'http://httpbin.org/cookies'</span>)</span><br><span class="line"><span class="hljs-comment">#访问http://httpbin.org/cookies并将返回结果命名为response</span></span><br><span class="line">response.cookies.items()</span><br><span class="line"><span class="hljs-comment">#输出以上response结果的网页源代码</span></span><br><span class="line"><span class="hljs-comment">#观察运行结果，思考为什么没法获取number：123456789的cookies数据？</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>requests.Session()</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">s=requests.Session()</span><br><span class="line"><span class="hljs-comment">#利用requests创建一个Session对象s</span></span><br><span class="line">s.get(<span class="hljs-string">'http://httpbin.org/cookies/set/number/123456789'</span>)</span><br><span class="line"><span class="hljs-comment">#s调用get方法访问http://httpbin.org/cookies/set/number/123456789</span></span><br><span class="line">response=s.get(<span class="hljs-string">'http://httpbin.org/cookies'</span>)</span><br><span class="line"><span class="hljs-comment">#s调用get方法访问http://httpbin.org/cookies并将返回结果设置为response</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="证书验证"><a href="#证书验证" class="headerlink" title="证书验证"></a>证书验证</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">from</span> requests.packages <span class="hljs-keyword">import</span> urllib3</span><br><span class="line">urllib3.disable_warnings()</span><br><span class="line"><span class="hljs-comment">#调用urllib3的disable_warnings</span></span><br><span class="line">response = requests.get(<span class="hljs-string">'https://www.12306.cn'</span>,verify=<span class="hljs-literal">False</span>)</span><br><span class="line"><span class="hljs-comment">#get方式访问https://www.12306.cn，verify设置为False</span></span><br><span class="line">print(response.status_code)</span><br><span class="line"><span class="hljs-comment">#输出状态码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="超时设置"><a href="#超时设置" class="headerlink" title="超时设置"></a>超时设置</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">from</span> requests.exceptions <span class="hljs-keyword">import</span> Timeout</span><br><span class="line"><span class="hljs-comment"># from requests.exceptions import Timeout #导入异常包里的exceptions里面的ConnectTimeout</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">try</span> :</span><br><span class="line"><span class="hljs-comment">#增加异常检测try exception,捕获异常后输出对应的异常类名</span></span><br><span class="line">response = requests.get(<span class="hljs-string">'https://vitan.me'</span>,timeout=<span class="hljs-number">0.2</span>)</span><br><span class="line"><span class="hljs-comment">#尝试将timeou设置为0.2，是否会出现错误，并查看是什么异常</span></span><br><span class="line">print(response.status_code)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">except</span> Timeout:</span><br><span class="line"><span class="hljs-comment">#增加except语句，引入Timeout类</span></span><br><span class="line">print(<span class="hljs-string">'TimeOut'</span>)</span><br><span class="line"><span class="hljs-comment">#一旦捕获，输出显示Timeout信息</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="http://docs.python-requests.org/en/master/api/#exceptions" target="_blank" rel="noopener">查看requests下的exceptions官方文档的网址</a></li>
+</ul>
+<h2 id="认证设置"><a href="#认证设置" class="headerlink" title="认证设置"></a>认证设置</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">r = requests.post(<span class="hljs-string">'http://www.scholat.com'</span>, auth=(<span class="hljs-string">'user'</span>,<span class="hljs-string">'123456'</span>))</span><br><span class="line"><span class="hljs-comment">#利用post方式模拟登陆学者网（http://www.scholat.com），auth参数用户名为你在该网站的用户名与密码</span></span><br><span class="line">print(r.status_code)</span><br><span class="line"><span class="hljs-comment">#输出显示响应状态码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">from</span> requests.exceptions <span class="hljs-keyword">import</span> ReadTimeout, ConnectionError, RequestException<span class="hljs-comment">#引入requests.exceptions下面的ReadTimeout, ConnectionError, RequestException类</span></span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">response = requests.get(<span class="hljs-string">"http://httpbin.org/get"</span>, timeout = <span class="hljs-number">0.02</span>)</span><br><span class="line">print(response.status_code)</span><br><span class="line"><span class="hljs-keyword">except</span> TimeoutError:</span><br><span class="line"><span class="hljs-comment">#访问超时的异常类ReadTimeout 子类</span></span><br><span class="line">print(<span class="hljs-string">'Timeout'</span>)</span><br><span class="line"><span class="hljs-keyword">except</span> ConnectionError:</span><br><span class="line">print(<span class="hljs-string">'Connection error'</span>)</span><br><span class="line"><span class="hljs-comment">#网络不通时的异常类：ConnectionError尝试关闭网络，重新运行代码 父类</span></span><br><span class="line"><span class="hljs-keyword">except</span> RequestException:</span><br><span class="line">print(<span class="hljs-string">'Error'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="解析-Json"><a href="#解析-Json" class="headerlink" title="解析 Json"></a>解析 Json</h1><h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">import</span> json</span><br><span class="line"></span><br><span class="line">response=requests.get(<span class="hljs-string">'http://httpbin.org/get'</span>)<span class="hljs-comment">#get方式访问http://httpbin.org/get</span></span><br><span class="line">print(response.text)</span><br><span class="line"><span class="hljs-comment">#输出网页源代码</span></span><br><span class="line">response.json</span><br><span class="line"><span class="hljs-comment">#以json（dict数据结构）输出数据</span></span><br><span class="line">json.loads(response.text)</span><br><span class="line"><span class="hljs-comment">#以json.loads函数输出json（dict数据结构）格式数据</span></span><br><span class="line">print(response.json())</span><br><span class="line"><span class="hljs-comment">#打印输出response.json()返回结果的数据类型</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/PythonRequest.html">https://vitan.me/posts/PythonRequest.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Note/">Note</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Python/">Python</a>,&nbsp;<a class="has-link-grey -link" href="/tags/WebCrawler/">WebCrawler</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/PythonBeautifulSoup.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Python BeautifulSoup 库基础使用</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/PythonType.html">
+                <span class="level-item">Python 基本数据类型</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#实例引入">
+            <span class="has-mr-6">1</span>
+            <span>实例引入</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#各种请求方式">
+            <span class="has-mr-6">1.1</span>
+            <span>各种请求方式</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#请求">
+            <span class="has-mr-6">2</span>
+            <span>请求</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#基本-GET-请求">
+            <span class="has-mr-6">2.1</span>
+            <span>基本 GET 请求</span>
+            </a></li><li>
+            <a class="is-flex" href="#带参数-GET-请求">
+            <span class="has-mr-6">2.2</span>
+            <span>带参数 GET 请求</span>
+            </a></li><li>
+            <a class="is-flex" href="#添加headers">
+            <span class="has-mr-6">2.3</span>
+            <span>添加headers</span>
+            </a></li><li>
+            <a class="is-flex" href="#基本POST请求">
+            <span class="has-mr-6">2.4</span>
+            <span>基本POST请求</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#响应">
+            <span class="has-mr-6">3</span>
+            <span>响应</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#reponse-属性">
+            <span class="has-mr-6">3.1</span>
+            <span>reponse 属性</span>
+            </a></li><li>
+            <a class="is-flex" href="#状态码判断">
+            <span class="has-mr-6">3.2</span>
+            <span>状态码判断</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#高级操作">
+            <span class="has-mr-6">4</span>
+            <span>高级操作</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#文件上传">
+            <span class="has-mr-6">4.1</span>
+            <span>文件上传</span>
+            </a></li><li>
+            <a class="is-flex" href="#获取-cookie">
+            <span class="has-mr-6">4.2</span>
+            <span>获取 cookie</span>
+            </a></li><li>
+            <a class="is-flex" href="#会话维持">
+            <span class="has-mr-6">4.3</span>
+            <span>会话维持</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#模拟登录">
+            <span class="has-mr-6">4.3.1</span>
+            <span>模拟登录</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#证书验证">
+            <span class="has-mr-6">4.4</span>
+            <span>证书验证</span>
+            </a></li><li>
+            <a class="is-flex" href="#超时设置">
+            <span class="has-mr-6">4.5</span>
+            <span>超时设置</span>
+            </a></li><li>
+            <a class="is-flex" href="#认证设置">
+            <span class="has-mr-6">4.6</span>
+            <span>认证设置</span>
+            </a></li><li>
+            <a class="is-flex" href="#异常处理">
+            <span class="has-mr-6">4.7</span>
+            <span>异常处理</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#解析-Json">
+            <span class="has-mr-6">5</span>
+            <span>解析 Json</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#基本">
+            <span class="has-mr-6">5.1</span>
+            <span>基本</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Python Request 库基础使用" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

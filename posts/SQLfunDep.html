@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>SQL 函数赖与模式分解 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="SQL 函数赖与模式分解" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="SQL 函数赖与模式分解" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/SQL.png" alt="SQL 函数赖与模式分解">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>SQL 函数赖与模式分解
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Database/">Database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    19 分钟 读完 (约 2882 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-05-21T10:58:02.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-05-21</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.187Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖 Functional Dependency"></a>函数依赖 Functional Dependency</h1><p>数据依赖的一种，它反映属性或属性组之间相依存，互相制约的关系，即反映现实世界的约束关系。</p>
+<a id="more"></a>
+
+<p>定义<br>设R(U)是属性U上的一个关系模式，X和Y均为U={A1，A2，…，An}的子集，r为R的任一关系，如果对于r中的任意两个元组u，v，只要有u[X]=v[X]，就有u[Y]=v[Y]，则称X函数决定Y，或称Y函数依赖于X，记为X→Y。</p>
+<p>例：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(sno-学生ID，tno-教师ID，cno-课程ID，</span><br><span class="line">sname-学生姓名，tname-教师姓名，cname-课程名称，grade-成绩）</span><br><span class="line">sno→sname, cno→cname,(sno,cno)→grade √</span><br><span class="line">sname→sno, tno→cno, sno→tname ×</span><br></pre></td></tr></table></figure>
+
+<p>函数依赖是语义范畴</p>
+<ol>
+<li>语义：数据所反映的现实世界事物本质联系</li>
+<li>根据语义来确定函数依赖性的存在与否</li>
+<li>函数依赖反映属性之间的一般规律，必须在关系模式下的任一个关系r中都满足约束条件。</li>
+</ol>
+<h1 id="属性间的联系决定函数依赖关系"><a href="#属性间的联系决定函数依赖关系" class="headerlink" title="属性间的联系决定函数依赖关系"></a>属性间的联系决定函数依赖关系</h1><p>例子<br>设X、Y均是U的子集</p>
+<ol>
+<li>X和Y间联系是1:1，则X→Y,Y→X。（相互依赖，可记作X←→Y）</li>
+<li>X和Y间联系是M:1(M)， 则X→Y。</li>
+<li>X和Y间联系是M:N(M,N)，则X、Y间不存在函数依赖。</li>
+</ol>
+<h1 id="完全函数依赖和部分函数依赖"><a href="#完全函数依赖和部分函数依赖" class="headerlink" title="完全函数依赖和部分函数依赖"></a>完全函数依赖和部分函数依赖</h1><p>函数依赖分为完全函数依赖和部分函数依赖</p>
+<p>定义</p>
+<p>在R(U)中，如果X→Y，并且对于X的任何真子集X’都有X’Y’，则称 Y 完全依赖于 X ，记作X→Y；否则，如果X→Y，且X中存在一个真子集X’，使得X’→Y成立，则称 Y 部分依赖 于 X。</p>
+<p>例</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">学生ID，学生姓名，所修课程ID，课程名称，成绩</span><br><span class="line">（学生ID，所修课程ID）→成绩</span><br><span class="line">成绩既不能单独依赖于学生ID，也不能单独依赖于所修课程ID，因此成绩完全函数依赖于关键字。</span><br><span class="line">（学生ID，所修课程ID）→学生姓名</span><br><span class="line">学生ID→学生姓名</span><br><span class="line">学生姓名可以依赖于关键字的一个主属性——学生ID，因此学生姓名部分函数依赖于（学生ID，所修课程ID）。</span><br></pre></td></tr></table></figure>
+
+<h1 id="平凡函数依赖和非平凡函数依赖"><a href="#平凡函数依赖和非平凡函数依赖" class="headerlink" title="平凡函数依赖和非平凡函数依赖"></a>平凡函数依赖和非平凡函数依赖</h1><p>平凡函数依赖</p>
+<p>当关系中属性集合Y是属性集合X的子集时(Y?X)，存在函数依赖X→Y，即一组属性函数决定它的所有子集，这种函数依赖称为 <code>平凡函数依赖</code></p>
+<p>非平凡函数依赖</p>
+<p>当关系中属性集合Y不是属性集合X的子集时，存在函数依赖X→Y，则称这种函数依赖为 <code>非平凡函数依赖</code>。</p>
+<p>设X，Y均为某关系上的属性集，且X→Y</p>
+<ol>
+<li>若Y包含于X，则称X→Y为：平凡函数依赖；(Sno, Cno) → Sno  (Sno, Cno) → Cno</li>
+<li>若Y不包含于X，则称X→Y为：非平凡函数依赖。(Sno, Cno) → Grade<br>Y包含于X内，W于X相交，与Y无直接交集。则：X→Y为平凡函数依赖X→W, W→Y为非平凡函数依赖</li>
+</ol>
+<h1 id="传递函数依赖-X→Y，Y→Z-则Z传递函数依赖于X"><a href="#传递函数依赖-X→Y，Y→Z-则Z传递函数依赖于X" class="headerlink" title="传递函数依赖 X→Y，Y→Z 则Z传递函数依赖于X"></a>传递函数依赖 X→Y，Y→Z 则Z传递函数依赖于X</h1><p>例1<br>设X,Y,Z是关系R中互不相同的属性集合，存在X→Y(Y !→X),Y→Z，则称Z传递函数依赖于X。</p>
+<ul>
+<li>函数依赖<br>设R(U)是一个属性集U上的关系模式，X和Y是U的子集。<br>若对于R(U)的任意一个可能的关系r，r中不可能存在两个元组在X上的属性值相等， 而在Y上的属性值不等， 则称 “X函数确定Y” 或 “Y函数依赖于X”，记作X→Y。<br>X称为这个函数依赖的决定属性集(Determinant)。<br>Y=f(x)<ul>
+<li>说明：<ul>
+<li>函数依赖不是指关系模式R的某个或某些关系实例满足的约束条件，而是指R的所有关系实例均要满足的约束条件。</li>
+<li>函数依赖是语义范畴的概念。只能根据数据的语义来确定函数依赖。<br>例如“姓名→年龄”这个函数依赖只有在不允许有同名人的条件下成立</li>
+<li>数据库设计者可以对现实世界作强制的规定。例如规定不允许同名人出现，函数依赖“姓名→年龄”成立。所插入的元组必须满足规定的函数依赖，若发现有同名人存在， 则拒绝装入该元组。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例2<br>Student(Sno, Sname, Ssex, Sage, Sdept)</p>
+<ul>
+<li><p>假设不允许重名，则有:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sno → Ssex， Sno → Sage , Sno → Sdept，</span><br><span class="line">Sno ←→ Sname, Sname → Ssex， Sname → Sage</span><br><span class="line">Sname → Sdept</span><br><span class="line">但Ssex －\→Sage</span><br><span class="line">若X→Y，并且Y→X, 则记为X←→Y。</span><br><span class="line">若Y不函数依赖于X, 则记为X－\→Y。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在关系模式R(U)中，对于U的子集X和Y，</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果X→Y，但Y 不为 X的子集，则称X→Y是非平凡的函数依赖</span><br><span class="line">若X→Y，但Y 为 X的子集, 则称X→Y是平凡的函数依赖</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>例3<br>在关系SC(Sno, Cno, Grade)中</p>
+<ol>
+<li>凡函数依赖:(Sno, Cno) → Grade</li>
+<li>平凡函数依赖：(Sno, Cno) → Sno(Sno, Cno) → Cno</li>
+<li>部分函数依赖：若x-&gt;y 并且，存在X的真子集x1，使得x1-&gt;y,则 y部分依赖于 x。</li>
+<li>完全函数依赖：若x-&gt;y并且，对于x的任何一个真子集x1，都不在x1-&gt;y 则称y完全依赖于x</li>
+</ol>
+<h1 id="传递与直接函数依赖"><a href="#传递与直接函数依赖" class="headerlink" title="传递与直接函数依赖"></a>传递与直接函数依赖</h1><p>概念<br>设有两个非平凡函数依赖 X  → Y，Y → Z，当 X 不依赖于 Y，则称 Z<code>传递</code>函数依赖于 X。<br>-这里之所以规定” X 不函数依赖于 Y”，是因为当 Y → X 时，X 与 Y 就一一对应了，在这种情况下 Z 就<code>直接</code>函数依赖于 X（而不是我们所说的传递函数依赖）。</p>
+<ul>
+<li>Z 传递函数依赖于 X，表名 Z 间接依赖于 X，从而表明 X 和 Z 之间关联较弱。</li>
+</ul>
+<h1 id="函数依赖的-Armstrong-公理"><a href="#函数依赖的-Armstrong-公理" class="headerlink" title="函数依赖的 Armstrong 公理"></a>函数依赖的 Armstrong 公理</h1><p>无冗余的函数依赖集 和 函数依赖的完备集（闭包）是好的关系设计。由已知的函数依赖集可以推导出 无冗余的函数依赖集 和 函数依赖的完备集（闭包）。</p>
+<h2 id="基本公理和推理规则："><a href="#基本公理和推理规则：" class="headerlink" title="基本公理和推理规则："></a>基本公理和推理规则：</h2><p>基本公理：</p>
+<ul>
+<li><code>自反律</code>如果 Y ∈ X∈ U，则 X → Y 成立。（平凡函数依赖）</li>
+<li><code>增广律</code>如果 X → Y 在 R(U)  成立，且 Z∈ U，则 XZ → XY</li>
+<li><code>传递律</code>如果 X → Y，Y → Z 成立，则 X → Z 成立。</li>
+</ul>
+<p>推理规则：</p>
+<ul>
+<li><code>合并规则</code>{X → Y，X → Z}，则 X → YZ</li>
+<li><code>分解规则</code>{X → Y，Z ∈ Y}，则 X → Z。（或：X → YZ，那么 X → Y，X → Z）</li>
+<li><code>伪传递规则</code> {X → Y,YW → Z}，则 WX → Z</li>
+<li><code>复合规则</code>{X → Y，W → Z},则 XW → YZ</li>
+<li><code>自积律规则</code>{X → YZ，Z → W}，则 X → YZW</li>
+</ul>
+<h2 id="属性闭包"><a href="#属性闭包" class="headerlink" title="属性闭包"></a>属性闭包</h2><p>概念</p>
+<p>设 F 是属性集合 U 上的一个函数依赖集，X ∈ U，称 X+ = { A|:    A∈U,X → A 由 F 按照 Armstrong 公理系统推导得到 } 为属性集的 x 关于 F 的闭包。</p>
+<p>例子：<br>设有关系模式 R（U，F），U = ABC，F={A→B，B → C}，则有 A 的闭包 A+ = ABC，B+=BC，C+=C。</p>
+<p>函数依赖闭包和属性集闭包</p>
+<p>一般来说，我们很少会求函数依赖闭包，因为这样会产生大量“无意义”或者意义不大的函数依赖。多数时候，我们关心的只是 F+ 的一个子集，常常伴随的问题是某函数依赖 X → Y 是否在 F+中。而求解这个问题的解决方式，通常是求在 F 下，属性集合 X 的闭包 X+（至于其证明，有兴趣的可以查阅一下相关资料）。</p>
+<ul>
+<li>如何求解 X 的属性闭包：<ul>
+<li>设置初始值：令X(0) = ?，X(1)= X，F’=?。<ul>
+<li>若X(0)≠X(1),令 X(0)=X(1)。否则转向 4）。</li>
+<li>构造函数依赖集合 F’={Y→Z | (Y→Z)∈F∩Y∈X(1)}，令 F = F – F’,对于其中的每个函数依赖 Y→Z，令X(1) = X(1)∪Z，转向 2）。</li>
+<li>输出 X(1),它就是X+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="最小函数依赖集"><a href="#最小函数依赖集" class="headerlink" title="最小函数依赖集"></a>最小函数依赖集</h1><p>概念<br>对于函数集 F ，称函数集Fmin 为F 的最小函数依赖集，如果 Fmin满足一下条件：</p>
+<ol>
+<li>Fmin与 F等价：Fmin+=F+。</li>
+<li>Fmin中每个函数依赖 X→Y 的依赖因素为单元素集，即Y中只含有一个属性集合。</li>
+<li>Fmin中每个函数依赖 X→Y的决定因素不存在冗余，即既要删除X中任何一个属性，就会改变Fmin的闭包。</li>
+<li>Fmin中每个函数毒不是冗余的，即删除 Fmin 中任意一个函数依赖，就会改变Fmin 的闭包。</li>
+</ol>
+<h1 id="无损分解"><a href="#无损分解" class="headerlink" title="无损分解"></a>无损分解</h1><p>概念</p>
+<p>无损分解指的是对关系模式分解时，原关系模型下任一合法的关系值在分解之后应能通过自然联接运算恢复起来。反之，则称为有损分解。</p>
+<p>这里解释一下：“损”代表了信息的丢失的丢失，可能发生的情况是：分解后的关系模式通过自然连接合并，原有元组丢失或增加了无意义的元组，此情况记为“损”。在实际应用当中，我们希望通过自然连接之后可恢复原有关系模式，既不减少也不增加新的元组。那如何才可以做到无损分解呢？？答案是：保持原有关系模式的函数依赖</p>
+<p>保持函数依赖的分解</p>
+<h2 id="分解需要保持函数依赖，因为-F-中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的-F"><a href="#分解需要保持函数依赖，因为-F-中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的-F" class="headerlink" title="分解需要保持函数依赖，因为 F 中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的 F+"></a>分解需要保持函数依赖，因为 F 中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的 F+</h2><p><strong>Via</strong></p>
+<ul>
+<li><a href="http://www.cnblogs.com/ndxsdhy/archive/2010/12/21/1913123.html" target="_blank" rel="noopener">源地址</a></li>
+<li><a href="http://blog.51cto.com/peiquan/1425012" target="_blank" rel="noopener">函数依赖与模式分解</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/SQLfunDep.html">https://vitan.me/posts/SQLfunDep.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/SQLnfs.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">SQL 范式</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/SQLgrant.html">
+                <span class="level-item">SQL 授权</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#函数依赖-Functional-Dependency">
+            <span class="has-mr-6">1</span>
+            <span>函数依赖 Functional Dependency</span>
+            </a></li><li>
+            <a class="is-flex" href="#属性间的联系决定函数依赖关系">
+            <span class="has-mr-6">2</span>
+            <span>属性间的联系决定函数依赖关系</span>
+            </a></li><li>
+            <a class="is-flex" href="#完全函数依赖和部分函数依赖">
+            <span class="has-mr-6">3</span>
+            <span>完全函数依赖和部分函数依赖</span>
+            </a></li><li>
+            <a class="is-flex" href="#平凡函数依赖和非平凡函数依赖">
+            <span class="has-mr-6">4</span>
+            <span>平凡函数依赖和非平凡函数依赖</span>
+            </a></li><li>
+            <a class="is-flex" href="#传递函数依赖-X→Y，Y→Z-则Z传递函数依赖于X">
+            <span class="has-mr-6">5</span>
+            <span>传递函数依赖 X→Y，Y→Z 则Z传递函数依赖于X</span>
+            </a></li><li>
+            <a class="is-flex" href="#传递与直接函数依赖">
+            <span class="has-mr-6">6</span>
+            <span>传递与直接函数依赖</span>
+            </a></li><li>
+            <a class="is-flex" href="#函数依赖的-Armstrong-公理">
+            <span class="has-mr-6">7</span>
+            <span>函数依赖的 Armstrong 公理</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#基本公理和推理规则：">
+            <span class="has-mr-6">7.1</span>
+            <span>基本公理和推理规则：</span>
+            </a></li><li>
+            <a class="is-flex" href="#属性闭包">
+            <span class="has-mr-6">7.2</span>
+            <span>属性闭包</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#最小函数依赖集">
+            <span class="has-mr-6">8</span>
+            <span>最小函数依赖集</span>
+            </a></li><li>
+            <a class="is-flex" href="#无损分解">
+            <span class="has-mr-6">9</span>
+            <span>无损分解</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#分解需要保持函数依赖，因为-F-中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的-F">
+            <span class="has-mr-6">9.1</span>
+            <span>分解需要保持函数依赖，因为 F 中每一个函数依赖都代表数据库的一个约束。如果模式分解不保持函数依赖，那在模式分解中就会丢失一些函数依赖。注意：这里保持原有的函数依赖，包括了通过原有函数依赖推到出来的函数依赖，可以理解为保持原有函数的 F+</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="SQL 函数赖与模式分解" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Ubuntu 常用命令 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Ubuntu 常用命令" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Ubuntu 常用命令" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Ubuntu.png" alt="Ubuntu 常用命令">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Ubuntu 常用命令
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    8 分钟 读完 (约 1190 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-03-10T23:57:27.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-03-11</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.196Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Ununtu常用命令。</p>
+<a id="more"></a>
+<h1 id="磁盘目录"><a href="#磁盘目录" class="headerlink" title="磁盘目录"></a>磁盘目录</h1><table>
+<thead>
+<tr>
+<th align="left">目录</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/</td>
+<td align="left">根目录</td>
+</tr>
+<tr>
+<td align="left">/bin</td>
+<td align="left">存放必要的命令</td>
+</tr>
+<tr>
+<td align="left">/boot</td>
+<td align="left">存放内核以及启动所需的文件等</td>
+</tr>
+<tr>
+<td align="left">/dev</td>
+<td align="left">存放设备文件</td>
+</tr>
+<tr>
+<td align="left">/etc</td>
+<td align="left">存放系统的配置文件</td>
+</tr>
+<tr>
+<td align="left">/home</td>
+<td align="left">用户文件的主目录，用户数据存放在其主目录中</td>
+</tr>
+<tr>
+<td align="left">/lib</td>
+<td align="left">存放必要的运行库</td>
+</tr>
+<tr>
+<td align="left">/mnt</td>
+<td align="left">存放临时的映射文件系统，我们常把软驱和光驱挂装在这里的floppy和cdrom子目录下</td>
+</tr>
+<tr>
+<td align="left">/proc</td>
+<td align="left">存放存储进程和系统信息</td>
+</tr>
+<tr>
+<td align="left">/root</td>
+<td align="left">超级用户的主目录</td>
+</tr>
+<tr>
+<td align="left">/sbin</td>
+<td align="left">存放系统管理程序</td>
+</tr>
+<tr>
+<td align="left">/tmp</td>
+<td align="left">存放临时文件的目录</td>
+</tr>
+<tr>
+<td align="left">/usr</td>
+<td align="left">包含了一般不需要修改的应用程序，命令程序文件、程序库、手册和其它文档</td>
+</tr>
+<tr>
+<td align="left">/var</td>
+<td align="left">包含系统产生的经常变化的文件</td>
+</tr>
+</tbody></table>
+<h1 id="文件-文件夹管理"><a href="#文件-文件夹管理" class="headerlink" title="文件/文件夹管理"></a>文件/文件夹管理</h1><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ls</td>
+<td align="left">列出当前目录下的所有文件（不显示隐藏文件）</td>
+</tr>
+<tr>
+<td align="left">ls -a</td>
+<td align="left">列出当前目录下的所有文件（显示隐藏文件）</td>
+</tr>
+<tr>
+<td align="left">ls -l</td>
+<td align="left">列出当前目录下所有文件的详细信息</td>
+</tr>
+<tr>
+<td align="left">cd 或者 cd ~</td>
+<td align="left">进入用户主目录</td>
+</tr>
+<tr>
+<td align="left">cd ..</td>
+<td align="left">回到上一级目录</td>
+</tr>
+<tr>
+<td align="left">cd -</td>
+<td align="left">返回进入此目录之前所在的目录</td>
+</tr>
+<tr>
+<td align="left">mkdir dirname</td>
+<td align="left">新建目录</td>
+</tr>
+<tr>
+<td align="left">rmdir dirname</td>
+<td align="left">删除空目录</td>
+</tr>
+<tr>
+<td align="left">rm filename</td>
+<td align="left">删除文件</td>
+</tr>
+<tr>
+<td align="left">rm -rf dirname</td>
+<td align="left">删除非空目录及其包含的所有文件</td>
+</tr>
+<tr>
+<td align="left">mv file1 file2</td>
+<td align="left">将文件1重命名为文件2</td>
+</tr>
+<tr>
+<td align="left">mv file1 dir1</td>
+<td align="left">将文件1移动到目录1中</td>
+</tr>
+<tr>
+<td align="left">find 路径 -name “字符串”</td>
+<td align="left">查找路径所在范围内满足字符串匹配的文件和目录</td>
+</tr>
+</tbody></table>
+<h1 id="程序安装与卸载"><a href="#程序安装与卸载" class="headerlink" title="程序安装与卸载"></a>程序安装与卸载</h1><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">apt-get +</td>
+<td align="left">程序安装与卸载命令的标志，需要管理员权限</td>
+</tr>
+<tr>
+<td align="left">install</td>
+<td align="left">安装指定程序，举例：`sudo apt-get install vim</td>
+</tr>
+<tr>
+<td align="left">remove</td>
+<td align="left">卸载指定的程序，一般最好加上<code>--purge</code>执行清除式卸并在程序名称后添加*号。举例 sudo apt-get remove–purge nvidia *卸载 nvidia 的驱动及其配置文件</td>
+</tr>
+<tr>
+<td align="left">update</td>
+<td align="left">更新本地软件源文件，需要管理员权限，举例：sudo apt-get update</td>
+</tr>
+</tbody></table>
+<h1 id="打包-解压"><a href="#打包-解压" class="headerlink" title="打包/解压"></a>打包/解压</h1><ul>
+<li>参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-c</td>
+<td align="left">建立压缩档案</td>
+</tr>
+<tr>
+<td align="left">-z</td>
+<td align="left">有gzip属性的</td>
+</tr>
+<tr>
+<td align="left">-t</td>
+<td align="left">查看内容</td>
+</tr>
+<tr>
+<td align="left">-j</td>
+<td align="left">有bz2属性的</td>
+</tr>
+<tr>
+<td align="left">-u</td>
+<td align="left">更新原压缩包中的文件</td>
+</tr>
+<tr>
+<td align="left">-Z</td>
+<td align="left">有compress属性的</td>
+</tr>
+<tr>
+<td align="left">-x</td>
+<td align="left">解压</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td align="left">显示所有过程</td>
+</tr>
+<tr>
+<td align="left">-r</td>
+<td align="left">向压缩归档文件末尾追加文件</td>
+</tr>
+<tr>
+<td align="left">-O</td>
+<td align="left">将文件解开到标准输出</td>
+</tr>
+</tbody></table>
+<ul>
+<li>参数是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。右边五个参数是根据需要在压缩或解压时可选的。</li>
+</ul>
+<h1 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h1><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">tar -cvf jpg.tar *.jpg</td>
+<td align="left">将目录里所有jpg文件打包成tar.jpg</td>
+</tr>
+<tr>
+<td align="left">tar -czf jpg.tar.gz *.jpg</td>
+<td align="left">将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</td>
+</tr>
+<tr>
+<td align="left">tar -cjf jpg.tar.bz2 *.jpg</td>
+<td align="left">将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</td>
+</tr>
+<tr>
+<td align="left">tar -cZf jpg.tar.Z *.jpg</td>
+<td align="left">将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</td>
+</tr>
+<tr>
+<td align="left">rar a jpg.rar *.jpg rar</td>
+<td align="left">格式的压缩，需要先下载rar for linux</td>
+</tr>
+<tr>
+<td align="left">zip jpg.zip *.jpg zip</td>
+<td align="left">格式的压缩，需要先下载zip for linux</td>
+</tr>
+</tbody></table>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">tar -xvf file.tar</td>
+<td align="left">解压 tar包</td>
+</tr>
+<tr>
+<td align="left">tar -xzvf file.tar.gz</td>
+<td align="left">解压 tar.gz</td>
+</tr>
+<tr>
+<td align="left">tar -xjvf file.tar.bz2</td>
+<td align="left">解压 tar.bz2</td>
+</tr>
+<tr>
+<td align="left">tar -xZvf file.tar.Z</td>
+<td align="left">解压 tar.Z</td>
+</tr>
+<tr>
+<td align="left">unrar e file.rar</td>
+<td align="left">解压 rar</td>
+</tr>
+<tr>
+<td align="left">unzip file.zip</td>
+<td align="left">解压 zip</td>
+</tr>
+</tbody></table>
+<ul>
+<li>总结<ul>
+<li><code>.tar</code>用 <code>tar -xvf</code> 解压</li>
+<li><code>.gz</code> 用 <code>gzip -d</code>或者<code>gunzip</code> 解压</li>
+<li><code>.tar.gz</code>和<code>.tg</code>z 用<code>tar -xzf</code> 解压</li>
+<li><code>.bz2</code> 用<code>bzip2 -d</code>或者用<code>bunzip2</code>解压</li>
+<li><code>.tar.bz2</code>用<code>tar -xjf</code> 解压</li>
+<li><code>.Z</code> 用 <code>uncompress</code> 解压</li>
+<li><code>.tar.Z</code> 用<code>tar -xZf</code> 解压</li>
+<li><code>rar</code> 用 <code>unrar e</code>解压</li>
+<li><code>.zi</code>p 用 <code>unzip</code> 解压</li>
+</ul>
+</li>
+</ul>
+<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sudo useradd username</td>
+<td align="left">创建一个新的用户username</td>
+</tr>
+<tr>
+<td align="left">sudo passwd username</td>
+<td align="left">设置用户username的密码</td>
+</tr>
+<tr>
+<td align="left">sudo groupadd groupname</td>
+<td align="left">创建一个新的组groupname</td>
+</tr>
+<tr>
+<td align="left">sudo usermod -g groupname username</td>
+<td align="left">把用户username加入到组groupname中</td>
+</tr>
+<tr>
+<td align="left">sudo chown username:groupname dirname</td>
+<td align="left">将指定文件的拥有者改为指定的用户或组</td>
+</tr>
+</tbody></table>
+<h1 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h1><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">uname -a</td>
+<td align="left">查看内核版本</td>
+</tr>
+<tr>
+<td align="left">cat /etc/issue</td>
+<td align="left">查看ubuntu版本</td>
+</tr>
+<tr>
+<td align="left">sudo fdisk -l</td>
+<td align="left">查看磁盘信息</td>
+</tr>
+<tr>
+<td align="left">df -h</td>
+<td align="left">查看硬盘剩余空间</td>
+</tr>
+<tr>
+<td align="left">free -m</td>
+<td align="left">查看当前的内存使用情况</td>
+</tr>
+<tr>
+<td align="left">ps -A</td>
+<td align="left">查看当前有哪些进程</td>
+</tr>
+<tr>
+<td align="left">kill 进程号 或者 killall 进程名</td>
+<td align="left">杀死进程</td>
+</tr>
+<tr>
+<td align="left">kill -9 进程号</td>
+<td align="left">强制杀死进程</td>
+</tr>
+</tbody></table>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/UbuntuCommand.html">https://vitan.me/posts/UbuntuCommand.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Ubuntu/">Ubuntu</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Vim-utf-8.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Vim 设置默认中文并加行数</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Termux-Npm-Error.html">
+                <span class="level-item">解决 &#34;Npm Err! Cannot Read Property &#39;Length&#39; of Undefined&#34;</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#磁盘目录">
+            <span class="has-mr-6">1</span>
+            <span>磁盘目录</span>
+            </a></li><li>
+            <a class="is-flex" href="#文件-文件夹管理">
+            <span class="has-mr-6">2</span>
+            <span>文件/文件夹管理</span>
+            </a></li><li>
+            <a class="is-flex" href="#程序安装与卸载">
+            <span class="has-mr-6">3</span>
+            <span>程序安装与卸载</span>
+            </a></li><li>
+            <a class="is-flex" href="#打包-解压">
+            <span class="has-mr-6">4</span>
+            <span>打包/解压</span>
+            </a></li><li>
+            <a class="is-flex" href="#压缩">
+            <span class="has-mr-6">5</span>
+            <span>压缩</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#解压">
+            <span class="has-mr-6">5.1</span>
+            <span>解压</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#用户管理">
+            <span class="has-mr-6">6</span>
+            <span>用户管理</span>
+            </a></li><li>
+            <a class="is-flex" href="#系统管理">
+            <span class="has-mr-6">7</span>
+            <span>系统管理</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Ubuntu 常用命令" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

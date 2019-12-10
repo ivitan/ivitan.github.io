@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Xpath 升格用法 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Xpath 升格用法" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Xpath 升格用法" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Python.png" alt="Xpath 升格用法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Xpath 升格用法
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    5 分钟 读完 (约 809 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2019-09-12T11:05:17.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-09-12</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.199Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>xpath 升格用法</p>
+<a id="more"></a>
+
+<h1 id="匹配当前节点下所有子节点"><a href="#匹配当前节点下所有子节点" class="headerlink" title="匹配当前节点下所有子节点 .//"></a>匹配当前节点下所有子节点 <code>.//</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div//'</span>) <span class="hljs-comment"># div 当前节点</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>//</code> 标签下的所有标签</li>
+</ul>
+<h1 id="匹配某标签的属性值-属性名称"><a href="#匹配某标签的属性值-属性名称" class="headerlink" title="匹配某标签的属性值 /@属性名称"></a>匹配某标签的属性值 <code>/@属性名称</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取 input value</span></span><br><span class="line">xpath(<span class="hljs-string">'//input/@value'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配多个路径"><a href="#匹配多个路径" class="headerlink" title="匹配多个路径 |"></a>匹配多个路径 <code>|</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div/text() | //div/div/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="按属性匹配"><a href="#按属性匹配" class="headerlink" title="按属性匹配 @"></a>按属性匹配 <code>@</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取所有id="test"的所有文本内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]//text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配不包含某个属性的标签-not"><a href="#匹配不包含某个属性的标签-not" class="headerlink" title="匹配不包含某个属性的标签 not"></a>匹配不包含某个属性的标签 <code>not</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 多用于表格中匹配中不包含表头信息的数据</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead")]'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配包含多个属性的标签-and"><a href="#匹配包含多个属性的标签-and" class="headerlink" title="匹配包含多个属性的标签 and"></a>匹配包含多个属性的标签 <code>and</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有的tr中不包含 tbhead 属性 和包含 head 的tr标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead") and @class="head"]'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配包含不同属性的名称相同的标签-or"><a href="#匹配包含不同属性的名称相同的标签-or" class="headerlink" title="匹配包含不同属性的名称相同的标签 or"></a>匹配包含不同属性的名称相同的标签 <code>or</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配包含class="speedbar" 或者 class="content-wrap" 的标签</span></span><br><span class="line">xpath（<span class="hljs-string">'//div[@class="speedbar" or @class="content-wrap"]'</span>）</span><br></pre></td></tr></table></figure>
+
+<h1 id="将对象还原为字符串-etree-tostring（）"><a href="#将对象还原为字符串-etree-tostring（）" class="headerlink" title="将对象还原为字符串 etree.tostring（）"></a>将对象还原为字符串 <code>etree.tostring（）</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 将匹配到的对象，作为etree.tostring（）的参数即可，  注： 返回字符串</span></span><br><span class="line">sObj = xml.xpath(<span class="hljs-string">'//*[@id="test"]'</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment"># 使用xpath定位一个节点</span></span><br><span class="line">sStr = etree.tostring(sObj)</span><br></pre></td></tr></table></figure>
+
+<h1 id="按轴-Axes-匹配"><a href="#按轴-Axes-匹配" class="headerlink" title="按轴(Axes)匹配"></a>按轴(Axes)匹配</h1><h2 id="选取当前节点的所有子元素-child"><a href="#选取当前节点的所有子元素-child" class="headerlink" title="选取当前节点的所有子元素 child"></a>选取当前节点的所有子元素 <code>child</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div下的tr的标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]/child::tr/td/text()'</span>)</span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋， 也可以实现</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]//tr/td'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="选取当前节点的所有属性-attribute"><a href="#选取当前节点的所有属性-attribute" class="headerlink" title="选取当前节点的所有属性 attribute"></a>选取当前节点的所有属性 <code>attribute</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div标签所有的属性值</span></span><br><span class="line">xpath(<span class="hljs-string">'//div/attribute::*'</span>) </span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋，//div/@* 同样能实现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素"><a href="#ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素" class="headerlink" title="ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素"></a>ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取父辈元素的div的所有属性值， 在不好定位的情况下，通过孩子标签定位，这种方法可以用</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="descendant：后代-descendant-or-self：后代及当前节点本身"><a href="#descendant：后代-descendant-or-self：后代及当前节点本身" class="headerlink" title="descendant：后代 / descendant-or-self：后代及当前节点本身"></a>descendant：后代 / descendant-or-self：后代及当前节点本身</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取孩子元素的div的所有属性值，感觉鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="选取当前节点的所有命名空间节点-namespace"><a href="#选取当前节点的所有命名空间节点-namespace" class="headerlink" title="选取当前节点的所有命名空间节点 namespace"></a>选取当前节点的所有命名空间节点 <code>namespace</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/namespace::*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 <code>position</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 和通过下标定位一样， 方法鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]/ol/li[position()=2]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Xpath-函数"><a href="#Xpath-函数" class="headerlink" title="Xpath 函数"></a>Xpath 函数</h1><h2 id="统计数量-count"><a href="#统计数量-count" class="headerlink" title="统计数量 count"></a>统计数量 <code>count</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计符合要求节点的数量,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'count(//tr[@info])'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串拼接-concat"><a href="#字符串拼接-concat" class="headerlink" title="字符串拼接 concat"></a>字符串拼接 <code>concat</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计出来的两个内容的字符串进行“ + ”处理,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'concat(//li[@id="one"]/text(),//li[@id="three"]/text())'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解析当前节点下的字符-string"><a href="#解析当前节点下的字符-string" class="headerlink" title="解析当前节点下的字符 string"></a>解析当前节点下的字符 <code>string</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># string()直解析匹配的第一个标签的值，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'string(//tr)'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取当前节点的节点名称-local-name"><a href="#获取当前节点的节点名称-local-name" class="headerlink" title="获取当前节点的节点名称 local-name"></a>获取当前节点的节点名称 <code>local-name</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 返回当前属性的节点名称，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'local-name(//*[@id="test"])'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="以指定的字符开头-starts-with"><a href="#以指定的字符开头-starts-with" class="headerlink" title="以指定的字符开头 starts-with"></a>以指定的字符开头 <code>starts-with</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># starts-with定位属性值以8开头的li元素</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[starts-with(@code,"one")]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="小于-lt"><a href="#小于-lt" class="headerlink" title="小于 &lt;"></a>小于 <code>&lt;</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有tr标签属性info小于200的内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[@info&lt;200]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="根据指定的文本内容选择"><a href="#根据指定的文本内容选择" class="headerlink" title="根据指定的文本内容选择"></a>根据指定的文本内容选择</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 指定的文本内容可以是文本内容的部分， 也可以是全部</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[2]/ul/li[contains(text(), "指定的文本内容")]/span/text()'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/4fef4142b33f" target="_blank" rel="noopener">作者:董小贱</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Xpath.html">https://vitan.me/posts/Xpath.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Python/">Python</a>,&nbsp;<a class="has-link-grey -link" href="/tags/WebCrawler/">WebCrawler</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Wine-dpi.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Linux Wine 调整分辨率</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/HexoSEO.html">
+                <span class="level-item">Hexo SEO 优化</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#匹配当前节点下所有子节点">
+            <span class="has-mr-6">1</span>
+            <span>匹配当前节点下所有子节点 .//</span>
+            </a></li><li>
+            <a class="is-flex" href="#匹配某标签的属性值-属性名称">
+            <span class="has-mr-6">2</span>
+            <span>匹配某标签的属性值 /@属性名称</span>
+            </a></li><li>
+            <a class="is-flex" href="#匹配多个路径">
+            <span class="has-mr-6">3</span>
+            <span>匹配多个路径 |</span>
+            </a></li><li>
+            <a class="is-flex" href="#按属性匹配">
+            <span class="has-mr-6">4</span>
+            <span>按属性匹配 @</span>
+            </a></li><li>
+            <a class="is-flex" href="#匹配不包含某个属性的标签-not">
+            <span class="has-mr-6">5</span>
+            <span>匹配不包含某个属性的标签 not</span>
+            </a></li><li>
+            <a class="is-flex" href="#匹配包含多个属性的标签-and">
+            <span class="has-mr-6">6</span>
+            <span>匹配包含多个属性的标签 and</span>
+            </a></li><li>
+            <a class="is-flex" href="#匹配包含不同属性的名称相同的标签-or">
+            <span class="has-mr-6">7</span>
+            <span>匹配包含不同属性的名称相同的标签 or</span>
+            </a></li><li>
+            <a class="is-flex" href="#将对象还原为字符串-etree-tostring（）">
+            <span class="has-mr-6">8</span>
+            <span>将对象还原为字符串 etree.tostring（）</span>
+            </a></li><li>
+            <a class="is-flex" href="#按轴-Axes-匹配">
+            <span class="has-mr-6">9</span>
+            <span>按轴(Axes)匹配</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#选取当前节点的所有子元素-child">
+            <span class="has-mr-6">9.1</span>
+            <span>选取当前节点的所有子元素 child</span>
+            </a></li><li>
+            <a class="is-flex" href="#选取当前节点的所有属性-attribute">
+            <span class="has-mr-6">9.2</span>
+            <span>选取当前节点的所有属性 attribute</span>
+            </a></li><li>
+            <a class="is-flex" href="#ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素">
+            <span class="has-mr-6">9.3</span>
+            <span>ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素</span>
+            </a></li><li>
+            <a class="is-flex" href="#descendant：后代-descendant-or-self：后代及当前节点本身">
+            <span class="has-mr-6">9.4</span>
+            <span>descendant：后代 / descendant-or-self：后代及当前节点本身</span>
+            </a></li><li>
+            <a class="is-flex" href="#选取当前节点的所有命名空间节点-namespace">
+            <span class="has-mr-6">9.5</span>
+            <span>选取当前节点的所有命名空间节点 namespace</span>
+            </a></li><li>
+            <a class="is-flex" href="#定位-position">
+            <span class="has-mr-6">9.6</span>
+            <span>定位 position</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#Xpath-函数">
+            <span class="has-mr-6">10</span>
+            <span>Xpath 函数</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#统计数量-count">
+            <span class="has-mr-6">10.1</span>
+            <span>统计数量 count</span>
+            </a></li><li>
+            <a class="is-flex" href="#字符串拼接-concat">
+            <span class="has-mr-6">10.2</span>
+            <span>字符串拼接 concat</span>
+            </a></li><li>
+            <a class="is-flex" href="#解析当前节点下的字符-string">
+            <span class="has-mr-6">10.3</span>
+            <span>解析当前节点下的字符 string</span>
+            </a></li><li>
+            <a class="is-flex" href="#获取当前节点的节点名称-local-name">
+            <span class="has-mr-6">10.4</span>
+            <span>获取当前节点的节点名称 local-name</span>
+            </a></li><li>
+            <a class="is-flex" href="#以指定的字符开头-starts-with">
+            <span class="has-mr-6">10.5</span>
+            <span>以指定的字符开头 starts-with</span>
+            </a></li><li>
+            <a class="is-flex" href="#小于-lt">
+            <span class="has-mr-6">10.6</span>
+            <span>小于 &lt;</span>
+            </a></li><li>
+            <a class="is-flex" href="#根据指定的文本内容选择">
+            <span class="has-mr-6">10.7</span>
+            <span>根据指定的文本内容选择</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Xpath 升格用法" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

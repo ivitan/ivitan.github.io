@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Excel 函数 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Excel 函数" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Excel 函数" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Excel.png" alt="Excel 函数">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Excel 函数
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Diary/">Diary</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    10 分钟 读完 (约 1529 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-11-15T02:37:33.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-11-15</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.144Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Excel 函数</p>
+<a id="more"></a>
+<h1 id="数字处理"><a href="#数字处理" class="headerlink" title="数字处理"></a>数字处理</h1><p>取绝对值</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=ABS(数字) </span><br><span class="line"># 如：</span><br><span class="line">ABS(-2) =2</span><br></pre></td></tr></table></figure>
+
+<p>向下取整</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=INT(数字) </span><br><span class="line"># 如：</span><br><span class="line">INT(5.6)=5 ; INT(5.2)=5</span><br></pre></td></tr></table></figure>
+
+<p>四舍五入</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=ROUND(数字,小数位数) </span><br><span class="line"># 如： </span><br><span class="line">ROUND(5.6,0)=6 ; ROUND(5.2,0)=5</span><br></pre></td></tr></table></figure>
+
+<h1 id="判断公式"><a href="#判断公式" class="headerlink" title="判断公式"></a>判断公式</h1><ul>
+<li><p>把公式产生的错误值显示为空</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C2=IFERROR(A2/B2,&quot;&quot;) </span><br><span class="line">#  如：</span><br><span class="line">IFERROR(2/0,&quot;错误&quot;) = &quot;错误&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明：如果是错误值则显示为空，否则正常显示。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>IF多条件判断返回值</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=IF(AND(A2&lt;500,B2=&quot;未到期&quot;),&quot;补款&quot;,&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明：两个条件同时成立用AND,任一个成立用OR函数。</li>
+</ul>
+</li>
+</ul>
+<h1 id="统计公式"><a href="#统计公式" class="headerlink" title="统计公式"></a>统计公式</h1><p>统计两个表格重复的内容</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=COUNTIF(Sheet15!A:A,A2)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明：如果返回值大于0说明在另一个表中存在，0则不存在。</li>
+</ul>
+<p>统计不重复的总人数</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=SUMPRODUCT(1/COUNTIF(A2:A8,A2:A8))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明:用COUNTIF统计出每人的出现次数，用1除的方式把出现次数变成分母，然后相加。</li>
+</ul>
+<h1 id="求和公式"><a href="#求和公式" class="headerlink" title="求和公式"></a>求和公式</h1><p>隔列求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">H3=SUMIF($A$2:$G$2,H$2,A3:G3) </span><br><span class="line">或</span><br><span class="line">=SUMPRODUCT((MOD(COLUMN(B3:G3),2)=0)*B3:G3)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明：如果标题行没有规则用第2个公式</li>
+</ul>
+<p>单条件求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F2=SUMIF(A:A,E2,C:C)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>说明：SUMIF函数的基本用法</li>
+</ul>
+<p>单条件模糊求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kdqfs8nj209507fwgx.jpg" alt></p>
+<ul>
+<li>说明：如果需要进行模糊求和，就需要掌握通配符的使用，其中星号是表示任意多个字符，如”<em>A</em>“就表示a前和后有任意多个字符，即包含A。</li>
+</ul>
+<p>多条件模糊求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C11=SUMIFS(C2:C7,A2:A7,A11&amp;&quot;*&quot;,B2:B7,B11)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kexfwl2j209t065tat.jpg" alt></p>
+<ul>
+<li>说明：在sumifs中可以使用通配符*</li>
+</ul>
+<p>多表相同位置求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b2=SUM(Sheet1:Sheet19!B2)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kgfwoxlj208y04n75k.jpg" alt></p>
+<ul>
+<li>说明：在表中间删除或添加表后，公式结果会自动更新。</li>
+</ul>
+<p>按日期和产品求和</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F2=SUMPRODUCT((MONTH($A$2:$A$25)=F$1)*($B$2:$B$25=$E2)*$C$2:$C$25)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8khi926oj20a005xgob.jpg" alt></p>
+<ul>
+<li>说明：SUMPRODUCT可以完成多条件求和</li>
+</ul>
+<h1 id="查找与引用公式"><a href="#查找与引用公式" class="headerlink" title="查找与引用公式"></a>查找与引用公式</h1><p>单条件查找公式</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C11=VLOOKUP(B11,B3:F7,4,FALSE)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kligjavj20a606gdiu.jpg" alt></p>
+<ul>
+<li>说明：查找是VLOOKUP最擅长的，基本用法</li>
+</ul>
+<p>双向查找公式</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=INDEX(C3:H7,MATCH(B10,B3:B7,0),MATCH(C10,C2:H2,0))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kmqj7r8j20d3074n10.jpg" alt></p>
+<ul>
+<li>说明：利用MATCH函数查找位置，用INDEX函数取值</li>
+</ul>
+<p>查找最后一条符合条件的记录。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C13 = LOOKUP(1,0/(C5:C10=B13),D5:D10)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kngxy5tj209v07tjt9.jpg" alt></p>
+<ul>
+<li>说明：0/(条件)可以把不符合条件的变成错误值，而lookup可以忽略错误值</li>
+</ul>
+<h2 id="多条件查找"><a href="#多条件查找" class="headerlink" title="多条件查找"></a>多条件查找</h2><p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kppnnmaj20d808c0vh.jpg" alt></p>
+<ul>
+<li>说明:公式原理同上一个公式</li>
+</ul>
+<p>指定区域最后一个非空值查找</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B14=LOOKUP(1,0/(B2:B13&lt;&gt;&quot;&quot;),$A2:$A13)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kquebpdj20ax0a8jun.jpg" alt></p>
+<p>按数字区域间取对应的值</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D9=VLOOKUP(C9,B$4:C$6,2)</span><br><span class="line">or</span><br><span class="line">D9=LOOKUP(C9,B$4:B6,C$4:C$5)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8l4ove6sj20as0bgwje.jpg" alt></p>
+<ul>
+<li>公式说明：VLOOKUP和LOOKUP函数都可以按区间取值，一定要注意，销售量列的数字一定要升序排列。</li>
+</ul>
+<h1 id="字符串处理公式"><a href="#字符串处理公式" class="headerlink" title="字符串处理公式"></a>字符串处理公式</h1><p>多单元格字符串合并</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=PHONETIC(A2:A7)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kvrf9x1j208x05kjsa.jpg" alt></p>
+<ul>
+<li>说明：Phonetic函数只能对字符型内容合并，数字不可以。</li>
+</ul>
+<p>截取除后3位之外的部分</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=LEFT(D1,LEN(D1)-3)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kwlf6hnj20700493yv.jpg" alt></p>
+<ul>
+<li>说明：LEN计算出总长度,LEFT从左边截总长度-3个</li>
+</ul>
+<p>截取-前的部分</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=Left(A1,FIND(&quot;-&quot;,A1)-1)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8l7paax9j208m04cwfu.jpg" alt></p>
+<ul>
+<li>说明：用FIND函数查找位置，用LEFT截取。</li>
+</ul>
+<p>截取字符串中任一段的公式</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B1=TRIM(MID(SUBSTITUTE($A1,&quot; &quot;,REPT(&quot; &quot;,20)),20,20))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8l8kx8szj20br04cwf1.jpg" alt></p>
+<ul>
+<li>说明:公式是利用强插N个空字符的方式进行截取</li>
+</ul>
+<p>字符串查找</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(COUNT(FIND(&quot;河南&quot;,A2))=0,&quot;否&quot;,&quot;是&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8l9u3emjj209004wgml.jpg" alt></p>
+<ul>
+<li>说明: FIND查找成功，返回字符的位置，否则返回错误值，而COUNT可以统计出数字的 个数，这里可以用来判断查找是否成功。</li>
+</ul>
+<p>字符串查找一对多</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(COUNT(FIND(&#123;&quot;辽宁&quot;,&quot;黑龙江&quot;,&quot;吉林&quot;&#125;,A2))=0,&quot;其他&quot;,&quot;东北&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8lbzg388j209s059gn7.jpg" alt></p>
+<ul>
+<li>说明：设置FIND第一个参数为常量数组，用COUNT函数统计FIND查找结果</li>
+</ul>
+<h1 id="日期计算公式"><a href="#日期计算公式" class="headerlink" title="日期计算公式"></a>日期计算公式</h1><p>两日期相隔的年、月、天数计算</p>
+<ul>
+<li>A1是开始日期（2011-12-1），B1是结束日期(2013-6-10)。<ul>
+<li>相隔多少天？<code>=datedif(A1,B1,&quot;d&quot;)</code> 结果：557</li>
+<li>相隔多少月? <code>=datedif(A1,B1,&quot;m&quot;)</code>结果：18</li>
+<li>相隔多少年? <code>=datedif(A1,B1,&quot;Y&quot;)</code> 结果：1</li>
+<li>不考虑年相隔多少月？<code>=datedif(A1,B1,&quot;Ym&quot;)</code> 结果：6</li>
+<li>不考虑年相隔多少天？<code>=datedif(A1,B1,&quot;YD&quot;)</code>  结果：192</li>
+<li>不考虑年月相隔多少天？<code>=datedif(A1,B1,&quot;MD&quot;)</code>结果：9<ul>
+<li>datedif函数第3个参数说明：</li>
+</ul>
+</li>
+<li>“Y” 时间段中的整年数。</li>
+<li>“M” 时间段中的整月数。</li>
+<li>“D” 时间段中的天数。</li>
+<li>“MD” 天数的差。忽略日期中的月和年。</li>
+<li>“YM” 月数的差。忽略日期中的日和年。</li>
+<li>“YD” 天数的差。忽略日期中的年。</li>
+</ul>
+</li>
+</ul>
+<p>扣除周末天数的工作日天数</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=NETWORKDAYS.INTL(IF(B2&lt;DATE(2015,1,1),DATE(2015,1,1),B2),DATE(2015,1,31),11)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8lgn3f80j209z06amyx.jpg" alt></p>
+<ul>
+<li>说明：返回两个日期之间的所有工作日数，使用参数指示哪些天是周末，以及有多少天是周末。周末和任何指定为假期的日期不被视为工作日</li>
+</ul>
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="https://blog.csdn.net/HaHa_Sir/article/details/78970082" target="_blank" rel="noopener">链接</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/ExcelFunction.html">https://vitan.me/posts/ExcelFunction.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Excel/">Excel</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Note/">Note</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/HTMLTag.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">HTML 常用标签</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/PythonSeleniumMa.html">
+                <span class="level-item">Selenium 马蜂窝评论</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#数字处理">
+            <span class="has-mr-6">1</span>
+            <span>数字处理</span>
+            </a></li><li>
+            <a class="is-flex" href="#判断公式">
+            <span class="has-mr-6">2</span>
+            <span>判断公式</span>
+            </a></li><li>
+            <a class="is-flex" href="#统计公式">
+            <span class="has-mr-6">3</span>
+            <span>统计公式</span>
+            </a></li><li>
+            <a class="is-flex" href="#求和公式">
+            <span class="has-mr-6">4</span>
+            <span>求和公式</span>
+            </a></li><li>
+            <a class="is-flex" href="#查找与引用公式">
+            <span class="has-mr-6">5</span>
+            <span>查找与引用公式</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#多条件查找">
+            <span class="has-mr-6">5.1</span>
+            <span>多条件查找</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#字符串处理公式">
+            <span class="has-mr-6">6</span>
+            <span>字符串处理公式</span>
+            </a></li><li>
+            <a class="is-flex" href="#日期计算公式">
+            <span class="has-mr-6">7</span>
+            <span>日期计算公式</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Excel 函数" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

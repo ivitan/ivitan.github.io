@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>jQuery Selector - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="jQuery Selector" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="jQuery Selector" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/jQuery.png" alt="jQuery Selector">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>jQuery Selector
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Web/">Web</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    6 分钟 读完 (约 954 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2019-03-23T05:39:32.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-03-23</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.199Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>jQuery 选择器</p>
+<a id="more"></a>
+<p>#元素选择器</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// id 选择器</span></span><br><span class="line">$(<span class="hljs-string">"#myELement"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 元素选择器</span></span><br><span class="line">$(<span class="hljs-string">"div"</span>)</span><br><span class="line">$(<span class="hljs-string">"span"</span>)</span><br><span class="line">$(<span class="hljs-string">"button"</span>)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// .class 选择</span></span><br><span class="line">$(<span class="hljs-string">".myClass"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 通配符选择(选取所有元素)</span></span><br><span class="line">$(<span class="hljs-string">"*"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="层叠选择器"><a href="#层叠选择器" class="headerlink" title="层叠选择器"></a>层叠选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有form元素中的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"form input"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//id值为main的所有的子元素</span></span><br><span class="line">$(<span class="hljs-string">"#main &gt; *"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*所有的label元素的下一个input元素节点，</span></span><br><span class="line"><span class="hljs-comment">返回的是label标签后面直接跟一个input标签的所有input标签元素 */</span>       </span><br><span class="line">$(<span class="hljs-string">"label + input"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//同胞选择器，返回id为prev的标签元素的所有的属于同一个父元素的div标签</span></span><br><span class="line">$(<span class="hljs-string">"#prev ~ div"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="基本过滤选择器"><a href="#基本过滤选择器" class="headerlink" title="基本过滤选择器"></a>基本过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有tr元素的第一个</span></span><br><span class="line">$(<span class="hljs-string">"tr:first"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有tr元素的最后一个 s</span></span><br><span class="line">$(<span class="hljs-string">"tr:last"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//过滤掉：checked的选择器的所有的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"input:not(:checked) + span"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的tr元素的第1，3，5... ...个元素 </span></span><br><span class="line">(<span class="hljs-string">"tr:odd"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的td元素中序号为2的那个td元素</span></span><br><span class="line">$(<span class="hljs-string">"td:eq(2)"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//td元素中序号大于4的所有td元素 </span></span><br><span class="line">$(<span class="hljs-string">"td:gt(4)"</span>)   </span><br><span class="line"></span><br><span class="line">td元素中序号小于<span class="hljs-number">4</span>的所有的td元素     </span><br><span class="line">$(<span class="hljs-string">"td:ll(4)"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有标题元素（h1 - h6）</span></span><br><span class="line">$(<span class="hljs-string">":header"</span>) </span><br><span class="line"></span><br><span class="line">$(<span class="hljs-string">"div:animated"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="内容过滤选择器"><a href="#内容过滤选择器" class="headerlink" title="内容过滤选择器"></a>内容过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有div中含有John文本的元素</span></span><br><span class="line">$(<span class="hljs-string">"div:contains('John')"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的为空（也不包括文本节点）的td元素的数组 </span></span><br><span class="line">$(<span class="hljs-string">"td:empty"</span>)        </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有含有p标签的div元素   </span></span><br><span class="line">$(<span class="hljs-string">"div:has(p)"</span>)      </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的以td为父节点的元素数组 </span></span><br><span class="line">$(<span class="hljs-string">"td:parent"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="可视化过滤选择器"><a href="#可视化过滤选择器" class="headerlink" title="可视化过滤选择器"></a>可视化过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有的被hidden的div元素 </span></span><br><span class="line">$(<span class="hljs-string">"div:hidden"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的可视化的div元素    </span></span><br><span class="line">$(<span class="hljs-string">"div:visible"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="属性过滤选择器"><a href="#属性过滤选择器" class="headerlink" title="属性过滤选择器"></a>属性过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//含有id属性的div元素 </span></span><br><span class="line">$(<span class="hljs-string">"div[id]"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//name属性等于'newsletter'的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"input[name='newsletter']"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">//name属性不等于'newsletter'的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"input[name!='newsletter']"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">//name属性以'news'开头的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"input[name^='news']"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// name属性以'news'结尾的input元素 </span></span><br><span class="line">$(<span class="hljs-string">"input[name$='news']"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//name属性包含'news'的input元素     </span></span><br><span class="line">$(<span class="hljs-string">"input[name*='man']"</span>)          </span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">//可以使用多个属性进行联合选择，得到所有的含有id属性并且属性以man结尾的元素 </span></span><br><span class="line">$(<span class="hljs-string">"input[id][name$='man']"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="子元素过滤选择器"><a href="#子元素过滤选择器" class="headerlink" title="子元素过滤选择器"></a>子元素过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="hljs-string">"ul li:nth-child(2)"</span>),$(<span class="hljs-string">"ul li:nth-child(odd)"</span>),$(<span class="hljs-string">"ul li:nth-child(3n + 1)"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//返回所有的div元素的第一个子节点的数组</span></span><br><span class="line">$(<span class="hljs-string">"div span:first-child"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//返回所有的div元素的最后一个节点的数组 </span></span><br><span class="line">$(<span class="hljs-string">"div span:last-child"</span>) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//返回所有的div中只有唯一一个子节点的所有子节点的数组 </span></span><br><span class="line">$(<span class="hljs-string">"div button:only-child"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="表单元素选择器："><a href="#表单元素选择器：" class="headerlink" title="表单元素选择器："></a>表单元素选择器：</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有的表单输入元素，包括input, textarea, select 和 button </span></span><br><span class="line">$(<span class="hljs-string">":input"</span>)  </span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">//所有的text input元素 </span></span><br><span class="line">$(<span class="hljs-string">":text"</span>)                     </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的password input元素 </span></span><br><span class="line">$(<span class="hljs-string">":password"</span>)           </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的radio input元素</span></span><br><span class="line">$(<span class="hljs-string">":radio"</span>)                    </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的checkbox input元素</span></span><br><span class="line">$(<span class="hljs-string">":checkbox"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的submit input元素 </span></span><br><span class="line">$(<span class="hljs-string">":submit"</span>)               </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 所有的image input元素 </span></span><br><span class="line">$(<span class="hljs-string">":image"</span>)                </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的reset input元素 </span></span><br><span class="line">$(<span class="hljs-string">":reset"</span>)                   </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的button input元素 </span></span><br><span class="line">$(<span class="hljs-string">":button"</span>)                </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 所有的file input元素 </span></span><br><span class="line">$(<span class="hljs-string">":file"</span>)                    </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 所有类型为hidden的input元素或表单的隐藏域 </span></span><br><span class="line">$(<span class="hljs-string">":hidden"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="表单元素过滤选择器"><a href="#表单元素过滤选择器" class="headerlink" title="表单元素过滤选择器"></a>表单元素过滤选择器</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//所有的可操作的表单元素 </span></span><br><span class="line">$(<span class="hljs-string">":enabled"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的不可操作的表单元素 </span></span><br><span class="line">$(<span class="hljs-string">":disabled"</span>)            </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的被checked的表单元素</span></span><br><span class="line">$(<span class="hljs-string">":checked"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//所有的select 的子元素中被selected的元素 </span></span><br><span class="line">$(<span class="hljs-string">"select option:selected"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//选取一个 name 为”S_03_22″的input text框的上一个td的text值</span><br><span class="line">$(”input[@ name =S_03_22]“).parent().prev().text() </span><br><span class="line">    </span><br><span class="line">//名字以”S_”开始，并且不是以”_R”结尾的</span><br><span class="line">$(”input[@ name ^=&apos;S_&apos;]“).not(”[@ name $=&apos;_R&apos;]“) </span><br><span class="line">    </span><br><span class="line">//一个名为 radio_01的radio所选的值</span><br><span class="line">$(”input[@ name =radio_01][@checked]“).val();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//查找A元素下面的所有子节点，包括非直接子节点</span><br><span class="line">$(&quot;A B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素下面的直接子节点</span><br><span class="line">$(&quot;A&gt;B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素后面的兄弟节点，包括非直接子节点</span><br><span class="line">$(&quot;A+B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素后面的兄弟节点，不包括非直接子节点</span><br><span class="line">$(&quot;A~B&quot;)</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/jQuerySelector.html">https://vitan.me/posts/jQuerySelector.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/CSS/">CSS</a>,&nbsp;<a class="has-link-grey -link" href="/tags/HTML/">HTML</a>,&nbsp;<a class="has-link-grey -link" href="/tags/jQuery/">jQuery</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Termux-ADB.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Termux ADB</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/GitEmoji.html">
+                <span class="level-item">Git Commit Emoji</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#层叠选择器">
+            <span class="has-mr-6">1</span>
+            <span>层叠选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#基本过滤选择器">
+            <span class="has-mr-6">2</span>
+            <span>基本过滤选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#内容过滤选择器">
+            <span class="has-mr-6">3</span>
+            <span>内容过滤选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#可视化过滤选择器">
+            <span class="has-mr-6">4</span>
+            <span>可视化过滤选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#属性过滤选择器">
+            <span class="has-mr-6">5</span>
+            <span>属性过滤选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#子元素过滤选择器">
+            <span class="has-mr-6">6</span>
+            <span>子元素过滤选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#表单元素选择器：">
+            <span class="has-mr-6">7</span>
+            <span>表单元素选择器：</span>
+            </a></li><li>
+            <a class="is-flex" href="#表单元素过滤选择器">
+            <span class="has-mr-6">8</span>
+            <span>表单元素过滤选择器</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="jQuery Selector" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by jQuery Selector @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

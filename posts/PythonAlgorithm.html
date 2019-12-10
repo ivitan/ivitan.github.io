@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>常用算法 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="常用算法" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="常用算法" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Python.png" alt="常用算法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>常用算法
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    7 分钟 读完 (约 1091 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2019-01-28T08:03:10.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-01-28</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.159Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Python 排序</p>
+<a id="more"></a>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubble_sort</span><span class="hljs-params">(li)</span>:</span></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(li)<span class="hljs-number">-1</span>): <span class="hljs-comment"># i表示第几趟</span></span><br><span class="line">    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(li)-i<span class="hljs-number">-1</span>): <span class="hljs-comment"># j表示图中的箭头</span></span><br><span class="line">        <span class="hljs-keyword">if</span> li[j] &gt; li[j+<span class="hljs-number">1</span>]:</span><br><span class="line">            li[j], li[j+<span class="hljs-number">1</span>] = li[j+<span class="hljs-number">1</span>], li[j]</span><br></pre></td></tr></table></figure>
+
+<p>冒泡排序(优化)</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubble_sort_1</span><span class="hljs-params">(li)</span>:</span></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(li)<span class="hljs-number">-1</span>): <span class="hljs-comment"># i表示第几趟</span></span><br><span class="line">    exchange = <span class="hljs-literal">False</span></span><br><span class="line">    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(li)-i<span class="hljs-number">-1</span>): <span class="hljs-comment"># j表示图中的箭头</span></span><br><span class="line">        <span class="hljs-keyword">if</span> li[j] &gt; li[j+<span class="hljs-number">1</span>]:</span><br><span class="line">            li[j], li[j+<span class="hljs-number">1</span>] = li[j+<span class="hljs-number">1</span>], li[j]</span><br><span class="line">            exchange = <span class="hljs-literal">True</span></span><br><span class="line">    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> exchange:</span><br><span class="line">        <span class="hljs-keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/maopao.gif" alt></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select</span><span class="hljs-params">(li)</span>:</span></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(li)):</span><br><span class="line">    <span class="hljs-comment"># 第i趟开始时 无序区：li[i:]</span></span><br><span class="line">    <span class="hljs-comment"># 找无序区最小值，保存最小值的位置</span></span><br><span class="line">    min_index = i</span><br><span class="line">    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i + <span class="hljs-number">1</span>, len(li)):</span><br><span class="line">        <span class="hljs-keyword">if</span> li[j] &lt; li[min_index]:</span><br><span class="line">            min_index = j</span><br><span class="line">    li[min_index], li[i] = li[i], li[min_index]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/xuanze.gif" alt></p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_sort</span><span class="hljs-params">(li)</span>:</span></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(li)): <span class="hljs-comment"># i是摸到的牌的下标</span></span><br><span class="line">    tmp = li[i]     <span class="hljs-comment"># tmp是摸到牌的值</span></span><br><span class="line">    <span class="hljs-comment"># 方法一</span></span><br><span class="line">    j = i - <span class="hljs-number">1</span> <span class="hljs-comment"># j是手里最后一张牌的下标    li[j]是手里最后一张牌的值</span></span><br><span class="line">    <span class="hljs-keyword">while</span> j &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> li[j] &gt; tmp:   <span class="hljs-comment"># 两个终止条件：j小于0表示tmp是最小的 顺序不要乱 </span></span><br><span class="line">        li[j+<span class="hljs-number">1</span>] = li[j]</span><br><span class="line">        j -= <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-comment"># 方法二</span></span><br><span class="line">    <span class="hljs-comment"># for j in range(i-1, -1, -1):</span></span><br><span class="line">    <span class="hljs-comment">#     if li[j] &gt; tmp:</span></span><br><span class="line">    <span class="hljs-comment">#         li[j+1] = li[j]</span></span><br><span class="line">    <span class="hljs-comment">#     else:</span></span><br><span class="line">    <span class="hljs-comment">#         break</span></span><br><span class="line">    li[j+<span class="hljs-number">1</span>] = tmp   <span class="hljs-comment">#将摸到的牌 插入到 往前挪过之后的 j 的后一位</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/charu.gif" alt></p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(lists, left, right)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># 快速排序</span></span><br><span class="line">    <span class="hljs-keyword">if</span> left &gt;= right:</span><br><span class="line">        <span class="hljs-keyword">return</span> lists</span><br><span class="line">    key = lists[left]</span><br><span class="line">    low = left</span><br><span class="line">    high = right</span><br><span class="line">    <span class="hljs-keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="hljs-keyword">while</span> left &lt; right <span class="hljs-keyword">and</span> lists[right] &gt;= key:</span><br><span class="line">            right -= <span class="hljs-number">1</span></span><br><span class="line">        lists[left] = lists[right]</span><br><span class="line">        <span class="hljs-keyword">while</span> left &lt; right <span class="hljs-keyword">and</span> lists[left] &lt;= key:</span><br><span class="line">            left += <span class="hljs-number">1</span></span><br><span class="line">        lists[right] = lists[left]</span><br><span class="line">    lists[right] = key</span><br><span class="line">    quick_sort(lists, low, left - <span class="hljs-number">1</span>)</span><br><span class="line">    quick_sort(lists, left + <span class="hljs-number">1</span>, high)</span><br><span class="line">    <span class="hljs-keyword">return</span> lists</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">part</span><span class="hljs-params">(li, left, right)</span>:</span>  <span class="hljs-comment"># 列表,最左索引,最右索引</span></span><br><span class="line">    tmp = li[left]  <span class="hljs-comment"># 先找个临时变量把第一个元素存起来</span></span><br><span class="line">    <span class="hljs-keyword">while</span> left &lt; right:  <span class="hljs-comment"># 当最左小于最右</span></span><br><span class="line">        <span class="hljs-keyword">while</span> left &lt; right <span class="hljs-keyword">and</span> li[right] &gt;= tmp:  <span class="hljs-comment"># 当最左&lt;最右 且 最右边的值大于等于临时变量</span></span><br><span class="line">            right -= <span class="hljs-number">1</span>  <span class="hljs-comment"># 最右 往左 挪 1 个单位长度</span></span><br><span class="line">        li[left] = li[right]  <span class="hljs-comment"># 都不满足:把挪完之后的最右的值 赋值给 最左的值(即最右的值小于临时变量时,这个值挪到当前最左的值)</span></span><br><span class="line">        <span class="hljs-keyword">while</span> left &lt; right <span class="hljs-keyword">and</span> li[left] &lt;= tmp:  <span class="hljs-comment"># 当最左&lt;最右 且 最左边的值小于等于临时变量</span></span><br><span class="line">            left += <span class="hljs-number">1</span>  <span class="hljs-comment"># 最左 往右 挪 1 个单位长度</span></span><br><span class="line">        li[right] = li[left]  <span class="hljs-comment"># 都不满足:把挪完之后的最左的值 赋值给 最右的值(即最左的值大于临时变量时,这个值挪到当前最右的值)</span></span><br><span class="line">    li[left] = tmp  <span class="hljs-comment"># 当前最左最右的值相等时,把这个值赋给临时变量</span></span><br><span class="line">    <span class="hljs-keyword">return</span> left  <span class="hljs-comment"># 返回当前临时变量的索引</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick</span><span class="hljs-params">(li, left, right)</span>:</span></span><br><span class="line">   <span class="hljs-keyword">if</span> left &lt; right:  <span class="hljs-comment"># 如果左索引&lt;右索引</span></span><br><span class="line">       mid = part(li, left, right)  <span class="hljs-comment"># 调用part进行分区 返回一个索引赋给mid</span></span><br><span class="line">       quick(li, left, mid - <span class="hljs-number">1</span>)  <span class="hljs-comment"># 递归调用quick 直到left=mid-1</span></span><br><span class="line">       quick(li, mid + <span class="hljs-number">1</span>, right)  <span class="hljs-comment"># 递归调用quick 直到mid+1=right</span></span><br><span class="line"></span><br><span class="line">li = list(range(<span class="hljs-number">1000</span>))</span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line">random.shuffle(li)</span><br><span class="line">print(li)</span><br><span class="line"></span><br><span class="line">quick(li, <span class="hljs-number">0</span>, len(li) - <span class="hljs-number">1</span>)</span><br><span class="line">print(li)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/kuaisu.gif" alt></p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sift</span><span class="hljs-params">(li, low, high)</span>:</span></span><br><span class="line">   tmp = li[low]</span><br><span class="line">   i = low</span><br><span class="line">   j = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-keyword">while</span> j &lt;= high: <span class="hljs-comment"># 退出条件2：当前i位置是叶子结点，j位置超过了high</span></span><br><span class="line">       <span class="hljs-comment"># j 指向更大的孩子</span></span><br><span class="line">       <span class="hljs-keyword">if</span> j + <span class="hljs-number">1</span> &lt;= high <span class="hljs-keyword">and</span> li[j+<span class="hljs-number">1</span>] &gt; li[j]:</span><br><span class="line">           j = j + <span class="hljs-number">1</span> <span class="hljs-comment"># 如果右孩子存在并且更大，j指向右孩子</span></span><br><span class="line">       <span class="hljs-keyword">if</span> tmp &lt; li[j]:</span><br><span class="line">           li[i] = li[j]</span><br><span class="line">           i = j</span><br><span class="line">           j = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span></span><br><span class="line">       <span class="hljs-keyword">else</span>:       <span class="hljs-comment"># 退出条件1：tmp的值大于两个孩子的值</span></span><br><span class="line">           <span class="hljs-keyword">break</span></span><br><span class="line">   li[i] = tmp</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@cal_time</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heap_sort</span><span class="hljs-params">(li)</span>:</span></span><br><span class="line">   <span class="hljs-comment"># 1. 建堆</span></span><br><span class="line">   n = len(li)</span><br><span class="line">   <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n//<span class="hljs-number">2</span><span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">       <span class="hljs-comment"># i 是建堆时要调整的子树的根的下标</span></span><br><span class="line">       sift(li, i, n<span class="hljs-number">-1</span>)</span><br><span class="line">   <span class="hljs-comment"># 2.挨个出数</span></span><br><span class="line">   <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>): <span class="hljs-comment">#i表示当前的high值 也表示棋子的位置</span></span><br><span class="line">       li[i], li[<span class="hljs-number">0</span>] = li[<span class="hljs-number">0</span>], li[i]</span><br><span class="line">       <span class="hljs-comment"># 现在堆的范围 0~i-1</span></span><br><span class="line">       sift(li, <span class="hljs-number">0</span>, i<span class="hljs-number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/zengdui.gif" alt></p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(li, low, mid, high)</span>:</span></span><br><span class="line">   i = low</span><br><span class="line">   j = mid + <span class="hljs-number">1</span></span><br><span class="line">   ltmp = []</span><br><span class="line">   <span class="hljs-keyword">while</span> i &lt;= mid <span class="hljs-keyword">and</span> j &lt;= high:</span><br><span class="line">       <span class="hljs-keyword">if</span> li[i] &lt; li[j]:</span><br><span class="line">           ltmp.append(li[i])</span><br><span class="line">           i += <span class="hljs-number">1</span></span><br><span class="line">       <span class="hljs-keyword">else</span>:</span><br><span class="line">           ltmp.append(li[j])</span><br><span class="line">           j += <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-keyword">while</span> i &lt;= mid:</span><br><span class="line">       ltmp.append(li[i])</span><br><span class="line">       i += <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-keyword">while</span> j &lt;= high:</span><br><span class="line">       ltmp.append(li[j])</span><br><span class="line">       j += <span class="hljs-number">1</span></span><br><span class="line">   <span class="hljs-comment"># for k in range(low, high+1):</span></span><br><span class="line">   <span class="hljs-comment">#     li[k] = ltmp[k-low]</span></span><br><span class="line">   li[low:high+<span class="hljs-number">1</span>] = ltmp</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(li, low, high)</span>:</span></span><br><span class="line">   <span class="hljs-keyword">if</span> low &lt; high:</span><br><span class="line">       mid = (low + high) // <span class="hljs-number">2</span></span><br><span class="line">       merge_sort(li, low, mid)</span><br><span class="line">       merge_sort(li, mid+<span class="hljs-number">1</span>, high)</span><br><span class="line">       merge(li, low, mid, high)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># li = list(range(10000))</span></span><br><span class="line"><span class="hljs-comment"># random.shuffle(li)</span></span><br><span class="line"><span class="hljs-comment"># merge_sort(li, 0, len(li)-1)</span></span><br><span class="line"><span class="hljs-comment"># print(li)</span></span><br><span class="line">li = [<span class="hljs-number">10</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>]</span><br><span class="line">merge_sort(li, <span class="hljs-number">0</span>, len(li)<span class="hljs-number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/guibing.gif" alt></p>
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="https://juejin.im/post/5b6ba2d26fb9a04fde5af361" target="_blank" rel="noopener">掘金</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/PythonAlgorithm.html">https://vitan.me/posts/PythonAlgorithm.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Note/">Note</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Python/">Python</a>,&nbsp;<a class="has-link-grey -link" href="/tags/WebCrawler/">WebCrawler</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Spyder-1.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">数据分析(是否出险)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/PythonCommonlyUse.html">
+                <span class="level-item">常用实现</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#冒泡排序">
+            <span class="has-mr-6">1</span>
+            <span>冒泡排序</span>
+            </a></li><li>
+            <a class="is-flex" href="#选择排序">
+            <span class="has-mr-6">2</span>
+            <span>选择排序</span>
+            </a></li><li>
+            <a class="is-flex" href="#插入排序">
+            <span class="has-mr-6">3</span>
+            <span>插入排序</span>
+            </a></li><li>
+            <a class="is-flex" href="#快速排序">
+            <span class="has-mr-6">4</span>
+            <span>快速排序</span>
+            </a></li><li>
+            <a class="is-flex" href="#堆排序">
+            <span class="has-mr-6">5</span>
+            <span>堆排序</span>
+            </a></li><li>
+            <a class="is-flex" href="#归并排序">
+            <span class="has-mr-6">6</span>
+            <span>归并排序</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="常用算法" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

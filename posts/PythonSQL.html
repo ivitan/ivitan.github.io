@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Python SQL - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Python SQL" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Python SQL" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Python.png" alt="Python SQL">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Python SQL
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    5 分钟 读完 (约 706 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-11-22T03:33:20.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-11-22</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.162Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Python SQL 操作</p>
+<a id="more"></a>
+<h1 id="MonngoDB"><a href="#MonngoDB" class="headerlink" title="MonngoDB"></a>MonngoDB</h1><h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 普通连接</span></span><br><span class="line">client = MongoClient(<span class="hljs-string">'localhost'</span>, <span class="hljs-number">27017</span>)</span><br><span class="line"><span class="hljs-comment"># client = MongoClient('mongodb://localhost:27017/')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 密码连接</span></span><br><span class="line">client = MongoClient(<span class="hljs-string">'mongodb://username:password@localhost:27017/dbname'</span>)</span><br><span class="line">db = client.mydatabase</span><br><span class="line"><span class="hljs-comment"># db = client['mydatabase']</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h2><ul>
+<li>增(insert)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 增加一条记录</span></span><br><span class="line">person = &#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>,<span class="hljs-string">'sex'</span>:<span class="hljs-string">'boy'</span>&#125;</span><br><span class="line">person_id = test.insert_one(person).inserted_id</span><br><span class="line">print(person_id)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 批量插入</span></span><br><span class="line">persons = [&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>, <span class="hljs-string">'sex'</span>: <span class="hljs-string">'boy'</span>&#125;, &#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone1'</span>, <span class="hljs-string">'sex'</span>: <span class="hljs-string">'boy1'</span>&#125;]</span><br><span class="line">result = test.insert_many(persons)</span><br><span class="line">print(result.inserted_ids)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删(delete)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line">myclient = pymongo.MongoClient(<span class="hljs-string">"mongodb://localhost:27017/"</span>)</span><br><span class="line">mydb = myclient[<span class="hljs-string">"mydatabase"</span>]</span><br><span class="line">mycol = mydb[<span class="hljs-string">"customers"</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 删除地址为“Mountain 21”的文档：</span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: <span class="hljs-string">"Mountain 21"</span> &#125;</span><br><span class="line">mycol.delete_one(myquery)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># delete_many() 删除多个</span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: &#123;<span class="hljs-string">"$regex"</span>: <span class="hljs-string">"^S"</span>&#125; &#125;</span><br><span class="line">x = mycol.delete_many(myquery)</span><br><span class="line">print(x.deleted_count, <span class="hljs-string">" documents deleted."</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 删除单条记录</span></span><br><span class="line">result1 = test.delete_one(&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>&#125;)</span><br><span class="line">pprint.pprint(result1)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 批量删除</span></span><br><span class="line">result1 = test.delete_many(&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>&#125;)</span><br><span class="line">pprint.pprint(result1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>改(update)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Valley 345”更改为“Canyon 123” </span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: <span class="hljs-string">"Valley 345"</span> &#125;</span><br><span class="line">newvalues = &#123; <span class="hljs-string">"$set"</span>: &#123; <span class="hljs-string">"address"</span>: <span class="hljs-string">"Canyon 123"</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line">mycol.update_one(myquery, newvalues)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#print "customers" after the update:</span></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> mycol.find():</span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># update_many() 更新多个</span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: &#123; <span class="hljs-string">"$regex"</span>: <span class="hljs-string">"^S"</span> &#125; &#125;</span><br><span class="line">newvalues = &#123; <span class="hljs-string">"$set"</span>: &#123; <span class="hljs-string">"name"</span>: <span class="hljs-string">"Minnie"</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line">x = mycol.update_many(myquery, newvalues)</span><br><span class="line"></span><br><span class="line">print(x.modified_count, <span class="hljs-string">"documents updated."</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 更新单条记录</span></span><br><span class="line">res = test.update_one(&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>&#125;, &#123;<span class="hljs-string">'$set'</span>: &#123;<span class="hljs-string">'sex'</span>: <span class="hljs-string">'girl girl'</span>&#125;&#125;)</span><br><span class="line">print(res.matched_count)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 更新多条记录</span></span><br><span class="line">test.update_many(&#123;<span class="hljs-string">'name'</span>: <span class="hljs-string">'zone'</span>&#125;, &#123;<span class="hljs-string">'$set'</span>: &#123;<span class="hljs-string">'sex'</span>: <span class="hljs-string">'girl girl'</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查(Querry)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line">myclient = pymongo.MongoClient(<span class="hljs-string">"mongodb://localhost:27017/"</span>)</span><br><span class="line">mydb = myclient[<span class="hljs-string">"mydatabase"</span>]</span><br><span class="line">mycol = mydb[<span class="hljs-string">"customers"</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 查找地址以字母“S”或更高开头的文档：</span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: &#123; <span class="hljs-string">"$gt"</span>: <span class="hljs-string">"S"</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line">mydoc = mycol.find(myquery)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> mydoc:</span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 正则表达式过滤</span></span><br><span class="line">myquery = &#123; <span class="hljs-string">"address"</span>: &#123; <span class="hljs-string">"$regex"</span>: <span class="hljs-string">"^S"</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line">mydoc = mycol.find(myquery)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> mydoc:</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 查找多条记录</span></span><br><span class="line">pprint.pprint(test.find())</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 添加查找条件</span></span><br><span class="line">pprint.pprint(test.find(&#123;<span class="hljs-string">"sex"</span>: <span class="hljs-string">"boy"</span>&#125;).sort(<span class="hljs-string">"name"</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><ul>
+<li>sort()方法</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">results = collection.find().sort(<span class="hljs-string">'name'</span>, pymongo.ASCENDING)</span><br><span class="line">print([result[<span class="hljs-string">'name'</span>] <span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> results])</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">client = pymongo.MongoClient(<span class="hljs-string">'localhost'</span>)</span><br><span class="line">b = client[<span class="hljs-string">'MaFengWoView'</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_to_mongo</span><span class="hljs-params">(view)</span>:</span></span><br><span class="line"><span class="hljs-keyword">if</span> db[<span class="hljs-string">'MaFengWoView'</span>].insert_one(view):</span><br><span class="line">    print(<span class="hljs-string">'Saving to MongoDB'</span>,view)</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span></span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-literal">False</span></span><br><span class="line"></span><br><span class="line"> save_to_mongo(view)</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="连接创建"><a href="#连接创建" class="headerlink" title="连接创建"></a>连接创建</h2><ul>
+<li>创建一个名为“customers”的表</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line">mydb = mysql.connector.connect(</span><br><span class="line">host=<span class="hljs-string">"localhost"</span>,</span><br><span class="line">user=<span class="hljs-string">"yourusername"</span>,</span><br><span class="line">passwd=<span class="hljs-string">"yourpassword"</span>,</span><br><span class="line">database=<span class="hljs-string">"mydatabase"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">mycursor.execute(<span class="hljs-string">"CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检查表是否存在</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">mycursor.execute(<span class="hljs-string">"SHOW TABLES"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> mycursor:</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建表时创建主键(存在用ALTER TABLE)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line">mydb = mysql.connector.connect(</span><br><span class="line">host=<span class="hljs-string">"localhost"</span>,</span><br><span class="line">user=<span class="hljs-string">"yourusername"</span>,</span><br><span class="line">passwd=<span class="hljs-string">"yourpassword"</span>,</span><br><span class="line">database=<span class="hljs-string">"mydatabase"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">mycursor.execute(<span class="hljs-string">"CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h1><ul>
+<li>单行</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">sql = <span class="hljs-string">"INSERT INTO customers (name, address) VALUES (%s, %s)"</span></span><br><span class="line">val = (<span class="hljs-string">"John"</span>, <span class="hljs-string">"Highway 21"</span>)</span><br><span class="line">mycursor.execute(sql, val)</span><br><span class="line"></span><br><span class="line">mydb.commit()</span><br><span class="line"></span><br><span class="line">print(mycursor.rowcount, <span class="hljs-string">"record inserted."</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">sql = <span class="hljs-string">"INSERT INTO customers (name, address) VALUES (%s, %s)"</span></span><br><span class="line">val = [</span><br><span class="line">    (<span class="hljs-string">'Peter'</span>, <span class="hljs-string">'Lowstreet 4'</span>),</span><br><span class="line">    (<span class="hljs-string">'Amy'</span>, <span class="hljs-string">'Apple st 652'</span>),</span><br><span class="line">    (<span class="hljs-string">'Hannah'</span>, <span class="hljs-string">'Mountain 21'</span>),</span><br><span class="line">    (<span class="hljs-string">'Michael'</span>, <span class="hljs-string">'Valley 345'</span>),</span><br><span class="line">    (<span class="hljs-string">'Sandy'</span>, <span class="hljs-string">'Ocean blvd 2'</span>),</span><br><span class="line">    (<span class="hljs-string">'Betty'</span>, <span class="hljs-string">'Green Grass 1'</span>),</span><br><span class="line">    (<span class="hljs-string">'Richard'</span>, <span class="hljs-string">'Sky st 331'</span>),</span><br><span class="line">    (<span class="hljs-string">'Susan'</span>, <span class="hljs-string">'One way 98'</span>),</span><br><span class="line">    (<span class="hljs-string">'Vicky'</span>, <span class="hljs-string">'Yellow Garden 2'</span>),</span><br><span class="line">    (<span class="hljs-string">'Ben'</span>, <span class="hljs-string">'Park Lane 38'</span>),</span><br><span class="line">    (<span class="hljs-string">'William'</span>, <span class="hljs-string">'Central st 954'</span>),</span><br><span class="line">    (<span class="hljs-string">'Chuck'</span>, <span class="hljs-string">'Main Road 989'</span>),</span><br><span class="line">    (<span class="hljs-string">'Viola'</span>, <span class="hljs-string">'Sideway 1633'</span>)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">mycursor.executemany(sql, val)</span><br><span class="line"></span><br><span class="line">mydb.commit()</span><br><span class="line"></span><br><span class="line">print(mycursor.rowcount, <span class="hljs-string">"was inserted."</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><ul>
+<li>所有</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">mycursor.execute(<span class="hljs-string">"SELECT * FROM customers"</span>)</span><br><span class="line"></span><br><span class="line">myresult = mycursor.fetchall()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> myresult:</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>列</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mycursor = mydb.cursor()</span><br><span class="line"></span><br><span class="line">mycursor.execute(<span class="hljs-string">"SELECT name, address FROM customers"</span>)</span><br><span class="line"></span><br><span class="line">myresult = mycursor.fetchall()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> myresult:</span><br><span class="line">     print(x)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://api.mongodb.com/python/current/tutorial.html" target="_blank" rel="noopener">官方文档</a></li>
+<li><a href="https://www.w3schools.com/python/python_mongodb_drop_collection.asp" target="_blank" rel="noopener">W3School</a></li>
+<li><a href="https://juejin.im/post/5be245b251882516bc477aae" target="_blank" rel="noopener">zone</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/PythonSQL.html">https://vitan.me/posts/PythonSQL.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Note/">Note</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Python/">Python</a>,&nbsp;<a class="has-link-grey -link" href="/tags/WebCrawler/">WebCrawler</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/ScrapyCommand.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Scrapy</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Qunar.html">
+                <span class="level-item">Qunar</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#MonngoDB">
+            <span class="has-mr-6">1</span>
+            <span>MonngoDB</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#连接">
+            <span class="has-mr-6">1.1</span>
+            <span>连接</span>
+            </a></li><li>
+            <a class="is-flex" href="#增删查改">
+            <span class="has-mr-6">1.2</span>
+            <span>增删查改</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#排序">
+            <span class="has-mr-6">2</span>
+            <span>排序</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#示例">
+            <span class="has-mr-6">2.1</span>
+            <span>示例</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#MySQL">
+            <span class="has-mr-6">3</span>
+            <span>MySQL</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#连接创建">
+            <span class="has-mr-6">3.1</span>
+            <span>连接创建</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#插入">
+            <span class="has-mr-6">4</span>
+            <span>插入</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#Select">
+            <span class="has-mr-6">4.1</span>
+            <span>Select</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Python SQL" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

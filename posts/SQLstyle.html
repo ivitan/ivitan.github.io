@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>SQL 规范 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="SQL 规范" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="SQL 规范" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/SQL.png" alt="SQL 规范">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>SQL 规范
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Database/">Database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    8 分钟 读完 (约 1199 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-06-09T02:15:14.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-06-09</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.191Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>SQL规范，注意事项。</p>
+<a id="more"></a>
+<h1 id="MySQL-常用的存储引擎"><a href="#MySQL-常用的存储引擎" class="headerlink" title="MySQL 常用的存储引擎"></a>MySQL 常用的存储引擎</h1><p>数据引擎表<br>|存储引擎|事务|锁粒度|主要应用|忌用|<br>|:—|:—|:—|:—|:—|<br>|MYISAM|不支持|支持并发插入的表级锁|SELECT,INSERT|读写操作频繁|<br>|MRG_MYISAM|不支持|支持并发插入的表级锁|分段归档,数据仓库|数全局查找过多的场景|<br>|Innodb|支持|支持MVCC的行级锁|事务处理|无|<br>|Archive|不支持|行级锁|日志记录只支持insert,select|需要随机读取,更新,删除|<br>|Ndb cluster|支持|行级锁|高可用性|大部份应用|</p>
+<h1 id="表及字段的命名规则"><a href="#表及字段的命名规则" class="headerlink" title="表及字段的命名规则"></a>表及字段的命名规则</h1><p>规则</p>
+<ul>
+<li>可读性原则<ul>
+<li>使用大写和小写来格式化的库对象名字以获得良好的可读性。<ul>
+<li>例如:使用CustAddress而不是Custaddress来提高可读性。(这里要注意有些DBMS系统对表名的大小写是敏感的)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>表意性原则<ul>
+<li>对象的名字应该能够描述它所标识的对象。<ul>
+<li>例如,对于表,表的名称应该能够体现表中存储的数据内容;对于存储过程,存储过程名称应该能够体现存储过程的功能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>长名原则<ul>
+<li>尽可能少使用或者不使用缩写,<ul>
+<li>适用于数据库(DATABASE)名之外的任一对象。<h1 id="字段类型的选择原则"><a href="#字段类型的选择原则" class="headerlink" title="字段类型的选择原则"></a>字段类型的选择原则</h1>原因<br>列的数据类型一方面影响数据存储空间的开销,另一方面也会影响数据查询性能。当一个列可以选择多种数据类型时,应该优先考虑数字类型,其次是日期或二进制类型,最后是字符类型。对于相同级别的数据类型,应该优先选择占用空间小的数据类型。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">列类型</th>
+<th align="center">存储空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">TINYINT</td>
+<td align="center">1字节</td>
+</tr>
+<tr>
+<td align="center">SMALLINT</td>
+<td align="center">2个字节</td>
+</tr>
+<tr>
+<td align="center">MEDIUMINT</td>
+<td align="center">3个字节</td>
+</tr>
+<tr>
+<td align="center">INT</td>
+<td align="center">4个字节</td>
+</tr>
+<tr>
+<td align="center">BIGINT</td>
+<td align="center">8个字节</td>
+</tr>
+<tr>
+<td align="center">DATE</td>
+<td align="center">13个字节</td>
+</tr>
+<tr>
+<td align="center">DATETIME</td>
+<td align="center">8个字节</td>
+</tr>
+<tr>
+<td align="center">TIMESTAMP</td>
+<td align="center">4个字节</td>
+</tr>
+<tr>
+<td align="center">CHAR(M)</td>
+<td align="center">M字节,1 &lt;= M &lt;= 255</td>
+</tr>
+<tr>
+<td align="center">VARCHAR(M)</td>
+<td align="center">L+1字节,在此L &lt;= M1 &lt;= M &lt;= 255</td>
+</tr>
+</tbody></table>
+<ul>
+<li>以上选择原则主要是从下面两个角度考虑<ul>
+<li>在对数据进行比较(查询条件、JOIN条件及排序)操作时:<br>同样的数据,字符处理往往比数字处理慢。</li>
+<li>在数据库中,数据处理以页为单位,列的长度越小,利于性能提升。</li>
+</ul>
+</li>
+</ul>
+<h2 id="char-varchar-如何选择"><a href="#char-varchar-如何选择" class="headerlink" title="char varchar 如何选择"></a>char varchar 如何选择</h2><p>原则</p>
+<ol>
+<li>如果列中要存储的数据长度差不多是一致的,则应该考虑用char;否则应该考虑用varchar。</li>
+<li>如果列中的最大数据长度小于50Byte,则一般也考虑用char。(当然,如果这个列很少用,则基于节省空间和减少I/O的考虑,还是可以选择用varchar)</li>
+<li>一般不宜定义大于50 Byte的char类型列。</li>
+</ol>
+<h2 id="decimal与float-如何选择"><a href="#decimal与float-如何选择" class="headerlink" title="decimal与float 如何选择"></a>decimal与float 如何选择</h2><p>原则:</p>
+<ol>
+<li>decimal用于存储精确数据,而float只能用于存储非精确数据。故精确数据只能选择用decimal类型。</li>
+<li>由于float的存储空间开销一般比decimal小(精确到7位小数只需要4个字节,而精确到15位小数只需要8字节)故非精确数据优先选择float类型。</li>
+</ol>
+<h2 id="时间类型如何存储"><a href="#时间类型如何存储" class="headerlink" title="时间类型如何存储"></a>时间类型如何存储</h2><p>使用int来存储时间字段的优缺点</p>
+<ul>
+<li>优点:字段长度比datetime小。</li>
+<li>缺点:使用不方便,要进行函数转换。</li>
+<li>限制<ul>
+<li>只能存储到2038-1-19 11:14:07即2^32 为2147483648</li>
+<li>需要存储的时间粒度<ul>
+<li>年月日 小时 分 秒 周</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="如何选择主键"><a href="#如何选择主键" class="headerlink" title="如何选择主键"></a>如何选择主键</h1><p>区分业务主键和数据库主键</p>
+<ol>
+<li>业务主键用于标识业务数据,进行表与表之间的关联;数据库主键为了优化数据存储(Innodb会生成6个字节的隐含主键)</li>
+<li>根据数据库的类型考虑主键是否要顺序增长<ul>
+<li>有些数据库是按主键的顺序逻辑存储的</li>
+</ul>
+</li>
+</ol>
+<p>主键的字段类型所占空间要尽可能的小</p>
+<p>对于使用聚集索引方式存储的表,每个索引后都会附加主键信息。</p>
+<p>避免使用外键约束</p>
+<ol>
+<li>降低数据导入的效率</li>
+<li>增加维护成本</li>
+<li>虽然不建议使用外键约束,但是相关联的列上一定要建立索引</li>
+</ol>
+<p>避免使用触发器<br>:1. 降低数据导入的效率。<br>2. 可能会出现意想不到的数据异常。<br>3. 使业务逻辑变得复杂。</p>
+<h1 id="关于预留字段"><a href="#关于预留字段" class="headerlink" title="关于预留字段"></a>关于预留字段</h1><p>原因</p>
+<ol>
+<li>无法准确的知道预留字段的类型。</li>
+<li>无法准确的知道预留字段中所存储的内容。</li>
+<li>后期维护预留字段所要的成本,同增加一个字段所需要的成本是相同的。</li>
+<li>严禁使用预留字段。</li>
+</ol>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/SQLstyle.html">https://vitan.me/posts/SQLstyle.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/SQLlock.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">SQL 锁与并发控制</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/SQLtrigger.html">
+                <span class="level-item">SQL 触发器</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#MySQL-常用的存储引擎">
+            <span class="has-mr-6">1</span>
+            <span>MySQL 常用的存储引擎</span>
+            </a></li><li>
+            <a class="is-flex" href="#表及字段的命名规则">
+            <span class="has-mr-6">2</span>
+            <span>表及字段的命名规则</span>
+            </a></li><li>
+            <a class="is-flex" href="#字段类型的选择原则">
+            <span class="has-mr-6">3</span>
+            <span>字段类型的选择原则</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#char-varchar-如何选择">
+            <span class="has-mr-6">3.1</span>
+            <span>char varchar 如何选择</span>
+            </a></li><li>
+            <a class="is-flex" href="#decimal与float-如何选择">
+            <span class="has-mr-6">3.2</span>
+            <span>decimal与float 如何选择</span>
+            </a></li><li>
+            <a class="is-flex" href="#时间类型如何存储">
+            <span class="has-mr-6">3.3</span>
+            <span>时间类型如何存储</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#如何选择主键">
+            <span class="has-mr-6">4</span>
+            <span>如何选择主键</span>
+            </a></li><li>
+            <a class="is-flex" href="#关于预留字段">
+            <span class="has-mr-6">5</span>
+            <span>关于预留字段</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="SQL 规范" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>数据处理 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="数据处理" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="数据处理" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Python.png" alt="数据处理">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>数据处理
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    13 分钟 读完 (约 1985 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-12-04T06:12:45.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-12-04</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.158Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>数据处理</p>
+<a id="more"></a>
+<h1 id="数据筛选"><a href="#数据筛选" class="headerlink" title="数据筛选"></a>数据筛选</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line">df = pd.DataFrame([&#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'frank'</span>, <span class="hljs-string">'gender'</span>:<span class="hljs-string">'M'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">29</span>&#125;, </span><br><span class="line">                &#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'mary'</span>,  <span class="hljs-string">'gender'</span>:<span class="hljs-string">'F'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">23</span>&#125;, </span><br><span class="line">                &#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'tom'</span>,   <span class="hljs-string">'gender'</span>:<span class="hljs-string">'M'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">35</span>&#125;, </span><br><span class="line">                &#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'ted'</span>,   <span class="hljs-string">'gender'</span>:<span class="hljs-string">'M'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">33</span>&#125;, </span><br><span class="line">                &#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'jean'</span>,  <span class="hljs-string">'gender'</span>:<span class="hljs-string">'F'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">21</span>&#125;, </span><br><span class="line">                &#123;<span class="hljs-string">'name'</span>:<span class="hljs-string">'lisa'</span>,  <span class="hljs-string">'gender'</span>:<span class="hljs-string">'F'</span>, <span class="hljs-string">'age'</span>:<span class="hljs-number">20</span>&#125;])</span><br></pre></td></tr></table></figure>
+
+<h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><ol>
+<li><p>查看df前5行</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head(<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用ix索引查找行号名为1的行记录</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.ix[<span class="hljs-number">1</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用ix查找行号名为1-3的行记录</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.ix[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用列名返回name列数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">'name'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回name与age列数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[[<span class="hljs-string">'name'</span>,<span class="hljs-string">'age'</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回行名号为1、2的name与age列数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.ix[<span class="hljs-number">1</span>:<span class="hljs-number">2</span>,[<span class="hljs-string">'name'</span>,<span class="hljs-string">'age'</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回gender列数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">'gender'</span>]</span><br><span class="line">df.gender</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断每行的gender列数据是否为M</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.gender==<span class="hljs-string">'M'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回男性的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df.gender==<span class="hljs-string">'M'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断各行记录age列是否大于30</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.age&gt;<span class="hljs-number">30</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回年龄大于30岁的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df.age&gt;<span class="hljs-number">30</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回男性且年龄大于30的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.ix[(df.gender==<span class="hljs-string">'M'</span>) &amp; (df.age&gt;<span class="hljs-number">30</span>),]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回男性或年龄大于30的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.ix[(df.gender==<span class="hljs-string">'M'</span>) | (df.age&gt;<span class="hljs-number">30</span>),]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>df增加employee列，其值均为True</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">'employee'</span>]=<span class="hljs-literal">True</span></span><br><span class="line">```python</span><br><span class="line"><span class="hljs-number">14.</span> 利用<span class="hljs-keyword">del</span>删除employee列</span><br><span class="line">```python</span><br><span class="line"><span class="hljs-keyword">del</span> df[<span class="hljs-string">'employee'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次为df增加employee列</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">'employee'</span>]=<span class="hljs-literal">True</span></span><br><span class="line">df.head()<span class="hljs-comment">#查看df前5行</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用df.drop函数删除employee列，按列删除</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = df.drop(<span class="hljs-string">'employee'</span>,axis=<span class="hljs-number">1</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用loc查看行号名为5的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.loc[<span class="hljs-number">5</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为df增加行号名为6的行数据，数据为{‘age’:20, ‘gender’: ‘F’, ‘name’:’qoo’}</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="hljs-number">6</span>]=&#123;<span class="hljs-string">'age'</span>:<span class="hljs-number">20</span>, <span class="hljs-string">'gender'</span>: <span class="hljs-string">'F'</span>, <span class="hljs-string">'name'</span>:<span class="hljs-string">'qoo'</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用df.drop删除索引号为6的记录</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = df.drop(<span class="hljs-number">6</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用df.append增加以上行数据到df中，ignore_index为True</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = df.append(pd.DataFrame([&#123;<span class="hljs-string">'age'</span>:<span class="hljs-number">20</span>, <span class="hljs-string">'gender'</span>: <span class="hljs-string">'F'</span>, <span class="hljs-string">'name'</span>:<span class="hljs-string">'qoo'</span>&#125;]), ignore_index=<span class="hljs-literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用df.drop删除索引号为6的行数据</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.drop(<span class="hljs-number">6</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为df增加一列数据userid，值为101-106,提示：利用range函数</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">'userid'</span>] = range(<span class="hljs-number">101</span>,<span class="hljs-number">107</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用set_index设置userid为索引列，代替原来行号名</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = df.set_index(<span class="hljs-string">'userid'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>oc——通过行（行名字）标签索引行数据 iloc——通过行号（行序号，从0开始）索引行数据 ix——通过行标签或者行号索引行数据（基于loc和iloc 的混合）</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#分别利用行名与行序号返回第一条行数据</span></span><br><span class="line">df.loc[<span class="hljs-number">101</span>]</span><br><span class="line">df.iloc[<span class="hljs-number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#返回df第2，4，6行的数据</span></span><br><span class="line">df.iloc[[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>]]</span><br><span class="line">df.loc[[<span class="hljs-number">102</span>,<span class="hljs-number">104</span>,<span class="hljs-number">106</span>]]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#利用ix返回行名为101,103,105的记录</span></span><br><span class="line">df.ix[[<span class="hljs-number">101</span>,<span class="hljs-number">103</span>,<span class="hljs-number">105</span>]]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#利用loc返回行名为[101,103,105]的记录</span></span><br><span class="line">df.loc[[<span class="hljs-number">101</span>,<span class="hljs-number">103</span>,<span class="hljs-number">105</span>]]</span><br></pre></td></tr></table></figure>
+
+<h1 id="检测缺失值"><a href="#检测缺失值" class="headerlink" title="检测缺失值"></a>检测缺失值</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line"><span class="hljs-keyword">import</span> numpy  <span class="hljs-keyword">as</span> np</span><br><span class="line">df = pd.DataFrame([\</span><br><span class="line">            [<span class="hljs-string">'frank'</span>, <span class="hljs-string">'M'</span>,    np.nan], \</span><br><span class="line">            [<span class="hljs-string">'mary'</span> , np.nan, np.nan], \</span><br><span class="line">            [<span class="hljs-string">'tom'</span>  , <span class="hljs-string">'M'</span>,    <span class="hljs-number">35</span>], \</span><br><span class="line">            [<span class="hljs-string">'ted'</span>  , <span class="hljs-string">'M'</span>,    <span class="hljs-number">33</span>], \</span><br><span class="line">            [<span class="hljs-string">'jean'</span> , np.nan, <span class="hljs-number">21</span>], \</span><br><span class="line">            [<span class="hljs-string">'lisa'</span> , <span class="hljs-string">'F'</span>,    <span class="hljs-number">20</span>]])</span><br><span class="line">df.columns = [<span class="hljs-string">'name'</span>, <span class="hljs-string">'gender'</span>, <span class="hljs-string">'age'</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><ul>
+<li>判断df的gender列每个单元格是否为空</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.gender.isnull()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断df的age列是否存在空的单元格（结果只需知道有没有存在）</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.age.isnull().any()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断df整个数据框是否存在空的单元格（结果只需知道有没有存在）</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().values.any()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求df的age列空的单元格的总数</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.age.isnull().sum()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求df所有列空单元格的总数</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().sum().sum()</span><br></pre></td></tr></table></figure>
+
+<h1 id="Imputing-Missing-Value"><a href="#Imputing-Missing-Value" class="headerlink" title="Imputing Missing Value"></a>Imputing Missing Value</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd</span><br><span class="line"><span class="hljs-keyword">import</span> numpy  <span class="hljs-keyword">as</span> np</span><br><span class="line">df = pd.DataFrame([\</span><br><span class="line">             [<span class="hljs-string">'frank'</span>, <span class="hljs-string">'M'</span>,    np.nan], \</span><br><span class="line">             [np.nan , np.nan, np.nan], \</span><br><span class="line">             [<span class="hljs-string">'tom'</span>  , <span class="hljs-string">'M'</span>,    <span class="hljs-number">35</span>], \</span><br><span class="line">             [<span class="hljs-string">'ted'</span>  , <span class="hljs-string">'M'</span>,    <span class="hljs-number">33</span>], \</span><br><span class="line">             [<span class="hljs-string">'jean'</span> , np.nan, <span class="hljs-number">21</span>], \</span><br><span class="line">             [<span class="hljs-string">'lisa'</span> , <span class="hljs-string">'F'</span>,    <span class="hljs-number">20</span>]])</span><br><span class="line">df.columns = [<span class="hljs-string">'name'</span>, <span class="hljs-string">'gender'</span>, <span class="hljs-string">'age'</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#删除df具有Nan值的行</span></span><br><span class="line">df.dropna()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#删除df所有列均为空值的行记录</span></span><br><span class="line">df.dropna(how=<span class="hljs-string">'all'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#删除df空值超过2个的行记录</span></span><br><span class="line">df.dropna(thresh=<span class="hljs-number">2</span>)</span><br><span class="line"><span class="hljs-comment">#删除df的age列</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#删除df中整列值均为nan的列</span></span><br><span class="line">df.dropna(axis=<span class="hljs-number">1</span>,how=<span class="hljs-string">'all'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>增加</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#在df中增加一新列employee，且值为空（np.nan）</span></span><br><span class="line"> df[<span class="hljs-string">'employee'</span>]=np.nan</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>填补</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#填补df里任意空单元格的值为0</span></span><br><span class="line">df.fillna(<span class="hljs-number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#将df的age列的均值填入该列值为空的单元格</span></span><br><span class="line">df[<span class="hljs-string">'age'</span>].fillna(df[<span class="hljs-string">'age'</span>].mean())</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#将df的age列的空单元格，按性别填入该类性别的平均年龄值</span></span><br><span class="line">df[<span class="hljs-string">'age'</span>].fillna(df.groupby(<span class="hljs-string">'gender'</span>)[<span class="hljs-string">'age'</span>].transform(<span class="hljs-string">'mean'</span>))</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#使用向后填补方面对df的空值单元格进行填补</span></span><br><span class="line">df.fillna(method=<span class="hljs-string">'backfill'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#使用向前填补对df的空值单元格进行填补</span></span><br><span class="line">df.fillna(method=<span class="hljs-string">'pad'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>数据2</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df2 = pd.DataFrame([[<span class="hljs-number">1</span>, <span class="hljs-number">870</span>],\</span><br><span class="line">            [<span class="hljs-number">2</span>, <span class="hljs-number">900</span>],\</span><br><span class="line">            [np.nan, np.nan],\</span><br><span class="line">            [<span class="hljs-number">4</span>, <span class="hljs-number">950</span>],\</span><br><span class="line">            [<span class="hljs-number">5</span>,<span class="hljs-number">1080</span>],\</span><br><span class="line">            [<span class="hljs-number">6</span>,<span class="hljs-number">1200</span>]])</span><br><span class="line">df2.columns = [<span class="hljs-string">'time'</span>, <span class="hljs-string">'val'</span>]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#使用内插法对df2进行填补</span></span><br><span class="line">df2.interpolate()</span><br></pre></td></tr></table></figure>
+
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><ul>
+<li>读取数据</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pandas</span><br><span class="line">df = pandas.read_csv(<span class="hljs-string">'house_data.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#用del删除列名为'Unnamed: 0'的列</span></span><br><span class="line"><span class="hljs-keyword">del</span> df[<span class="hljs-string">'Unnamed: 0'</span>]</span><br><span class="line">df.head(<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="检视"><a href="#检视" class="headerlink" title="检视"></a>检视</h2><ul>
+<li>检视前几行资料</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head(<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检视后三行资料</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail(<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检视DataFrame 信息</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#查看df所有的信息(列名，各列非空计数，数据类型)</span></span><br><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检视字段名称</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#查看df所有列名</span></span><br><span class="line">df.columns</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检视字段型态</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#查看df各列数据类型</span></span><br><span class="line">df.dtypes</span><br></pre></td></tr></table></figure>
+
+<h2 id="舍弃第一栏"><a href="#舍弃第一栏" class="headerlink" title="舍弃第一栏"></a>舍弃第一栏</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#将文件读取进来，命名为df，并且在读取文件同时删除第1列</span></span><br><span class="line">df = pandas.read_csv(<span class="hljs-string">'house_data.csv'</span>,index_col=<span class="hljs-number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="将”暂无资料”变成缺失值"><a href="#将”暂无资料”变成缺失值" class="headerlink" title="将”暂无资料”变成缺失值"></a>将”暂无资料”变成缺失值</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#筛选df数据框中“物业费”列的值为“暂无资料”的行记录</span></span><br><span class="line">df[df[<span class="hljs-string">'物 业 费'</span>]==<span class="hljs-string">'暂无资料'</span>]</span><br><span class="line"><span class="hljs-comment"># df.ix[df['物 业 费']=='暂无资料',]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line"><span class="hljs-comment">#将“物业费”列的值为“暂无资料”的单元格设置为空</span></span><br><span class="line">df.loc[df[<span class="hljs-string">'物 业 费'</span>]==<span class="hljs-string">'暂无资料'</span>,<span class="hljs-string">'物 业 费'</span>]=np.nan</span><br><span class="line">df.head(<span class="hljs-number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> pandas</span><br><span class="line"><span class="hljs-comment">#读取文件同时，将“暂无资料”的单元格设置为空，且去掉第一列</span></span><br><span class="line">df = pandas.read_csv(<span class="hljs-string">'house_data.csv'</span>,index_col=<span class="hljs-number">0</span>,na_values=<span class="hljs-string">'暂无资料'</span>)</span><br><span class="line">df.head(<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="取得叙述性统计"><a href="#取得叙述性统计" class="headerlink" title="取得叙述性统计"></a>取得叙述性统计</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#对df各非字符串列进行描述性统计（计数，均值，标准差，最大最小，4分位等）</span></span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
+
+<h2 id="侦测缺失值"><a href="#侦测缺失值" class="headerlink" title="侦测缺失值"></a>侦测缺失值</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#对事个数据框df每个单元格进行缺失值判断</span></span><br><span class="line">df.isnull()</span><br></pre></td></tr></table></figure>
+
+<h2 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a>缺失值</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#对数据框各列分别进行判断，返回每列是否有缺失值</span></span><br><span class="line">df.isnull().any()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#对数据框df按列统计各列各有多少个缺失值</span></span><br><span class="line">df.isnull().sum()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#统计数据框各列缺失值与各占各列非空单元格的比例</span></span><br><span class="line">df.count() <span class="hljs-comment"># 所有非空单元格</span></span><br><span class="line">df.isnull().sum()/df.count()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除有缺失值的字段</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#用drop删除df的“参考月供”列数据</span></span><br><span class="line">df = df.drop(<span class="hljs-string">'参考月供'</span>,axis=<span class="hljs-number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="筛选字段"><a href="#筛选字段" class="headerlink" title="筛选字段"></a>筛选字段</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#对数据框df的“产权性质”列所有出现的值进行计数</span></span><br><span class="line">df[<span class="hljs-string">'产权性质'</span>].value_counts()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#获取产权性质为'个人产权'的行记录</span></span><br><span class="line">df[df[<span class="hljs-string">'产权性质'</span>]==<span class="hljs-string">'个人产权'</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#查看获取产权性质为'个人产权'的行记录的前3行</span></span><br><span class="line">df[df[<span class="hljs-string">'产权性质'</span>] == <span class="hljs-string">'个人产权'</span>].head(<span class="hljs-number">3</span>)</span><br><span class="line"></span><br><span class="line">df.iloc[<span class="hljs-number">5</span>:<span class="hljs-number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#筛选'建筑面积'大于100且總價大于2000的行记录，查看第1行</span></span><br><span class="line">df[(df[<span class="hljs-string">'建筑面积'</span>]&gt;<span class="hljs-number">100</span>) &amp; (df[<span class="hljs-string">'總價'</span>]&gt;<span class="hljs-number">2000</span>)]</span><br><span class="line"></span><br><span class="line">df.loc[df[<span class="hljs-string">'建筑面积'</span>] &gt; <span class="hljs-number">100</span>].head(<span class="hljs-number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#筛选产权性质为“个人产权”的行记录</span></span><br><span class="line">df[<span class="hljs-string">'产权性质'</span>]</span><br><span class="line">df.head(<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="舍弃包含缺失值的字段"><a href="#舍弃包含缺失值的字段" class="headerlink" title="舍弃包含缺失值的字段"></a>舍弃包含缺失值的字段</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#筛选建筑类别为空的行记录，并查看前3行，问，建筑类别列数据是否均为空</span></span><br><span class="line">df[df[<span class="hljs-string">'建筑类别'</span>].isnull()]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#利用dropna删除df的列,并将结果重新赋值给df（整列均为空的列）</span></span><br><span class="line">f.dropna(axis=<span class="hljs-number">1</span>,how=<span class="hljs-string">'all'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="补齐缺失值"><a href="#补齐缺失值" class="headerlink" title="补齐缺失值"></a>补齐缺失值</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#对物业费为空的单元格，填补为0</span></span><br><span class="line">df[<span class="hljs-string">'物 业 费'</span>] = df[<span class="hljs-string">'物 业 费'</span>].fillna(<span class="hljs-number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#计算'總價'列为空的单元格个数</span></span><br><span class="line">df[<span class="hljs-string">'總價'</span>].isnull().sum()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#筛选出‘總價’为空的行记录</span></span><br><span class="line">df[df[<span class="hljs-string">'總價'</span>].isnull()]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#利用‘總價’列与‘建筑面积’列求均价</span></span><br><span class="line">(df[<span class="hljs-string">'總價'</span>] / df[<span class="hljs-string">'建筑面积'</span>]).mean()    </span><br><span class="line">df[<span class="hljs-string">'總價'</span>].isnull().sum()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#对‘總價’列单元格为空的，按上面求的“均价”与建筑面积相乘进行计算</span></span><br><span class="line">df[<span class="hljs-string">'總價'</span>] = df[<span class="hljs-string">'總價'</span>].fillna((df[<span class="hljs-string">'總價'</span>] / df[<span class="hljs-string">'建筑面积'</span>]).mean()* df[<span class="hljs-string">'建筑面积'</span>])</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#再次计算‘總價’为空的单元格个数</span></span><br><span class="line">df[<span class="hljs-string">'總價'</span>].isnull().sum()</span><br></pre></td></tr></table></figure>
+
+<h1 id="将资料写入CSV-中"><a href="#将资料写入CSV-中" class="headerlink" title="将资料写入CSV 中"></a>将资料写入CSV 中</h1> <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.to_csv(<span class="hljs-string">'house_final.csv'</span>, index_label=<span class="hljs-literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/PyData.html">https://vitan.me/posts/PyData.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Note/">Note</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Python/">Python</a>,&nbsp;<a class="has-link-grey -link" href="/tags/WebCrawler/">WebCrawler</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/tmux.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Tmux</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/PycharmShortcut.html">
+                <span class="level-item">Pycharm Shortcut</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#数据筛选">
+            <span class="has-mr-6">1</span>
+            <span>数据筛选</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#筛选">
+            <span class="has-mr-6">1.1</span>
+            <span>筛选</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#检测缺失值">
+            <span class="has-mr-6">2</span>
+            <span>检测缺失值</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#数据操作">
+            <span class="has-mr-6">2.1</span>
+            <span>数据操作</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#Imputing-Missing-Value">
+            <span class="has-mr-6">3</span>
+            <span>Imputing Missing Value</span>
+            </a></li><li>
+            <a class="is-flex" href="#实例">
+            <span class="has-mr-6">4</span>
+            <span>实例</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#检视">
+            <span class="has-mr-6">4.1</span>
+            <span>检视</span>
+            </a></li><li>
+            <a class="is-flex" href="#舍弃第一栏">
+            <span class="has-mr-6">4.2</span>
+            <span>舍弃第一栏</span>
+            </a></li><li>
+            <a class="is-flex" href="#将”暂无资料”变成缺失值">
+            <span class="has-mr-6">4.3</span>
+            <span>将”暂无资料”变成缺失值</span>
+            </a></li><li>
+            <a class="is-flex" href="#取得叙述性统计">
+            <span class="has-mr-6">4.4</span>
+            <span>取得叙述性统计</span>
+            </a></li><li>
+            <a class="is-flex" href="#侦测缺失值">
+            <span class="has-mr-6">4.5</span>
+            <span>侦测缺失值</span>
+            </a></li><li>
+            <a class="is-flex" href="#缺失值">
+            <span class="has-mr-6">4.6</span>
+            <span>缺失值</span>
+            </a></li><li>
+            <a class="is-flex" href="#筛选字段">
+            <span class="has-mr-6">4.7</span>
+            <span>筛选字段</span>
+            </a></li><li>
+            <a class="is-flex" href="#舍弃包含缺失值的字段">
+            <span class="has-mr-6">4.8</span>
+            <span>舍弃包含缺失值的字段</span>
+            </a></li><li>
+            <a class="is-flex" href="#补齐缺失值">
+            <span class="has-mr-6">4.9</span>
+            <span>补齐缺失值</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#将资料写入CSV-中">
+            <span class="has-mr-6">5</span>
+            <span>将资料写入CSV 中</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="数据处理" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

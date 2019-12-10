@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Termux 折腾记 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Termux 折腾记" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Termux 折腾记" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Termux.png" alt="Termux 折腾记">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Termux 折腾记
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Diary/">Diary</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    9 分钟 读完 (约 1386 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-01-22T03:58:38.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-01-22</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.195Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Termux oh-my-zsh 主题设置，去欢迎字等。</p>
+<a id="more"></a>
+
+<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><ul>
+<li><a href="https://termux.com" target="_blank" rel="noopener">官网</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play</a></li>
+<li><a href="https://www.coolapk.com/apk/com.termux" target="_blank" rel="noopener">CoolApk</a></li>
+<li><a href="https://pan.baidu.com/s/1zNrdz8Doed0wIob7bftXwQ" target="_blank" rel="noopener">百度网盘</a>密码: 7eyf</li>
+</ul>
+<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><p>音量-键模拟（Ctrl）键</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">音量-键(Ctrl)+L 清除屏幕内容</span><br><span class="line">音量-键(Ctrl)+C 终止当前操作</span><br><span class="line">音量-键(Ctrl)D 退出当前会话session</span><br><span class="line">音量+键+D Tab键（可自动补全命令或文件名）</span><br><span class="line">音量+键+W 方向键 上（可显示前一条命令）</span><br><span class="line">音量+键+S 方向键 下（可显示后一条命令）</span><br><span class="line">音量+键+A 方向键 左（可左移动光标）</span><br><span class="line">音量+键+D 方向键 右（可右移动光标）</span><br><span class="line">音量+键+Q 显示或关闭扩展键（ESC、插入链接CTR、ALT、TAB、-、/、|以及左滑扩展键一栏可切换到全功能支持手机输入法的输入框）</span><br></pre></td></tr></table></figure>
+
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>更新</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage 挂载Storage</span><br><span class="line">apt update 更新源</span><br><span class="line">apt search &lt;query&gt; 全文搜索可安装包</span><br><span class="line">apt install &lt;package&gt; 安装软件包</span><br><span class="line">apt upgrade 升级软件包</span><br><span class="line">apt show &lt;package&gt; 显示软件包的信息</span><br><span class="line">apt list [--installed] 列出所有（或已安装）的软件包信息</span><br><span class="line">apt remove &lt;package&gt; 删除软件包</span><br><span class="line">chmod 修改文件权限</span><br><span class="line">chown 修改文件归属</span><br></pre></td></tr></table></figure>
+
+<p>cd 命令</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd</span><br><span class="line"># 你当前在 /root目录中，使用这个命令会进入 /root/bash目录，这是相对路径</span><br><span class="line">cd bash</span><br><span class="line"># 如果你不在 /root目录中的话，就不能用上面的相对路径了，就需要绝对路径</span><br><span class="line">cd /root/bash</span><br><span class="line"># 假设你当前在 /root/bash目录中，使用相对路径，你可以用这个命令进入上一级 /root目录， `..` 代表相对路径 上级目录</span><br><span class="line">cd ..</span><br><span class="line"># 当然你也可以用绝对路径来进入上一级 /root目录</span><br><span class="line">cd /root</span><br><span class="line">路径的输入zsh有个方</span><br></pre></td></tr></table></figure>
+
+<p>ls 命令</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 显示当前目录下的所有文件</span></span><br><span class="line">ls -a</span><br><span class="line">ls -a bash/<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-comment"># 相对路径，当前目录是 /root ，欲查看的目录是 /root/bash/log</span></span><br><span class="line">ls -a /root/bash/<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-comment"># 绝对路径， 当前目录是 /root ，欲查看的目录是 /root/bash/log</span></span><br><span class="line"><span class="hljs-comment">#更多的命令可以用 ls --help 来查看。</span></span><br></pre></td></tr></table></figure>
+
+<p>tree 包命令</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 复制当前目录内的 log.txt文件到 /var目录</span></span><br><span class="line">cp log.txt /var/log.txt</span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的 bash文件夹到 /home目录</span></span><br><span class="line">cp -R bash /home/bash</span><br><span class="line">———————————————————————————————————————————————</span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的所有.txt后缀的文件到 /var/log目录</span></span><br><span class="line">cp *.txt /var/<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的所有以 doubi开头的文件到 /var/log目录</span></span><br><span class="line">cp doubi* /var/<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的所有以 doubi开头 以.txt后缀结尾的文件到 /var/log目录</span></span><br><span class="line">cp doubi*.txt /var/<span class="hljs-built_in">log</span></span><br><span class="line">———————————————————————————————————————————————</span><br><span class="line"><span class="hljs-comment"># 假设当前目录是 /root/doubi/log，要把这个目录中的所有.txt后缀的文件复制到上一级目录 /root/doubi，那么这样做</span></span><br><span class="line">cp *.txt ..</span><br><span class="line"><span class="hljs-comment"># .. 就是相对路径，代表上一级目录，��然你也可以用绝对路径，这样更不容易出错</span></span><br><span class="line">cp *.txt /root/doubi</span><br><span class="line">——————————————————————————————————————————————</span><br><span class="line"><span class="hljs-comment"># 重命名当前目录内的 log.txt文件为 log2.txt</span></span><br><span class="line">cp log.txt log2.txt</span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的 log.txt文件到 /var目录并重命名为 log1.txt</span></span><br><span class="line">cp log.txt /var/log1.txt</span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的 bash文件夹到 /home目录并重命名为 bash2</span></span><br><span class="line">cp -R bash /home/bash2</span><br><span class="line">——————————————————————————————————————————————</span><br><span class="line"><span class="hljs-comment">#复制当前目录内的 log.txt文件到 /var目录，但是 /var 目录中已经存着 log.txt，那么会提示 cp: overwrite `/var/log.txt'? 可以用 -f 强制覆盖</span></span><br><span class="line">cp -f <span class="hljs-built_in">log</span> /var/log.txt</span><br><span class="line"><span class="hljs-comment"># 复制当前目录内的 log.txt log1.txt log2.txt文件和 log233目录到 /home/log目录中</span></span><br><span class="line">cp -R log.txt log1.txt log2.txt log233 /home/<span class="hljs-built_in">log</span></span><br><span class="line"><span class="hljs-comment">#更多的命令可以用 cp --help 查看。</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="去欢迎字"><a href="#去欢迎字" class="headerlink" title="去欢迎字"></a>去欢迎字</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.hushlogin</span><br></pre></td></tr></table></figure>
+
+<h1 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install git curl zsh -y</span><br><span class="line">sh -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
+
+<p>带字体，配色管理版</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)</span>"</span> //安装</span><br><span class="line">~/.termux/colors.sh   //修改配色</span><br><span class="line">~/.termux/fonts.sh    //修改字体</span><br></pre></td></tr></table></figure>
+
+<h1 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install openssh -y</span><br></pre></td></tr></table></figure>
+
+<p>连接</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p443 root@主机ip</span><br></pre></td></tr></table></figure>
+
+<h1 id="hexo博客"><a href="#hexo博客" class="headerlink" title="hexo博客"></a>hexo博客</h1><p>install</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install git openssh nodejs make python2 vim</span><br><span class="line">mkdir blog</span><br><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">npm install -g hexo</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在站点配置文件_config.yml的Deployment字段处添加并修改</li>
+</ul>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="hljs-built_in">type</span>: git</span><br><span class="line">repo: git@github.com:username/username.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>创建ssh密钥</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config –global user.name “Vitan”</span><br><span class="line">git config –global user.email “ivitan95@gmailcom”</span><br><span class="line">ssh-keygen -t rsa -C “ivitan@gmail.com”</span><br></pre></td></tr></table></figure>
+
+<p>添加本地私钥文件</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加到 Github</li>
+</ul>
+<p>测试并发布 GithubPage 上</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> ~/blog</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/TermuxNote.html">https://vitan.me/posts/TermuxNote.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Termux/">Termux</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/GitNote.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Git 笔记</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Hexo-Command.html">
+                <span class="level-item">Hexo 常用命令</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#软件下载">
+            <span class="has-mr-6">1</span>
+            <span>软件下载</span>
+            </a></li><li>
+            <a class="is-flex" href="#常用快捷键">
+            <span class="has-mr-6">2</span>
+            <span>常用快捷键</span>
+            </a></li><li>
+            <a class="is-flex" href="#常用命令">
+            <span class="has-mr-6">3</span>
+            <span>常用命令</span>
+            </a></li><li>
+            <a class="is-flex" href="#去欢迎字">
+            <span class="has-mr-6">4</span>
+            <span>去欢迎字</span>
+            </a></li><li>
+            <a class="is-flex" href="#oh-my-zsh">
+            <span class="has-mr-6">5</span>
+            <span>oh-my-zsh</span>
+            </a></li><li>
+            <a class="is-flex" href="#ssh">
+            <span class="has-mr-6">6</span>
+            <span>ssh</span>
+            </a></li><li>
+            <a class="is-flex" href="#hexo博客">
+            <span class="has-mr-6">7</span>
+            <span>hexo博客</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Termux 折腾记" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

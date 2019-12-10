@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Github 隐藏的技巧 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Github 隐藏的技巧" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Github 隐藏的技巧" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Github.png" alt="Github 隐藏的技巧">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Github 隐藏的技巧
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Diary/">Diary</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    5 分钟 读完 (约 793 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-07-17T05:39:22.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-07-17</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.146Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Github 中隐藏了很多可以提高效率的小技巧。</p>
+<a id="more"></a>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="全站中"><a href="#全站中" class="headerlink" title="全站中"></a>全站中</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s 定位到搜索框</span><br><span class="line">? 展示当前页面可用的快捷键</span><br><span class="line">g+n 查看通知</span><br></pre></td></tr></table></figure>
+
+<h2 id="库快捷键"><a href="#库快捷键" class="headerlink" title="库快捷键"></a>库快捷键</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">g+c 到代码库首页</span><br><span class="line">g+i 查看 issue</span><br><span class="line">g+p 查看 PR</span><br><span class="line">g+w 查看 Wiki</span><br></pre></td></tr></table></figure>
+
+<h2 id="浏览代码"><a href="#浏览代码" class="headerlink" title="浏览代码"></a>浏览代码</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t 激活查找文件模式</span><br><span class="line">l 定位到行</span><br><span class="line">w 切换分支或tag</span><br><span class="line">y 将 URL 展开成正则形式</span><br><span class="line">i 显示或隐藏 diff 中的评论</span><br></pre></td></tr></table></figure>
+
+<h2 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c 创建一个 issue</span><br><span class="line">/ 定位到 issue 搜索框</span><br><span class="line">l 过滤或编辑标签</span><br><span class="line">m 过滤或编辑 milestone</span><br><span class="line">a 过滤或编辑 assignee</span><br><span class="line">r 在回复中引用鼠标选中的文本</span><br></pre></td></tr></table></figure>
+
+<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e l y 标记为已读</span><br><span class="line">shift m 将帖子静音</span><br></pre></td></tr></table></figure>
+
+<h1 id="仓库中"><a href="#仓库中" class="headerlink" title="仓库中"></a>仓库中</h1><h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r 在回复中引用鼠标选中的文本</span><br><span class="line">o+enter 打开 issue</span><br></pre></td></tr></table></figure>
+
+<h2 id="Network-Graph"><a href="#Network-Graph" class="headerlink" title="Network Graph"></a>Network Graph</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方向键和 hjkl 与 Vim 中一样</span><br><span class="line">shift + 方向键或 hjkl 行动到头</span><br></pre></td></tr></table></figure>
+
+<h1 id="URL-后添加"><a href="#URL-后添加" class="headerlink" title="URL 后添加"></a>URL 后添加</h1><h2 id="忽略空格-w-1"><a href="#忽略空格-w-1" class="headerlink" title="忽略空格: ?w=1"></a>忽略空格: ?w=1</h2><p>在任意的 diff URL 添加<code>?w=1</code>用来整理缩进<br><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1ftctuu01vrj20f005kaac.jpg" alt></p>
+<h2 id="查看某个作者的提交历史"><a href="#查看某个作者的提交历史" class="headerlink" title="查看某个作者的提交历史"></a>查看某个作者的提交历史</h2><p>在 URL 中添加 <code>?author=username</code>例如：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/rails/rails/commits/master?author=snowtraces</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcu02qcwoj20cp0kota4.jpg" alt></p>
+<h2 id="比较版本"><a href="#比较版本" class="headerlink" title="比较版本"></a>比较版本</h2><p>使用类似如下的 URL 比较分支</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/qutang/hexo-theme-cutie/compare/master...v2.1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcu7572zej20um05aq3i.jpg" alt></p>
+<ul>
+<li><p>也可以使用一下格式</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/rails/rails/compare/master@&#123;1.day.ago&#125;...master</span><br><span class="line">https://github.com/rails/rails/compare/master@&#123;2014-10-04&#125;...master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>和派生仓库比较，加上派生仓库名作前缀即可</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/iVitan/hexo-theme-cutie/compare/master...qutang:master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="高亮行"><a href="#高亮行" class="headerlink" title="高亮行"></a>高亮行</h2><p>在 URL 中加上<code>#L10</code>可以高亮第10行,或者你也可以直接点击行数。</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml<span class="hljs-comment">#L10</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多行高亮同样支持。你可以使用类似<code>#L10-L20</code>格式，或者在按住 shift 的同时点击<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml<span class="hljs-comment">#L10-L20</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcuhwdriaj20fc08ft8x.jpg" alt></p>
+<h2 id="合并请求的-diff-和-patch"><a href="#合并请求的-diff-和-patch" class="headerlink" title="合并请求的 diff 和 patch"></a>合并请求的 diff 和 patch</h2><p>可以在 URL 后添加<code>.diff</code>和<code>.patch</code>以对应的模式查看合并请求</p>
+<h1 id="快速引用"><a href="#快速引用" class="headerlink" title="快速引用"></a>快速引用</h1><h2 id="引用评论"><a href="#引用评论" class="headerlink" title="引用评论"></a>引用评论</h2><ul>
+<li>可以选中别人的评论文字，然后按 <code>r</code>，这些内容会以引用的形式被复制在文本框中<br><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcukae70tg20m80a7nfn.jpg" alt></li>
+</ul>
+<h1 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h1><h2 id="To-Do"><a href="#To-Do" class="headerlink" title="To Do"></a>To Do</h2><p>在工单或合并请求中，你可以使用任务列表语法：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] Be awesome</span><br><span class="line">- [ ] Do stuff</span><br><span class="line">- [ ] Sleep</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>勾选之后，会更新 Markdown<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] Be awesome</span><br><span class="line">- [x] Do stuff</span><br><span class="line">- [ ] Sleep</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="嵌入-GitHub"><a href="#嵌入-GitHub" class="headerlink" title="嵌入 GitHub"></a>嵌入 GitHub</h1><ul>
+<li><p>网页上面嵌入你自己的GitHub仓库页面</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=ivitan&amp;amp;repo=ivitan.github.io&amp;amp;type=watch&amp;amp;count=true&amp;amp;size=large&quot; allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;156px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=ivitan&amp;amp;repo=ivitan.github&amp;amp;type=fork&amp;amp;count=true&amp;amp;size=large&quot; allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;156px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><iframe src="https://ghbtns.com/github-btn.html?user=ivitan&amp;repo=ivitan.github.io&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe></li>
+<li><iframe src="https://ghbtns.com/github-btn.html?user=ivitan&amp;repo=ivitan.github.io&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe>
+
+</li>
+</ul>
+<h1 id="设置项目语言"><a href="#设置项目语言" class="headerlink" title="设置项目语言"></a>设置项目语言</h1><p>GitHub 会根据相关文件代码的数量来自动识别你这个项目，如果你需要自己指定项目语言，可以在项目的根目录下添加如下<code>.gitattributes</code>文件</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*.html linguist-language=Python</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="http://www.kuqin.com/shuoit/20151010/348440.html" target="_blank" rel="noopener">关于Git和Github你不知道的十件事</a></li>
+<li><a href="https://segmentfault.com/a/1190000000475547" target="_blank" rel="noopener">少有人知的 GitHub 使用技巧</a></li>
+<li><a href="https://blog.csdn.net/neilol/article/details/46568611" target="_blank" rel="noopener">GitHub 使用小技巧</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/GithubTips.html">https://vitan.me/posts/GithubTips.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/Git/">Git</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Github/">Github</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/LinuxDir.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Linux 常见目录</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/MySQLbasic.html">
+                <span class="level-item">MySQL 基础语句</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#快捷键">
+            <span class="has-mr-6">1</span>
+            <span>快捷键</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#全站中">
+            <span class="has-mr-6">1.1</span>
+            <span>全站中</span>
+            </a></li><li>
+            <a class="is-flex" href="#库快捷键">
+            <span class="has-mr-6">1.2</span>
+            <span>库快捷键</span>
+            </a></li><li>
+            <a class="is-flex" href="#浏览代码">
+            <span class="has-mr-6">1.3</span>
+            <span>浏览代码</span>
+            </a></li><li>
+            <a class="is-flex" href="#issues">
+            <span class="has-mr-6">1.4</span>
+            <span>issues</span>
+            </a></li><li>
+            <a class="is-flex" href="#通知">
+            <span class="has-mr-6">1.5</span>
+            <span>通知</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#仓库中">
+            <span class="has-mr-6">2</span>
+            <span>仓库中</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#PR">
+            <span class="has-mr-6">2.1</span>
+            <span>PR</span>
+            </a></li><li>
+            <a class="is-flex" href="#Network-Graph">
+            <span class="has-mr-6">2.2</span>
+            <span>Network Graph</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#URL-后添加">
+            <span class="has-mr-6">3</span>
+            <span>URL 后添加</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#忽略空格-w-1">
+            <span class="has-mr-6">3.1</span>
+            <span>忽略空格: ?w=1</span>
+            </a></li><li>
+            <a class="is-flex" href="#查看某个作者的提交历史">
+            <span class="has-mr-6">3.2</span>
+            <span>查看某个作者的提交历史</span>
+            </a></li><li>
+            <a class="is-flex" href="#比较版本">
+            <span class="has-mr-6">3.3</span>
+            <span>比较版本</span>
+            </a></li><li>
+            <a class="is-flex" href="#高亮行">
+            <span class="has-mr-6">3.4</span>
+            <span>高亮行</span>
+            </a></li><li>
+            <a class="is-flex" href="#合并请求的-diff-和-patch">
+            <span class="has-mr-6">3.5</span>
+            <span>合并请求的 diff 和 patch</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#快速引用">
+            <span class="has-mr-6">4</span>
+            <span>快速引用</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#引用评论">
+            <span class="has-mr-6">4.1</span>
+            <span>引用评论</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#任务列表">
+            <span class="has-mr-6">5</span>
+            <span>任务列表</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#To-Do">
+            <span class="has-mr-6">5.1</span>
+            <span>To Do</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#嵌入-GitHub">
+            <span class="has-mr-6">6</span>
+            <span>嵌入 GitHub</span>
+            </a></li><li>
+            <a class="is-flex" href="#设置项目语言">
+            <span class="has-mr-6">7</span>
+            <span>设置项目语言</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Github 隐藏的技巧" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Vim 基础 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Vim 基础" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Vim 基础" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/Vim.png" alt="Vim 基础">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>Vim 基础
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    18 分钟 读完 (约 2683 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-04-02T07:10:25.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-04-02</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.198Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Vim 基础</p>
+<a id="more"></a>
+<h1 id="Vim-基础"><a href="#Vim-基础" class="headerlink" title="Vim 基础"></a>Vim 基础</h1><p>指令图<br><img src="https://i.loli.net/2018/04/06/5ac73a8e7333f.png" alt="指令图"></p>
+<p>Vim（ViImproved）编辑器是vi的扩展版，比vi功能更加强大，是功能强大的跨平台文本文件编辑工具，可以利用它可以建立、修改文本文件等。Vim有三种操作模式，分别称为 编辑模式、插入模式 和 命令模式，当运行Vim时，首会进入命令模式。</p>
+<h1 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h1><p>Vim命令模式下可以进行很多操作，例如光标跳动到指定的单词、行；复制、删除某行甚至很多行以及全文都可以，反正功能真的太强大了，以下就作出详解：</p>
+<h2 id="小范围"><a href="#小范围" class="headerlink" title="小范围"></a>小范围</h2><ol>
+<li>如果键盘上有上、下、左、右箭头的导航键，就由这些键来完成光标的移动。另外，可以用下面的键完成同样的 按字符移动 功能：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">k</td>
+<td align="left">向上移动</td>
+</tr>
+<tr>
+<td align="left">j</td>
+<td align="left">向下移动</td>
+</tr>
+<tr>
+<td align="left">h</td>
+<td align="left">向左移动</td>
+</tr>
+<tr>
+<td align="left">l</td>
+<td align="left">向右移动</td>
+</tr>
+<tr>
+<td align="left">30j</td>
+<td align="left">向下移动30行</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">到行首</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">到行首第一个字符，如果前面有空格的话</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">到行尾</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">快速到文件头</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">快速到文件尾</td>
+</tr>
+<tr>
+<td align="left">100G</td>
+<td align="left">跳转到第100行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="稍大范围移动光标的命令"><a href="#稍大范围移动光标的命令" class="headerlink" title="稍大范围移动光标的命令"></a>稍大范围移动光标的命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ctrl+f</td>
+<td align="left">向文件尾部翻一屏</td>
+</tr>
+<tr>
+<td align="left">ctrl+b</td>
+<td align="left">向文件首部翻一屏</td>
+</tr>
+<tr>
+<td align="left">ctrl+d</td>
+<td align="left">向文件尾部翻半屏</td>
+</tr>
+<tr>
+<td align="left">ctrl+u</td>
+<td align="left">向文件首部翻半屏</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="指定某行大范围移动"><a href="#指定某行大范围移动" class="headerlink" title="指定某行大范围移动"></a>指定某行大范围移动</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">G</td>
+<td align="left">光标跳到文件尾行</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">光标跳到文件首行</td>
+</tr>
+<tr>
+<td align="left">#G</td>
+<td align="left">“#”指数字，输入随意一个数字就会调到指定的行数</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="跳转字母"><a href="#跳转字母" class="headerlink" title="跳转字母"></a>跳转字母</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">H</td>
+<td align="left">光标跳到当前一页的首行的第一个字母</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">光标跳到当前一页的中间行的第一个字母</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">光标跳到当前一页的尾行的第一个字母</td>
+</tr>
+</tbody></table>
+<hr>
+<p>H M L 命令还可以加数字。如<code>2H</code>表示将光标移到屏幕的第2行；3M 表示将光标移动到中间行的上面第三行；3L 表示将光标移到屏幕的倒数第3行。</p>
+<h2 id="行内移动"><a href="#行内移动" class="headerlink" title="行内移动"></a>行内移动</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">w</td>
+<td align="left">右移光标到下一个字的开头</td>
+</tr>
+<tr>
+<td align="left">e</td>
+<td align="left">右移光标到一个字的末尾</td>
+</tr>
+<tr>
+<td align="left">b</td>
+<td align="left">左移光标到前一个字的开头</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">移动光标，到本行的第一个非空字符</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">右移光标，到本行的末尾</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">数字０，左移光标到本行的开始</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="搜索匹配"><a href="#搜索匹配" class="headerlink" title="搜索匹配"></a>搜索匹配</h1><p>vim除了在命令模式下进行光标移动外，还提供了强大的字符串搜索功能。要查找文件中指定字或短语出现的位置，可以用Vim直接进行搜索，而不必以手工方式进行。</p>
+<h2 id="搜索方法"><a href="#搜索方法" class="headerlink" title="搜索方法"></a>搜索方法</h2><p>键入字符 <code>/</code> 后面跟以要搜索的字符串，然后按回车键。编辑程序执行正向搜索（即朝文件末尾方向），并在找到指定字符串后，将光标停到该字符串的开头；键入 n 命令可以继续执行搜索，找出这一字符串下次出现的位置。用字符 <code>?</code> 取代 <code>/</code> ，可以实现反向搜索（朝文件开头方向）例如：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/root</td>
+<td align="left">正向搜索字符串root</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">继续搜索，找出root下次出现在的位置</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td align="left">继续搜索，找出root上次出现在的位置</td>
+</tr>
+<tr>
+<td align="left">?root</td>
+<td align="left">反向搜索字符串root</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="字符编辑、替换"><a href="#字符编辑、替换" class="headerlink" title="字符编辑、替换"></a>字符编辑、替换</h1><p>Vim常规的删除命令是d、x(前者删除行后者删除字符),结合Vim的其他特性可以实现基础的删除功能。将光标定位于文件内指定位置后，可以用其他字符来替换光标所指向的字符，或从当前光标位置删除一个或多个字符或一行、多行。例如：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x</td>
+<td align="left">删除光标处的字符</td>
+</tr>
+<tr>
+<td align="left">#x</td>
+<td align="left">删除光标处起始的#个字符</td>
+</tr>
+<tr>
+<td align="left">xp</td>
+<td align="left">交换光标所在处的字符及其后面字符的位置</td>
+</tr>
+<tr>
+<td align="left">~</td>
+<td align="left">转换大小写</td>
+</tr>
+<tr>
+<td align="left">J</td>
+<td align="left">删除当前行后的换行符</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">替换光标所在处的字符</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">切换成REPLACE模式</td>
+</tr>
+</tbody></table>
+<h1 id="复制、粘贴、剪切、删除"><a href="#复制、粘贴、剪切、删除" class="headerlink" title="复制、粘贴、剪切、删除"></a>复制、粘贴、剪切、删除</h1><h2 id="黏贴"><a href="#黏贴" class="headerlink" title="黏贴"></a>黏贴</h2><p>从正文中删除的内容（如字符、字或行）并没有真正丢失，而是被剪切并复制到了一个内存缓冲区中。用户可将其粘贴到正文中的指定位置。完成这一操作的命令是：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">p</td>
+<td align="left">粘贴复制或剪切的内容</td>
+</tr>
+<tr>
+<td align="left">p</td>
+<td align="left">小写字母 p，将缓冲区的内容粘贴到光标的后面</td>
+</tr>
+<tr>
+<td align="left">P</td>
+<td align="left">大写字母 P，将缓冲区的内容粘贴到光标的前面</td>
+</tr>
+<tr>
+<td align="left">3p</td>
+<td align="left">将复制或剪切的内容粘贴三次</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>有时需要复制一段正文到新位置，同时保留原有位置的内容。这种情况下，首先应当把指定内容复制（而不是剪切）到内存缓冲区。完成这一操作的命令是：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">y</td>
+<td align="left">复制整行；同时y后面还可以和w,e,b,$,^,等符号连用，例如：yw表示复制光标所在处的一个单词</td>
+</tr>
+<tr>
+<td align="left">10yy</td>
+<td align="left">向下复制10行</td>
+</tr>
+<tr>
+<td align="left">yw</td>
+<td align="left">复制光标开始的一个单词</td>
+</tr>
+<tr>
+<td align="left">y$</td>
+<td align="left">复制光标到行尾</td>
+</tr>
+<tr>
+<td align="left">yfB</td>
+<td align="left">复制光标到第一个大写B中间的内容</td>
+</tr>
+<tr>
+<td align="left">y2fB</td>
+<td align="left">复制光标到第二个大写B中间的内容</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td align="left">复制行</td>
+</tr>
+<tr>
+<td align="left">#yy</td>
+<td align="left">“#”表示数字也就是复制几行</td>
+</tr>
+<tr>
+<td align="left">#”tyy</td>
+<td align="left">“#”表示任何数，“t“表示T这个寄容器，linux中有36个剪寄容器，即a-z，0-9；复制行数可以选择放到任何这36个寄容器上；粘贴的话”tp表示将t寄存器内容粘贴到文件中。</td>
+</tr>
+</tbody></table>
+<h2 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x</td>
+<td align="left">向剪切一个一个字符，如果是在行尾，则为向前剪切</td>
+</tr>
+<tr>
+<td align="left">3x</td>
+<td align="left">剪切三个</td>
+</tr>
+<tr>
+<td align="left">xp</td>
+<td align="left">非行尾交换两个字符，如从bs变成sb</td>
+</tr>
+</tbody></table>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>删除的内容会放到剪贴板，按 p 即可粘贴到其他地方</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">dd</td>
+<td align="left">删除一行</td>
+</tr>
+<tr>
+<td align="left">%d</td>
+<td align="left">删除全文</td>
+</tr>
+<tr>
+<td align="left">200dd</td>
+<td align="left">删除200行</td>
+</tr>
+<tr>
+<td align="left">dw</td>
+<td align="left">删除一个单词 （最喜欢啦）</td>
+</tr>
+<tr>
+<td align="left">df”</td>
+<td align="left">删除到出现的第一个双引</td>
+</tr>
+</tbody></table>
+<h2 id="撤销和重复"><a href="#撤销和重复" class="headerlink" title="撤销和重复"></a>撤销和重复</h2><p>在编辑文档的过程中，为消除某个错误的编辑命令造成的后果，可以用撤消命令。另外，如果用户希望在新的光标位置重复前面执行过的编辑命令，可用重复命令。</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">u</td>
+<td align="left">撤消前一条命令的结果，可以和数字连用</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">重复最后一条修改正文的命令</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="插入模式-Insert-（编辑模式）"><a href="#插入模式-Insert-（编辑模式）" class="headerlink" title="插入模式(Insert)（编辑模式）"></a>插入模式(Insert)（编辑模式）</h1><ul>
+<li>进入插入模式<br>在编辑模式下正确定位光标之后，可用以下命令切换到插入模式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">在光标左侧插入正文</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">在光标右侧插入正文</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">在光标所在行的下一行增添新行</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">在光标所在行的末尾插入</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">在光标所在行的末尾插入</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">在光标所在行的上一行增添新行</td>
+</tr>
+</tbody></table>
+<ul>
+<li>退出插入模式<br>退出插入模式的方法是，按 <code>ESC</code> 退出插入模式之后，将会进入编辑模式 。</li>
+</ul>
+<h1 id="扩展命令模式-extended-command"><a href="#扩展命令模式-extended-command" class="headerlink" title="扩展命令模式(extended command )"></a>扩展命令模式(extended command )</h1><p>在 Vim 的命令模式下，可以使用复杂的命令。在命令模式下按 <code>shift+ ：</code>并显示冒号，此时已进入命令模式。命令模式又称末行模式，用户输入的内容均显示在屏幕的最后一行，按回车键，Vim 执行命令。</p>
+<h2 id="打开、保存、退出"><a href="#打开、保存、退出" class="headerlink" title="打开、保存、退出"></a>打开、保存、退出</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">：！file</td>
+<td align="left">在打开的vim中，如果想看一个文件可以：！后面跟文件</td>
+</tr>
+<tr>
+<td align="left">：r！file</td>
+<td align="left">将打开的文件读入到vim中</td>
+</tr>
+<tr>
+<td align="left">：w</td>
+<td align="left">file将当前文件另存为</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="字符串搜索"><a href="#字符串搜索" class="headerlink" title="字符串搜索"></a>字符串搜索</h2><p>如果希望进行正向搜索，将待搜索的字符串置于两个 / 之间；如果希望反向搜索，则将字符串放在两个 ? 之间。</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">n</td>
+<td align="left">查找下一个匹配</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td align="left">查找上一个匹配</td>
+</tr>
+<tr>
+<td align="left">2n</td>
+<td align="left">查找下面第二个匹配</td>
+</tr>
+<tr>
+<td align="left">:/root/</td>
+<td align="left">正向搜索，将光标移到下一个包含字符串 root 的行</td>
+</tr>
+<tr>
+<td align="left">:?root?</td>
+<td align="left">反向搜索，将光标移到上一个包含字符串 root 的行</td>
+</tr>
+<tr>
+<td align="left">:/root/w file</td>
+<td align="left">正向搜索，并将第一个包含字符串 root的行写入 file 文件</td>
+</tr>
+<tr>
+<td align="left">/str1/,str2/w file</td>
+<td align="left">正向搜索，并将包含字符串 str1 的行至包含字符串 str2 的行写</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="正文替换"><a href="#正文替换" class="headerlink" title="正文替换"></a>正文替换</h2><p>利用 <code>：s</code> 命令可以实现字符串的替换。具体的用法包括：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:%s/str1/str2/</td>
+<td align="left">用字符串 str2 替换行中首次出现的字符串 str1</td>
+</tr>
+<tr>
+<td align="left">:s/str1/str2/</td>
+<td align="left">用字符串 str2 替换行中所有出现的字符串 str1</td>
+</tr>
+<tr>
+<td align="left"><code>:.,$ s/str1/str2/g</code></td>
+<td align="left">用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1</td>
+</tr>
+<tr>
+<td align="left">:1,$ s/str1/str2/g</td>
+<td align="left">用字符串 str2 替换正文中所有出现的字符串 str1</td>
+</tr>
+<tr>
+<td align="left">:g/str1/s//str2/g</td>
+<td align="left">功能同上</td>
+</tr>
+<tr>
+<td align="left">:m,ns/str1/str2/g</td>
+<td align="left">将从m行到n行的str1替换成str2</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li>从上述例子中可以总结这些：</li>
+<li><code>g</code> 放在命令末尾，表示对搜索字符串的每次出现进行替换,不止匹配每行中的第一次出现；不加 <code>g</code>，表示只对搜索字符串的首次出现进行替换；<code>g</code> 放在命令开头，表示对正文中所有包含搜索字符串的行进行替换操作</li>
+<li>表示后面跟着一串替换的命令</li>
+<li>表示替换范围是所有行，即全文</li>
+</ul>
+<h1 id="分屏管理"><a href="#分屏管理" class="headerlink" title="分屏管理"></a>分屏管理</h1><p>普通的Vim模式，打开一个Vim程序只能查看一个文件，如果想同时查看多个文件，就需要用到Vim分屏与标签页功能。</p>
+<h2 id="多文件分割"><a href="#多文件分割" class="headerlink" title="多文件分割"></a>多文件分割</h2><ul>
+<li>vim -o|-O FILE1 FILE2 …<ul>
+<li>-o：水平分割</li>
+<li>-O：垂直分割</li>
+</ul>
+</li>
+</ul>
+<h2 id="单文件窗口分割："><a href="#单文件窗口分割：" class="headerlink" title="单文件窗口分割："></a>单文件窗口分割：</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+w,s</td>
+<td align="left">水平分割</td>
+</tr>
+<tr>
+<td align="left">Ctrl+w,v</td>
+<td align="left">垂直分割</td>
+</tr>
+<tr>
+<td align="left">Ctrl+w,q</td>
+<td align="left">取消相邻窗口</td>
+</tr>
+<tr>
+<td align="left">Ctrl+w,o</td>
+<td align="left">取消全部相邻窗口</td>
+</tr>
+<tr>
+<td align="left">wqall</td>
+<td align="left">退出</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="http://blog.51cto.com/19940919/1953791" target="_blank" rel="noopener">Vimi基础</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Vim.html">https://vitan.me/posts/Vim.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/ArchLinux/">ArchLinux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Ubuntu/">Ubuntu</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Vim/">Vim</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Win/">Win</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Ubuntu-Nodejs.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Ubuntu 下 Node.Js 安装与版本升级</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Termux-Openjdk.html">
+                <span class="level-item">Termux 安装 Openjdk</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#Vim-基础">
+            <span class="has-mr-6">1</span>
+            <span>Vim 基础</span>
+            </a></li><li>
+            <a class="is-flex" href="#命令模式">
+            <span class="has-mr-6">2</span>
+            <span>命令模式</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#小范围">
+            <span class="has-mr-6">2.1</span>
+            <span>小范围</span>
+            </a></li><li>
+            <a class="is-flex" href="#稍大范围移动光标的命令">
+            <span class="has-mr-6">2.2</span>
+            <span>稍大范围移动光标的命令</span>
+            </a></li><li>
+            <a class="is-flex" href="#指定某行大范围移动">
+            <span class="has-mr-6">2.3</span>
+            <span>指定某行大范围移动</span>
+            </a></li><li>
+            <a class="is-flex" href="#跳转字母">
+            <span class="has-mr-6">2.4</span>
+            <span>跳转字母</span>
+            </a></li><li>
+            <a class="is-flex" href="#行内移动">
+            <span class="has-mr-6">2.5</span>
+            <span>行内移动</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#搜索匹配">
+            <span class="has-mr-6">3</span>
+            <span>搜索匹配</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#搜索方法">
+            <span class="has-mr-6">3.1</span>
+            <span>搜索方法</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#字符编辑、替换">
+            <span class="has-mr-6">4</span>
+            <span>字符编辑、替换</span>
+            </a></li><li>
+            <a class="is-flex" href="#复制、粘贴、剪切、删除">
+            <span class="has-mr-6">5</span>
+            <span>复制、粘贴、剪切、删除</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#黏贴">
+            <span class="has-mr-6">5.1</span>
+            <span>黏贴</span>
+            </a></li><li>
+            <a class="is-flex" href="#复制">
+            <span class="has-mr-6">5.2</span>
+            <span>复制</span>
+            </a></li><li>
+            <a class="is-flex" href="#剪切">
+            <span class="has-mr-6">5.3</span>
+            <span>剪切</span>
+            </a></li><li>
+            <a class="is-flex" href="#删除">
+            <span class="has-mr-6">5.4</span>
+            <span>删除</span>
+            </a></li><li>
+            <a class="is-flex" href="#撤销和重复">
+            <span class="has-mr-6">5.5</span>
+            <span>撤销和重复</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#插入模式-Insert-（编辑模式）">
+            <span class="has-mr-6">6</span>
+            <span>插入模式(Insert)（编辑模式）</span>
+            </a></li><li>
+            <a class="is-flex" href="#扩展命令模式-extended-command">
+            <span class="has-mr-6">7</span>
+            <span>扩展命令模式(extended command )</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#打开、保存、退出">
+            <span class="has-mr-6">7.1</span>
+            <span>打开、保存、退出</span>
+            </a></li><li>
+            <a class="is-flex" href="#字符串搜索">
+            <span class="has-mr-6">7.2</span>
+            <span>字符串搜索</span>
+            </a></li><li>
+            <a class="is-flex" href="#正文替换">
+            <span class="has-mr-6">7.3</span>
+            <span>正文替换</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#分屏管理">
+            <span class="has-mr-6">8</span>
+            <span>分屏管理</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#多文件分割">
+            <span class="has-mr-6">8.1</span>
+            <span>多文件分割</span>
+            </a></li><li>
+            <a class="is-flex" href="#单文件窗口分割：">
+            <span class="has-mr-6">8.2</span>
+            <span>单文件窗口分割：</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="Vim 基础" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

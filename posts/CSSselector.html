@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>CSS 选择器 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="CSS 选择器" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="CSS 选择器" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/CSS.png" alt="CSS 选择器">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>CSS 选择器
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    8 分钟 读完 (约 1160 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2018-11-18T00:52:54.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-11-18</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.142Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Css 选择器与权重</p>
+<a id="more"></a>
+<h1 id="引入-CSS"><a href="#引入-CSS" class="headerlink" title="引入 CSS"></a>引入 CSS</h1><h2 id="行间引入"><a href="#行间引入" class="headerlink" title="行间引入"></a>行间引入</h2><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style = "width:100px;height:100px;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面级引入-内嵌式"><a href="#页面级引入-内嵌式" class="headerlink" title="页面级引入(内嵌式)"></a>页面级引入(内嵌式)</h2><ul>
+<li><code>&lt;head&gt;</code> 和 <code>&lt;/head&gt;</code> 之间<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="css/text"&gt;</span><br><span class="line"><span class="hljs-selector-class">.text</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;</span><br><span class="line">    <span class="hljs-attribute">padding-left</span>: o;</span><br><span class="line">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;</span><br><span class="line">&#125; </span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="导入式"><a href="#导入式" class="headerlink" title="导入式"></a>导入式</h2><ol>
+<li>在style元素中导入CSS文件</li>
+</ol>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt;    </span><br><span class="line">@<span class="hljs-keyword">import</span> <span class="hljs-string">"CSS样式文件的绝对地址"</span>;</span><br><span class="line">@<span class="hljs-keyword">import</span> url(<span class="hljs-string">"样式文件的绝对地址"</span>);</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在CSS文件中再导入CSS文件</li>
+</ol>
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*某个CSS文件*/</span></span><br><span class="line">@<span class="hljs-keyword">import</span> <span class="hljs-string">"另一个CSS文件的地址"</span>;</span><br><span class="line"><span class="hljs-selector-class">.test</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="line">   <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="line">   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: red; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链接式"><a href="#链接式" class="headerlink" title="链接式"></a>链接式</h2><ul>
+<li>网页的 <code>&lt;head&gt;&lt;/head&gt;</code> 标签对中使用<code>&lt;link&gt;</code> 标记来引入外部样式表文件</li>
+</ul>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link type="text/css" rel="stylesheet" href="CSS样式文件的地址"&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">含义</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*</td>
+<td align="left">通用选择器，匹配任何元素</td>
+<td align="left">*{font-size:16px;}</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">标签选择器，匹配所有使用E标签的元素</td>
+<td align="left">p{font-family:arial;}</td>
+</tr>
+<tr>
+<td align="left">.error</td>
+<td align="left">class选择器，匹配所有class属性中包含error的元素</td>
+<td align="left">.error{font-weight:bold;}</td>
+</tr>
+<tr>
+<td align="left">#correct</td>
+<td align="left">id选择器，匹配所有id属性值为correct的元素</td>
+<td align="left">#correct{font-style:italic;}</td>
+</tr>
+</tbody></table>
+<ul>
+<li>id(唯一)</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"only&gt;</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">123</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-id">#only</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: red;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>class</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"only&gt;</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">123</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.only</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以有多个 class</li>
+</ul>
+<h2 id="标准选择器"><a href="#标准选择器" class="headerlink" title="标准选择器"></a>标准选择器</h2><ul>
+<li>会选择所有相同元素</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>123</span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>123</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">div</span> &#123;</span><br><span class="line">  <span class="hljs-attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-selector-tag">span</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: green;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通配符选择器 </p>
+<ul>
+<li>会匹配所有的元素</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">  <span class="hljs-attribute">margin</span>:<span class="hljs-number">0px</span>;</span><br><span class="line">  <span class="hljs-attribute">padding</span>:<span class="hljs-number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h2><table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">含义</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">E,F</td>
+<td align="left">多元素选择器，同时匹配所有E元素或F元素</td>
+<td align="left">div,p{background-attachment:fixed;}</td>
+</tr>
+<tr>
+<td align="left">E F</td>
+<td align="left">后代元素选择器，匹配所有属于E元素的后代F元素</td>
+<td align="left">div a{background-color:blue;}</td>
+</tr>
+<tr>
+<td align="left">E &gt; F</td>
+<td align="left">子元素选择器，匹配所有E元素的子元素F</td>
+<td align="left">div&gt;p{background-image:url(xxx.gif)}</td>
+</tr>
+<tr>
+<td align="left">E+F</td>
+<td align="left">毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
+<td align="left">p+div{background-position:x% y%}</td>
+</tr>
+</tbody></table>
+<ul>
+<li>父子选择器/派生选择器</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">span</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>直接子元素选择器</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">   <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>134<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span></span><br><span class="line">         <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>323<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">em</span>&#123;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>并列选择器</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span> =<span class="hljs-string">"demo"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span> = <span class="hljs-string">"demo1"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.demo</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分组选择器</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">spam</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">spam</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">em</span>,</span><br><span class="line"><span class="hljs-selector-tag">strong</span>,</span><br><span class="line"><span class="hljs-selector-tag">span</span>&#123;</span><br><span class="line">   <span class="hljs-attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">E:first-child</td>
+<td align="left">匹配父元素E下的第一个子元素</td>
+</tr>
+<tr>
+<td align="left">E:link</td>
+<td align="left">匹配所有未被点击的链接</td>
+</tr>
+<tr>
+<td align="left">E:visited</td>
+<td align="left">匹配所有已被点击的链接</td>
+</tr>
+<tr>
+<td align="left">E:active</td>
+<td align="left">匹配鼠标已经按下、还没有释放的E元素</td>
+</tr>
+<tr>
+<td align="left">E:hover</td>
+<td align="left">匹配鼠标悬停其上的E元素</td>
+</tr>
+<tr>
+<td align="left">E:focus</td>
+<td align="left">匹配获得当前焦点的E元素</td>
+</tr>
+<tr>
+<td align="left">E:lang(c)</td>
+<td align="left">匹配lang属性等于c的E元素</td>
+</tr>
+</tbody></table>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">含义</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">E[att]</td>
+<td align="left">匹配所有具有att属性的E元素</td>
+<td align="left">p[style]{background-repeat:repeat-y;}</td>
+</tr>
+<tr>
+<td align="left">E[att=val]</td>
+<td align="left">匹配所有att属性等于“val”的E元素</td>
+<td align="left">div[class=”c1”]</td>
+</tr>
+<tr>
+<td align="left">E[att~=val]</td>
+<td align="left">匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素</td>
+<td align="left">div[class~=c2]</td>
+</tr>
+<tr>
+<td align="left">E[att｜=val]</td>
+<td align="left">匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以“val”开头的E元素</td>
+<td align="left">p[lang｜=en]</td>
+</tr>
+</tbody></table>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">含义</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">E:first-line</td>
+<td align="left">匹配E元素的第一行</td>
+<td align="left">p:first-line{color:red;}</td>
+</tr>
+<tr>
+<td align="left">E:first-letter</td>
+<td align="left">匹配E元素的第一个字母</td>
+<td align="left">.c1:first-letter{color:blue;}</td>
+</tr>
+<tr>
+<td align="left">E:before</td>
+<td align="left">在E元素之前插入生成的内容</td>
+<td align="left">.ctn before{content:””;display:block;;height:40px;width:40px;}</td>
+</tr>
+<tr>
+<td align="left">E:after</td>
+<td align="left">在E元素之后插入生成的内容</td>
+<td align="left">.ctn after{content:””;display:block;;height:40px;width:40px;}</td>
+</tr>
+</tbody></table>
+<h1 id="选择器的权重"><a href="#选择器的权重" class="headerlink" title="选择器的权重"></a>选择器的权重</h1><ul>
+<li>!important &gt; 行间样式 &gt; id &gt; class | 属性 &gt; 标签选择器 &gt; 通配符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="center">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">!important</td>
+<td align="center">Infinity</td>
+</tr>
+<tr>
+<td align="left">行间样式</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="left">class、属性、伪累</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="left">标签、伪属性</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">通配符</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<h2 id="权重的计算"><a href="#权重的计算" class="headerlink" title="权重的计算"></a>权重的计算</h2><ol>
+<li>在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级</li>
+<li>权值较大的优先级越高，权值相同的，后定义的优先级较高，样式值含有<code>！important</code>，优先级最高<ul>
+<li>div .class1 #people 的权值等于 1+10+100=111</li>
+</ul>
+</li>
+</ol>
+<h1 id="颜色的三种方法"><a href="#颜色的三种方法" class="headerlink" title="颜色的三种方法"></a>颜色的三种方法</h1><h2 id="纯英文单词"><a href="#纯英文单词" class="headerlink" title="纯英文单词"></a>纯英文单词</h2> <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">red</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="十六进制颜色"><a href="#十六进制颜色" class="headerlink" title="十六进制颜色"></a>十六进制颜色</h2><p><code>＃RRGGBB</code>，其中 RR（红色），GG（绿色）和 BB（蓝色）。所有值必须介于0和FF之间。</p>
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#ff4040</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>两位相同可以缩写</li>
+</ul>
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">color</span>: # <span class="hljs-selector-tag">f40</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h2><p>RGB（红，绿，蓝）。每个参数（红色，绿色和蓝色）定义颜色的亮度，可在0和255之间，或一个百分比值（从0％到100％）之间的整数。</p>
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-tag">background-color</span><span class="hljs-selector-pseudo">:rgba(255</span>,0,0,0<span class="hljs-selector-class">.5</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://www.w3cschool.cn/css/css-selector.html" target="_blank" rel="noopener">W3School</a></li>
+<li><a href="https://www.jianshu.com/p/a53ba8e1fe72" target="_blank" rel="noopener">CSS选择器与优先级浅析</a></li>
+</ul>
+
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/CSSselector.html">https://vitan.me/posts/CSSselector.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/CSS/">CSS</a>,&nbsp;<a class="has-link-grey -link" href="/tags/HTML/">HTML</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Note/">Note</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Web/">Web</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/PythonPandas.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Pandas</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/HTMLTag.html">
+                <span class="level-item">HTML 常用标签</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#引入-CSS">
+            <span class="has-mr-6">1</span>
+            <span>引入 CSS</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#行间引入">
+            <span class="has-mr-6">1.1</span>
+            <span>行间引入</span>
+            </a></li><li>
+            <a class="is-flex" href="#页面级引入-内嵌式">
+            <span class="has-mr-6">1.2</span>
+            <span>页面级引入(内嵌式)</span>
+            </a></li><li>
+            <a class="is-flex" href="#导入式">
+            <span class="has-mr-6">1.3</span>
+            <span>导入式</span>
+            </a></li><li>
+            <a class="is-flex" href="#链接式">
+            <span class="has-mr-6">1.4</span>
+            <span>链接式</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#选择器">
+            <span class="has-mr-6">2</span>
+            <span>选择器</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#基础选择器">
+            <span class="has-mr-6">2.1</span>
+            <span>基础选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#标准选择器">
+            <span class="has-mr-6">2.2</span>
+            <span>标准选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#组合选择器">
+            <span class="has-mr-6">2.3</span>
+            <span>组合选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#伪类选择器">
+            <span class="has-mr-6">2.4</span>
+            <span>伪类选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#属性选择器">
+            <span class="has-mr-6">2.5</span>
+            <span>属性选择器</span>
+            </a></li><li>
+            <a class="is-flex" href="#伪元素">
+            <span class="has-mr-6">2.6</span>
+            <span>伪元素</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#选择器的权重">
+            <span class="has-mr-6">3</span>
+            <span>选择器的权重</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#权重的计算">
+            <span class="has-mr-6">3.1</span>
+            <span>权重的计算</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#颜色的三种方法">
+            <span class="has-mr-6">4</span>
+            <span>颜色的三种方法</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#纯英文单词">
+            <span class="has-mr-6">4.1</span>
+            <span>纯英文单词</span>
+            </a></li><li>
+            <a class="is-flex" href="#十六进制颜色">
+            <span class="has-mr-6">4.2</span>
+            <span>十六进制颜色</span>
+            </a></li><li>
+            <a class="is-flex" href="#RGB">
+            <span class="has-mr-6">4.3</span>
+            <span>RGB</span>
+            </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="CSS 选择器" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
