@@ -19,7 +19,7 @@ Batch 批量处理
 3. cd %~dp0bin\ ：进入批处理所在目录的bin目录
 
 ```bat
-::作用：以管理员身份安装Apache
+REM 作用：以管理员身份安装Apache
 d:
 cd %~dp0bin\
 httpd.exe -k install -n "Apache24"
@@ -217,13 +217,9 @@ call [[Drive:][Path] FileName [BatchParameters]] [:label [arguments]]
 ```
 参数: 
 
-[Drive:][Path] FileName 指定要调用的批处理程序的位置和名称。filename 参数必须具有 .bat 或 .cmd 扩展名。
+`[Drive:][Path] FileName` 指定要调用的批处理程序的位置和名称。filename 参数必须具有 `.bat` 或 `.cmd` 扩展名。
 
-调用另一个批处理程序，并且不终止父批处理程序。
-
-如果不用call而直接调用别的批处理文件，那么执行完那个批处理文件后将无法返回当前文件并执行当前文件的后续命令。
-
-call 命令接受用作调用目标的标签。如果在脚本或批处理文件外使用 Call，它将不会在命令行起作用。
+调用另一个批处理程序，并且不终止父批处理程序。如果不用call而直接调用别的批处理文件，那么执行完那个批处理文件后将无法返回当前文件并执行当前文件的后续命令。call 命令接受用作调用目标的标签。如果在脚本或批处理文件外使用 Call，它将不会在命令行起作用。
 
 ```bat
 REM 调用指定目录下的 test2.bat，且输入3个参数给他
@@ -390,16 +386,19 @@ usebackq - 指定新语法已在下类情况中使用:
 
 在作为命令执行一个后引号的字符串并且一个单引号字符为文字字符串命令并允许在 filenameset中使用双引号扩起文件名称。
 
-3) Sample:
-1. 如下命令行会显示当前目录下所有以bat或者txt为扩展名的文件名。
+1. 显示当前目录下所有以bat或者txt为扩展名的文件名
+
 ```bat
 for %%c in (*.bat *.txt) do (echo %%c)
 ```
-a. 如下命令行会显示当前目录下所有包含有 e 或者 i 的目录名。
+a. 显示当前目录下所有包含有 e 或者 i 的目录名
+
 ```bat
 for /D %%a in (*e* *i*) do echo %%a
 ```
-b. 如下命令行会显示 E盘test目录 下所有以bat或者txt为扩展名的文件名。
+
+b. 显示 E盘test目录 下所有以bat或者txt为扩展名的文件名。
+
 ```bat
 for /R E:\test %%b in (*.txt *.bat) do echo %%b
 for /r %%c in (*) do (echo %%c) :: 遍历当前目录下所有文件
@@ -424,7 +423,7 @@ if {!atmp!}=={} ( echo.) else echo !atmp!
 
 )
 
-:: 读取记事本里的内容(使用 delims 是为了把一行显示全,否则会以空格为分隔符)
+REM 读取记事本里的内容(使用 delims 是为了把一行显示全,否则会以空格为分隔符)
 
 for /f "delims=" %%a in (zhidian.txt) do echo.%%a
 ```
@@ -530,22 +529,22 @@ set str1=%str1%%str2% (合并 str1 和 str2)
 没有现成的函数。如下程序利用 goto形成循环，不断将字符串截短1，并记录截短的次数，到字符串变成空时的次数即长度。
 ```bat
 set testStr=This is a test string
-:: 将 testStr 复制到str，str 是个临时字符串
+REM 将 testStr 复制到str，str 是个临时字符串
 set str=%testStr%
-:: 标签，用于goto跳转
+REM 标签，用于goto跳转
 :next1
-:: 判断str是不是空，如果不是则执行下边的语句
+REM 判断str是不是空，如果不是则执行下边的语句
 if not "%str%"=="" (
-:: 算术运算，使num的值自增1，相当于num++或者++num语句
+REM 算术运算，使num的值自增1，相当于num++或者++num语句
 set /a num+=1
-:: 截取字符串，每次截短1
+REM 截取字符串，每次截短1
 set "str=%str:~1%"
-:: 跳转到next1标签: 这里利用goto和标签，构成循环结构
+REM 跳转到next1标签: 这里利用goto和标签，构成循环结构
 goto next1
 
 )
 
-:: 当以上循环结构执行完毕时，会执行下边的语句
+REM 当以上循环结构执行完毕时，会执行下边的语句
 echo testStr=%testStr%
 echo testStr的长度为：%num%
 ```
@@ -635,6 +634,7 @@ example: REG ADD HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Ru
 
 ## 刷新注册表
 修改注册表之后，结束并重新加载explorer.exe进程，可刷新注册表，令其生效
+
 ```bat
 taskkill /f /im explorer.exe >nul
 start "" "explorer.exe"
@@ -643,17 +643,31 @@ start "" "explorer.exe"
 
 # 系统服务
 ## 停止/启动
-1. 停止服务：NET STOP 服务名
-2. 启动服务：NET Start 服务名
+```bat
+REM 停止服务
+NET STOP 服务名
 
+REM 启动服务
+NET Start 服务名
+```
 ##  设置启动类型
-1. 自动： SC CONFIG 服务名 START= auto
-2. 手动： SC CONFIG 服务名 START= demand
-3. 已禁用：SC CONFIG 服务名 START= disabled
+```bat
+REM 自动： 
+SC CONFIG 服务名 START= auto
+
+REM 手动： 
+SC CONFIG 服务名 START= demand
+
+REM 已禁用：
+SC CONFIG 服务名 START= disabled
+```
 
 附：“START= ”等号后面必须要有一个空格。(start还有boot,system两个值)
 
-Sample: SC CONFIG Spooler START= demand (打印机加载项，设置成手动，默认自动)
+```bat
+REM 打印机加载项，设置成手动，默认自动
+SC CONFIG Spooler START= demand
+```
 
 ## 查看系统服务：
 ```bat
@@ -762,7 +776,7 @@ MD [drive:]path
 
 
 
-# 实践部分:
+# 实践部分
 
 1. 调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略,如：`start LeapFTP.exe` 与 `start leapftp` 效果一样，都是运行“LeapFTP.exe”文件。每行的开头的字符串会自动查找程序来运行，还可用双引号引起来(文件名或目录名含空格时必须用),如："D:\Program Files\Leap FTP.exe" "LeapFTP.exe" 可正常运行文件，start "" "LeapFTP.exe" 也可以正常运行文件(注意，第一个参数是窗口显示的标题)
 
@@ -776,10 +790,10 @@ MD [drive:]path
 
 7. 在命令末尾加上 `>NUL 2>NUL`，表示隐蔽返回信息。
 
-8. 等待用户输入： 
+8. 等待用户输入：set /p 变量名=屏幕显示信息
 
 ```bat
-set /p 变量名=屏幕显示信息。 Sample：set /p pass=请输入密码:
+set /p pass=请输入密码:
 ```
 
 9. 让用户按回车退出,小技巧(替代pause)，文件的最后一句：
@@ -876,15 +890,16 @@ echo [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup] >> c:\
 echo "ServicePackSourcePath"="D:\\Win2003\\" >> c:\setupreg.reg
 echo "SourcePath"="D:\\Win2003\\" >> c:\setupreg.reg
 
-:: 写入注册表
+REM 写入注册表
 regedit /S c:\setupreg.reg
 
-:: 删除注册表文件
+REM 删除注册表文件
 del c:\setupreg.reg
 ```
  
 
-2. 调用了exe文件,结束后没有关闭，解决方法:用start命令运行文件，如：
+2. 调用了exe文件,结束后没有关闭，解决方法:用start命令运行文件，如
+
 ```bat
 start LeapFTP.exe 192.168.0.100
 ```
@@ -892,13 +907,13 @@ start LeapFTP.exe 192.168.0.100
 3. 设置系统环境变量
 
 ```bat
-:: 有这个环境变量，则不需再设置，直接结束
+REM 有这个环境变量，则不需再设置，直接结束
 if not "%JAVA_HOME%" == "" exit
 
-:: 设置环境变量的地址
+REM 设置环境变量的地址
 set inputJavaHome=%cd%\jdk1.6.0_07
 
-:: 设置环境变量，也可以设置当前用户的变量
+REM 设置环境变量，也可以设置当前用户的变量
 set EnvironmentHome=HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
 
 echo 正在设置环境变量，请稍候......
@@ -906,7 +921,7 @@ reg add "%EnvironmentHome%" /v JAVA_HOME /t reg_sz /d "%inputJavaHome%" /f
 reg add "%EnvironmentHome%" /v ClassPath /t reg_sz /d ".;%%JAVA_HOME%%\lib" /f
 reg add "%EnvironmentHome%" /v Path /t reg_sz /d "%%JAVA_HOME%%\bin;%Path%" /f]
 
-:: 刷新，令环境变量生效
+REM 刷新，令环境变量生效
 taskkill /f /im explorer.exe >nul
 start "" "explorer.exe"
 ```
@@ -943,8 +958,9 @@ pause
 @echo off
 
 del /f /s /q c:\recycler\*.*
+del /f /s /q %systemdrive%\recycled\*.*
 
-::刷新屏幕
+REM 新屏幕
 taskkill /f /im explorer.exe >nul
 start "" "explorer.exe"
 ```
@@ -956,9 +972,9 @@ start "" "explorer.exe"
 @echo off
 
 :begin
-:: 发出鸣叫(“”实际就是ASCII码值为7的特殊字符（蜂鸣键beep）
+REM 发出鸣叫(“”实际就是ASCII码值为7的特殊字符（蜂鸣键beep）
 echo
-:: 让程序暂停一小阵子
+REM 让程序暂停一小阵子
 ping -n 1 -l 1 127.1>nul
 goto :begin
 ```
@@ -989,7 +1005,7 @@ CONVERT volume /FS:NTFS [/V] [/CvtArea:filename] [/NoSecurity] [/X]
 @ ECHO.
 
 convert c: /fs:ntfs
-:: D盘也转成 NTFS
+REM D盘也转成 NTFS
 convert d: /fs:ntfs
 ```
 
@@ -1000,7 +1016,7 @@ SET SF="HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders"
 
 FOR /F "tokens=2,*" %%I IN ('REG QUERY %SF% /v Personal 2^>NUL^|FIND /I "Personal"') DO SET "myDoc=%%~J"
 
-:: 复制文件到我的文档
+REM 复制文件到我的文档
 XCOPY /D /E /R /Y /C "%cd%\test.txt" "%myDoc%\test\"
 ```
 
