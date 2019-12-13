@@ -8,7 +8,7 @@ author:
   - Vitan
 enable_unread_badge: true
 toc: true
-thumbnail: /images/Typography.png
+thumbnail: /images/Batch.png
 date: 2019-11-03 09:53:23
 ---
 CMD 基础
