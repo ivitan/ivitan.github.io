@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://vitan.me/posts/WinTask.html</loc>
+    <loc>https://vitan.me/posts/Batch.html</loc>
     
-    <lastmod>2019-12-13T05:02:01.214Z</lastmod>
+    <lastmod>2019-12-13T05:34:00.602Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Batch.html</loc>
+    <loc>https://vitan.me/posts/CMD.html</loc>
     
-    <lastmod>2019-12-11T06:11:59.008Z</lastmod>
+    <lastmod>2019-12-13T05:32:31.259Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/WinTask.html</loc>
+    
+    <lastmod>2019-12-13T05:32:04.563Z</lastmod>
     
   </url>
   
@@ -1146,13 +1153,6 @@
     <loc>https://vitan.me/posts/Colorful-Man-Page.html</loc>
     
     <lastmod>2019-12-10T01:38:54.142Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/CMD.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.141Z</lastmod>
     
   </url>
   
