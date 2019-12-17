@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/about/index.html</loc>
+    
+    <lastmod>2019-12-17T05:45:13.295Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/Batch.html</loc>
     
     <lastmod>2019-12-13T05:34:00.602Z</lastmod>
@@ -38,13 +45,6 @@
   
   <url>
     <loc>https://vitan.me/posts/first.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/about/index.html</loc>
     
     <lastmod>2019-12-10T01:38:54.202Z</lastmod>
     

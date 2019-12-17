@@ -196,187 +196,196 @@
         <div class="content">
             <p>Vim 重新学习笔记</p>
 <a id="more"></a>
-<h1 id="三个模式"><a href="#三个模式" class="headerlink" title="三个模式"></a>三个模式</h1><h2 id="Insert-编辑模式"><a href="#Insert-编辑模式" class="headerlink" title="Insert 编辑模式"></a>Insert 编辑模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="hljs-comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="hljs-comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure>
-
+<h1 id="三个模式">三个模式</h1>
+<h2 id="insert-编辑模式">Insert 编辑模式</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="hljs-comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="hljs-comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>i (insert)</li>
 <li>a (append)</li>
 <li>o (oppen a line below)</li>
 </ul>
-<h2 id="Command-模式"><a href="#Command-模式" class="headerlink" title="Command 模式"></a>Command 模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq <span class="hljs-comment"># 保存退出</span></span><br><span class="line">:vs <span class="hljs-comment"># vertical split 横向分频</span></span><br><span class="line">:sp <span class="hljs-comment"># 纵向分频</span></span><br><span class="line">:% s/foo/bar/g <span class="hljs-comment"># 全局替换</span></span><br><span class="line">:h option-list <span class="hljs-comment"># 查找所有设置选项</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Visual-可视-模式"><a href="#Visual-可视-模式" class="headerlink" title="Visual (可视)模式"></a>Visual (可视)模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v <span class="hljs-comment"># 进入 visual 模式</span></span><br><span class="line">V <span class="hljs-comment"># 选择行</span></span><br><span class="line">ctrl v <span class="hljs-comment"># 进行快选择</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="如何快速纠错"><a href="#如何快速纠错" class="headerlink" title="如何快速纠错"></a>如何快速纠错</h1><p>a/i/o 进入插入模式</p>
+<h2 id="command-模式">Command 模式</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq <span class="hljs-comment"># 保存退出</span></span><br><span class="line">:vs <span class="hljs-comment"># vertical split 横向分频</span></span><br><span class="line">:sp <span class="hljs-comment"># 纵向分频</span></span><br><span class="line">:% s/foo/bar/g <span class="hljs-comment"># 全局替换</span></span><br><span class="line">:h option-list <span class="hljs-comment"># 查找所有设置选项</span></span><br></pre></td></tr></table></figure>
+<h2 id="visual-可视-模式">Visual (可视)模式</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v <span class="hljs-comment"># 进入 visual 模式</span></span><br><span class="line">V <span class="hljs-comment"># 选择行</span></span><br><span class="line">ctrl v <span class="hljs-comment"># 进行快选择</span></span><br></pre></td></tr></table></figure>
+<h1 id="如何快速纠错">如何快速纠错</h1>
+<p>a/i/o 进入插入模式</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl h <span class="hljs-comment"># 删除上一个字符</span></span><br><span class="line">ctrl w <span class="hljs-comment"># 删除上一个单词</span></span><br><span class="line">ctrl u <span class="hljs-comment"># 删除当前行</span></span><br></pre></td></tr></table></figure>
-
 <p>快速切换 Insert 和 Normal</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl c / ctrl [ <span class="hljs-comment"># 代替 Esc</span></span><br><span class="line">gi <span class="hljs-comment"># 快速跳转到你最后一次编辑的地方并进入插入模式</span></span><br></pre></td></tr></table></figure>
-
 <p>使用 hjkl 移动</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h <span class="hljs-comment"># 左</span></span><br><span class="line">j <span class="hljs-comment"># 下</span></span><br><span class="line">k <span class="hljs-comment"># 上</span></span><br><span class="line">l <span class="hljs-comment"># 右</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="在单词之间飞舞"><a href="#在单词之间飞舞" class="headerlink" title="在单词之间飞舞"></a>在单词之间飞舞</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w/W <span class="hljs-comment"># 移到下一 word/WORD 开头</span></span><br><span class="line">e/E <span class="hljs-comment"># 下一个 word/WORD 尾</span></span><br><span class="line">b/B <span class="hljs-comment"># 回到上一个word/WORD 开头</span></span><br></pre></td></tr></table></figure>
-
+<h1 id="在单词之间飞舞">在单词之间飞舞</h1>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w/W <span class="hljs-comment"># 移到下一 word/WORD 开头</span></span><br><span class="line">e/E <span class="hljs-comment"># 下一个 word/WORD 尾</span></span><br><span class="line">b/B <span class="hljs-comment"># 回到上一个word/WORD 开头</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>word 指以非空白符分割的单词</li>
 <li>WORD 以空白符分割的单词</li>
 </ul>
 <p>行间搜索移动</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;char&#125; <span class="hljs-comment"># 移到 char 字符上</span></span><br><span class="line">t <span class="hljs-comment"># 移到 char 前一个字符</span></span><br><span class="line">F <span class="hljs-comment"># 反过来搜索前面的字符</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>; 该行下一个</li>
 <li>, 该行上一个</li>
 </ul>
 <p>水平移动</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 <span class="hljs-comment"># 移到行首第一个字符</span></span><br><span class="line">^ <span class="hljs-comment"># 第一个非空白字符</span></span><br><span class="line">$ <span class="hljs-comment"># 移到行尾</span></span><br><span class="line">g_ <span class="hljs-comment"># 移到行尾非空白字符</span></span><br></pre></td></tr></table></figure>
-
 <p>垂直移到</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">() <span class="hljs-comment"># 在句子间移动</span></span><br><span class="line">&#123;&#125; <span class="hljs-comment"># 在段落间移到</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>插件 easy-motion</li>
 </ul>
 <p>页面移动</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gg、G <span class="hljs-comment"># 文件开头/结尾</span></span><br><span class="line">ctrl o <span class="hljs-comment"># 快速返回</span></span><br><span class="line"></span><br><span class="line">H/M/L <span class="hljs-comment"># 跳到屏幕开头(Head)中间(Middle)结尾(Lower)</span></span><br><span class="line">ctrl u <span class="hljs-comment"># 上翻页</span></span><br><span class="line">ctrl f <span class="hljs-comment"># 下翻页</span></span><br><span class="line">zz <span class="hljs-comment"># 把屏幕置为中间</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h1><p>增</p>
+<h1 id="增删查改">增删查改</h1>
+<p>增</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a/i/o</span><br><span class="line">A/I/O</span><br></pre></td></tr></table></figure>
-
 <p>快速删除</p>
 <figure class="highlight bash hljs"><figcaption><span>normal 模式下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x <span class="hljs-comment"># 快速删一个字符</span></span><br><span class="line">d <span class="hljs-comment"># 删除</span></span><br><span class="line">daw <span class="hljs-comment"># 删除一个单词</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>d x 可以搭配数字执行多次</li>
 </ul>
 <p>快速修改</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r(replace) c(change) s(substitute) <span class="hljs-comment"># 常用</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>normal 下 r 可以替换一个字符，s 替换并进入插入模式</li>
 <li>使用 c 配合文本对象可以快速进行修改</li>
 </ul>
 <p>查询</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ <span class="hljs-comment"># 前向搜索</span></span><br><span class="line">? <span class="hljs-comment"># 反向搜索</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>n/N 跳转上一个或者上一个匹配</li>
-<li><ul>
+<li>
+<ul>
 <li>或者 # 进行当前单词的前向和后向匹配</li>
 </ul>
 </li>
 </ul>
-<h1 id="替换命令"><a href="#替换命令" class="headerlink" title="替换命令"></a>替换命令</h1><p>substitute</p>
+<h1 id="替换命令">替换命令</h1>
+<p>substitute</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:[range]s[ubsitite]/&#123;pattern&#125;/&#123;string&#125;/[flags]</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>range 范围(:10,20),10-20行,% 全部</li>
 <li>pattern 要替换的模式</li>
 <li>string 是替换后的文本</li>
 </ul>
-<h2 id="替换标志位"><a href="#替换标志位" class="headerlink" title="替换标志位"></a>替换标志位</h2><p>Flags 常用标志</p>
+<h2 id="替换标志位">替换标志位</h2>
+<p>Flags 常用标志</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g(global) <span class="hljs-comment"># 全局</span></span><br><span class="line">c(confirm) <span class="hljs-comment"># 表示确认，可以确认或拒绝修改</span></span><br><span class="line">n(number) <span class="hljs-comment"># 报告匹配到的次数而不替换，可以用来匹配次数</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>:1,6 s/self// 查询1-6行有几个 self</li>
 <li>:% s/&lt;quack&gt;/jiao/g 替换所有 quack 为 jiao</li>
 </ul>
-<h1 id="Buffer-Windows-Tab"><a href="#Buffer-Windows-Tab" class="headerlink" title="Buffer Windows Tab"></a>Buffer Windows Tab</h1><p>文件操作相关</p>
+<h1 id="buffer-windows-tab">Buffer Windows Tab</h1>
+<p>文件操作相关</p>
 <ol>
 <li>Buffer 是打开的一个文件的内存缓冲区</li>
 <li>窗口是 Buffer 可视化的分割区域</li>
 <li>Tab 可以组织窗口为一个工作区</li>
 </ol>
-<h2 id="在-Buffer-之间切换"><a href="#在-Buffer-之间切换" class="headerlink" title="在 Buffer 之间切换"></a>在 Buffer 之间切换</h2><ol>
+<h2 id="在-buffer-之间切换">在 Buffer 之间切换</h2>
+<ol>
 <li>使用 :ls 列举当前缓冲区，后 :b n跳转到第 n 个</li>
 <li>:bpre :bnext :bfirst :blast</li>
 <li>或者 :b buffer_name 加上 tab 补全来跳转</li>
 </ol>
-<h2 id="Windows-窗口"><a href="#Windows-窗口" class="headerlink" title="Windows 窗口"></a>Windows 窗口</h2><ol>
+<h2 id="windows-窗口">Windows 窗口</h2>
+<ol>
 <li><ctrl w>s 水平分割</ctrl></li>
 <li><ctrl w>v 垂直分割</ctrl></li>
 <li>或者 :sp :vs</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt><br><img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt></p>
-<h1 id="宏-macro"><a href="#宏-macro" class="headerlink" title="宏(macro)"></a>宏(macro)</h1><p>可以看做一系列命令合集</p>
-<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><ol>
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt>
+<img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt></p>
+<h1 id="宏-macro">宏(macro)</h1>
+<p>可以看做一系列命令合集</p>
+<h2 id="how">How</h2>
+<ol>
 <li>q 录制、技术录制</li>
 <li>q{register} 选择要保存的寄存器，把录制的命令保存其中</li>
-<li>@{register} 回放寄存器中的一系列命令<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="hljs-string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="hljs-comment"># 全选</span></span><br><span class="line">: I<span class="hljs-string">"</span></span><br><span class="line"><span class="hljs-string">:t # 重复上一命令</span></span><br><span class="line"><span class="hljs-string">:A"</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>@{register} 回放寄存器中的一系列命令</li>
 </ol>
-<h1 id="常见的补全"><a href="#常见的补全" class="headerlink" title="常见的补全"></a>常见的补全</h1><table>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="hljs-string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="hljs-comment"># 全选</span></span><br><span class="line">: I<span class="hljs-string">"</span></span><br><span class="line"><span class="hljs-string">:t # 重复上一命令</span></span><br><span class="line"><span class="hljs-string">:A"</span></span><br></pre></td></tr></table></figure>
+<h1 id="常见的补全">常见的补全</h1>
+<table>
 <thead>
 <tr>
-<th align="left">命令</th>
-<th align="left">补全类型</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">补全类型</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">ctrl n</td>
-<td align="left">普通关键字</td>
+<tbody>
+<tr>
+<td style="text-align:left">ctrl n</td>
+<td style="text-align:left">普通关键字</td>
 </tr>
 <tr>
-<td align="left">ctrl x/n</td>
-<td align="left">当前缓冲区关键字</td>
+<td style="text-align:left">ctrl x/n</td>
+<td style="text-align:left">当前缓冲区关键字</td>
 </tr>
 <tr>
-<td align="left">ctrl x/i</td>
-<td align="left">包含文件关键字</td>
+<td style="text-align:left">ctrl x/i</td>
+<td style="text-align:left">包含文件关键字</td>
 </tr>
 <tr>
-<td align="left">ctrl x/J</td>
-<td align="left">标签文件关键字</td>
+<td style="text-align:left">ctrl x/J</td>
+<td style="text-align:left">标签文件关键字</td>
 </tr>
 <tr>
-<td align="left">ctrl x/k</td>
-<td align="left">字典查找</td>
+<td style="text-align:left">ctrl x/k</td>
+<td style="text-align:left">字典查找</td>
 </tr>
 <tr>
-<td align="left">ctrl x/l</td>
-<td align="left">整行补全</td>
+<td style="text-align:left">ctrl x/l</td>
+<td style="text-align:left">整行补全</td>
 </tr>
 <tr>
-<td align="left">ctrl x/f</td>
-<td align="left">文件名补全</td>
+<td style="text-align:left">ctrl x/f</td>
+<td style="text-align:left">文件名补全</td>
 </tr>
 <tr>
-<td align="left">ctrl x/o</td>
-<td align="left">全能(Omni)补全</td>
+<td style="text-align:left">ctrl x/o</td>
+<td style="text-align:left">全能(Omni)补全</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-<h2 id="最常用"><a href="#最常用" class="headerlink" title="最常用"></a>最常用</h2><ol>
+<h2 id="最常用">最常用</h2>
+<ol>
 <li>ctrl n 和 ctrl p 补全单词</li>
 <li>ctrl x 和 ctrl f 补全文件名</li>
-<li>ctrl x 和 ctrl o 补全代码 </li>
+<li>ctrl x 和 ctrl o 补全代码</li>
 </ol>
-<h1 id="更换配色"><a href="#更换配色" class="headerlink" title="更换配色"></a>更换配色</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:colorscheme <span class="hljs-comment"># 显示当前主题配色</span></span><br><span class="line">:colorscheme &lt;ctrl+d&gt; <span class="hljs-comment"># 显示所有配色</span></span><br><span class="line">:colorscheme 配色名 <span class="hljs-comment"># 修改配色</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h1><h2 id="基本映射"><a href="#基本映射" class="headerlink" title="基本映射"></a>基本映射</h2><ul>
+<h1 id="更换配色">更换配色</h1>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:colorscheme <span class="hljs-comment"># 显示当前主题配色</span></span><br><span class="line">:colorscheme &lt;ctrl+d&gt; <span class="hljs-comment"># 显示所有配色</span></span><br><span class="line">:colorscheme 配色名 <span class="hljs-comment"># 修改配色</span></span><br></pre></td></tr></table></figure>
+<h1 id="映射">映射</h1>
+<h2 id="基本映射">基本映射</h2>
+<ul>
 <li>normal 模式下(leadser键即 <code>,</code> )</li>
 </ul>
 <ol>
 <li>map 可以实现映射，<code>:map -x</code> 然后按下 - 就会删除一个字符</li>
 <li><code>:map &lt;space&gt; viw</code> 按下空格键时选中整个单词</li>
-<li>`:map <c-d> dd 删除<ul>
-<li>消除映射 <code>unmap -</code></li>
-<li><code>imap &lt;c-d&gt; &lt;Esc&gt;ddi</code> insert 模式映射 ctrl+d 删除一行</li>
-</ul>
-</c-d></li>
+<li>`:map <c-d> dd 删除</c-d></li>
 </ol>
 <ul>
-<li>模式映射映射</li>
+<li>
+<p>消除映射 <code>unmap -</code></p>
+</li>
+<li>
+<p><code>imap &lt;c-d&gt; &lt;Esc&gt;ddi</code> insert 模式映射 ctrl+d 删除一行</p>
+</li>
+<li>
+<p>模式映射映射</p>
+</li>
 </ul>
 <ol>
-<li>用 namap/vmap/imap 定义映射只在normal/visual/insert分别有效<ul>
+<li>用 namap/vmap/imap 定义映射只在normal/visual/insert分别有效</li>
+</ol>
+<ul>
 <li><code>:vmap \U</code> 把 visusal 模式下选中的文本大小(u/U转换大小写)</li>
 </ul>
-</li>
-</ol>
-<h2 id="递归与非递归映射"><a href="#递归与非递归映射" class="headerlink" title="递归与非递归映射"></a>递归与非递归映射</h2><p>*map 系列有递归风险,如果安装了一个插件，插件映射了同一个按键的不同行为，有冲突就会有一个失效。</p>
+<h2 id="递归与非递归映射">递归与非递归映射</h2>
+<p>*map 系列有递归风险,如果安装了一个插件，插件映射了同一个按键的不同行为，有冲突就会有一个失效。</p>
 <p>非递归映射</p>
 <ol>
 <li>*map 对应的 nnoremap/vnoremao/inoremap</li>
@@ -384,19 +393,21 @@
 </ol>
 <p>示例</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">let</span> mapleader = <span class="hljs-string">","</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt; <span class="hljs-comment"># 插入模式保存</span></span><br><span class="line">inoremap jj &lt;Esc&gt; <span class="hljs-comment"># 使用jj直接进入 normal</span></span><br><span class="line"><span class="hljs-comment"># 使用 leader+w 直接保存</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;</span><br><span class="line">noremap &lt;leader&gt;w :w&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 切换 Buffer</span></span><br><span class="line">nnoremap &lt;slient&gt; [b :bprevious&lt;CR&gt;</span><br><span class="line">nnoremap &lt;slient&gt; [n :bnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 分屏</span></span><br><span class="line">noremap &lt;C-h&gt; &lt;C-w&gt;h</span><br><span class="line">noremap &lt;C-j&gt; &lt;C-w&gt;j</span><br><span class="line">noremap &lt;C-k&gt; &lt;C-w&gt;k</span><br><span class="line">noremap &lt;C<span class="hljs-_">-l</span>&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># json 格式化</span></span><br><span class="line">comr FormatJSON %!python3 -m json.tool</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># sudo to write</span></span><br><span class="line">cnoremap w!! w !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure>
-
-<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="常见的插件管理器"><a href="#常见的插件管理器" class="headerlink" title="常见的插件管理器"></a>常见的插件管理器</h2><p>vim-plug,Vundle,Pathogen,Deim </p>
-<h2 id="vim-plug"><a href="#vim-plug" class="headerlink" title="vim-plug"></a><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a></h2><ul>
+<h1 id="插件">插件</h1>
+<h2 id="常见的插件管理器">常见的插件管理器</h2>
+<p>vim-plug,Vundle,Pathogen,Deim</p>
+<h2 id="vim-plug"><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a></h2>
+<ul>
 <li>安装 vim-plug</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="hljs-built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight bash hljs"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="hljs-comment">#begin('~/.vim/plugged')</span></span><br><span class="line">Plug <span class="hljs-string">'mhinz/vim-startify'</span> <span class="hljs-comment"># 插件</span></span><br><span class="line"><span class="hljs-string">" Initialize plugin system</span></span><br><span class="line"><span class="hljs-string">call plug#end()</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="安装插件">安装插件</h2>
+<figure class="highlight bash hljs"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="hljs-comment">#begin('~/.vim/plugged')</span></span><br><span class="line">Plug <span class="hljs-string">'mhinz/vim-startify'</span> <span class="hljs-comment"># 插件</span></span><br><span class="line"><span class="hljs-string">" Initialize plugin system</span></span><br><span class="line"><span class="hljs-string">call plug#end()</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>source ~/.vimrc</code> 并 <code>:PlugInstall</code></li>
 </ul>
-<h2 id="vim-美观插件"><a href="#vim-美观插件" class="headerlink" title="vim 美观插件"></a>vim 美观插件</h2><ul>
+<h2 id="vim-美观插件">vim 美观插件</h2>
+<ul>
 <li>外观</li>
 </ul>
 <ol>
@@ -412,57 +423,62 @@
 <li><a href="https://github.com/altercation/vim-colors-solarized" target="_blank" rel="noopener">solarized</a></li>
 <li><a href="https://github.com/morhetz/gruvbox" target="_blank" rel="noopener">grubbox</a></li>
 </ol>
-<h2 id="插件推荐网站"><a href="#插件推荐网站" class="headerlink" title="插件推荐网站"></a>插件推荐网站</h2><p><a href="https://vimawesome.com" target="_blank" rel="noopener">vimawesome</a></p>
-<h2 id="文件目录和搜索插件"><a href="#文件目录和搜索插件" class="headerlink" title="文件目录和搜索插件"></a>文件目录和搜索插件</h2><ul>
+<h2 id="插件推荐网站">插件推荐网站</h2>
+<p><a href="https://vimawesome.com" target="_blank" rel="noopener">vimawesome</a></p>
+<h2 id="文件目录和搜索插件">文件目录和搜索插件</h2>
+<ul>
 <li>文件目录 <a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">nerdtree</a></li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot; 查找文件所在位置</span><br><span class="line">nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;</span><br><span class="line">&quot; 切换设置</span><br><span class="line">nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><p>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Crtl + P 后输入要搜索的内容</li>
+<li>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a></li>
 </ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>Crtl + P 后输入要搜索的内容</p>
 </li>
-<li><p>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a></p>
+<li>
+<p>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a></p>
+</li>
+</ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Files . <span class="hljs-comment"># 搜索当前目录</span></span><br><span class="line">:Ag content <span class="hljs-comment"># 搜索字符串</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></p>
-</li>
+<ul>
+<li>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></li>
 </ul>
 <p>映射</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unmap ss &lt;Plus&gt;(easymotion-s2)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>修改成对内容 <a href="https://github.com/tpope/vim-surround" target="_blank" rel="noopener">vim-surround</a></li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ds <span class="hljs-comment"># delete a surrounding</span></span><br><span class="line">cs <span class="hljs-comment"># change a surrounding</span></span><br><span class="line">ys <span class="hljs-comment"># you add a surrounding</span></span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a></li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="浏览代码"><a href="#浏览代码" class="headerlink" title="浏览代码"></a>浏览代码</h3><p><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">targbar</a></p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
+<h2 id="代码">代码</h2>
+<h3 id="浏览代码">浏览代码</h3>
+<p><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">targbar</a></p>
 <figure class="highlight bash hljs"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonormal &lt;leader&gt;t :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://github.com/lfv89/vim-interestingwords" target="_blank" rel="noopener">vim-interestingwords</a> 可以高亮单词</p>
-<h3 id="补全"><a href="#补全" class="headerlink" title="补全"></a>补全</h3><p>补全插件</p>
+<h3 id="补全">补全</h3>
+<p>补全插件</p>
 <ol>
 <li><a href="https//github.com/shougo/deoplete.nvim">deoplete.nvim</a> 多语言，模糊搜索</li>
 <li><a href="https://github.com/neoclide/coc.nvim" target="_blank" rel="noopener">coc.vim</a> 多语言插件支持</li>
 </ol>
-<p>快速注释<br><a href="https://github.com/tpope/vim-commentary" target="_blank" rel="noopener">vim-commentary</a> <code>gc</code> 注释或取消注释</p>
-<h2 id="格式化与静态检查"><a href="#格式化与静态检查" class="headerlink" title="格式化与静态检查"></a>格式化与静态检查</h2><p>格式化</p>
+<p>快速注释
+<a href="https://github.com/tpope/vim-commentary" target="_blank" rel="noopener">vim-commentary</a> <code>gc</code> 注释或取消注释</p>
+<h2 id="格式化与静态检查">格式化与静态检查</h2>
+<p>格式化</p>
 <p><a href="https://github.com/sbdchd/neoformat" target="_blank" rel="noopener">Neoformat</a> 需要安装对应语言的格式化库，python的autopep8,js的prettier等</p>
 <p>静态检查Lint</p>
 <p>neomake、<a href="https://github.com/w0rp/ale" target="_blank" rel="noopener">ale</a> 需要安装对应语言的 lint 库如 eslint/pylint/golint</p>
-<h2 id="Python-相关"><a href="#Python-相关" class="headerlink" title="Python 相关"></a>Python 相关</h2><p><a href="https://github.com/python-mode/python-mode" target="_blank" rel="noopener">Python-mode</a> 具有基本的补全，跳转，重构，格式化功能</p>
+<h2 id="python-相关">Python 相关</h2>
+<p><a href="https://github.com/python-mode/python-mode" target="_blank" rel="noopener">Python-mode</a> 具有基本的补全，跳转，重构，格式化功能</p>
 <figure class="highlight bash hljs"><figcaption><span>.vimer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">" Python-mode</span></span><br><span class="line"><span class="hljs-string">let g:pymode_python =  'python3'</span></span><br><span class="line"><span class="hljs-string">let g:pymode_trim_whitespaces = 1</span></span><br><span class="line"><span class="hljs-string">let g:pymode_doc = 1</span></span><br><span class="line"><span class="hljs-string">let g:pymode_doc_bind = 'k'</span></span><br><span class="line"><span class="hljs-string">let g:pymode_rope_goto_definition_bind = "</span>&lt;C-J&gt;<span class="hljs-string">"</span></span><br><span class="line"><span class="hljs-string">let g:pymode_lint = `</span></span><br><span class="line"><span class="hljs-string">let g:pymode_lint_checkers = ['pyflakers','pep8','mccabe','plylint']</span></span><br><span class="line"><span class="hljs-string">let g:pymode_options_max_line_length = 120</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://github.com/tppope/vim-fugitive" target="_blank" rel="noopener">Fugitive</a></p>
+<h2 id="git">Git</h2>
+<p><a href="https://github.com/tppope/vim-fugitive" target="_blank" rel="noopener">Fugitive</a></p>
 <ul>
 <li>命令 <code>:Gedit</code>,<code>:Gdiff</code>,<code>:Gblame</code>,<code>:Gcommit</code> 等</li>
 </ul>
@@ -626,15 +642,15 @@
             <span class="has-mr-6">1</span>
             <span>三个模式</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#Insert-编辑模式">
+            <a class="is-flex" href="#insert-编辑模式">
             <span class="has-mr-6">1.1</span>
             <span>Insert 编辑模式</span>
             </a></li><li>
-            <a class="is-flex" href="#Command-模式">
+            <a class="is-flex" href="#command-模式">
             <span class="has-mr-6">1.2</span>
             <span>Command 模式</span>
             </a></li><li>
-            <a class="is-flex" href="#Visual-可视-模式">
+            <a class="is-flex" href="#visual-可视-模式">
             <span class="has-mr-6">1.3</span>
             <span>Visual (可视)模式</span>
             </a></li></ul></li><li>
@@ -658,15 +674,15 @@
             <span class="has-mr-6">5.1</span>
             <span>替换标志位</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#Buffer-Windows-Tab">
+            <a class="is-flex" href="#buffer-windows-tab">
             <span class="has-mr-6">6</span>
             <span>Buffer Windows Tab</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#在-Buffer-之间切换">
+            <a class="is-flex" href="#在-buffer-之间切换">
             <span class="has-mr-6">6.1</span>
             <span>在 Buffer 之间切换</span>
             </a></li><li>
-            <a class="is-flex" href="#Windows-窗口">
+            <a class="is-flex" href="#windows-窗口">
             <span class="has-mr-6">6.2</span>
             <span>Windows 窗口</span>
             </a></li></ul></li><li>
@@ -674,7 +690,7 @@
             <span class="has-mr-6">7</span>
             <span>宏(macro)</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#How">
+            <a class="is-flex" href="#how">
             <span class="has-mr-6">7.1</span>
             <span>How</span>
             </a></li></ul></li><li>
@@ -746,11 +762,11 @@
             <span class="has-mr-6">11.8</span>
             <span>格式化与静态检查</span>
             </a></li><li>
-            <a class="is-flex" href="#Python-相关">
+            <a class="is-flex" href="#python-相关">
             <span class="has-mr-6">11.9</span>
             <span>Python 相关</span>
             </a></li><li>
-            <a class="is-flex" href="#Git">
+            <a class="is-flex" href="#git">
             <span class="has-mr-6">11.10</span>
             <span>Git</span>
             </a></li></ul></li></ul>
