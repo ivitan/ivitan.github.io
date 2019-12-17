@@ -22,6 +22,6 @@ share: false
 > - 本博客文章有些原创,有些来源自网络,若侵犯了您的版权,告知后会在第一时间删除
 
 # 联系方式
-> - **Email**：<a href="mailto:me@vitan.me">me@vitan.me</a>
+> - **Email**：<a href="mailto:vitan.me@gmail.com">ivitan.me#gmail.com</a>
 > - **Github**：https://github.com/ivitan
 > - **Telegram**：[ivitan](http://t.me/ivitan)
