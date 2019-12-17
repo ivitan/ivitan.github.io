@@ -2,14 +2,15 @@
 layout: page
 title: About
 description: About
-comment: false
 toc: false
-share: false
 ---
-<div align=center><img  src="/images/ivitan.png" style="border-radius:50%" width="250px" height="250px"/></div>
-<center>
-<iframe src="https://ghbtns.com/github-btn.html?user=ivitan&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
-</center>
+<p align="center" class="has-mb-6">
+<img src="/images/ivitan.png" style="border-radius:50%" width="200px" height="200px">
+<br> 
+<br>
+<iframe src="https://ghbtns.com/github-btn.html?user=ivitan&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="200px" height="28px"></iframe>
+<br>
+</p>
 
 # Vitan
 > - 数码爱好者
