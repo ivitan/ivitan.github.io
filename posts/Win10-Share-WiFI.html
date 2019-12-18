@@ -198,13 +198,12 @@
         <div class="content">
             <p>在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。</p>
 <a id="more"></a>
-<h1 id="方法">方法</h1>
-<ul>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
 <li>电脑端</li>
 </ul>
 <ol>
-<li>右键SSR/SS --&gt; 选项设置 --&gt; 勾选 <code>允许来自局域网连接</code>,V2ray 同样在设置中勾选 <code>允许来自局域网的连接</code></li>
-<li>CMD --&gt; 输入 <code>ipconfig</code> 获取 <code>无线的IPV4地址</code></li>
+<li>右键SSR/SS –&gt; 选项设置 –&gt; 勾选 <code>允许来自局域网连接</code>,V2ray 同样在设置中勾选 <code>允许来自局域网的连接</code></li>
+<li>CMD –&gt; 输入 <code>ipconfig</code> 获取 <code>无线的IPV4地址</code></li>
 <li>正常开启热点</li>
 </ol>
 <ul>
@@ -219,8 +218,7 @@
 <li>保存</li>
 </ol>
 <hr>
-<h1 id="跳过谷歌验证">跳过谷歌验证</h1>
-<ul>
+<h1 id="跳过谷歌验证"><a href="#跳过谷歌验证" class="headerlink" title="跳过谷歌验证"></a>跳过谷歌验证</h1><ul>
 <li>方法一</li>
 </ul>
 <p>即上述 Windows 10 开热点的方法</p>
@@ -228,6 +226,7 @@
 <li>方法二</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure user_setup_complete 1</span><br><span class="line">adb shell settings put global device_provisioned 1</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>方法三</li>
 </ul>

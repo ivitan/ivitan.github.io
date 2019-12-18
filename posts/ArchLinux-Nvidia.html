@@ -196,87 +196,101 @@
         <div class="content">
             <p>ArchLinux 双显卡驱动。</p>
 <a id="more"></a>
-<h1 id="安装">安装</h1>
-<h2 id="nvidia-和-xorg-xrandr">Nvidia 和 xorg-xrandr</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvidia nvidia-settings xorg-xrandr</span><br></pre></td></tr></table></figure>
-<h2 id="配置">配置</h2>
-<p>获取显卡 PCI 地址</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Nvidia-和-xorg-xrandr"><a href="#Nvidia-和-xorg-xrandr" class="headerlink" title="Nvidia 和 xorg-xrandr"></a>Nvidia 和 xorg-xrandr</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvidia nvidia-settings xorg-xrandr</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>获取显卡 PCI 地址</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci | grep -E <span class="hljs-string">"VGA|3D"</span></span><br></pre></td></tr></table></figure>
+
 <p>地址转换</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01:00.0 --&gt; 1:0:0 <span class="hljs-comment"># 转换示例</span></span><br></pre></td></tr></table></figure>
+
 <p>配置 xorg.conf</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/X11/xorg.conf</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>添加</li>
+<li>添加<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  Section <span class="hljs-string">"Module"</span></span><br><span class="line">	Load <span class="hljs-string">"modesetting"</span></span><br><span class="line">EndSection</span><br><span class="line"></span><br><span class="line">Section <span class="hljs-string">"Device"</span></span><br><span class="line">	Identifier <span class="hljs-string">"nvidia'"</span></span><br><span class="line">	Driver <span class="hljs-string">"nvidia"</span></span><br><span class="line">	BusID <span class="hljs-string">"1:0:0"</span></span><br><span class="line">	Option <span class="hljs-string">"AllowEmptyInitialConfiguration"</span></span><br><span class="line">EndSection</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  Section <span class="hljs-string">"Module"</span></span><br><span class="line">	Load <span class="hljs-string">"modesetting"</span></span><br><span class="line">EndSection</span><br><span class="line"></span><br><span class="line">Section <span class="hljs-string">"Device"</span></span><br><span class="line">	Identifier <span class="hljs-string">"nvidia'"</span></span><br><span class="line">	Driver <span class="hljs-string">"nvidia"</span></span><br><span class="line">	BusID <span class="hljs-string">"1:0:0"</span></span><br><span class="line">	Option <span class="hljs-string">"AllowEmptyInitialConfiguration"</span></span><br><span class="line">EndSection</span><br></pre></td></tr></table></figure>
-<h1 id="各桌面配置-display-managers">各桌面配置 (Display Managers)</h1>
-<h2 id="sddm-plasma">SDDM (Plasma)</h2>
-<p>启动管理器编辑脚本</p>
+<h1 id="各桌面配置-Display-Managers"><a href="#各桌面配置-Display-Managers" class="headerlink" title="各桌面配置 (Display Managers)"></a>各桌面配置 (Display Managers)</h1><h2 id="SDDM-Plasma"><a href="#SDDM-Plasma" class="headerlink" title="SDDM (Plasma)"></a>SDDM (Plasma)</h2><p>启动管理器编辑脚本</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/sddm/scripts/Xsetup</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>添加</li>
+<li>添加<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xrandr --setprovideroutputsource modesetting NVIDIA-0</span><br><span class="line">xrandr --auto</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xrandr --setprovideroutputsource modesetting NVIDIA-0</span><br><span class="line">xrandr --auto</span><br></pre></td></tr></table></figure>
-<h2 id="lightdm-deepin">LightDM (Deepin)</h2>
-<p>配置</p>
+<h2 id="LightDM-Deepin"><a href="#LightDM-Deepin" class="headerlink" title="LightDM (Deepin)"></a>LightDM (Deepin)</h2><p>配置</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/lightdm/display_setup.sh</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>添加</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/sh</span></span><br><span class="line">xrandr --setprovideroutputsource modesetting NVIDIA-0</span><br><span class="line">xrandr --auto</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>chmod 权限</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/lightdm/display_setup.sh</span><br></pre></td></tr></table></figure>
+
 <p>配置脚本</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>添加</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Seat:*]</span><br><span class="line">display-setup-script=/etc/lightdm/display_setup.sh</span><br></pre></td></tr></table></figure>
-<h2 id="gdm-gnome">GDM (Gnome)</h2>
-<p>创建两个新的 .desktop 文件</p>
+
+<h2 id="GDM-Gnome"><a href="#GDM-Gnome" class="headerlink" title="GDM (Gnome)"></a>GDM (Gnome)</h2><p>创建两个新的 .desktop 文件</p>
 <ul>
 <li>/usr/share/gdm/greeter/autostart/optimus.desktop 下创建</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>添加</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Name=Optimus</span><br><span class="line">Exec=sh -c <span class="hljs-string">"xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"</span></span><br><span class="line">NoDisplay=<span class="hljs-literal">true</span></span><br><span class="line">X-GNOME-Autostart-Phase=DisplayServer</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>/etc/xdg/autostart/optimus.desktop 下创建</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/xdg/autostart/optimus.desktop</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>添加</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Name=Optimus</span><br><span class="line">Exec=sh -c <span class="hljs-string">"xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"</span></span><br><span class="line">NoDisplay=<span class="hljs-literal">true</span></span><br><span class="line">X-GNOME-Autostart-Phase=DisplayServer</span><br></pre></td></tr></table></figure>
+
 <p>确保 GDM 使用 X 作为默认后端</p>
 <ul>
 <li>Gnome 默认使用 Wayland 作为后端，只有 Wayland 后端无法启动时才使用 Xorg 后端。</li>
 <li>修改为 X</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm/custom.conf</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>取消以下注释</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#WaylandEnable=false</span></span><br></pre></td></tr></table></figure>
+
 <p>解决错误提示</p>
 <ul>
 <li>删除主用户 “gdm”，删除组 “gdm”</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo userdel gdm</span><br><span class="line">sudo groupdel gdm</span><br></pre></td></tr></table></figure>
+
 <p>GDM使用单独的 dconf 数据库来控制电源管理</p>
 <ul>
 <li>通过将用户设置复制到 GDM 的 dconf 数据库，可以使 GDM 的行为与用户会话相同。</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IFS=$<span class="hljs-string">'\n'</span>; <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); <span class="hljs-keyword">do</span> <span class="hljs-built_in">eval</span> <span class="hljs-string">"sudo -u gdm dbus-launch gsettings set <span class="hljs-variable">$x</span>"</span>; <span class="hljs-keyword">done</span>; <span class="hljs-built_in">unset</span> IFS</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>或者简单地禁用自动挂起(在电池上运行时，也可以用 ac 替换电池来禁用它)：</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u gdm dbus-launch gsettings <span class="hljs-built_in">set</span> org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type <span class="hljs-string">'nothing'</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>参考</strong></p>
 <ul>
@@ -436,7 +450,7 @@
             <span class="has-mr-6">1</span>
             <span>安装</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#nvidia-和-xorg-xrandr">
+            <a class="is-flex" href="#Nvidia-和-xorg-xrandr">
             <span class="has-mr-6">1.1</span>
             <span>Nvidia 和 xorg-xrandr</span>
             </a></li><li>
@@ -444,19 +458,19 @@
             <span class="has-mr-6">1.2</span>
             <span>配置</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#各桌面配置-display-managers">
+            <a class="is-flex" href="#各桌面配置-Display-Managers">
             <span class="has-mr-6">2</span>
             <span>各桌面配置 (Display Managers)</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#sddm-plasma">
+            <a class="is-flex" href="#SDDM-Plasma">
             <span class="has-mr-6">2.1</span>
             <span>SDDM (Plasma)</span>
             </a></li><li>
-            <a class="is-flex" href="#lightdm-deepin">
+            <a class="is-flex" href="#LightDM-Deepin">
             <span class="has-mr-6">2.2</span>
             <span>LightDM (Deepin)</span>
             </a></li><li>
-            <a class="is-flex" href="#gdm-gnome">
+            <a class="is-flex" href="#GDM-Gnome">
             <span class="has-mr-6">2.3</span>
             <span>GDM (Gnome)</span>
             </a></li></ul></li></ul>

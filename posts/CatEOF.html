@@ -196,28 +196,28 @@
         <div class="content">
             <p>Cat  追加与覆盖</p>
 <a id="more"></a>
-<h1 id="追加">追加</h1>
-<ul>
+<h1 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h1><ul>
 <li>cat &lt;<eof>&gt;</eof></li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt;&gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>cat &gt;&gt;</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line">cat &gt;&gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<h1 id="覆盖">覆盖</h1>
-<ul>
+
+<h1 id="覆盖"><a href="#覆盖" class="headerlink" title="覆盖"></a>覆盖</h1><ul>
 <li>cat &lt;<eof>&gt;</eof></li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>cat &gt;&gt;</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line">cat &gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<h1 id="使用变量">使用变量</h1>
-<ul>
-<li>Warnning
-追加和覆盖若要使用变量必须加 <code>\</code> 如 <strong><code>\$var</code></strong></li>
+
+<h1 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h1><ul>
+<li>Warnning<br>追加和覆盖若要使用变量必须加 <code>\</code> 如 <strong><code>\$var</code></strong></li>
 </ul>
 
         </div>

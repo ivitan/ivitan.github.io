@@ -196,21 +196,21 @@
         <div class="content">
             <p>解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题</p>
 <a id="more"></a>
-<h1 id="方法">方法</h1>
-<ul>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
 <li>复制以下内容</li>
 </ul>
 <figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>).cpus() || &#123; <span class="hljs-attr">length</span>: <span class="hljs-number">1</span> &#125;).length</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>编辑</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改如下保存即可</li>
 </ul>
 <p><img src="https://s1.ax1x.com/2018/03/11/9WmxIA.jpg" alt="修改.jpg"></p>
-<h1 id="已知问题">已知问题</h1>
-<ul>
+<h1 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h1><ul>
 <li>Npm 无法升级。</li>
 </ul>
 

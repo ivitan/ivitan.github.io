@@ -196,65 +196,68 @@
         <div class="content">
             <p>Python DateTime 时间日期处理.</p>
 <a id="more"></a>
-<h1 id="datetime">DateTime</h1>
-<h2 id="获取当前-datetime">获取当前 DateTime</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> datetime timport datetime</span><br><span class="line">datetime.datetime.now()</span><br></pre></td></tr></table></figure>
-<h2 id="获取当天-date">获取当天 date</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.date.today()</span><br></pre></td></tr></table></figure>
-<h2 id="获取明天-前n天">获取明天/前N天</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 明天</span></span><br><span class="line">atetime.date.today() + datetime.timedelta(days=<span class="hljs-number">1</span>)</span><br><span class="line"><span class="hljs-comment"># 前N天</span></span><br><span class="line">datetime.datetime.now()</span><br><span class="line">datetime.datetime.now() - datetime.timedelta(days=<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="获取当天开始和结束时间">获取当天开始和结束时间</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.min)</span><br><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.max)</span><br></pre></td></tr></table></figure>
-<h2 id="获取两个-datetime-的时间差">获取两个 datetime 的时间差</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">now = datetime.now()</span><br><span class="line">end = datetime.strptime(<span class="hljs-string">'2018-10-25 22:00'</span>,<span class="hljs-string">'%Y-%m-%d %H:%M'</span>)</span><br><span class="line">time = end - now</span><br><span class="line">print(time.days,<span class="hljs-string">'天'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="获取本周-本月-上月最后一天">获取本周/本月/上月最后一天</h2>
-<ul>
+<h1 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h1><h2 id="获取当前-DateTime"><a href="#获取当前-DateTime" class="headerlink" title="获取当前 DateTime"></a>获取当前 DateTime</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> datetime timport datetime</span><br><span class="line">datetime.datetime.now()</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取当天-date"><a href="#获取当天-date" class="headerlink" title="获取当天 date"></a>获取当天 date</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.date.today()</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取明天-前N天"><a href="#获取明天-前N天" class="headerlink" title="获取明天/前N天"></a>获取明天/前N天</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 明天</span></span><br><span class="line">atetime.date.today() + datetime.timedelta(days=<span class="hljs-number">1</span>)</span><br><span class="line"><span class="hljs-comment"># 前N天</span></span><br><span class="line">datetime.datetime.now()</span><br><span class="line">datetime.datetime.now() - datetime.timedelta(days=<span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取当天开始和结束时间"><a href="#获取当天开始和结束时间" class="headerlink" title="获取当天开始和结束时间"></a>获取当天开始和结束时间</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.min)</span><br><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.max)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取两个-datetime-的时间差"><a href="#获取两个-datetime-的时间差" class="headerlink" title="获取两个 datetime 的时间差"></a>获取两个 datetime 的时间差</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">now = datetime.now()</span><br><span class="line">end = datetime.strptime(<span class="hljs-string">'2018-10-25 22:00'</span>,<span class="hljs-string">'%Y-%m-%d %H:%M'</span>)</span><br><span class="line">time = end - now</span><br><span class="line">print(time.days,<span class="hljs-string">'天'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取本周-本月-上月最后一天"><a href="#获取本周-本月-上月最后一天" class="headerlink" title="获取本周/本月/上月最后一天"></a>获取本周/本月/上月最后一天</h2><ul>
 <li>本周最后一天</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">sunday = today + datetime.timedelta(<span class="hljs-number">6</span> - today.weekday())</span><br><span class="line">sunday</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>本月最后一天</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> calendar</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">last_day_num = calendar.monthrange(today.year, today.month)</span><br><span class="line">last_day = datetime.date(today.year, today.month, last_day_num)</span><br><span class="line">last_day</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>上月最后一天</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">first = datetime.date(day=<span class="hljs-number">1</span>, month=today.month, year=today.year)</span><br><span class="line">lastMonth = first - datetime.timedelta(days=<span class="hljs-number">1</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="转换">转换</h1>
-<h2 id="datetime-string">datetime &lt;=&gt; string</h2>
-<ul>
+
+<h1 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h1><h2 id="datetime-lt-gt-string"><a href="#datetime-lt-gt-string" class="headerlink" title="datetime &lt;=&gt; string"></a>datetime &lt;=&gt; string</h2><ul>
 <li>datetime -&gt; string</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">datetime.datetime.now().strftime(<span class="hljs-string">"%Y-%m-%d %H:%M:%S"</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>string -&gt; datetime</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">datetime.datetime.strptime(<span class="hljs-string">"2018-10-22 12:50:46"</span>, <span class="hljs-string">"%Y-%m-%d %H:%M:%S"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="datetime-timetuple">datetime &lt;=&gt; timetuple</h2>
-<ul>
+
+<h2 id="datetime-lt-gt-timetuple"><a href="#datetime-lt-gt-timetuple" class="headerlink" title="datetime &lt;=&gt; timetuple"></a>datetime &lt;=&gt; timetuple</h2><ul>
 <li>datetime -&gt; timetuple</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">datetime.datetime.now().timetuple()</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>timetuple -&gt; datetime</li>
 </ul>
 <figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timetuple =&gt; timestamp =&gt; datetime [看后面datetime&lt;=&gt;timestamp]</span><br></pre></td></tr></table></figure>
-<h2 id="datetime-date">datetime &lt;=&gt; date</h2>
-<ul>
+
+<h2 id="datetime-lt-gt-date"><a href="#datetime-lt-gt-date" class="headerlink" title="datetime &lt;=&gt; date"></a>datetime &lt;=&gt; date</h2><ul>
 <li>datetime -&gt; date</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> datetime</span><br><span class="line">datetime.datetime.now().date()</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>date -&gt; datetime</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">datetime.date.today()</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">datetime.datetime.combine(today, datetime.time())</span><br><span class="line">datetime.datetime.combine(today, datetime.time.min)</span><br></pre></td></tr></table></figure>
-<h2 id="datetime-timestamp">datetime &lt;=&gt; timestamp</h2>
-<ul>
+
+<h2 id="datetime-lt-gt-timestamp"><a href="#datetime-lt-gt-timestamp" class="headerlink" title="datetime &lt;=&gt; timestamp"></a>datetime &lt;=&gt; timestamp</h2><ul>
 <li>datetime -&gt; timestamp</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">now = datetime.datetime.now()</span><br><span class="line">timestamp = time.mktime(now.timetuple())</span><br><span class="line">timestamp</span><br></pre></td></tr></table></figure>
-<h2 id="timestamp-datetime">timestamp -&gt; datetime</h2>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.fromtimestamp(1421077403.0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="timestamp-gt-datetime"><a href="#timestamp-gt-datetime" class="headerlink" title="timestamp -&gt; datetime"></a>timestamp -&gt; datetime</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.fromtimestamp(1421077403.0)</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>Via</strong></p>
 <ul>
@@ -409,11 +412,11 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#datetime">
+            <a class="is-flex" href="#DateTime">
             <span class="has-mr-6">1</span>
             <span>DateTime</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#获取当前-datetime">
+            <a class="is-flex" href="#获取当前-DateTime">
             <span class="has-mr-6">1.1</span>
             <span>获取当前 DateTime</span>
             </a></li><li>
@@ -421,7 +424,7 @@
             <span class="has-mr-6">1.2</span>
             <span>获取当天 date</span>
             </a></li><li>
-            <a class="is-flex" href="#获取明天-前n天">
+            <a class="is-flex" href="#获取明天-前N天">
             <span class="has-mr-6">1.3</span>
             <span>获取明天/前N天</span>
             </a></li><li>
@@ -441,23 +444,23 @@
             <span class="has-mr-6">2</span>
             <span>转换</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#datetime-string">
+            <a class="is-flex" href="#datetime-lt-gt-string">
             <span class="has-mr-6">2.1</span>
             <span>datetime &lt;=&gt; string</span>
             </a></li><li>
-            <a class="is-flex" href="#datetime-timetuple">
+            <a class="is-flex" href="#datetime-lt-gt-timetuple">
             <span class="has-mr-6">2.2</span>
             <span>datetime &lt;=&gt; timetuple</span>
             </a></li><li>
-            <a class="is-flex" href="#datetime-date">
+            <a class="is-flex" href="#datetime-lt-gt-date">
             <span class="has-mr-6">2.3</span>
             <span>datetime &lt;=&gt; date</span>
             </a></li><li>
-            <a class="is-flex" href="#datetime-timestamp">
+            <a class="is-flex" href="#datetime-lt-gt-timestamp">
             <span class="has-mr-6">2.4</span>
             <span>datetime &lt;=&gt; timestamp</span>
             </a></li><li>
-            <a class="is-flex" href="#timestamp-datetime">
+            <a class="is-flex" href="#timestamp-gt-datetime">
             <span class="has-mr-6">2.5</span>
             <span>timestamp -&gt; datetime</span>
             </a></li></ul></li></ul>

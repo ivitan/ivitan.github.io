@@ -196,36 +196,36 @@
         <div class="content">
             <p>常用实现</p>
 <a id="more"></a>
-<h2 id="九九乘法表">九九乘法表</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):</span><br><span class="line">   <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, i+<span class="hljs-number">1</span>):</span><br><span class="line">       print(<span class="hljs-string">'&#123;&#125;x&#123;&#125;=&#123;&#125;\t'</span>.format(j, i, i*j), end=<span class="hljs-string">''</span>)</span><br><span class="line">   print()</span><br></pre></td></tr></table></figure>
-<h1 id="列出目录文件">列出目录文件</h1>
-<ul>
+<h2 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):</span><br><span class="line">   <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, i+<span class="hljs-number">1</span>):</span><br><span class="line">       print(<span class="hljs-string">'&#123;&#125;x&#123;&#125;=&#123;&#125;\t'</span>.format(j, i, i*j), end=<span class="hljs-string">''</span>)</span><br><span class="line">   print()</span><br></pre></td></tr></table></figure>
+
+<h1 id="列出目录文件"><a href="#列出目录文件" class="headerlink" title="列出目录文件"></a>列出目录文件</h1><ul>
 <li>路径下的所有文件和文件夹的路径</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path = &apos;~/path&apos;</span><br><span class="line">for i in os.listdir(path):</span><br><span class="line">    print(os.path.join(path,i))</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>读取路径下的文本</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">txt_processing</span><span class="hljs-params">(folder_path)</span>:</span></span><br><span class="line">folder_list = os.listdir(folder_path)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 遍历文件夹</span></span><br><span class="line"><span class="hljs-keyword">for</span> folder <span class="hljs-keyword">in</span> folder_list:</span><br><span class="line">    new_folder_path = os.path.join(folder_path,folder) <span class="hljs-comment"># 拼接路径</span></span><br><span class="line">    files = os.listdir(new_folder_path) <span class="hljs-comment"># 258/分类</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:</span><br><span class="line">        <span class="hljs-comment"># if j &gt; 1000000000000000: # 要读的每个分类的文件个数</span></span><br><span class="line">        <span class="hljs-comment">#     break</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.isdir(file):  <span class="hljs-comment"># 判断是否是文件夹，不是文件夹才打开</span></span><br><span class="line">            TxtPath = os.path.join(new_folder_path, file)</span><br><span class="line">            <span class="hljs-keyword">with</span> open(TxtPath,<span class="hljs-string">'r'</span>,encoding=<span class="hljs-string">'UTF-8'</span>) <span class="hljs-keyword">as</span> fp:</span><br><span class="line">                Txt = fp.read()</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>输出以 xxx 为后缀的文件</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> os.listdir(filepath):</span><br><span class="line">    path = os.path.join(fillepath,i)</span><br><span class="line"><span class="hljs-keyword">if</span> path.endswith(<span class="hljs-string">'.xxx'</span>):</span><br><span class="line">    print(path)</span><br></pre></td></tr></table></figure>
-<h1 id="判断奇偶数">判断奇偶数</h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number = int(input(<span class="hljs-string">'输入数字:'</span>))</span><br><span class="line"><span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> ) == <span class="hljs-number">0</span>:</span><br><span class="line">    print(<span class="hljs-string">'&#123;&#125;：是偶数'</span>.format(number))</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    print(<span class="hljs-string">'&#123;&#125;：是奇数'</span>.format(number))</span><br></pre></td></tr></table></figure>
-<h1 id="字符串判断">字符串判断</h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="hljs-string">"runoob.com"</span></span><br><span class="line">print(str.isalnum()) <span class="hljs-comment"># 判断所有字符都是数字或者字母</span></span><br><span class="line">print(str.isalpha()) <span class="hljs-comment"># 判断所有字符都是字母</span></span><br><span class="line">print(str.isdigit()) <span class="hljs-comment"># 判断所有字符都是数字</span></span><br><span class="line">print(str.islower()) <span class="hljs-comment"># 判断所有字符都是小写</span></span><br><span class="line">print(str.isupper()) <span class="hljs-comment"># 判断所有字符都是大写</span></span><br><span class="line">print(str.istitle()) <span class="hljs-comment"># 判断所有单词都是首字母大写，像标题</span></span><br><span class="line">print(str.isspace()) <span class="hljs-comment"># 判断所有字符都是空白字符、\t、\n、\r</span></span><br></pre></td></tr></table></figure>
-<h1 id="字符串到小写转换">字符串到小写转换</h1>
-<pre><code class="language-python">str = 'vitan.me'
-# 把所有字符中的小写字母转换成大写字母
+
+<h1 id="判断奇偶数"><a href="#判断奇偶数" class="headerlink" title="判断奇偶数"></a>判断奇偶数</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number = int(input(<span class="hljs-string">'输入数字:'</span>))</span><br><span class="line"><span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> ) == <span class="hljs-number">0</span>:</span><br><span class="line">    print(<span class="hljs-string">'&#123;&#125;：是偶数'</span>.format(number))</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    print(<span class="hljs-string">'&#123;&#125;：是奇数'</span>.format(number))</span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串判断"><a href="#字符串判断" class="headerlink" title="字符串判断"></a>字符串判断</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="hljs-string">"runoob.com"</span></span><br><span class="line">print(str.isalnum()) <span class="hljs-comment"># 判断所有字符都是数字或者字母</span></span><br><span class="line">print(str.isalpha()) <span class="hljs-comment"># 判断所有字符都是字母</span></span><br><span class="line">print(str.isdigit()) <span class="hljs-comment"># 判断所有字符都是数字</span></span><br><span class="line">print(str.islower()) <span class="hljs-comment"># 判断所有字符都是小写</span></span><br><span class="line">print(str.isupper()) <span class="hljs-comment"># 判断所有字符都是大写</span></span><br><span class="line">print(str.istitle()) <span class="hljs-comment"># 判断所有单词都是首字母大写，像标题</span></span><br><span class="line">print(str.isspace()) <span class="hljs-comment"># 判断所有字符都是空白字符、\t、\n、\r</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串到小写转换"><a href="#字符串到小写转换" class="headerlink" title="字符串到小写转换"></a>字符串到小写转换</h1><pre><code class="python">str = <span class="string">'vitan.me'</span>
+<span class="comment"># 把所有字符中的小写字母转换成大写字母</span>
 print(str.upper())         
-# 把所有字符中的大写字母转换成小写字母
+<span class="comment"># 把所有字符中的大写字母转换成小写字母</span>
 print(str.lower())      
-# 把第一个字母转化为大写字母，其余小写
+<span class="comment"># 把第一个字母转化为大写字母，其余小写</span>
 print(str.capitalize())  
-# 把每个单词的第一个字母转化为大写，其余小写 
-print(str.title())     
-</code></pre>
+<span class="comment"># 把每个单词的第一个字母转化为大写，其余小写 </span>
+print(str.title())     </code></pre>
 
         </div>
         
