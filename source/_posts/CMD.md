@@ -13,12 +13,13 @@ date: 2019-11-03 09:53:23
 ---
 CMD 基础
 转载自:[可可西](https://www.cnblogs.com/kekec/p/3662125.html)
-<!--more-->
+
 # 基础命令
 ```cmd
 # 中断命令
 Crtl + z  
 ```
+<!--more-->
 # 文件/目录
 ##  cd
 |命令|含义|

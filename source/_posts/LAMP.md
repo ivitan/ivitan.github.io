@@ -13,7 +13,7 @@ thumbnail: /images/Linux.png
 date: 2019-10-15 12:32:16
 ---
 Linux 编译安装 LAMP 
-<!--more-->
+
 # Apache
 # 准备
 编译工具&开发包
@@ -29,6 +29,7 @@ yum -y install make gcc openssl
 |[apr-util](https://apr.apache.org/download.cgi)|Apache 依赖包|
 |[pcre](https://ftp.pcre.org/pub/pcre/)|Apache 依赖包|
 
+<!--more-->
 ## Install
 
 - apr

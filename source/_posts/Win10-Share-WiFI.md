@@ -9,9 +9,8 @@ categories: Diary
 thumbnail: /images/Note.png
 ---
 在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
-<!--more-->
-# 方法
 
+# 方法
 - 电脑端
 
 1. 右键SSR/SS --> 选项设置 --> 勾选 `允许来自局域网连接`,V2ray 同样在设置中勾选 `允许来自局域网的连接`
@@ -26,7 +25,7 @@ thumbnail: /images/Note.png
 4. 手动
 5. 服务器主机IP输入刚刚获取的 `IPV4地址`, 端口 `1080`
 6. 保存
-
+<!--more-->
 ---
 
 # 跳过谷歌验证

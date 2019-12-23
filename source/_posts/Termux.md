@@ -12,7 +12,7 @@ thumbnail: /images/Termux.png
 ---
 # 简介
 [Termux](https://wiki.termux.com/wiki/Main_Page)是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持apt 管理软件包，十分方便安装软件包, 完美支持 Python,PHP,Ruby,Go,Nodejs,MySQL 等。
-<!--more-->
+
 # 命令
 基本命令
 ``` bash
@@ -27,7 +27,7 @@ thumbnail: /images/Termux.png
   pkg shoe <package>  #显示某个包的详细信息
   pkg files <package>  #显示某个包的
 ```
-
+<!--more-->
 手动安装 *.deb 文件
 ```bash
 dpkg -i ./package.deb #安装

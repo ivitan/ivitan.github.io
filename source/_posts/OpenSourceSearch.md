@@ -13,7 +13,7 @@ thumbnail: /images/Github.png
 date: 2019-11-14 18:23:35
 ---
 Github 中高效寻找搜索开源项目
-<!--more-->
+
 # in:name
 搜索时使用 `in:name` 可以搜索名字包含的内容
 ```
@@ -27,7 +27,7 @@ in:name vue
  #匹配start书大于1000
  in:name vue stasr>1000
 ```
-
+<!--more-->
 - Forks 数
 
 ```bash

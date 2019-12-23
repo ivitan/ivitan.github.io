@@ -12,12 +12,12 @@ thumbnail: /images/Batch.png
 date: 2019-12-11 09:23:23
 ---
 Batch 批量处理
-<!--more-->
+
 # %~dp0[获取当前路径]
 1. %~dp0 “d”为Drive的缩写，即为驱动器，磁盘、“p”为Path缩写，即为路径，目录
 2. cd %~dp0 ：进入批处理所在目录
 3. cd %~dp0bin\ ：进入批处理所在目录的bin目录
-
+<!--more-->
 ```bat
 REM 作用：以管理员身份安装Apache
 d:
