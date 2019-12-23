@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>WNMP 环境配置 - Vitan&#39;s Blog</title>
+
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="WNMP 环境配置" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/vitan.png">
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144334903-1');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2581760538335948",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="WNMP 环境配置" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Category</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
+                        
+                        <i class="fa fa-rss"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/PHP.png" alt="WNMP 环境配置">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <i class="fas fa-angle-double-right"></i>WNMP 环境配置
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    4 分钟 读完 (约 542 字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+                <time class="level-item has-text-grey" datetime="2019-12-23T05:42:58.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-12-23</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-23T08:16:06.507Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-23</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1 id="下载">下载</h1>
+<ol>
+<li><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">Nginx</a></li>
+<li><a href="http://windows.php.net/download/" target="_blank" rel="noopener">PHP</a></li>
+<li><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip" target="_blank" rel="noopener">MySQL</a></li>
+</ol>
+<a id="more"></a>
+<h1 id="nignx">Nignx</h1>
+<ol>
+<li>解压 Nignx 到 D:\DevEnv\Nignx</li>
+<li>运行 D:\DevEnv\Nignx 下的 nginx.exe</li>
+<li>打开浏览器访问 <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> 或 <a href="http://127.0.0.1" target="_blank" rel="noopener">http://127.0.0.1</a></li>
+</ol>
+<p><img src="https://i.loli.net/2019/12/23/TuIFyje98l4qXvi.png" alt="nginx.png"></p>
+<ol start="4">
+<li>配置</li>
+</ol>
+<figure class="highlight bat hljs"><figcaption><span>D:\DevEnv\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    root   D:/WNMP/www;        #指定站点根目录为D:/wnmp/www</span><br><span class="line">    index  index.php index.html index.htm;    #添加index.php,优先解析php文件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再往下，找到如下内容，取消注释</p>
+<figure class="highlight bat hljs"><figcaption><span>D:\WNMP\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#location ~ \.php$ &#123;</span><br><span class="line">#    root           html;</span><br><span class="line">#    fastcgi_pass   <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9000</span>;</span><br><span class="line">#    fastcgi_index  index.php;</span><br><span class="line">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">#    include        fastcgi_params;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
+<p>然后将 root html; 更改为 root D:/wnmp/www; 再将 /scripts 改为 $document_root，这里的&quot;$document_root&quot;就是前面 “root” 所指定的站点路径</p>
+<figure class="highlight bat hljs"><figcaption><span>D:\WNMP\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           D:/WNMP/www;</span><br><span class="line">    fastcgi_pass   <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9000</span>;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;</span><br><span class="line">    include        fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令">常用命令</h2>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop	快速关闭Nginx</span><br><span class="line">nginx -s quit	优雅的关闭Nginx</span><br><span class="line">nginx -s reload 更改配置，使用新配置启动新工作进程，正常关闭旧工作进程</span><br><span class="line">nginx -s reopen 重新打开日志文件</span><br></pre></td></tr></table></figure>
+<h1 id="mysql">MySQL</h1>
+<p>复制my-default.ini文件，并重命名为my.ini。再打开my.ini，取消 basedir 和 datadir 注释，并指定具体路径：</p>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = "D:/wamp/mysql/"</span><br><span class="line">datadir = "D:/wamp/mysql/data/"</span><br></pre></td></tr></table></figure>
+<p>以管理员身份打开一个DOS窗口，切换到bin目录（必须），</p>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">d:                                         # 切换到<span class="hljs-title">D</span>盘</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">cd</span> <span class="hljs-title">d</span>:\<span class="hljs-title">wnmp</span>\<span class="hljs-title">mysql</span>-5.7.17-<span class="hljs-title">winx64</span>\<span class="hljs-title">bin</span>         # 切换到<span class="hljs-title">bin</span>目录</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">mysqld</span> -<span class="hljs-title">install</span>                            # 安装<span class="hljs-title">MySQL</span>服务</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">mysqld</span> --<span class="hljs-title">initialize</span> --<span class="hljs-title">user</span>=<span class="hljs-title">root</span> --<span class="hljs-title">console</span>  # 初始化<span class="hljs-title">MySQL</span>，生成<span class="hljs-title">data</span>目录和<span class="hljs-title">root</span>密码，5.7版本之后必须要有这个命令</span></span><br></pre></td></tr></table></figure>
+<p>最后那条命令会生成一个临时密码，如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-12-23T07:55:56.279880Z 1 [Note] A temporary password is generated for root@localhost: o*%_kb(k_1&lt;V</span><br></pre></td></tr></table></figure>
+<p>再启动MySQL：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<p>临时密码只能登陆后修改密码，不能进行其他操作。使用下面的命令修改</p>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<p><a href="https://vitan.me/posts/MySQLPassword.html">其他版本修改密码</a></p>
+<h1 id="php">PHP</h1>
+<ol>
+<li>解压 PHP 到 D:\DevEnv\PHP</li>
+<li>修改配置，将 D:\PHP\php.ini-development 改为 php.ini,取消下面注释</li>
+</ol>
+<figure class="highlight bat hljs"><figcaption><span>D:\PHP\php.ini</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">;extension=mysql</span><br><span class="line">;extension=mysqli</span><br><span class="line">;enable_dl = Off，改为 enable_dl = On</span><br><span class="line">;fastcgi.impersonate = <span class="hljs-number">1</span></span><br><span class="line">;extension=curl</span><br><span class="line">;extension=gd2</span><br><span class="line">;extension=mbstring</span><br><span class="line">;extension=mysqli</span><br><span class="line">;extension=mysql</span><br></pre></td></tr></table></figure>
+<p>去 <code>;</code>再修改</p>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">;extension_dir = "ext" 改为 extension_dir = "D:\wnmp\php\ext"</span><br><span class="line">;<span class="hljs-built_in">date</span>.timezone = 改为<span class="hljs-built_in">date</span>.timezone = Asia/Shanghai</span><br><span class="line">;cgi.force_redirect = <span class="hljs-number">1</span> 改为cgi.force_redirect = <span class="hljs-number">0</span></span><br><span class="line">;cgi.rfc2616_headers = <span class="hljs-number">0</span> 改为 cgi.rfc2616_headers = <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>配置 PHP，使其能与 Nginx 配合，取消下面的注释</li>
+</ol>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;cgi.fix_pathinfo=<span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>启动PHP</li>
+</ol>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">D:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php</span>-<span class="hljs-title">cli.exe</span> -<span class="hljs-title">b</span> 127.0.1.1:9000 -<span class="hljs-title">c</span> <span class="hljs-title">D</span>:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php.ini</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本">脚本</h2>
+<figure class="highlight bat hljs"><figcaption><span>stat.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-built_in">echo</span> off</span><br><span class="line"><span class="hljs-comment">REM Windows 下无效</span></span><br><span class="line"><span class="hljs-comment">REM set PHP_FCGI_CHILDREN=5</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">REM 每个进程处理的最大请求数，或设置为Windows环境变量</span></span><br><span class="line"><span class="hljs-built_in">set</span> PHP_FCGI_MAX_REQUESTS=<span class="hljs-number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Starting PHP FastCGI...</span><br><span class="line">RunHiddenConsole D:/wnmp/php/php-cgi.exe -b <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9000</span> -c D:/wnmp/php/php.ini</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Starting nginx...</span><br><span class="line">RunHiddenConsole D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bat hljs"><figcaption><span>stop.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Stopping nginx...</span><br><span class="line"><span class="hljs-built_in">taskkill</span> /F /IM nginx.exe &gt; null</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Stopping PHP FastCGI...</span><br><span class="line"><span class="hljs-built_in">taskkill</span> /F /IM php-cgi.exe &gt; null</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">exit</span></span><br></pre></td></tr></table></figure>
+<h1 id="环境变量">环境变量</h1>
+<p>环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径</p>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;D:\wnmp\mysql\bin;D:\wnmp\nginx;D:\wnmp\php;</span><br></pre></td></tr></table></figure>
+<h1 id="整体测试">整体测试</h1>
+<ul>
+<li>测试 PHP</li>
+</ul>
+<figure class="highlight php hljs"><figcaption><span>D:\WNMP\nginx\html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">	phpinfo();	</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>浏览器访问 <a href="http://localhost/phpinfo.php" target="_blank" rel="noopener">http://localhost/phpinfo.php</a></p>
+<ul>
+<li>测试 Mysql</li>
+</ul>
+<figure class="highlight php hljs"><figcaption><span>D:\WNMP\nginx\html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span> </span><br><span class="line">	<span class="hljs-keyword">if</span> (mysqli_connect(<span class="hljs-string">"localhost"</span>,<span class="hljs-string">"root"</span>,<span class="hljs-string">"root"</span>)) &#123;</span><br><span class="line">		<span class="hljs-keyword">echo</span> <span class="hljs-string">"Mysql connect successful！"</span>;</span><br><span class="line">	&#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-keyword">echo</span> <span class="hljs-string">"Mysql connect error..."</span>;</span><br><span class="line">	&#125;</span><br><span class="line"> <span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+    <div class="donate">
+        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
+        <div id="DonateText" class="tr3">赏</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            
+            
+                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
+            
+            
+                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
+            
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        jQuery(document).ready(function () {
+            var QRBox = $('#QRBox');
+            var MainBox = $('#MainBox');
+            var AliPayQR = '/images/alipay.png';
+            var WeChanQR = '/images/wechat.png';
+            function showQR(QR) {
+                if (QR) {
+                    MainBox.css('background-image', 'url(' + QR + ')');
+                }
+                $('#DonateText,#donateBox,#github').addClass('blur');
+                QRBox.fadeIn(300, function (argument) {
+                    MainBox.addClass('showQR');
+                });
+            }
+            $('#donateBox>li').click(function (event) {
+                var thisID = $(this).attr('id');
+                if (thisID === 'AliPay') {
+                    showQR(AliPayQR);
+                } else if (thisID === 'WeChat') {
+                    showQR(WeChanQR);
+                }
+            });
+            MainBox.click(function (event) {
+                MainBox.removeClass('showQR').addClass('hideQR');
+                setTimeout(function (a) {
+                    QRBox.fadeOut(300, function (argument) {
+                        MainBox.removeClass('hideQR');
+                    });
+                    $('#DonateText,#donateBox,#github').removeClass('blur');
+                }, 600);
+            });
+        });
+    </script>
+
+        <ul class="post-copyright">
+            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/WNMP.html">https://vitan.me/posts/WNMP.html</a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
+                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+        </ul>
+        
+        
+        <hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/PHP/">PHP</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Win/">Win</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/WinTask.html">
+                <span class="level-item">Batch 计划任务</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
+        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
+        placeholder: '快来做第一个评论的人吧！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+    <!--<div class="card widget" id="toc">-->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content">
+            <div class="menu" style="max-height: 700px;overflow:auto;">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+            <a class="is-flex" href="#下载">
+            <span class="has-mr-6">1</span>
+            <span>下载</span>
+            </a></li><li>
+            <a class="is-flex" href="#nignx">
+            <span class="has-mr-6">2</span>
+            <span>Nignx</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#常用命令">
+            <span class="has-mr-6">2.1</span>
+            <span>常用命令</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#mysql">
+            <span class="has-mr-6">3</span>
+            <span>MySQL</span>
+            </a></li><li>
+            <a class="is-flex" href="#php">
+            <span class="has-mr-6">4</span>
+            <span>PHP</span>
+            </a><ul class="menu-list"><li>
+            <a class="is-flex" href="#脚本">
+            <span class="has-mr-6">4.1</span>
+            <span>脚本</span>
+            </a></li></ul></li><li>
+            <a class="is-flex" href="#环境变量">
+            <span class="has-mr-6">5</span>
+            <span>环境变量</span>
+            </a></li><li>
+            <a class="is-flex" href="#整体测试">
+            <span class="has-mr-6">6</span>
+            <span>整体测试</span>
+            </a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!--
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    <img src="/images/logo.png" alt="WNMP 环境配置" height="28">
+                    
+                </a>
+                -->
+                <p class="is-size-7">
+                    <span id="busuanzi_container_site_uv">
+                        感谢
+                        <span id="busuanzi_value_site_uv">0</span>
+                        位小伙伴的
+                    </span>
+                    <span id="busuanzi_container_site_pv">
+                        <span id="busuanzi_value_site_pv">0</span>
+                        次陪伴
+                    </span>
+                    </p>
+                <p class="is-size-7">
+                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+                
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                    
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="GitHub" href="https://github.com/ivitan">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            title="SiteMap" href="/xml/sitemap.xml">
+                            
+                            <i class="fas fa-sitemap"></i>
+                            
+                        </a>
+                    </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

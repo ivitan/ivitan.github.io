@@ -194,25 +194,27 @@
         </div>
         
         <div class="content">
-            <p> Python ChromeDriver GeckoDriver Configer</p>
+            <p>Python ChromeDriver GeckoDriver Configer</p>
 <a id="more"></a>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul>
+<h1 id="下载">下载</h1>
+<ul>
 <li><a href="http://chromedriver.chromium.org/downloads" target="_blank" rel="noopener">ChromeDriver</a></li>
 <li><a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener">GeckoDriver</a></li>
 </ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<h1 id="配置">配置</h1>
+<h2 id="linux">Linux</h2>
+<ul>
 <li>方法一</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv chromedriver /usr/bin</span><br><span class="line">sudo mv geckodriver /usr/bin</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法二-配置-Path"><a href="#方法二-配置-Path" class="headerlink" title="方法二(配置 Path)"></a>方法二(配置 Path)</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$PATH</span>:/usr/local/chromedriver"</span></span><br><span class="line"><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$PATH</span>:/usr/local/geckodriver"</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="方法二-配置-path">方法二(配置 Path)</h2>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$PATH</span>:/usr/local/chromedriver"</span></span><br><span class="line"><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$PATH</span>:/usr/local/geckodriver"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>验证</li>
 </ul>
 <figure class="highlight sh hljs"><figcaption><span>terminal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chromedriver</span><br><span class="line">geckodriver</span><br></pre></td></tr></table></figure>
-
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>chromedriver.exe geckodriver.exe 文件拖到 Python 的 Scripts 目录下</p>
+<h2 id="windows">Windows</h2>
+<p>chromedriver.exe geckodriver.exe 文件拖到 Python 的 Scripts 目录下</p>
 
         </div>
         
@@ -370,15 +372,15 @@
             <span class="has-mr-6">2</span>
             <span>配置</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#Linux">
+            <a class="is-flex" href="#linux">
             <span class="has-mr-6">2.1</span>
             <span>Linux</span>
             </a></li><li>
-            <a class="is-flex" href="#方法二-配置-Path">
+            <a class="is-flex" href="#方法二-配置-path">
             <span class="has-mr-6">2.2</span>
             <span>方法二(配置 Path)</span>
             </a></li><li>
-            <a class="is-flex" href="#Windows">
+            <a class="is-flex" href="#windows">
             <span class="has-mr-6">2.3</span>
             <span>Windows</span>
             </a></li></ul></li></ul>

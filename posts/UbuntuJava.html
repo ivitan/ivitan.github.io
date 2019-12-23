@@ -196,19 +196,19 @@
         <div class="content">
             <p>Ubuntu 安装并配置 java 环境</p>
 <a id="more"></a>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm" target="_blank" rel="noopener">链接</a></p>
-<h2 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h2><p>在usr目录下建立java安装目录</p>
+<h1 id="下载">下载</h1>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm" target="_blank" rel="noopener">链接</a></p>
+<h2 id="安装-jdk">安装 JDK</h2>
+<p>在usr目录下建立java安装目录</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr</span><br><span class="line">sudo mkdir java</span><br></pre></td></tr></table></figure>
-
 <p>将jdk文件移动到java目录下并解压</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home/download</span><br><span class="line">sudo mv dk-8u161-linux-x64.tar.gz /usr/java #移动</span><br><span class="line">cd /usr/java</span><br><span class="line">tar -zxvf dk-8u161-linux-x64.tar.gz #解压</span><br><span class="line">ln -s /usr/java/jdk1.8.0_121/ /usr/jdk #创建快捷方式</span><br></pre></td></tr></table></figure>
-
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ul>
+<h1 id="环境配置">环境配置</h1>
+<ul>
 <li><code>sudo vim /etc/profile</code></li>
 <li>在最后加入</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/jdk</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">export JAVA_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>保存退出</li>
 <li>加载配置信息<code>source /etc/profile</code></li>
@@ -367,7 +367,7 @@
             <span class="has-mr-6">1</span>
             <span>下载</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#安装-JDK">
+            <a class="is-flex" href="#安装-jdk">
             <span class="has-mr-6">1.1</span>
             <span>安装 JDK</span>
             </a></li></ul></li><li>

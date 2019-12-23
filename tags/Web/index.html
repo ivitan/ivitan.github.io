@@ -190,13 +190,44 @@
                 
                 <time class="level-item has-text-grey" datetime="2019-10-15T04:32:16.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-10-15</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.152Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-23T07:46:43.630Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-23</time>
                 
             </div>
         </div>
         
         <div class="content">
-            <p>Linux 编译安装 LAMP </p>
+            <p>Linux 编译安装 LAMP</p>
+<h1 id="apache">Apache</h1>
+<h1 id="准备">准备</h1>
+<p>编译工具&amp;开发包</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make gcc openssl</span><br></pre></td></tr></table></figure>
+<p>依赖包</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">包</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://httpd.apache.org/" target="_blank" rel="noopener">httpd</a></td>
+<td style="text-align:left">Apache 主程序包</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr</a></td>
+<td style="text-align:left">Apache 依赖包</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-util</a></td>
+<td style="text-align:left">Apache 依赖包</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://ftp.pcre.org/pub/pcre/" target="_blank" rel="noopener">pcre</a></td>
+<td style="text-align:left">Apache 依赖包</td>
+</tr>
+</tbody>
+</table>
         </div>
         
         
@@ -421,7 +452,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        174
+                        175
                     </p>
                 </a>
             </div>
@@ -441,7 +472,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        41
                     </p>
                 </a>
             </div>
@@ -497,7 +528,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ADB/" style="font-size: 10.63px;">ADB</a> <a href="/tags/Android/" style="font-size: 13.75px;">Android</a> <a href="/tags/ArchLinux/" style="font-size: 17.5px;">ArchLinux</a> <a href="/tags/Atom/" style="font-size: 10.63px;">Atom</a> <a href="/tags/Batch/" style="font-size: 10px;">Batch</a> <a href="/tags/CSS/" style="font-size: 10.63px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eclipse/" style="font-size: 10.63px;">Eclipse</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Github/" style="font-size: 13.13px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML/" style="font-size: 11.25px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 14.38px;">Hexo</a> <a href="/tags/Java/" style="font-size: 13.13px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 11.88px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 11.25px;">MySQL</a> <a href="/tags/Node-Js/" style="font-size: 10px;">Node.Js</a> <a href="/tags/Note/" style="font-size: 19.38px;">Note</a> <a href="/tags/Notes/" style="font-size: 10.63px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.75px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RaspberryPi/" style="font-size: 12.5px;">RaspberryPi</a> <a href="/tags/SQL/" style="font-size: 16.25px;">SQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Shell/" style="font-size: 10.63px;">Shell</a> <a href="/tags/Termux/" style="font-size: 16.88px;">Termux</a> <a href="/tags/TvBox/" style="font-size: 10px;">TvBox</a> <a href="/tags/Typography/" style="font-size: 10.63px;">Typography</a> <a href="/tags/Ubuntu/" style="font-size: 17.5px;">Ubuntu</a> <a href="/tags/Ununtu/" style="font-size: 11.25px;">Ununtu</a> <a href="/tags/Vim/" style="font-size: 12.5px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/Web/" style="font-size: 11.25px;">Web</a> <a href="/tags/WebCrawler/" style="font-size: 18.13px;">WebCrawler</a> <a href="/tags/Win/" style="font-size: 15.63px;">Win</a> <a href="/tags/Wine/" style="font-size: 10px;">Wine</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+        <a href="/tags/ADB/" style="font-size: 10.63px;">ADB</a> <a href="/tags/Android/" style="font-size: 13.75px;">Android</a> <a href="/tags/ArchLinux/" style="font-size: 17.5px;">ArchLinux</a> <a href="/tags/Atom/" style="font-size: 10.63px;">Atom</a> <a href="/tags/Batch/" style="font-size: 10px;">Batch</a> <a href="/tags/CSS/" style="font-size: 10.63px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eclipse/" style="font-size: 10.63px;">Eclipse</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Github/" style="font-size: 13.13px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML/" style="font-size: 11.25px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 14.38px;">Hexo</a> <a href="/tags/Java/" style="font-size: 13.13px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 11.88px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 11.25px;">MySQL</a> <a href="/tags/Node-Js/" style="font-size: 10px;">Node.Js</a> <a href="/tags/Note/" style="font-size: 19.38px;">Note</a> <a href="/tags/Notes/" style="font-size: 10.63px;">Notes</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 18.75px;">Python</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/RaspberryPi/" style="font-size: 12.5px;">RaspberryPi</a> <a href="/tags/SQL/" style="font-size: 16.25px;">SQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Shell/" style="font-size: 10.63px;">Shell</a> <a href="/tags/Termux/" style="font-size: 16.88px;">Termux</a> <a href="/tags/TvBox/" style="font-size: 10px;">TvBox</a> <a href="/tags/Typography/" style="font-size: 10.63px;">Typography</a> <a href="/tags/Ubuntu/" style="font-size: 17.5px;">Ubuntu</a> <a href="/tags/Ununtu/" style="font-size: 11.25px;">Ununtu</a> <a href="/tags/Vim/" style="font-size: 12.5px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/Web/" style="font-size: 11.25px;">Web</a> <a href="/tags/WebCrawler/" style="font-size: 18.13px;">WebCrawler</a> <a href="/tags/Win/" style="font-size: 15.63px;">Win</a> <a href="/tags/Wine/" style="font-size: 10px;">Wine</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
     </div>
 </div>
 
@@ -508,6 +539,29 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/posts/WNMP.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" style="border-radius: 5%" src="/images/PHP.png"
+                        alt="WNMP 环境配置">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase"
+                            datetime="2019-12-23T05:42:58.000Z">2019-12-23</time></div>
+                    <a href="/posts/WNMP.html"
+                        class="title has-link-black-ter is-size-6 has-text-weight-normal">WNMP 环境配置</a>
+                    <p class="is-size-7 is-uppercase">
+                        <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
+                        <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -593,29 +647,6 @@
                             datetime="2019-11-03T01:53:23.000Z">2019-11-03</time></div>
                     <a href="/posts/CMD.html"
                         class="title has-link-black-ter is-size-6 has-text-weight-normal">CMD</a>
-                    <p class="is-size-7 is-uppercase">
-                        <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
-                        <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/HCNA_Note.html" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" style="border-radius: 5%" src="/images/Linux.png"
-                        alt="HCNA NOTE">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase"
-                            datetime="2019-10-20T02:12:16.000Z">2019-10-20</time></div>
-                    <a href="/posts/HCNA_Note.html"
-                        class="title has-link-black-ter is-size-6 has-text-weight-normal">HCNA NOTE</a>
                     <p class="is-size-7 is-uppercase">
                         <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
                         <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>

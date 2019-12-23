@@ -196,31 +196,30 @@
         <div class="content">
             <p>Ubuntu美化</p>
 <a id="more"></a>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>unity-tweak-tool</p>
+<h1 id="主题">主题</h1>
+<p>unity-tweak-tool</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure>
-
 <p>Flatabulous 主题</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br></pre></td></tr></table></figure>
-
 <p>配套的图标</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/icons</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ultra-flat-icons</span><br></pre></td></tr></table></figure>
-
-<h1 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h1><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
-
-<h2 id="问题错误"><a href="#问题错误" class="headerlink" title="问题错误"></a>问题错误</h2><p>agnoster 主题不正常</p>
+<h1 id="oh-my-zsh">oh-my-zsh</h1>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
+<h2 id="问题错误">问题错误</h2>
+<p>agnoster 主题不正常</p>
 <ul>
-<li><p>修改字体即可</p>
+<li>
+<p>修改字体即可</p>
 </li>
-<li><p>错误提示</p>
+<li>
+<p>错误提示</p>
 </li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zsh compinit: insecure directories, run compaudit <span class="hljs-keyword">for</span> list.</span><br><span class="line">Ignore insecure directories and <span class="hljs-built_in">continue</span> [y] or abort compinit [n]?</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>解决方法</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">compaudit</span><br><span class="line">//会显示如下内容</span><br><span class="line">There are insecure directories:</span><br><span class="line">  usr/local/share/zsh/site-functions</span><br><span class="line">//</span><br><span class="line">cd cd /usr/local/share/zsh</span><br><span class="line">sudo chown -R root:root ./site-functions</span><br><span class="line">cd /usr/local/share/</span><br><span class="line">sudo chmod -R 755 zsh</span><br><span class="line">sudo chown -R root:staff zsh</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>参考</strong></p>
 <ul>

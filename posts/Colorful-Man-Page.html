@@ -196,27 +196,33 @@
         <div class="content">
             <p>Linux下 Man Page 的显示默认是通过 less 来完成的， <code>.bashrc</code> 文件中添加 less 的相关设置参数可使其变成彩色。</p>
 <a id="more"></a>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
-<li><p>编辑 .bashrc</p>
+<h1 id="方法">方法</h1>
+<ul>
+<li>编辑 .bashrc</li>
+</ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加</p>
+<ul>
+<li>添加</li>
+</ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_mb=$<span class="hljs-string">'\e[1;32m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_md=$<span class="hljs-string">'\e[1;32m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_me=$<span class="hljs-string">'\e[0m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_se=$<span class="hljs-string">'\e[0m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_so=$<span class="hljs-string">'\e[01;33m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_ue=$<span class="hljs-string">'\e[0m'</span></span><br><span class="line"><span class="hljs-built_in">export</span> LESS_TERMCAP_us=$<span class="hljs-string">'\e[1;4;31m'</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="参数含义"><a href="#参数含义" class="headerlink" title="参数含义"></a>参数含义</h2><ul>
-<li><p>数字</p>
+<h2 id="参数含义">参数含义</h2>
 <ul>
-<li>31 – red</li>
-<li>32 – green</li>
-<li>33 – yellow<ul>
-<li><a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank" rel="noopener">颜色</a> </li>
+<li>数字
+<ul>
+<li>
+<p>31 – red</p>
+</li>
+<li>
+<p>32 – green</p>
+</li>
+<li>
+<p>33 – yellow</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank" rel="noopener">颜色</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><p><code>\e[0x;3y;4zm&#39;</code></p>
+<li>
+<p><code>\e[0x;3y;4zm'</code></p>
 <ul>
 <li>x 是否加粗，</li>
 <li>1 加粗，</li>
@@ -224,43 +230,46 @@
 <li>y 和 z 分别代表文字前景色和背景色</li>
 </ul>
 </li>
-<li><p>LESS_TERMCAP_xx</p>
+<li>
+<p>LESS_TERMCAP_xx</p>
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
-<th align="left">含义</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">mb</td>
-<td align="left">start blink</td>
+<tbody>
+<tr>
+<td style="text-align:left">mb</td>
+<td style="text-align:left">start blink</td>
 </tr>
 <tr>
-<td align="left">md</td>
-<td align="left">start bold</td>
+<td style="text-align:left">md</td>
+<td style="text-align:left">start bold</td>
 </tr>
 <tr>
-<td align="left">me</td>
-<td align="left">turn off bold, blink and underline</td>
+<td style="text-align:left">me</td>
+<td style="text-align:left">turn off bold, blink and underline</td>
 </tr>
 <tr>
-<td align="left">us</td>
-<td align="left">start underline</td>
+<td style="text-align:left">us</td>
+<td style="text-align:left">start underline</td>
 </tr>
 <tr>
-<td align="left">ue</td>
-<td align="left">stop underline</td>
+<td style="text-align:left">ue</td>
+<td style="text-align:left">stop underline</td>
 </tr>
 <tr>
-<td align="left">so</td>
-<td align="left">start standoutv</td>
+<td style="text-align:left">so</td>
+<td style="text-align:left">start standoutv</td>
 </tr>
 <tr>
-<td align="left">se</td>
-<td align="left">stop standout</td>
+<td style="text-align:left">se</td>
+<td style="text-align:left">stop standout</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
 </ul>
 </li>
