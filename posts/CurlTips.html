@@ -196,45 +196,46 @@
         <div class="content">
             <p>Curl 使用技巧</p>
 <a id="more"></a>
-<h1 id="技巧">技巧</h1>
-<h2 id="查看版本号">查看版本号</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --version</span><br></pre></td></tr></table></figure>
+<h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><h2 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --version</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>or</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>选项不仅会返回版本，还会返回当前版本中支持的协议和功能。</li>
 </ul>
-<h2 id="下载一个文件">下载一个文件</h2>
-<ul>
+<h2 id="下载一个文件"><a href="#下载一个文件" class="headerlink" title="下载一个文件"></a>下载一个文件</h2><ul>
 <li>不指定文件名</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>指定文件名</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o newfile.tar.gz https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="下载多个文件">下载多个文件</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz -O https://Vitan.me/newfile.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="恢复中断下载">恢复中断下载</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -C --O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="使用代理">使用代理</h2>
-<ul>
-<li>如果有 <a href="http://proxy.yourdomain.com" target="_blank" rel="noopener">proxy.yourdomain.com</a> 端口 8080 的代理服务器，请执行此操作。</li>
+
+<h2 id="下载多个文件"><a href="#下载多个文件" class="headerlink" title="下载多个文件"></a>下载多个文件</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz -O https://Vitan.me/newfile.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="恢复中断下载"><a href="#恢复中断下载" class="headerlink" title="恢复中断下载"></a>恢复中断下载</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -C --O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><ul>
+<li>如果有 proxy.yourdomain.com 端口 8080 的代理服务器，请执行此操作。</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -x proxy.yourdomain.com:8080 -U user:password -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="查询-http-标头">查询 HTTP 标头</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I www.vitan.me</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询-HTTP-标头"><a href="#查询-HTTP-标头" class="headerlink" title="查询 HTTP 标头"></a>查询 HTTP 标头</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I www.vitan.me</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>HTTP 标头允许远程Web服务器发送有关自身的其他信息以及实际请求。这为客户提供了有关如何处理请求的详细信息。</li>
 </ul>
-<h2 id="从-ftp-服务器下载文件">从 FTP 服务器下载文件</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -O ftp://yourftpserver/yourfile.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="上传文件到-ftp-服务器">上传文件到 FTP 服务器</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -T file.tar.gz ftp://ftpserver</span><br></pre></td></tr></table></figure>
-<h2 id="限制下载速率">限制下载速率</h2>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --<span class="hljs-built_in">limit</span>-rate 100K https://Vitan.me/file.tar.gz -O</span><br></pre></td></tr></table></figure>
+<h2 id="从-FTP-服务器下载文件"><a href="#从-FTP-服务器下载文件" class="headerlink" title="从 FTP 服务器下载文件"></a>从 FTP 服务器下载文件</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -O ftp://yourftpserver/yourfile.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="上传文件到-FTP-服务器"><a href="#上传文件到-FTP-服务器" class="headerlink" title="上传文件到 FTP 服务器"></a>上传文件到 FTP 服务器</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -T file.tar.gz ftp://ftpserver</span><br></pre></td></tr></table></figure>
+
+<h2 id="限制下载速率"><a href="#限制下载速率" class="headerlink" title="限制下载速率"></a>限制下载速率</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --<span class="hljs-built_in">limit</span>-rate 100K https://Vitan.me/file.tar.gz -O</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -408,15 +409,15 @@
             <span class="has-mr-6">1.5</span>
             <span>使用代理</span>
             </a></li><li>
-            <a class="is-flex" href="#查询-http-标头">
+            <a class="is-flex" href="#查询-HTTP-标头">
             <span class="has-mr-6">1.6</span>
             <span>查询 HTTP 标头</span>
             </a></li><li>
-            <a class="is-flex" href="#从-ftp-服务器下载文件">
+            <a class="is-flex" href="#从-FTP-服务器下载文件">
             <span class="has-mr-6">1.7</span>
             <span>从 FTP 服务器下载文件</span>
             </a></li><li>
-            <a class="is-flex" href="#上传文件到-ftp-服务器">
+            <a class="is-flex" href="#上传文件到-FTP-服务器">
             <span class="has-mr-6">1.8</span>
             <span>上传文件到 FTP 服务器</span>
             </a></li><li>
@@ -464,7 +465,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by [object Object] @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

@@ -196,268 +196,248 @@
         <div class="content">
             <p>MySQL 基础语句</p>
 <a id="more"></a>
-<h1 id="mysql-语句的规范">MySQL 语句的规范</h1>
-<ol>
+<h1 id="MySQL-语句的规范"><a href="#MySQL-语句的规范" class="headerlink" title="MySQL 语句的规范"></a>MySQL 语句的规范</h1><ol>
 <li>关键字与函数名称全部大写</li>
 <li>数据库名称、表名称、字段名称全部小写</li>
 <li>SQL语句必须以分号结尾</li>
 </ol>
-<h1 id="数据类型">数据类型</h1>
-<p>数据类型是指列、存储过程参数、表达式和局部变量的数据特征,它决定了数据的存储格式,代表了不同的信息类型。</p>
-<h2 id="字符型">字符型</h2>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>数据类型是指列、存储过程参数、表达式和局部变量的数据特征,它决定了数据的存储格式,代表了不同的信息类型。</p>
+<h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><table>
+<thead>
+<tr>
+<th align="left">列类型</th>
+<th align="left">存储需求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CHAR(M)</td>
+<td align="left">M个字节,0&lt;=M&lt;=255</td>
+</tr>
+<tr>
+<td align="left">VARCHAR(M)</td>
+<td align="left">L+1个字节,其中L&lt;=M且0&lt;=M&lt;= 65535</td>
+</tr>
+<tr>
+<td align="left">TINYTEXT</td>
+<td align="left">L+1个字节,其中L&lt;2^8^</td>
+</tr>
+<tr>
+<td align="left">TEXT</td>
+<td align="left">L+2个字节,其中L&lt;2^16^</td>
+</tr>
+<tr>
+<td align="left">MEDIUMTEXT</td>
+<td align="left">L+3个字节,其中L&lt;2^24^</td>
+</tr>
+<tr>
+<td align="left">LONGTEXT</td>
+<td align="left">L+4个字节,其中L&lt;2^32^</td>
+</tr>
+<tr>
+<td align="left">ENUM(‘value’,’value2’,…)</td>
+<td align="left">1或2个字节,取决于枚举值的个数(最多65.535个值)</td>
+</tr>
+<tr>
+<td align="left">SET(‘valuel’,’value2’,…)</td>
+<td align="left">1、2、3、4或者8个字节,取决于set成员的数目(最多64个成员)</td>
+</tr>
+</tbody></table>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><table>
+<thead>
+<tr>
+<th align="left">数据类</th>
+<th align="left">型存储范围</th>
+<th align="left">字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">TINYINT</td>
+<td align="left">有符号值:-128到127(-2^7^到2^7^-1)无符号值:0到255(0到2^8^ -1)</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">SMALLINT</td>
+<td align="left">有符号值:-32768到32767(2^15^到2^15^-1)无符号值:0到65535 (0到2^16^-1)</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">MEDIUMINT</td>
+<td align="left">有符号值:-8388608到8388607(-2^23^到2^23^-1)无符号值:0到16777215(0到2^24^-1)</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">INT</td>
+<td align="left">有符号值:-2147483648到2147483647(-2^31^到2^31^-1)无符号值:0到4294967295(0到2^32^-1)</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">BIGINT</td>
+<td align="left">有符号值:-9223372036854775808到9223373036854775807 (-2^63^到2^63^-1),无符号值:0到18446744073709551615(0到2^64^-1)</td>
+<td align="left">8</td>
+</tr>
+</tbody></table>
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p><img src="https://i.loli.net/2018/07/12/5b46f3cadd49b.jpg" alt="Screenshot_20180712-142200.jpg"></p>
+<h2 id="日期时间型"><a href="#日期时间型" class="headerlink" title="日期时间型"></a>日期时间型</h2><table>
+<thead>
+<tr>
+<th align="left">列类型</th>
+<th align="left">存储需求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">YEAE</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">TIME</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">DATE</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">DATETIME</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">TIMESTAMP</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">—</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="MySQL-登录"><a href="#MySQL-登录" class="headerlink" title="MySQL 登录"></a>MySQL 登录</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h 127.0.0.1  -u root -p</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">列类型</th>
-<th style="text-align:left">存储需求</th>
+<th align="left">参数</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">CHAR(M)</td>
-<td style="text-align:left">M个字节,0&lt;=M&lt;=255</td>
+<tbody><tr>
+<td align="left">-D,-database naime</td>
+<td align="left">打开指定数据库</td>
 </tr>
 <tr>
-<td style="text-align:left">VARCHAR(M)</td>
-<td style="text-align:left">L+1个字节,其中L&lt;=M且0&lt;=M&lt;= 65535</td>
+<td align="left">–delimiter = naime</td>
+<td align="left">指定分隔符</td>
 </tr>
 <tr>
-<td style="text-align:left">TINYTEXT</td>
-<td style="text-align:left">L+1个字节,其中L&lt;2<sup>8</sup></td>
+<td align="left">-h,-host taine</td>
+<td align="left">服务器名称</td>
 </tr>
 <tr>
-<td style="text-align:left">TEXT</td>
-<td style="text-align:left">L+2个字节,其中L&lt;2<sup>16</sup></td>
+<td align="left">-p,–password [-name]</td>
+<td align="left">密码</td>
 </tr>
 <tr>
-<td style="text-align:left">MEDIUMTEXT</td>
-<td style="text-align:left">L+3个字节,其中L&lt;2<sup>24</sup></td>
+<td align="left">-p,–prot=#</td>
+<td align="left">端口号</td>
 </tr>
 <tr>
-<td style="text-align:left">LONGTEXT</td>
-<td style="text-align:left">L+4个字节,其中L&lt;2<sup>32</sup></td>
+<td align="left">–prompt line</td>
+<td align="left">设置提示符</td>
 </tr>
 <tr>
-<td style="text-align:left">ENUM(‘value’,‘value2’,…)</td>
-<td style="text-align:left">1或2个字节,取决于枚举值的个数(最多65.535个值)</td>
+<td align="left">-u,–user=name</td>
+<td align="left">用户名</td>
 </tr>
 <tr>
-<td style="text-align:left">SET(‘valuel’,‘value2’,…)</td>
-<td style="text-align:left">1、2、3、4或者8个字节,取决于set成员的数目(最多64个成员)</td>
+<td align="left">-V,–version</td>
+<td align="left">輸出版本信息并且退出</td>
 </tr>
-</tbody>
-</table>
-<h2 id="整型">整型</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">数据类</th>
-<th style="text-align:left">型存储范围</th>
-<th style="text-align:left">字节</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">TINYINT</td>
-<td style="text-align:left">有符号值:-128到127(-2<sup>7</sup>到2<sup>7</sup>-1)无符号值:0到255(0到2<sup>8</sup> -1)</td>
-<td style="text-align:left">1</td>
-</tr>
-<tr>
-<td style="text-align:left">SMALLINT</td>
-<td style="text-align:left">有符号值:-32768到32767(2<sup>15</sup>到2<sup>15</sup>-1)无符号值:0到65535 (0到2<sup>16</sup>-1)</td>
-<td style="text-align:left">2</td>
-</tr>
-<tr>
-<td style="text-align:left">MEDIUMINT</td>
-<td style="text-align:left">有符号值:-8388608到8388607(-2<sup>23</sup>到2<sup>23</sup>-1)无符号值:0到16777215(0到2<sup>24</sup>-1)</td>
-<td style="text-align:left">3</td>
-</tr>
-<tr>
-<td style="text-align:left">INT</td>
-<td style="text-align:left">有符号值:-2147483648到2147483647(-2<sup>31</sup>到2<sup>31</sup>-1)无符号值:0到4294967295(0到2<sup>32</sup>-1)</td>
-<td style="text-align:left">4</td>
-</tr>
-<tr>
-<td style="text-align:left">BIGINT</td>
-<td style="text-align:left">有符号值:-9223372036854775808到9223373036854775807 (-2<sup>63</sup>到2<sup>63</sup>-1),无符号值:0到18446744073709551615(0到2<sup>64</sup>-1)</td>
-<td style="text-align:left">8</td>
-</tr>
-</tbody>
-</table>
-<h2 id="浮点型">浮点型</h2>
-<p><img src="https://i.loli.net/2018/07/12/5b46f3cadd49b.jpg" alt="Screenshot_20180712-142200.jpg"></p>
-<h2 id="日期时间型">日期时间型</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">列类型</th>
-<th style="text-align:left">存储需求</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">YEAE</td>
-<td style="text-align:left">1</td>
-</tr>
-<tr>
-<td style="text-align:left">TIME</td>
-<td style="text-align:left">3</td>
-</tr>
-<tr>
-<td style="text-align:left">DATE</td>
-<td style="text-align:left">3</td>
-</tr>
-<tr>
-<td style="text-align:left">DATETIME</td>
-<td style="text-align:left">8</td>
-</tr>
-<tr>
-<td style="text-align:left">TIMESTAMP</td>
-<td style="text-align:left">4</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h1 id="语法">语法</h1>
-<h2 id="mysql-登录">MySQL 登录</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h 127.0.0.1  -u root -p</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-D,-database naime</td>
-<td style="text-align:left">打开指定数据库</td>
-</tr>
-<tr>
-<td style="text-align:left">–delimiter = naime</td>
-<td style="text-align:left">指定分隔符</td>
-</tr>
-<tr>
-<td style="text-align:left">-h,-host taine</td>
-<td style="text-align:left">服务器名称</td>
-</tr>
-<tr>
-<td style="text-align:left">-p,–password [-name]</td>
-<td style="text-align:left">密码</td>
-</tr>
-<tr>
-<td style="text-align:left">-p,–prot=#</td>
-<td style="text-align:left">端口号</td>
-</tr>
-<tr>
-<td style="text-align:left">–prompt line</td>
-<td style="text-align:left">设置提示符</td>
-</tr>
-<tr>
-<td style="text-align:left">-u,–user=name</td>
-<td style="text-align:left">用户名</td>
-</tr>
-<tr>
-<td style="text-align:left">-V,–version</td>
-<td style="text-align:left">輸出版本信息并且退出</td>
-</tr>
-</tbody>
-</table>
-<h2 id="修改mysql提示符">修改MySQL提示符</h2>
-<ol>
-<li>连接客户端时通过参数指定</li>
+</tbody></table>
+<h2 id="修改MySQL提示符"><a href="#修改MySQL提示符" class="headerlink" title="修改MySQL提示符"></a>修改MySQL提示符</h2><ol>
+<li>连接客户端时通过参数指定<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot <span class="hljs-comment">--prompt 提示符</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot <span class="hljs-comment">--prompt 提示符</span></span><br></pre></td></tr></table></figure>
 <p>2.连接上客户端后,通过 prompt 命令修改</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;prompt 提示符</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">描述</th>
+<th align="left">参数</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">\D</td>
-<td style="text-align:left">完整的日期</td>
+<tbody><tr>
+<td align="left">\D</td>
+<td align="left">完整的日期</td>
 </tr>
 <tr>
-<td style="text-align:left">\d</td>
-<td style="text-align:left">当前数据库</td>
+<td align="left">\d</td>
+<td align="left">当前数据库</td>
 </tr>
 <tr>
-<td style="text-align:left">\h</td>
-<td style="text-align:left">服务器名称</td>
+<td align="left">\h</td>
+<td align="left">服务器名称</td>
 </tr>
 <tr>
-<td style="text-align:left">\u</td>
-<td style="text-align:left">用户名称</td>
+<td align="left">\u</td>
+<td align="left">用户名称</td>
 </tr>
-</tbody>
-</table>
-<h1 id="mysql-常用语句">MySQL 常用语句</h1>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当前服务器版本</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">VERSION</span>();</span><br><span class="line">显示当前日期时间</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">NOW</span>();</span><br><span class="line">显示当前用户</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">USER</span>();</span><br></pre></td></tr></table></figure>
-<h2 id="创建数据库">创建数据库</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span>(<span class="hljs-keyword">DATABASE</span> <span class="hljs-keyword">SCHEMA</span> [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] <span class="hljs-keyword">name</span></span><br><span class="line"></span><br><span class="line">[<span class="hljs-keyword">DEFAULT</span>] <span class="hljs-built_in">CHARACTER</span> <span class="hljs-keyword">SET</span> [=] charset_name</span><br></pre></td></tr></table></figure>
-<h2 id="查看当前服务器下的数据表列表">查看当前服务器下的数据表列表</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> (<span class="hljs-keyword">DATABASES</span> SCHEMAS&#125;</span><br><span class="line"></span><br><span class="line">[<span class="hljs-keyword">LIKE</span> <span class="hljs-string">'pattern'</span> | <span class="hljs-keyword">WHERE</span> expr]</span><br></pre></td></tr></table></figure>
-<h2 id="修改数据库">修改数据库</h2>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER &#123;DATABASE SCHEMA&#125; [db_name]</span><br><span class="line"></span><br><span class="line">[DEFAULT] CHARACTER SET [=] charset_name</span><br></pre></td></tr></table></figure>
-<h2 id="删除数据库">删除数据库</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DROP</span> &#123;<span class="hljs-keyword">DATABASE</span> | <span class="hljs-keyword">SCHEMA</span>&#125; [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span>] db_name</span><br></pre></td></tr></table></figure>
-<h1 id="表">表</h1>
-<p>数据表(或称表)是数据库最重要的组成部分之一,是其他对象的基础。</p>
-<h2 id="创建数据表">创建数据表</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] table_name(</span><br><span class="line"><span class="hljs-keyword">column</span> <span class="hljs-keyword">name</span> data_type,</span><br><span class="line">...</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
-<h2 id="查看数据表列表">查看数据表列表</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">TABLES</span> [<span class="hljs-keyword">FROM</span> db <span class="hljs-keyword">name</span>]</span><br><span class="line">[<span class="hljs-keyword">LIKE</span> <span class="hljs-string">'pattern'</span> | <span class="hljs-keyword">WHERE</span> expr]</span><br></pre></td></tr></table></figure>
+</tbody></table>
+<h1 id="MySQL-常用语句"><a href="#MySQL-常用语句" class="headerlink" title="MySQL 常用语句"></a>MySQL 常用语句</h1><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当前服务器版本</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">VERSION</span>();</span><br><span class="line">显示当前日期时间</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">NOW</span>();</span><br><span class="line">显示当前用户</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">USER</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span>(<span class="hljs-keyword">DATABASE</span> <span class="hljs-keyword">SCHEMA</span> [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] <span class="hljs-keyword">name</span></span><br><span class="line"></span><br><span class="line">[<span class="hljs-keyword">DEFAULT</span>] <span class="hljs-built_in">CHARACTER</span> <span class="hljs-keyword">SET</span> [=] charset_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前服务器下的数据表列表"><a href="#查看当前服务器下的数据表列表" class="headerlink" title="查看当前服务器下的数据表列表"></a>查看当前服务器下的数据表列表</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> (<span class="hljs-keyword">DATABASES</span> SCHEMAS&#125;</span><br><span class="line"></span><br><span class="line">[<span class="hljs-keyword">LIKE</span> <span class="hljs-string">'pattern'</span> | <span class="hljs-keyword">WHERE</span> expr]</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER &#123;DATABASE SCHEMA&#125; [db_name]</span><br><span class="line"></span><br><span class="line">[DEFAULT] CHARACTER SET [=] charset_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DROP</span> &#123;<span class="hljs-keyword">DATABASE</span> | <span class="hljs-keyword">SCHEMA</span>&#125; [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span>] db_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><p>数据表(或称表)是数据库最重要的组成部分之一,是其他对象的基础。</p>
+<h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> [<span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] table_name(</span><br><span class="line"><span class="hljs-keyword">column</span> <span class="hljs-keyword">name</span> data_type,</span><br><span class="line">...</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看数据表列表"><a href="#查看数据表列表" class="headerlink" title="查看数据表列表"></a>查看数据表列表</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">TABLES</span> [<span class="hljs-keyword">FROM</span> db <span class="hljs-keyword">name</span>]</span><br><span class="line">[<span class="hljs-keyword">LIKE</span> <span class="hljs-string">'pattern'</span> | <span class="hljs-keyword">WHERE</span> expr]</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">TABLES</span> [<span class="hljs-keyword">FROM</span> db <span class="hljs-keyword">name</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="查看数据表结构">查看数据表结构</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">COLUMNS</span> <span class="hljs-keyword">FROM</span> table_name</span><br></pre></td></tr></table></figure>
-<h2 id="插入记录">插入记录</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] table_name[(column_name...)] <span class="hljs-keyword">VALUES</span>(val,...)</span><br></pre></td></tr></table></figure>
-<h2 id="记录查找">记录查找</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> expr,... <span class="hljs-keyword">FROM</span> table_name</span><br></pre></td></tr></table></figure>
-<h2 id="空值与非空">空值与非空</h2>
-<ol>
+
+<h2 id="查看数据表结构"><a href="#查看数据表结构" class="headerlink" title="查看数据表结构"></a>查看数据表结构</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">COLUMNS</span> <span class="hljs-keyword">FROM</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] table_name[(column_name...)] <span class="hljs-keyword">VALUES</span>(val,...)</span><br></pre></td></tr></table></figure>
+
+<h2 id="记录查找"><a href="#记录查找" class="headerlink" title="记录查找"></a>记录查找</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> expr,... <span class="hljs-keyword">FROM</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="空值与非空"><a href="#空值与非空" class="headerlink" title="空值与非空"></a>空值与非空</h2><ol>
 <li>NULL,字段值可以为空</li>
 <li>NOT NULL,字段值禁止为空</li>
 </ol>
-<h2 id="auto-increment">AUTO_INCREMENT</h2>
-<p>自动编号,且必须与主键组合使用,默认情况下,起始值为1, 每次的增量为1.</p>
-<h1 id="约束">约束</h1>
-<ol>
+<h2 id="AUTO-INCREMENT"><a href="#AUTO-INCREMENT" class="headerlink" title="AUTO_INCREMENT"></a>AUTO_INCREMENT</h2><p>自动编号,且必须与主键组合使用,默认情况下,起始值为1, 每次的增量为1.</p>
+<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ol>
 <li>约束保证数据的完整性和一致性。</li>
 <li>约束分为表级约束和列级约束。</li>
 </ol>
-<h2 id="约束类型包括">约束类型包括:</h2>
-<ul>
+<h2 id="约束类型包括"><a href="#约束类型包括" class="headerlink" title="约束类型包括:"></a>约束类型包括:</h2><ul>
 <li>NOT NULL (非空约束)</li>
 <li>PRIMARY KEY (主键约束)</li>
 <li>UNIQUE KEY (唯一约束)</li>
 <li>DEFAULT (默认约束)</li>
 <li>FOREIGN KEY (外键约束)</li>
 </ul>
-<h2 id="primary-key-主键约束">PRIMARY KEY 主键约束</h2>
-<ol>
+<h2 id="PRIMARY-KEY-主键约束"><a href="#PRIMARY-KEY-主键约束" class="headerlink" title="PRIMARY KEY 主键约束"></a>PRIMARY KEY 主键约束</h2><ol>
 <li>每张数据表只能存在一个主键</li>
 <li>主键保证记录的唯一性</li>
 <li>主键自动为 NOT NULL</li>
 </ol>
-<h2 id="unique-key-唯一约束">UNIQUE KEY 唯一约束</h2>
-<ol>
+<h2 id="UNIQUE-KEY-唯一约束"><a href="#UNIQUE-KEY-唯一约束" class="headerlink" title="UNIQUE KEY 唯一约束"></a>UNIQUE KEY 唯一约束</h2><ol>
 <li>唯一约束可以保证记录的唯一性</li>
 <li>唯一约束的字段可以为空值(NULL)</li>
 <li>每张数据表可以存在多个唯一约束</li>
 </ol>
-<h2 id="default-默认值">DEFAULT 默认值</h2>
-<ul>
-<li>当插入记录时,如果没有明确为字段赋值,则自动赋予默认值。</li>
+<h2 id="DEFAULT-默认值"><a href="#DEFAULT-默认值" class="headerlink" title="DEFAULT 默认值"></a>DEFAULT 默认值</h2><ul>
+<li>当插入记录时,如果没有明确为字段赋值,则自动赋予默认值。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> tb5&#123;</span><br><span class="line"><span class="hljs-keyword">id</span> <span class="hljs-built_in">SMALLINT</span> <span class="hljs-keyword">UNSIGNED</span> AUTO_INCREMENT PRIMARY <span class="hljs-keyword">KEY</span>,</span><br><span class="line">usernate <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> NUL <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span>,</span><br><span class="line">sex ENIUM(<span class="hljs-string">'1'</span>, <span class="hljs-string">'2'</span>,<span class="hljs-number">3</span><span class="hljs-string">') DEFAULT '</span><span class="hljs-number">3</span><span class="hljs-string">'</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> tb5&#123;</span><br><span class="line"><span class="hljs-keyword">id</span> <span class="hljs-built_in">SMALLINT</span> <span class="hljs-keyword">UNSIGNED</span> AUTO_INCREMENT PRIMARY <span class="hljs-keyword">KEY</span>,</span><br><span class="line">usernate <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> NUL <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span>,</span><br><span class="line">sex ENIUM(<span class="hljs-string">'1'</span>, <span class="hljs-string">'2'</span>,<span class="hljs-number">3</span><span class="hljs-string">') DEFAULT '</span><span class="hljs-number">3</span><span class="hljs-string">'</span></span><br></pre></td></tr></table></figure>
-<h2 id="foreign-key">FOREIGN KEY</h2>
-<ul>
+<h2 id="FOREIGN-KEY"><a href="#FOREIGN-KEY" class="headerlink" title="FOREIGN KEY"></a>FOREIGN KEY</h2><ul>
 <li>作用</li>
 </ul>
 <ol>
@@ -465,18 +445,15 @@
 <li>实现一对一或一对多关系。</li>
 </ol>
 <ul>
-<li>
-<p>外键约束的要求</p>
+<li><p>外键约束的要求</p>
 <ol>
 <li>父表和子表必须使用相同的存储引擎,而且禁止使用临时表。</li>
 <li>数据表的存储引擎只能为InnoDB。</li>
-<li>外键列和参照列必须具有相似的数据类型。其中数字的长度
-或是否有符号位必须相同;而字符的长度则可以不同。</li>
+<li>外键列和参照列必须具有相似的数据类型。其中数字的长度<br>或是否有符号位必须相同;而字符的长度则可以不同。</li>
 <li>外键和参照列必须创建索引。如果外键列不存在索引的话,MySQL将自动创建索引。</li>
 </ol>
 </li>
-<li>
-<p>外键约束的参照操作</p>
+<li><p>外键约束的参照操作</p>
 <ol>
 <li>CASCADE:从主表删除或更新且自动删除或更新子表中配的行</li>
 <li>SET NULL:从主表删除或更新行,并设置子表中的外键列为NULL。如果使用该选项,必须保证子表列没有指定NOT NULL</li>
@@ -484,8 +461,7 @@
 <li>NO ACTION:标准SQL的关键字,在MySQL中与RESTRICT相同</li>
 </ol>
 </li>
-<li>
-<p>表级约束与列级约束</p>
+<li><p>表级约束与列级约束</p>
 <ul>
 <li>对一个数据列建立的约束,称为列级约束,</li>
 <li>对多个数据列建立的约束,称为表级约束,</li>
@@ -494,59 +470,57 @@
 </ul>
 </li>
 </ul>
-<h1 id="修改数据表">修改数据表</h1>
-<h2 id="添加列">添加列</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">COLUMN</span>] colname</span><br><span class="line">column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
-<h2 id="添加多列">添加多列</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">COLUMN</span>]</span><br><span class="line">(col_name column_definitio,n...)</span><br></pre></td></tr></table></figure>
-<h2 id="删除列">删除列</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> [<span class="hljs-keyword">COLUMN</span>] colname</span><br></pre></td></tr></table></figure>
-<h2 id="添加主键约束">添加主键约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">CONSTRAINT</span> [symbol]]</span><br><span class="line">PRIMARY <span class="hljs-keyword">KEY</span> [index_type](index_col namer...)</span><br></pre></td></tr></table></figure>
-<h2 id="删除主键约束">删除主键约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> PRIMARY <span class="hljs-keyword">KEY</span></span><br></pre></td></tr></table></figure>
-<h2 id="添加唯一约束">添加唯一约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">CONSTRAINT</span> [symbol]]</span><br><span class="line"><span class="hljs-keyword">UNIQUE</span> [<span class="hljs-keyword">INDEX</span>|<span class="hljs-keyword">KEY</span>] [index_name] [index_type]</span><br><span class="line">(index_col <span class="hljs-keyword">name</span>,...)</span><br></pre></td></tr></table></figure>
-<h2 id="删除唯一约束">删除唯一约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">DROP</span> &#123;<span class="hljs-keyword">INDEX</span>|<span class="hljs-keyword">KEY</span>&#125; index_name</span><br></pre></td></tr></table></figure>
-<h1 id="修改">修改</h1>
-<h2 id="添加-删除默认约束">添加/删除默认约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ALTER</span> [<span class="hljs-keyword">COLUMN</span>] column_name</span><br><span class="line">&#123;<span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> literal | <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="删除外键约束">删除外键约束</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> fk_symbol</span><br></pre></td></tr></table></figure>
-<h2 id="修改列定义">修改列定义</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">MODIFY</span> [<span class="hljs-keyword">COLUMN</span>] col_name</span><br><span class="line">column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
-<h2 id="修改列名称">修改列名称</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">CHANGE</span> [<span class="hljs-keyword">COLUMN</span>] old_col_name</span><br><span class="line"><span class="hljs-keyword">new</span> col_name column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
-<h2 id="数据表更名">数据表更名</h2>
-<ul>
-<li>方法一</li>
-</ul>
+<h1 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h1><h2 id="添加列"><a href="#添加列" class="headerlink" title="添加列"></a>添加列</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">COLUMN</span>] colname</span><br><span class="line">column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加多列"><a href="#添加多列" class="headerlink" title="添加多列"></a>添加多列</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">COLUMN</span>]</span><br><span class="line">(col_name column_definitio,n...)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> [<span class="hljs-keyword">COLUMN</span>] colname</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加主键约束"><a href="#添加主键约束" class="headerlink" title="添加主键约束"></a>添加主键约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">CONSTRAINT</span> [symbol]]</span><br><span class="line">PRIMARY <span class="hljs-keyword">KEY</span> [index_type](index_col namer...)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除主键约束"><a href="#删除主键约束" class="headerlink" title="删除主键约束"></a>删除主键约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> PRIMARY <span class="hljs-keyword">KEY</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加唯一约束"><a href="#添加唯一约束" class="headerlink" title="添加唯一约束"></a>添加唯一约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> [<span class="hljs-keyword">CONSTRAINT</span> [symbol]]</span><br><span class="line"><span class="hljs-keyword">UNIQUE</span> [<span class="hljs-keyword">INDEX</span>|<span class="hljs-keyword">KEY</span>] [index_name] [index_type]</span><br><span class="line">(index_col <span class="hljs-keyword">name</span>,...)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除唯一约束"><a href="#删除唯一约束" class="headerlink" title="删除唯一约束"></a>删除唯一约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">DROP</span> &#123;<span class="hljs-keyword">INDEX</span>|<span class="hljs-keyword">KEY</span>&#125; index_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h1><h2 id="添加-删除默认约束"><a href="#添加-删除默认约束" class="headerlink" title="添加/删除默认约束"></a>添加/删除默认约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ALTER</span> [<span class="hljs-keyword">COLUMN</span>] column_name</span><br><span class="line">&#123;<span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> literal | <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除外键约束"><a href="#删除外键约束" class="headerlink" title="删除外键约束"></a>删除外键约束</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> fk_symbol</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改列定义"><a href="#修改列定义" class="headerlink" title="修改列定义"></a>修改列定义</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">MODIFY</span> [<span class="hljs-keyword">COLUMN</span>] col_name</span><br><span class="line">column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改列名称"><a href="#修改列名称" class="headerlink" title="修改列名称"></a>修改列名称</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">CHANGE</span> [<span class="hljs-keyword">COLUMN</span>] old_col_name</span><br><span class="line"><span class="hljs-keyword">new</span> col_name column_definition [<span class="hljs-keyword">FIRST</span> | <span class="hljs-keyword">AFTER</span> col_name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据表更名"><a href="#数据表更名" class="headerlink" title="数据表更名"></a>数据表更名</h2><ul>
+<li><p>方法一</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">RENAME</span> [<span class="hljs-keyword">TO</span>[<span class="hljs-keyword">AS</span>] new_tbl_name</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方法二</li>
-</ul>
+</li>
+<li><p>方法二</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">RENAME</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">TO</span> new_tbl_name</span><br><span class="line">[, tbl_name2 <span class="hljs-keyword">TO</span> new_tb_name2]</span><br></pre></td></tr></table></figure>
-<h1 id="基础语法">基础语法</h1>
-<h2 id="insert">INSERT</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] table_name [(column_name,...)) &#123;<span class="hljs-keyword">VALUES</span> | <span class="hljs-keyword">VALUE</span>&#125;</span><br><span class="line">(&#123;expr | <span class="hljs-keyword">DEFAULT</span>,...),(...)....</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] table_name [(column_name,...)) &#123;<span class="hljs-keyword">VALUES</span> | <span class="hljs-keyword">VALUE</span>&#125;</span><br><span class="line">(&#123;expr | <span class="hljs-keyword">DEFAULT</span>,...),(...)....</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] table_name <span class="hljs-keyword">SET</span> col_name=&#123;expr | <span class="hljs-keyword">DEFAULT</span>&#125;,...</span><br></pre></td></tr></table></figure>
+
 <p>说明:与第一种方式的区别在于,此方法可以使用子查询(SubQuery)</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> [<span class="hljs-keyword">INTO</span>] tbl_name [(col_name,...] SELECT...</span><br></pre></td></tr></table></figure>
+
 <p>说明:此方法可以将查询结果插入到指定数据表。</p>
-<h2 id="update">UPDATE</h2>
-<ul>
-<li>UPDATE 更新记录值(单表)</li>
+<h2 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h2><ul>
+<li>UPDATE 更新记录值(单表)<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">UPDATE</span> [<span class="hljs-keyword">LOW_PRIORITY</span>] [<span class="hljs-keyword">IGNORE</span>] tabl_ <span class="hljs-keyword">reference</span> <span class="hljs-keyword">SET</span></span><br><span class="line">col_name1=&#123;expr1 | <span class="hljs-keyword">DEFAULT</span>&#125; [, col_name2=&#123;expr2 | <span class="hljs-keyword">DEFAULT</span>&#125;]...</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> where_condition]</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">UPDATE</span> [<span class="hljs-keyword">LOW_PRIORITY</span>] [<span class="hljs-keyword">IGNORE</span>] tabl_ <span class="hljs-keyword">reference</span> <span class="hljs-keyword">SET</span></span><br><span class="line">col_name1=&#123;expr1 | <span class="hljs-keyword">DEFAULT</span>&#125; [, col_name2=&#123;expr2 | <span class="hljs-keyword">DEFAULT</span>&#125;]...</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> where_condition]</span><br></pre></td></tr></table></figure>
 <p>##DELETE 删除记录(单表刪除)</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> table_name [<span class="hljs-keyword">WHERE</span> where_condition]</span><br></pre></td></tr></table></figure>
-<h2 id="select">SELECT</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> select_expr[,select_expr...]</span><br><span class="line">[</span><br><span class="line"><span class="hljs-keyword">FROM</span> table_references</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> where_condition]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> &#123;col_name | <span class="hljs-keyword">position</span>&#125; [<span class="hljs-keyword">ASC</span> | <span class="hljs-keyword">DESC</span>],...]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> where_condition]</span><br><span class="line">[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> &#123;col_name | expr |  <span class="hljs-keyword">position</span>) [<span class="hljs-keyword">ASC</span> | <span class="hljs-keyword">DESC</span>],...]</span><br><span class="line">[<span class="hljs-keyword">LIMIT</span> &#123;[<span class="hljs-keyword">offset</span>,] <span class="hljs-keyword">row_count</span> | <span class="hljs-keyword">row_count</span> <span class="hljs-keyword">OFFSET</span> <span class="hljs-keyword">offset</span>&#125;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="以上选项含义">以上选项含义</h3>
-<ul>
-<li>select_expr 查询表达式
-<ul>
+
+<h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> select_expr[,select_expr...]</span><br><span class="line">[</span><br><span class="line"><span class="hljs-keyword">FROM</span> table_references</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> where_condition]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> &#123;col_name | <span class="hljs-keyword">position</span>&#125; [<span class="hljs-keyword">ASC</span> | <span class="hljs-keyword">DESC</span>],...]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> where_condition]</span><br><span class="line">[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> &#123;col_name | expr |  <span class="hljs-keyword">position</span>) [<span class="hljs-keyword">ASC</span> | <span class="hljs-keyword">DESC</span>],...]</span><br><span class="line">[<span class="hljs-keyword">LIMIT</span> &#123;[<span class="hljs-keyword">offset</span>,] <span class="hljs-keyword">row_count</span> | <span class="hljs-keyword">row_count</span> <span class="hljs-keyword">OFFSET</span> <span class="hljs-keyword">offset</span>&#125;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="以上选项含义"><a href="#以上选项含义" class="headerlink" title="以上选项含义"></a>以上选项含义</h3><ul>
+<li>select_expr 查询表达式<ul>
 <li>每一个表达式表示想要的一列,必须有至少一个。</li>
 <li>多个列之间以英文逗号分隔。</li>
 <li>星号(*)所有列。 table_name. *可以命名表的所有列。</li>
@@ -555,98 +529,89 @@
 </ul>
 </li>
 </ul>
-<h2 id="where-条件表达式">WHERE 条件表达式</h2>
-<ol>
+<h2 id="WHERE-条件表达式"><a href="#WHERE-条件表达式" class="headerlink" title="WHERE 条件表达式"></a>WHERE 条件表达式</h2><ol>
 <li>对记录进行过滤,如果没有指定WHERE子句,则显示所有记录。</li>
 <li>在WHERE表达式中,可以使用MySQL支持的函数或运算符。</li>
 </ol>
-<h2 id="group-by-查询结果分组">GROUP BY 查询结果分组</h2>
-<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[GROUP BY &#123;col_name position&#125; [ASC | DESC],...]</span><br></pre></td></tr></table></figure>
-<h2 id="having-条件分组">HAVING 条件分组</h2>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HAVING where_condition]</span><br></pre></td></tr></table></figure>
-<h2 id="order-by-对查询结果进行排序">ORDER BY 对查询结果进行排序</h2>
-<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ORDER BY &#123;col_name | expr | position&#125; [ASC | DESC],..]</span><br></pre></td></tr></table></figure>
-<h2 id="limit-限制查询结果返回的数量">LIMIT 限制查询结果返回的数量</h2>
-<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[LIMIT &#123;[offset,] row_count | row_count OFFSET offset&#125;]</span><br></pre></td></tr></table></figure>
-<h1 id="子查询">子查询</h1>
-<p>子查询(Subquery)是指出现在其他SQL语句内的SELECT子句。</p>
+<h2 id="GROUP-BY-查询结果分组"><a href="#GROUP-BY-查询结果分组" class="headerlink" title="GROUP BY 查询结果分组"></a>GROUP BY 查询结果分组</h2><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[GROUP BY &#123;col_name position&#125; [ASC | DESC],...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="HAVING-条件分组"><a href="#HAVING-条件分组" class="headerlink" title="HAVING 条件分组"></a>HAVING 条件分组</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HAVING where_condition]</span><br></pre></td></tr></table></figure>
+
+<h2 id="ORDER-BY-对查询结果进行排序"><a href="#ORDER-BY-对查询结果进行排序" class="headerlink" title="ORDER BY 对查询结果进行排序"></a>ORDER BY 对查询结果进行排序</h2><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ORDER BY &#123;col_name | expr | position&#125; [ASC | DESC],..]</span><br></pre></td></tr></table></figure>
+
+<h2 id="LIMIT-限制查询结果返回的数量"><a href="#LIMIT-限制查询结果返回的数量" class="headerlink" title="LIMIT 限制查询结果返回的数量"></a>LIMIT 限制查询结果返回的数量</h2><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[LIMIT &#123;[offset,] row_count | row_count OFFSET offset&#125;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h1><p>子查询(Subquery)是指出现在其他SQL语句内的SELECT子句。</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> t1 <span class="hljs-keyword">WHERE</span> coll = (<span class="hljs-keyword">SELECT</span> col2 <span class="hljs-keyword">FROM</span> t2);</span><br><span class="line">其中<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">FROM</span> t1,称为<span class="hljs-keyword">Outer</span> <span class="hljs-keyword">Query</span>/<span class="hljs-keyword">Inner</span> <span class="hljs-keyword">Statement</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> col2 <span class="hljs-keyword">FROM</span> t2 ,称为SubQuery</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>子查询指嵌套在查询内部,且必须始终出现在圆括号内。</p>
+<li><p>子查询指嵌套在查询内部,且必须始终出现在圆括号内。</p>
 </li>
-<li>
-<p>子查询可以包含多个关键字或条件,</p>
+<li><p>子查询可以包含多个关键字或条件,</p>
 <ul>
 <li>如DISTINCT、GROUP BY、ORDER BY, LIMIT函数等。</li>
 </ul>
 </li>
-<li>
-<p>子查询的外层查询可以是:SELECT INSERT, UPDATE.SET或DO。</p>
+<li><p>子查询的外层查询可以是:SELECT INSERT, UPDATE.SET或DO。</p>
 <ol>
 <li>子查询返回值</li>
 </ol>
 </li>
-<li>
-<p>子查询可以返回标量、一行、一列或子查询。</p>
+<li><p>子查询可以返回标量、一行、一列或子查询。</p>
 <ol>
 <li>使用比较运算符的子查询</li>
 </ol>
 </li>
-<li>
-<p>使用比较运算符的子查询</p>
+<li><p>使用比较运算符的子查询</p>
 <ul>
 <li>=, &gt;, &lt; &gt;, &lt;= &lt;&gt;. !&gt;, &lt;=&gt;</li>
 </ul>
 </li>
-<li>
-<p>语法结构</p>
+<li><p>语法结构</p>
 <ul>
 <li>operand comparison operator subquery</li>
 </ul>
 </li>
 </ul>
-<h1 id="用-any-some-或-all-修饰的比较运算符">用 ANY,SOME  或 ALL 修饰的比较运算符</h1>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">operand comparison operator ANY (subquery)</span><br><span class="line">operand comparison operator SUM (subquery)</span><br><span class="line">operand comparison operator ALL (subquery)</span><br></pre></td></tr></table></figure>
+<h1 id="用-ANY-SOME-或-ALL-修饰的比较运算符"><a href="#用-ANY-SOME-或-ALL-修饰的比较运算符" class="headerlink" title="用 ANY,SOME  或 ALL 修饰的比较运算符"></a>用 ANY,SOME  或 ALL 修饰的比较运算符</h1><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">operand comparison operator ANY (subquery)</span><br><span class="line">operand comparison operator SUM (subquery)</span><br><span class="line">operand comparison operator ALL (subquery)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>ANY、SOME、ALL关键字</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">运算符</th>
-<th style="text-align:left">ANY</th>
-<th style="text-align:left">SOME</th>
-<th style="text-align:left">ALL</th>
+<th align="left">运算符</th>
+<th align="left">ANY</th>
+<th align="left">SOME</th>
+<th align="left">ALL</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">&gt;,&gt;=</td>
-<td style="text-align:left">最小值</td>
-<td style="text-align:left">最小值</td>
-<td style="text-align:left">最大值</td>
+<tbody><tr>
+<td align="left">&gt;,&gt;=</td>
+<td align="left">最小值</td>
+<td align="left">最小值</td>
+<td align="left">最大值</td>
 </tr>
 <tr>
-<td style="text-align:left">&lt;,&lt;=</td>
-<td style="text-align:left">最大值</td>
-<td style="text-align:left">最大值</td>
-<td style="text-align:left">最小值</td>
+<td align="left">&lt;,&lt;=</td>
+<td align="left">最大值</td>
+<td align="left">最大值</td>
+<td align="left">最小值</td>
 </tr>
 <tr>
-<td style="text-align:left">=</td>
-<td style="text-align:left">任意值</td>
-<td style="text-align:left">任意值</td>
-<td style="text-align:left"></td>
+<td align="left">=</td>
+<td align="left">任意值</td>
+<td align="left">任意值</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">&lt;&gt;,!=</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left">任意值</td>
+<td align="left">&lt;&gt;,!=</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">任意值</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
         </div>
         
@@ -796,7 +761,7 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#mysql-语句的规范">
+            <a class="is-flex" href="#MySQL-语句的规范">
             <span class="has-mr-6">1</span>
             <span>MySQL 语句的规范</span>
             </a></li><li>
@@ -824,15 +789,15 @@
             <span class="has-mr-6">3</span>
             <span>语法</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#mysql-登录">
+            <a class="is-flex" href="#MySQL-登录">
             <span class="has-mr-6">3.1</span>
             <span>MySQL 登录</span>
             </a></li><li>
-            <a class="is-flex" href="#修改mysql提示符">
+            <a class="is-flex" href="#修改MySQL提示符">
             <span class="has-mr-6">3.2</span>
             <span>修改MySQL提示符</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#mysql-常用语句">
+            <a class="is-flex" href="#MySQL-常用语句">
             <span class="has-mr-6">4</span>
             <span>MySQL 常用语句</span>
             </a><ul class="menu-list"><li>
@@ -880,7 +845,7 @@
             <span class="has-mr-6">5.6</span>
             <span>空值与非空</span>
             </a></li><li>
-            <a class="is-flex" href="#auto-increment">
+            <a class="is-flex" href="#AUTO-INCREMENT">
             <span class="has-mr-6">5.7</span>
             <span>AUTO_INCREMENT</span>
             </a></li></ul></li><li>
@@ -892,19 +857,19 @@
             <span class="has-mr-6">6.1</span>
             <span>约束类型包括:</span>
             </a></li><li>
-            <a class="is-flex" href="#primary-key-主键约束">
+            <a class="is-flex" href="#PRIMARY-KEY-主键约束">
             <span class="has-mr-6">6.2</span>
             <span>PRIMARY KEY 主键约束</span>
             </a></li><li>
-            <a class="is-flex" href="#unique-key-唯一约束">
+            <a class="is-flex" href="#UNIQUE-KEY-唯一约束">
             <span class="has-mr-6">6.3</span>
             <span>UNIQUE KEY 唯一约束</span>
             </a></li><li>
-            <a class="is-flex" href="#default-默认值">
+            <a class="is-flex" href="#DEFAULT-默认值">
             <span class="has-mr-6">6.4</span>
             <span>DEFAULT 默认值</span>
             </a></li><li>
-            <a class="is-flex" href="#foreign-key">
+            <a class="is-flex" href="#FOREIGN-KEY">
             <span class="has-mr-6">6.5</span>
             <span>FOREIGN KEY</span>
             </a></li></ul></li><li>
@@ -968,15 +933,15 @@
             <span class="has-mr-6">9</span>
             <span>基础语法</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#insert">
+            <a class="is-flex" href="#INSERT">
             <span class="has-mr-6">9.1</span>
             <span>INSERT</span>
             </a></li><li>
-            <a class="is-flex" href="#update">
+            <a class="is-flex" href="#UPDATE">
             <span class="has-mr-6">9.2</span>
             <span>UPDATE</span>
             </a></li><li>
-            <a class="is-flex" href="#select">
+            <a class="is-flex" href="#SELECT">
             <span class="has-mr-6">9.3</span>
             <span>SELECT</span>
             </a><ul class="menu-list"><li>
@@ -984,23 +949,23 @@
             <span class="has-mr-6">9.3.1</span>
             <span>以上选项含义</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#where-条件表达式">
+            <a class="is-flex" href="#WHERE-条件表达式">
             <span class="has-mr-6">9.4</span>
             <span>WHERE 条件表达式</span>
             </a></li><li>
-            <a class="is-flex" href="#group-by-查询结果分组">
+            <a class="is-flex" href="#GROUP-BY-查询结果分组">
             <span class="has-mr-6">9.5</span>
             <span>GROUP BY 查询结果分组</span>
             </a></li><li>
-            <a class="is-flex" href="#having-条件分组">
+            <a class="is-flex" href="#HAVING-条件分组">
             <span class="has-mr-6">9.6</span>
             <span>HAVING 条件分组</span>
             </a></li><li>
-            <a class="is-flex" href="#order-by-对查询结果进行排序">
+            <a class="is-flex" href="#ORDER-BY-对查询结果进行排序">
             <span class="has-mr-6">9.7</span>
             <span>ORDER BY 对查询结果进行排序</span>
             </a></li><li>
-            <a class="is-flex" href="#limit-限制查询结果返回的数量">
+            <a class="is-flex" href="#LIMIT-限制查询结果返回的数量">
             <span class="has-mr-6">9.8</span>
             <span>LIMIT 限制查询结果返回的数量</span>
             </a></li></ul></li><li>
@@ -1008,7 +973,7 @@
             <span class="has-mr-6">10</span>
             <span>子查询</span>
             </a></li><li>
-            <a class="is-flex" href="#用-any-some-或-all-修饰的比较运算符">
+            <a class="is-flex" href="#用-ANY-SOME-或-ALL-修饰的比较运算符">
             <span class="has-mr-6">11</span>
             <span>用 ANY,SOME  或 ALL 修饰的比较运算符</span>
             </a></li></ul>
@@ -1052,7 +1017,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

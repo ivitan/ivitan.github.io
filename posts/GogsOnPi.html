@@ -196,30 +196,36 @@
         <div class="content">
             <p>树莓派搭建 Gogs Git 服务</p>
 <a id="more"></a>
-<h1 id="安装-mysql">安装 MySQL</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure>
+<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf </span><br><span class="line">注释掉 </span><br><span class="line"><span class="hljs-built_in">bind</span>-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改 root 密码</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysqladmin -u root -p password</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>新建 gogs 数据库</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -h127.0.0.1 -uroot -p123456</span><br><span class="line">create database gogs;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>重启 MySQL</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
-<h1 id="golang">golang</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install golang -y</span><br></pre></td></tr></table></figure>
-<h1 id="gogs"><a href="https://gogs.io/" target="_blank" rel="noopener">gogs</a></h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://cdn.gogs.io/0.11.79/gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang"><a href="#golang" class="headerlink" title="golang"></a>golang</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install golang -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="gogs"><a href="#gogs" class="headerlink" title="gogs"></a><a href="https://gogs.io/" target="_blank" rel="noopener">gogs</a></h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://cdn.gogs.io/0.11.79/gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
 <p>解压</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
 <p>安装</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> 解压后的目录</span><br><span class="line">./gogs web</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <ul>
 <li>浏览器打开 <code>http://ip:3000</code></li>
@@ -227,14 +233,18 @@
 <p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/20190731144809.png" alt></p>
 <p>后台运行</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./gogs web &gt; nohup.out 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-<h1 id="frp-内网穿透"><a href="https://diannaobos.com/frp/" target="_blank" rel="noopener">Frp</a> 内网穿透</h1>
-<p>下载安装</p>
+
+<h1 id="Frp-内网穿透"><a href="#Frp-内网穿透" class="headerlink" title="Frp 内网穿透"></a><a href="https://diannaobos.com/frp/" target="_blank" rel="noopener">Frp</a> 内网穿透</h1><p>下载安装</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.27.1/frp_0.27.1_linux_386.tar.gz</span><br><span class="line">  </span><br><span class="line"><span class="hljs-comment"># 解压安装</span></span><br><span class="line">tar -zxvf frp_0.27.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> frp_0.27.1_linux_386</span><br><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = gogs.vitan.me</span><br><span class="line">server_port = 8000</span><br><span class="line">token = </span><br><span class="line"></span><br><span class="line">[gogs]</span><br><span class="line"><span class="hljs-built_in">type</span> =http</span><br><span class="line">privilege_mode = <span class="hljs-literal">true</span></span><br><span class="line">local_ip = localhost</span><br><span class="line">locah_port = 3000</span><br><span class="line"></span><br><span class="line">custom_domain = gogs.vitan.me</span><br></pre></td></tr></table></figure>
+
 <p>启动</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>配置好服务器端后,可以在浏览中(<a href="http://IP:8000/static/#/" target="_blank" rel="noopener">http://IP:8000/static/#/</a>) 打开 frp 的控制台</li>
 </ul>
@@ -393,7 +403,7 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#安装-mysql">
+            <a class="is-flex" href="#安装-MySQL">
             <span class="has-mr-6">1</span>
             <span>安装 MySQL</span>
             </a></li><li>
@@ -405,7 +415,7 @@
             <span class="has-mr-6">3</span>
             <span>gogs</span>
             </a></li><li>
-            <a class="is-flex" href="#frp-内网穿透">
+            <a class="is-flex" href="#Frp-内网穿透">
             <span class="has-mr-6">4</span>
             <span>Frp 内网穿透</span>
             </a></li></ul>
@@ -449,7 +459,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

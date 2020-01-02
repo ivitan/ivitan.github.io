@@ -196,28 +196,22 @@
         <div class="content">
             <p>Ubuntu安装Android Studio</p>
 <a id="more"></a>
-<h1 id="sdk">SDK</h1>
-<h2 id="安装-android-sdk">安装 Android SDK</h2>
-<ul>
+
+<h1 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h1><h2 id="安装-Android-SDK"><a href="#安装-Android-SDK" class="headerlink" title="安装 Android SDK"></a>安装 Android SDK</h2><ul>
 <li>下载SDK<a href="https://developer.android.com/studio/index.html?hl=zh-cn" target="_blank" rel="noopener">传送门</a></li>
-<li>解压并移动到指定目录<code>tar -zxvf android-sdk-linux.tgz -C /usr/local/andriod-sdk</code>
-sudo mv -r /usr/local/ android-sdk-linux</li>
-<li>更改属主、属组
-·cd /usr/local/·
-·sudo chown -R vitan:vitan android-sdk/</li>
+<li>解压并移动到指定目录<code>tar -zxvf android-sdk-linux.tgz -C /usr/local/andriod-sdk</code><br>sudo mv -r /usr/local/ android-sdk-linux</li>
+<li>更改属主、属组<br>·cd /usr/local/·<br>·sudo chown -R vitan:vitan android-sdk/</li>
 </ul>
-<h2 id="配置sdk环境变量">配置SDK环境变量</h2>
-<ul>
+<h2 id="配置SDK环境变量"><a href="#配置SDK环境变量" class="headerlink" title="配置SDK环境变量"></a>配置SDK环境变量</h2><ul>
 <li><code>vim /etc/profile</code>后添加</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set sdk environment</span><br><span class="line">export SDK_HOME=/usr/local/android-sdk-linux</span><br><span class="line">export PATH=$SDK_HOME/tools:$SDK_HOME/platform-tools:$PATH</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>source /etc/profile</code> 使上面的配置立即生效。</li>
 </ul>
-<h1 id="studio-步骤">Studio 步骤</h1>
-<p>1.下载Android Studio <a href="http://www.android-studio.org/" target="_blank" rel="noopener">传送门</a></p>
-<p>2.解压到指定目录
-<code>sudo tar zxvf android-studio-ide-171.4443003-linux.zip /opt/Android-Studio/</code></p>
+<h1 id="Studio-步骤"><a href="#Studio-步骤" class="headerlink" title="Studio 步骤"></a>Studio 步骤</h1><p>1.下载Android Studio <a href="http://www.android-studio.org/" target="_blank" rel="noopener">传送门</a></p>
+<p>2.解压到指定目录<br><code>sudo tar zxvf android-studio-ide-171.4443003-linux.zip /opt/Android-Studio/</code></p>
 <p>3.安装</p>
 <ul>
 <li>cd /opt/Android-Studio/bin</li>
@@ -373,19 +367,19 @@ sudo mv -r /usr/local/ android-sdk-linux</li>
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#sdk">
+            <a class="is-flex" href="#SDK">
             <span class="has-mr-6">1</span>
             <span>SDK</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#安装-android-sdk">
+            <a class="is-flex" href="#安装-Android-SDK">
             <span class="has-mr-6">1.1</span>
             <span>安装 Android SDK</span>
             </a></li><li>
-            <a class="is-flex" href="#配置sdk环境变量">
+            <a class="is-flex" href="#配置SDK环境变量">
             <span class="has-mr-6">1.2</span>
             <span>配置SDK环境变量</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#studio-步骤">
+            <a class="is-flex" href="#Studio-步骤">
             <span class="has-mr-6">2</span>
             <span>Studio 步骤</span>
             </a></li></ul>
@@ -429,7 +423,7 @@ sudo mv -r /usr/local/ android-sdk-linux</li>
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

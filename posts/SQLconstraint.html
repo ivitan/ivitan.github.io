@@ -196,188 +196,188 @@
         <div class="content">
             <p>SQL：约束</p>
 <a id="more"></a>
-<h1 id="unique-约束">UNIQUE 约束</h1>
-<p>各约束意义</p>
+<h1 id="UNIQUE-约束"><a href="#UNIQUE-约束" class="headerlink" title="UNIQUE 约束"></a>UNIQUE 约束</h1><p>各约束意义</p>
 <ul>
 <li><code>UNIQUE</code>约束唯一标识数据库表中的每条记录。</li>
 <li><code>UNIQUE</code>和<code>PRIMARY KEY</code>约束均为列或列集合提供了唯一性的保证。</li>
 <li><code>PRIMARY KEY</code>约束拥有自动定义的 UNIQUE 约束。</li>
 <li>请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</li>
 </ul>
-<h2 id="create-table-时的-unique-约束">CREATE TABLE 时的 UNIQUE 约束</h2>
-<ul>
+<h2 id="CREATE-TABLE-时的-UNIQUE-约束"><a href="#CREATE-TABLE-时的-UNIQUE-约束" class="headerlink" title="CREATE TABLE 时的 UNIQUE 约束"></a>CREATE TABLE 时的 UNIQUE 约束</h2><ul>
 <li>在 “Persons” 表创建时在 “P_Id” 列上创建 UNIQUE 约束</li>
 <li>MySQL</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line"><span class="hljs-keyword">UNIQUE</span> (P_Id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>SQL Server/Oracle/MS Access</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">UNIQUE</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h2 id="命名-unique-约束-并定义多个列的-unique-约束">命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束</h2>
-<ul>
+
+<h2 id="命名-UNIQUE-约束，并定义多个列的-UNIQUE-约束"><a href="#命名-UNIQUE-约束，并定义多个列的-UNIQUE-约束" class="headerlink" title="命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束"></a>命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束</h2><ul>
 <li>MySQL/SQL Server/Oracle/MS Access</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line"><span class="hljs-keyword">CONSTRAINT</span> uc_PersonID <span class="hljs-keyword">UNIQUE</span> (P_Id,LastName)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h2 id="alter-table-时的-unique-约束">ALTER TABLE 时的 UNIQUE 约束</h2>
-<p>语法</p>
+
+<h2 id="ALTER-TABLE-时的-UNIQUE-约束"><a href="#ALTER-TABLE-时的-UNIQUE-约束" class="headerlink" title="ALTER TABLE 时的 UNIQUE 约束"></a>ALTER TABLE 时的 UNIQUE 约束</h2><p>语法</p>
 <ul>
 <li>当表已被创建时，如需在 “P_Id” 列创建 UNIQUE 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">UNIQUE</span> (P_Id)</span><br></pre></td></tr></table></figure>
-<h2 id="如需命名-unique-约束-并添加-unique-约束">如需命名 UNIQUE 约束，并添加 UNIQUE 约束，</h2>
-<p>语法</p>
+
+<h2 id="如需命名-UNIQUE-约束，并添加-UNIQUE-约束，"><a href="#如需命名-UNIQUE-约束，并添加-UNIQUE-约束，" class="headerlink" title="如需命名 UNIQUE 约束，并添加 UNIQUE 约束，"></a>如需命名 UNIQUE 约束，并添加 UNIQUE 约束，</h2><p>语法</p>
 <p>MySQL / SQL Server / Oracle / MS Access：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> uc_PersonID <span class="hljs-keyword">UNIQUE</span> (P_Id,LastName)</span><br></pre></td></tr></table></figure>
-<h2 id="撤销-unique-约束">撤销 UNIQUE 约束</h2>
-<p>撤销 UNIQUE 约束
-MySQL</p>
+
+<h2 id="撤销-UNIQUE-约束"><a href="#撤销-UNIQUE-约束" class="headerlink" title="撤销 UNIQUE 约束"></a>撤销 UNIQUE 约束</h2><p>撤销 UNIQUE 约束<br>MySQL</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">INDEX</span> uc_PersonID</span><br></pre></td></tr></table></figure>
+
 <p>SQL Server / Oracle / MS Access：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> uc_PersonID</span><br></pre></td></tr></table></figure>
-<h1 id="primary-key-约束">PRIMARY KEY 约束</h1>
-<p>PRIMARY KEY 约束唯一标识数据库表中的每条记录。</p>
+
+<h1 id="PRIMARY-KEY-约束"><a href="#PRIMARY-KEY-约束" class="headerlink" title="PRIMARY KEY 约束"></a>PRIMARY KEY 约束</h1><p>PRIMARY KEY 约束唯一标识数据库表中的每条记录。</p>
 <ul>
 <li>主键必须包含唯一的值。</li>
 <li>主键列不能包含 NULL 值。</li>
 <li>每个表都应该有一个主键，并且每个表只能有一个主键。</li>
 </ul>
-<h2 id="create-table-时的-primary-key-约束">CREATE TABLE 时的 PRIMARY KEY 约束</h2>
-<p>下面的 SQL 在 “Persons” 表创建时在 “P_Id” 列上创建 PRIMARY KEY 约束</p>
+<h2 id="CREATE-TABLE-时的-PRIMARY-KEY-约束"><a href="#CREATE-TABLE-时的-PRIMARY-KEY-约束" class="headerlink" title="CREATE TABLE 时的 PRIMARY KEY 约束"></a>CREATE TABLE 时的 PRIMARY KEY 约束</h2><p>下面的 SQL 在 “Persons” 表创建时在 “P_Id” 列上创建 PRIMARY KEY 约束</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">PRIMARY <span class="hljs-keyword">KEY</span> (P_Id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>SQL Server / Oracle / MS Access</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line"><span class="hljs-keyword">CONSTRAINT</span> pk_PersonID PRIMARY <span class="hljs-keyword">KEY</span> (P_Id,LastName)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>注释：在上面的实例中，只有一个主键 PRIMARY KEY（pk_PersonID）。然而，pk_PersonID 的值是由两个列（P_Id 和 LastName）组成的。</li>
 </ul>
-<h2 id="alter-table-时的-primary-key-约束">ALTER TABLE 时的 PRIMARY KEY 约束</h2>
-<ul>
+<h2 id="ALTER-TABLE-时的-PRIMARY-KEY-约束"><a href="#ALTER-TABLE-时的-PRIMARY-KEY-约束" class="headerlink" title="ALTER TABLE 时的 PRIMARY KEY 约束"></a>ALTER TABLE 时的 PRIMARY KEY 约束</h2><ul>
 <li>当表已被创建时，如需在 “P_Id” 列创建 PRIMARY KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> PRIMARY <span class="hljs-keyword">KEY</span> (P_Id)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 PRIMARY KEY 约束，并定义多个列的 PRIMARY KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> pk_PersonID PRIMARY <span class="hljs-keyword">KEY</span> (P_Id,LastName)</span><br></pre></td></tr></table></figure>
+
 <p>注释：如果您使用 ALTER TABLE 语句添加主键，必须把主键列声明为不包含 NULL 值（在表首次创建时）。</p>
-<h2 id="撤销-primary-key-约束">撤销 PRIMARY KEY 约束</h2>
-<p>MySQL</p>
+<h2 id="撤销-PRIMARY-KEY-约束"><a href="#撤销-PRIMARY-KEY-约束" class="headerlink" title="撤销 PRIMARY KEY 约束"></a>撤销 PRIMARY KEY 约束</h2><p>MySQL</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> PRIMARY <span class="hljs-keyword">KEY</span></span><br></pre></td></tr></table></figure>
+
 <p>SQL Server / Oracle / MS Access</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> pk_PersonID</span><br></pre></td></tr></table></figure>
-<h1 id="foreign-key-约束">FOREIGN KEY 约束</h1>
-<p>一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。</p>
-<h2 id="解释外键">解释外键</h2>
+
+<h1 id="FOREIGN-KEY-约束"><a href="#FOREIGN-KEY-约束" class="headerlink" title="FOREIGN KEY 约束"></a>FOREIGN KEY 约束</h1><p>一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。</p>
+<h2 id="解释外键"><a href="#解释外键" class="headerlink" title="解释外键"></a>解释外键</h2><table>
+<thead>
+<tr>
+<th align="left">P_Id</th>
+<th align="left">LastName</th>
+<th align="left">FirstName</th>
+<th align="left">Address</th>
+<th align="left">City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">Hansen</td>
+<td align="left">Ola</td>
+<td align="left">Timoteivn</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Svendson</td>
+<td align="left">Tove</td>
+<td align="left">Borgvn</td>
+<td align="left">23</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Pettersen</td>
+<td align="left">Kari</td>
+<td align="left">Storgt</td>
+<td align="left">20</td>
+</tr>
+</tbody></table>
+<p>“Orders” </p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">P_Id</th>
-<th style="text-align:left">LastName</th>
-<th style="text-align:left">FirstName</th>
-<th style="text-align:left">Address</th>
-<th style="text-align:left">City</th>
+<th align="left">O_Id</th>
+<th align="left">OrderNo</th>
+<th align="left">P_Id</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">Hansen</td>
-<td style="text-align:left">Ola</td>
-<td style="text-align:left">Timoteivn</td>
-<td style="text-align:left">10</td>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">77895</td>
+<td align="left">3</td>
 </tr>
 <tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">Svendson</td>
-<td style="text-align:left">Tove</td>
-<td style="text-align:left">Borgvn</td>
-<td style="text-align:left">23</td>
+<td align="left">2</td>
+<td align="left">44678</td>
+<td align="left">3</td>
 </tr>
 <tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">Pettersen</td>
-<td style="text-align:left">Kari</td>
-<td style="text-align:left">Storgt</td>
-<td style="text-align:left">20</td>
-</tr>
-</tbody>
-</table>
-<p>“Orders”</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">O_Id</th>
-<th style="text-align:left">OrderNo</th>
-<th style="text-align:left">P_Id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">77895</td>
-<td style="text-align:left">3</td>
+<td align="left">3</td>
+<td align="left">22456</td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">44678</td>
-<td style="text-align:left">3</td>
+<td align="left">4</td>
+<td align="left">24562</td>
+<td align="left">1</td>
 </tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">22456</td>
-<td style="text-align:left">2</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">24562</td>
-<td style="text-align:left">1</td>
-</tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>请注意，“Orders” 表中的 “P_Id” 列指向 “Persons” 表中的 “P_Id” 列。</li>
+<li>请注意，”Orders” 表中的 “P_Id” 列指向 “Persons” 表中的 “P_Id” 列。</li>
 <li>“Persons” 表中的 “P_Id” 列是 “Persons” 表中的 PRIMARY KEY。</li>
 <li>“Orders” 表中的 “P_Id” 列是 “Orders” 表中的 FOREIGN KEY。</li>
 </ul>
-<h2 id="foreign-key-约束用于预防破坏表之间连接的行为">FOREIGN KEY 约束用于预防破坏表之间连接的行为。</h2>
-<p>作用: FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。</p>
+<h2 id="FOREIGN-KEY-约束用于预防破坏表之间连接的行为。"><a href="#FOREIGN-KEY-约束用于预防破坏表之间连接的行为。" class="headerlink" title="FOREIGN KEY 约束用于预防破坏表之间连接的行为。"></a>FOREIGN KEY 约束用于预防破坏表之间连接的行为。</h2><p>作用: FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。</p>
 <ul>
-<li>CREATE TABLE 时的 FOREIGN KEY 约束
-下面的 SQL 在 “Orders” 表创建时在 “P_Id” 列上创建 FOREIGN KEY 约束：</li>
+<li>CREATE TABLE 时的 FOREIGN KEY 约束<br>下面的 SQL 在 “Orders” 表创建时在 “P_Id” 列上创建 FOREIGN KEY 约束：</li>
 </ul>
 <p>MySQL：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">OrderNo <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">P_Id <span class="hljs-built_in">int</span>,</span><br><span class="line">PRIMARY <span class="hljs-keyword">KEY</span> (O_Id),</span><br><span class="line"><span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (P_Id) <span class="hljs-keyword">REFERENCES</span> Persons(P_Id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>SQL Server / Oracle / MS Access：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,</span><br><span class="line">OrderNo <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">REFERENCES</span> Persons(P_Id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">OrderNo <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">P_Id <span class="hljs-built_in">int</span>,</span><br><span class="line">PRIMARY <span class="hljs-keyword">KEY</span> (O_Id),</span><br><span class="line"><span class="hljs-keyword">CONSTRAINT</span> fk_PerOrders <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (P_Id)</span><br><span class="line"><span class="hljs-keyword">REFERENCES</span> Persons(P_Id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>ALTER TABLE 时的 FOREIGN KEY 约束</p>
 <ul>
 <li>当 “Orders” 表已被创建时，如需在 “P_Id” 列创建 FOREIGN KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (P_Id)</span><br><span class="line"><span class="hljs-keyword">REFERENCES</span> Persons(P_Id)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 FOREIGN KEY 约束，并定义多个列的 FOREIGN KEY 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_PerOrders</span><br><span class="line"><span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (P_Id)</span><br><span class="line"><span class="hljs-keyword">REFERENCES</span> Persons(P_Id)</span><br></pre></td></tr></table></figure>
-<h2 id="撤销-foreign-key-约束">撤销 FOREIGN KEY 约束</h2>
-<p>撤销 FOREIGN KEY 约束：</p>
+
+<h2 id="撤销-FOREIGN-KEY-约束"><a href="#撤销-FOREIGN-KEY-约束" class="headerlink" title="撤销 FOREIGN KEY 约束"></a>撤销 FOREIGN KEY 约束</h2><p>撤销 FOREIGN KEY 约束：</p>
 <ul>
 <li>MySQL</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> fk_PerOrders</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>SQL Server / Oracle / MS Access</li>
+<li>SQL Server / Oracle / MS Access<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> fk_PerOrders</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> fk_PerOrders</span><br></pre></td></tr></table></figure>
-<h1 id="check-约束">CHECK 约束</h1>
-<p>范围及作用</p>
+<h1 id="CHECK-约束"><a href="#CHECK-约束" class="headerlink" title="CHECK 约束"></a>CHECK 约束</h1><p>范围及作用</p>
 <ul>
 <li>CHECK 约束用于限制列中的值的范围。</li>
 <li>如果对单个列定义 CHECK 约束，那么该列只允许特定的值。</li>
@@ -385,74 +385,80 @@ MySQL</p>
 </ul>
 <p>CREATE TABLE 时的 CHECK 约束</p>
 <ul>
-<li>
-<p>下面的 SQL 在 “Persons” 表创建时在 “P_Id” 列上创建 CHECK 约束。CHECK 约束规定 “P_Id” 列必须只包含大于 0 的整数。</p>
+<li><p>下面的 SQL 在 “Persons” 表创建时在 “P_Id” 列上创建 CHECK 约束。CHECK 约束规定 “P_Id” 列必须只包含大于 0 的整数。</p>
 </li>
-<li>
-<p>MySQL</p>
+<li><p>MySQL</p>
 </li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line"><span class="hljs-keyword">CHECK</span> (P_Id&gt;<span class="hljs-number">0</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>SQL Server / Oracle / MS Access：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">CHECK</span> (P_Id&gt;<span class="hljs-number">0</span>),</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 CHECK 约束，并定义多个列的 CHECK 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line"><span class="hljs-keyword">CONSTRAINT</span> chk_Person <span class="hljs-keyword">CHECK</span> (P_Id&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> City=<span class="hljs-string">'Sandnes'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>ALTER TABLE 时的 CHECK 约束</p>
 <ul>
 <li>当表已被创建时，如需在 “P_Id” 列创建 CHECK 约束，请使用下面的 SQL</li>
 </ul>
 <p>MySQL / SQL Server / Oracle / MS Access:</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CHECK</span> (P_Id&gt;<span class="hljs-number">0</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如需命名 CHECK 约束，并定义多个列的 CHECK 约束</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> chk_Person <span class="hljs-keyword">CHECK</span> (P_Id&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> City=<span class="hljs-string">'Sandnes'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="撤销-check-约束">撤销 CHECK 约束</h2>
-<p>撤销 CHECK 约束
-SQL Server / Oracle / MS Access：</p>
+
+<h2 id="撤销-CHECK-约束"><a href="#撤销-CHECK-约束" class="headerlink" title="撤销 CHECK 约束"></a>撤销 CHECK 约束</h2><p>撤销 CHECK 约束<br>SQL Server / Oracle / MS Access：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> chk_Person</span><br></pre></td></tr></table></figure>
+
 <p>MySQL：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CHECK</span> chk_Person</span><br></pre></td></tr></table></figure>
-<h1 id="sql-default-约束">SQL DEFAULT 约束</h1>
-<p>作用</p>
+
+<h1 id="SQL-DEFAULT-约束"><a href="#SQL-DEFAULT-约束" class="headerlink" title="SQL DEFAULT 约束"></a>SQL DEFAULT 约束</h1><p>作用</p>
 <ul>
 <li>DEFAULT 约束用于向列中插入默认值。</li>
 <li>如果没有规定其他的值，那么会将默认值添加到所有的新记录。</li>
 </ul>
-<p>CREATE TABLE 时的 DEFAULT 约束
-下面的 SQL 在 “Persons” 表创建时在 “City” 列上创建 DEFAULT 约束：
-My SQL / SQL Server / Oracle / MS Access</p>
+<p>CREATE TABLE 时的 DEFAULT 约束<br>下面的 SQL 在 “Persons” 表创建时在 “City” 列上创建 DEFAULT 约束：<br>My SQL / SQL Server / Oracle / MS Access</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">P_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">LastName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">FirstName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">Address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>),</span><br><span class="line">City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'Sandnes'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>通过使用类似 GETDATE() 这样的函数，DEFAULT 约束也可以用于插入系统值：</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">O_Id <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">OrderNo <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">P_Id <span class="hljs-built_in">int</span>,</span><br><span class="line">OrderDate <span class="hljs-built_in">date</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">GETDATE</span>()</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>ALTER TABLE 时的 DEFAULT 约束</p>
 <ul>
 <li>当表已被创建时，如需在 “City” 列创建 DEFAULT 约束</li>
 <li>MySQL</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ALTER</span> City <span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'SANDNES'</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>SQL Server / MS Access</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">COLUMN</span> City <span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'SANDNES'</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Oracle</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">MODIFY</span> City <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'SANDNES'</span></span><br></pre></td></tr></table></figure>
-<h2 id="撤销-default-约束">撤销 DEFAULT 约束</h2>
-<p>撤销 DEFAULT 约束</p>
+
+<h2 id="撤销-DEFAULT-约束"><a href="#撤销-DEFAULT-约束" class="headerlink" title="撤销 DEFAULT 约束"></a>撤销 DEFAULT 约束</h2><p>撤销 DEFAULT 约束</p>
 <ul>
 <li>MySQL</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ALTER</span> City <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>SQL Server / Oracle / MS Access</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Persons</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">COLUMN</span> City <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>来源</strong></p>
 <ul>
@@ -607,47 +613,47 @@ My SQL / SQL Server / Oracle / MS Access</p>
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#unique-约束">
+            <a class="is-flex" href="#UNIQUE-约束">
             <span class="has-mr-6">1</span>
             <span>UNIQUE 约束</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#create-table-时的-unique-约束">
+            <a class="is-flex" href="#CREATE-TABLE-时的-UNIQUE-约束">
             <span class="has-mr-6">1.1</span>
             <span>CREATE TABLE 时的 UNIQUE 约束</span>
             </a></li><li>
-            <a class="is-flex" href="#命名-unique-约束-并定义多个列的-unique-约束">
+            <a class="is-flex" href="#命名-UNIQUE-约束，并定义多个列的-UNIQUE-约束">
             <span class="has-mr-6">1.2</span>
             <span>命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束</span>
             </a></li><li>
-            <a class="is-flex" href="#alter-table-时的-unique-约束">
+            <a class="is-flex" href="#ALTER-TABLE-时的-UNIQUE-约束">
             <span class="has-mr-6">1.3</span>
             <span>ALTER TABLE 时的 UNIQUE 约束</span>
             </a></li><li>
-            <a class="is-flex" href="#如需命名-unique-约束-并添加-unique-约束">
+            <a class="is-flex" href="#如需命名-UNIQUE-约束，并添加-UNIQUE-约束，">
             <span class="has-mr-6">1.4</span>
             <span>如需命名 UNIQUE 约束，并添加 UNIQUE 约束，</span>
             </a></li><li>
-            <a class="is-flex" href="#撤销-unique-约束">
+            <a class="is-flex" href="#撤销-UNIQUE-约束">
             <span class="has-mr-6">1.5</span>
             <span>撤销 UNIQUE 约束</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#primary-key-约束">
+            <a class="is-flex" href="#PRIMARY-KEY-约束">
             <span class="has-mr-6">2</span>
             <span>PRIMARY KEY 约束</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#create-table-时的-primary-key-约束">
+            <a class="is-flex" href="#CREATE-TABLE-时的-PRIMARY-KEY-约束">
             <span class="has-mr-6">2.1</span>
             <span>CREATE TABLE 时的 PRIMARY KEY 约束</span>
             </a></li><li>
-            <a class="is-flex" href="#alter-table-时的-primary-key-约束">
+            <a class="is-flex" href="#ALTER-TABLE-时的-PRIMARY-KEY-约束">
             <span class="has-mr-6">2.2</span>
             <span>ALTER TABLE 时的 PRIMARY KEY 约束</span>
             </a></li><li>
-            <a class="is-flex" href="#撤销-primary-key-约束">
+            <a class="is-flex" href="#撤销-PRIMARY-KEY-约束">
             <span class="has-mr-6">2.3</span>
             <span>撤销 PRIMARY KEY 约束</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#foreign-key-约束">
+            <a class="is-flex" href="#FOREIGN-KEY-约束">
             <span class="has-mr-6">3</span>
             <span>FOREIGN KEY 约束</span>
             </a><ul class="menu-list"><li>
@@ -655,27 +661,27 @@ My SQL / SQL Server / Oracle / MS Access</p>
             <span class="has-mr-6">3.1</span>
             <span>解释外键</span>
             </a></li><li>
-            <a class="is-flex" href="#foreign-key-约束用于预防破坏表之间连接的行为">
+            <a class="is-flex" href="#FOREIGN-KEY-约束用于预防破坏表之间连接的行为。">
             <span class="has-mr-6">3.2</span>
             <span>FOREIGN KEY 约束用于预防破坏表之间连接的行为。</span>
             </a></li><li>
-            <a class="is-flex" href="#撤销-foreign-key-约束">
+            <a class="is-flex" href="#撤销-FOREIGN-KEY-约束">
             <span class="has-mr-6">3.3</span>
             <span>撤销 FOREIGN KEY 约束</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#check-约束">
+            <a class="is-flex" href="#CHECK-约束">
             <span class="has-mr-6">4</span>
             <span>CHECK 约束</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#撤销-check-约束">
+            <a class="is-flex" href="#撤销-CHECK-约束">
             <span class="has-mr-6">4.1</span>
             <span>撤销 CHECK 约束</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#sql-default-约束">
+            <a class="is-flex" href="#SQL-DEFAULT-约束">
             <span class="has-mr-6">5</span>
             <span>SQL DEFAULT 约束</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#撤销-default-约束">
+            <a class="is-flex" href="#撤销-DEFAULT-约束">
             <span class="has-mr-6">5.1</span>
             <span>撤销 DEFAULT 约束</span>
             </a></li></ul></li></ul>
@@ -719,7 +725,7 @@ My SQL / SQL Server / Oracle / MS Access</p>
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

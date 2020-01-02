@@ -196,30 +196,31 @@
         <div class="content">
             <p>ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。</p>
 <a id="more"></a>
-<h1 id="安装-mariadb">安装 MariaDB</h1>
-<p>安装 MariaDb 和其客户端工具</p>
+<h1 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h1><p>安装 MariaDb 和其客户端工具</p>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>初始化</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br></pre></td></tr></table></figure>
-<h2 id="配置">配置</h2>
-<ul>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
 <li>启动 MariaDB</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>为 root 用户设置一新密码</li>
-</ul>
+<li><p>为 root 用户设置一新密码</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root password '71017'</span><br></pre></td></tr></table></figure>
-<ul>
-<li>登录 MariaDb</li>
-</ul>
+</li>
+<li><p>登录 MariaDb</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p71017</span><br></pre></td></tr></table></figure>
-<ul>
-<li>开机自动启动 MariaDb</li>
+</li>
+<li><p>开机自动启动 MariaDb</p>
+</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="hljs-built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -369,7 +370,7 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#安装-mariadb">
+            <a class="is-flex" href="#安装-MariaDB">
             <span class="has-mr-6">1</span>
             <span>安装 MariaDB</span>
             </a><ul class="menu-list"><li>
@@ -417,7 +418,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by [object Object] @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

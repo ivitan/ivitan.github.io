@@ -196,53 +196,52 @@
         <div class="content">
             <p>xpath 升格用法</p>
 <a id="more"></a>
-<h1 id="匹配当前节点下所有子节点">匹配当前节点下所有子节点 <code>.//</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div//'</span>) <span class="hljs-comment"># div 当前节点</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配当前节点下所有子节点"><a href="#匹配当前节点下所有子节点" class="headerlink" title="匹配当前节点下所有子节点 .//"></a>匹配当前节点下所有子节点 <code>.//</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div//'</span>) <span class="hljs-comment"># div 当前节点</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>//</code> 标签下的所有标签</li>
 </ul>
-<h1 id="匹配某标签的属性值-属性名称">匹配某标签的属性值 <code>/@属性名称</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取 input value</span></span><br><span class="line">xpath(<span class="hljs-string">'//input/@value'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="匹配多个路径">匹配多个路径 <code>|</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div/text() | //div/div/text()'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="按属性匹配">按属性匹配 <code>@</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取所有id="test"的所有文本内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]//text()'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="匹配不包含某个属性的标签-not">匹配不包含某个属性的标签 <code>not</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 多用于表格中匹配中不包含表头信息的数据</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead")]'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="匹配包含多个属性的标签-and">匹配包含多个属性的标签 <code>and</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有的tr中不包含 tbhead 属性 和包含 head 的tr标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead") and @class="head"]'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="匹配包含不同属性的名称相同的标签-or">匹配包含不同属性的名称相同的标签 <code>or</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配包含class="speedbar" 或者 class="content-wrap" 的标签</span></span><br><span class="line">xpath（<span class="hljs-string">'//div[@class="speedbar" or @class="content-wrap"]'</span>）</span><br></pre></td></tr></table></figure>
-<h1 id="将对象还原为字符串-etree-tostring">将对象还原为字符串 <code>etree.tostring（）</code></h1>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 将匹配到的对象，作为etree.tostring（）的参数即可，  注： 返回字符串</span></span><br><span class="line">sObj = xml.xpath(<span class="hljs-string">'//*[@id="test"]'</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment"># 使用xpath定位一个节点</span></span><br><span class="line">sStr = etree.tostring(sObj)</span><br></pre></td></tr></table></figure>
-<h1 id="按轴-axes-匹配">按轴(Axes)匹配</h1>
-<h2 id="选取当前节点的所有子元素-child">选取当前节点的所有子元素 <code>child</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div下的tr的标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]/child::tr/td/text()'</span>)</span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋， 也可以实现</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]//tr/td'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="选取当前节点的所有属性-attribute">选取当前节点的所有属性 <code>attribute</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div标签所有的属性值</span></span><br><span class="line">xpath(<span class="hljs-string">'//div/attribute::*'</span>) </span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋，//div/@* 同样能实现</span></span><br></pre></td></tr></table></figure>
-<h2 id="ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素">ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取父辈元素的div的所有属性值， 在不好定位的情况下，通过孩子标签定位，这种方法可以用</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="descendant：后代-descendant-or-self：后代及当前节点本身">descendant：后代 / descendant-or-self：后代及当前节点本身</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取孩子元素的div的所有属性值，感觉鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="选取当前节点的所有命名空间节点-namespace">选取当前节点的所有命名空间节点 <code>namespace</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/namespace::*'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="定位-position">定位 <code>position</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 和通过下标定位一样， 方法鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]/ol/li[position()=2]/text()'</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="xpath-函数">Xpath 函数</h1>
-<h2 id="统计数量-count">统计数量 <code>count</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计符合要求节点的数量,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'count(//tr[@info])'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="字符串拼接-concat">字符串拼接 <code>concat</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计出来的两个内容的字符串进行“ + ”处理,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'concat(//li[@id="one"]/text(),//li[@id="three"]/text())'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="解析当前节点下的字符-string">解析当前节点下的字符 <code>string</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># string()直解析匹配的第一个标签的值，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'string(//tr)'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="获取当前节点的节点名称-local-name">获取当前节点的节点名称 <code>local-name</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 返回当前属性的节点名称，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'local-name(//*[@id="test"])'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="以指定的字符开头-starts-with">以指定的字符开头 <code>starts-with</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># starts-with定位属性值以8开头的li元素</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[starts-with(@code,"one")]/text()'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="小于">小于 <code>&lt;</code></h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有tr标签属性info小于200的内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[@info&lt;200]/text()'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="根据指定的文本内容选择">根据指定的文本内容选择</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 指定的文本内容可以是文本内容的部分， 也可以是全部</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[2]/ul/li[contains(text(), "指定的文本内容")]/span/text()'</span></span><br></pre></td></tr></table></figure>
+<h1 id="匹配某标签的属性值-属性名称"><a href="#匹配某标签的属性值-属性名称" class="headerlink" title="匹配某标签的属性值 /@属性名称"></a>匹配某标签的属性值 <code>/@属性名称</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取 input value</span></span><br><span class="line">xpath(<span class="hljs-string">'//input/@value'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配多个路径"><a href="#匹配多个路径" class="headerlink" title="匹配多个路径 |"></a>匹配多个路径 <code>|</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div/text() | //div/div/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="按属性匹配"><a href="#按属性匹配" class="headerlink" title="按属性匹配 @"></a>按属性匹配 <code>@</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取所有id="test"的所有文本内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]//text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配不包含某个属性的标签-not"><a href="#匹配不包含某个属性的标签-not" class="headerlink" title="匹配不包含某个属性的标签 not"></a>匹配不包含某个属性的标签 <code>not</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 多用于表格中匹配中不包含表头信息的数据</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead")]'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配包含多个属性的标签-and"><a href="#匹配包含多个属性的标签-and" class="headerlink" title="匹配包含多个属性的标签 and"></a>匹配包含多个属性的标签 <code>and</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有的tr中不包含 tbhead 属性 和包含 head 的tr标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//table/tr[not(@class="tbhead") and @class="head"]'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="匹配包含不同属性的名称相同的标签-or"><a href="#匹配包含不同属性的名称相同的标签-or" class="headerlink" title="匹配包含不同属性的名称相同的标签 or"></a>匹配包含不同属性的名称相同的标签 <code>or</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配包含class="speedbar" 或者 class="content-wrap" 的标签</span></span><br><span class="line">xpath（<span class="hljs-string">'//div[@class="speedbar" or @class="content-wrap"]'</span>）</span><br></pre></td></tr></table></figure>
+
+<h1 id="将对象还原为字符串-etree-tostring（）"><a href="#将对象还原为字符串-etree-tostring（）" class="headerlink" title="将对象还原为字符串 etree.tostring（）"></a>将对象还原为字符串 <code>etree.tostring（）</code></h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 将匹配到的对象，作为etree.tostring（）的参数即可，  注： 返回字符串</span></span><br><span class="line">sObj = xml.xpath(<span class="hljs-string">'//*[@id="test"]'</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment"># 使用xpath定位一个节点</span></span><br><span class="line">sStr = etree.tostring(sObj)</span><br></pre></td></tr></table></figure>
+
+<h1 id="按轴-Axes-匹配"><a href="#按轴-Axes-匹配" class="headerlink" title="按轴(Axes)匹配"></a>按轴(Axes)匹配</h1><h2 id="选取当前节点的所有子元素-child"><a href="#选取当前节点的所有子元素-child" class="headerlink" title="选取当前节点的所有子元素 child"></a>选取当前节点的所有子元素 <code>child</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div下的tr的标签</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]/child::tr/td/text()'</span>)</span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋， 也可以实现</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="testid"]//tr/td'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="选取当前节点的所有属性-attribute"><a href="#选取当前节点的所有属性-attribute" class="headerlink" title="选取当前节点的所有属性 attribute"></a>选取当前节点的所有属性 <code>attribute</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取div标签所有的属性值</span></span><br><span class="line">xpath(<span class="hljs-string">'//div/attribute::*'</span>) </span><br><span class="line"><span class="hljs-comment"># 感觉这种方法鸡肋，//div/@* 同样能实现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素"><a href="#ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素" class="headerlink" title="ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素"></a>ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取父辈元素的div的所有属性值， 在不好定位的情况下，通过孩子标签定位，这种方法可以用</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/ancestor-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="descendant：后代-descendant-or-self：后代及当前节点本身"><a href="#descendant：后代-descendant-or-self：后代及当前节点本身" class="headerlink" title="descendant：后代 / descendant-or-self：后代及当前节点本身"></a>descendant：后代 / descendant-or-self：后代及当前节点本身</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 获取孩子元素的div的所有属性值，感觉鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant::div/@*'</span>)</span><br><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/descendant-or-self::div/@*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="选取当前节点的所有命名空间节点-namespace"><a href="#选取当前节点的所有命名空间节点-namespace" class="headerlink" title="选取当前节点的所有命名空间节点 namespace"></a>选取当前节点的所有命名空间节点 <code>namespace</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="hljs-string">'//div[@id="test"]/namespace::*'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 <code>position</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 和通过下标定位一样， 方法鸡肋</span></span><br><span class="line">xpath(<span class="hljs-string">'//*[@id="test"]/ol/li[position()=2]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Xpath-函数"><a href="#Xpath-函数" class="headerlink" title="Xpath 函数"></a>Xpath 函数</h1><h2 id="统计数量-count"><a href="#统计数量-count" class="headerlink" title="统计数量 count"></a>统计数量 <code>count</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计符合要求节点的数量,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'count(//tr[@info])'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串拼接-concat"><a href="#字符串拼接-concat" class="headerlink" title="字符串拼接 concat"></a>字符串拼接 <code>concat</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 统计出来的两个内容的字符串进行“ + ”处理,返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'concat(//li[@id="one"]/text(),//li[@id="three"]/text())'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解析当前节点下的字符-string"><a href="#解析当前节点下的字符-string" class="headerlink" title="解析当前节点下的字符 string"></a>解析当前节点下的字符 <code>string</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># string()直解析匹配的第一个标签的值，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'string(//tr)'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取当前节点的节点名称-local-name"><a href="#获取当前节点的节点名称-local-name" class="headerlink" title="获取当前节点的节点名称 local-name"></a>获取当前节点的节点名称 <code>local-name</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 返回当前属性的节点名称，  注： 返回字符串</span></span><br><span class="line">xpath(<span class="hljs-string">'local-name(//*[@id="test"])'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="以指定的字符开头-starts-with"><a href="#以指定的字符开头-starts-with" class="headerlink" title="以指定的字符开头 starts-with"></a>以指定的字符开头 <code>starts-with</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># starts-with定位属性值以8开头的li元素</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[starts-with(@code,"one")]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="小于-lt"><a href="#小于-lt" class="headerlink" title="小于 &lt;"></a>小于 <code>&lt;</code></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 匹配所有tr标签属性info小于200的内容</span></span><br><span class="line">xpath(<span class="hljs-string">'//tr[@info&lt;200]/text()'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="根据指定的文本内容选择"><a href="#根据指定的文本内容选择" class="headerlink" title="根据指定的文本内容选择"></a>根据指定的文本内容选择</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 指定的文本内容可以是文本内容的部分， 也可以是全部</span></span><br><span class="line">xpath(<span class="hljs-string">'//div[2]/ul/li[contains(text(), "指定的文本内容")]/span/text()'</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>Via</strong></p>
 <ul>
@@ -425,11 +424,11 @@
             <span class="has-mr-6">7</span>
             <span>匹配包含不同属性的名称相同的标签 or</span>
             </a></li><li>
-            <a class="is-flex" href="#将对象还原为字符串-etree-tostring">
+            <a class="is-flex" href="#将对象还原为字符串-etree-tostring（）">
             <span class="has-mr-6">8</span>
             <span>将对象还原为字符串 etree.tostring（）</span>
             </a></li><li>
-            <a class="is-flex" href="#按轴-axes-匹配">
+            <a class="is-flex" href="#按轴-Axes-匹配">
             <span class="has-mr-6">9</span>
             <span>按轴(Axes)匹配</span>
             </a><ul class="menu-list"><li>
@@ -457,7 +456,7 @@
             <span class="has-mr-6">9.6</span>
             <span>定位 position</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#xpath-函数">
+            <a class="is-flex" href="#Xpath-函数">
             <span class="has-mr-6">10</span>
             <span>Xpath 函数</span>
             </a><ul class="menu-list"><li>
@@ -481,7 +480,7 @@
             <span class="has-mr-6">10.5</span>
             <span>以指定的字符开头 starts-with</span>
             </a></li><li>
-            <a class="is-flex" href="#小于">
+            <a class="is-flex" href="#小于-lt">
             <span class="has-mr-6">10.6</span>
             <span>小于 &lt;</span>
             </a></li><li>
@@ -529,7 +528,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

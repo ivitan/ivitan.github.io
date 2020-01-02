@@ -196,12 +196,11 @@
         <div class="content">
             <p>Markdown 建表格。</p>
 <a id="more"></a>
-<h1 id="单元格和表头">单元格和表头</h1>
-<h2 id="表头和其他行">表头和其他行</h2>
-<ul>
-<li>使用<code>|</code>来分隔不同的单元格，使用 <code>-</code>来分隔表头和其他行：</li>
+<h1 id="单元格和表头"><a href="#单元格和表头" class="headerlink" title="单元格和表头"></a>单元格和表头</h1><h2 id="表头和其他行"><a href="#表头和其他行" class="headerlink" title="表头和其他行"></a>表头和其他行</h2><ul>
+<li>使用<code>|</code>来分隔不同的单元格，使用 <code>-</code>来分隔表头和其他行：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name| ge</span><br><span class="line">----|---</span><br><span class="line">LearnShare|12</span><br><span class="line">Mike|32</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name| ge</span><br><span class="line">----|---</span><br><span class="line">LearnShare|12</span><br><span class="line">Mike|32</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -209,8 +208,7 @@
 <th>age</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>LearnShare</td>
 <td>12</td>
 </tr>
@@ -218,12 +216,12 @@
 <td>Mike</td>
 <td>32</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：</li>
+<li>为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|name|age|</span><br><span class="line">|----------|---|</span><br><span class="line">|LearnShare|12|</span><br><span class="line">|Mike|32|</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|name|age|</span><br><span class="line">|----------|---|</span><br><span class="line">|LearnShare|12|</span><br><span class="line">|Mike|32|</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -231,8 +229,7 @@
 <th>age</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>LearnShare</td>
 <td>12</td>
 </tr>
@@ -240,44 +237,40 @@
 <td>Mike</td>
 <td>32</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li>为了使 Markdown 更清晰，<code>|</code> 和<code>-</code>两侧需要至少有一个空格（最左侧和最右侧的 | 外就不需要了）。</li>
 </ul>
-<h2 id="对齐">对齐</h2>
-<p>在表头下方的分隔线标记中加入<code>:</code>，即可标记下方单元格内容的对齐方式：</p>
+<h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>在表头下方的分隔线标记中加入<code>:</code>，即可标记下方单元格内容的对齐方式：</p>
 <ul>
 <li><code>:---</code>代表左对齐</li>
 <li><code>:--:</code>代表居中对齐</li>
 <li><code>---:</code>代表右对齐</li>
 </ul>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| left | center | right |</span><br><span class="line">| :--- | :----: | ----: |</span><br><span class="line">| aaaa | bbbbbb | ccccc |</span><br><span class="line">| a    | b      | c     |</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">left</th>
-<th style="text-align:center">center</th>
-<th style="text-align:right">right</th>
+<th align="left">left</th>
+<th align="center">center</th>
+<th align="right">right</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">aaaa</td>
-<td style="text-align:center">bbbbbb</td>
-<td style="text-align:right">ccccc</td>
+<tbody><tr>
+<td align="left">aaaa</td>
+<td align="center">bbbbbb</td>
+<td align="right">ccccc</td>
 </tr>
 <tr>
-<td style="text-align:left">a</td>
-<td style="text-align:center">b</td>
-<td style="text-align:right">c</td>
+<td align="left">a</td>
+<td align="center">b</td>
+<td align="right">c</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <p>如果不使用对齐标记，单元格中的内容默认左对齐；表头单元格中的内容会一直居中对齐（不同的实现可能会有不同表现）。</p>
-<h2 id="插入其他内容">插入其他内容</h2>
-<p>表格中可以插入其他 Markdown 中的行内标记：</p>
+<h2 id="插入其他内容"><a href="#插入其他内容" class="headerlink" title="插入其他内容"></a>插入其他内容</h2><p>表格中可以插入其他 Markdown 中的行内标记：</p>
 
         </div>
         
@@ -483,7 +476,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

@@ -196,45 +196,51 @@
         <div class="content">
             <p>SQL触发器</p>
 <a id="more"></a>
-<h1 id="概念">概念</h1>
-<p>某一个表的一定的操作，触发某种条件，从而执行的一段程序。触发器是一个特殊的存储过程。</p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>某一个表的一定的操作，触发某种条件，从而执行的一段程序。触发器是一个特殊的存储过程。</p>
 <p>常见的触发器有三种：分别应用于Insert , Update , Delete 事件。</p>
 <p>语法</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> 触发器名</span><br><span class="line"><span class="hljs-keyword">on</span></span><br><span class="line">zg   <span class="hljs-comment">-- 在zg表建立触发器</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-keyword">insert</span>,<span class="hljs-keyword">update</span>  <span class="hljs-comment">-- 为什么事件触发</span></span><br><span class="line"><span class="hljs-keyword">as</span>   <span class="hljs-comment">-- 事件触发后所要做的事情</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> (<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span> (<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> inserted))</span><br><span class="line"><span class="hljs-keyword">commit</span></span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span>  <span class="hljs-keyword">TRIGGER</span> trigger_name [<span class="hljs-keyword">BEFORE</span>|<span class="hljs-keyword">AFTER</span>] event_name</span><br><span class="line"><span class="hljs-keyword">ON</span> table_name</span><br><span class="line"><span class="hljs-keyword">BEGIN</span></span><br><span class="line"> <span class="hljs-comment">-- Trigger logic goes here....</span></span><br><span class="line"><span class="hljs-keyword">END</span></span><br></pre></td></tr></table></figure>
+
 <p>Deleted 与 Inserted</p>
 <ol>
 <li><code>Deleted</code>表存放由于执行Delete或Update语句而要从表中删除的所有行。</li>
 <li><code>Inserted</code>表存放由于执行Insert或Update语句而要向表中插入的所有行。</li>
 </ol>
-<h2 id="update-操作上在表的一个或多个指定列上创建触发器-trigger">UPDATE 操作上在表的一个或多个指定列上创建触发器(Trigger)</h2>
-<p>语法</p>
+<h2 id="UPDATE-操作上在表的一个或多个指定列上创建触发器-Trigger"><a href="#UPDATE-操作上在表的一个或多个指定列上创建触发器-Trigger" class="headerlink" title="UPDATE 操作上在表的一个或多个指定列上创建触发器(Trigger)"></a>UPDATE 操作上在表的一个或多个指定列上创建触发器(Trigger)</h2><p>语法</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span>  <span class="hljs-keyword">TRIGGER</span> trigger_name [<span class="hljs-keyword">BEFORE</span>|<span class="hljs-keyword">AFTER</span>] <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">OF</span> column_name</span><br><span class="line"><span class="hljs-keyword">ON</span> table_name</span><br><span class="line"><span class="hljs-keyword">BEGIN</span></span><br><span class="line"> <span class="hljs-comment">-- Trigger logic goes here....</span></span><br><span class="line"><span class="hljs-keyword">END</span></span><br></pre></td></tr></table></figure>
-<h1 id="触发器操作">触发器操作</h1>
-<p>删除</p>
+
+<h1 id="触发器操作"><a href="#触发器操作" class="headerlink" title="触发器操作"></a>触发器操作</h1><p>删除</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">trigger</span> trigger_name</span><br></pre></td></tr></table></figure>
+
 <p>修改</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">alter</span>  <span class="hljs-keyword">trigger</span> tri_ck_zg</span><br><span class="line"><span class="hljs-keyword">on</span> zg <span class="hljs-keyword">for</span> <span class="hljs-keyword">insert</span>,<span class="hljs-keyword">update</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> (<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span> (<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> inserted))</span><br><span class="line"><span class="hljs-keyword">commit</span></span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+
 <p>列出触发器</p>
 <ul>
-<li>所有</li>
-</ul>
+<li><p>所有</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">FROM</span> sqlite_master</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">type</span> = <span class="hljs-string">'trigger'</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>指定表</li>
-</ul>
+</li>
+<li><p>指定表</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">FROM</span> sqlite_master</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">type</span> = <span class="hljs-string">'trigger'</span> <span class="hljs-keyword">AND</span> tbl_name = <span class="hljs-string">'表名'</span></span><br></pre></td></tr></table></figure>
-<h1 id="习题">习题</h1>
-<p>成绩小于60的不可更改</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> tri_grade</span><br><span class="line"><span class="hljs-keyword">on</span> xkgx <span class="hljs-keyword">for</span> <span class="hljs-keyword">update</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">update</span>(成绩)</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span>(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted  <span class="hljs-keyword">where</span> 成绩&lt;<span class="hljs-number">60</span>)</span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>验证</li>
+
+</li>
 </ul>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><p>成绩小于60的不可更改</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> tri_grade</span><br><span class="line"><span class="hljs-keyword">on</span> xkgx <span class="hljs-keyword">for</span> <span class="hljs-keyword">update</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">update</span>(成绩)</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span>(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted  <span class="hljs-keyword">where</span> 成绩&lt;<span class="hljs-number">60</span>)</span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>验证</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">update</span> xkgx <span class="hljs-keyword">set</span> 成绩=<span class="hljs-number">80</span> <span class="hljs-keyword">where</span>课程号=<span class="hljs-string">'303'</span> <span class="hljs-keyword">and</span>  学号=<span class="hljs-string">'S101101'</span></span><br></pre></td></tr></table></figure>
+
 <hr>
+</li>
+</ul>
 <p>成绩小于60的不可更改</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> tri_grade</span><br><span class="line"><span class="hljs-keyword">on</span> xkgx <span class="hljs-keyword">for</span> <span class="hljs-keyword">update</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> deleted</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">update</span>(成绩)</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span>(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted <span class="hljs-keyword">join</span> deleted <span class="hljs-keyword">on</span>  inserted.学号=deleted.学号</span><br><span class="line"><span class="hljs-keyword">where</span> inserted.成绩&gt;=<span class="hljs-number">60</span> <span class="hljs-keyword">and</span> deleted.成绩&lt;<span class="hljs-number">60</span>)</span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -388,7 +394,7 @@
             <span class="has-mr-6">1</span>
             <span>概念</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#update-操作上在表的一个或多个指定列上创建触发器-trigger">
+            <a class="is-flex" href="#UPDATE-操作上在表的一个或多个指定列上创建触发器-Trigger">
             <span class="has-mr-6">1.1</span>
             <span>UPDATE 操作上在表的一个或多个指定列上创建触发器(Trigger)</span>
             </a></li></ul></li><li>
@@ -440,7 +446,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

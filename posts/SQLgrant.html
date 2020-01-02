@@ -194,51 +194,58 @@
         </div>
         
         <div class="content">
-            <p>SQL授权</p>
+            <p> SQL授权</p>
 <a id="more"></a>
-<h1 id="授权命令">授权命令</h1>
-<p>语法</p>
+<h1 id="授权命令"><a href="#授权命令" class="headerlink" title="授权命令"></a>授权命令</h1><p>语法</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> &lt;权限名&gt;[ ,&lt;权限名&gt;] <span class="hljs-keyword">on</span> &lt;对象&gt;</span><br><span class="line"><span class="hljs-keyword">to</span> 用户<span class="hljs-number">1</span>,用户<span class="hljs-number">2</span>,... | <span class="hljs-keyword">public</span> [<span class="hljs-keyword">with</span> <span class="hljs-keyword">grant</span> <span class="hljs-keyword">option</span>]</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>对应不同对象,有不可权限,代表不同的操作(语句)。
-注音: All Privileges–對象上的所有权限的总和。</li>
-<li>public --表示所有用户</li>
+<li>对应不同对象,有不可权限,代表不同的操作(语句)。<br>  注音: All Privileges–對象上的所有权限的总和。</li>
+<li>public –表示所有用户</li>
 <li>指定With grant option时,用户可以获得的权限转受给其他用户;否則,用户只能使用而不能转受。</li>
 <li>SQL 标准允许具有with grant option 的用户把相应的权限或其子集传递授予其他用户,但不允许循环授权,即被授权者不能把权限再授回给授权者或其祖先.</li>
 </ul>
 <p>DBA 执行了如下语句:</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span>, <span class="hljs-keyword">update</span> <span class="hljs-keyword">on</span> Student <span class="hljs-keyword">to</span> Liming</span><br><span class="line"><span class="hljs-keyword">with</span> <span class="hljs-keyword">grant</span> <span class="hljs-keyword">option</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>则 <code>DBA</code> 把对 <code>Student</code> (基本表或视图)的权限赋给用户 Liming,因为有<code>with grant option</code>,所以 Lining 可以把这个权限再转授给其他用户。</li>
 </ul>
 <p>用户 Liming 执行了如下语句:</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span>(Sno, Sname), <span class="hljs-keyword">update</span> (Sname)</span><br><span class="line"><span class="hljs-keyword">on</span> Student <span class="hljs-keyword">to</span> U5</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>则 <code>Liming</code> 把对 <code>Student</code> 上某些列的权限赋给用户<code>U5</code>,但 U5不可以把这个权限再转授给其他用户。</li>
 </ul>
 <p>DBA 对表查询的权限授予所有用户</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">on</span> SC <span class="hljs-keyword">to</span> <span class="hljs-keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <p>Grant 还可以实现数据库类型和模式类型权限管理,格式如下:</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> 权限名[,...] <span class="hljs-keyword">to</span> user1,user2,...</span><br><span class="line">| <span class="hljs-keyword">public</span>[<span class="hljs-keyword">with</span> <span class="hljs-keyword">grant</span> <span class="hljs-keyword">option</span>]</span><br></pre></td></tr></table></figure>
+
 <p>授予用户 Liming 具有创建数据表和图的权限</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span>, <span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> <span class="hljs-keyword">to</span> Liming</span><br></pre></td></tr></table></figure>
-<h1 id="收回权限">收回权限</h1>
-<p>语法</p>
+
+<h1 id="收回权限"><a href="#收回权限" class="headerlink" title="收回权限"></a>收回权限</h1><p>语法</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">revoke</span> 权限名[ ,…] <span class="hljs-keyword">on</span> 对象 <span class="hljs-keyword">form</span></span><br><span class="line">用户<span class="hljs-number">1</span>,用户<span class="hljs-number">2</span>,… | <span class="hljs-keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>收回权限时,若该用户已将权限转授给其他用户，则这些转受的权限也一并收回。</li>
 </ul>
 <p>DBA 执行以下语句:</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">revoke</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">on</span> Student <span class="hljs-keyword">from</span> Liming</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>DBA 回收用户<code>Liming</code> 的对<code>Student</code> 的更新权限.理论上，Liming转受给用户U5的对Student某些列的更新权限也一并收回udent 某些列的更新权限也要一并收回</li>
 </ul>
 <p>收回所有用户对表 SC 的查询权</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">Revoke</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">on</span> SC <span class="hljs-keyword">from</span> <span class="hljs-keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>revoke</code>还可以实现数据库类型和模式类型权限收回,格式如下</li>
 </ul>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">revoke</span> 权限名[ ,…] <span class="hljs-keyword">from</span> 用户<span class="hljs-number">1</span>,用户<span class="hljs-number">2</span>,... | <span class="hljs-keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <p>收回Liming 创建表的权限。</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">Revoke</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">from</span> Liming</span><br></pre></td></tr></table></figure>
         </div>
@@ -437,7 +444,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

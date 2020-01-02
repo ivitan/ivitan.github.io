@@ -194,28 +194,27 @@
         </div>
         
         <div class="content">
-            <p>树莓派获取 IP</p>
+            <p>树莓派获取 IP </p>
 <a id="more"></a>
-<h1 id="有显示器">有显示器</h1>
-<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br><span class="line">hostname -I</span><br></pre></td></tr></table></figure>
-<h1 id="无显示器有路由器">无显示器有路由器</h1>
-<ul>
+<h1 id="有显示器"><a href="#有显示器" class="headerlink" title="有显示器"></a>有显示器</h1><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br><span class="line">hostname -I</span><br></pre></td></tr></table></figure>
+
+<h1 id="无显示器有路由器"><a href="#无显示器有路由器" class="headerlink" title="无显示器有路由器"></a>无显示器有路由器</h1><ul>
 <li>连接路由器后<a href="http://192.168.1.1" target="_blank" rel="noopener">登陆路由器管理界</a>面查看即可。</li>
 </ul>
-<h1 id="只有电脑">只有电脑</h1>
-<ul>
+<h1 id="只有电脑"><a href="#只有电脑" class="headerlink" title="只有电脑"></a>只有电脑</h1><ul>
 <li>网线直接把树莓派与电脑连接起来</li>
 <li>电脑需要连 WiFi</li>
 <li>在 设置-&gt;网络-&gt;Wlan-&gt;网络与共享中心-&gt;Wlan-&gt;属性-&gt;共享-&gt;允许​其它用户通过它来连接-&gt;确定。</li>
 <li>CMD 查看 IP</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping raspberrypi.local</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>改变了树莓派的主机名字，Avahi 也将改变 .local 的 DNS 多播地址</li>
 </ul>
 <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br><span class="line"><span class="hljs-comment"># 通常以192.168开头，最后一位是1</span></span><br></pre></td></tr></table></figure>
-<h1 id="只有手机-安卓">只有手机（安卓）</h1>
-<ul>
+
+<h1 id="只有手机（安卓）"><a href="#只有手机（安卓）" class="headerlink" title="只有手机（安卓）"></a>只有手机（安卓）</h1><ul>
 <li>USB 共享的网络</li>
 <li>开启热点</li>
 <li>使用局域网扫描软件(<a href="https://play.google.com/store/apps/details?id=com.overlook.android.fing" target="_blank" rel="noopener">Find</a>,IpScanner,Es文件管理器…)查询 IP</li>
@@ -387,7 +386,7 @@
             <span class="has-mr-6">3</span>
             <span>只有电脑</span>
             </a></li><li>
-            <a class="is-flex" href="#只有手机-安卓">
+            <a class="is-flex" href="#只有手机（安卓）">
             <span class="has-mr-6">4</span>
             <span>只有手机（安卓）</span>
             </a></li></ul>
@@ -431,7 +430,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by [object Object] @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by [object Object] @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

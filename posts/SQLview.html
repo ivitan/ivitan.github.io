@@ -196,64 +196,60 @@
         <div class="content">
             <p>SQL视图</p>
 <a id="more"></a>
-<h1 id="什么是视图">什么是视图</h1>
-<p>解析</p>
+<h1 id="什么是视图"><a href="#什么是视图" class="headerlink" title="什么是视图"></a>什么是视图</h1><p>解析</p>
 <ul>
 <li>在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。</li>
-<li>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表。
-<ul>
+<li>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表。<ul>
 <li>注释：数据库的设计和结构不会受到视图中的函数、where 或 join 语句的影响。</li>
 </ul>
 </li>
 </ul>
-<h1 id="sql-create-view">SQL CREATE VIEW</h1>
-<p>语法</p>
+<h1 id="SQL-CREATE-VIEW"><a href="#SQL-CREATE-VIEW" class="headerlink" title="SQL CREATE VIEW"></a>SQL CREATE VIEW</h1><p>语法</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> view_name <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="hljs-keyword">FROM</span> table_name</span><br><span class="line"><span class="hljs-keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>注释：视图总是显示最近的数据。每当用户查询视图时，数据库引擎通过使用 SQL 语句来重建数据。</li>
 </ul>
-<h2 id="sql-create-view-实例">SQL CREATE VIEW 实例</h2>
-<p>要求</p>
+<h2 id="SQL-CREATE-VIEW-实例"><a href="#SQL-CREATE-VIEW-实例" class="headerlink" title="SQL CREATE VIEW 实例"></a>SQL CREATE VIEW 实例</h2><p>要求</p>
 <ol>
 <li>可以从某个查询内部、某个存储过程内部，或者从另一个视图内部来使用视图。通过向视图添加函数、join 等等，我们可以向用户精确地提交我们希望提交的数据。</li>
 <li>样本数据库 Northwind 拥有一些被默认安装的视图。视图 “Current Product List” 会从 Products 表列出所有正在使用的产品。这</li>
 </ol>
 <p>创建：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> [<span class="hljs-keyword">Current</span> Product <span class="hljs-keyword">List</span>] <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ProductID,ProductName</span><br><span class="line"><span class="hljs-keyword">FROM</span> Products</span><br><span class="line"><span class="hljs-keyword">WHERE</span> Discontinued=<span class="hljs-keyword">No</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>查询上面这个视图：</li>
-</ul>
+<li><p>查询上面这个视图：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> [<span class="hljs-keyword">Current</span> Product <span class="hljs-keyword">List</span>]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Northwind 样本数据库的另一个视图会选取 Products 表中所有单位价格高于平均单位价格的产品</li>
-</ul>
+</li>
+<li><p>Northwind 样本数据库的另一个视图会选取 Products 表中所有单位价格高于平均单位价格的产品</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> [Products Above Average Price] <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ProductName,UnitPrice</span><br><span class="line"><span class="hljs-keyword">FROM</span> Products</span><br><span class="line"><span class="hljs-keyword">WHERE</span> UnitPrice&gt;(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">AVG</span>(UnitPrice) <span class="hljs-keyword">FROM</span> Products)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询上面这个视图：</li>
-</ul>
+</li>
+<li><p>查询上面这个视图：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> [Products Above Average Price]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>另一个来自 Northwind 数据库的视图实例会计算在 1997 年每个种类的销售总数。请注意，这个视图会从另一个名为 “Product Sales for 1997” 的视图那里选取数据：</li>
-</ul>
+</li>
+<li><p>另一个来自 Northwind 数据库的视图实例会计算在 1997 年每个种类的销售总数。请注意，这个视图会从另一个名为 “Product Sales for 1997” 的视图那里选取数据：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> [<span class="hljs-keyword">Category</span> Sales <span class="hljs-keyword">For</span> <span class="hljs-number">1997</span>] <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> CategoryName,<span class="hljs-keyword">Sum</span>(ProductSales) <span class="hljs-keyword">AS</span> CategorySales</span><br><span class="line"><span class="hljs-keyword">FROM</span> [Product Sales <span class="hljs-keyword">for</span> <span class="hljs-number">1997</span>]</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> CategoryName</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询上面这个视图：</li>
-</ul>
+</li>
+<li><p>查询上面这个视图：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> [<span class="hljs-keyword">Category</span> Sales <span class="hljs-keyword">For</span> <span class="hljs-number">1997</span>]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以向查询添加条件。现在，我们仅仅需要查看 “Beverages” 类的全部销量：</li>
-</ul>
+</li>
+<li><p>也可以向查询添加条件。现在，我们仅仅需要查看 “Beverages” 类的全部销量：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> [<span class="hljs-keyword">Category</span> Sales <span class="hljs-keyword">For</span> <span class="hljs-number">1997</span>]</span><br><span class="line"><span class="hljs-keyword">WHERE</span> CategoryName=<span class="hljs-string">'Beverages'</span></span><br></pre></td></tr></table></figure>
-<h2 id="sql-更新视图">SQL 更新视图</h2>
-<p>语法</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> Syntax</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> view_name <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="hljs-keyword">FROM</span> table_name</span><br><span class="line"><span class="hljs-keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
-<ul>
-<li>现在，我们希望向 “Current Product List” 视图添加 “Category” 列。我们将通过下列 SQL 更新视图：</li>
+
+</li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> [<span class="hljs-keyword">Current</span> Product <span class="hljs-keyword">List</span>] <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ProductID,ProductName,<span class="hljs-keyword">Category</span></span><br><span class="line"><span class="hljs-keyword">FROM</span> Products</span><br><span class="line"><span class="hljs-keyword">WHERE</span> Discontinued=<span class="hljs-keyword">No</span></span><br></pre></td></tr></table></figure>
-<h2 id="sql-撤销视图">SQL 撤销视图</h2>
-<p>DROP VIEW</p>
+<h2 id="SQL-更新视图"><a href="#SQL-更新视图" class="headerlink" title="SQL 更新视图"></a>SQL 更新视图</h2><p>语法</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> Syntax</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> view_name <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="hljs-keyword">FROM</span> table_name</span><br><span class="line"><span class="hljs-keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>现在，我们希望向 “Current Product List” 视图添加 “Category” 列。我们将通过下列 SQL 更新视图：<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> [<span class="hljs-keyword">Current</span> Product <span class="hljs-keyword">List</span>] <span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ProductID,ProductName,<span class="hljs-keyword">Category</span></span><br><span class="line"><span class="hljs-keyword">FROM</span> Products</span><br><span class="line"><span class="hljs-keyword">WHERE</span> Discontinued=<span class="hljs-keyword">No</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="SQL-撤销视图"><a href="#SQL-撤销视图" class="headerlink" title="SQL 撤销视图"></a>SQL 撤销视图</h2><p>DROP VIEW</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">VIEW</span> Syntax</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>Via</strong></p>
 <ul>
@@ -412,19 +408,19 @@
             <span class="has-mr-6">1</span>
             <span>什么是视图</span>
             </a></li><li>
-            <a class="is-flex" href="#sql-create-view">
+            <a class="is-flex" href="#SQL-CREATE-VIEW">
             <span class="has-mr-6">2</span>
             <span>SQL CREATE VIEW</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#sql-create-view-实例">
+            <a class="is-flex" href="#SQL-CREATE-VIEW-实例">
             <span class="has-mr-6">2.1</span>
             <span>SQL CREATE VIEW 实例</span>
             </a></li><li>
-            <a class="is-flex" href="#sql-更新视图">
+            <a class="is-flex" href="#SQL-更新视图">
             <span class="has-mr-6">2.2</span>
             <span>SQL 更新视图</span>
             </a></li><li>
-            <a class="is-flex" href="#sql-撤销视图">
+            <a class="is-flex" href="#SQL-撤销视图">
             <span class="has-mr-6">2.3</span>
             <span>SQL 撤销视图</span>
             </a></li></ul></li></ul>
@@ -468,7 +464,7 @@
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>

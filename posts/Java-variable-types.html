@@ -196,35 +196,33 @@
         <div class="content">
             <p>Java 变量类型</p>
 <a id="more"></a>
-<h1 id="java变量类型">Java变量类型</h1>
-<p>在Java语言中，所有的变量在使用前必须声明。声明变量的基本格式如下：</p>
+<h1 id="Java变量类型"><a href="#Java变量类型" class="headerlink" title="Java变量类型"></a>Java变量类型</h1><p>在Java语言中，所有的变量在使用前必须声明。声明变量的基本格式如下：</p>
 <blockquote>
-<p>type identifier [ = value][, identifier [= value] …] ;
-格式说明：type为Java数据类型。identifier是变量名。可以使用逗号隔开来声明多个同类型变量。</p>
+<p>type identifier [ = value][, identifier [= value] …] ;<br>格式说明：type为Java数据类型。identifier是变量名。可以使用逗号隔开来声明多个同类型变量。</p>
 </blockquote>
 <p>以下列出了一些变量的声明实例。注意有些包含了初始化过程。</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a, b, c;         <span class="hljs-comment">// 声明三个int型整数：a、 b、c</span></span><br><span class="line"><span class="hljs-keyword">int</span> d = <span class="hljs-number">3</span>, e = <span class="hljs-number">4</span>, f = <span class="hljs-number">5</span>; <span class="hljs-comment">// 声明三个整数并赋予初值</span></span><br><span class="line"><span class="hljs-keyword">byte</span> z = <span class="hljs-number">22</span>;         <span class="hljs-comment">// 声明并初始化 z</span></span><br><span class="line">String s = <span class="hljs-string">"runoob"</span>;  <span class="hljs-comment">// 声明并初始化字符串 s</span></span><br><span class="line"><span class="hljs-keyword">double</span> pi = <span class="hljs-number">3.14159</span>; <span class="hljs-comment">// 声明了双精度浮点型变量 pi</span></span><br><span class="line"><span class="hljs-keyword">char</span> x = <span class="hljs-string">'x'</span>;        <span class="hljs-comment">// 声明变量 x 的值是字符 'x'。</span></span><br></pre></td></tr></table></figure>
-<h1 id="java语言支持的变量类型有">Java语言支持的变量类型有</h1>
-<ul>
+
+<h1 id="Java语言支持的变量类型有"><a href="#Java语言支持的变量类型有" class="headerlink" title="Java语言支持的变量类型有"></a>Java语言支持的变量类型有</h1><ul>
 <li>类变量：独立于方法之外的变量，用 static 修饰。</li>
 <li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
 <li>局部变量：类的方法中的变量。</li>
-<li>实例</li>
+<li>实例<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Variable</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> allClicks=<span class="hljs-number">0</span>;    <span class="hljs-comment">// 类变量</span></span><br><span class="line"></span><br><span class="line">    String str=<span class="hljs-string">"hello world"</span>;  <span class="hljs-comment">// 实例变量</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Variable</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> allClicks=<span class="hljs-number">0</span>;    <span class="hljs-comment">// 类变量</span></span><br><span class="line"></span><br><span class="line">    String str=<span class="hljs-string">"hello world"</span>;  <span class="hljs-comment">// 实例变量</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="java-局部变量">Java 局部变量</h1>
-<ul>
+<h1 id="Java-局部变量"><a href="#Java-局部变量" class="headerlink" title="Java 局部变量"></a>Java 局部变量</h1><ul>
 <li>局部变量声明在方法、构造方法或者语句块中；</li>
 <li>局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</li>
 <li>访问修饰符不能用于局部变量；</li>
 <li>局部变量只在声明它的方法、构造方法或者语句块中可见；</li>
 <li>局部变量是在栈上分配的。</li>
 <li>局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。</li>
-<li></li>
+<li>实例 1</li>
 </ul>
-<p>实例 1</p>
 <p>在以下实例中age是一个局部变量。定义在pupAge()方法中，它的作用域就限制在这个方法中。</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.runoob.test;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pupAge</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> age = <span class="hljs-number">0</span>;</span><br><span class="line">      age = age + <span class="hljs-number">7</span>;</span><br><span class="line">      System.out.println(<span class="hljs-string">"小狗的年龄是: "</span> + age);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">      Test test = <span class="hljs-keyword">new</span> Test();</span><br><span class="line">      test.pupAge();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>小狗的年龄是: 7</p>
@@ -232,15 +230,12 @@
 <p>实例 2</p>
 <p>在下面的例子中 age 变量没有初始化，所以在编译时会出错：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.runoob.test;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pupAge</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> age;</span><br><span class="line">      age = age + <span class="hljs-number">7</span>;</span><br><span class="line">      System.out.println(<span class="hljs-string">"小狗的年龄是 : "</span> + age);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">      Test test = <span class="hljs-keyword">new</span> Test();</span><br><span class="line">      test.pupAge();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
-<p>Test.java:4:variable number might not have been initialized
-age = age + 7;
-^
-1 error</p>
+<p>Test.java:4:variable number might not have been initialized<br>age = age + 7;<br>        ^<br>1 error</p>
 </blockquote>
-<h1 id="实例变量">实例变量</h1>
-<ul>
+<h1 id="实例变量"><a href="#实例变量" class="headerlink" title="实例变量"></a>实例变量</h1><ul>
 <li>实例变量声明在一个类中，但在方法、构造方法和语句块之外；</li>
 <li>当一个对象被实例化之后，每个实例变量的值就跟着确定；</li>
 <li>实例变量在对象创建的时候创建，在对象被销毁的时候销毁；</li>
@@ -253,15 +248,12 @@ age = age + 7;
 </ul>
 <p>实例</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Employee.java 文件代码：</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span></span>&#123;</span><br><span class="line">   <span class="hljs-comment">// 这个实例变量对子类可见</span></span><br><span class="line">   <span class="hljs-keyword">public</span> String name;</span><br><span class="line">   <span class="hljs-comment">// 私有变量，仅在该类可见</span></span><br><span class="line">   <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> salary;</span><br><span class="line">   <span class="hljs-comment">//在构造器中对name赋值</span></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Employee</span> <span class="hljs-params">(String empName)</span></span>&#123;</span><br><span class="line">      name = empName;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-comment">//设定salary的值</span></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSalary</span><span class="hljs-params">(<span class="hljs-keyword">double</span> empSal)</span></span>&#123;</span><br><span class="line">      salary = empSal;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-comment">// 打印信息</span></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printEmp</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="hljs-string">"名字 : "</span> + name );</span><br><span class="line">      System.out.println(<span class="hljs-string">"薪水 : "</span> + salary);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">      Employee empOne = <span class="hljs-keyword">new</span> Employee(<span class="hljs-string">"RUNOOB"</span>);</span><br><span class="line">      empOne.setSalary(<span class="hljs-number">1000</span>);</span><br><span class="line">      empOne.printEmp();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
-<p>$ javac Employee.java
-$ java Employee
-名字 : RUNOOB
-薪水 : 1000.0</p>
+<p>$ javac Employee.java<br>$ java Employee<br>名字 : RUNOOB<br>薪水 : 1000.0</p>
 </blockquote>
-<h1 id="类变量-静态变量">类变量（静态变量）</h1>
-<ul>
+<h1 id="类变量（静态变量）"><a href="#类变量（静态变量）" class="headerlink" title="类变量（静态变量）"></a>类变量（静态变量）</h1><ul>
 <li>类变量也称为静态变量，在类中以static关键字声明，但必须在方法构造方法和语句块之外。</li>
 <li>无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</li>
 <li>静态变量除了被声明为常量外很少使用。常量是指声明为public/private，final和static类型的变量。常量初始化后不可改变。</li>
@@ -274,6 +266,7 @@ $ java Employee
 </ul>
 <p>实例：</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Employee.java 文件代码：</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">//salary是静态的私有变量</span></span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> salary;</span><br><span class="line">    <span class="hljs-comment">// DEPARTMENT是一个常量</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DEPARTMENT = <span class="hljs-string">"开发人员"</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">    salary = <span class="hljs-number">10000</span>;</span><br><span class="line">        System.out.println(DEPARTMENT+<span class="hljs-string">"平均工资:"</span>+salary);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>开发人员平均工资:10000.0</p>
@@ -428,15 +421,15 @@ $ java Employee
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#java变量类型">
+            <a class="is-flex" href="#Java变量类型">
             <span class="has-mr-6">1</span>
             <span>Java变量类型</span>
             </a></li><li>
-            <a class="is-flex" href="#java语言支持的变量类型有">
+            <a class="is-flex" href="#Java语言支持的变量类型有">
             <span class="has-mr-6">2</span>
             <span>Java语言支持的变量类型有</span>
             </a></li><li>
-            <a class="is-flex" href="#java-局部变量">
+            <a class="is-flex" href="#Java-局部变量">
             <span class="has-mr-6">3</span>
             <span>Java 局部变量</span>
             </a></li><li>
@@ -444,7 +437,7 @@ $ java Employee
             <span class="has-mr-6">4</span>
             <span>实例变量</span>
             </a></li><li>
-            <a class="is-flex" href="#类变量-静态变量">
+            <a class="is-flex" href="#类变量（静态变量）">
             <span class="has-mr-6">5</span>
             <span>类变量（静态变量）</span>
             </a></li></ul>
@@ -488,7 +481,7 @@ $ java Employee
                     </span>
                     </p>
                 <p class="is-size-7">
-                    Copyright by Vitan @ 2019 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
+                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
                         href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>
