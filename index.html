@@ -320,6 +320,64 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/posts/Cmder.html" class="image is-7by1">
+            <img class="thumbnail" src="/images/Win.png" alt="Cmder 配置">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/posts/Cmder.html"><i class="fas fa-angle-double-right"></i>Cmder 配置</a>
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    1 分钟 读完 (约 138 字)
+                </span>
+                
+                
+                <time class="level-item has-text-grey" datetime="2020-01-08T05:40:15.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-08</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-01-08T06:15:27.387Z"><i class="far fa-calendar-check">&nbsp;</i>2020-01-08</time>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1 id="使用-Bash"><a href="#使用-Bash" class="headerlink" title="使用 Bash"></a>使用 Bash</h1><p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash hljs"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 别名</span></span><br><span class="line"><span class="hljs-comment">#打开当前文件夹</span></span><br><span class="line"><span class="hljs-built_in">alias</span> e.=<span class="hljs-string">'explorer .'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> clear=cls</span><br><span class="line"><span class="hljs-built_in">alias</span> gl=<span class="hljs-string">'git pull origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> glm=<span class="hljs-string">'git pull origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gpm=<span class="hljs-string">'git push origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpd=<span class="hljs-string">'cap production deploy'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpt=<span class="hljs-string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="hljs-string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># NEW.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📦 NEW: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># IMPROVE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"👌 IMPROVE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># FIX.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🐛 FIX: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># RELEASE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🚀 RELEASE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DOC.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📖 DOC: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># TEST.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"✅ TEST: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/posts/TermuxConfig.html" class="image is-7by1">
             <img class="thumbnail" src="/images/Termux.png" alt="Termux Config Shell">
         </a>
@@ -842,108 +900,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/posts/LAMP.html" class="image is-7by1">
-            <img class="thumbnail" src="/images/Linux.png" alt="LAMP">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/posts/LAMP.html"><i class="fas fa-angle-double-right"></i>LAMP</a>
-            
-        </h1>
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    5 分钟 读完 (约 775 字)
-                </span>
-                
-                
-                <time class="level-item has-text-grey" datetime="2019-10-15T04:32:16.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-10-15</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-23T07:46:43.630Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-23</time>
-                
-            </div>
-        </div>
-        
-        <div class="content">
-            <p>Linux 编译安装 LAMP </p>
-<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>编译工具&amp;开发包</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make gcc openssl</span><br></pre></td></tr></table></figure>
-
-<p>依赖包</p>
-<table>
-<thead>
-<tr>
-<th align="left">包</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="https://httpd.apache.org/" target="_blank" rel="noopener">httpd</a></td>
-<td align="left">Apache 主程序包</td>
-</tr>
-<tr>
-<td align="left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr</a></td>
-<td align="left">Apache 依赖包</td>
-</tr>
-<tr>
-<td align="left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-util</a></td>
-<td align="left">Apache 依赖包</td>
-</tr>
-<tr>
-<td align="left"><a href="https://ftp.pcre.org/pub/pcre/" target="_blank" rel="noopener">pcre</a></td>
-<td align="left">Apache 依赖包</td>
-</tr>
-</tbody></table>
-        </div>
-        
-        
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-mobile is-flex">
-            <div class="level-start">
-                
-                <div class="level-item is-size-7 is-uppercase">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Web/">Web</a>
-                </div>
-                
-            </div>
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/posts/LAMP.html#more"><i class="fas fa-book-reader has-text-grey"></i>&nbsp;&nbsp;阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1011,7 +967,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        176
+                        177
                     </p>
                 </a>
             </div>
@@ -1101,6 +1057,29 @@
         
         <article class="media">
             
+            <a href="/posts/Cmder.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" style="border-radius: 5%" src="/images/Win.png"
+                        alt="Cmder 配置">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase"
+                            datetime="2020-01-08T05:40:15.000Z">2020-01-08</time></div>
+                    <a href="/posts/Cmder.html"
+                        class="title has-link-black-ter is-size-6 has-text-weight-normal">Cmder 配置</a>
+                    <p class="is-size-7 is-uppercase">
+                        <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
+                        <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/posts/TermuxConfig.html" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" style="border-radius: 5%" src="/images/Termux.png"
@@ -1183,29 +1162,6 @@
                             datetime="2019-12-11T01:23:23.000Z">2019-12-11</time></div>
                     <a href="/posts/Batch.html"
                         class="title has-link-black-ter is-size-6 has-text-weight-normal">Batch</a>
-                    <p class="is-size-7 is-uppercase">
-                        <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
-                        <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/OpenSourceSearch.html" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" style="border-radius: 5%" src="/images/Github.png"
-                        alt="如何高效寻找开源项目">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase"
-                            datetime="2019-11-14T10:23:35.000Z">2019-11-14</time></div>
-                    <a href="/posts/OpenSourceSearch.html"
-                        class="title has-link-black-ter is-size-6 has-text-weight-normal">如何高效寻找开源项目</a>
                     <p class="is-size-7 is-uppercase">
                         <i class="fa fa-folder-open has-text-grey"></i>&nbsp;&nbsp;
                         <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>

@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Termux Config Shell - Vitan&#39;s Blog</title>
+<title>Cmder 配置 - Vitan&#39;s Blog</title>
 
 
 
 
 
 
-<link rel="alternative" href="/atom.xml" title="Termux Config Shell" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="Cmder 配置" type="application/atom+xml">
 
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="Termux Config Shell" height="28">
+                <img src="/images/logo.png" alt="Cmder 配置" height="28">
             
             </a>
         </div>
@@ -152,14 +152,14 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/Termux.png" alt="Termux Config Shell">
+            <img class="thumbnail" src="/images/Win.png" alt="Cmder 配置">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <i class="fas fa-angle-double-right"></i>Termux Config Shell
+                <i class="fas fa-angle-double-right"></i>Cmder 配置
             
         </h1>
         
@@ -177,7 +177,7 @@
                     <i class="far fa-clock"></i>&nbsp;
                     
                     
-                    几秒 读完 (约 45 字)
+                    1 分钟 读完 (约 138 字)
                 </span>
                 
                 
@@ -186,17 +186,16 @@
                     <span id="busuanzi_value_page_pv">0</span>次访问
                 </span>
                 
-                <time class="level-item has-text-grey" datetime="2020-01-08T04:11:49.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-08</time>
+                <time class="level-item has-text-grey" datetime="2020-01-08T05:40:15.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-08</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-01-08T04:17:07.564Z"><i class="far fa-calendar-check">&nbsp;</i>2020-01-08</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-01-08T06:15:27.387Z"><i class="far fa-calendar-check">&nbsp;</i>2020-01-08</time>
                 
             </div>
         </div>
         
         <div class="content">
-            <h1 id="Termux-配置脚本"><a href="#Termux-配置脚本" class="headerlink" title="Termux 配置脚本"></a>Termux 配置脚本</h1><h2 id="via-curl"><a href="#via-curl" class="headerlink" title="via curl"></a>via curl</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install curl</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="via-wget"><a href="#via-wget" class="headerlink" title="via wget"></a>via wget</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install wget</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(wget -O- https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+            <h1 id="使用-Bash"><a href="#使用-Bash" class="headerlink" title="使用 Bash"></a>使用 Bash</h1><p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash hljs"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 别名</span></span><br><span class="line"><span class="hljs-comment">#打开当前文件夹</span></span><br><span class="line"><span class="hljs-built_in">alias</span> e.=<span class="hljs-string">'explorer .'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> clear=cls</span><br><span class="line"><span class="hljs-built_in">alias</span> gl=<span class="hljs-string">'git pull origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> glm=<span class="hljs-string">'git pull origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gpm=<span class="hljs-string">'git push origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpd=<span class="hljs-string">'cap production deploy'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpt=<span class="hljs-string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="hljs-string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># NEW.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📦 NEW: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># IMPROVE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"👌 IMPROVE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># FIX.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🐛 FIX: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># RELEASE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🚀 RELEASE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DOC.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📖 DOC: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># TEST.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"✅ TEST: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -253,7 +252,7 @@
 
         <ul class="post-copyright">
             <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/TermuxConfig.html">https://vitan.me/posts/TermuxConfig.html</a></li>
+            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Cmder.html">https://vitan.me/posts/Cmder.html</a></li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
                     href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
                     target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -288,17 +287,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Cmder.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Cmder 配置</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/WNMP.html">
-                <span class="level-item">WNMP 环境配置</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/TermuxConfig.html">
+                <span class="level-item">Termux Config Shell</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -345,18 +337,14 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#Termux-配置脚本">
+            <a class="is-flex" href="#使用-Bash">
             <span class="has-mr-6">1</span>
-            <span>Termux 配置脚本</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#via-curl">
-            <span class="has-mr-6">1.1</span>
-            <span>via curl</span>
+            <span>使用 Bash</span>
             </a></li><li>
-            <a class="is-flex" href="#via-wget">
-            <span class="has-mr-6">1.2</span>
-            <span>via wget</span>
-            </a></li></ul></li></ul>
+            <a class="is-flex" href="#配置">
+            <span class="has-mr-6">2</span>
+            <span>配置</span>
+            </a></li></ul>
             </div>
         </div>
     </div>
@@ -381,7 +369,7 @@
                 <!--
                 <a class="footer-logo is-block has-mb-6" href="/">
                     
-                    <img src="/images/logo.png" alt="Termux Config Shell" height="28">
+                    <img src="/images/logo.png" alt="Cmder 配置" height="28">
                     
                 </a>
                 -->

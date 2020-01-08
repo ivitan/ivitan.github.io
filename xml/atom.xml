@@ -6,7 +6,7 @@
   <link href="//xml/atom.xml" rel="self"/>
   
   <link href="https://vitan.me/"/>
-  <updated>2020-01-08T04:17:07.564Z</updated>
+  <updated>2020-01-08T06:15:27.387Z</updated>
   <id>https://vitan.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cmder 配置</title>
+    <link href="https://vitan.me/posts/Cmder.html"/>
+    <id>https://vitan.me/posts/Cmder.html</id>
+    <published>2020-01-08T05:40:15.000Z</published>
+    <updated>2020-01-08T06:15:27.387Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用-Bash"><a href="#使用-Bash" class="headerlink" title="使用 Bash"></a>使用 Bash</h1><p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt></p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash hljs"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 别名</span></span><br><span class="line"><span class="hljs-comment">#打开当前文件夹</span></span><br><span class="line"><span class="hljs-built_in">alias</span> e.=<span class="hljs-string">'explorer .'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> clear=cls</span><br><span class="line"><span class="hljs-built_in">alias</span> gl=<span class="hljs-string">'git pull origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> glm=<span class="hljs-string">'git pull origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gpm=<span class="hljs-string">'git push origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpd=<span class="hljs-string">'cap production deploy'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpt=<span class="hljs-string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="hljs-string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># NEW.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📦 NEW: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># IMPROVE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"👌 IMPROVE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># FIX.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🐛 FIX: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># RELEASE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🚀 RELEASE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DOC.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📖 DOC: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># TEST.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"✅ TEST: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用-Bash&quot;&gt;&lt;a href=&quot;#使用-Bash&quot; class=&quot;headerlink&quot; title=&quot;使用 Bash&quot;&gt;&lt;/a&gt;使用 Bash&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ivitan
+      
+    
+    </summary>
+    
+      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
+    
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+  </entry>
   
   <entry>
     <title>Termux Config Shell</title>
@@ -527,30 +554,6 @@
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Win" scheme="https://vitan.me/tags/Win/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 更换设备后怎么做</title>
-    <link href="https://vitan.me/posts/Git-Change.html"/>
-    <id>https://vitan.me/posts/Git-Change.html</id>
-    <published>2019-06-07T02:19:01.000Z</published>
-    <updated>2019-12-10T01:38:54.144Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git 更换设备后怎么做</p><a id="more"></a><h1 id="旧仓库"><a href="#旧仓库" class="headerlink" title="旧仓库"></a>旧仓库</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git init 仓库名字</span><br><span class="line"><span class="hljs-comment"># 建立远程连接</span></span><br><span class="line">git remote add origin https://github.com/user/repo.git    </span><br><span class="line"><span class="hljs-comment">#获取远程更新</span></span><br><span class="line">git fetch origin  </span><br><span class="line"><span class="hljs-comment"># 把更新的内容合并到本地分支</span></span><br><span class="line">git merge origin/master </span><br><span class="line"><span class="hljs-comment"># 加入差异的文件,就是本地修改的文件</span></span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="hljs-string">"Commit message"</span> </span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure><h1 id="新仓库"><a href="#新仓库" class="headerlink" title="新仓库"></a>新仓库</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init()</span><br><span class="line">git remote add origin https://github.com/user/repo.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="hljs-string">"Commit message"</span></span><br><span class="line">push origin master</span><br></pre></td></tr></table></figure><h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ul><li>拉取时推荐</li></ul><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master</span><br><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure><ul><li>不推荐</li></ul><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Git 更换设备后怎么做&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
-    
-    
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
-    
-      <category term="Git" scheme="https://vitan.me/tags/Git/"/>
     
   </entry>
   
