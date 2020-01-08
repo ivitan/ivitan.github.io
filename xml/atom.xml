@@ -6,7 +6,7 @@
   <link href="//xml/atom.xml" rel="self"/>
   
   <link href="https://vitan.me/"/>
-  <updated>2019-12-24T00:04:57.556Z</updated>
+  <updated>2020-01-08T04:17:07.564Z</updated>
   <id>https://vitan.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Termux Config Shell</title>
+    <link href="https://vitan.me/posts/TermuxConfig.html"/>
+    <id>https://vitan.me/posts/TermuxConfig.html</id>
+    <published>2020-01-08T04:11:49.000Z</published>
+    <updated>2020-01-08T04:17:07.564Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Termux-配置脚本"><a href="#Termux-配置脚本" class="headerlink" title="Termux 配置脚本"></a>Termux 配置脚本</h1><h2 id="via-curl"><a href="#via-curl" class="headerlink" title="via curl"></a>via curl</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install curl</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure><h2 id="via-wget"><a href="#via-wget" class="headerlink" title="via wget"></a>via wget</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install wget</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(wget -O- https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Termux-配置脚本&quot;&gt;&lt;a href=&quot;#Termux-配置脚本&quot; class=&quot;headerlink&quot; title=&quot;Termux 配置脚本&quot;&gt;&lt;/a&gt;Termux 配置脚本&lt;/h1&gt;&lt;h2 id=&quot;via-curl&quot;&gt;&lt;a href=&quot;#via-curl&quot;
+      
+    
+    </summary>
+    
+      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
+    
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+  </entry>
   
   <entry>
     <title>WNMP 环境配置</title>
@@ -524,30 +551,6 @@
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Git" scheme="https://vitan.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArchLinux Docker</title>
-    <link href="https://vitan.me/posts/Docker.html"/>
-    <id>https://vitan.me/posts/Docker.html</id>
-    <published>2019-05-25T05:10:00.000Z</published>
-    <updated>2019-12-10T01:38:54.143Z</updated>
-    
-    <content type="html"><![CDATA[<p>ArchLinux 安装 Docker</p><a id="more"></a><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure><p>start server</p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure><h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="hljs-comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure><h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure><ul><li>-it, -i：交互式操作， -t 终端</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ArchLinux 安装 Docker&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
-    
-    
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
-    
-      <category term="Docker" scheme="https://vitan.me/tags/Docker/"/>
     
   </entry>
   
