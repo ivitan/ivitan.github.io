@@ -36,7 +36,7 @@ for i in range(len(li)-1): # i表示第几趟
     if not exchange:
         return
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/maopao.gif)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/maopao.gif)
 
 ## 选择排序
 ```python
@@ -51,7 +51,7 @@ for i in range(len(li)):
     li[min_index], li[i] = li[i], li[min_index]
 
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/xuanze.gif)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/xuanze.gif)
 
 ## 插入排序
 ```python
@@ -71,7 +71,7 @@ for i in range(1, len(li)): # i是摸到的牌的下标
     #         break
     li[j+1] = tmp   #将摸到的牌 插入到 往前挪过之后的 j 的后一位
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/charu.gif
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/charu.gif
 )
 
  ##  快速排序
@@ -122,7 +122,7 @@ print(li)
 quick(li, 0, len(li) - 1)
 print(li)
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/kuaisu.gif)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/kuaisu.gif)
 
 ## 堆排序
 ```python
@@ -155,7 +155,7 @@ def heap_sort(li):
        # 现在堆的范围 0~i-1
        sift(li, 0, i-1)
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/zengdui.gif
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/zengdui.gif
 )
 
 ## 归并排序
@@ -195,7 +195,7 @@ def merge_sort(li, low, high):
 li = [10,4,6,3,8,2,5,7]
 merge_sort(li, 0, len(li)-1)
 ```
-![](https://raw.githubusercontent.com/ivitan/Picture/master/guibing.gif
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/guibing.gif
 )
 
 ---

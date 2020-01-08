@@ -44,4 +44,4 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 # 效果
-![](https://raw.githubusercontent.com/ivitan/Picture/master/Grub.png)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png)

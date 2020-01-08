@@ -45,7 +45,7 @@ echo "vitan.me" > CNAME
 
 # Github 配置
 仓库设置
-![](https://raw.githubusercontent.com/ivitan/Picture/master/20190808222520.png)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/20190808222520.png)
 
 ---
 **参考**
