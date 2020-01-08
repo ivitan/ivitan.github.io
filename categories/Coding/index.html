@@ -203,8 +203,10 @@
         </div>
         
         <div class="content">
-            <h1 id="使用-Bash"><a href="#使用-Bash" class="headerlink" title="使用 Bash"></a>使用 Bash</h1><p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt></p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash hljs"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 别名</span></span><br><span class="line"><span class="hljs-comment">#打开当前文件夹</span></span><br><span class="line"><span class="hljs-built_in">alias</span> e.=<span class="hljs-string">'explorer .'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> clear=cls</span><br><span class="line"><span class="hljs-built_in">alias</span> gl=<span class="hljs-string">'git pull origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> glm=<span class="hljs-string">'git pull origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gpm=<span class="hljs-string">'git push origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpd=<span class="hljs-string">'cap production deploy'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpt=<span class="hljs-string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="hljs-string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># NEW.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📦 NEW: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># IMPROVE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"👌 IMPROVE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># FIX.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🐛 FIX: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># RELEASE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🚀 RELEASE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DOC.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📖 DOC: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># TEST.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"✅ TEST: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="使用-bash">使用 Bash</h1>
+<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt></p>
+<h1 id="配置">配置</h1>
+<figure class="highlight bash hljs"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 别名</span></span><br><span class="line"><span class="hljs-comment">#打开当前文件夹</span></span><br><span class="line"><span class="hljs-built_in">alias</span> e.=<span class="hljs-string">'explorer .'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> clear=cls</span><br><span class="line"><span class="hljs-built_in">alias</span> gl=<span class="hljs-string">'git pull origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> glm=<span class="hljs-string">'git pull origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push origin $1'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> gpm=<span class="hljs-string">'git push origin master'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpd=<span class="hljs-string">'cap production deploy'</span></span><br><span class="line"><span class="hljs-built_in">alias</span> cpt=<span class="hljs-string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="hljs-string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># NEW.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📦 NEW: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># IMPROVE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"👌 IMPROVE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># FIX.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🐛 FIX: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># RELEASE.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"🚀 RELEASE: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DOC.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"📖 DOC: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># TEST.</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="hljs-string">"✅ TEST: <span class="hljs-variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -261,9 +263,11 @@
         </div>
         
         <div class="content">
-            <h1 id="Termux-配置脚本"><a href="#Termux-配置脚本" class="headerlink" title="Termux 配置脚本"></a>Termux 配置脚本</h1><h2 id="via-curl"><a href="#via-curl" class="headerlink" title="via curl"></a>via curl</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install curl</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="via-wget"><a href="#via-wget" class="headerlink" title="via wget"></a>via wget</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install wget</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(wget -O- https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+            <h1 id="termux-配置脚本">Termux 配置脚本</h1>
+<h2 id="via-curl">via curl</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install curl</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<h2 id="via-wget">via wget</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install wget</span><br><span class="line">bash -c <span class="hljs-string">"<span class="hljs-variable">$(wget -O- https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -320,7 +324,8 @@
         </div>
         
         <div class="content">
-            <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ol>
+            <h1 id="下载">下载</h1>
+<ol>
 <li><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">Nginx</a></li>
 <li><a href="http://windows.php.net/download/" target="_blank" rel="noopener">PHP</a></li>
 <li><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip" target="_blank" rel="noopener">MySQL</a></li>
@@ -473,10 +478,12 @@
         
         <div class="content">
             <p>Batch 批量处理</p>
-<h1 id="dp0-获取当前路径"><a href="#dp0-获取当前路径" class="headerlink" title="%~dp0[获取当前路径]"></a>%~dp0[获取当前路径]</h1><ol>
+<h1 id="dp0-获取当前路径">%~dp0[获取当前路径]</h1>
+<ol>
 <li>%~dp0 “d”为Drive的缩写，即为驱动器，磁盘、“p”为Path缩写，即为路径，目录</li>
 <li>cd %~dp0 ：进入批处理所在目录</li>
-<li>cd %~dp0bin\ ：进入批处理所在目录的bin目录</li></ol>
+<li>cd %~dp0bin\ ：进入批处理所在目录的bin目录</li>
+</ol>
         </div>
         
         
@@ -551,10 +558,11 @@
         
         <div class="content">
             <p>Github 中高效寻找搜索开源项目</p>
-<h1 id="in-name"><a href="#in-name" class="headerlink" title="in:name"></a>in:name</h1><p>搜索时使用 <code>in:name</code> 可以搜索名字包含的内容</p>
+<h1 id="in-name">in:name</h1>
+<p>搜索时使用 <code>in:name</code> 可以搜索名字包含的内容</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name vue</span><br></pre></td></tr></table></figure>
-
-<h2 id="搜索过滤"><a href="#搜索过滤" class="headerlink" title="搜索过滤"></a>搜索过滤</h2><ul>
+<h2 id="搜索过滤">搜索过滤</h2>
+<ul>
 <li>Stars 数</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#匹配start书大于1000</span></span><br><span class="line"><span class="hljs-keyword">in</span>:name vue stasr&gt;1000</span><br></pre></td></tr></table></figure>
@@ -631,8 +639,10 @@
         </div>
         
         <div class="content">
-            <p>CMD 基础<br>转载自:<a href="https://www.cnblogs.com/kekec/p/3662125.html" target="_blank" rel="noopener">可可西</a></p>
-<h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><figure class="highlight cmd hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 中断命令</span><br><span class="line">Crtl + z</span><br></pre></td></tr></table></figure>
+            <p>CMD 基础
+转载自:<a href="https://www.cnblogs.com/kekec/p/3662125.html" target="_blank" rel="noopener">可可西</a></p>
+<h1 id="基础命令">基础命令</h1>
+<figure class="highlight cmd hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 中断命令</span><br><span class="line">Crtl + z</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -707,7 +717,9 @@
         
         <div class="content">
             <p>HCNA 学习笔记</p>
-<h1 id="网络整体架构"><a href="#网络整体架构" class="headerlink" title="网络整体架构"></a>网络整体架构</h1><h2 id="企业网络"><a href="#企业网络" class="headerlink" title="企业网络"></a>企业网络</h2><p>企业网络：包括小型办公室、教育、政府、银行等行业或机构</p>
+<h1 id="网络整体架构">网络整体架构</h1>
+<h2 id="企业网络">企业网络</h2>
+<p>企业网络：包括小型办公室、教育、政府、银行等行业或机构</p>
 <ul>
 <li>企业网络远程互联：</li>
 </ul>
@@ -787,9 +799,10 @@
         
         <div class="content">
             <p>解决 Python 安装库时速度慢或者超时问题</p>
-<h1 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="hljs-number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
-
-<h1 id="i-指定源"><a href="#i-指定源" class="headerlink" title="-i 指定源"></a>-i 指定源</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+<h1 id="设置超时时间">设置超时时间</h1>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="hljs-number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
+<h1 id="i-指定源">-i 指定源</h1>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
         </div>
         
         

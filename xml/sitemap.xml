@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/posts/Termux.html</loc>
+    
+    <lastmod>2020-01-08T06:36:58.556Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Hexo-Domain.html</loc>
+    
+    <lastmod>2020-01-08T06:36:00.825Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/PythonAlgorithm.html</loc>
+    
+    <lastmod>2020-01-08T06:32:04.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Grub.html</loc>
+    
+    <lastmod>2020-01-08T06:29:58.052Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Shell.html</loc>
+    
+    <lastmod>2020-01-08T06:27:52.069Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/Cmder.html</loc>
     
     <lastmod>2020-01-08T06:15:27.387Z</lastmod>
@@ -68,13 +103,6 @@
     <loc>https://vitan.me/posts/Win10-Share-WiFI.html</loc>
     
     <lastmod>2019-12-23T07:43:39.128Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Termux.html</loc>
-    
-    <lastmod>2019-12-23T07:43:20.388Z</lastmod>
     
   </url>
   
@@ -341,13 +369,6 @@
     <loc>https://vitan.me/posts/Termux-Npm-Error.html</loc>
     
     <lastmod>2019-12-10T01:38:54.194Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Shell.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.193Z</lastmod>
     
   </url>
   
@@ -709,13 +730,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/PythonAlgorithm.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.159Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/PythonCommonlyUse.html</loc>
     
     <lastmod>2019-12-10T01:38:54.159Z</lastmod>
@@ -975,23 +989,9 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Hexo-Domain.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.149Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/Hexo-Command.html</loc>
     
     <lastmod>2019-12-10T01:38:54.149Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Grub.html</loc>
-    
-    <lastmod>2019-12-10T01:38:54.148Z</lastmod>
     
   </url>
   

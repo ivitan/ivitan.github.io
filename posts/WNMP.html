@@ -194,14 +194,15 @@
         </div>
         
         <div class="content">
-            <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ol>
+            <h1 id="下载">下载</h1>
+<ol>
 <li><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">Nginx</a></li>
 <li><a href="http://windows.php.net/download/" target="_blank" rel="noopener">PHP</a></li>
 <li><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip" target="_blank" rel="noopener">MySQL</a></li>
 </ol>
 <a id="more"></a>
-
-<h1 id="Nignx"><a href="#Nignx" class="headerlink" title="Nignx"></a>Nignx</h1><ol>
+<h1 id="nignx">Nignx</h1>
+<ol>
 <li>解压 Nignx 到 D:\DevEnv\Nignx</li>
 <li>运行 D:\DevEnv\Nignx 下的 nginx.exe</li>
 <li>打开浏览器访问 <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> 或 <a href="http://127.0.0.1" target="_blank" rel="noopener">http://127.0.0.1</a></li>
@@ -211,61 +212,51 @@
 <li>配置</li>
 </ol>
 <figure class="highlight bat hljs"><figcaption><span>D:\DevEnv\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    root   D:/WNMP/www;        #指定站点根目录为D:/wnmp/www</span><br><span class="line">    index  index.php index.html index.htm;    #添加index.php,优先解析php文件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>再往下，找到如下内容，取消注释</p>
 <figure class="highlight bat hljs"><figcaption><span>D:\WNMP\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#location ~ \.php$ &#123;</span><br><span class="line">#    root           html;</span><br><span class="line">#    fastcgi_pass   <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9000</span>;</span><br><span class="line">#    fastcgi_index  index.php;</span><br><span class="line">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">#    include        fastcgi_params;</span><br><span class="line">#&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后将 root html; 更改为 root D:/wnmp/www; 再将 /scripts 改为 $document_root，这里的”$document_root”就是前面 “root” 所指定的站点路径</p>
+<p>然后将 root html; 更改为 root D:/wnmp/www; 再将 /scripts 改为 $document_root，这里的&quot;$document_root&quot;就是前面 “root” 所指定的站点路径</p>
 <figure class="highlight bat hljs"><figcaption><span>D:\WNMP\Nignx\nginx.cof</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           D:/WNMP/www;</span><br><span class="line">    fastcgi_pass   <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">9000</span>;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;</span><br><span class="line">    include        fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop	快速关闭Nginx</span><br><span class="line">nginx -s quit	优雅的关闭Nginx</span><br><span class="line">nginx -s reload 更改配置，使用新配置启动新工作进程，正常关闭旧工作进程</span><br><span class="line">nginx -s reopen 重新打开日志文件</span><br></pre></td></tr></table></figure>
-
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>复制my-default.ini文件，并重命名为my.ini。再打开my.ini，取消 basedir 和 datadir 注释，并指定具体路径：</p>
+<h2 id="常用命令">常用命令</h2>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop	快速关闭Nginx</span><br><span class="line">nginx -s quit	优雅的关闭Nginx</span><br><span class="line">nginx -s reload 更改配置，使用新配置启动新工作进程，正常关闭旧工作进程</span><br><span class="line">nginx -s reopen 重新打开日志文件</span><br></pre></td></tr></table></figure>
+<h1 id="mysql">MySQL</h1>
+<p>复制my-default.ini文件，并重命名为my.ini。再打开my.ini，取消 basedir 和 datadir 注释，并指定具体路径：</p>
 <figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = "D:/wamp/mysql/"</span><br><span class="line">datadir = "D:/wamp/mysql/data/"</span><br></pre></td></tr></table></figure>
-
 <p>以管理员身份打开一个DOS窗口，切换到bin目录（必须），</p>
 <figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">d:                                         # 切换到<span class="hljs-title">D</span>盘</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">cd</span> <span class="hljs-title">d</span>:\<span class="hljs-title">wnmp</span>\<span class="hljs-title">mysql</span>-5.7.17-<span class="hljs-title">winx64</span>\<span class="hljs-title">bin</span>         # 切换到<span class="hljs-title">bin</span>目录</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">mysqld</span> -<span class="hljs-title">install</span>                            # 安装<span class="hljs-title">MySQL</span>服务</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">mysqld</span> --<span class="hljs-title">initialize</span> --<span class="hljs-title">user</span>=<span class="hljs-title">root</span> --<span class="hljs-title">console</span>  # 初始化<span class="hljs-title">MySQL</span>，生成<span class="hljs-title">data</span>目录和<span class="hljs-title">root</span>密码，5.7版本之后必须要有这个命令</span></span><br></pre></td></tr></table></figure>
-
 <p>最后那条命令会生成一个临时密码，如下：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-12-23T07:55:56.279880Z 1 [Note] A temporary password is generated for root@localhost: o*%_kb(k_1&lt;V</span><br></pre></td></tr></table></figure>
-
 <p>再启动MySQL：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
 <p>临时密码只能登陆后修改密码，不能进行其他操作。使用下面的命令修改</p>
 <figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
-
 <p><a href="https://vitan.me/posts/MySQLPassword.html">其他版本修改密码</a></p>
-<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><ol>
+<h1 id="php">PHP</h1>
+<ol>
 <li>解压 PHP 到 D:\DevEnv\PHP</li>
 <li>修改配置，将 D:\PHP\php.ini-development 改为 php.ini,取消下面注释</li>
 </ol>
 <figure class="highlight bat hljs"><figcaption><span>D:\PHP\php.ini</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">;extension=mysql</span><br><span class="line">;extension=mysqli</span><br><span class="line">;enable_dl = Off，改为 enable_dl = On</span><br><span class="line">;fastcgi.impersonate = <span class="hljs-number">1</span></span><br><span class="line">;extension=curl</span><br><span class="line">;extension=gd2</span><br><span class="line">;extension=mbstring</span><br><span class="line">;extension=mysqli</span><br><span class="line">;extension=mysql</span><br></pre></td></tr></table></figure>
-
 <p>去 <code>;</code>再修改</p>
 <figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">;extension_dir = "ext" 改为 extension_dir = "D:\wnmp\php\ext"</span><br><span class="line">;<span class="hljs-built_in">date</span>.timezone = 改为<span class="hljs-built_in">date</span>.timezone = Asia/Shanghai</span><br><span class="line">;cgi.force_redirect = <span class="hljs-number">1</span> 改为cgi.force_redirect = <span class="hljs-number">0</span></span><br><span class="line">;cgi.rfc2616_headers = <span class="hljs-number">0</span> 改为 cgi.rfc2616_headers = <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
-
 <ol start="3">
-<li><p>配置 PHP，使其能与 Nginx 配合，取消下面的注释</p>
-<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;cgi.fix_pathinfo=<span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动PHP</p>
-<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">D:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php</span>-<span class="hljs-title">cli.exe</span> -<span class="hljs-title">b</span> 127.0.1.1:9000 -<span class="hljs-title">c</span> <span class="hljs-title">D</span>:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php.ini</span></span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>配置 PHP，使其能与 Nginx 配合，取消下面的注释</li>
 </ol>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><figure class="highlight bat hljs"><figcaption><span>stat.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-built_in">echo</span> off</span><br><span class="line"><span class="hljs-comment">REM Windows 下无效</span></span><br><span class="line"><span class="hljs-comment">REM set PHP_FCGI_CHILDREN=5</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">REM 每个进程处理的最大请求数，或设置为Windows环境变量</span></span><br><span class="line"><span class="hljs-built_in">set</span> PHP_FCGI_MAX_REQUESTS=<span class="hljs-number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Starting PHP FastCGI...</span><br><span class="line"><span class="hljs-function">D:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">php</span>/<span class="hljs-title">php</span>-<span class="hljs-title">cgi.exe</span> -<span class="hljs-title">b</span> 127.0.0.1:9000 -<span class="hljs-title">c</span> <span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">php</span>/<span class="hljs-title">php.ini</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">echo</span> <span class="hljs-title">Starting</span> <span class="hljs-title">nginx</span>...</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">nginx</span>/<span class="hljs-title">nginx.exe</span> -<span class="hljs-title">p</span> <span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">nginx</span></span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;cgi.fix_pathinfo=<span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>启动PHP</li>
+</ol>
+<figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">D:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php</span>-<span class="hljs-title">cli.exe</span> -<span class="hljs-title">b</span> 127.0.1.1:9000 -<span class="hljs-title">c</span> <span class="hljs-title">D</span>:\<span class="hljs-title">WNMP</span>\<span class="hljs-title">php</span>\<span class="hljs-title">php.ini</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本">脚本</h2>
+<figure class="highlight bat hljs"><figcaption><span>stat.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-built_in">echo</span> off</span><br><span class="line"><span class="hljs-comment">REM Windows 下无效</span></span><br><span class="line"><span class="hljs-comment">REM set PHP_FCGI_CHILDREN=5</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">REM 每个进程处理的最大请求数，或设置为Windows环境变量</span></span><br><span class="line"><span class="hljs-built_in">set</span> PHP_FCGI_MAX_REQUESTS=<span class="hljs-number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Starting PHP FastCGI...</span><br><span class="line"><span class="hljs-function">D:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">php</span>/<span class="hljs-title">php</span>-<span class="hljs-title">cgi.exe</span> -<span class="hljs-title">b</span> 127.0.0.1:9000 -<span class="hljs-title">c</span> <span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">php</span>/<span class="hljs-title">php.ini</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">echo</span> <span class="hljs-title">Starting</span> <span class="hljs-title">nginx</span>...</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">nginx</span>/<span class="hljs-title">nginx.exe</span> -<span class="hljs-title">p</span> <span class="hljs-title">D</span>:/<span class="hljs-title">wnmp</span>/<span class="hljs-title">nginx</span></span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bat hljs"><figcaption><span>stop.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Stopping nginx...</span><br><span class="line"><span class="hljs-built_in">taskkill</span> /F /IM nginx.exe &gt; null</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">echo</span> Stopping PHP FastCGI...</span><br><span class="line"><span class="hljs-built_in">taskkill</span> /F /IM php-cgi.exe &gt; null</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">exit</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><p>环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径</p>
+<h1 id="环境变量">环境变量</h1>
+<p>环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径</p>
 <figure class="highlight bat hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;D:\wnmp\mysql\bin;D:\wnmp\nginx;D:\wnmp\php;</span><br></pre></td></tr></table></figure>
-
-<h1 id="整体测试"><a href="#整体测试" class="headerlink" title="整体测试"></a>整体测试</h1><ul>
+<h1 id="整体测试">整体测试</h1>
+<ul>
 <li>测试 PHP</li>
 </ul>
 <figure class="highlight php hljs"><figcaption><span>D:\WNMP\nginx\html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">	phpinfo();	</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>浏览器访问 <a href="http://localhost/phpinfo.php" target="_blank" rel="noopener">http://localhost/phpinfo.php</a></p>
 <ul>
 <li>测试 Mysql</li>
@@ -423,7 +414,7 @@
             <span class="has-mr-6">1</span>
             <span>下载</span>
             </a></li><li>
-            <a class="is-flex" href="#Nignx">
+            <a class="is-flex" href="#nignx">
             <span class="has-mr-6">2</span>
             <span>Nignx</span>
             </a><ul class="menu-list"><li>
@@ -431,11 +422,11 @@
             <span class="has-mr-6">2.1</span>
             <span>常用命令</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#MySQL">
+            <a class="is-flex" href="#mysql">
             <span class="has-mr-6">3</span>
             <span>MySQL</span>
             </a></li><li>
-            <a class="is-flex" href="#PHP">
+            <a class="is-flex" href="#php">
             <span class="has-mr-6">4</span>
             <span>PHP</span>
             </a><ul class="menu-list"><li>

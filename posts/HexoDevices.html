@@ -196,47 +196,46 @@
         <div class="content">
             <p>Hexo 多设备源码同步</p>
 <a id="more"></a>
-<h1 id="主设备操作"><a href="#主设备操作" class="headerlink" title="主设备操作"></a>主设备操作</h1><h2 id="部署-Hexo"><a href="#部署-Hexo" class="headerlink" title="部署 Hexo"></a>部署 Hexo</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 在本地博客根目录下安装 hexo</span></span><br><span class="line">npm install -g  hexo-cli</span><br><span class="line"><span class="hljs-comment"># 初始化hexo</span></span><br><span class="line">npm init</span><br><span class="line"><span class="hljs-comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="hljs-comment"># 安装部署相关的配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h2 id="Push-源码"><a href="#Push-源码" class="headerlink" title="Push 源码"></a>Push 源码</h2><ul>
+<h1 id="主设备操作">主设备操作</h1>
+<h2 id="部署-hexo">部署 Hexo</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 在本地博客根目录下安装 hexo</span></span><br><span class="line">npm install -g  hexo-cli</span><br><span class="line"><span class="hljs-comment"># 初始化hexo</span></span><br><span class="line">npm init</span><br><span class="line"><span class="hljs-comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="hljs-comment"># 安装部署相关的配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h2 id="push-源码">Push 源码</h2>
+<ul>
 <li>新建分支后,在本地博客根目录下使用 git 指令上传项目到 Github</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># git初始化</span></span><br><span class="line">git init</span><br><span class="line"><span class="hljs-comment"># 添加仓库地址</span></span><br><span class="line">git remote add origin https://github.com/iVitan/ivitan.github.io.git</span><br><span class="line"><span class="hljs-comment"># 新建分支并切换到新建的分支</span></span><br><span class="line">git checkout -b hexo</span><br><span class="line"><span class="hljs-comment"># 添加所有本地文件到git</span></span><br><span class="line">git add .</span><br><span class="line"><span class="hljs-comment"># git提交</span></span><br><span class="line">git commit -m <span class="hljs-string">""</span></span><br><span class="line"><span class="hljs-comment"># 文件推送到hexo分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
-
-<h1 id="其他设备操作"><a href="#其他设备操作" class="headerlink" title="其他设备操作"></a>其他设备操作</h1><p>克隆Github分支上的文件:</p>
+<h1 id="其他设备操作">其他设备操作</h1>
+<p>克隆Github分支上的文件:</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> -b hexo  https://github.com/iVitan/ivitan.github.io.git</span><br></pre></td></tr></table></figure>
-
 <p>安装 Hexo</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 安装hexo</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="hljs-comment"># 注意这里不需要hexo初始化：hexo init；否则之前的hexo配置参数会重置</span></span><br><span class="line"><span class="hljs-comment"># 安装依赖库</span></span><br><span class="line">npm install</span><br><span class="line"><span class="hljs-comment"># 安装部署相关配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
 <p>主题 cutie</p>
 <ul>
-<li><p><a href="https://github.com/qutang/hexo-theme-cutie/releases/latest" target="_blank" rel="noopener">下载</a></p>
+<li>
+<p><a href="https://github.com/qutang/hexo-theme-cutie/releases/latest" target="_blank" rel="noopener">下载</a></p>
 </li>
-<li><p>相关 npm</p>
+<li>
+<p>相关 npm</p>
 </li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm i markdown-it-emoji --save</span><br><span class="line">npm i markdown-it-mark --save</span><br><span class="line">npm i markdown-it-deflist --save</span><br><span class="line">npm i markdown-it-container --save</span><br></pre></td></tr></table></figure>
-
 <p>更新文章</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="hljs-string">"tittle"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>分别同步到master,hexo分支</li>
 </ul>
-<h2 id="后续-Push"><a href="#后续-Push" class="headerlink" title="后续 Push"></a>后续 Push</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 添加源文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="hljs-comment"># Git 提交</span></span><br><span class="line">git commit -m <span class="hljs-string">""</span></span><br><span class="line"><span class="hljs-comment"># 先拉原来Github分支上的源文件到本地，进行合并</span></span><br><span class="line"><span class="hljs-comment"># 分支名后面的“--allow-unrelated-histories”是为了弹出“fatal: refusing to merge unrelated histories.”的错误</span></span><br><span class="line">git pull origin hexo --allow-unrelated-histories</span><br><span class="line"><span class="hljs-comment"># 比较解决前后版本冲突后，push源文件到Github的分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
-
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>无法Push</p>
+<h2 id="后续-push">后续 Push</h2>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 添加源文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="hljs-comment"># Git 提交</span></span><br><span class="line">git commit -m <span class="hljs-string">""</span></span><br><span class="line"><span class="hljs-comment"># 先拉原来Github分支上的源文件到本地，进行合并</span></span><br><span class="line"><span class="hljs-comment"># 分支名后面的“--allow-unrelated-histories”是为了弹出“fatal: refusing to merge unrelated histories.”的错误</span></span><br><span class="line">git pull origin hexo --allow-unrelated-histories</span><br><span class="line"><span class="hljs-comment"># 比较解决前后版本冲突后，push源文件到Github的分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+<h1 id="问题">问题</h1>
+<p>无法Push</p>
 <ol>
 <li>强制 Push</li>
 </ol>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin hexo</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
 <li>根目录的.gitconfig文件一般写上需要忽略的文件及文件夹</li>
 </ol>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store      </span><br><span class="line">Thumbs.db      </span><br><span class="line">db.json      </span><br><span class="line">*.<span class="hljs-built_in">log</span>      </span><br><span class="line">node_modules/      </span><br><span class="line">public/      </span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
-
 
         </div>
         
@@ -390,11 +389,11 @@
             <span class="has-mr-6">1</span>
             <span>主设备操作</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#部署-Hexo">
+            <a class="is-flex" href="#部署-hexo">
             <span class="has-mr-6">1.1</span>
             <span>部署 Hexo</span>
             </a></li><li>
-            <a class="is-flex" href="#Push-源码">
+            <a class="is-flex" href="#push-源码">
             <span class="has-mr-6">1.2</span>
             <span>Push 源码</span>
             </a></li></ul></li><li>
@@ -402,7 +401,7 @@
             <span class="has-mr-6">2</span>
             <span>其他设备操作</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#后续-Push">
+            <a class="is-flex" href="#后续-push">
             <span class="has-mr-6">2.1</span>
             <span>后续 Push</span>
             </a></li></ul></li><li>
