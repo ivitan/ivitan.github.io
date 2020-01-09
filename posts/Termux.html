@@ -196,50 +196,52 @@
         </div>
         
         <div class="content">
-            <h1 id="简介">简介</h1>
-<p><a href="https://wiki.termux.com/wiki/Main_Page" target="_blank" rel="noopener">Termux</a>是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持apt 管理软件包，十分方便安装软件包, 完美支持 Python,PHP,Ruby,Go,Nodejs,MySQL 等。</p>
-<h1 id="命令">命令</h1>
-<p>基本命令</p>
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://wiki.termux.com/wiki/Main_Page" target="_blank" rel="noopener">Termux</a>是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持apt 管理软件包，十分方便安装软件包, 完美支持 Python,PHP,Ruby,Go,Nodejs,MySQL 等。</p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>基本命令</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg search &lt;query&gt;  <span class="hljs-comment">#搜索包</span></span><br><span class="line">pkg install &lt;package&gt; <span class="hljs-comment">#安装包</span></span><br><span class="line">pkg uninstall &lt;package&gt; <span class="hljs-comment">#卸载包</span></span><br><span class="line">pkg reinstall &lt;package&gt; <span class="hljs-comment">#重新安装包</span></span><br><span class="line">pkg update  <span class="hljs-comment">#更新源</span></span><br><span class="line">pkg upgrade <span class="hljs-comment">#升级软件包</span></span><br><span class="line">pkg list-all <span class="hljs-comment">#列出可供安装的所有包</span></span><br><span class="line">pkg list-installed  <span class="hljs-comment">#列出已经安装的包</span></span><br><span class="line">pkg shoe &lt;package&gt;  <span class="hljs-comment">#显示某个包的详细信息</span></span><br><span class="line">pkg files &lt;package&gt;  <span class="hljs-comment">#显示某个包的</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <p>手动安装 *.deb 文件</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i ./package.deb <span class="hljs-comment">#安装</span></span><br><span class="line">dpkg --remove [package name] <span class="hljs-comment">#卸载</span></span><br><span class="line">dpkg --remove [package name] <span class="hljs-comment">#列出所有已安装的包</span></span><br></pre></td></tr></table></figure>
-<h1 id="换源">换源</h1>
-<h2 id="清华源">清华源</h2>
-<p>设置默认编辑器</p>
+
+<h1 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h1><h2 id="清华源"><a href="#清华源" class="headerlink" title="清华源"></a>清华源</h2><p>设置默认编辑器</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> EDITOR=vim</span><br></pre></td></tr></table></figure>
+
 <p>编辑源文件</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>然后 <a href="https://mirrors.tuna.tsinghua.edu.cn/termux" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/termux</a> 代替原文中的 <a href="https://termux.net" target="_blank" rel="noopener">https://termux.net</a>，保存退出</li>
+<li>然后 <a href="https://mirrors.tuna.tsinghua.edu.cn/termux" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/termux</a> 代替原文中的 <a href="https://termux.net，保存退出" target="_blank" rel="noopener">https://termux.net，保存退出</a></li>
 </ul>
-<h2 id="官方其他源">官方其他源</h2>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install root-repo</span><br><span class="line">pkg install x11-repo</span><br><span class="line">pkg install unstable-repo</span><br></pre></td></tr></table></figure>
-<h2 id="its-pointless"><a href="https://github.com/its-pointless/its-pointless.github.io" target="_blank" rel="noopener">its-pointless</a></h2>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget</span><br><span class="line"><span class="hljs-variable">$PREFIX</span>/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br><span class="line">bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
+<h2 id="官方其他源"><a href="#官方其他源" class="headerlink" title="官方其他源"></a>官方其他源</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install root-repo</span><br><span class="line">pkg install x11-repo</span><br><span class="line">pkg install unstable-repo</span><br></pre></td></tr></table></figure>
+
+<h2 id="its-pointless"><a href="#its-pointless" class="headerlink" title="its-pointless"></a><a href="https://github.com/its-pointless/its-pointless.github.io" target="_blank" rel="noopener">its-pointless</a></h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget</span><br><span class="line"><span class="hljs-variable">$PREFIX</span>/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br><span class="line">bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>库包括 gcc-7，gfortran，octave，r-cran（R语言），rustc，scipy 和许多游戏.</li>
 </ul>
-<h2 id="extra"><a href="https://github.com/thioshp/termux-extra-packages" target="_blank" rel="noopener">Extra</a></h2>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 将PGP密钥添加到APT的密钥环中</span></span><br><span class="line">pkg install dirmngr</span><br><span class="line">apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 手动下载公钥并添加它</span></span><br><span class="line">curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc</span><br><span class="line">apt-key add pubkey.asc</span><br></pre></td></tr></table></figure>
+<h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a><a href="https://github.com/thioshp/termux-extra-packages" target="_blank" rel="noopener">Extra</a></h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 将PGP密钥添加到APT的密钥环中</span></span><br><span class="line">pkg install dirmngr</span><br><span class="line">apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 手动下载公钥并添加它</span></span><br><span class="line">curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc</span><br><span class="line">apt-key add pubkey.asc</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><code>apt edit-sources</code> 加入下方内容</li>
-</ul>
+<li><p><code>apt edit-sources</code> 加入下方内容</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Xeffyr&apos;s Extra packages</span><br><span class="line">deb https://termux.xeffyr.ml/ extra main x11</span><br></pre></td></tr></table></figure>
-<ul>
-<li>库有　OpenJDK</li>
+</li>
+<li><p>库有　OpenJDK</p>
+</li>
 </ul>
-<h1 id="修改启动问候语">修改启动问候语</h1>
-<p>修改</p>
+<h1 id="修改启动问候语"><a href="#修改启动问候语" class="headerlink" title="修改启动问候语"></a>修改启动问候语</h1><p>修改</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="hljs-variable">$PREFIX</span>/etc/motd</span><br></pre></td></tr></table></figure>
+
+
 <p>不显示</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.hushlogin</span><br></pre></td></tr></table></figure>
-<h1 id="恢复双层键盘">恢复双层键盘</h1>
-<p>Termux在 0.66 取消了双层键盘</p>
+
+<h1 id="恢复双层键盘"><a href="#恢复双层键盘" class="headerlink" title="恢复双层键盘"></a>恢复双层键盘</h1><p>Termux在 0.66 取消了双层键盘</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="hljs-variable">$HOME</span>/.termux</span><br><span class="line"><span class="hljs-built_in">echo</span> <span class="hljs-string">"extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]"</span> &gt;&gt; <span class="hljs-variable">$HOME</span>/.termux/termux.properties</span><br></pre></td></tr></table></figure>
-<h1 id="管理员权限-root-问题">管理员权限 root 问题</h1>
-<p>虚拟管理员(未root)</p>
+
+<h1 id="管理员权限-root-问题"><a href="#管理员权限-root-问题" class="headerlink" title="管理员权限 root 问题"></a>管理员权限 root 问题</h1><p>虚拟管理员(未root)</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br><span class="line">termux-chroot <span class="hljs-comment"># 启动命令</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>模拟root环境的同时，还会模拟linux的文件路径。</li>
 <li>普通文件路径是【/data/data/com.termux/file/home】</li>
@@ -247,52 +249,53 @@
 </ul>
 <p>真实管理员(已root)</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install tsu</span><br><span class="line">tsu <span class="hljs-comment"># 启动命令</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>执行后文件路径不变，因此可以进入手机的任何一个目录</li>
 </ul>
-<h1 id="安装-ssh">安装 SSH</h1>
-<p>安装</p>
+<h1 id="安装-SSH"><a href="#安装-SSH" class="headerlink" title="安装 SSH"></a>安装 SSH</h1><p>安装</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install openssh</span><br></pre></td></tr></table></figure>
-<h2 id="设置-ssh-key">设置 SSH Key</h2>
-<p>配置账户信息</p>
+
+<h2 id="设置-SSH-Key"><a href="#设置-SSH-Key" class="headerlink" title="设置 SSH Key"></a>设置 SSH Key</h2><p>配置账户信息</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="hljs-string">"Vitan"</span></span><br><span class="line">git config --global user.email <span class="hljs-string">"ivitan95@gmail.com"</span></span><br></pre></td></tr></table></figure>
+
 <p>创建 SSH</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="hljs-string">"ivtan95@gmail.com"</span></span><br></pre></td></tr></table></figure>
+
 <p>复制 key</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <p>验证 SSH</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<h2 id="ssh-基础使用">SSH 基础使用</h2>
-<p>远程主机登录</p>
+
+<h2 id="SSH-基础使用"><a href="#SSH-基础使用" class="headerlink" title="SSH 基础使用"></a>SSH 基础使用</h2><p>远程主机登录</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh root@host</span><br><span class="line">ssh host</span><br><span class="line"><span class="hljs-comment">#本地用户名与远程用户名一致，登录时可以省略用户名</span></span><br><span class="line">ssh -p 2222 root@host</span><br><span class="line"><span class="hljs-comment"># SSH 的默认端口是22，使用 p 参数，可以修改这个端口。</span></span><br></pre></td></tr></table></figure>
+
 <p>公钥登录</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id user@host</span><br><span class="line"><span class="hljs-comment">#将公钥传送到远程主机 host 上面</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>如果还是不行，就打开远程主机的 <code>/etc/ssh/sshd_config</code> 这个文件，检查下面几行前面&quot;#&quot;注释是否取掉。</li>
+<li>如果还是不行，就打开远程主机的 <code>/etc/ssh/sshd_config</code> 这个文件，检查下面几行前面”#”注释是否取掉。</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile</span><br><span class="line">.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>然后，重启远程主机的ssh服务。
-<ul>
+<li>然后，重启远程主机的ssh服务。<ul>
 <li>Ubuntu系统 service ssh restart</li>
 <li>Debian系统 /etc/init.d/ssh restart</li>
 </ul>
 </li>
 </ul>
-<h1 id="oh-my-zsh">Oh-My-ZSH</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install git zsh curl -y</span><br><span class="line">sh -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
-<h1 id="安装-openjdk">安装 OpenJDK</h1>
-<ul>
-<li>JDK1.8
-<ul>
-<li><a href="https://drive.google.com/file/d/1PdNqmLrhFlBoRlpCW-mC6CHbVS_Lva9D/view?usp=drivesdk" target="_blank" rel="noopener">aarch64谷歌云盘</a>
-<ul>
+<h1 id="Oh-My-ZSH"><a href="#Oh-My-ZSH" class="headerlink" title="Oh-My-ZSH"></a>Oh-My-ZSH</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install git zsh curl -y</span><br><span class="line">sh -c <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装-OpenJDK"><a href="#安装-OpenJDK" class="headerlink" title="安装 OpenJDK"></a>安装 OpenJDK</h1><ul>
+<li>JDK1.8<ul>
+<li><a href="https://drive.google.com/file/d/1PdNqmLrhFlBoRlpCW-mC6CHbVS_Lva9D/view?usp=drivesdk" target="_blank" rel="noopener">aarch64谷歌云盘</a><ul>
 <li><a href="https://pan.baidu.com/s/14T-2L2j3gZaxfbwkZxJxqg" target="_blank" rel="noopener">aarch64百度云盘密码:ryea</a></li>
 </ul>
 </li>
-<li>JDK1.9
-<ul>
-<li><s><a href="https://drive.google.com/file/d/1U3o34Z3aI_g8mvkJ2gP3YfBB6aaQS1xK/view?usp=drivesdk" target="_blank" rel="noopener">aarch64下载</a></s></li>
+<li>JDK1.9<ul>
+<li><del><a href="https://drive.google.com/file/d/1U3o34Z3aI_g8mvkJ2gP3YfBB6aaQS1xK/view?usp=drivesdk" target="_blank" rel="noopener">aarch64下载</a></del></li>
 </ul>
 </li>
 </ul>
@@ -300,108 +303,117 @@
 </ul>
 <p>安装</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> storage/下载目录</span><br><span class="line">dpkg -i openjdk9_9.2017.8.20_aarch64.deb</span><br></pre></td></tr></table></figure>
-<h1 id="安装-nodejs">安装 Nodejs</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install nodejs</span><br><span class="line"></span><br><span class="line">pkg install nodejs-lts</span><br></pre></td></tr></table></figure>
-<h2 id="解决-npm-出现-npm-err-cannot-read-property-length-of-undefined-问题">解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题</h2>
-<ul>
+
+<h1 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install nodejs</span><br><span class="line"></span><br><span class="line">pkg install nodejs-lts</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决-npm-出现-npm-err-cannot-read-property-‘length’-of-undefined-问题"><a href="#解决-npm-出现-npm-err-cannot-read-property-‘length’-of-undefined-问题" class="headerlink" title="解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题"></a>解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题</h2><ul>
 <li>复制下面内容</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(require(<span class="hljs-string">'os'</span>).cpus() || &#123; length: 1 &#125;).length</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改如下</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg" alt></p>
-<h1 id="安装-hexo">安装 Hexo</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br><span class="line">hexo g      <span class="hljs-comment">#生成静态文件</span></span><br><span class="line">hexo s      <span class="hljs-comment">#启动 Hexo</span></span><br><span class="line">hexo d      <span class="hljs-comment">#部署到 Github</span></span><br><span class="line">hexo new <span class="hljs-string">"my blog"</span> <span class="hljs-comment">#新建文章</span></span><br><span class="line">hexo s      <span class="hljs-comment">#开启本地服务</span></span><br><span class="line">hexo clean  <span class="hljs-comment">#清除 public</span></span><br><span class="line">npm update -g <span class="hljs-comment">#版本更新</span></span><br></pre></td></tr></table></figure>
-<h1 id="安装mariadb-mysql">安装mariadb(MySQL)</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install mariadb</span><br></pre></td></tr></table></figure>
+<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br><span class="line">hexo g      <span class="hljs-comment">#生成静态文件</span></span><br><span class="line">hexo s      <span class="hljs-comment">#启动 Hexo</span></span><br><span class="line">hexo d      <span class="hljs-comment">#部署到 Github</span></span><br><span class="line">hexo new <span class="hljs-string">"my blog"</span> <span class="hljs-comment">#新建文章</span></span><br><span class="line">hexo s      <span class="hljs-comment">#开启本地服务</span></span><br><span class="line">hexo clean  <span class="hljs-comment">#清除 public</span></span><br><span class="line">npm update -g <span class="hljs-comment">#版本更新</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="安装mariadb-MySQL"><a href="#安装mariadb-MySQL" class="headerlink" title="安装mariadb(MySQL)"></a>安装mariadb(MySQL)</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install mariadb</span><br></pre></td></tr></table></figure>
+
 <p>安装基本数据</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_install_db</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>mysqld: Can’t read dir ofソdata/data/com . termux/files/usr/e tc/my.cnf.d’ (Errcode: 2 “No such file or directory”) Fatal error in defaults handling. Program aborted
-<ul>
+<li>mysqld: Can’t read dir ofソdata/data/com . termux/files/usr/e tc/my.cnf.d’ (Errcode: 2 “No such file or directory”) Fatal error in defaults handling. Program aborted<ul>
 <li>先在<code>my.cnf</code>所在目录下新建<code>my.cnf.d</code>文件夹，然后执行<code>mysql_install_db</code></li>
 </ul>
 </li>
 </ul>
 <p>启动mariadb服务</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>启动mysql后，该回话便无法进行任何操作，需要左滑唤醒会话菜单，开启新的回话。而倘若不在一个会话里启动mysqld，而是直接运行mysql，则会2002错误。</li>
 </ul>
 <p>修改mysql密码</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br><span class="line"><span class="hljs-comment"># 输入旧密码，空则直接回车</span></span><br><span class="line">Set root password? [Y/n] y</span><br><span class="line">New password:</span><br><span class="line">Re-enter new password:<span class="hljs-comment"># 两次输入新密码</span></span><br><span class="line"></span><br><span class="line">Remove anonymous users? [Y/n] Y <span class="hljs-comment">#是否移除匿名用户</span></span><br><span class="line">Disallow root login remotely? [Y/n] n <span class="hljs-comment">#是否不允许root远程登录</span></span><br><span class="line">Remove <span class="hljs-built_in">test</span> database and access to it? [Y/n] n <span class="hljs-comment">#是否移除test数据库</span></span><br><span class="line">Reload privilege tables now? [Y/n] y <span class="hljs-comment">#是否重新加载表的权限</span></span><br></pre></td></tr></table></figure>
+
 <p>登录mysql</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line">Enter password: ***apache2</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>或者使用</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p******</span><br></pre></td></tr></table></figure>
-<h1 id="python-环境部署">Python 环境部署</h1>
-<p>安装 python2.7</p>
+
+<h1 id="Python-环境部署"><a href="#Python-环境部署" class="headerlink" title="Python 环境部署"></a>Python 环境部署</h1><p>安装 python2.7</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install python2</span><br></pre></td></tr></table></figure>
+
 <p>安装 python3</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install python</span><br></pre></td></tr></table></figure>
+
 <p>升级 pip 版本</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install --upgrade pip</span><br><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+
 <p>pip 版本查看</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip -v</span><br><span class="line">pip3.6 -v</span><br></pre></td></tr></table></figure>
-<h2 id="ipython">ipython</h2>
-<p>ipython 是一个 python 的交互式 shell，支持变量自动补全，自动缩进，支持 bash shell 命令，内置了许多很有用的功能和函数。学习 ipython 将会让我们以一种更高的效率来使用 python。
-先安装clang, 否则直接使用pip安装ipython会失败报错.</p>
+
+<h2 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h2><p>ipython 是一个 python 的交互式 shell，支持变量自动补全，自动缩进，支持 bash shell 命令，内置了许多很有用的功能和函数。学习 ipython 将会让我们以一种更高的效率来使用 python。<br>先安装clang, 否则直接使用pip安装ipython会失败报错.</p>
 <ul>
 <li>安装</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install clang</span><br><span class="line">pip install ipython</span><br><span class="line">pip3.6 install ipython</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>使用</li>
 </ul>
 <p>别使用<code>ipython</code>和<code>ipython2</code>进入<code>py2</code>和<code>py3</code>控制台:</p>
-<h1 id="php部署">PHP部署</h1>
-<p>安装</p>
+<h1 id="PHP部署"><a href="#PHP部署" class="headerlink" title="PHP部署"></a>PHP部署</h1><p>安装</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install php <span class="hljs-comment"># 可采用phpinfo进行测试</span></span><br><span class="line">php -S 127.0.0.1:8080 -t www/</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>编写测试文件</li>
 </ul>
 <ol>
 <li>在家目录下建一个www文件夹:<code>mkdir www</code></li>
-<li>在www文件夹下新建一个<code>index.php</code>文件, 其内容为</li>
+<li>在www文件夹下新建一个<code>index.php</code>文件, 其内容为<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="nmap-口扫描必备工具">Nmap(口扫描必备工具)</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install nmap</span><br></pre></td></tr></table></figure>
-<h1 id="hydra">hydra</h1>
-<p>Hydra 是著名的黑客组织 THC 的一款开源暴力破解工具这是一个验证性质的工具，主要目的是：展示安全研究人员从远程获取一个系统认证权限。</p>
+<h1 id="Nmap-口扫描必备工具"><a href="#Nmap-口扫描必备工具" class="headerlink" title="Nmap(口扫描必备工具)"></a>Nmap(口扫描必备工具)</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install nmap</span><br></pre></td></tr></table></figure>
+
+<h1 id="hydra"><a href="#hydra" class="headerlink" title="hydra"></a>hydra</h1><p>Hydra 是著名的黑客组织 THC 的一款开源暴力破解工具这是一个验证性质的工具，主要目的是：展示安全研究人员从远程获取一个系统认证权限。</p>
 <ul>
 <li>安装</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install hydra</span><br></pre></td></tr></table></figure>
-<h1 id="sslscan">sslscan</h1>
-<p>SSLscan 主要探测基于 ssl 的服务，如 https。SSLscan 是一款探测目标服务器所支持的 SSL 加密算法工具。</p>
+
+<h1 id="sslscan"><a href="#sslscan" class="headerlink" title="sslscan"></a>sslscan</h1><p>SSLscan 主要探测基于 ssl 的服务，如 https。SSLscan 是一款探测目标服务器所支持的 SSL 加密算法工具。</p>
 <ul>
 <li>安装</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install sslscan</span><br></pre></td></tr></table></figure>
-<h1 id="whatportis">whatportis</h1>
-<p>whatportis 是一款可以通过服务查询默认端口，或者是通过端口查询默认服务的工具，简单易用。在渗透测试过程中，如果需要查询某个端口绑定什么服务器，或者某个应用绑定的默认端口，可以使用 whatportis 查询。</p>
+
+<h1 id="whatportis"><a href="#whatportis" class="headerlink" title="whatportis"></a>whatportis</h1><p>whatportis 是一款可以通过服务查询默认端口，或者是通过端口查询默认服务的工具，简单易用。在渗透测试过程中，如果需要查询某个端口绑定什么服务器，或者某个应用绑定的默认端口，可以使用 whatportis 查询。</p>
 <ul>
 <li>安装</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip2 install whatportis</span><br></pre></td></tr></table></figure>
-<h1 id="routersploit">RouterSploit</h1>
-<p>RouteSploit 框架是一款开源的路由器等嵌入式设备漏洞检测及利用框架。</p>
+
+<h1 id="RouterSploit"><a href="#RouterSploit" class="headerlink" title="RouterSploit"></a>RouterSploit</h1><p>RouteSploit 框架是一款开源的路由器等嵌入式设备漏洞检测及利用框架。</p>
 <ul>
 <li>安装</li>
 </ul>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip2 install requests</span><br><span class="line">git <span class="hljs-built_in">clone</span> https://github.com/reverse-shell/routersploit</span><br><span class="line"><span class="hljs-built_in">cd</span> routersploit</span><br><span class="line">python2 rsf.py</span><br></pre></td></tr></table></figure>
-<h1 id="slowloris-低带宽的-dos-工具">Slowloris 低带宽的 DoS 工具</h1>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> https://github.com/gkbrk/slowloris.git</span><br><span class="line"><span class="hljs-built_in">cd</span> slowloris</span><br><span class="line">chmod +x slowloris.py</span><br></pre></td></tr></table></figure>
+
+<h1 id="Slowloris-低带宽的-DoS-工具"><a href="#Slowloris-低带宽的-DoS-工具" class="headerlink" title="Slowloris 低带宽的 DoS 工具"></a>Slowloris 低带宽的 DoS 工具</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> https://github.com/gkbrk/slowloris.git</span><br><span class="line"><span class="hljs-built_in">cd</span> slowloris</span><br><span class="line">chmod +x slowloris.py</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>参考</strong></p>
 <ul>
 <li><a href="https://wiki.termux.com/wiki/Package_Management" target="_blank" rel="noopener">Termux Wike</a></li>
-<li><a href="http://www.liuxi.site/2018/05/16/android%E4%B8%8A%E7%9A%84%E7%BB%88%E7%AB%AF%E2%80%94%E2%80%94termux/" target="_blank" rel="noopener">android上的终端——termux</a></li>
+<li><a href="http://www.liuxi.site/2018/05/16/android上的终端——termux/" target="_blank" rel="noopener">android上的终端——termux</a></li>
 <li><a href="http://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程</a></li>
 </ul>
 
@@ -577,7 +589,7 @@
             <span class="has-mr-6">3.3</span>
             <span>its-pointless</span>
             </a></li><li>
-            <a class="is-flex" href="#extra">
+            <a class="is-flex" href="#Extra">
             <span class="has-mr-6">3.4</span>
             <span>Extra</span>
             </a></li></ul></li><li>
@@ -593,43 +605,43 @@
             <span class="has-mr-6">6</span>
             <span>管理员权限 root 问题</span>
             </a></li><li>
-            <a class="is-flex" href="#安装-ssh">
+            <a class="is-flex" href="#安装-SSH">
             <span class="has-mr-6">7</span>
             <span>安装 SSH</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#设置-ssh-key">
+            <a class="is-flex" href="#设置-SSH-Key">
             <span class="has-mr-6">7.1</span>
             <span>设置 SSH Key</span>
             </a></li><li>
-            <a class="is-flex" href="#ssh-基础使用">
+            <a class="is-flex" href="#SSH-基础使用">
             <span class="has-mr-6">7.2</span>
             <span>SSH 基础使用</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#oh-my-zsh">
+            <a class="is-flex" href="#Oh-My-ZSH">
             <span class="has-mr-6">8</span>
             <span>Oh-My-ZSH</span>
             </a></li><li>
-            <a class="is-flex" href="#安装-openjdk">
+            <a class="is-flex" href="#安装-OpenJDK">
             <span class="has-mr-6">9</span>
             <span>安装 OpenJDK</span>
             </a></li><li>
-            <a class="is-flex" href="#安装-nodejs">
+            <a class="is-flex" href="#安装-Nodejs">
             <span class="has-mr-6">10</span>
             <span>安装 Nodejs</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#解决-npm-出现-npm-err-cannot-read-property-length-of-undefined-问题">
+            <a class="is-flex" href="#解决-npm-出现-npm-err-cannot-read-property-‘length’-of-undefined-问题">
             <span class="has-mr-6">10.1</span>
             <span>解决 npm 出现 npm err! cannot read property ‘length’ of undefined 问题</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#安装-hexo">
+            <a class="is-flex" href="#安装-Hexo">
             <span class="has-mr-6">11</span>
             <span>安装 Hexo</span>
             </a></li><li>
-            <a class="is-flex" href="#安装mariadb-mysql">
+            <a class="is-flex" href="#安装mariadb-MySQL">
             <span class="has-mr-6">12</span>
             <span>安装mariadb(MySQL)</span>
             </a></li><li>
-            <a class="is-flex" href="#python-环境部署">
+            <a class="is-flex" href="#Python-环境部署">
             <span class="has-mr-6">13</span>
             <span>Python 环境部署</span>
             </a><ul class="menu-list"><li>
@@ -637,11 +649,11 @@
             <span class="has-mr-6">13.1</span>
             <span>ipython</span>
             </a></li></ul></li><li>
-            <a class="is-flex" href="#php部署">
+            <a class="is-flex" href="#PHP部署">
             <span class="has-mr-6">14</span>
             <span>PHP部署</span>
             </a></li><li>
-            <a class="is-flex" href="#nmap-口扫描必备工具">
+            <a class="is-flex" href="#Nmap-口扫描必备工具">
             <span class="has-mr-6">15</span>
             <span>Nmap(口扫描必备工具)</span>
             </a></li><li>
@@ -657,11 +669,11 @@
             <span class="has-mr-6">18</span>
             <span>whatportis</span>
             </a></li><li>
-            <a class="is-flex" href="#routersploit">
+            <a class="is-flex" href="#RouterSploit">
             <span class="has-mr-6">19</span>
             <span>RouterSploit</span>
             </a></li><li>
-            <a class="is-flex" href="#slowloris-低带宽的-dos-工具">
+            <a class="is-flex" href="#Slowloris-低带宽的-DoS-工具">
             <span class="has-mr-6">20</span>
             <span>Slowloris 低带宽的 DoS 工具</span>
             </a></li></ul>

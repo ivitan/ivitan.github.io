@@ -196,13 +196,10 @@
         <div class="content">
             <p>Python Numpy</p>
 <a id="more"></a>
-<h1 id="问题">问题</h1>
-<h2 id="数列">数列</h2>
-<ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h2><ul>
 <li>a = a1,a2,a3,·····,an</li>
 <li>b = b1,b2,b3,·····,bn</li>
-<li>求：
-<ul>
+<li>求：<ul>
 <li>c = a12+b13,a22+b23,a32+b33,·····+an2+bn3</li>
 </ul>
 <ol>
@@ -212,19 +209,20 @@
 </ol>
 </li>
 </ul>
-<h1 id="实现">实现</h1>
-<h2 id="列表-循环实现-并包装成函数">列表+循环实现，并包装成函数</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pySum</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    a = list(range(n))</span><br><span class="line">    b = list(range(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>*n,<span class="hljs-number">5</span>))</span><br><span class="line">    c = []</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(a)):</span><br><span class="line">        c.append(a[i] ** <span class="hljs-number">2</span> + b[i] ** <span class="hljs-number">3</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span>(c)</span><br><span class="line">print(pySum(<span class="hljs-number">10</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="数组numpy实现-并包装成函数">数组numpy实现，并包装成函数</h2>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">npSum</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="hljs-number">0</span>, <span class="hljs-number">5</span> * n, <span class="hljs-number">5</span>)</span><br><span class="line">    c = a**<span class="hljs-number">2</span>+b**<span class="hljs-number">3</span></span><br><span class="line">    <span class="hljs-keyword">return</span>(c)</span><br><span class="line">print(npSum(<span class="hljs-number">10</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="列表-循环实现，并包装成函数"><a href="#列表-循环实现，并包装成函数" class="headerlink" title="列表+循环实现，并包装成函数"></a>列表+循环实现，并包装成函数</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pySum</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    a = list(range(n))</span><br><span class="line">    b = list(range(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>*n,<span class="hljs-number">5</span>))</span><br><span class="line">    c = []</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(a)):</span><br><span class="line">        c.append(a[i] ** <span class="hljs-number">2</span> + b[i] ** <span class="hljs-number">3</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span>(c)</span><br><span class="line">print(pySum(<span class="hljs-number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组numpy实现，并包装成函数"><a href="#数组numpy实现，并包装成函数" class="headerlink" title="数组numpy实现，并包装成函数"></a>数组numpy实现，并包装成函数</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">npSum</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="hljs-number">0</span>, <span class="hljs-number">5</span> * n, <span class="hljs-number">5</span>)</span><br><span class="line">    c = a**<span class="hljs-number">2</span>+b**<span class="hljs-number">3</span></span><br><span class="line">    <span class="hljs-keyword">return</span>(c)</span><br><span class="line">print(npSum(<span class="hljs-number">10</span>))</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>对比两种方法实现的效率，给定一个较大的参数n，用运行函数前后的timedelta表示</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime</span><br><span class="line">start = datetime.now()</span><br><span class="line">pySum(<span class="hljs-number">100000</span>)</span><br><span class="line">delta = datetime.now()-start</span><br><span class="line">print(delta)</span><br><span class="line"></span><br><span class="line">start = datetime.now()</span><br><span class="line">npSum(<span class="hljs-number">100000</span>)</span><br><span class="line">delta = datetime.now()-start</span><br><span class="line">print(delta)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>尝试把 a,b 定义为三层嵌套列表和三维数组</li>
 </ul>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">liSum</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>*n,<span class="hljs-number">5</span>)</span><br><span class="line">    c = numpy.array([[a,b],[a**<span class="hljs-number">2</span>,b**<span class="hljs-number">3</span>]])</span><br><span class="line">    <span class="hljs-keyword">return</span> (c)</span><br><span class="line">print(npSum(<span class="hljs-number">10</span>))</span><br><span class="line"></span><br><span class="line">start = datetime.now()</span><br><span class="line">liSum(<span class="hljs-number">100000</span>)</span><br><span class="line">time = datetime.now()-start</span><br><span class="line">print(time)</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -386,11 +384,11 @@
             <span class="has-mr-6">2</span>
             <span>实现</span>
             </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#列表-循环实现-并包装成函数">
+            <a class="is-flex" href="#列表-循环实现，并包装成函数">
             <span class="has-mr-6">2.1</span>
             <span>列表+循环实现，并包装成函数</span>
             </a></li><li>
-            <a class="is-flex" href="#数组numpy实现-并包装成函数">
+            <a class="is-flex" href="#数组numpy实现，并包装成函数">
             <span class="has-mr-6">2.2</span>
             <span>数组numpy实现，并包装成函数</span>
             </a></li></ul></li></ul>

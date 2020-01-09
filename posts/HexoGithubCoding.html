@@ -196,16 +196,14 @@
         <div class="content">
             <p>Hexo 同时部署到 Github Coding</p>
 <a id="more"></a>
-<h2 id="添加-ssh-公钥">添加 SSH 公钥</h2>
-<ol>
+<h2 id="添加-SSH-公钥"><a href="#添加-SSH-公钥" class="headerlink" title="添加 SSH 公钥"></a>添加 SSH 公钥</h2><ol>
 <li>Github Coding添加同一个 SSH 公钥</li>
 <li>Github Coding 都部署好相关的仓库</li>
 </ol>
-<h2 id="设置-config-yml">设置 _config.yml</h2>
- <figure class="highlight bash hljs"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="hljs-built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<h2 id="设置-config-yml"><a href="#设置-config-yml" class="headerlink" title="设置 _config.yml"></a>设置 _config.yml</h2> <figure class="highlight bash hljs"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="hljs-built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>效果
-<ul>
+<li>效果<ul>
 <li><a href="https://ivitan.github.io" target="_blank" rel="noopener">Github Page</a></li>
 <li><a href="https://vitan.coding.me" target="_blank" rel="noopener">Coding Page</a></li>
 </ul>
@@ -360,7 +358,7 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-            <a class="is-flex" href="#添加-ssh-公钥">
+            <a class="is-flex" href="#添加-SSH-公钥">
             <span class="has-mr-6">1</span>
             <span>添加 SSH 公钥</span>
             </a></li><li>

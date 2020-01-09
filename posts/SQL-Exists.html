@@ -196,8 +196,7 @@
         <div class="content">
             <p>SQL 中 EXISTS</p>
 <a id="more"></a>
-<h1 id="三点概念">三点概念</h1>
-<p>概念</p>
+<h1 id="三点概念"><a href="#三点概念" class="headerlink" title="三点概念"></a>三点概念</h1><p>概念</p>
 <ul>
 <li><code>EXISTS</code> 子查询找到的提交</li>
 <li><code>NOT EXISTS</code>子查询中 找不到的提交</li>
@@ -205,78 +204,63 @@
 <p>说明</p>
 <ul>
 <li>不要去翻译为存在和不存在，把脑袋搞晕。</li>
-<li><code>exists</code>代表存在量词<code>ョ</code>，该查询结果没有值，只有逻辑值真true和逻辑假false两个值。
-<ul>
+<li><code>exists</code>代表存在量词<code>ョ</code>，该查询结果没有值，只有逻辑值真true和逻辑假false两个值。<ul>
 <li>建立程序循环的概念，这是一个动态的查询过程。如 FOR循环.</li>
-<li><code>Exists</code>执行的流程<code>Exists</code>首先执行外层查询，再执行内存查询,与<code>IN</code>相反。 流程为首先取出外层中的第一元组，再执行内层查询，将外层表的第一元组代入,若内层查询为真，即有结果时。返回外层表中的第一元 组，接着取出第二元组，执行相同的算法。一直到扫描完外层整表。</li>
-</ul>
-<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i =0;  i&lt;&gt;EOFout;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  for (int j = 0 ; j&lt;EOFint,j++)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<li><code>Exists</code>执行的流程<code>Exists</code>首先执行外层查询，再执行内存查询,与<code>IN</code>相反。 流程为首先取出外层中的第一元组，再执行内层查询，将外层表的第一元组代入,若内层查询为真，即有结果时。返回外层表中的第一元 组，接着取出第二元组，执行相同的算法。一直到扫描完外层整表。<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i =0;  i&lt;&gt;EOFout;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  for (int j = 0 ; j&lt;EOFint,j++)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h1 id="例子">例子</h1>
-<p>表
-学生表student (Sno,Sname)</p>
+</li>
+</ul>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>表<br>学生表student (Sno,Sname)</p>
 <p>课程表course (Cno,Cname)</p>
 <p>选课表SC(Sno,Cno)</p>
 <p>要求查询出 ：选修了全部课程的学生姓名</p>
-<h2 id="思路">思路</h2>
-<p>思路一
-首先学生的选课信息存在于SC表中， 要想知道某个学生是否选修了全部课程，至少我们需要知道一共有几门课程，这是首要的条件。其次，学生选修了与否，我们又要扫描SC全表，统计出选修了所有课程的学生号，最后在STUDENT表中根据学生号打出姓名 。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>思路一<br>首先学生的选课信息存在于SC表中， 要想知道某个学生是否选修了全部课程，至少我们需要知道一共有几门课程，这是首要的条件。其次，学生选修了与否，我们又要扫描SC全表，统计出选修了所有课程的学生号，最后在STUDENT表中根据学生号打出姓名 。</p>
 <ul>
-<li>语句如下：</li>
+<li>语句如下：<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> Sno <span class="hljs-keyword">IN</span></span><br><span class="line">(<span class="hljs-keyword">select</span> Sno <span class="hljs-keyword">from</span> SC</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Sno</span><br><span class="line"> //根据Sno分组，统计每个学生选修了几门课程。如果等于course的总数，就是我们要找的Sno</span><br><span class="line"><span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(*) = (<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> course ))</span><br><span class="line">//统计course中共有几门课程</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> Sno <span class="hljs-keyword">IN</span></span><br><span class="line">(<span class="hljs-keyword">select</span> Sno <span class="hljs-keyword">from</span> SC</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Sno</span><br><span class="line"> //根据Sno分组，统计每个学生选修了几门课程。如果等于course的总数，就是我们要找的Sno</span><br><span class="line"><span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(*) = (<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> course ))</span><br><span class="line">//统计course中共有几门课程</span><br></pre></td></tr></table></figure>
 <p>另一种思路：</p>
 <ul>
-<li>引入：将题目换为 查找学号为 00003 没有选修的科目
+<li><p>引入：将题目换为 查找学号为 00003 没有选修的科目</p>
 <ul>
-<li>思路：我们可以将已知学号代入，把每一个科目代入（循环），这将形成<code>1*count(*)</code>种组合。将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交.</li>
-</ul>
+<li>思路：我们可以将已知学号代入，把每一个科目代入（循环），这将形成<code>1*count(*)</code>种组合。将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交.<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Cname <span class="hljs-keyword">from</span> course  <span class="hljs-keyword">where</span></span><br><span class="line"><span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span>  //找不到的组合，提交course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span> course.cno = cno <span class="hljs-keyword">and</span> sno = <span class="hljs-string">''</span><span class="hljs-number">00002</span><span class="hljs-string">''</span>)</span><br><span class="line">//在SC中匹配</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Cname <span class="hljs-keyword">from</span> course  <span class="hljs-keyword">where</span></span><br><span class="line"><span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span>  //找不到的组合，提交course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span> course.cno = cno <span class="hljs-keyword">and</span> sno = <span class="hljs-string">''</span><span class="hljs-number">00002</span><span class="hljs-string">''</span>)</span><br><span class="line">//在SC中匹配</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>查找没有 没有选修科目的学生姓名</p>
-<ul>
-<li>
-<p>思路：</p>
-<ul>
-<li>学号未知,科目未知，说明有两个未知变量。应该有两个EXISTS。我们可以扫描student 和 course共有 s * c 中组合，将这些组合与SC的每一项进行匹配，注意s*c组合已经包含所有可能。如果全部找到 ，就说明已经选修了全部课程。找不到就说明有课程没选修 。再将没选修的的提交给上一exists 循环 。若上一exists 不存在的再提交给外循环。</li>
-</ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>        //</span><br><span class="line">(<span class="hljs-keyword">select</span>  * <span class="hljs-keyword">from</span> course</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>      //不存在的提交给course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span></span><br><span class="line">Sno = student.sno  <span class="hljs-keyword">and</span> cno = Course.Cno))   // 代入两个未知变量</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>选修了全部课程的学生姓名.
-将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交 。</p>
+<li><p>查找没有 没有选修科目的学生姓名</p>
+<ul>
+<li><p>思路：</p>
+<ul>
+<li>学号未知,科目未知，说明有两个未知变量。应该有两个EXISTS。我们可以扫描student 和 course共有 s * c 中组合，将这些组合与SC的每一项进行匹配，注意s*c组合已经包含所有可能。如果全部找到 ，就说明已经选修了全部课程。找不到就说明有课程没选修 。再将没选修的的提交给上一exists 循环 。若上一exists 不存在的再提交给外循环。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Sname <span class="hljs-keyword">from</span> student</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>        //</span><br><span class="line">(<span class="hljs-keyword">select</span>  * <span class="hljs-keyword">from</span> course</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">exists</span>      //不存在的提交给course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span></span><br><span class="line">Sno = student.sno  <span class="hljs-keyword">and</span> cno = Course.Cno))   // 代入两个未知变量</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+<li><p>选修了全部课程的学生姓名.<br>将这组成作为条件，一一与SC表种进行比对，找不到匹配的我们提交 。</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> Cname <span class="hljs-keyword">from</span> course <span class="hljs-keyword">where</span></span><br><span class="line"><span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span>  //找不到的组合，提交course</span><br><span class="line">(<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> SC <span class="hljs-keyword">where</span> course.cno = cno <span class="hljs-keyword">and</span> sno = <span class="hljs-string">''</span><span class="hljs-number">00003</span><span class="hljs-string">''</span>)</span><br><span class="line">//在SC中匹配</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>查找没有选修科目的学生姓名</p>
+</li>
+<li><p>查找没有选修科目的学生姓名</p>
 <ul>
 <li>思路：1. 学号未知 科目未知 说明有两个未知变量。2. 应该有两个<code>EXISTS</code>。我们可以扫描<code>student</code>和<code>course</code>共有<code>s*c</code>中组合，将这些组合与SC的每一项进行匹配，注意s*c组合已经包含所有可能。如果全部找到 ，就说明已经选修了全部课程。找不到就说明有课程没选修 。再将没选修的的提交给上一exists 循环 。若上一exists 不存在的再提交给外循环。</li>
 </ul>
 </li>
-<li>
-<p>查询选修了全部课程的学生姓名。</p>
-</li>
-</ul>
+<li><p>查询选修了全部课程的学生姓名。</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> Sname</span><br><span class="line"><span class="hljs-keyword">FROM</span> Student</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></span><br><span class="line">（<span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> Course</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></span><br><span class="line">(<span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC</span><br><span class="line"><span class="hljs-keyword">WHERE</span> Sno= Student.Sno</span><br><span class="line"><span class="hljs-keyword">AND</span> Cno= Course.Cno）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询所有选修了001课程的学生名单</li>
-</ul>
+</li>
+<li><p>查询所有选修了001课程的学生名单</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=b.sno <span class="hljs-keyword">and</span> cno=<span class="hljs-string">'001'</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询没有选修了001课程的学生名单</li>
-</ul>
+</li>
+<li><p>查询没有选修了001课程的学生名单</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=b.sno <span class="hljs-keyword">and</span> cno=<span class="hljs-string">'001'</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询选修了所有课程的学生名单。</li>
+</li>
+<li><p>查询选修了所有课程的学生名单。</p>
+</li>
 </ul>
 <p>由于SQL中没有全称量词，可以这样理解：查询这样的学生，没有一门课程他没有选</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> course b</span><br><span class="line"><span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc c</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=c.sno <span class="hljs-keyword">and</span> c.cno=b.cno))</span><br></pre></td></tr></table></figure>
+
 <p>注意：SQL没有蕴涵谓词，可以使用等价变换进行转换<code>p→q ≡ ┑p∨q</code></p>
 <ul>
 <li>查询至少选修了学生95002选修的全部课程的学生名单。</li>
@@ -289,6 +273,7 @@
 <p>≡ ┑ョy(p∧q) 德模根定律</p>
 <p>它所表达的含义为：不存在这样的课程y，95002选修了y而x没有选，SQL语句如下：</p>
 <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> sname,sno</span><br><span class="line"><span class="hljs-keyword">from</span> student a</span><br><span class="line"><span class="hljs-keyword">where</span> sno &lt;&gt; <span class="hljs-string">'95002'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc b</span><br><span class="line"><span class="hljs-keyword">where</span> sno=<span class="hljs-string">'95002'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> *</span><br><span class="line"><span class="hljs-keyword">from</span> sc c</span><br><span class="line"><span class="hljs-keyword">where</span> a.sno=c.sno <span class="hljs-keyword">and</span> c.cno=b.cno))</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p><a href="http://www.cnblogs.com/losesea/archive/2012/06/14/2549023.html" target="_blank" rel="noopener">参考：</a></p>
