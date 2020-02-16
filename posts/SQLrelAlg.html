@@ -1,199 +1,219 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>SQL 关系代数表达式 - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="SQL 关系代数表达式" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/SQLrelAlg.html">
+    
+    
+    <title>SQL 关系代数表达式 | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SQL">
+    <meta name="description" content="关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL 关系代数表达式">
+<meta property="og:url" content="https://vitan.me/posts/SQLrelAlg.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/06/30/5b379215e6b8c.jpg">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL 关系代数表达式">
+<meta name="twitter:description" content="关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。">
+<meta name="twitter:image" content="https://i.loli.net/2018/06/30/5b379215e6b8c.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="SQL 关系代数表达式" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">SQL 关系代数表达式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/SQL.png" alt="SQL 关系代数表达式">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>SQL 关系代数表达式
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Database/">Database</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    8 分钟 读完 (约 1269 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2018-06-30T13:58:04.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-06-30</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.187Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">SQL 关系代数表达式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-30T13:58:04.000Z" itemprop="datePublished" class="page-time">
+  2018-06-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Database/">Database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、关系代数的9种操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、关系代数的9种操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、关系代数表达式"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、关系代数表达式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、举例说明"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、举例说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、关系代数表达式的优化"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、关系代数表达式的优化</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#转载注明"><span class="post-toc-number">5.</span> <span class="post-toc-text">转载注明</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-SQLrelAlg"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">SQL 关系代数表达式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-30 21:58:04" datetime="2018-06-30T13:58:04.000Z"  itemprop="datePublished">2018-06-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Database/">Database</a></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。</p>
 <a id="more"></a>
 <h1 id="一、关系代数的9种操作"><a href="#一、关系代数的9种操作" class="headerlink" title="一、关系代数的9种操作"></a>一、关系代数的9种操作</h1><p> 关系代数中包括了：并、交、差、乘、选择、投影、联接、除、自然联接等操作。</p>
@@ -224,69 +244,69 @@
 <p>学习关系SC(SNO,CNO,GRADE)</p>
 <p>课程关系C(CNO,CNAME,TEACHER)</p>
 <ol>
-<li>检索学习课程号为C2的学生学号与成绩<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SNO,GRADE</span><br><span class="line">  <span class="hljs-keyword">FROM</span> SC</span><br><span class="line"><span class="hljs-keyword">WHERE</span> CNO=<span class="hljs-string">'C2'</span></span><br></pre></td></tr></table></figure>
+<li>检索学习课程号为C2的学生学号与成绩<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO,GRADE</span><br><span class="line">  <span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,GRADE(σCNO=&apos;C2&apos;(SC))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,GRADE(σCNO=&apos;C2&apos;(SC))</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>检索学习课程号为C2的学生学号与姓名<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC,S</span><br><span class="line"><span class="hljs-keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="hljs-keyword">AND</span> SC.CNO=<span class="hljs-string">'C2'</span></span><br></pre></td></tr></table></figure>
+<li>检索学习课程号为C2的学生学号与姓名<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="keyword">FROM</span> SC,S</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME(σCNO=&apos;C2&apos;(S⋈SC))</span><br><span class="line">此查询涉及S和SC，先进行自然连接，然后再执行选择投影操作。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME(σCNO=&apos;C2&apos;(S⋈SC))</span><br><span class="line">此查询涉及S和SC，先进行自然连接，然后再执行选择投影操作。</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME（S）cross（πSNO(σCNO=&apos;C2&apos;(SC))）</span><br><span class="line">自然连接的右分量为&quot;学了C2课的学生学号的集合&quot;。</span><br><span class="line">此表达式比前一个表达式优化，执行起来要省时间、省空间。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME（S）cross（πSNO(σCNO=&apos;C2&apos;(SC))）</span><br><span class="line">自然连接的右分量为&quot;学了C2课的学生学号的集合&quot;。</span><br><span class="line">此表达式比前一个表达式优化，执行起来要省时间、省空间。</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>检索选修课程名为MATHS的学生学号与姓名<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC,S,C</span><br><span class="line"><span class="hljs-keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="hljs-keyword">AND</span> SC.CNO=C.CNO</span><br><span class="line"><span class="hljs-keyword">AND</span> C.CNAME=<span class="hljs-string">'MATHS'</span></span><br></pre></td></tr></table></figure>
+<li>检索选修课程名为MATHS的学生学号与姓名<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="keyword">FROM</span> SC,S,C</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=C.CNO</span><br><span class="line"><span class="keyword">AND</span> C.CNAME=<span class="string">'MATHS'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SANME(σCNAME=&apos;MATHS&apos;(S⋈SC⋈C))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SANME(σCNAME=&apos;MATHS&apos;(S⋈SC⋈C))</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li>检索选修课程号为C2或C4的学生学号<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SNO</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC</span><br><span class="line"><span class="hljs-keyword">WHERE</span> CNO=<span class="hljs-string">'C2'</span></span><br><span class="line"><span class="hljs-keyword">OR</span> CNO=<span class="hljs-string">'C4'</span></span><br></pre></td></tr></table></figure>
+<li>检索选修课程号为C2或C4的学生学号<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> CNO=<span class="string">'C2'</span></span><br><span class="line"><span class="keyword">OR</span> CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO(σ CNO=&apos;C2&apos;∨CNO=&apos;C4&apos;(SC))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO(σ CNO=&apos;C2&apos;∨CNO=&apos;C4&apos;(SC))</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
-<li>检索至少选修课程号为C2或C4的学生学号<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SA.SNO</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC <span class="hljs-keyword">AS</span> SA,SC <span class="hljs-keyword">AS</span> SB</span><br><span class="line"><span class="hljs-keyword">WHERE</span> SA.SNO=SB.SNO</span><br><span class="line"><span class="hljs-keyword">AND</span> SA.CNO=<span class="hljs-string">'C2'</span></span><br><span class="line"><span class="hljs-keyword">AND</span> SB.CNO=<span class="hljs-string">'C4'</span></span><br></pre></td></tr></table></figure>
+<li>检索至少选修课程号为C2或C4的学生学号<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SA.SNO</span><br><span class="line"><span class="keyword">FROM</span> SC <span class="keyword">AS</span> SA,SC <span class="keyword">AS</span> SB</span><br><span class="line"><span class="keyword">WHERE</span> SA.SNO=SB.SNO</span><br><span class="line"><span class="keyword">AND</span> SA.CNO=<span class="string">'C2'</span></span><br><span class="line"><span class="keyword">AND</span> SB.CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π 1(σ1=4∧2=&apos;C2&apos;∧5=&apos;C4&apos;（SC×SC）)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π 1(σ1=4∧2=&apos;C2&apos;∧5=&apos;C4&apos;（SC×SC）)</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
-<li>检索不学C2课的学生姓名与年龄<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> SNAME,AGE</span><br><span class="line"><span class="hljs-keyword">FROM</span> S</span><br><span class="line"><span class="hljs-keyword">MINUS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> S.SNAME,S.AGE</span><br><span class="line"><span class="hljs-keyword">FROM</span> SC,S</span><br><span class="line"><span class="hljs-keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="hljs-keyword">AND</span> SC.CNO=<span class="hljs-string">'C2'</span></span><br></pre></td></tr></table></figure>
+<li>检索不学C2课的学生姓名与年龄<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNAME,AGE</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">MINUS</span></span><br><span class="line"><span class="keyword">SELECT</span> S.SNAME,S.AGE</span><br><span class="line"><span class="keyword">FROM</span> SC,S</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNAME,AGE（S）－πSNAME,AGE(σCNO=&apos;C2&apos;（S⋈SC）)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNAME,AGE（S）－πSNAME,AGE(σCNO=&apos;C2&apos;（S⋈SC）)</span><br></pre></td></tr></table></figure>
 
 <ol start="7">
 <li><p>检索学习全部课程的学生姓名</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">π SNO,CNO(SC)÷πCNO(C)</span><br><span class="line">先用除法取出选取所有课程的SNO集(除法可以理解为一个Filter)</span><br><span class="line">π SNAME(S ⋈ (πSNO,CNO(SC)÷πCNO(C)))</span><br><span class="line">再关联S表取出SNAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">π SNO,CNO(SC)÷πCNO(C)</span><br><span class="line">先用除法取出选取所有课程的SNO集(除法可以理解为一个Filter)</span><br><span class="line">π SNAME(S ⋈ (πSNO,CNO(SC)÷πCNO(C)))</span><br><span class="line">再关联S表取出SNAME</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索所学课程包含S3所学课程的学生学号</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,CNO(SC)÷ πCNO(σSNO=&apos;S3&apos;(SC)）</span><br><span class="line">同样运用了除法的特性</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,CNO(SC)÷ πCNO(σSNO=&apos;S3&apos;(SC)）</span><br><span class="line">同样运用了除法的特性</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将新课程元组(‘C10’,’PHYSICS’,’YU’)插入到关系C中</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> C <span class="hljs-keyword">VALUES</span>(<span class="hljs-string">'C10'</span>,<span class="hljs-string">'PHYSICS'</span>,<span class="hljs-string">'YU'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> C <span class="keyword">VALUES</span>(<span class="string">'C10'</span>,<span class="string">'PHYSICS'</span>,<span class="string">'YU'</span>)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(C∪(&apos;C10&apos;,&apos;PHYSICS&apos;,&apos;YU&apos;))</span><br><span class="line">记住该符号的用法</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(C∪(&apos;C10&apos;,&apos;PHYSICS&apos;,&apos;YU&apos;))</span><br><span class="line">记住该符号的用法</span><br></pre></td></tr></table></figure>
 
 <ol start="10">
-<li>将学号S4选修课程号为C4的成绩改为85分<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">UPDATE</span> SC <span class="hljs-keyword">SET</span> GRADE=<span class="hljs-number">85</span></span><br><span class="line"><span class="hljs-keyword">WHERE</span> SNO=<span class="hljs-string">'S4'</span></span><br><span class="line"><span class="hljs-keyword">AND</span> CNO=<span class="hljs-string">'C4'</span></span><br></pre></td></tr></table></figure>
+<li>将学号S4选修课程号为C4的成绩改为85分<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> SC <span class="keyword">SET</span> GRADE=<span class="number">85</span></span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S4'</span></span><br><span class="line"><span class="keyword">AND</span> CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（SC－（&apos;S4&apos;,&apos;C4&apos;,?)∪(&apos;S4&apos;,&apos;C4&apos;,85)）</span><br><span class="line">先用&apos;－&apos;实现DELETE功能，再用&apos;∪&apos;实现INSERT功能</span><br><span class="line">注意使用?来表示检索时忽略该字段值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（SC－（&apos;S4&apos;,&apos;C4&apos;,?)∪(&apos;S4&apos;,&apos;C4&apos;,85)）</span><br><span class="line">先用&apos;－&apos;实现DELETE功能，再用&apos;∪&apos;实现INSERT功能</span><br><span class="line">注意使用?来表示检索时忽略该字段值</span><br></pre></td></tr></table></figure>
 
 <h1 id="四、关系代数表达式的优化"><a href="#四、关系代数表达式的优化" class="headerlink" title="四、关系代数表达式的优化"></a>四、关系代数表达式的优化</h1><p>目的：<br>为了系统在执行时既省时间又能提高效率。</p>
 <p>基本策略：<br>先做选择，运用投影去除多余属性等等。</p>
@@ -305,384 +325,340 @@
 <p>π CNAME,TEACHER(σSEX=’女’(S⋈SC⋈C)) 进行优化后转换为：</p>
 <p>πCNAME,TEACHER(C⋈πC#(πS#,C#(SC)⋈S#(σSEX=’女’(S))))</p>
 <p>优化前和优化后的语法树如下所示：</p>
-<p><img src="https://i.loli.net/2018/06/30/5b379215e6b8c.jpg" alt="syntax_tree_thumb.jpg"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2018/06/30/5b379215e6b8c.jpg" alt="syntax_tree_thumb.jpg" title>
+                </div>
+                <div class="image-caption">syntax_tree_thumb.jpg</div>
+            </figure>
+
 <h1 id="转载注明"><a href="#转载注明" class="headerlink" title="转载注明"></a>转载注明</h1><p><a href="http://www.blogjava.net/decode360/archive/2009/04/15/292362.html" target="_blank" rel="noopener">数据库关系代数表达式学习</a></p>
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.187Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/SQLrelAlg.html" target="_blank" rel="external">https://vitan.me/posts/SQLrelAlg.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/SQLrelAlg.html&title=《SQL 关系代数表达式》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/SQLrelAlg.html&title=《SQL 关系代数表达式》 — Vitan's Blog&source=关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/SQLrelAlg.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL 关系代数表达式》 — Vitan's Blog&url=https://vitan.me/posts/SQLrelAlg.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/SQLrelAlg.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/SQLmode.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">SQL 模式分解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/SQLexercise.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SQL 补充练习题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/SQLrelAlg.html">https://vitan.me/posts/SQLrelAlg.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/SQLmode.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">SQL 模式分解</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/SQLexercise.html">
-                <span class="level-item">SQL 补充练习题</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#一、关系代数的9种操作">
-            <span class="has-mr-6">1</span>
-            <span>一、关系代数的9种操作</span>
-            </a></li><li>
-            <a class="is-flex" href="#二、关系代数表达式">
-            <span class="has-mr-6">2</span>
-            <span>二、关系代数表达式</span>
-            </a></li><li>
-            <a class="is-flex" href="#三、举例说明">
-            <span class="has-mr-6">3</span>
-            <span>三、举例说明</span>
-            </a></li><li>
-            <a class="is-flex" href="#四、关系代数表达式的优化">
-            <span class="has-mr-6">4</span>
-            <span>四、关系代数表达式的优化</span>
-            </a></li><li>
-            <a class="is-flex" href="#转载注明">
-            <span class="has-mr-6">5</span>
-            <span>转载注明</span>
-            </a></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="SQL 关系代数表达式" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/SQLrelAlg.html&title=《SQL 关系代数表达式》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/SQLrelAlg.html&title=《SQL 关系代数表达式》 — Vitan's Blog&source=关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/SQLrelAlg.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL 关系代数表达式》 — Vitan's Blog&url=https://vitan.me/posts/SQLrelAlg.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/SQLrelAlg.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aQW7EIAwF0Ln/pdNtN0m+7cBEo8eq0hTyYGFh488nHse/UZ3V+3U0cHFxx9zjclwvnXwymZsYcHFx93Mny51t7/rDzePAxcV9Mfds7k0YwsXF/TluL725DnO4uLhv5j57ZelxH87VcHFxB9xq6XPF30vqu7i4uC3uMRi9hGfydVxc3D3catDJuZMjuEmNcHFxN3KrhY9kY9XVonVwcXE3cquTq7/mpdKbSxIuLu5ibvUxIw9Y+UHkBVZcXNw93KTZYl4AfSDhyXtDcHFxH+L2luhdgB7O1XBxcbdw80aKKj0/lEIgw8XFXcCtPo1UZ/XSntOgiYuLu4VbbZCqfrJQtc3btnBxcRdz86tJtahavWdF/4+Li7uF2wtkvZJK/qR680iDi4u7mJsEoHlom5RQb96EcXFxF3AnjVnV1CVZISnK4OLiruYexZFfX6pH0Gy8wMXFXcDNR+9BZb49XFzcb3Enwat6iamWVk9vZLi4uFu4eTJTbbyYJD+F+i4uLu6XuAmlmuSU72K4uLgv4+ab6W2g/NSKi4u7mDv5QHIZyh9XbkqouLi4W7jVlqxei0ae/DxW38XFxe1w/wDV875VZib+RQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>

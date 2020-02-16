@@ -1,214 +1,239 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>Git 闯关游戏 - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="Git 闯关游戏" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/GitGame.html">
+    
+    
+    <title>Git 闯关游戏 | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux,Termux,Git">
+    <meta name="description" content="Git闯关游戏">
+<meta name="keywords" content="Linux,Termux,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 闯关游戏">
+<meta property="og:url" content="https://vitan.me/posts/GitGame.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="Git闯关游戏">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 闯关游戏">
+<meta name="twitter:description" content="Git闯关游戏">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="Git 闯关游戏" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git 闯关游戏</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/Git.png" alt="Git 闯关游戏">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>Git 闯关游戏
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Diary/">Diary</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    1 小时 读完 (约 7833 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2018-02-10T13:09:24.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-02-10</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.147Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Git 闯关游戏</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-02-10T13:09:24.000Z" itemprop="datePublished" class="page-time">
+  2018-02-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一关（Init）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第一关（Init）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二关（Config）"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第二关（Config）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三关-（Add）"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第三关 （Add）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四关-（Commit）"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第四关 （Commit）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五关（Clone"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">第五关（Clone)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第六关（Clone-to-folder）"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">第六关（Clone to folder）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第七关（Ignore"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">第七关（Ignore)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第八关（Include"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">第八关（Include</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第九关（Status"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">第九关（Status)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十关（Number-of-files-committed）"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">第十关（Number of files committed）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十一关（rm）"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">第十一关（rm）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十二关（rm-cached）"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">第十二关（rm cached）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十三关（stash）"><span class="post-toc-number">2.13.</span> <span class="post-toc-text">第十三关（stash）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十四关（Rename"><span class="post-toc-number">2.14.</span> <span class="post-toc-text">第十四关（Rename)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十五关（Restructure）"><span class="post-toc-number">2.15.</span> <span class="post-toc-text">第十五关（Restructure）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十六关（Log）"><span class="post-toc-number">2.16.</span> <span class="post-toc-text">第十六关（Log）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十七关（Tag）"><span class="post-toc-number">2.17.</span> <span class="post-toc-text">第十七关（Tag）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十八关（Push-tags）"><span class="post-toc-number">2.18.</span> <span class="post-toc-text">第十八关（Push tags）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第十九关（Commit-amend）"><span class="post-toc-number">2.19.</span> <span class="post-toc-text">第十九关（Commit amend）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十关（Commit-in-feature）"><span class="post-toc-number">2.20.</span> <span class="post-toc-text">第二十关（Commit in feature）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十一关（Reset）"><span class="post-toc-number">2.21.</span> <span class="post-toc-text">第二十一关（Reset）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十二关（Reset-soft）"><span class="post-toc-number">2.22.</span> <span class="post-toc-text">第二十二关（Reset soft）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十三关（Checkout-file）"><span class="post-toc-number">2.23.</span> <span class="post-toc-text">第二十三关（Checkout file）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十四关（Remote）"><span class="post-toc-number">2.24.</span> <span class="post-toc-text">第二十四关（Remote）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十五关（remote-url）"><span class="post-toc-number">2.25.</span> <span class="post-toc-text">第二十五关（remote url）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十六关（pull）"><span class="post-toc-number">2.26.</span> <span class="post-toc-text">第二十六关（pull）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十七关（Remote-add）"><span class="post-toc-number">2.27.</span> <span class="post-toc-text">第二十七关（Remote add）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十八关（Push）"><span class="post-toc-number">2.28.</span> <span class="post-toc-text">第二十八关（Push）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二十九关（Diff）"><span class="post-toc-number">2.29.</span> <span class="post-toc-text">第二十九关（Diff）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十关（Blame）"><span class="post-toc-number">2.30.</span> <span class="post-toc-text">第三十关（Blame）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十一关（Branch）"><span class="post-toc-number">2.31.</span> <span class="post-toc-text">第三十一关（Branch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十二关（Checkout）"><span class="post-toc-number">2.32.</span> <span class="post-toc-text">第三十二关（Checkout）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十三关（Checkout-tag）"><span class="post-toc-number">2.33.</span> <span class="post-toc-text">第三十三关（Checkout tag）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十四关（Checkout-tag-over-branch）"><span class="post-toc-number">2.34.</span> <span class="post-toc-text">第三十四关（Checkout tag over branch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十五关（branch-at）"><span class="post-toc-number">2.35.</span> <span class="post-toc-text">第三十五关（branch at）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十六关（delete-branch）"><span class="post-toc-number">2.36.</span> <span class="post-toc-text">第三十六关（delete branch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十七关（Push-branch）"><span class="post-toc-number">2.37.</span> <span class="post-toc-text">第三十七关（Push branch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十八关（merge）"><span class="post-toc-number">2.38.</span> <span class="post-toc-text">第三十八关（merge）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三十九关（fetch）"><span class="post-toc-number">2.39.</span> <span class="post-toc-text">第三十九关（fetch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十关（rebase）"><span class="post-toc-number">2.40.</span> <span class="post-toc-text">第四十关（rebase）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十一关（rebase-onto）"><span class="post-toc-number">2.41.</span> <span class="post-toc-text">第四十一关（rebase_onto）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十二关（repack）"><span class="post-toc-number">2.42.</span> <span class="post-toc-text">第四十二关（repack）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十三关-（cherry-pick"><span class="post-toc-number">2.43.</span> <span class="post-toc-text">第四十三关 （cherry-pick</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十四关（grep）"><span class="post-toc-number">2.44.</span> <span class="post-toc-text">第四十四关（grep）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十五关（rename-commit）"><span class="post-toc-number">2.45.</span> <span class="post-toc-text">第四十五关（rename commit）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十六关（squash）"><span class="post-toc-number">2.46.</span> <span class="post-toc-text">第四十六关（squash）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十七关（merge-squash）"><span class="post-toc-number">2.47.</span> <span class="post-toc-text">第四十七关（merge squash）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十八关-reorder"><span class="post-toc-number">2.48.</span> <span class="post-toc-text">第四十八关(reorder()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四十九关-bisect"><span class="post-toc-number">2.49.</span> <span class="post-toc-text">第四十九关(bisect)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五十关（Stage-lines）"><span class="post-toc-number">3.</span> <span class="post-toc-text">第五十关（Stage lines）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十一关（Find-old-branch）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">第五十一关（Find old branch）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十二关（Revert）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">第五十二关（Revert）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十三关（Restore）"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">第五十三关（Restore）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十四关（Conflict）"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">第五十四关（Conflict）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十五关（Submodule）"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">第五十五关（Submodule）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五十六关（Contribute）"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">第五十六关（Contribute）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-GitGame"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git 闯关游戏</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-02-10 21:09:24" datetime="2018-02-10T13:09:24.000Z"  itemprop="datePublished">2018-02-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>Git闯关游戏</p>
 <a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install ruby</span><br><span class="line">gem install githug</span><br></pre></td></tr></table></figure>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install ruby</span><br><span class="line">gem install githug</span><br></pre></td></tr></table></figure>
 
 <h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><p><code>githug play</code> - 默认命令，检查是否过关</p>
 <p><code>githug hint</code> - 显示过关提示</p>
 <p><code>githug reset</code> - 重启本关，或者重启到指定的某关</p>
 <p><code>githug levels</code> - 显示关卡列表</p>
 <h2 id="第一关（Init）"><a href="#第一关（Init）" class="headerlink" title="第一关（Init）"></a>第一关（Init）</h2><p>紧接着，马上进入到了第一个关卡, 按照提示初始化这个这个 githug 文件夹为仓库。完成关卡可以通过调用 <code>githug play</code> 验证操作，成功则会进入下一个关卡</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd git_hug</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd git_hug</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>cd</code> （Change Directory），跳转目录、切换路径。</p>
 <p><code>git init</code>在当前目录新建一个Git代码库</p>
 <h2 id="第二关（Config）"><a href="#第二关（Config）" class="headerlink" title="第二关（Config）"></a>第二关（Config）</h2><p>设置 Git 用户名和邮箱，为了不影响全局的配置，我设置的是仓库级别的。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p><code>git config git</code> 的设置文件为.gitconfig,他可以在全局配置（加上–global），也可以项目配置。</p>
@@ -216,7 +241,7 @@
 <p><code>git config --lis</code>t 显示当前的git配置</p>
 <p><code>git config -e [--global]</code> 编辑git的配置文件</p>
 <h2 id="第三关-（Add）"><a href="#第三关-（Add）" class="headerlink" title="第三关 （Add）"></a>第三关 （Add）</h2><p>使用 add 命令将 README 文件添加到 staging area.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .README</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .README</span><br></pre></td></tr></table></figure>
 
 <p>相关</p>
 <p><code>git add</code>将所有修改过的工作文件提交暂存区</p>
@@ -228,7 +253,7 @@
 <li><code>git add -A</code>（git add –all的缩写）是上面两个功能的合集。即包括修改的文件、删除的文件以及新文件。</li>
 </ul>
 <h2 id="第四关-（Commit）"><a href="#第四关-（Commit）" class="headerlink" title="第四关 （Commit）"></a>第四关 （Commit）</h2><p>提交 README 文件，记得每次 commit 使用 -m 参数加上备注是个好习惯</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;message&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;message&apos;</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p><code>git commit -m [message]</code>提交暂存区到仓库区;还可以提交暂存区的指定文件到仓库区<code>git commit [file1] [file2] ... -m [message]</code>。</p>
@@ -240,25 +265,32 @@
 <li><code>git commit --amend [file1] [file2] ...</code>重做上一次commit，并包括指定文件的新变化</li>
 </ul>
 <h2 id="第五关（Clone"><a href="#第五关（Clone" class="headerlink" title="第五关（Clone)"></a>第五关（Clone)</h2><p>克隆一个仓库，默认的文件夹名是远端的仓库名</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Gazler/cloneme</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Gazler/cloneme</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone http[s]://example.com/path/to/repo.git/</span><br><span class="line">git clone ssh://example.com/path/to/repo.git/</span><br><span class="line">git clone git://example.com/path/to/repo.git/</span><br><span class="line">git clone /opt/git/project.git</span><br><span class="line">git clone file:///opt/git/project.git</span><br><span class="line">git clone ftp[s]://example.com/path/to/repo.git/</span><br><span class="line">git clone rsync://example.com/path/to/repo.git/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone http[s]://example.com/path/to/repo.git/</span><br><span class="line">git clone ssh://example.com/path/to/repo.git/</span><br><span class="line">git clone git://example.com/path/to/repo.git/</span><br><span class="line">git clone /opt/git/project.git</span><br><span class="line">git clone file:///opt/git/project.git</span><br><span class="line">git clone ftp[s]://example.com/path/to/repo.git/</span><br><span class="line">git clone rsync://example.com/path/to/repo.git/</span><br></pre></td></tr></table></figure>
 
 <p>SSH协议的另一种写法</p>
 <p><code>git clone [user@]example.com:path/to/repo.git/</code></p>
 <h2 id="第六关（Clone-to-folder）"><a href="#第六关（Clone-to-folder）" class="headerlink" title="第六关（Clone to folder）"></a>第六关（Clone to folder）</h2><p>同样是克隆一个仓库，不同的是可以指定一个文件夹名</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Gazler/cloneme my_cloned_repo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Gazler/cloneme my_cloned_repo</span><br></pre></td></tr></table></figure>
 
 <p>相关</p>
 <p><code>git clone</code>&lt;版本库的网址&gt; &lt;本地目录名&gt; 该命令会在本地主机生成一个目录。如果不指定目录名，则与远程主机的版本库同名。</p>
 <h2 id="第七关（Ignore"><a href="#第七关（Ignore" class="headerlink" title="第七关（Ignore)"></a>第七关（Ignore)</h2><p>忽略所有 .swp 后缀名的文件。这里使用 vim 编辑器打开 .gitignore，这个文件记录了 git 忽略文件的规则, 不会 vim 的同学可以用自己熟悉的编辑。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg" alt></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch .gitignore  </span><br><span class="line">echo &apos;*.swp&apos;&gt;&gt;.gitignore</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch .gitignore  </span><br><span class="line">echo &apos;*.swp&apos;&gt;&gt;.gitignore</span><br></pre></td></tr></table></figure>
 
 <p>使用正则(glob 模式)匹配所有的 .swp 文件，然后保存并退出</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.progile.yml</span><br><span class="line">.gitignore</span><br><span class="line">*.swp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.progile.yml</span><br><span class="line">.gitignore</span><br><span class="line">*.swp</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p>忽略掉某个文件，需要修改.gitignore文件的方法。可以在你的用户目录下创建 <code>~/.gitignoreglobal</code> 文件中设置全局。</p>
@@ -283,18 +315,18 @@
 <li>另外 git 还提供了另一种<code>exclude</code>的方式来做同样的事情，不同的是 .gitignore 这个文件本身会提交到版本库中去，用来保存的是公共的需要排除的文件。<br>而<code>.git/info/exclude</code> 这里设置的则是你自己本地需要排除的文件。他不会影响到其他人。也不会提交到版本库中去。</li>
 </ol>
 <h2 id="第八关（Include"><a href="#第八关（Include" class="headerlink" title="第八关（Include"></a>第八关（Include</h2><p>除了 <code>lib.a</code>文件，其他所有的 .a 后缀名的文件都忽略。和上一关的操作一样，修改 <code>.gitignore</code> 文件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;*.a&apos;&gt;&gt;.gitignore</span><br><span class="line">echo &apos;!lib.a&apos;&gt;&gt;.gitignore</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;*.a&apos;&gt;&gt;.gitignore</span><br><span class="line">echo &apos;!lib.a&apos;&gt;&gt;.gitignore</span><br></pre></td></tr></table></figure>
 
 <p>其中 <code>#</code> 开头的是注释，用<code>*.a</code> 匹配所有 <code>.a</code> 文件，<code>!</code> 开头代表不要忽略</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.profile.yml</span><br><span class="line">.gitignore</span><br><span class="line"></span><br><span class="line"># ignore all file with &quot;.a&quot; extensions expect &quot;lib.a&quot; file</span><br><span class="line">*.a</span><br><span class="line">!lib.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.profile.yml</span><br><span class="line">.gitignore</span><br><span class="line"></span><br><span class="line"># ignore all file with &quot;.a&quot; extensions expect &quot;lib.a&quot; file</span><br><span class="line">*.a</span><br><span class="line">!lib.a</span><br></pre></td></tr></table></figure>
 
 <h2 id="第九关（Status"><a href="#第九关（Status" class="headerlink" title="第九关（Status)"></a>第九关（Status)</h2><p>查看所有处于<code>untracked</code>状态的文件。使用<code>git status</code> 查看当前仓库的状态，可以看到红色部分就是 <code>untracked</code> 状态的文件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
 <p>答案：<code>database.yml</code></p>
 <p>相关:<code>git status</code> 显示有变更的文件</p>
 <h2 id="第十关（Number-of-files-committed）"><a href="#第十关（Number-of-files-committed）" class="headerlink" title="第十关（Number of files committed）"></a>第十关（Number of files committed）</h2><p>其实就是查看处于 staged 状态的文件，图中黄色部分就是，所以个数就是2</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
 <p>相关</p>
 <p><code>git status</code>命令可以列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件。</p>
@@ -304,16 +336,16 @@
 <li>命令中“Untracked files”中所列的内容是尚未被Git跟踪的内容，add之后进入Index</li>
 </ul>
 <h2 id="第十一关（rm）"><a href="#第十一关（rm）" class="headerlink" title="第十一关（rm）"></a>第十一关（rm）</h2><p>有一个文件从硬盘中删除了，但是并未从 git 仓库中删除，找到它并从 git 仓库中删除。删除也是修改的一种，提交这个修改就好了</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git rm deleteme.rb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git rm deleteme.rb</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git rm [file1] [file2] ...</code>删除工作区文件，并且将这次删除放入暂存区。</p>
 <h2 id="第十二关（rm-cached）"><a href="#第十二关（rm-cached）" class="headerlink" title="第十二关（rm cached）"></a>第十二关（rm cached）</h2><p>讲一个新文件从 <code>staging area</code> 中删除。按照要求，不应该直接从硬盘上删除这个文件，只是从 Git 中删除而已。加上<code>--cache</code> 可以是文件只是从 <code>staging area</code> 中移除，不会真正的删除物理文件，如果要连这个物理文件也一起删除，请使用 <code>-f</code> 选项</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git rm --cached deleteme.rb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git rm --cached deleteme.rb</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p><code>git rm --cached [file]</code> 停止追踪指定文件，但该文件会保留在工作区。</p>
 <h2 id="第十三关（stash）"><a href="#第十三关（stash）" class="headerlink" title="第十三关（stash）"></a>第十三关（stash）</h2><p>临时提交某个文件。这个操作在需要临时保存修改，而又不想提交的时候特别好用！而且 git 中维护了一个栈来保存，所以支持提交多次。如果需要恢复某次提交，使用 git stash apply 即可。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git stash</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git stash</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -330,11 +362,11 @@
 <li><code>git stash branch &lt;branchname&gt; &lt;stash&gt;</code> 基于进度创建分支。</li>
 </ul>
 <h2 id="第十四关（Rename"><a href="#第十四关（Rename" class="headerlink" title="第十四关（Rename)"></a>第十四关（Rename)</h2><p>重命名文件。首先这个文件需要是已经是已追踪状态，才可以使用<code>git mv</code> 命令，操作完成后自动处于 <code>staging</code> 状态</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv oldfile.txt newfile.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv oldfile.txt newfile.txt</span><br></pre></td></tr></table></figure>
 
 <p>相关:<code>git mv</code> 重命名文件</p>
 <h2 id="第十五关（Restructure）"><a href="#第十五关（Restructure）" class="headerlink" title="第十五关（Restructure）"></a>第十五关（Restructure）</h2><p>移动所有 <code>.html</code> 文件到 <code>src</code> 文件夹。<code>git mv</code> 后面的第二个参数可以接受文件或目录，如果是目录，则文件会直接放入目录内，可以使用正则（glob模式）匹配所有 <code>.html</code> 文件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir src</span><br><span class="line">git mv *.html src/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir src</span><br><span class="line">git mv *.html src/</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -352,11 +384,18 @@
 </li>
 </ul>
 <h2 id="第十六关（Log）"><a href="#第十六关（Log）" class="headerlink" title="第十六关（Log）"></a>第十六关（Log）</h2><p>找到最新的 commit 的 hash 值。使用 git log 查看历史提交记录, 找到最新的 commit 的 hash 值，记录下来用户回答问题</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
 
 <p>答案为：<code>34b2fd7(commit</code>后 前7位)</p>
 <p>这里是按照倒叙排列的，最新的在最前面，<code>commit</code> 关键字后面跟着的就是这个 <code>commit</code> 的<code>hash</code>值</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <p>相关:</p>
 <p>git log 显示当前分支的版本历史。</p>
 <ul>
@@ -369,7 +408,7 @@
 <li><code>git log [tag] HEAD --grep feature</code> 显示某个commit之后的所有变动，其“提交说明”必须符合搜索条件</li>
 </ul>
 <h2 id="第十七关（Tag）"><a href="#第十七关（Tag）" class="headerlink" title="第十七关（Tag）"></a>第十七关（Tag）</h2><p>为最新的 commit 打 <code>tag</code>。不加额外参数就是为当前 <code>commit</code> 记录<code>tag</code>, 当然可以为特定的 <code>commit</code> 打</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag new_tag</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag new_tag</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -379,7 +418,7 @@
 <li><code>git tag d [tag]</code> 删除本地tag</li>
 </ul>
 <h2 id="第十八关（Push-tags）"><a href="#第十八关（Push-tags）" class="headerlink" title="第十八关（Push tags）"></a>第十八关（Push tags）</h2><p>将所有本地 tag 都推送到远端。–tags 参数代表将所有的 tags 都推送到远端</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --tags origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --tags origin master</span><br></pre></td></tr></table></figure>
 
 <p>相关：</p>
 <p>默认 <code>git push</code> 不会罢 tag 标签传送到远端服务器上，只有通过显示命令才能分享标签到远端仓库。</p>
@@ -388,14 +427,14 @@
 <li><code>git push [origin] --tags push</code> 所有 tag</li>
 </ul>
 <h2 id="第十九关（Commit-amend）"><a href="#第十九关（Commit-amend）" class="headerlink" title="第十九关（Commit amend）"></a>第十九关（Commit amend）</h2><p>某个文件在上次提交中遗漏了，在那次提交中补上这个文件。 其实，使用<code>git commit --amend</code> 会进入编辑界面修改备注信息，我这里直接 <code>:wq</code> 保存并退出</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add forgotten_file.rb</span><br><span class="line">git commit --amend -m &apos;message&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add forgotten_file.rb</span><br><span class="line">git commit --amend -m &apos;message&apos;</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p><code>git commit --amend</code> 合并缓存区的修改和最近的一次commit, 然后用生成的新的commit替换掉老的. 如果缓存区没有内容, 那么利用amend可以修改上一次commit的描述.</p>
-<h2 id="第二十关（Commit-in-feature）"><a href="#第二十关（Commit-in-feature）" class="headerlink" title="第二十关（Commit in feature）"></a>第二十关（Commit in feature）</h2><p> 为提交指定一个未来的时间。<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit --date 2016.10.08 -m &apos;message&apos;</span><br><span class="line">#或者</span><br><span class="line">git commit --date=05.01.2018T14:00:00</span><br></pre></td></tr></table></figure></p>
+<h2 id="第二十关（Commit-in-feature）"><a href="#第二十关（Commit-in-feature）" class="headerlink" title="第二十关（Commit in feature）"></a>第二十关（Commit in feature）</h2><p> 为提交指定一个未来的时间。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit --date 2016.10.08 -m &apos;message&apos;</span><br><span class="line">#或者</span><br><span class="line">git commit --date=05.01.2018T14:00:00</span><br></pre></td></tr></table></figure></p>
 <p> 相关:<code>git commit --date &lt;date&gt;</code>修改提交时间</p>
 <h2 id="第二十一关（Reset）"><a href="#第二十一关（Reset）" class="headerlink" title="第二十一关（Reset）"></a>第二十一关（Reset）</h2><p>两个文件都被添加到了 staging area, 但是只想提交其中一个。使用 git reset 可以用仓库中的版本覆盖 <code>staging area</code> 的版本。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git reset HEAD to_commit_second.rb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git reset HEAD to_commit_second.rb</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>git reset</code>使用仓库中的版本覆盖 <code>staging area</code> 中的，如果 <code>working directory</code> 该文件没有其他修改，则 <code>staging area</code> 中的修改将应用到 <code>working directory</code> 中。反之<code>working directory</code> 中的版本将被保留，丢弃 <code>staging area</code>中的修改。</li>
@@ -410,10 +449,10 @@
 <li><code>git reset -hard</code>彻底回退到某个版本，本地的源码也会变为上一个版本的内容，即staged snapshot 和 working directory 都将回退</li>
 </ul>
 <p>例子：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#回退所有内容到上一版本 HEAD^的意思是最近一次的提交</span><br><span class="line">git reset HEAD^</span><br><span class="line">#回退a.py这个文件的版本到上一个版本</span><br><span class="line">git reset HEAD^ a.py</span><br><span class="line">#向前回退到第3个版本</span><br><span class="line">git reset –soft HEAD~3</span><br><span class="line">#将本地的状态回退到和远程的一样</span><br><span class="line">git reset –hard origin/master</span><br><span class="line">#回退到某个版本</span><br><span class="line">git reset 38679ed</span><br><span class="line">#回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit</span><br><span class="line">git revert HEAD</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#回退所有内容到上一版本 HEAD^的意思是最近一次的提交</span><br><span class="line">git reset HEAD^</span><br><span class="line">#回退a.py这个文件的版本到上一个版本</span><br><span class="line">git reset HEAD^ a.py</span><br><span class="line">#向前回退到第3个版本</span><br><span class="line">git reset –soft HEAD~3</span><br><span class="line">#将本地的状态回退到和远程的一样</span><br><span class="line">git reset –hard origin/master</span><br><span class="line">#回退到某个版本</span><br><span class="line">git reset 38679ed</span><br><span class="line">#回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit</span><br><span class="line">git revert HEAD</span><br></pre></td></tr></table></figure>
 
 <h2 id="第二十二关（Reset-soft）"><a href="#第二十二关（Reset-soft）" class="headerlink" title="第二十二关（Reset soft）"></a>第二十二关（Reset soft）</h2><p>撤销上一次提交。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^1</span><br></pre></td></tr></table></figure>
 
 <p>相关：</p>
 <ul>
@@ -422,7 +461,7 @@
 <li><code>--hard</code> 参数直接将上一次的修改抛弃</li>
 </ul>
 <h2 id="第二十三关（Checkout-file）"><a href="#第二十三关（Checkout-file）" class="headerlink" title="第二十三关（Checkout file）"></a>第二十三关（Checkout file）</h2><p>抛弃某一次的修改，使用上次提交的版本。checkout 和 reset 的区别参照第二十一关</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout config.rb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout config.rb</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git checkou</code>t 检出。</p>
 <ul>
@@ -431,7 +470,7 @@
 <li>上面两个命令可以合成一个命令 <code>git checkout -b branchName</code></li>
 </ul>
 <h2 id="第二十四关（Remote）"><a href="#第二十四关（Remote）" class="headerlink" title="第二十四关（Remote）"></a>第二十四关（Remote）</h2><p>查看远端仓库。其实可以不加<code>-v</code>参数，加这个参数只是可以将地址也一起输出(没想到下一关就是考察这个参数，平常习惯加这个参数了。)</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 
 <p>答案：my_remote_repo</p>
 <p>相关:</p>
@@ -445,10 +484,10 @@
 <li><code>git remore rename &lt;原主机名&gt; &lt;新主机名&gt;</code> 远程主机的改名</li>
 <li><code>tail .git/config</code> 查看remote信息。</li>
 </ul>
-<h2 id="第二十五关（remote-url）"><a href="#第二十五关（remote-url）" class="headerlink" title="第二十五关（remote url）"></a>第二十五关（remote url）</h2><p>查看远端仓库的 URL<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
+<h2 id="第二十五关（remote-url）"><a href="#第二十五关（remote-url）" class="headerlink" title="第二十五关（remote url）"></a>第二十五关（remote url）</h2><p>查看远端仓库的 URL<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
 <p>答案：<code>https://github.com/githug/not_a_repo</code></p>
 <h2 id="第二十六关（pull）"><a href="#第二十六关（pull）" class="headerlink" title="第二十六关（pull）"></a>第二十六关（pull）</h2><p>拉取远端仓库。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -457,13 +496,13 @@
 <li><code>git push origin local : remote</code><br>需要注意的两个操作的分支顺序是相反的，记忆的方法很简单，拉取是从远端到本地，所以远端在前，而推送是从本地到远端，所以本地在前。</li>
 </ul>
 <h2 id="第二十七关（Remote-add）"><a href="#第二十七关（Remote-add）" class="headerlink" title="第二十七关（Remote add）"></a>第二十七关（Remote add）</h2><p>添加一个远端仓库</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/githug/githug</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/githug/githug</span><br></pre></td></tr></table></figure>
 
 <h2 id="第二十八关（Push）"><a href="#第二十八关（Push）" class="headerlink" title="第二十八关（Push）"></a>第二十八关（Push）</h2><p>推送本地修改到远端</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase origin master</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase origin master</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git rebase</code>用于把一个分支的修改合并到当前分支。</p>
-<h2 id="第二十九关（Diff）"><a href="#第二十九关（Diff）" class="headerlink" title="第二十九关（Diff）"></a>第二十九关（Diff）</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff app.rb</span><br></pre></td></tr></table></figure>
+<h2 id="第二十九关（Diff）"><a href="#第二十九关（Diff）" class="headerlink" title="第二十九关（Diff）"></a>第二十九关（Diff）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff app.rb</span><br></pre></td></tr></table></figure>
 
 <p>答案：26</p>
 <p>相关：</p>
@@ -474,18 +513,18 @@
 <li><code>git diff HEAD</code>: 查看 working directory 与 repository 之间的差异</li>
 </ul>
 <h2 id="第三十关（Blame）"><a href="#第三十关（Blame）" class="headerlink" title="第三十关（Blame）"></a>第三十关（Blame）</h2><p>查看某个文件的修改人。这个命令简直邪恶，锅终于有人背了！！！</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame config.rb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame config.rb</span><br></pre></td></tr></table></figure>
 
 <p>答案：Spider Man</p>
 <p>相关:<br>git blame得到整个文件的每一行的详细修改信息:包括SHA串,日期和作者。</p>
 <h2 id="第三十一关（Branch）"><a href="#第三十一关（Branch）" class="headerlink" title="第三十一关（Branch）"></a>第三十一关（Branch）</h2><p>创建一个分支</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch test_code</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch test_code</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十二关（Checkout）"><a href="#第三十二关（Checkout）" class="headerlink" title="第三十二关（Checkout）"></a>第三十二关（Checkout）</h2><p>创建一个分支，并切换过去。其实，<code>git checkout -b my_branch</code> 就是创建一个分支，并切换过去，而且这种方法更方便，平常用的更多</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b my_branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b my_branch</span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十三关（Checkout-tag）"><a href="#第三十三关（Checkout-tag）" class="headerlink" title="第三十三关（Checkout tag）"></a>第三十三关（Checkout tag）</h2><p>切换到某个特定的 tag</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br><span class="line">git checkout v1.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br><span class="line">git checkout v1.2</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br>标签可以针对某一时间点的版本做标记，常用于版本发布。</p>
 <p>列出标签</p>
@@ -502,22 +541,22 @@
 <li><code>git push origin -tags</code>将本地所有标签一次性提交到git服务器</li>
 </ul>
 <h2 id="第三十四关（Checkout-tag-over-branch）"><a href="#第三十四关（Checkout-tag-over-branch）" class="headerlink" title="第三十四关（Checkout tag over branch）"></a>第三十四关（Checkout tag over branch）</h2><p>切换到某个特定的分支，但是分支名和标签名重叠了</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout tags/v1.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout tags/v1.2</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git checkout tags/v1.2</code> 当标签和分支名相同时，需要指定标签检出</p>
 <h2 id="第三十五关（branch-at）"><a href="#第三十五关（branch-at）" class="headerlink" title="第三十五关（branch at）"></a>第三十五关（branch at）</h2><p>根据一个特定的提交创建新分支</p>
 <p>一种方法：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test_branch HEAD^1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test_branch HEAD^1</span><br></pre></td></tr></table></figure>
 
 <p>第二种方法：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git branch test_branch -v 00740b4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git branch test_branch -v 00740b4</span><br></pre></td></tr></table></figure>
 
 <p>找到第二条的id，输入前7位</p>
 <h2 id="第三十六关（delete-branch）"><a href="#第三十六关（delete-branch）" class="headerlink" title="第三十六关（delete branch）"></a>第三十六关（delete branch）</h2><p>删除一个分支</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d delete_me</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d delete_me</span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十七关（Push-branch）"><a href="#第三十七关（Push-branch）" class="headerlink" title="第三十七关（Push branch）"></a>第三十七关（Push branch）</h2><p>将分支推送到远端仓库</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git push origin test_branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git push origin test_branch</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -530,14 +569,14 @@
 <li><code>git push origin --tags git push</code> 不会推送标签（tag），除非使用 -tags 选项</li>
 </ul>
 <h2 id="第三十八关（merge）"><a href="#第三十八关（merge）" class="headerlink" title="第三十八关（merge）"></a>第三十八关（merge）</h2><p>合并分支。为了简化分支模型，可以使用 <code>rebase</code> 代替，后续关卡会遇到。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge feature</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge feature</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git merge</code>合并分支</p>
 <h2 id="第三十九关（fetch）"><a href="#第三十九关（fetch）" class="headerlink" title="第三十九关（fetch）"></a>第三十九关（fetch）</h2><p>获取远端的修改，但是并不合并到当前分支。其实，<code>git pull</code> 就是 <code>git fetch</code> 和 <code>git merge</code> 组成的。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git fetch origin master</code>取回origin主机的master分支</p>
-<h2 id="第四十关（rebase）"><a href="#第四十关（rebase）" class="headerlink" title="第四十关（rebase）"></a>第四十关（rebase）</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
+<h2 id="第四十关（rebase）"><a href="#第四十关（rebase）" class="headerlink" title="第四十关（rebase）"></a>第四十关（rebase）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
 
 <p>相关：</p>
 <ul>
@@ -550,20 +589,20 @@
 <p><code>git rebase [-i | --interactive] [options] –onto –root []</code></p>
 <p><code>git rebase –continue | –skip | –abort</code></p>
 <h2 id="第四十一关（rebase-onto）"><a href="#第四十一关（rebase-onto）" class="headerlink" title="第四十一关（rebase_onto）"></a>第四十一关（rebase_onto）</h2><p>将版本库未打包的松散对象打包</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --onto master wrong_branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --onto master wrong_branch</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>git rebase --onto A B C A</code>代表的是你实际想要将切片放到哪个分支，B代表切片开始分支（一定要注意的问题是 B 的开闭问题，这里 rebase –onto 的机制是左开右闭）。</p>
 <p><code>git rebase --onto A B~1 temp</code> 如果想要保留A和C的历史，就需要先在切片的末尾建立一个分支temp。这就代表把B到c之间的历史移到了A上，并且当前temp分支的历史状态就是窝想要的。</p>
 <h2 id="第四十二关（repack）"><a href="#第四十二关（repack）" class="headerlink" title="第四十二关（repack）"></a>第四十二关（repack）</h2><p>应用某一个提交的修改。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git repack -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git repack -d</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br>g<code>it repack [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [--window=&lt;n&gt;] [--depth=&lt;n&gt;]</code></p>
 <p><code>git repack -d</code>包装后，如果新创建的包使一些现有的包冗余，删除多余的包。同时运行 <code>git prune-packed</code> 去除多余的松散对象文件。</p>
-<h2 id="第四十三关-（cherry-pick"><a href="#第四十三关-（cherry-pick" class="headerlink" title="第四十三关 （cherry-pick"></a>第四十三关 （cherry-pick</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git log new-feature</span><br><span class="line">$git cherry-pick ca32a6da</span><br></pre></td></tr></table></figure>
+<h2 id="第四十三关-（cherry-pick"><a href="#第四十三关-（cherry-pick" class="headerlink" title="第四十三关 （cherry-pick"></a>第四十三关 （cherry-pick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git log new-feature</span><br><span class="line">$git cherry-pick ca32a6da</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>Git cherry-pick</code> 可以选择某一个分支中的一个或几个commit来进行操作</p>
 <p><code>git grep</code>支持各种条件搜索及正则表达式，平时用的不多，但感觉功能强大。</p>
-<h2 id="第四十四关（grep）"><a href="#第四十四关（grep）" class="headerlink" title="第四十四关（grep）"></a>第四十四关（grep）</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git grep TODO</span><br></pre></td></tr></table></figure>
+<h2 id="第四十四关（grep）"><a href="#第四十四关（grep）" class="headerlink" title="第四十四关（grep）"></a>第四十四关（grep）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git grep TODO</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -577,30 +616,51 @@
 <li><code>git grep --all-match -e &#39;#define&#39; -e SORT_DIRENT</code>进行或条件搜索。</li>
 </ul>
 <h2 id="第四十五关（rename-commit）"><a href="#第四十五关（rename-commit）" class="headerlink" title="第四十五关（rename commit）"></a>第四十五关（rename commit）</h2><p>重命名提交。当涉及提交修改时，应该想到 <code>git rebase -i</code> 命令，它接受可以一个参数（提交的哈希值），它将罗列出此提交之后的所有提交，然后可以对个个提交做对应的操作。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log master</span><br><span class="line">git rebase -i HEAD~2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log master</span><br><span class="line">git rebase -i HEAD~2</span><br></pre></td></tr></table></figure>
 
 <p>查看历史提交记录，看到需要修改的为倒数第二个，进入编辑页面，将需要改动的行的·改为·。保存退出后在弹出的第二个窗口里修改拼写错误 <code>commmit</code> 改为 <code>commit</code></p>
 <h2 id="第四十六关（squash）"><a href="#第四十六关（squash）" class="headerlink" title="第四十六关（squash）"></a>第四十六关（squash）</h2><p>合并多个提交。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~4</span><br></pre></td></tr></table></figure>
 
 <p>将后三个改为s</p>
 <p>为新的提交修改备注</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <h2 id="第四十七关（merge-squash）"><a href="#第四十七关（merge-squash）" class="headerlink" title="第四十七关（merge squash）"></a>第四十七关（merge squash）</h2><p>将某个分支上的所有修改都应用成一个提交。默认修改都将进入暂存区</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git merge --squash long-feature-branch</span><br><span class="line">git commit -m &apos;message</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git merge --squash long-feature-branch</span><br><span class="line">git commit -m &apos;message</span><br></pre></td></tr></table></figure>
 
 <p>相关:<br><code>--squash</code> 选项的含义是：本地文件内容与不使用该选项的合并结果相同，但是不提交、不移动 HEAD ,因此需要一条额外的commit命令。其效果相当于将 another 分支上的多个 commit 合并成一个，放在当前分支上，原来的 commit 历史则没有拿过来。</p>
 <h2 id="第四十八关-reorder"><a href="#第四十八关-reorder" class="headerlink" title="第四十八关(reorder()"></a>第四十八关(reorder()</h2><p>重新排列提交顺序。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git rebase -i HEAD~2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git rebase -i HEAD~2</span><br></pre></td></tr></table></figure>
 
 <p>查看历史记录发现提交顺序错误，将前两行顺序调换。</p>
 <h2 id="第四十九关-bisect"><a href="#第四十九关-bisect" class="headerlink" title="第四十九关(bisect)"></a>第四十九关(bisect)</h2><p>使用 <code>git log</code> 查看所有的提交记录，太长我就不全贴出来了，找到最开始的提交<code>git bisect start master f608824888b83</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log --reverse -p prog.rb</span><br><span class="line">git bisect start master f6088248</span><br><span class="line">git bisect run make test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log --reverse -p prog.rb</span><br><span class="line">git bisect start master f6088248</span><br><span class="line">git bisect run make test</span><br></pre></td></tr></table></figure>
 
 <p>查看最初一次为正确提交，得到版本号。执行完毕后日志里找到 “is the first bad commit” ,得到 18ed2ac。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <p><code>git bisect start master f608824888b83</code>中，master 是有 bug 的节点，<code>f608824888b83</code>是没有 bug 的节点。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <p>相关:</p>
 <ul>
 <li><code>git bisect start</code></li>
@@ -610,11 +670,11 @@
 <li><code>git bisect reset</code> 回到之前执行 <code>git bisect start</code> 的状态。</li>
 </ul>
 <h1 id="第五十关（Stage-lines）"><a href="#第五十关（Stage-lines）" class="headerlink" title="第五十关（Stage lines）"></a>第五十关（Stage lines）</h1><p>其实，提交文件的部分修改这种需求平时还是比较常见的，不过平时都是用 Source Tree 来操作的，但是看到这题之后，好像又开启了一扇大门。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add -p feature.rb</span><br><span class="line">git diff</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add -p feature.rb</span><br><span class="line">git diff</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 
 <p>输入i编辑提交内容，删除第二个。</p>
 <h2 id="第五十一关（Find-old-branch）"><a href="#第五十一关（Find-old-branch）" class="headerlink" title="第五十一关（Find old branch）"></a>第五十一关（Find old branch）</h2><p>git reflog 可以列出所有的操作记录，所以找到之前忘记的信息并不是什么难事</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git checkout solve_world_hunger</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git checkout solve_world_hunger</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -622,7 +682,7 @@
 <li><code>git reflog</code> 命令可以对 git 误操作进行数据恢复。</li>
 </ul>
 <h2 id="第五十二关（Revert）"><a href="#第五十二关（Revert）" class="headerlink" title="第五十二关（Revert）"></a>第五十二关（Revert）</h2><p>与 <code>reset</code> 不同的是，<code>revert</code> 只会撤销当前的 <code>commit</code>，而之后的 <code>commit</code> 操作的修改还会保留，但是<code>reset</code> 还会将之后的所有<code>commit</code> 操作的修改全部退回 <code>staging area</code>或丢弃。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git revert HEAD^1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git revert HEAD^1</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p>修复提交文件中的错误：</p>
@@ -632,19 +692,26 @@
 <li><code>git revert HEAD</code> 撤销一次提交</li>
 </ul>
 <h2 id="第五十三关（Restore）"><a href="#第五十三关（Restore）" class="headerlink" title="第五十三关（Restore）"></a>第五十三关（Restore）</h2><p>根据之前的经验，<code>git reflog</code> 可以查看所有的操作记录，所以只要能找到误操作之前的 <code>commit id</code>，一样能够恢复现场。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git checkout bdbe33d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br><span class="line">git checkout bdbe33d</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <p>恢复已修改的文件：</p>
 <h2 id="第五十四关（Conflict）"><a href="#第五十四关（Conflict）" class="headerlink" title="第五十四关（Conflict）"></a>第五十四关（Conflict）</h2><p>冲突处理在平常的协同工作中真是再常见不过了，需要注意的是存在冲突的文件是在 <code>working directory</code> 中的，在解决完冲突之后需要添加到 <code>staging area</code> 并提交。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git merge mybranch</span><br><span class="line">vim poem.txt</span><br><span class="line">git add poem.txt</span><br><span class="line">git commit -m &apos;message</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git merge mybranch</span><br><span class="line">vim poem.txt</span><br><span class="line">git add poem.txt</span><br><span class="line">git commit -m &apos;message</span><br></pre></td></tr></table></figure>
 
 <p>相关：</p>
 <p>其实冲突解决完成的图片丢失了，只能口述了。</p>
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> 到 <code>=======</code> 之间的内容代表 <code>master</code> 分支的修改，<code>=======</code> 到 <code>&gt;&gt;&gt;&gt;&gt;&gt; mybranch</code> 之间的内容代表 <code>mybranch</code> 分支的修改，保留 <code>mybranch</code> 分支的修改，删除<code>master</code> 分支的修改即可，当然这些特殊符号所在行也要一并删除。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <h2 id="第五十五关（Submodule）"><a href="#第五十五关（Submodule）" class="headerlink" title="第五十五关（Submodule）"></a>第五十五关（Submodule）</h2><p><code>submodule</code>是一个很方便的将一个仓库分解成多个子模块的命令，特别是项目比较大且依赖其他 Git 项目的时候，比如 <code>Cocos2d-x</code>。虽然好用，但是门槛也相对高点，如果维护好 <code>submodule</code>还是需要好好研究一下。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add http://github.com/jackmaney/githug-include-me</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add http://github.com/jackmaney/githug-include-me</span><br></pre></td></tr></table></figure>
 
 <p>相关:</p>
 <ul>
@@ -654,592 +721,329 @@
 <p>参考：<br><a href="http://ryeeeeee.com/2016/01/04/Githug-Guide/" target="_blank" rel="noopener">Ryeeeeee</a><br><a href="https://www.jianshu.com/p/e8e6358e81e0" target="_blank" rel="noopener">风花花</a></p>
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.147Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/GitGame.html" target="_blank" rel="external">https://vitan.me/posts/GitGame.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/">Termux</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/GitGame.html&title=《Git 闯关游戏》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/GitGame.html&title=《Git 闯关游戏》 — Vitan's Blog&source=Git闯关游戏" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/GitGame.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 闯关游戏》 — Vitan's Blog&url=https://vitan.me/posts/GitGame.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/GitGame.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/UbuntuJava.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ubuntu 安装并配置 Java 环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/mobile.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用手机更新文章</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/GitGame.html">https://vitan.me/posts/GitGame.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/Git/">Git</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Termux/">Termux</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/UbuntuJava.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Ubuntu 安装并配置 Java 环境</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/mobile.html">
-                <span class="level-item">使用手机更新文章</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#安装">
-            <span class="has-mr-6">1</span>
-            <span>安装</span>
-            </a></li><li>
-            <a class="is-flex" href="#基本命令">
-            <span class="has-mr-6">2</span>
-            <span>基本命令</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#第一关（Init）">
-            <span class="has-mr-6">2.1</span>
-            <span>第一关（Init）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二关（Config）">
-            <span class="has-mr-6">2.2</span>
-            <span>第二关（Config）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三关-（Add）">
-            <span class="has-mr-6">2.3</span>
-            <span>第三关 （Add）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四关-（Commit）">
-            <span class="has-mr-6">2.4</span>
-            <span>第四关 （Commit）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五关（Clone">
-            <span class="has-mr-6">2.5</span>
-            <span>第五关（Clone)</span>
-            </a></li><li>
-            <a class="is-flex" href="#第六关（Clone-to-folder）">
-            <span class="has-mr-6">2.6</span>
-            <span>第六关（Clone to folder）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第七关（Ignore">
-            <span class="has-mr-6">2.7</span>
-            <span>第七关（Ignore)</span>
-            </a></li><li>
-            <a class="is-flex" href="#第八关（Include">
-            <span class="has-mr-6">2.8</span>
-            <span>第八关（Include</span>
-            </a></li><li>
-            <a class="is-flex" href="#第九关（Status">
-            <span class="has-mr-6">2.9</span>
-            <span>第九关（Status)</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十关（Number-of-files-committed）">
-            <span class="has-mr-6">2.10</span>
-            <span>第十关（Number of files committed）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十一关（rm）">
-            <span class="has-mr-6">2.11</span>
-            <span>第十一关（rm）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十二关（rm-cached）">
-            <span class="has-mr-6">2.12</span>
-            <span>第十二关（rm cached）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十三关（stash）">
-            <span class="has-mr-6">2.13</span>
-            <span>第十三关（stash）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十四关（Rename">
-            <span class="has-mr-6">2.14</span>
-            <span>第十四关（Rename)</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十五关（Restructure）">
-            <span class="has-mr-6">2.15</span>
-            <span>第十五关（Restructure）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十六关（Log）">
-            <span class="has-mr-6">2.16</span>
-            <span>第十六关（Log）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十七关（Tag）">
-            <span class="has-mr-6">2.17</span>
-            <span>第十七关（Tag）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十八关（Push-tags）">
-            <span class="has-mr-6">2.18</span>
-            <span>第十八关（Push tags）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第十九关（Commit-amend）">
-            <span class="has-mr-6">2.19</span>
-            <span>第十九关（Commit amend）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十关（Commit-in-feature）">
-            <span class="has-mr-6">2.20</span>
-            <span>第二十关（Commit in feature）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十一关（Reset）">
-            <span class="has-mr-6">2.21</span>
-            <span>第二十一关（Reset）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十二关（Reset-soft）">
-            <span class="has-mr-6">2.22</span>
-            <span>第二十二关（Reset soft）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十三关（Checkout-file）">
-            <span class="has-mr-6">2.23</span>
-            <span>第二十三关（Checkout file）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十四关（Remote）">
-            <span class="has-mr-6">2.24</span>
-            <span>第二十四关（Remote）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十五关（remote-url）">
-            <span class="has-mr-6">2.25</span>
-            <span>第二十五关（remote url）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十六关（pull）">
-            <span class="has-mr-6">2.26</span>
-            <span>第二十六关（pull）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十七关（Remote-add）">
-            <span class="has-mr-6">2.27</span>
-            <span>第二十七关（Remote add）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十八关（Push）">
-            <span class="has-mr-6">2.28</span>
-            <span>第二十八关（Push）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第二十九关（Diff）">
-            <span class="has-mr-6">2.29</span>
-            <span>第二十九关（Diff）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十关（Blame）">
-            <span class="has-mr-6">2.30</span>
-            <span>第三十关（Blame）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十一关（Branch）">
-            <span class="has-mr-6">2.31</span>
-            <span>第三十一关（Branch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十二关（Checkout）">
-            <span class="has-mr-6">2.32</span>
-            <span>第三十二关（Checkout）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十三关（Checkout-tag）">
-            <span class="has-mr-6">2.33</span>
-            <span>第三十三关（Checkout tag）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十四关（Checkout-tag-over-branch）">
-            <span class="has-mr-6">2.34</span>
-            <span>第三十四关（Checkout tag over branch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十五关（branch-at）">
-            <span class="has-mr-6">2.35</span>
-            <span>第三十五关（branch at）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十六关（delete-branch）">
-            <span class="has-mr-6">2.36</span>
-            <span>第三十六关（delete branch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十七关（Push-branch）">
-            <span class="has-mr-6">2.37</span>
-            <span>第三十七关（Push branch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十八关（merge）">
-            <span class="has-mr-6">2.38</span>
-            <span>第三十八关（merge）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第三十九关（fetch）">
-            <span class="has-mr-6">2.39</span>
-            <span>第三十九关（fetch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十关（rebase）">
-            <span class="has-mr-6">2.40</span>
-            <span>第四十关（rebase）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十一关（rebase-onto）">
-            <span class="has-mr-6">2.41</span>
-            <span>第四十一关（rebase_onto）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十二关（repack）">
-            <span class="has-mr-6">2.42</span>
-            <span>第四十二关（repack）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十三关-（cherry-pick">
-            <span class="has-mr-6">2.43</span>
-            <span>第四十三关 （cherry-pick</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十四关（grep）">
-            <span class="has-mr-6">2.44</span>
-            <span>第四十四关（grep）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十五关（rename-commit）">
-            <span class="has-mr-6">2.45</span>
-            <span>第四十五关（rename commit）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十六关（squash）">
-            <span class="has-mr-6">2.46</span>
-            <span>第四十六关（squash）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十七关（merge-squash）">
-            <span class="has-mr-6">2.47</span>
-            <span>第四十七关（merge squash）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十八关-reorder">
-            <span class="has-mr-6">2.48</span>
-            <span>第四十八关(reorder()</span>
-            </a></li><li>
-            <a class="is-flex" href="#第四十九关-bisect">
-            <span class="has-mr-6">2.49</span>
-            <span>第四十九关(bisect)</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#第五十关（Stage-lines）">
-            <span class="has-mr-6">3</span>
-            <span>第五十关（Stage lines）</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#第五十一关（Find-old-branch）">
-            <span class="has-mr-6">3.1</span>
-            <span>第五十一关（Find old branch）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五十二关（Revert）">
-            <span class="has-mr-6">3.2</span>
-            <span>第五十二关（Revert）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五十三关（Restore）">
-            <span class="has-mr-6">3.3</span>
-            <span>第五十三关（Restore）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五十四关（Conflict）">
-            <span class="has-mr-6">3.4</span>
-            <span>第五十四关（Conflict）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五十五关（Submodule）">
-            <span class="has-mr-6">3.5</span>
-            <span>第五十五关（Submodule）</span>
-            </a></li><li>
-            <a class="is-flex" href="#第五十六关（Contribute）">
-            <span class="has-mr-6">3.6</span>
-            <span>第五十六关（Contribute）</span>
-            </a></li></ul></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="Git 闯关游戏" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/GitGame.html&title=《Git 闯关游戏》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/GitGame.html&title=《Git 闯关游戏》 — Vitan's Blog&source=Git闯关游戏" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/GitGame.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 闯关游戏》 — Vitan's Blog&url=https://vitan.me/posts/GitGame.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/GitGame.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwklEQVR42u3ay47CMAwFUP7/pxmJ9VDujUtapJNVJfo4YWHZjh+PeD1f6/j63VNrz44WLi7umPs8XMmH23veXR8bcHFx93Pz4JXc2W44MeDi4t6TuxbIEiIuLu6vc5PUJK9ccHFx78xNip8kxXkXwta2jYuLexX3rIbp5PqC/i4uLu7SqcSkkZpziy/i4uJu4eZFTvJru4G1AxtcXNyruEkZ07ZFjg9c878DFxf329wkbCWt1bxdMtokLi7uRu4oCpatk1EahIuLu507T3cmoxtRgMPFxd3CzV/dbqwd7xjVari4uKdy82OPPBGZjHl9+BUXF/cG3DYMTUJhNJ6Fi4u7hbuWrOQJTTuWsVj84OLinsqdjErkm1kLZI+1GImLizvmtkekbbqTb+MEOi4u7kncedqRPzsJnVGthouLexI3L10mxyRriUskwcXF/QL3Wa52nGKS4vzzZlxc3C3cec+hSEeClKhtxODi4n6P2wavdgwrOY4tUiJcXNyN3LaAaQ9TJ8UPLi7ur3DXEpd2pOPDtAguLu4NuG1b5KzDFVxc3Ku4bfHTNliT9krUTsXFxd3CnZQiSVA7Bm3q7+Li4qbcP4ASvlXtEimFAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>

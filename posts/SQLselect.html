@@ -1,199 +1,217 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>SQL 检索练习题 - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="SQL 检索练习题" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/SQLselect.html">
+    
+    
+    <title>SQL 检索练习题 | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SQL">
+    <meta name="description" content="检索，存储过程，触发器相关练习。">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL 检索练习题">
+<meta property="og:url" content="https://vitan.me/posts/SQLselect.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="检索，存储过程，触发器相关练习。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL 检索练习题">
+<meta name="twitter:description" content="检索，存储过程，触发器相关练习。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="SQL 检索练习题" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">SQL 检索练习题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/SQL.png" alt="SQL 检索练习题">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>SQL 检索练习题
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Database/">Database</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    14 分钟 读完 (约 2036 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2018-06-22T04:45:23.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-06-22</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.189Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">SQL 检索练习题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-22T04:45:23.000Z" itemprop="datePublished" class="page-time">
+  2018-06-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Database/">Database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#检索"><span class="post-toc-number">1.</span> <span class="post-toc-text">检索</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储过程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建、修改、删除触发器。"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建、修改、删除触发器。</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-SQLselect"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">SQL 检索练习题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-22 12:45:23" datetime="2018-06-22T04:45:23.000Z"  itemprop="datePublished">2018-06-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Database/">Database</a></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>检索，存储过程，触发器相关练习。</p>
 <a id="more"></a>
 
@@ -424,512 +442,469 @@
 </tbody></table>
 <h1 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h1><ol>
 <li><p>检索在北京的供应商的名称。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 供应商名 <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 地址=<span class="hljs-string">'北京'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索发给供应商S6的订购单号。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 订购单号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S6'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出职工E6发给供应商S6的订购单信息。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号=<span class="hljs-string">'E6'</span><span class="hljs-keyword">and</span> 供应商号=<span class="hljs-string">'S6'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E6'</span><span class="keyword">and</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出向供应商S3发过订购单的职工的职工号和仓库号。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> zg.职工号,仓库号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">join</span> zg <span class="hljs-keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"> <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S3'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> zg.职工号,仓库号 <span class="keyword">from</span> dg <span class="keyword">join</span> zg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"> <span class="keyword">where</span> 供应商号=<span class="string">'S3'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出目前与S3供应商没有联系的职工信息。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S3'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S3'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出目前没有任何订购单的供应商信息</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 供应商号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span></span><br><span class="line"> (<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> 供应商号 <span class="hljs-keyword">from</span> dg)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line"> (<span class="keyword">select</span> <span class="keyword">distinct</span> 供应商号 <span class="keyword">from</span> dg)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> gys <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> </span><br><span class="line">( <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> dg <span class="hljs-keyword">WHERE</span> 供应商号=gys.供应商号 )</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> gys <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> </span><br><span class="line">( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> dg <span class="keyword">WHERE</span> 供应商号=gys.供应商号 )</span><br></pre></td></tr></table></figure>
 
 <ol start="7">
 <li><p>检索出和职工E1、E3都有联系的北京的供应商的信息。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 地址=<span class="hljs-string">'北京'</span> </span><br><span class="line"><span class="hljs-keyword">and</span> 供应商号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号=<span class="hljs-string">'E1'</span>)</span><br><span class="line"><span class="hljs-keyword">and</span> 供应商号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号=<span class="hljs-string">'E3'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span> </span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E1'</span>)</span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E3'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出目前和华通电子公司有业务联系的每个职工的工资。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 职工号,工资 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 供应商名=<span class="hljs-string">'华通电子公司'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号,工资 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商名=<span class="string">'华通电子公司'</span>))</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出与工资在1220元以下的职工没有联系的供应商名称。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 供应商名 <span class="hljs-keyword">from</span> gys </span><br><span class="line"><span class="hljs-keyword">where</span> 供应商号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> dg </span><br><span class="line"><span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 工资&lt;<span class="hljs-number">1220</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys </span><br><span class="line"><span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg </span><br><span class="line"><span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&lt;<span class="number">1220</span>))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 供应商名 <span class="hljs-keyword">from</span> gys </span><br><span class="line"><span class="hljs-keyword">where</span> 供应商号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> </span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">join</span> zg <span class="hljs-keyword">on</span> dg.职工号=zg.职工号</span><br><span class="line"><span class="hljs-keyword">where</span> 工资&gt;<span class="hljs-number">2250</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys </span><br><span class="line"><span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">join</span> zg <span class="keyword">on</span> dg.职工号=zg.职工号</span><br><span class="line"><span class="keyword">where</span> 工资&gt;<span class="number">2250</span>)</span><br></pre></td></tr></table></figure>
 
 <ol start="10">
 <li><p>检索出向S4供应商发出订购单的仓库所在的城市。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 城市 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S4'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 城市 <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>))</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出在上海工作并且向S6供应商发出了订购单的职工号。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 城市=<span class="hljs-string">'上海'</span> <span class="hljs-keyword">and</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S6'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 城市=<span class="string">'上海'</span> <span class="keyword">and</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span>))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> dg.职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">join</span> ck <span class="hljs-keyword">on</span> zg.仓库号=ck.仓库号</span><br><span class="line"><span class="hljs-keyword">join</span> dg <span class="hljs-keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="hljs-keyword">where</span> 城市=<span class="hljs-string">'上海'</span> <span class="hljs-keyword">and</span> 供应商号=<span class="hljs-string">'S6'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dg.职工号 <span class="keyword">from</span> zg <span class="keyword">join</span> ck <span class="keyword">on</span> zg.仓库号=ck.仓库号</span><br><span class="line"><span class="keyword">join</span> dg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'上海'</span> <span class="keyword">and</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure>
 
 <ol start="12">
 <li><p>检索出在广州工作并且只向S6供应商发出了订购单的职工号。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 城市=<span class="hljs-string">'广州'</span> </span><br><span class="line"><span class="hljs-keyword">and</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S6'</span>) </span><br><span class="line"><span class="hljs-keyword">and</span> 职工号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">SELECT</span> 职工号 <span class="hljs-keyword">FROM</span> dg <span class="hljs-keyword">WHERE</span> 供应商号!=<span class="hljs-string">'S6'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 城市=<span class="string">'广州'</span> </span><br><span class="line"><span class="keyword">and</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span>) </span><br><span class="line"><span class="keyword">and</span> 职工号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">SELECT</span> 职工号 <span class="keyword">FROM</span> dg <span class="keyword">WHERE</span> 供应商号!=<span class="string">'S6'</span>))</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出由工资多于1230元的职工向北京的供应商发出的订购单号。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 订购单号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 工资&gt;<span class="hljs-number">1230</span>) <span class="hljs-keyword">and</span>  供应商号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 地址=<span class="hljs-string">'北京'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">1230</span>) <span class="keyword">and</span>  供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span>)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 订购单号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 工资&gt;<span class="hljs-number">2000</span>)</span><br><span class="line"><span class="hljs-keyword">and</span> 供应商号 <span class="hljs-keyword">in</span> (</span><br><span class="line"><span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 地址=<span class="hljs-string">'北京'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">2000</span>)</span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span>)</span><br></pre></td></tr></table></figure>
 
 <ol start="14">
 <li><p>检索出仓库的个数</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(仓库号) <span class="hljs-keyword">from</span> ck</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号) <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出有最大面积的仓库信息。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> ck.面积=(</span><br><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(面积) <span class="hljs-keyword">from</span> ck )</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> ck.面积=(</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(面积) <span class="keyword">from</span> ck )</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出所有仓库的平均面积。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(面积) 平均面积  <span class="hljs-keyword">from</span> ck</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) 平均面积  <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出向S4供应商发出订购单的那些仓库的平均面积。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(面积) <span class="hljs-keyword">as</span> 平均面积 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S4'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) <span class="keyword">as</span> 平均面积 <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">avg</span>(面积) <span class="hljs-keyword">as</span> 平均面积 <span class="hljs-keyword">from</span> ck</span><br><span class="line"><span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span> </span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">join</span> dg <span class="hljs-keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="hljs-keyword">where</span> 供应商号=<span class="hljs-string">'S4'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) <span class="keyword">as</span> 平均面积 <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 仓库号 <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">join</span> dg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>)</span><br></pre></td></tr></table></figure>
 
 <ol start="18">
 <li><p>检索出每个城市的供应商个数。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 地址,<span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> gys</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> 地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 地址,<span class="keyword">count</span>(*) <span class="keyword">from</span> gys</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 地址</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出每个仓库中工资多于1220元的职工个数。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> 仓库号,<span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 工资&gt;<span class="hljs-number">1220</span></span><br><span class="line"> <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(*) <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">1220</span></span><br><span class="line"> <span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检索出和面积最小的仓库有联系的供应商的个数。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(供应商号) <span class="hljs-keyword">from</span> gys <span class="hljs-keyword">where</span> 供应商号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 供应商号 <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 面积=</span><br><span class="line">(<span class="hljs-keyword">select</span> <span class="hljs-keyword">min</span>(面积) <span class="hljs-keyword">from</span> ck))))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(供应商号) <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 面积=</span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">min</span>(面积) <span class="keyword">from</span> ck))))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(供应商号) <span class="hljs-keyword">from</span> dg <span class="hljs-keyword">where</span> 职工号 <span class="hljs-keyword">in</span> </span><br><span class="line">(<span class="hljs-keyword">select</span> 职工号 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span></span><br><span class="line">(<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 面积=(<span class="hljs-keyword">select</span> <span class="hljs-keyword">min</span>(面积) <span class="hljs-keyword">from</span> ck)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(供应商号) <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 面积=(<span class="keyword">select</span> <span class="keyword">min</span>(面积) <span class="keyword">from</span> ck)))</span><br></pre></td></tr></table></figure>
 
 <ol start="21">
-<li>检索出工资低于本仓库平均工资的职工信息。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> 职工 <span class="hljs-keyword">out</span> <span class="hljs-keyword">WHERE</span> 工资&lt; </span><br><span class="line">(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">AVG</span>(工资) <span class="hljs-keyword">FROM</span> 职工 inne </span><br><span class="line"><span class="hljs-keyword">WHERE</span> 仓库号=out.仓库号)</span><br></pre></td></tr></table></figure>
+<li>检索出工资低于本仓库平均工资的职工信息。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> 职工 <span class="keyword">out</span> <span class="keyword">WHERE</span> 工资&lt; </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(工资) <span class="keyword">FROM</span> 职工 inne </span><br><span class="line"><span class="keyword">WHERE</span> 仓库号=out.仓库号)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><ol>
-<li>创建一个存储过程P1，输入某个仓库号，查询对应仓库的<br>信息。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> proc P1</span><br><span class="line">@ckh <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">225</span>) </span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> ck <span class="hljs-keyword">where</span> 仓库号=@ckh</span><br></pre></td></tr></table></figure>
+<li>创建一个存储过程P1，输入某个仓库号，查询对应仓库的<br>信息。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc P1</span><br><span class="line">@ckh <span class="keyword">nvarchar</span>(<span class="number">225</span>) </span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号=@ckh</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P1 'WH8'</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P1 'WH8'</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>创建一个存储过程P2，输入某个仓库号，输出对应仓库的的职工人数。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> proc P2</span><br><span class="line">@ckh <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">20</span>)</span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(职工号) 职工人数 <span class="hljs-keyword">from</span> zg <span class="hljs-keyword">where</span> 仓库号 = @ckh</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure>
+<li>创建一个存储过程P2，输入某个仓库号，输出对应仓库的的职工人数。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc P2</span><br><span class="line">@ckh <span class="keyword">nvarchar</span>(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(职工号) 职工人数 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 = @ckh</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P2 'WH1'</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P2 'WH1'</span><br></pre></td></tr></table></figure>
 
 <hr>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">TRIGGER</span> tri_salary</span><br><span class="line"><span class="hljs-keyword">ON</span> zhg <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">UPDATE</span></span><br><span class="line"><span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INSERTED <span class="hljs-keyword">JOIN</span></span><br><span class="line">DELETED <span class="hljs-keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="hljs-keyword">IF</span> <span class="hljs-keyword">UPDATE</span>(工资)</span><br><span class="line"><span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INSERTED <span class="hljs-keyword">JOIN</span></span><br><span class="line">DELETED <span class="hljs-keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="hljs-keyword">WHERE</span> INSERTED.工资&amp;lt;DELETED.工资)</span><br><span class="line"><span class="hljs-keyword">begin</span></span><br><span class="line">print(&amp;<span class="hljs-comment">#39;新工资值低于原工资，拒绝修改&amp;#39;)</span></span><br><span class="line"><span class="hljs-keyword">ROLLBACK</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">TRIGGER</span> tri_salary</span><br><span class="line"><span class="keyword">ON</span> zhg <span class="keyword">FOR</span> <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED <span class="keyword">JOIN</span></span><br><span class="line">DELETED <span class="keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">UPDATE</span>(工资)</span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED <span class="keyword">JOIN</span></span><br><span class="line">DELETED <span class="keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="keyword">WHERE</span> INSERTED.工资&amp;lt;DELETED.工资)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">print(&amp;<span class="comment">#39;新工资值低于原工资，拒绝修改&amp;#39;)</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">PROCEDURE</span> countzhigong</span><br><span class="line">@ck <span class="hljs-built_in">char</span>(<span class="hljs-number">20</span>), @renshu <span class="hljs-built_in">int</span> <span class="hljs-keyword">output</span></span><br><span class="line"><span class="hljs-keyword">AS</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> @renshu = <span class="hljs-keyword">count</span>(职工号)</span><br><span class="line"><span class="hljs-keyword">FROM</span> ck <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> zhg <span class="hljs-keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"><span class="hljs-keyword">WHERE</span> ck.仓库号=@ck</span><br><span class="line"><span class="hljs-keyword">Declare</span> @re <span class="hljs-built_in">int</span></span><br><span class="line"><span class="hljs-keyword">Execute</span> countzhigong &amp;<span class="hljs-comment">#39;wh2&amp;#39;, @re output</span></span><br><span class="line">Print @re</span><br><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> ck <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> zhg <span class="hljs-keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> zhg</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> countzhigong</span><br><span class="line">@ck <span class="built_in">char</span>(<span class="number">20</span>), @renshu <span class="built_in">int</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> @renshu = <span class="keyword">count</span>(职工号)</span><br><span class="line"><span class="keyword">FROM</span> ck <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">JOIN</span> zhg <span class="keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"><span class="keyword">WHERE</span> ck.仓库号=@ck</span><br><span class="line"><span class="keyword">Declare</span> @re <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Execute</span> countzhigong &amp;<span class="comment">#39;wh2&amp;#39;, @re output</span></span><br><span class="line">Print @re</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> ck <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">JOIN</span> zhg <span class="keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> zhg</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h1 id="创建、修改、删除触发器。"><a href="#创建、修改、删除触发器。" class="headerlink" title="创建、修改、删除触发器。"></a>创建、修改、删除触发器。</h1><ol>
-<li>创建一个触发器zhigong1，在对职工表的工资属性修改时触发：每修改一个职工的工资，就检查新工资是否比原工资低，若是低，则恢复原工资而不做修改。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> zhigong1</span><br><span class="line"><span class="hljs-keyword">on</span> zg <span class="hljs-keyword">for</span> <span class="hljs-keyword">insert</span>,<span class="hljs-keyword">update</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted <span class="hljs-keyword">join</span> deleted </span><br><span class="line"><span class="hljs-keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">update</span>(工资)</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> (<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted <span class="hljs-keyword">join</span> </span><br><span class="line">deleted <span class="hljs-keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="hljs-keyword">where</span> inserted.工资&lt;deleted.工资)</span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+<li>创建一个触发器zhigong1，在对职工表的工资属性修改时触发：每修改一个职工的工资，就检查新工资是否比原工资低，若是低，则恢复原工资而不做修改。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> zhigong1</span><br><span class="line"><span class="keyword">on</span> zg <span class="keyword">for</span> <span class="keyword">insert</span>,<span class="keyword">update</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> deleted </span><br><span class="line"><span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">update</span>(工资)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> </span><br><span class="line">deleted <span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">where</span> inserted.工资&lt;deleted.工资)</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">update</span> zg <span class="hljs-keyword">set</span> 工资=<span class="hljs-string">'3000'</span> <span class="hljs-keyword">where</span> 职工号=<span class="hljs-string">'E9'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> zg <span class="keyword">set</span> 工资=<span class="string">'3000'</span> <span class="keyword">where</span> 职工号=<span class="string">'E9'</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>创建一个触发器zhigong2，在插入新的职工记录时触发：检查新职工记录的仓库号是否在仓库表的仓库号中存在，如果不存在就撤消插入操作。<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">trigger</span> zhigong2</span><br><span class="line"><span class="hljs-keyword">on</span> zg <span class="hljs-keyword">for</span> <span class="hljs-keyword">insert</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> inserted <span class="hljs-keyword">join</span> deleted <span class="hljs-keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> ( <span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> inserted <span class="hljs-keyword">where</span> 仓库号 <span class="hljs-keyword">in</span> (<span class="hljs-keyword">select</span> 仓库号 <span class="hljs-keyword">from</span> ck ))</span><br><span class="line"><span class="hljs-keyword">rollback</span></span><br></pre></td></tr></table></figure>
+<li>创建一个触发器zhigong2，在插入新的职工记录时触发：检查新职工记录的仓库号是否在仓库表的仓库号中存在，如果不存在就撤消插入操作。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">trigger</span> zhigong2</span><br><span class="line"><span class="keyword">on</span> zg <span class="keyword">for</span> <span class="keyword">insert</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> deleted <span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> ( <span class="keyword">select</span> 仓库号 <span class="keyword">from</span> inserted <span class="keyword">where</span> 仓库号 <span class="keyword">in</span> (<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck ))</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> zg <span class="hljs-keyword">values</span>(<span class="hljs-string">'E33'</span>,<span class="hljs-string">'WH2'</span>,<span class="hljs-string">'3000'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> zg <span class="keyword">values</span>(<span class="string">'E33'</span>,<span class="string">'WH2'</span>,<span class="string">'3000'</span>)</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li><p>删除以上两个触发器。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">trigger</span> zhigong1,zhigong2</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">trigger</span> zhigong1,zhigong2</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建一个触发器dinggou1，在对订购表进行插入操作时，输出该职工的所经手的订购单数目。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">create</span>  <span class="hljs-keyword">trigger</span>  dinggou1</span><br><span class="line"><span class="hljs-keyword">on</span> dg <span class="hljs-keyword">for</span> <span class="hljs-keyword">insert</span></span><br><span class="line"><span class="hljs-keyword">as</span></span><br><span class="line"><span class="hljs-keyword">select</span> dg.职工号,<span class="hljs-keyword">count</span>(dg.订购单号) <span class="hljs-keyword">as</span> 订购单数目</span><br><span class="line"><span class="hljs-keyword">from</span> dg <span class="hljs-keyword">join</span> inserted <span class="hljs-keyword">on</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="hljs-keyword">where</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> dg.职工号</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span>  <span class="keyword">trigger</span>  dinggou1</span><br><span class="line"><span class="keyword">on</span> dg <span class="keyword">for</span> <span class="keyword">insert</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> dg.职工号,<span class="keyword">count</span>(dg.订购单号) <span class="keyword">as</span> 订购单数目</span><br><span class="line"><span class="keyword">from</span> dg <span class="keyword">join</span> inserted <span class="keyword">on</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="keyword">where</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dg.职工号</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> dg <span class="hljs-keyword">values</span></span><br><span class="line">(<span class="hljs-string">'E1'</span>,<span class="hljs-string">'S6'</span>,<span class="hljs-string">'OR98'</span>,<span class="hljs-string">'2018-01-21 00:00:00.000'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dg <span class="keyword">values</span></span><br><span class="line">(<span class="string">'E1'</span>,<span class="string">'S6'</span>,<span class="string">'OR98'</span>,<span class="string">'2018-01-21 00:00:00.000'</span>)</span><br></pre></td></tr></table></figure>
 
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.189Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/SQLselect.html" target="_blank" rel="external">https://vitan.me/posts/SQLselect.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/SQLselect.html&title=《SQL 检索练习题》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/SQLselect.html&title=《SQL 检索练习题》 — Vitan's Blog&source=检索，存储过程，触发器相关练习。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/SQLselect.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL 检索练习题》 — Vitan's Blog&url=https://vitan.me/posts/SQLselect.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/SQLselect.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/Termux.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Termux</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/Vim-Vundle-Markdown.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vim 插件&amp;主题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/SQLselect.html">https://vitan.me/posts/SQLselect.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Termux.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Termux</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Vim-Vundle-Markdown.html">
-                <span class="level-item">Vim 插件&amp;主题</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#检索">
-            <span class="has-mr-6">1</span>
-            <span>检索</span>
-            </a></li><li>
-            <a class="is-flex" href="#存储过程">
-            <span class="has-mr-6">2</span>
-            <span>存储过程</span>
-            </a></li><li>
-            <a class="is-flex" href="#创建、修改、删除触发器。">
-            <span class="has-mr-6">3</span>
-            <span>创建、修改、删除触发器。</span>
-            </a></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="SQL 检索练习题" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/SQLselect.html&title=《SQL 检索练习题》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/SQLselect.html&title=《SQL 检索练习题》 — Vitan's Blog&source=检索，存储过程，触发器相关练习。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/SQLselect.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL 检索练习题》 — Vitan's Blog&url=https://vitan.me/posts/SQLselect.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/SQLselect.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aQYrDMAwF0Nz/0hmY1UCn6Zcci1CeV6E0yksWwpJ8HPE6f9frL39/f71O/nPsWLi4uMvc83Jd/yehv3vtJP4/cXBxcQe51dC9CNWkhouL+3zuu+TSS3C4uLjfxK0WP/kmCRcX92ncXrikd1Etn26r1XBxcRe41YbpjuuN/V1cXNwi91xeK+2P8rNwcXFHuL32x13XzZEMLi7uZu4NI8/iS+ZHOqLviouLu5nbO1DVa15UPwQuLu4kd73/kLdH83ZqlNRwcXG3cVfeqZqA8pHqh4YILi7uZm419MoQNCmKosi4uLibuUlC6R2wyI95FdC4uLgj3HubI0m06nOjb4yLi7uBu1LMVFsedw1vcHFx93GT0NXtSG/TE22tcHFxR7i9B1+npHxQWh234OLiznB72448ISbHNQqfBhcXd4RbHahUK6re0CUayuLi4m7jnsWVj0urDZSoQMLFxR3h9tJK3tRItjLVESwuLu4MN09e1aTW2wB9eAouLu4gNz9Kld9VHpAkd+Hi4j6Sm7dNqwOV6C5cXNyHcfNSJ3/h6qENXFzcSW7viNVK4dRsp+Li4o5wew3TvLC5Bg31d3FxcVPuD6Vp02qMqiFPAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>

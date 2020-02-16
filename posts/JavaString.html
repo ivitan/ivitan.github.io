@@ -1,252 +1,270 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>Java 中 String 方法 - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="Java 中 String 方法" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/JavaString.html">
+    
+    
+    <title>Java 中 String 方法 | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="Java 中 Srting 常用方法。">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 中 String 方法">
+<meta property="og:url" content="https://vitan.me/posts/JavaString.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="Java 中 Srting 常用方法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.151Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 中 String 方法">
+<meta name="twitter:description" content="Java 中 Srting 常用方法。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="Java 中 String 方法" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java 中 String 方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/Java.png" alt="Java 中 String 方法">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>Java 中 String 方法
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Coding/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    23 分钟 读完 (约 3521 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2018-03-21T04:09:10.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-03-21</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.151Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java 中 String 方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-21T04:09:10.000Z" itemprop="datePublished" class="page-time">
+  2018-03-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/Java/">Java</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#length-字符串长度"><span class="post-toc-number">1.</span> <span class="post-toc-text">length()字符串长度</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#charAt-截取一个字符"><span class="post-toc-number">2.</span> <span class="post-toc-text">charAt()截取一个字符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#getChars-截取多个字符"><span class="post-toc-number">3.</span> <span class="post-toc-text">getChars()截取多个字符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#getBytes"><span class="post-toc-number">4.</span> <span class="post-toc-text">getBytes()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#toCharArray"><span class="post-toc-number">5.</span> <span class="post-toc-text">toCharArray()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#equals-和equalsIgnoreCase-比较两个字符串"><span class="post-toc-number">6.</span> <span class="post-toc-text">equals()和equalsIgnoreCase() 比较两个字符串</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#regionMatches-regionMatches"><span class="post-toc-number">7.</span> <span class="post-toc-text">regionMatches() regionMatches()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#startsWith-和endsWith"><span class="post-toc-number">8.</span> <span class="post-toc-text">startsWith()和endsWith()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#equals-和-equals"><span class="post-toc-number">9.</span> <span class="post-toc-text">equals()和==equals()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#compareTo-和compareToIgnoreCase-比较字符串"><span class="post-toc-number">10.</span> <span class="post-toc-text">compareTo()和compareToIgnoreCase()比较字符串</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#indexOf-和lastIndexOf"><span class="post-toc-number">11.</span> <span class="post-toc-text">indexOf()和lastIndexOf()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lastIndexOf"><span class="post-toc-number">12.</span> <span class="post-toc-text">lastIndexOf()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#substring"><span class="post-toc-number">13.</span> <span class="post-toc-text">substring()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#replace-替换"><span class="post-toc-number">14.</span> <span class="post-toc-text">replace()替换</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#trim-去掉起始和结尾的空格"><span class="post-toc-number">15.</span> <span class="post-toc-text">trim() 去掉起始和结尾的空格</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#valueOf-NaN"><span class="post-toc-number">16.</span> <span class="post-toc-text">valueOf()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#toLowerCase"><span class="post-toc-number">17.</span> <span class="post-toc-text">toLowerCase()</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaString"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java 中 String 方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-21 12:09:10" datetime="2018-03-21T04:09:10.000Z"  itemprop="datePublished">2018-03-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/Java/">Java</a></li></ul></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>Java 中 Srting 常用方法。</p>
 <a id="more"></a>
-<h1 id="length-字符串长度"><a href="#length-字符串长度" class="headerlink" title="length()字符串长度"></a><code>length()</code>字符串长度</h1><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"www"</span>);</span><br><span class="line">        String Str2 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"github"</span> );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"字符串 Str1 长度 :"</span>);</span><br><span class="line">        System.out.println(Str1.length());</span><br><span class="line">        System.out.print(<span class="hljs-string">"字符串 Str2 长度 :"</span>);</span><br><span class="line">        System.out.println(Str2.length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="length-字符串长度"><a href="#length-字符串长度" class="headerlink" title="length()字符串长度"></a><code>length()</code>字符串长度</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www"</span>);</span><br><span class="line">        String Str2 = <span class="keyword">new</span> String(<span class="string">"github"</span> );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"字符串 Str1 长度 :"</span>);</span><br><span class="line">        System.out.println(Str1.length());</span><br><span class="line">        System.out.print(<span class="string">"字符串 Str2 长度 :"</span>);</span><br><span class="line">        System.out.println(Str2.length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="charAt-截取一个字符"><a href="#charAt-截取一个字符" class="headerlink" title="charAt()截取一个字符"></a><code>charAt()</code>截取一个字符</h1><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="hljs-string">"www.qq.com"</span>;</span><br><span class="line">        <span class="hljs-keyword">char</span> result = s.charAt(<span class="hljs-number">8</span>);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="charAt-截取一个字符"><a href="#charAt-截取一个字符" class="headerlink" title="charAt()截取一个字符"></a><code>charAt()</code>截取一个字符</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"www.qq.com"</span>;</span><br><span class="line">        <span class="keyword">char</span> result = s.charAt(<span class="number">8</span>);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结果：c</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> ch:</span><br><span class="line">ch=<span class="hljs-string">"abc"</span>.charAt(<span class="hljs-number">1</span>); <span class="hljs-comment">//返回b</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch:</span><br><span class="line">ch=<span class="string">"abc"</span>.charAt(<span class="number">1</span>); <span class="comment">//返回b</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="getChars-截取多个字符"><a href="#getChars-截取多个字符" class="headerlink" title="getChars()截取多个字符"></a><code>getChars()</code>截取多个字符</h1><p>语法</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getChars</span><span class="hljs-params">(<span class="hljs-keyword">int</span> srcBegin, <span class="hljs-keyword">int</span> srcEnd, <span class="hljs-keyword">char</span>[] dst,  <span class="hljs-keyword">int</span> dstBegin)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span>[] dst,  <span class="keyword">int</span> dstBegin)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>参数:</p>
 <p>srcBegin – 字符串中要复制的第一个字符的索引。</p>
 <p>srcEnd – 字符串中要复制的最后一个字符之后的索引。</p>
 <p>dst – 目标数组。</p>
 <p>dstBegin – 目标数组中的起始偏移量。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"www.runoob.com"</span>);</span><br><span class="line">        <span class="hljs-keyword">char</span>[] Str2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">6</span>];</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            Str1.getChars(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>, Str2, <span class="hljs-number">0</span>);</span><br><span class="line">            System.out.print(<span class="hljs-string">"拷贝的字符串为："</span> );</span><br><span class="line">            System.out.println(Str2 );</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span>( Exception ex) &#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"触发异常..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line">        <span class="keyword">char</span>[] Str2 = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Str1.getChars(<span class="number">4</span>, <span class="number">10</span>, Str2, <span class="number">0</span>);</span><br><span class="line">            System.out.print(<span class="string">"拷贝的字符串为："</span> );</span><br><span class="line">            System.out.println(Str2 );</span><br><span class="line">        &#125; <span class="keyword">catch</span>( Exception ex) &#123;</span><br><span class="line">            System.out.println(<span class="string">"触发异常..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：拷贝的字符串为：runoob</p>
 <p>sourceStart指定了子串开始字符的下标，sourceEnd指定了子串结束后的下一个字符的下标。因此， 子串包含从sourceStart到sourceEnd-1的字符。接收字符的数组由target指定，target中开始复制子串的下标值是targetStart。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="hljs-string">"this is a demo of the getChars method."</span>;</span><br><span class="line">　　　　<span class="hljs-keyword">char</span> buf[]=<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">20</span>];</span><br><span class="line">　　　　s.getChars(<span class="hljs-number">10</span>,<span class="hljs-number">14</span>,buf,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">"this is a demo of the getChars method."</span>;</span><br><span class="line">　　　　<span class="keyword">char</span> buf[]=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">20</span>];</span><br><span class="line">　　　　s.getChars(<span class="number">10</span>,<span class="number">14</span>,buf,<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 
 <h1 id="getBytes"><a href="#getBytes" class="headerlink" title="getBytes()"></a><code>getBytes()</code></h1><p>替代getChars()的一种方法是将字符存储在字节数组中，该方法即getBytes()。<br>getBytes() 方法有两种形式：</p>
 <p>getBytes(String charsetName): 使用指定的字符集将字符串编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
 <p>getBytes(): 使用平台的默认字符集将字符串编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
 <p>语法</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public byte[] getBytes(String charsetName) throws UnsupportedEncodingException</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public byte[] getBytes(String charsetName) throws UnsupportedEncodingException</span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public byte[] getBytes()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public byte[] getBytes()</span><br></pre></td></tr></table></figure>
 
 <p>参数:<br>charsetName – 支持的字符集名称。</p>
 <p>返回值:返回 byte 数组。</p>
 <p>实例</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"runoob"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">byte</span>[] Str2 = Str1.getBytes();</span><br><span class="line">            System.out.println(<span class="hljs-string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="hljs-string">"UTF-8"</span> );</span><br><span class="line">            System.out.println(<span class="hljs-string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="hljs-string">"ISO-8859-1"</span> );</span><br><span class="line">            System.out.println(<span class="hljs-string">"返回值："</span> + Str2 );</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> ( UnsupportedEncodingException e)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"不支持的字符集"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">byte</span>[] Str2 = Str1.getBytes();</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="string">"UTF-8"</span> );</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="string">"ISO-8859-1"</span> );</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line">        &#125; <span class="keyword">catch</span> ( UnsupportedEncodingException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"不支持的字符集"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值：[B@7852e922</span><br><span class="line">返回值：[B@4e25154f</span><br><span class="line">返回值：[B@70dea4e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值：[B@7852e922</span><br><span class="line">返回值：[B@4e25154f</span><br><span class="line">返回值：[B@70dea4e</span><br></pre></td></tr></table></figure>
 
 <h1 id="toCharArray"><a href="#toCharArray" class="headerlink" title="toCharArray()"></a>toCharArray()</h1><p><code>public char[] toCharArray()</code></p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"vitan.xyzm"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toCharArray() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"vitan.xyzm"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toCharArray() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="equals-和equalsIgnoreCase-比较两个字符串"><a href="#equals-和equalsIgnoreCase-比较两个字符串" class="headerlink" title="equals()和equalsIgnoreCase() 比较两个字符串"></a><code>equals()</code>和<code>equalsIgnoreCase()</code> 比较两个字符串</h1><p>String.equals()对大小写敏感，而String.equalsIgnoreCase()忽略大小写.</p>
 <p>例如：</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"ABC"</span>.equals(<span class="hljs-string">"abc"</span>)<span class="hljs-comment">//是false</span></span><br><span class="line"><span class="hljs-string">"ABC"</span>.equalsIgnoreCase(<span class="hljs-string">"abc"</span>)<span class="hljs-comment">//为ture</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ABC"</span>.equals(<span class="string">"abc"</span>)<span class="comment">//是false</span></span><br><span class="line"><span class="string">"ABC"</span>.equalsIgnoreCase(<span class="string">"abc"</span>)<span class="comment">//为ture</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="regionMatches-regionMatches"><a href="#regionMatches-regionMatches" class="headerlink" title="regionMatches() regionMatches()"></a><code>regionMatches()</code> regionMatches()</h1><p>方法用于检测两个字符串在一个区域内是否相等。</p>
 <p>语法:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">regionMatches</span><span class="hljs-params">(<span class="hljs-keyword">int</span> toffset,String other, <span class="hljs-keyword">int</span> ooffset,<span class="hljs-keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> toffset,String other, <span class="keyword">int</span> ooffset,<span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>or</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">regionMatches</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> ignoreCase,<span class="hljs-keyword">int</span> toffset, String other,<span class="hljs-keyword">int</span> ooffset,<span class="hljs-keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase,<span class="keyword">int</span> toffset, String other,<span class="keyword">int</span> ooffset,<span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>参数：</p>
 <p>ignoreCase – 如果为 true，则比较字符时忽略大小写。</p>
@@ -255,18 +273,18 @@
 <p>ooffset – 字符串参数中子区域的起始偏移量。</p>
 <p>len – 要比较的字符数。</p>
 <p>用于比较一个字符串中特定区域与另一特定区域，它有一个重载的形式允许在比较中忽略大小写。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">regionMatches</span><span class="hljs-params">(<span class="hljs-keyword">int</span> startIndex,String str2,<span class="hljs-keyword">int</span> str2StartIndex,<span class="hljs-keyword">int</span> numChars)</span></span></span><br><span class="line"><span class="hljs-function">　　<span class="hljs-keyword">boolean</span> <span class="hljs-title">regionMatches</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> ignoreCase,<span class="hljs-keyword">int</span> startIndex,String str2,<span class="hljs-keyword">int</span> str2StartIndex,<span class="hljs-keyword">int</span> numChars)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> startIndex,String str2,<span class="keyword">int</span> str2StartIndex,<span class="keyword">int</span> numChars)</span></span></span><br><span class="line"><span class="function">　　<span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase,<span class="keyword">int</span> startIndex,String str2,<span class="keyword">int</span> str2StartIndex,<span class="keyword">int</span> numChars)</span></span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"www.runoob.com"</span>);</span><br><span class="line">        String Str2 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"runoob"</span>);</span><br><span class="line">        String Str3 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"RUNOOB"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="hljs-number">4</span>, Str2, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="hljs-number">4</span>, Str3, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="hljs-keyword">true</span>, <span class="hljs-number">4</span>, Str3, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line">        String Str2 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String Str3 = <span class="keyword">new</span> String(<span class="string">"RUNOOB"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="number">4</span>, Str2, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="number">4</span>, Str3, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="keyword">true</span>, <span class="number">4</span>, Str3, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值 :true</span><br><span class="line">返回值 :false</span><br><span class="line">返回值 :true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值 :true</span><br><span class="line">返回值 :false</span><br><span class="line">返回值 :true</span><br></pre></td></tr></table></figure>
 
 <h1 id="startsWith-和endsWith"><a href="#startsWith-和endsWith" class="headerlink" title="startsWith()和endsWith()"></a><code>startsWith()</code>和<code>endsWith()</code></h1><p>startsWith()方法决定是否以特定字符串开始，endWith()方法决定是否以特定字符串结束</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringDemo</span></span>&#123;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">      String s1=<span class="hljs-string">"this is my original string"</span>;</span><br><span class="line">      String sd=<span class="hljs-string">"original"</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span> (s1.startsWith(sd)) <span class="hljs-comment">//startsWith()方法判断字符串s1是否从字符串sd开始</span></span><br><span class="line">         s1=s1.substring(sd.length());</span><br><span class="line">      <span class="hljs-keyword">else</span></span><br><span class="line">         <span class="hljs-keyword">if</span>(s1.endsWith(sd)) <span class="hljs-comment">//endWith()方法判断字符串s1是否从字符串sd结尾</span></span><br><span class="line">             s1=s1.substring(<span class="hljs-number">0</span>,s1.length()-sd.length());</span><br><span class="line">         <span class="hljs-keyword">else</span></span><br><span class="line">         &#123;</span><br><span class="line">               <span class="hljs-keyword">int</span> index=s1.indexOf(sd); <span class="hljs-comment">//indexOf()搜索字符或子字符串首次出现，这里的index等于11</span></span><br><span class="line">               <span class="hljs-keyword">if</span>(index!=-<span class="hljs-number">1</span>)</span><br><span class="line">               &#123;</span><br><span class="line">                  String s2=s1.substring(<span class="hljs-number">0</span>,index); <span class="hljs-comment">//从字符串s1的首字符开始，取index个字符</span></span><br><span class="line">                  String s3=s1.substring(index+sd.length());<span class="hljs-comment">//取字符串s1的第19个字符后面的字符串</span></span><br><span class="line">                  s1=s2+s3;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="hljs-keyword">else</span></span><br><span class="line">               System.out.println(<span class="hljs-string">"string /"</span><span class="hljs-string">"+sd+"</span>/<span class="hljs-string">" not found"</span>);</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println(s1);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      String s1=<span class="string">"this is my original string"</span>;</span><br><span class="line">      String sd=<span class="string">"original"</span>;</span><br><span class="line">      <span class="keyword">if</span> (s1.startsWith(sd)) <span class="comment">//startsWith()方法判断字符串s1是否从字符串sd开始</span></span><br><span class="line">         s1=s1.substring(sd.length());</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">         <span class="keyword">if</span>(s1.endsWith(sd)) <span class="comment">//endWith()方法判断字符串s1是否从字符串sd结尾</span></span><br><span class="line">             s1=s1.substring(<span class="number">0</span>,s1.length()-sd.length());</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">         &#123;</span><br><span class="line">               <span class="keyword">int</span> index=s1.indexOf(sd); <span class="comment">//indexOf()搜索字符或子字符串首次出现，这里的index等于11</span></span><br><span class="line">               <span class="keyword">if</span>(index!=-<span class="number">1</span>)</span><br><span class="line">               &#123;</span><br><span class="line">                  String s2=s1.substring(<span class="number">0</span>,index); <span class="comment">//从字符串s1的首字符开始，取index个字符</span></span><br><span class="line">                  String s3=s1.substring(index+sd.length());<span class="comment">//取字符串s1的第19个字符后面的字符串</span></span><br><span class="line">                  s1=s2+s3;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               System.out.println(<span class="string">"string /"</span><span class="string">"+sd+"</span>/<span class="string">" not found"</span>);</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println(s1);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="equals-和-equals"><a href="#equals-和-equals" class="headerlink" title="equals()和==equals()"></a><code>equals()</code>和<code>==equals()</code></h1><p>方法比较字符串对象中的字符，==运算符比较两个对象是否引用同一实例。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1=<span class="hljs-string">"Hello"</span>;</span><br><span class="line">　　　　String s2=<span class="hljs-keyword">new</span> String(s1);</span><br><span class="line">　　　　s1.eauals(s2);    <span class="hljs-comment">//true</span></span><br><span class="line">　　　　s1==s2;          <span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1=<span class="string">"Hello"</span>;</span><br><span class="line">　　　　String s2=<span class="keyword">new</span> String(s1);</span><br><span class="line">　　　　s1.eauals(s2);    <span class="comment">//true</span></span><br><span class="line">　　　　s1==s2;          <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="compareTo-和compareToIgnoreCase-比较字符串"><a href="#compareTo-和compareToIgnoreCase-比较字符串" class="headerlink" title="compareTo()和compareToIgnoreCase()比较字符串"></a><code>compareTo()</code>和<code>compareToIgnoreCase()</code>比较字符串</h1><p>compareTo()</p>
 <p>字符串与对象进行比较。</p>
@@ -277,10 +295,10 @@
 <p>如果此字符串小于字符串参数，则返回一个小于 0 的值；</p>
 <p>如果此字符串大于字符串参数，则返回一个大于 0 的值。</p>
 <p>实例:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="hljs-string">"Strings"</span>;</span><br><span class="line">        String str2 = <span class="hljs-string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="hljs-string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> result = str1.compareTo( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareTo( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareTo( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str2 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> result = str1.compareTo( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareTo( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareTo( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">-3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">-3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 
 <p><code>compareToIgnoreCase()</code> 方法用于按字典顺序比较两个字符串，不考虑大小写。</p>
 <p>参数:</p>
@@ -289,7 +307,7 @@
 <p>如果参数字符串等于此字符串，则返回值 0；</p>
 <p>如果此字符串小于字符串参数，则返回一个小于 0 的值；</p>
 <p>如果此字符串大于字符串参数，则返回一个大于 0 的值。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="hljs-string">"STRINGS"</span>;</span><br><span class="line">        String str2 = <span class="hljs-string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="hljs-string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> result = str1.compareToIgnoreCase( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareToIgnoreCase( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareToIgnoreCase( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"STRINGS"</span>;</span><br><span class="line">        String str2 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> result = str1.compareToIgnoreCase( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareToIgnoreCase( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareToIgnoreCase( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="indexOf-和lastIndexOf"><a href="#indexOf-和lastIndexOf" class="headerlink" title="indexOf()和lastIndexOf()"></a><code>indexOf()</code>和<code>lastIndexOf()</code></h1><p>indexOf() 查找字符或者子串第一次出现的地方。</p>
 <p>indexOf() 方法有以下四种形式：</p>
@@ -298,25 +316,25 @@
 <p>int indexOf(String str): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
 <p>int indexOf(String str, int fromIndex): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1</p>
 <p>语法:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ch )</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch )</span></span></span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ch, <span class="hljs-keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch, <span class="keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(String str)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(String str, <span class="hljs-keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str, <span class="keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>参数:<br>ch – 字符。fromIndex – 开始搜索的索引位置。str – 要搜索的子字符串。</p>
 <p>返回值:</p>
 <p>指定子字符串在字符串中第一次出现处的索引，从指定的索引开始。</p>
 <p>实例:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="hljs-string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"从第14个位置查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="hljs-string">'o'</span>, <span class="hljs-number">14</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"子字符串 SubStr1 第一次出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1, <span class="hljs-number">15</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"子字符串 SubStr2 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="keyword">new</span> String(<span class="string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="string">"从第14个位置查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="string">'o'</span>, <span class="number">14</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr1 第一次出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="string">"从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1, <span class="number">15</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr2 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 第一次出现的位置 :12</span><br><span class="line">从第14个位置查找字符 o 第一次出现的位置 :17</span><br><span class="line">子字符串 SubStr1 第一次出现的位置:9</span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :-1</span><br><span class="line">子字符串 SubStr2 第一次出现的位置 :16。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 第一次出现的位置 :12</span><br><span class="line">从第14个位置查找字符 o 第一次出现的位置 :17</span><br><span class="line">子字符串 SubStr1 第一次出现的位置:9</span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :-1</span><br><span class="line">子字符串 SubStr2 第一次出现的位置 :16。</span><br></pre></td></tr></table></figure>
 
 <h1 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a><code>lastIndexOf()</code></h1><p>查找字符或者子串是后一次出现的地方。</p>
 <p>lastIndexOf() 方法有以下四种形式：</p>
@@ -325,15 +343,15 @@
 <p>public int lastIndexOf(String str): 返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
 <p>public int lastIndexOf(String str, int fromIndex): 返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
 <p>语法:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public int lastIndexOf(int ch)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(int ch, int fromIndex)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(String str)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(String str, int fromIndex)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public int lastIndexOf(int ch)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(int ch, int fromIndex)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(String str)</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public int lastIndexOf(String str, int fromIndex)</span><br></pre></td></tr></table></figure>
 
 <p>参数:<br>ch – 字符。fromIndex – 开始搜索的索引位置。str – 要搜索的子字符串。</p>
 <p>返回值<br>指定子字符串在字符串中第一次出现处的索引值。</p>
 <p>实例</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="hljs-string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"从第14个位置查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="hljs-string">'o'</span>, <span class="hljs-number">14</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"子字符串 SubStr1 最后出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1, <span class="hljs-number">15</span> ));</span><br><span class="line">        System.out.print(<span class="hljs-string">"子字符串 SubStr2 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="keyword">new</span> String(<span class="string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="string">"从第14个位置查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="string">'o'</span>, <span class="number">14</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr1 最后出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="string">"从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1, <span class="number">15</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr2 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 最后出现的位置 :17</span><br><span class="line">从第14个位置查找字符 o 最后出现的位置 :13</span><br><span class="line">子字符串 SubStr1 最后出现的位置:9</span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :9</span><br><span class="line">子字符串 SubStr2 最后出现的位置 :16</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 最后出现的位置 :17</span><br><span class="line">从第14个位置查找字符 o 最后出现的位置 :13</span><br><span class="line">子字符串 SubStr1 最后出现的位置:9</span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :9</span><br><span class="line">子字符串 SubStr2 最后出现的位置 :16</span><br></pre></td></tr></table></figure>
 
 <h1 id="substring"><a href="#substring" class="headerlink" title="substring()"></a><code>substring()</code></h1><p>它有两种形</p>
 <p>第一种是：public String substring(int startIndex)</p>
@@ -344,17 +362,17 @@
 <p>返回值</p>
 <p>子字符串。</p>
 <p>实例</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"www.runoob.com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="hljs-number">4</span>) );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="number">4</span>) );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="number">4</span>, <span class="number">10</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 :runoob.com</span><br><span class="line">返回值 :runoob</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 :runoob.com</span><br><span class="line">返回值 :runoob</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>concat()</code> 连接两个字符串<br>语法: public String concat(String s)<br>参数:   s – 要连接的字符串。</li>
 </ul>
 <p>返回值:<br>返回连接后的新字符串。</p>
 <p>实例</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="hljs-string">"你好："</span>;</span><br><span class="line">        s = s.concat(<span class="hljs-string">"Hellom"</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"你好："</span>;</span><br><span class="line">        s = s.concat(<span class="string">"Hellom"</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：<br>你好：Hello</p>
 <h1 id="replace-替换"><a href="#replace-替换" class="headerlink" title="replace()替换"></a><code>replace()</code>替换</h1><p>replace() 方法通过用 newChar 字符替换字符串中出现的所有 oldChar 字符，并返回替换后的新字符串。</p>
@@ -362,18 +380,18 @@
 <p>返回值:</p>
 <p>替换后生成的新字符串。</p>
 <p>实例:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="hljs-string">'o'</span>, <span class="hljs-string">'T'</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="hljs-string">'l'</span>, <span class="hljs-string">'D'</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="string">'o'</span>, <span class="string">'T'</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="string">'l'</span>, <span class="string">'D'</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 :hellT</span><br><span class="line">返回值 :heDDo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 :hellT</span><br><span class="line">返回值 :heDDo</span><br></pre></td></tr></table></figure>
 
-<h1 id="trim-去掉起始和结尾的空格"><a href="#trim-去掉起始和结尾的空格" class="headerlink" title="trim() 去掉起始和结尾的空格"></a><code>trim()</code> 去掉起始和结尾的空格</h1><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="hljs-string">" abc "</span>;</span><br><span class="line">String s2=s.trim();</span><br><span class="line">s2=<span class="hljs-string">"abc"</span></span><br></pre></td></tr></table></figure>
+<h1 id="trim-去掉起始和结尾的空格"><a href="#trim-去掉起始和结尾的空格" class="headerlink" title="trim() 去掉起始和结尾的空格"></a><code>trim()</code> 去掉起始和结尾的空格</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">" abc "</span>;</span><br><span class="line">String s2=s.trim();</span><br><span class="line">s2=<span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf()"></a><code>valueOf()</code></h1><p>===</p>
 <p>valueOf() 方法用于返回给定参数的原生 Number 对象值，参数可以是原生数据类型, String等。<br>该方法是静态方法。该方法可以接收两个参数一个是字符串，一个是基数。</p>
 <p>语法:</p>
 <p>该方法有以下几种语法格式：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static Integer valueOf(int i)</span><br><span class="line">static Integer valueOf(String s)</span><br><span class="line">static Integer valueOf(String s, int radix)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static Integer valueOf(int i)</span><br><span class="line">static Integer valueOf(String s)</span><br><span class="line">static Integer valueOf(String s, int radix)</span><br></pre></td></tr></table></figure>
 
 <p>参数</p>
 <p>i – Integer 对象的整数。</p>
@@ -384,23 +402,23 @@
 <p>Integer valueOf(String s):返回保存指定的 String 的值的Integer 对象。</p>
 <p>Integer valueOf(String s, int radix): 返回一个 Integer 对象，该对象中保存了用第二个参数提供的基数进行解析时从指定的 String 中提取的值。</p>
 <p>实例</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line">        Integer x =Integer.valueOf(9);</span><br><span class="line">        Double c = Double.valueOf(5);</span><br><span class="line">        Float a = Float.valueOf(&quot;80&quot;);</span><br><span class="line"></span><br><span class="line">        Integer b = Integer.valueOf(&quot;444&quot;,16);   // 使用 16 进制</span><br><span class="line"></span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line">        Integer x =Integer.valueOf(9);</span><br><span class="line">        Double c = Double.valueOf(5);</span><br><span class="line">        Float a = Float.valueOf(&quot;80&quot;);</span><br><span class="line"></span><br><span class="line">        Integer b = Integer.valueOf(&quot;444&quot;,16);   // 使用 16 进制</span><br><span class="line"></span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>输出结果为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">5.0</span><br><span class="line">80.0</span><br><span class="line">1092</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">5.0</span><br><span class="line">80.0</span><br><span class="line">1092</span><br></pre></td></tr></table></figure>
 
 <h1 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a><code>toLowerCase()</code></h1><p>转换为小写</p>
 <p>toLowerCase() 方法将字符串转换为小写。</p>
 <p>语法</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toLowerCase</span><span class="hljs-params">()</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toLowerCase</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toLowerCase</span><span class="hljs-params">(Locale locale)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toLowerCase</span><span class="params">(Locale locale)</span></span></span><br></pre></td></tr></table></figure>
 
 <p>返回值</p>
 <p>转换为小写的字符串。</p>
 <p>实例</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="hljs-keyword">new</span> String(<span class="hljs-string">"VITAN"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="hljs-string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toLowerCase() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"VITAN"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toLowerCase() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序执行结果为：返回值 :vitan</p>
 <ul>
@@ -413,428 +431,329 @@
 </ul>
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.151Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/JavaString.html" target="_blank" rel="external">https://vitan.me/posts/JavaString.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/JavaString.html&title=《Java 中 String 方法》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/JavaString.html&title=《Java 中 String 方法》 — Vitan's Blog&source=Java 中 Srting 常用方法。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/JavaString.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 中 String 方法》 — Vitan's Blog&url=https://vitan.me/posts/JavaString.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/JavaString.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/Java-basic-datatypes.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java 基本数据类型</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/Oh-My-ZSH-complete.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Oh-My-Zsh 插件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/JavaString.html">https://vitan.me/posts/JavaString.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Java-basic-datatypes.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Java 基本数据类型</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/Oh-My-ZSH-complete.html">
-                <span class="level-item">Oh-My-Zsh 插件</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#length-字符串长度">
-            <span class="has-mr-6">1</span>
-            <span>length()字符串长度</span>
-            </a></li><li>
-            <a class="is-flex" href="#charAt-截取一个字符">
-            <span class="has-mr-6">2</span>
-            <span>charAt()截取一个字符</span>
-            </a></li><li>
-            <a class="is-flex" href="#getChars-截取多个字符">
-            <span class="has-mr-6">3</span>
-            <span>getChars()截取多个字符</span>
-            </a></li><li>
-            <a class="is-flex" href="#getBytes">
-            <span class="has-mr-6">4</span>
-            <span>getBytes()</span>
-            </a></li><li>
-            <a class="is-flex" href="#toCharArray">
-            <span class="has-mr-6">5</span>
-            <span>toCharArray()</span>
-            </a></li><li>
-            <a class="is-flex" href="#equals-和equalsIgnoreCase-比较两个字符串">
-            <span class="has-mr-6">6</span>
-            <span>equals()和equalsIgnoreCase() 比较两个字符串</span>
-            </a></li><li>
-            <a class="is-flex" href="#regionMatches-regionMatches">
-            <span class="has-mr-6">7</span>
-            <span>regionMatches() regionMatches()</span>
-            </a></li><li>
-            <a class="is-flex" href="#startsWith-和endsWith">
-            <span class="has-mr-6">8</span>
-            <span>startsWith()和endsWith()</span>
-            </a></li><li>
-            <a class="is-flex" href="#equals-和-equals">
-            <span class="has-mr-6">9</span>
-            <span>equals()和==equals()</span>
-            </a></li><li>
-            <a class="is-flex" href="#compareTo-和compareToIgnoreCase-比较字符串">
-            <span class="has-mr-6">10</span>
-            <span>compareTo()和compareToIgnoreCase()比较字符串</span>
-            </a></li><li>
-            <a class="is-flex" href="#indexOf-和lastIndexOf">
-            <span class="has-mr-6">11</span>
-            <span>indexOf()和lastIndexOf()</span>
-            </a></li><li>
-            <a class="is-flex" href="#lastIndexOf">
-            <span class="has-mr-6">12</span>
-            <span>lastIndexOf()</span>
-            </a></li><li>
-            <a class="is-flex" href="#substring">
-            <span class="has-mr-6">13</span>
-            <span>substring()</span>
-            </a></li><li>
-            <a class="is-flex" href="#replace-替换">
-            <span class="has-mr-6">14</span>
-            <span>replace()替换</span>
-            </a></li><li>
-            <a class="is-flex" href="#trim-去掉起始和结尾的空格">
-            <span class="has-mr-6">15</span>
-            <span>trim() 去掉起始和结尾的空格</span>
-            </a></li><li>
-            <a class="is-flex" href="#valueOf-NaN">
-            <span class="has-mr-6">16</span>
-            <span>valueOf()</span>
-            </a></li><li>
-            <a class="is-flex" href="#toLowerCase">
-            <span class="has-mr-6">17</span>
-            <span>toLowerCase()</span>
-            </a></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="Java 中 String 方法" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/JavaString.html&title=《Java 中 String 方法》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/JavaString.html&title=《Java 中 String 方法》 — Vitan's Blog&source=Java 中 Srting 常用方法。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/JavaString.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 中 String 方法》 — Vitan's Blog&url=https://vitan.me/posts/JavaString.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/JavaString.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aQY6DMAwF0N7/0sx2pBng204oi8eqQjR9dGHZP/l84uv4dc2fzFdrXri4uGPucXmd/cDZnb8rJ88nBlxc3Oe5ZxXj+nO+TvVVT+/j4uK+kjtpaBb8Bbi4uK/nzsckXFzcN3OT4ecalN+5bnqWzWq4uLgDbl6e9n3eku/i4uK2uEfxSmKOVSHpP2vi4uI+ws0LSrX1mYSkN6MULi7uZu71gDEvT71W5qaE4eLiPsitgibbq/m3bjoyXFzcDdw8+EheaXLYIjnUhYuL+yQ3QSTNSh6dRA1NMqvh4uJu4OZLVNuRyXZpeVbDxcXdwM0LSrWVWTsI4eLiPsNdG4+uOmYRRa64uLjbuNW2o1faei95U3dxcXG3cdfuXRbS2fivWVxxcXFxW9z5Ua18QEpi2SjLwcXF3cbNo9KkhCVr5gErLi7ud7lro5DehsrNM7i4uJu5ky3S/CBF7+AFLi7ut7iT7Y3qoa5edNJ8GVxc3DG3On6sKlXVwoeLi/s8Ny801cijWuYKgSkuLu5ruMmdXpkrTGy4uLgv4/aalUnwsazu4uLiFrnVBqXa9MyfxMXFfZLbCzcnxzLyAjfKd3FxcTvcH8PaKfiJaWlZAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>

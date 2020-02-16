@@ -1,202 +1,220 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>Vim 插件&amp;主题 - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="Vim 插件&amp;主题" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/Vim-Vundle-Markdown.html">
+    
+    
+    <title>Vim 插件&amp;主题 | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux,Win,Vim">
+    <meta name="description" content="Vim 插件 主题">
+<meta name="keywords" content="Linux,Win,Vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim 插件&amp;主题">
+<meta property="og:url" content="https://vitan.me/posts/Vim-Vundle-Markdown.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="Vim 插件 主题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim 插件&amp;主题">
+<meta name="twitter:description" content="Vim 插件 主题">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="Vim 插件&amp;主题" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vim 插件&amp;主题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/Vim.png" alt="Vim 插件&amp;主题">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>Vim 插件&amp;主题
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    7 分钟 读完 (约 1104 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2018-06-19T13:17:04.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2018-06-19</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.198Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vim 插件&amp;主题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-19T13:17:04.000Z" itemprop="datePublished" class="page-time">
+  2018-06-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SpaceVim"><span class="post-toc-number">1.</span> <span class="post-toc-text">SpaceVim</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vundle-插件管理器"><span class="post-toc-number">2.</span> <span class="post-toc-text">Vundle 插件管理器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-Markdown-插件"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 Markdown 插件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-gruvbox-主题"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装 gruvbox 主题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vim-airline"><span class="post-toc-number">5.</span> <span class="post-toc-text">Vim-airline</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NERD-Tree-文件浏览插件"><span class="post-toc-number">6.</span> <span class="post-toc-text">NERD Tree 文件浏览插件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#vimrc-配置文件"><span class="post-toc-number">7.</span> <span class="post-toc-text">.vimrc 配置文件</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Vim-Vundle-Markdown"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vim 插件&主题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-19 21:17:04" datetime="2018-06-19T13:17:04.000Z"  itemprop="datePublished">2018-06-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>Vim 插件 主题</p>
 <a id="more"></a>
-<h1 id="SpaceVim"><a href="#SpaceVim" class="headerlink" title="SpaceVim"></a>SpaceVim</h1><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sLf https://spacevim.org/install.sh | bash</span><br></pre></td></tr></table></figure>
+<h1 id="SpaceVim"><a href="#SpaceVim" class="headerlink" title="SpaceVim"></a>SpaceVim</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sLf https://spacevim.org/install.sh | bash</span><br></pre></td></tr></table></figure>
 
 <h1 id="Vundle-插件管理器"><a href="#Vundle-插件管理器" class="headerlink" title="Vundle 插件管理器"></a>Vundle 插件管理器</h1><p>Vundle 是Vim bundle 的简称,是一个 Vim 插件管理器.</p>
 <p>Vundle 允许你做</p>
@@ -209,7 +227,7 @@
 <li>可以通过单一按键完成以上操作,详见<a href="https://github.com/VundleVim/Vundle.vim/blob/v0.10.2/doc/vundle.txt#L319-L360" target="_blank" rel="noopener">interactive mode</a></li>
 </ol>
 <p>安装</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>配置</li>
@@ -217,53 +235,53 @@
 <ol>
 <li>编辑</li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .vimrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .vimrc</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>添加下列内容</li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible   &quot; be iMproved, required</span><br><span class="line">filetype off   &quot; required</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">call vundle#end()   &quot; required</span><br><span class="line">filetype plugin indent on  &quot; required</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible   &quot; be iMproved, required</span><br><span class="line">filetype off   &quot; required</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">call vundle#end()   &quot; required</span><br><span class="line">filetype plugin indent on  &quot; required</span><br></pre></td></tr></table></figure>
 
 <p>安装需要的插件</p>
 <ul>
 <li>bash 下：</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim +PluginInstall +qall</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim +PluginInstall +qall</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>vim 下</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure>
 
 <h1 id="安装-Markdown-插件"><a href="#安装-Markdown-插件" class="headerlink" title="安装 Markdown 插件"></a>安装 Markdown 插件</h1><p>修改vimrc配置文件,添加</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;godlygeek/tabular&apos;</span><br><span class="line">Plugin &apos;plasticboy/vim-markdown&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;godlygeek/tabular&apos;</span><br><span class="line">Plugin &apos;plasticboy/vim-markdown&apos;</span><br></pre></td></tr></table></figure>
 
 <p>下一步</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim</span><br><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim</span><br><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure>
 
 <h1 id="安装-gruvbox-主题"><a href="#安装-gruvbox-主题" class="headerlink" title="安装 gruvbox 主题"></a>安装 gruvbox 主题</h1><p>在 .vimrc 添加</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;morhetz/gruvbox&apos;</span><br><span class="line">Plugin &apos;vim-airline/vim-airline&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;morhetz/gruvbox&apos;</span><br><span class="line">Plugin &apos;vim-airline/vim-airline&apos;</span><br></pre></td></tr></table></figure>
 
 <p>配置主题</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set bg=dark &quot;设置背景为黑色</span><br><span class="line">colorscheme gruvbox &quot;设置主题为 gruvbox</span><br><span class="line">set guioptions=  &quot;去掉两边的scrollbar</span><br><span class="line">set guifont=Monaco:h17 &quot;设置字体和字的大小</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set bg=dark &quot;设置背景为黑色</span><br><span class="line">colorscheme gruvbox &quot;设置主题为 gruvbox</span><br><span class="line">set guioptions=  &quot;去掉两边的scrollbar</span><br><span class="line">set guifont=Monaco:h17 &quot;设置字体和字的大小</span><br></pre></td></tr></table></figure>
 
 <h1 id="Vim-airline"><a href="#Vim-airline" class="headerlink" title="Vim-airline"></a>Vim-airline</h1><p>.vimrc 添加插件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;vim-airline/vim-airline</span><br><span class="line">Plugin &apos;vim-airline/vim-airline-themes&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;vim-airline/vim-airline</span><br><span class="line">Plugin &apos;vim-airline/vim-airline-themes&apos;</span><br></pre></td></tr></table></figure>
 
 <p>配置</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot; airline settings.</span><br><span class="line">let g:airline_theme = &apos;simple&apos;</span><br><span class="line">let g:airline_powerline_fonts = 1</span><br><span class="line"></span><br><span class="line">if !exists(&apos;g:airline_symbols&apos;)</span><br><span class="line">  let g:airline_symbols = &#123;&#125;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">let g:airline_left_sep = &apos;&apos;</span><br><span class="line">let g:airline_left_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_symbols.branch = &apos;&apos;</span><br><span class="line">let g:airline_symbols.readonly = &apos;&apos;</span><br><span class="line">let g:airline_symbols.linenr = &apos;&apos;</span><br><span class="line">let g:airline#extensions#tabline#enabled = 1</span><br><span class="line">&quot; show absolute file path in status line</span><br><span class="line">let g:airline_section_c = &apos;%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#&apos;</span><br><span class="line">&quot; show tab number in tab line</span><br><span class="line">let g:airline#extensions#tabline#tab_nr_type = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot; airline settings.</span><br><span class="line">let g:airline_theme = &apos;simple&apos;</span><br><span class="line">let g:airline_powerline_fonts = 1</span><br><span class="line"></span><br><span class="line">if !exists(&apos;g:airline_symbols&apos;)</span><br><span class="line">  let g:airline_symbols = &#123;&#125;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">let g:airline_left_sep = &apos;&apos;</span><br><span class="line">let g:airline_left_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_symbols.branch = &apos;&apos;</span><br><span class="line">let g:airline_symbols.readonly = &apos;&apos;</span><br><span class="line">let g:airline_symbols.linenr = &apos;&apos;</span><br><span class="line">let g:airline#extensions#tabline#enabled = 1</span><br><span class="line">&quot; show absolute file path in status line</span><br><span class="line">let g:airline_section_c = &apos;%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#&apos;</span><br><span class="line">&quot; show tab number in tab line</span><br><span class="line">let g:airline#extensions#tabline#tab_nr_type = 1</span><br></pre></td></tr></table></figure>
 
 <p>支持主题</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">badwolf</span><br><span class="line">base16</span><br><span class="line">behelit</span><br><span class="line">bubblegum</span><br><span class="line">dark</span><br><span class="line">durant</span><br><span class="line">hybridline</span><br><span class="line">hybrid</span><br><span class="line">jellybeans</span><br><span class="line">kalisi</span><br><span class="line">kolor</span><br><span class="line">laederon</span><br><span class="line">light</span><br><span class="line">lucius</span><br><span class="line">luna</span><br><span class="line">molokai</span><br><span class="line">monochrome</span><br><span class="line">murmur</span><br><span class="line">papercolor</span><br><span class="line">powerlineish</span><br><span class="line">raven</span><br><span class="line">serene</span><br><span class="line">silver</span><br><span class="line">simple</span><br><span class="line">solarized</span><br><span class="line">sol</span><br><span class="line">term</span><br><span class="line">tomorrow</span><br><span class="line">ubaryd</span><br><span class="line">understated</span><br><span class="line">wombat</span><br><span class="line">zenburn</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">badwolf</span><br><span class="line">base16</span><br><span class="line">behelit</span><br><span class="line">bubblegum</span><br><span class="line">dark</span><br><span class="line">durant</span><br><span class="line">hybridline</span><br><span class="line">hybrid</span><br><span class="line">jellybeans</span><br><span class="line">kalisi</span><br><span class="line">kolor</span><br><span class="line">laederon</span><br><span class="line">light</span><br><span class="line">lucius</span><br><span class="line">luna</span><br><span class="line">molokai</span><br><span class="line">monochrome</span><br><span class="line">murmur</span><br><span class="line">papercolor</span><br><span class="line">powerlineish</span><br><span class="line">raven</span><br><span class="line">serene</span><br><span class="line">silver</span><br><span class="line">simple</span><br><span class="line">solarized</span><br><span class="line">sol</span><br><span class="line">term</span><br><span class="line">tomorrow</span><br><span class="line">ubaryd</span><br><span class="line">understated</span><br><span class="line">wombat</span><br><span class="line">zenburn</span><br></pre></td></tr></table></figure>
 
 <h1 id="NERD-Tree-文件浏览插件"><a href="#NERD-Tree-文件浏览插件" class="headerlink" title="NERD Tree 文件浏览插件"></a>NERD Tree 文件浏览插件</h1><p>.vimrc 添加插件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;scrooloose/nerdtree&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plugin &apos;scrooloose/nerdtree&apos;</span><br></pre></td></tr></table></figure>
 
 <p>打开/关闭 NERD Tree</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:NERDTreeToggle</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:NERDTreeToggle</span><br></pre></td></tr></table></figure>
 
 <p>NERD Tree 配置</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;当 vim 启动没指定文件时，自动打开 NERDTree</span><br><span class="line">autocmd StdinReadPre * let s:std_in=1</span><br><span class="line">autocmd VimEnter * if argc() == 0 &amp;&amp; !exists(&quot;s:std_in&quot;) | NERDTree | endif</span><br><span class="line">&quot;在 normal 下按 ,d 打开关闭文件浏览</span><br><span class="line">nmap ,d :NERDTreeToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;当 vim 启动没指定文件时，自动打开 NERDTree</span><br><span class="line">autocmd StdinReadPre * let s:std_in=1</span><br><span class="line">autocmd VimEnter * if argc() == 0 &amp;&amp; !exists(&quot;s:std_in&quot;) | NERDTree | endif</span><br><span class="line">&quot;在 normal 下按 ,d 打开关闭文件浏览</span><br><span class="line">nmap ,d :NERDTreeToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
 
 <p>使用技巧</p>
 <ol>
@@ -273,13 +291,13 @@
 <li><code>&lt;c-w&gt;j</code> ，<code>&lt;c-w&gt;k</code>, <code>&lt;c-w&gt;h</code>, <code>&lt;c-w&gt;l</code>按键分别向上、下、左、右分屏移动。 <code>&lt;c-w&gt;=</code>均分屏幕</li>
 </ol>
 <p>改默的切换分屏按键方式</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;--------- Split Mapping --------------------&quot;</span><br><span class="line">nmap &lt;c-j&gt; &lt;c-w&gt;j</span><br><span class="line">nmap &lt;c-k&gt; &lt;c-w&gt;k</span><br><span class="line">nmap &lt;c-h&gt; &lt;c-w&gt;h</span><br><span class="line">nmap &lt;c-l&gt; &lt;c-w&gt;l</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;--------- Split Mapping --------------------&quot;</span><br><span class="line">nmap &lt;c-j&gt; &lt;c-w&gt;j</span><br><span class="line">nmap &lt;c-k&gt; &lt;c-w&gt;k</span><br><span class="line">nmap &lt;c-h&gt; &lt;c-w&gt;h</span><br><span class="line">nmap &lt;c-l&gt; &lt;c-w&gt;l</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>官网文档<br><a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">GitHub Repo</a></li>
 </ul>
 <h1 id="vimrc-配置文件"><a href="#vimrc-配置文件" class="headerlink" title=".vimrc 配置文件"></a>.vimrc 配置文件</h1><p>vimrc</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&quot;设置行号显示</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot;将行号设置为相对行号</span><br><span class="line">set relativenumber</span><br><span class="line"></span><br><span class="line">&quot;显示标尺</span><br><span class="line">set ruler</span><br><span class="line"></span><br><span class="line">&quot; 编码</span><br><span class="line">set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line">set fileencoding=utf-8</span><br><span class="line">set encoding=utf-8</span><br><span class="line">set fencs=utf-8,gbk,gb2312,gb18030</span><br><span class="line"></span><br><span class="line">&quot;语法高亮</span><br><span class="line">syntax enable</span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line">&quot; 高亮</span><br><span class="line">hi pythonSelf            ctermfg=174 guifg=#6094DB cterm=bold gui=bold</span><br><span class="line">let python_highlight_all=1</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; 状态行颜色</span><br><span class="line">highlight StatusLine guifg=SlateBlue guibg=Yellow</span><br><span class="line">highlight StatusLineNC guifg=Gray guibg=White</span><br><span class="line"></span><br><span class="line">&quot; 增强模式中的命令行自动完成操作</span><br><span class="line">set wildmenu</span><br><span class="line"></span><br><span class="line">&quot; 总是显示状态行</span><br><span class="line">set laststatus=2</span><br><span class="line"></span><br><span class="line">&quot;命令行补全参数</span><br><span class="line">set wildmenu</span><br><span class="line"></span><br><span class="line">&quot;设置tab键空4格</span><br><span class="line">set tabstop=4</span><br><span class="line"></span><br><span class="line">&quot;自动检测文件类型</span><br><span class="line">filetype plugin indent on</span><br><span class="line"></span><br><span class="line">&quot;开启自动缩进，智能缩进</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br><span class="line">set smartindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line"></span><br><span class="line">&quot;映射光标在窗口间移动的快捷键</span><br><span class="line">nmap &lt;C-H&gt; &lt;C-W&gt;h</span><br><span class="line">nmap &lt;C-J&gt; &lt;C-W&gt;j</span><br><span class="line">nmap &lt;C-K&gt; &lt;C-W&gt;k</span><br><span class="line">nmap &lt;C-L&gt; &lt;C-W&gt;l</span><br><span class="line"></span><br><span class="line">&quot;插件安装列表</span><br><span class="line">set nocompatible              &quot; be iMproved, required</span><br><span class="line">filetype off                  &quot; required</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">Plugin &apos;morhetz/gruvbox&apos;</span><br><span class="line">Plugin &apos;vim-airline/vim-airline&apos;</span><br><span class="line">Plugin &apos;plasticboy/vim-markdown&apos;</span><br><span class="line">call vundle#end()            &quot; required</span><br><span class="line">filetype plugin indent on    &quot; required</span><br><span class="line"></span><br><span class="line">&quot;基本主题配置</span><br><span class="line">set bg=dark    		   &quot;设置背景为黑色</span><br><span class="line">colorscheme gruvbox    &quot;设置主题为 gruvbox</span><br><span class="line">set guioptions=        &quot;去掉两边的scrollbar</span><br><span class="line">set guifont=Monaco:h17 &quot;设置字体和字的大小</span><br><span class="line">set cuc</span><br><span class="line">set cul</span><br><span class="line">set incsearch		  &quot;输入搜索内容时就显示搜索结果</span><br><span class="line">set ignorecase</span><br><span class="line">set hlsearch		  &quot;搜索时高亮显示被找到的文本</span><br><span class="line"></span><br><span class="line">&quot;airline settings.</span><br><span class="line">let g:airline_theme = &apos;simple&apos;</span><br><span class="line">let g:airline_powerline_fonts = 1</span><br><span class="line"></span><br><span class="line">if !exists(&apos;g:airline_symbols&apos;)</span><br><span class="line">  let g:airline_symbols = &#123;&#125;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">let g:airline_left_sep = &apos;&apos;</span><br><span class="line">let g:airline_left_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_symbols.branch = &apos;&apos;</span><br><span class="line">let g:airline_symbols.readonly = &apos;&apos;</span><br><span class="line">let g:airline_symbols.linenr = &apos;&apos;</span><br><span class="line">let g:airline#extensions#tabline#enabled = 1</span><br><span class="line">&quot; show absolute file path in status line</span><br><span class="line">let g:airline_section_c = &apos;%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#&apos;</span><br><span class="line">&quot; show tab number in tab line</span><br><span class="line">let g:airline#extensions#tabline#tab_nr_type = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&quot;设置行号显示</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot;将行号设置为相对行号</span><br><span class="line">set relativenumber</span><br><span class="line"></span><br><span class="line">&quot;显示标尺</span><br><span class="line">set ruler</span><br><span class="line"></span><br><span class="line">&quot; 编码</span><br><span class="line">set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line">set fileencoding=utf-8</span><br><span class="line">set encoding=utf-8</span><br><span class="line">set fencs=utf-8,gbk,gb2312,gb18030</span><br><span class="line"></span><br><span class="line">&quot;语法高亮</span><br><span class="line">syntax enable</span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line">&quot; 高亮</span><br><span class="line">hi pythonSelf            ctermfg=174 guifg=#6094DB cterm=bold gui=bold</span><br><span class="line">let python_highlight_all=1</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; 状态行颜色</span><br><span class="line">highlight StatusLine guifg=SlateBlue guibg=Yellow</span><br><span class="line">highlight StatusLineNC guifg=Gray guibg=White</span><br><span class="line"></span><br><span class="line">&quot; 增强模式中的命令行自动完成操作</span><br><span class="line">set wildmenu</span><br><span class="line"></span><br><span class="line">&quot; 总是显示状态行</span><br><span class="line">set laststatus=2</span><br><span class="line"></span><br><span class="line">&quot;命令行补全参数</span><br><span class="line">set wildmenu</span><br><span class="line"></span><br><span class="line">&quot;设置tab键空4格</span><br><span class="line">set tabstop=4</span><br><span class="line"></span><br><span class="line">&quot;自动检测文件类型</span><br><span class="line">filetype plugin indent on</span><br><span class="line"></span><br><span class="line">&quot;开启自动缩进，智能缩进</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br><span class="line">set smartindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line"></span><br><span class="line">&quot;映射光标在窗口间移动的快捷键</span><br><span class="line">nmap &lt;C-H&gt; &lt;C-W&gt;h</span><br><span class="line">nmap &lt;C-J&gt; &lt;C-W&gt;j</span><br><span class="line">nmap &lt;C-K&gt; &lt;C-W&gt;k</span><br><span class="line">nmap &lt;C-L&gt; &lt;C-W&gt;l</span><br><span class="line"></span><br><span class="line">&quot;插件安装列表</span><br><span class="line">set nocompatible              &quot; be iMproved, required</span><br><span class="line">filetype off                  &quot; required</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">Plugin &apos;morhetz/gruvbox&apos;</span><br><span class="line">Plugin &apos;vim-airline/vim-airline&apos;</span><br><span class="line">Plugin &apos;plasticboy/vim-markdown&apos;</span><br><span class="line">call vundle#end()            &quot; required</span><br><span class="line">filetype plugin indent on    &quot; required</span><br><span class="line"></span><br><span class="line">&quot;基本主题配置</span><br><span class="line">set bg=dark    		   &quot;设置背景为黑色</span><br><span class="line">colorscheme gruvbox    &quot;设置主题为 gruvbox</span><br><span class="line">set guioptions=        &quot;去掉两边的scrollbar</span><br><span class="line">set guifont=Monaco:h17 &quot;设置字体和字的大小</span><br><span class="line">set cuc</span><br><span class="line">set cul</span><br><span class="line">set incsearch		  &quot;输入搜索内容时就显示搜索结果</span><br><span class="line">set ignorecase</span><br><span class="line">set hlsearch		  &quot;搜索时高亮显示被找到的文本</span><br><span class="line"></span><br><span class="line">&quot;airline settings.</span><br><span class="line">let g:airline_theme = &apos;simple&apos;</span><br><span class="line">let g:airline_powerline_fonts = 1</span><br><span class="line"></span><br><span class="line">if !exists(&apos;g:airline_symbols&apos;)</span><br><span class="line">  let g:airline_symbols = &#123;&#125;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">let g:airline_left_sep = &apos;&apos;</span><br><span class="line">let g:airline_left_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_sep = &apos;&apos;</span><br><span class="line">let g:airline_right_alt_sep = &apos;&apos;</span><br><span class="line">let g:airline_symbols.branch = &apos;&apos;</span><br><span class="line">let g:airline_symbols.readonly = &apos;&apos;</span><br><span class="line">let g:airline_symbols.linenr = &apos;&apos;</span><br><span class="line">let g:airline#extensions#tabline#enabled = 1</span><br><span class="line">&quot; show absolute file path in status line</span><br><span class="line">let g:airline_section_c = &apos;%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#&apos;</span><br><span class="line">&quot; show tab number in tab line</span><br><span class="line">let g:airline#extensions#tabline#tab_nr_type = 1</span><br></pre></td></tr></table></figure>
 
 <hr>
 <p><strong>参考</strong></p>
@@ -290,388 +308,329 @@
 </ul>
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.198Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/Vim-Vundle-Markdown.html" target="_blank" rel="external">https://vitan.me/posts/Vim-Vundle-Markdown.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Vim-Vundle-Markdown.html&title=《Vim 插件&主题》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Vim-Vundle-Markdown.html&title=《Vim 插件&主题》 — Vitan's Blog&source=Vim 插件 主题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Vim-Vundle-Markdown.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim 插件&主题》 — Vitan's Blog&url=https://vitan.me/posts/Vim-Vundle-Markdown.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Vim-Vundle-Markdown.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/SQLselect.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">SQL 检索练习题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/SQLfull.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SQL 实现数据完整性约束</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Vim-Vundle-Markdown.html">https://vitan.me/posts/Vim-Vundle-Markdown.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Vim/">Vim</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Win/">Win</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/SQLselect.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">SQL 检索练习题</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/SQLfull.html">
-                <span class="level-item">SQL 实现数据完整性约束</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#SpaceVim">
-            <span class="has-mr-6">1</span>
-            <span>SpaceVim</span>
-            </a></li><li>
-            <a class="is-flex" href="#Vundle-插件管理器">
-            <span class="has-mr-6">2</span>
-            <span>Vundle 插件管理器</span>
-            </a></li><li>
-            <a class="is-flex" href="#安装-Markdown-插件">
-            <span class="has-mr-6">3</span>
-            <span>安装 Markdown 插件</span>
-            </a></li><li>
-            <a class="is-flex" href="#安装-gruvbox-主题">
-            <span class="has-mr-6">4</span>
-            <span>安装 gruvbox 主题</span>
-            </a></li><li>
-            <a class="is-flex" href="#Vim-airline">
-            <span class="has-mr-6">5</span>
-            <span>Vim-airline</span>
-            </a></li><li>
-            <a class="is-flex" href="#NERD-Tree-文件浏览插件">
-            <span class="has-mr-6">6</span>
-            <span>NERD Tree 文件浏览插件</span>
-            </a></li><li>
-            <a class="is-flex" href="#vimrc-配置文件">
-            <span class="has-mr-6">7</span>
-            <span>.vimrc 配置文件</span>
-            </a></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="Vim 插件&amp;主题" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Vim-Vundle-Markdown.html&title=《Vim 插件&主题》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Vim-Vundle-Markdown.html&title=《Vim 插件&主题》 — Vitan's Blog&source=Vim 插件 主题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Vim-Vundle-Markdown.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim 插件&主题》 — Vitan's Blog&url=https://vitan.me/posts/Vim-Vundle-Markdown.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Vim-Vundle-Markdown.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3a0QrCMAxGYd//peetoJvnT6qw9PRKxtblmxDapI8HHsfLeL/yer1z//vvxUOGDBm3ZRyXg09NnuX38NhkyJCxD+MsrJTBeddB89hkyJAh4+wenqDJPDJkyJCxikGSZrpklCFDhgzOIAk03dzyIP66F5chQ8YNGbzq/v/fP+lvyJAh41aMIxy8rJZe50n2w1MyZMgYzai1MMlCrdNIIJ/gwwwyZMgYyqilvOLXKjU7UXKXIUPGBgxeDkvLXtdF/+vPwZO+DBkyZjPSTWOnGUCCJuDiCleGDBkjGGkJrNaMrB3dCDqxMmTIGMfgByzWhpim2i/pXoYMGaMZvHCWhtvqVOCF5pd/RoYMGeMY/NZV4LRRWgTIkCHj5ozaEm3t8a/088mQIWNPRvpiUm5Lm5dpcpchQ8Y+jHSp12kMdEKXIUOGjPQ1KY+ndR4uKvPJkCFjHIOHmx7LIEk5BQTVQRkyZIxg8NeQwxbXGN74JKn2tHYoQ4aMoYza8m4tO92mypAhYzdGfxObBtRvKlR7njJkyLgfo4bhG9daCk4LfDJkyJjKOMKRJtx4eVdjy5AhYzSDD75E42Wy9ChG8ciFDBkyRjBIkk1blWljMljDns0jQ4aMDRi83M/LcK2w8MwyZMiQwTer6aHVWtvghwlXhgwZ4xi1fmKnoFY8gStDhoxBjM6mlG9x001yUP6TIUPGaEYndfLiWhporVUgQ4aMcYwnIEJQlolS5ncAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>

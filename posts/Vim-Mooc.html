@@ -1,264 +1,285 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
-    <meta charset="utf-8" />
-
-<meta name="generator" content="Hexo 3.9.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>Vim Summary - Vitan&#39;s Blog</title>
-
-
-
-
-
-
-<link rel="alternative" href="/atom.xml" title="Vim Summary" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/vitan.png">
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144334903-1"></script>
+<!-- Google Analytics -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-144334903-1');
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-144334903-1', 'auto');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
 
 
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
 
 
-<link rel="stylesheet" href="/css/style.css">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2581760538335948",
-    enable_page_level_ads: true
-  });
-</script>
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://vitan.me/posts/Vim-Mooc.html">
+    
+    
+    <title>Vim Summary | Vitan&#39;s Blog | ⁣⁣⁣Stay Hungry, Stay Foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux,Vim">
+    <meta name="description" content="Vim 重新学习笔记">
+<meta name="keywords" content="Linux,Vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim Summary">
+<meta property="og:url" content="https://vitan.me/posts/Vim-Mooc.html">
+<meta property="og:site_name" content="Vitan&#39;s Blog">
+<meta property="og:description" content="Vim 重新学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/window.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png">
+<meta property="og:updated_time" content="2019-12-10T01:38:54.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim Summary">
+<meta name="twitter:description" content="Vim 重新学习笔记">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/window.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
-<body class="is-2-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="Vim Summary" height="28">
-            
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ivitan.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Vitan</h5>
+          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                观影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ivitan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vim Summary</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Category</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="RSS" href="/xml/atom.xml">
-                        
-                        <i class="fa fa-rss"></i>
-                        
-                    </a>
-                    
-                
-                
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/images/Vim.png" alt="Vim Summary">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <i class="fas fa-angle-double-right"></i>Vim Summary
-            
-        </h1>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                
-                
-                <div class="level-item">
-                <i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    <i class="far fa-clock"></i>&nbsp;
-                    
-                    
-                    13 分钟 读完 (约 1908 字)
-                </span>
-                
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
-                
-                <time class="level-item has-text-grey" datetime="2019-05-19T01:30:42.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2019-05-19</time>
-                
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-12-10T01:38:54.197Z"><i class="far fa-calendar-check">&nbsp;</i>2019-12-10</time>
-                
-            </div>
-        </div>
         
-        <div class="content">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vim Summary</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-19T01:30:42.000Z" itemprop="datePublished" class="page-time">
+  2019-05-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三个模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">三个模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Insert-编辑模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Insert 编辑模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Command-模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Command 模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Visual-可视-模式"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Visual (可视)模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何快速纠错"><span class="post-toc-number">2.</span> <span class="post-toc-text">如何快速纠错</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在单词之间飞舞"><span class="post-toc-number">3.</span> <span class="post-toc-text">在单词之间飞舞</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增删查改"><span class="post-toc-number">4.</span> <span class="post-toc-text">增删查改</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换命令"><span class="post-toc-number">5.</span> <span class="post-toc-text">替换命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换标志位"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">替换标志位</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Buffer-Windows-Tab"><span class="post-toc-number">6.</span> <span class="post-toc-text">Buffer Windows Tab</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在-Buffer-之间切换"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">在 Buffer 之间切换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Windows-窗口"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Windows 窗口</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#宏-macro"><span class="post-toc-number">7.</span> <span class="post-toc-text">宏(macro)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">How</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常见的补全"><span class="post-toc-number">8.</span> <span class="post-toc-text">常见的补全</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最常用"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">最常用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#更换配色"><span class="post-toc-number">9.</span> <span class="post-toc-text">更换配色</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#映射"><span class="post-toc-number">10.</span> <span class="post-toc-text">映射</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本映射"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">基本映射</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#递归与非递归映射"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">递归与非递归映射</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#插件"><span class="post-toc-number">11.</span> <span class="post-toc-text">插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见的插件管理器"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">常见的插件管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vim-plug"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">vim-plug</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装插件"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">安装插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vim-美观插件"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">vim 美观插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件推荐网站"><span class="post-toc-number">11.5.</span> <span class="post-toc-text">插件推荐网站</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录和搜索插件"><span class="post-toc-number">11.6.</span> <span class="post-toc-text">文件目录和搜索插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">11.7.</span> <span class="post-toc-text">代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览代码"><span class="post-toc-number">11.7.1.</span> <span class="post-toc-text">浏览代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#补全"><span class="post-toc-number">11.7.2.</span> <span class="post-toc-text">补全</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#格式化与静态检查"><span class="post-toc-number">11.8.</span> <span class="post-toc-text">格式化与静态检查</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Python-相关"><span class="post-toc-number">11.9.</span> <span class="post-toc-text">Python 相关</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git"><span class="post-toc-number">11.10.</span> <span class="post-toc-text">Git</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Vim-Mooc"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vim Summary</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-19 09:30:42" datetime="2019-05-19T01:30:42.000Z"  itemprop="datePublished">2019-05-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+
+
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p>Vim 重新学习笔记</p>
 <a id="more"></a>
-<h1 id="三个模式"><a href="#三个模式" class="headerlink" title="三个模式"></a>三个模式</h1><h2 id="Insert-编辑模式"><a href="#Insert-编辑模式" class="headerlink" title="Insert 编辑模式"></a>Insert 编辑模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="hljs-comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="hljs-comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure>
+<h1 id="三个模式"><a href="#三个模式" class="headerlink" title="三个模式"></a>三个模式</h1><h2 id="Insert-编辑模式"><a href="#Insert-编辑模式" class="headerlink" title="Insert 编辑模式"></a>Insert 编辑模式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>i (insert)</li>
 <li>a (append)</li>
 <li>o (oppen a line below)</li>
 </ul>
-<h2 id="Command-模式"><a href="#Command-模式" class="headerlink" title="Command 模式"></a>Command 模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq <span class="hljs-comment"># 保存退出</span></span><br><span class="line">:vs <span class="hljs-comment"># vertical split 横向分频</span></span><br><span class="line">:sp <span class="hljs-comment"># 纵向分频</span></span><br><span class="line">:% s/foo/bar/g <span class="hljs-comment"># 全局替换</span></span><br><span class="line">:h option-list <span class="hljs-comment"># 查找所有设置选项</span></span><br></pre></td></tr></table></figure>
+<h2 id="Command-模式"><a href="#Command-模式" class="headerlink" title="Command 模式"></a>Command 模式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq <span class="comment"># 保存退出</span></span><br><span class="line">:vs <span class="comment"># vertical split 横向分频</span></span><br><span class="line">:sp <span class="comment"># 纵向分频</span></span><br><span class="line">:% s/foo/bar/g <span class="comment"># 全局替换</span></span><br><span class="line">:h option-list <span class="comment"># 查找所有设置选项</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Visual-可视-模式"><a href="#Visual-可视-模式" class="headerlink" title="Visual (可视)模式"></a>Visual (可视)模式</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v <span class="hljs-comment"># 进入 visual 模式</span></span><br><span class="line">V <span class="hljs-comment"># 选择行</span></span><br><span class="line">ctrl v <span class="hljs-comment"># 进行快选择</span></span><br></pre></td></tr></table></figure>
+<h2 id="Visual-可视-模式"><a href="#Visual-可视-模式" class="headerlink" title="Visual (可视)模式"></a>Visual (可视)模式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v <span class="comment"># 进入 visual 模式</span></span><br><span class="line">V <span class="comment"># 选择行</span></span><br><span class="line">ctrl v <span class="comment"># 进行快选择</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="如何快速纠错"><a href="#如何快速纠错" class="headerlink" title="如何快速纠错"></a>如何快速纠错</h1><p>a/i/o 进入插入模式</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl h <span class="hljs-comment"># 删除上一个字符</span></span><br><span class="line">ctrl w <span class="hljs-comment"># 删除上一个单词</span></span><br><span class="line">ctrl u <span class="hljs-comment"># 删除当前行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl h <span class="comment"># 删除上一个字符</span></span><br><span class="line">ctrl w <span class="comment"># 删除上一个单词</span></span><br><span class="line">ctrl u <span class="comment"># 删除当前行</span></span><br></pre></td></tr></table></figure>
 
 <p>快速切换 Insert 和 Normal</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl c / ctrl [ <span class="hljs-comment"># 代替 Esc</span></span><br><span class="line">gi <span class="hljs-comment"># 快速跳转到你最后一次编辑的地方并进入插入模式</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl c / ctrl [ <span class="comment"># 代替 Esc</span></span><br><span class="line">gi <span class="comment"># 快速跳转到你最后一次编辑的地方并进入插入模式</span></span><br></pre></td></tr></table></figure>
 
 <p>使用 hjkl 移动</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h <span class="hljs-comment"># 左</span></span><br><span class="line">j <span class="hljs-comment"># 下</span></span><br><span class="line">k <span class="hljs-comment"># 上</span></span><br><span class="line">l <span class="hljs-comment"># 右</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h <span class="comment"># 左</span></span><br><span class="line">j <span class="comment"># 下</span></span><br><span class="line">k <span class="comment"># 上</span></span><br><span class="line">l <span class="comment"># 右</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="在单词之间飞舞"><a href="#在单词之间飞舞" class="headerlink" title="在单词之间飞舞"></a>在单词之间飞舞</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w/W <span class="hljs-comment"># 移到下一 word/WORD 开头</span></span><br><span class="line">e/E <span class="hljs-comment"># 下一个 word/WORD 尾</span></span><br><span class="line">b/B <span class="hljs-comment"># 回到上一个word/WORD 开头</span></span><br></pre></td></tr></table></figure>
+<h1 id="在单词之间飞舞"><a href="#在单词之间飞舞" class="headerlink" title="在单词之间飞舞"></a>在单词之间飞舞</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w/W <span class="comment"># 移到下一 word/WORD 开头</span></span><br><span class="line">e/E <span class="comment"># 下一个 word/WORD 尾</span></span><br><span class="line">b/B <span class="comment"># 回到上一个word/WORD 开头</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>word 指以非空白符分割的单词</li>
 <li>WORD 以空白符分割的单词</li>
 </ul>
 <p>行间搜索移动</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;char&#125; <span class="hljs-comment"># 移到 char 字符上</span></span><br><span class="line">t <span class="hljs-comment"># 移到 char 前一个字符</span></span><br><span class="line">F <span class="hljs-comment"># 反过来搜索前面的字符</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;char&#125; <span class="comment"># 移到 char 字符上</span></span><br><span class="line">t <span class="comment"># 移到 char 前一个字符</span></span><br><span class="line">F <span class="comment"># 反过来搜索前面的字符</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>; 该行下一个</li>
 <li>, 该行上一个</li>
 </ul>
 <p>水平移动</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 <span class="hljs-comment"># 移到行首第一个字符</span></span><br><span class="line">^ <span class="hljs-comment"># 第一个非空白字符</span></span><br><span class="line">$ <span class="hljs-comment"># 移到行尾</span></span><br><span class="line">g_ <span class="hljs-comment"># 移到行尾非空白字符</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 <span class="comment"># 移到行首第一个字符</span></span><br><span class="line">^ <span class="comment"># 第一个非空白字符</span></span><br><span class="line">$ <span class="comment"># 移到行尾</span></span><br><span class="line">g_ <span class="comment"># 移到行尾非空白字符</span></span><br></pre></td></tr></table></figure>
 
 <p>垂直移到</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">() <span class="hljs-comment"># 在句子间移动</span></span><br><span class="line">&#123;&#125; <span class="hljs-comment"># 在段落间移到</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">() <span class="comment"># 在句子间移动</span></span><br><span class="line">&#123;&#125; <span class="comment"># 在段落间移到</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>插件 easy-motion</li>
 </ul>
 <p>页面移动</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gg、G <span class="hljs-comment"># 文件开头/结尾</span></span><br><span class="line">ctrl o <span class="hljs-comment"># 快速返回</span></span><br><span class="line"></span><br><span class="line">H/M/L <span class="hljs-comment"># 跳到屏幕开头(Head)中间(Middle)结尾(Lower)</span></span><br><span class="line">ctrl u <span class="hljs-comment"># 上翻页</span></span><br><span class="line">ctrl f <span class="hljs-comment"># 下翻页</span></span><br><span class="line">zz <span class="hljs-comment"># 把屏幕置为中间</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gg、G <span class="comment"># 文件开头/结尾</span></span><br><span class="line">ctrl o <span class="comment"># 快速返回</span></span><br><span class="line"></span><br><span class="line">H/M/L <span class="comment"># 跳到屏幕开头(Head)中间(Middle)结尾(Lower)</span></span><br><span class="line">ctrl u <span class="comment"># 上翻页</span></span><br><span class="line">ctrl f <span class="comment"># 下翻页</span></span><br><span class="line">zz <span class="comment"># 把屏幕置为中间</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h1><p>增</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a/i/o</span><br><span class="line">A/I/O</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a/i/o</span><br><span class="line">A/I/O</span><br></pre></td></tr></table></figure>
 
 <p>快速删除</p>
-<figure class="highlight bash hljs"><figcaption><span>normal 模式下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x <span class="hljs-comment"># 快速删一个字符</span></span><br><span class="line">d <span class="hljs-comment"># 删除</span></span><br><span class="line">daw <span class="hljs-comment"># 删除一个单词</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>normal 模式下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x <span class="comment"># 快速删一个字符</span></span><br><span class="line">d <span class="comment"># 删除</span></span><br><span class="line">daw <span class="comment"># 删除一个单词</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>d x 可以搭配数字执行多次</li>
 </ul>
 <p>快速修改</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r(replace) c(change) s(substitute) <span class="hljs-comment"># 常用</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r(replace) c(change) s(substitute) <span class="comment"># 常用</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>normal 下 r 可以替换一个字符，s 替换并进入插入模式</li>
 <li>使用 c 配合文本对象可以快速进行修改</li>
 </ul>
 <p>查询</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ <span class="hljs-comment"># 前向搜索</span></span><br><span class="line">? <span class="hljs-comment"># 反向搜索</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ <span class="comment"># 前向搜索</span></span><br><span class="line">? <span class="comment"># 反向搜索</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>n/N 跳转上一个或者上一个匹配</li>
@@ -268,7 +289,7 @@
 </li>
 </ul>
 <h1 id="替换命令"><a href="#替换命令" class="headerlink" title="替换命令"></a>替换命令</h1><p>substitute</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:[range]s[ubsitite]/&#123;pattern&#125;/&#123;string&#125;/[flags]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:[range]s[ubsitite]/&#123;pattern&#125;/&#123;string&#125;/[flags]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>range 范围(:10,20),10-20行,% 全部</li>
@@ -276,7 +297,7 @@
 <li>string 是替换后的文本</li>
 </ul>
 <h2 id="替换标志位"><a href="#替换标志位" class="headerlink" title="替换标志位"></a>替换标志位</h2><p>Flags 常用标志</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g(global) <span class="hljs-comment"># 全局</span></span><br><span class="line">c(confirm) <span class="hljs-comment"># 表示确认，可以确认或拒绝修改</span></span><br><span class="line">n(number) <span class="hljs-comment"># 报告匹配到的次数而不替换，可以用来匹配次数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g(global) <span class="comment"># 全局</span></span><br><span class="line">c(confirm) <span class="comment"># 表示确认，可以确认或拒绝修改</span></span><br><span class="line">n(number) <span class="comment"># 报告匹配到的次数而不替换，可以用来匹配次数</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>:1,6 s/self// 查询1-6行有几个 self</li>
@@ -298,12 +319,26 @@
 <li><ctrl w>v 垂直分割</ctrl></li>
 <li>或者 :sp :vs</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt><br><img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
 <h1 id="宏-macro"><a href="#宏-macro" class="headerlink" title="宏(macro)"></a>宏(macro)</h1><p>可以看做一系列命令合集</p>
 <h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><ol>
 <li>q 录制、技术录制</li>
 <li>q{register} 选择要保存的寄存器，把录制的命令保存其中</li>
-<li>@{register} 回放寄存器中的一系列命令<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="hljs-string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="hljs-comment"># 全选</span></span><br><span class="line">: I<span class="hljs-string">"</span></span><br><span class="line"><span class="hljs-string">:t # 重复上一命令</span></span><br><span class="line"><span class="hljs-string">:A"</span></span><br></pre></td></tr></table></figure>
+<li>@{register} 回放寄存器中的一系列命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="comment"># 全选</span></span><br><span class="line">: I<span class="string">"</span></span><br><span class="line"><span class="string">:t # 重复上一命令</span></span><br><span class="line"><span class="string">:A"</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -353,7 +388,7 @@
 <li>ctrl x 和 ctrl f 补全文件名</li>
 <li>ctrl x 和 ctrl o 补全代码 </li>
 </ol>
-<h1 id="更换配色"><a href="#更换配色" class="headerlink" title="更换配色"></a>更换配色</h1><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:colorscheme <span class="hljs-comment"># 显示当前主题配色</span></span><br><span class="line">:colorscheme &lt;ctrl+d&gt; <span class="hljs-comment"># 显示所有配色</span></span><br><span class="line">:colorscheme 配色名 <span class="hljs-comment"># 修改配色</span></span><br></pre></td></tr></table></figure>
+<h1 id="更换配色"><a href="#更换配色" class="headerlink" title="更换配色"></a>更换配色</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:colorscheme <span class="comment"># 显示当前主题配色</span></span><br><span class="line">:colorscheme &lt;ctrl+d&gt; <span class="comment"># 显示所有配色</span></span><br><span class="line">:colorscheme 配色名 <span class="comment"># 修改配色</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h1><h2 id="基本映射"><a href="#基本映射" class="headerlink" title="基本映射"></a>基本映射</h2><ul>
 <li>normal 模式下(leadser键即 <code>,</code> )</li>
@@ -383,15 +418,15 @@
 <li>任何时候都建议使用非递归映射</li>
 </ol>
 <p>示例</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">let</span> mapleader = <span class="hljs-string">","</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt; <span class="hljs-comment"># 插入模式保存</span></span><br><span class="line">inoremap jj &lt;Esc&gt; <span class="hljs-comment"># 使用jj直接进入 normal</span></span><br><span class="line"><span class="hljs-comment"># 使用 leader+w 直接保存</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;</span><br><span class="line">noremap &lt;leader&gt;w :w&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 切换 Buffer</span></span><br><span class="line">nnoremap &lt;slient&gt; [b :bprevious&lt;CR&gt;</span><br><span class="line">nnoremap &lt;slient&gt; [n :bnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 分屏</span></span><br><span class="line">noremap &lt;C-h&gt; &lt;C-w&gt;h</span><br><span class="line">noremap &lt;C-j&gt; &lt;C-w&gt;j</span><br><span class="line">noremap &lt;C-k&gt; &lt;C-w&gt;k</span><br><span class="line">noremap &lt;C<span class="hljs-_">-l</span>&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># json 格式化</span></span><br><span class="line">comr FormatJSON %!python3 -m json.tool</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># sudo to write</span></span><br><span class="line">cnoremap w!! w !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader = <span class="string">","</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt; <span class="comment"># 插入模式保存</span></span><br><span class="line">inoremap jj &lt;Esc&gt; <span class="comment"># 使用jj直接进入 normal</span></span><br><span class="line"><span class="comment"># 使用 leader+w 直接保存</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;</span><br><span class="line">noremap &lt;leader&gt;w :w&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换 Buffer</span></span><br><span class="line">nnoremap &lt;slient&gt; [b :bprevious&lt;CR&gt;</span><br><span class="line">nnoremap &lt;slient&gt; [n :bnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分屏</span></span><br><span class="line">noremap &lt;C-h&gt; &lt;C-w&gt;h</span><br><span class="line">noremap &lt;C-j&gt; &lt;C-w&gt;j</span><br><span class="line">noremap &lt;C-k&gt; &lt;C-w&gt;k</span><br><span class="line">noremap &lt;C<span class="_">-l</span>&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line"><span class="comment"># json 格式化</span></span><br><span class="line">comr FormatJSON %!python3 -m json.tool</span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo to write</span></span><br><span class="line">cnoremap w!! w !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure>
 
 <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="常见的插件管理器"><a href="#常见的插件管理器" class="headerlink" title="常见的插件管理器"></a>常见的插件管理器</h2><p>vim-plug,Vundle,Pathogen,Deim </p>
 <h2 id="vim-plug"><a href="#vim-plug" class="headerlink" title="vim-plug"></a><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a></h2><ul>
 <li>安装 vim-plug</li>
 </ul>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="hljs-built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight bash hljs"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="hljs-comment">#begin('~/.vim/plugged')</span></span><br><span class="line">Plug <span class="hljs-string">'mhinz/vim-startify'</span> <span class="hljs-comment"># 插件</span></span><br><span class="line"><span class="hljs-string">" Initialize plugin system</span></span><br><span class="line"><span class="hljs-string">call plug#end()</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight bash"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="comment">#begin('~/.vim/plugged')</span></span><br><span class="line">Plug <span class="string">'mhinz/vim-startify'</span> <span class="comment"># 插件</span></span><br><span class="line"><span class="string">" Initialize plugin system</span></span><br><span class="line"><span class="string">call plug#end()</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>source ~/.vimrc</code> 并 <code>:PlugInstall</code></li>
@@ -416,37 +451,37 @@
 <h2 id="文件目录和搜索插件"><a href="#文件目录和搜索插件" class="headerlink" title="文件目录和搜索插件"></a>文件目录和搜索插件</h2><ul>
 <li>文件目录 <a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">nerdtree</a></li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot; 查找文件所在位置</span><br><span class="line">nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;</span><br><span class="line">&quot; 切换设置</span><br><span class="line">nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot; 查找文件所在位置</span><br><span class="line">nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;</span><br><span class="line">&quot; 切换设置</span><br><span class="line">nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Crtl + P 后输入要搜索的内容</li>
 </ul>
 </li>
 <li><p>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a></p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Files . <span class="hljs-comment"># 搜索当前目录</span></span><br><span class="line">:Ag content <span class="hljs-comment"># 搜索字符串</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Files . <span class="comment"># 搜索当前目录</span></span><br><span class="line">:Ag content <span class="comment"># 搜索字符串</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></p>
 </li>
 </ul>
 <p>映射</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unmap ss &lt;Plus&gt;(easymotion-s2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unmap ss &lt;Plus&gt;(easymotion-s2)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>修改成对内容 <a href="https://github.com/tpope/vim-surround" target="_blank" rel="noopener">vim-surround</a></li>
 </ul>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ds <span class="hljs-comment"># delete a surrounding</span></span><br><span class="line">cs <span class="hljs-comment"># change a surrounding</span></span><br><span class="line">ys <span class="hljs-comment"># you add a surrounding</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ds <span class="comment"># delete a surrounding</span></span><br><span class="line">cs <span class="comment"># change a surrounding</span></span><br><span class="line">ys <span class="comment"># you add a surrounding</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
+<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="浏览代码"><a href="#浏览代码" class="headerlink" title="浏览代码"></a>浏览代码</h3><p><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">targbar</a></p>
-<figure class="highlight bash hljs"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonormal &lt;leader&gt;t :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonormal &lt;leader&gt;t :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://github.com/lfv89/vim-interestingwords" target="_blank" rel="noopener">vim-interestingwords</a> 可以高亮单词</p>
 <h3 id="补全"><a href="#补全" class="headerlink" title="补全"></a>补全</h3><p>补全插件</p>
@@ -460,7 +495,7 @@
 <p>静态检查Lint</p>
 <p>neomake、<a href="https://github.com/w0rp/ale" target="_blank" rel="noopener">ale</a> 需要安装对应语言的 lint 库如 eslint/pylint/golint</p>
 <h2 id="Python-相关"><a href="#Python-相关" class="headerlink" title="Python 相关"></a>Python 相关</h2><p><a href="https://github.com/python-mode/python-mode" target="_blank" rel="noopener">Python-mode</a> 具有基本的补全，跳转，重构，格式化功能</p>
-<figure class="highlight bash hljs"><figcaption><span>.vimer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">" Python-mode</span></span><br><span class="line"><span class="hljs-string">let g:pymode_python =  'python3'</span></span><br><span class="line"><span class="hljs-string">let g:pymode_trim_whitespaces = 1</span></span><br><span class="line"><span class="hljs-string">let g:pymode_doc = 1</span></span><br><span class="line"><span class="hljs-string">let g:pymode_doc_bind = 'k'</span></span><br><span class="line"><span class="hljs-string">let g:pymode_rope_goto_definition_bind = "</span>&lt;C-J&gt;<span class="hljs-string">"</span></span><br><span class="line"><span class="hljs-string">let g:pymode_lint = `</span></span><br><span class="line"><span class="hljs-string">let g:pymode_lint_checkers = ['pyflakers','pep8','mccabe','plylint']</span></span><br><span class="line"><span class="hljs-string">let g:pymode_options_max_line_length = 120</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>.vimer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" Python-mode</span></span><br><span class="line"><span class="string">let g:pymode_python =  'python3'</span></span><br><span class="line"><span class="string">let g:pymode_trim_whitespaces = 1</span></span><br><span class="line"><span class="string">let g:pymode_doc = 1</span></span><br><span class="line"><span class="string">let g:pymode_doc_bind = 'k'</span></span><br><span class="line"><span class="string">let g:pymode_rope_goto_definition_bind = "</span>&lt;C-J&gt;<span class="string">"</span></span><br><span class="line"><span class="string">let g:pymode_lint = `</span></span><br><span class="line"><span class="string">let g:pymode_lint_checkers = ['pyflakers','pep8','mccabe','plylint']</span></span><br><span class="line"><span class="string">let g:pymode_options_max_line_length = 120</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://github.com/tppope/vim-fugitive" target="_blank" rel="noopener">Fugitive</a></p>
 <ul>
@@ -475,492 +510,329 @@
 </ul>
 
         </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-10T01:38:54.197Z" itemprop="dateUpdated">2019-12-10 09:38:54</time>
+</span><br>
+
+
         
-    <div class="donate">
-        <a id="github" href="https://github.com/weechang" target="_blank" class="pos-f tr3" title="Github"></a>
-        <div id="DonateText" class="tr3">赏</div>
-        <ul id="donateBox" class="list pos-f tr3">
+        本文链接：<a href="/posts/Vim-Mooc.html" target="_blank" rel="external">https://vitan.me/posts/Vim-Mooc.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://vitan.me">
+            <img src="/img/ivitan.png" alt="Vitan">
+            Vitan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+
+
             
-                <li id="AliPay" data-footnote="点击查看支付宝付款码"><a title="支付宝付款码">AliPay</a></li>
-            
-            
-                <li id="WeChat" data-footnote="点击查看微信付款码"><a title="微信付款码">WeChat</a></li>
-            
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Vim-Mooc.html&title=《Vim Summary》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Vim-Mooc.html&title=《Vim Summary》 — Vitan's Blog&source=Vim 重新学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Vim-Mooc.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim Summary》 — Vitan's Blog&url=https://vitan.me/posts/Vim-Mooc.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Vim-Mooc.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
         </div>
     </div>
-    <script type="application/javascript">
-        jQuery(document).ready(function () {
-            var QRBox = $('#QRBox');
-            var MainBox = $('#MainBox');
-            var AliPayQR = '/images/alipay.png';
-            var WeChanQR = '/images/wechat.png';
-            function showQR(QR) {
-                if (QR) {
-                    MainBox.css('background-image', 'url(' + QR + ')');
-                }
-                $('#DonateText,#donateBox,#github').addClass('blur');
-                QRBox.fadeIn(300, function (argument) {
-                    MainBox.addClass('showQR');
-                });
-            }
-            $('#donateBox>li').click(function (event) {
-                var thisID = $(this).attr('id');
-                if (thisID === 'AliPay') {
-                    showQR(AliPayQR);
-                } else if (thisID === 'WeChat') {
-                    showQR(WeChanQR);
-                }
-            });
-            MainBox.click(function (event) {
-                MainBox.removeClass('showQR').addClass('hideQR');
-                setTimeout(function (a) {
-                    QRBox.fadeOut(300, function (argument) {
-                        MainBox.removeClass('hideQR');
-                    });
-                    $('#DonateText,#donateBox,#github').removeClass('blur');
-                }, 600);
-            });
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/Docker.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ArchLinux Docker</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/CatEOF.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Cat 追加与覆盖</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
         });
+        new Valine({
+            el: '#comments',
+            notify: 'ture' == 'true',
+            verify: 'false' == 'true',
+            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+            avatar: "mm",
+            placeholder: "留下您的足迹吧！",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
     </script>
+    <!-- Valine Comments end -->
 
-        <ul class="post-copyright">
-            <li><strong>本文作者：</strong><a href="https://vitan.me">Vitan</a></li>
-            <li><strong>本文链接：</strong><a href="https://vitan.me/posts/Vim-Mooc.html">https://vitan.me/posts/Vim-Mooc.html</a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a
-                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow"
-                    target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-        
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Vim/">Vim</a>
-                </div>
-            </div>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
         </div>
         
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d5a0060c60153001277bba9&amp;product=sticky-share-buttons' async='async'></script>
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
     </div>
 </div>
 
 
 
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/Docker.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ArchLinux Docker</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/CatEOF.html">
-                <span class="level-item">Cat 追加与覆盖</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz',
-        app_key: 'rG3tgBLm6WGpoU2895oVKXVU',
-        placeholder: '快来做第一个评论的人吧！'
-    });
-</script>
-
-    </div>
-</div>
-</div>
+    <div class="bottom">
+        <p><span>Vitan &copy; 2017 - 2020</span>
+            <span>
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-    <!--<div class="card widget" id="toc">-->
-    <div class="card widget column-left is-sticky" id="toc">
-        <div class="card-content">
-            <div class="menu" style="max-height: 700px;overflow:auto;">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-            <a class="is-flex" href="#三个模式">
-            <span class="has-mr-6">1</span>
-            <span>三个模式</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#Insert-编辑模式">
-            <span class="has-mr-6">1.1</span>
-            <span>Insert 编辑模式</span>
-            </a></li><li>
-            <a class="is-flex" href="#Command-模式">
-            <span class="has-mr-6">1.2</span>
-            <span>Command 模式</span>
-            </a></li><li>
-            <a class="is-flex" href="#Visual-可视-模式">
-            <span class="has-mr-6">1.3</span>
-            <span>Visual (可视)模式</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#如何快速纠错">
-            <span class="has-mr-6">2</span>
-            <span>如何快速纠错</span>
-            </a></li><li>
-            <a class="is-flex" href="#在单词之间飞舞">
-            <span class="has-mr-6">3</span>
-            <span>在单词之间飞舞</span>
-            </a></li><li>
-            <a class="is-flex" href="#增删查改">
-            <span class="has-mr-6">4</span>
-            <span>增删查改</span>
-            </a></li><li>
-            <a class="is-flex" href="#替换命令">
-            <span class="has-mr-6">5</span>
-            <span>替换命令</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#替换标志位">
-            <span class="has-mr-6">5.1</span>
-            <span>替换标志位</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#Buffer-Windows-Tab">
-            <span class="has-mr-6">6</span>
-            <span>Buffer Windows Tab</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#在-Buffer-之间切换">
-            <span class="has-mr-6">6.1</span>
-            <span>在 Buffer 之间切换</span>
-            </a></li><li>
-            <a class="is-flex" href="#Windows-窗口">
-            <span class="has-mr-6">6.2</span>
-            <span>Windows 窗口</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#宏-macro">
-            <span class="has-mr-6">7</span>
-            <span>宏(macro)</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#How">
-            <span class="has-mr-6">7.1</span>
-            <span>How</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#常见的补全">
-            <span class="has-mr-6">8</span>
-            <span>常见的补全</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#最常用">
-            <span class="has-mr-6">8.1</span>
-            <span>最常用</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#更换配色">
-            <span class="has-mr-6">9</span>
-            <span>更换配色</span>
-            </a></li><li>
-            <a class="is-flex" href="#映射">
-            <span class="has-mr-6">10</span>
-            <span>映射</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#基本映射">
-            <span class="has-mr-6">10.1</span>
-            <span>基本映射</span>
-            </a></li><li>
-            <a class="is-flex" href="#递归与非递归映射">
-            <span class="has-mr-6">10.2</span>
-            <span>递归与非递归映射</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#插件">
-            <span class="has-mr-6">11</span>
-            <span>插件</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#常见的插件管理器">
-            <span class="has-mr-6">11.1</span>
-            <span>常见的插件管理器</span>
-            </a></li><li>
-            <a class="is-flex" href="#vim-plug">
-            <span class="has-mr-6">11.2</span>
-            <span>vim-plug</span>
-            </a></li><li>
-            <a class="is-flex" href="#安装插件">
-            <span class="has-mr-6">11.3</span>
-            <span>安装插件</span>
-            </a></li><li>
-            <a class="is-flex" href="#vim-美观插件">
-            <span class="has-mr-6">11.4</span>
-            <span>vim 美观插件</span>
-            </a></li><li>
-            <a class="is-flex" href="#插件推荐网站">
-            <span class="has-mr-6">11.5</span>
-            <span>插件推荐网站</span>
-            </a></li><li>
-            <a class="is-flex" href="#文件目录和搜索插件">
-            <span class="has-mr-6">11.6</span>
-            <span>文件目录和搜索插件</span>
-            </a></li><li>
-            <a class="is-flex" href="#代码">
-            <span class="has-mr-6">11.7</span>
-            <span>代码</span>
-            </a><ul class="menu-list"><li>
-            <a class="is-flex" href="#浏览代码">
-            <span class="has-mr-6">11.7.1</span>
-            <span>浏览代码</span>
-            </a></li><li>
-            <a class="is-flex" href="#补全">
-            <span class="has-mr-6">11.7.2</span>
-            <span>补全</span>
-            </a></li></ul></li><li>
-            <a class="is-flex" href="#格式化与静态检查">
-            <span class="has-mr-6">11.8</span>
-            <span>格式化与静态检查</span>
-            </a></li><li>
-            <a class="is-flex" href="#Python-相关">
-            <span class="has-mr-6">11.9</span>
-            <span>Python 相关</span>
-            </a></li><li>
-            <a class="is-flex" href="#Git">
-            <span class="has-mr-6">11.10</span>
-            <span>Git</span>
-            </a></li></ul></li></ul>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-        </div>
-    
-</div>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <!--
-                <a class="footer-logo is-block has-mb-6" href="/">
-                    
-                    <img src="/images/logo.png" alt="Vim Summary" height="28">
-                    
-                </a>
-                -->
-                <p class="is-size-7">
-                    <span id="busuanzi_container_site_uv">
-                        感谢
-                        <span id="busuanzi_value_site_uv">0</span>
-                        位小伙伴的
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                        <span id="busuanzi_value_site_pv">0</span>
-                        次陪伴
-                    </span>
-                    </p>
-                <p class="is-size-7">
-                    Copyright by Vitan @ 2020 &bull; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &bull; Theme: <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-                
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                    
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="GitHub" href="https://github.com/ivitan">
-                            
-                            <i class="fab fa-github"></i>
-                            
-                        </a>
-                    </p>
-                    
-                    <p class="control">
-                        <a class="button is-white is-large" target="_blank"
-                            title="SiteMap" href="/xml/sitemap.xml">
-                            
-                            <i class="fas fa-sitemap"></i>
-                            
-                        </a>
-                    </p>
-                    
-                </div>
-                
-            </div>
-        </div>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Vim-Mooc.html&title=《Vim Summary》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Vim-Mooc.html&title=《Vim Summary》 — Vitan's Blog&source=Vim 重新学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Vim-Mooc.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim Summary》 — Vitan's Blog&url=https://vitan.me/posts/Vim-Mooc.html&via=https://vitan.me" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Vim-Mooc.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
 
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aQY6DMAwF0N7/0sx2JFT4tkkGjV5WlUrpg0Vkf+fzidfxZf3+9nx9cs/PioWLizvmHpfrfOvz5/P152+vuYkBFxd3P/ex2wUb3/UruLHh4uK+kptvUtdFDC4u7v/gVpuZ64IJFxf3/dyk+UnaniQiSe72QK+Gi4s74OYp5brPS/JdXFzcFvdorfkD9/4dFxd3D7e66fRGJjkuao1wcXEXc3tDlDxOTR61EMji4uJu5OZjkknkkUelXzdEXFzc13DzIUq10Kl6cHFx93Cr21NSGOWvoDd2xcXF3cnNy5re0YoHmh9cXNwt3OqP56HJpNHCxcXdyZ0ckEpancdeEC4u7hZutdBJjlCsOP7VbIFwcXFb3PloZN2QdRSV4uLiDrjRDhcMSqsdSvUF4eLi7uQmI5NkTUat+eEwXFzcPdwkqugllpMG6eaeuLi4i7lHcVULoN7GVzh4gYuLu4BbjTInw9eknKq2ZLi4uOu4vU2nGqFWg9Sb5gcXF3cLNw8m8scrpLbzfBcXF/ePuNXGJimPyrUYLi7uy7i9be7ZAxm4uLg7ufPmZzIyKRwFw8XF3cLNA9NqhNprfh7Ld3FxcTv/+AMyxCULNbtIGwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '您似乎掉线了呢！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
     });
-});
+})();
 </script>
 
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
 
 
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
 </body>
 </html>
