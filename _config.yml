@@ -138,14 +138,6 @@ jsonContent:
     categories: false
     tags: true
 
-douban:
-  user: ivitan
-  builtin: ture
-  movie:
-    title: '我的观影'
-    quote: '我的观影'
-  timeout: 10000 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
