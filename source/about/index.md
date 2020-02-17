@@ -4,18 +4,9 @@ title: About
 description: About
 toc: false
 ---
-<p align="center" class="has-mb-6">
-<img src="/images/ivitan.png" style="border-radius:50%" width="200px" height="200px">
-<br> 
-<br>
-<iframe src="https://ghbtns.com/github-btn.html?user=ivitan&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="200px" height="28px"></iframe>
-<br>
-<br>
-</p>
-
 # Vitan
 > - 数码爱好者
-> - Linuxer,Pythonista,Vimer
+> - Linuxer，Pythonista，Vimer
 > - Google，Andriod，OnePlus 粉
 > - 规则长方体固体物质空间移动工程师
 

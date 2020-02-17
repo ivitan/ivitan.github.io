@@ -101,7 +101,7 @@ archive_generator:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: indigo
 
 lazyload:
   enable: false
@@ -118,15 +118,33 @@ google_adsense:
 feed:
   type: atom
   path: /xml/atom.xml
-sitemap:
-  path: /xml/sitemap.xml
 
-# 打赏
-donate:
-  enable: true
-  donate_message: 赏
-  alipay: /images/alipay.png
-  wechat: /images/wechat.png
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
+
+douban:
+  user: ivitan
+  builtin: ture
+  movie:
+    title: '我的观影'
+    quote: '我的观影'
+  timeout: 10000 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
