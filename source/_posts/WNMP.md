@@ -12,6 +12,9 @@ toc: true
 thumbnail: /images/PHP.png
 date: 2019-12-23 13:42:58
 ---
+# Github 仓库
+https://github.com/ivitan/wnmp
+
 # 下载
 1. [Nginx](http://nginx.org/en/download.html)
 2. [PHP](http://windows.php.net/download/ )
@@ -28,35 +31,58 @@ date: 2019-12-23 13:42:58
 
 4. 配置
 
-```bat D:\DevEnv\Nignx\nginx.cof
-location / {
-    root   D:/WNMP/www;        #指定站点根目录为D:/wnmp/www
-    index  index.php index.html index.htm;    #添加index.php,优先解析php文件
+```bat D:\WNMP\Nignx\nginx.cof
+#user  nobody;
+worker_processes  auto;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    #default_type  application/octet-stream;
+    
+
+    autoindex on;
+    autoindex_exact_size off;
+    autoindex_localtime on;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    #access_log  logs/access.log  main;
+    sendfile        on;
+    #tcp_nopush     on;
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    #gzip  on;
+	include vhost/*.conf;
 }
 ```
 
-再往下，找到如下内容，取消注释
-
-```bat D:\WNMP\Nignx\nginx.cof
-
-#location ~ \.php$ {
-#    root           html;
-#    fastcgi_pass   127.0.0.1:9000;
-#    fastcgi_index  index.php;
-#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-#    include        fastcgi_params;
-#}
-```
-
-然后将 root html; 更改为 root D:/wnmp/www; 再将 /scripts 改为 $document_root，这里的"$document_root"就是前面 "root" 所指定的站点路径
-
-```bat D:\WNMP\Nignx\nginx.cof
-location ~ \.php$ {
-    root           D:/WNMP/www;
-    fastcgi_pass   127.0.0.1:9000;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
+```bash D:\WNMP\Nignx\conf\vhost\default.cof
+server {
+    listen 80;
+    server_name localhost;
+    root www/;
+    location / {
+        index index.php index.html index.htm;
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    access_log logs/access.log main;
 }
 ```
 
@@ -68,34 +94,57 @@ nginx -s reload 更改配置，使用新配置启动新工作进程，正常关�
 nginx -s reopen 重新打开日志文件
 ```
 # MySQL
-复制my-default.ini文件，并重命名为my.ini。再打开my.ini，取消 basedir 和 datadir 注释，并指定具体路径：
-```bat
-basedir = "D:/wamp/mysql/"
-datadir = "D:/wamp/mysql/data/"
+## 配置
+```bash %mysql%\my.ini
+[mysqld]
+character-set-server=utf8
+#绑定IPv4和3306端口
+port = 3306
+# 设置mysql的安装目录
+basedir=D:/WorkPlace/WNMP/mysql
+# 设置mysql数据库的数据的存放目录
+datadir=D:/WorkPlace/WNMP/mysql/data
+# 允许最大连接数
+max_connections=2000
+# skip_grant_tables
+[mysql]
+default-character-set=utf8
+[mysql.server]
+default-character-set=utf8
+[mysql_safe]
+default-character-set=utf8
+[client]
+default-character-set=utf8
 ```
+## 安装
+```bash %mysql%\bin
+mysqld.exe -install 
+```
+提示：Service successfully installed. 表示安装成功.
 
-以管理员身份打开一个DOS窗口，切换到bin目录（必须），
+### 初始化 MySQL 数据
+创建一个具有空密码的root用户
+```sql
+mysqld --initialize-insecure --user=mysql 
+```
+- 最后的参数 --user=mysql 在 windows 也可以不用添加
+- 但在 unix 等系统下好像很重要。 
+- 执行命令后系统会自动生成相应的 data 目录，并自动创建好空密码的 root 用户。
 
-```bat
-d:                                         # 切换到D盘
-cd d:\wnmp\mysql-5.7.17-winx64\bin         # 切换到bin目录
-mysqld -install                            # 安装MySQL服务
-mysqld --initialize --user=root --console  # 初始化MySQL，生成data目录和root密码，5.7版本之后必须要有这个命令
-```
-最后那条命令会生成一个临时密码，如下：
-```
-2019-12-23T07:55:56.279880Z 1 [Note] A temporary password is generated for root@localhost: o*%_kb(k_1<V
-```
-再启动MySQL：
-```
+## 启动mysql服务
+```cmd
 net start mysql
 ```
-临时密码只能登陆后修改密码，不能进行其他操作。使用下面的命令修改
-```bat
-mysql_secure_installation
-```
+## 进行密码设定
+可执行如下命令：
+```sql
+mysqladmin -u root -p password NewPassword
 
-[其他版本修改密码](https://vitan.me/posts/MySQLPassword.html)
+password: # OldPassword
+```
+- 在输入旧密码（或没改过密码的就直接回车）
+- 系统很久没响应，然后报错（10060）。 原因：mysql没有通过windows防火墙 解决方法：将 D:\mysql\bin\mysqld.exe 添加到windows防火墙允许通过的应用中。
+
 # PHP
 1. 解压 PHP 到 D:\DevEnv\PHP
 2. 修改配置，将 D:\PHP\php.ini-development 改为 php.ini,取消下面注释
@@ -111,7 +160,9 @@ mysql_secure_installation
 ;extension=mysqli
 ;extension=mysql
 ```
-去 `;`再修改
+
+去 `;` 再修改
+
 ```bat
 ;extension_dir = "ext" 改为 extension_dir = "D:\wnmp\php\ext"
 ;date.timezone = 改为date.timezone = Asia/Shanghai
@@ -128,43 +179,94 @@ mysql_secure_installation
 D:\WNMP\php\php-cli.exe -b 127.0.1.1:9000 -c D:\WNMP\php\php.ini
 ```
 
-## 脚本
-```bat stat.bat
-@echo off
-REM Windows 下无效
-REM set PHP_FCGI_CHILDREN=5
+## php.ini 配置
+https://github.com/ivitan/wnmp/blob/master/php/php-7.2.25/php.ini
 
-REM 每个进程处理的最大请求数，或设置为Windows环境变量
-set PHP_FCGI_MAX_REQUESTS=1000
-
-echo Starting PHP FastCGI...
-D:/wnmp/php/php-cgi.exe -b 127.0.0.1:9000 -c D:/wnmp/php/php.ini
-
-echo Starting nginx...
-D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx
+# 脚本
+## 环境变量
+环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径
+```cmd
+;D:\wnmp\mysql\bin;D:\wnmp\nginx;D:\wnmp\php;
 ```
-```bat stop.bat
+## 启动 WNMP
+```cmd stat.bat
 @echo off
+set base_path=%cd%
+set nginx_path=%base_path%\nginx
+set php7_path=%base_path%\php\php-7.2.25
+set mysql_path=%base_path%\mySql
 
-echo Stopping nginx...
-taskkill /F /IM nginx.exe > null
+echo Starting PHP7 FastCGI...
+RunHiddenConsole %php7_path%\php-cgi.exe -b 127.0.0.1:9000 -c %php7_path%\php.ini
 
-echo Stopping PHP FastCGI...
-taskkill /F /IM php-cgi.exe > null
+echo Starting Nginx...
+RunHiddenConsole %nginx_path%\nginx.exe -c %nginx_path%\conf\nginx.conf
 
+echo Starting MySql...
+RunHiddenConsole %mysql_path%\bin\mysqld --defaults-file=%mysql_path%\my.ini --port=3306
+
+echo please open http://127.0.0.1 ...
+ping -n 3 127.0.0.1 > nul
+start chrome  "design.vitan.me"
 exit
 ```
 
-# 环境变量
-环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径
-```bat
-;D:\wnmp\mysql\bin;D:\wnmp\nginx;D:\wnmp\php;
+## 重启 WNMP
+```cmd
+@echo off
+echo Stopping Nginx...
+taskkill /F /IM nginx.exe > nul
+echo Stopping PHP FastCGI...
+taskkill /F /IM php-cgi.exe > nul
+echo Stopping Mysql...
+taskkill /F /IM mysqld.exe > nul
+
+set base_path=%cd%
+set nginx_path=%base_path%\nginx
+set php7_path=%base_path%\php\php-7.2.25
+set mysql_path=%base_path%\mysql
+
+echo Starting PHP7 FastCGI...
+RunHiddenConsole %php7_path%\php-cgi.exe -b 127.0.0.1:9000 -c %php7_path%\php.ini
+
+echo Starting Nginx...
+RunHiddenConsole %nginx_path%\nginx.exe -c %nginx_path%\conf\nginx.conf
+
+echo Starting MySql...
+RunHiddenConsole %mysql_path%\bin\mysqld --defaults-file=%mysql_path%\my.ini --port=3306
+echo please open http://127.0.0.1 ...
+ping -n 3 127.0.0.1 > nul
+start chrome  "design.vitan.me"
+exit
+```
+
+## 关闭 WNMP
+```cmd
+@echo off
+set base_path=%cd%
+set nginx_path=%base_path%\nginx
+set php7_path=%base_path%\php\php-7.2.25
+set mysql_path=%base_path%\mySql
+
+echo Starting PHP7 FastCGI...
+RunHiddenConsole %php7_path%\php-cgi.exe -b 127.0.0.1:9000 -c %php7_path%\php.ini
+
+echo Starting Nginx...
+RunHiddenConsole %nginx_path%\nginx.exe -c %nginx_path%\conf\nginx.conf
+
+echo Starting MySql...
+RunHiddenConsole %mysql_path%\bin\mysqld --defaults-file=%mysql_path%\my.ini --port=3306
+
+echo please open http://127.0.0.1 ...
+ping -n 3 127.0.0.1 > nul
+start chrome  "design.vitan.me"
+exit
 ```
 
 # 整体测试
 - 测试 PHP
 
-```php D:\WNMP\nginx\html
+```php D:\WNMP\www
 <?php
 	phpinfo();	
 ?>
@@ -173,7 +275,7 @@ exit
 
 - 测试 Mysql
 
-```php D:\WNMP\nginx\html
+```php D:\WNMP\www
 <?php 
 	if (mysqli_connect("localhost","root","root")) {
 		echo "Mysql connect successful！";

@@ -16,6 +16,8 @@ date: 2020-01-08 13:40:15
 
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png)
 
+<!--more-->
+
 # 配置
 
 ```bash D:\cmder\config\user_profile.sh

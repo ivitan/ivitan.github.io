@@ -11,13 +11,13 @@ thumbnail: /images/Note.png
 在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
 
 # 方法
-- 电脑端
+## 电脑端
 
 1. 右键SSR/SS --> 选项设置 --> 勾选 `允许来自局域网连接`,V2ray 同样在设置中勾选 `允许来自局域网的连接`
 2. CMD --> 输入 `ipconfig` 获取 `无线的IPV4地址`
 3. 正常开启热点
 
-- 手机端
+## 手机端
 
 1. 长按连接的 WiFi 名,点修改网络
 2. 显示高级选项
@@ -29,21 +29,21 @@ thumbnail: /images/Note.png
 ---
 
 # 跳过谷歌验证
-- 方法一
+## 方法一
 
 即上述 Windows 10 开热点的方法
 
-- 方法二
+## 方法二
 
 ```adb
 adb shell settings put secure user_setup_complete 1
 adb shell settings put global device_provisioned 1
 ```
 
-- 方法三
+## 方法三
 
 开机前不插入 SIM 卡,开机后不连接 WIFI,在开机导向时可以有选择跳过登录 Google 账号
 
-- 方法四
+## 方法四
 
 顺时针方向，从左上角开始,连点屏幕四角
