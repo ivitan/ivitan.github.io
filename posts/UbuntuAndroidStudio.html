@@ -31,9 +31,9 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Android,Ubuntu">
+    <meta name="keywords" content="Android,Linux,Ubuntu">
     <meta name="description" content="Ubuntu安装Android Studio">
-<meta name="keywords" content="Linux,Android,Ubuntu">
+<meta name="keywords" content="Android,Linux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 安装 Android Studio">
 <meta property="og:url" content="https://vitan.me/posts/UbuntuAndroidStudio.html">
@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SDK"><span class="post-toc-number">1.</span> <span class="post-toc-text">SDK</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-Android-SDK"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装 Android SDK</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置SDK环境变量"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置SDK环境变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Studio-步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">Studio 步骤</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sdk"><span class="post-toc-number">1.</span> <span class="post-toc-text">SDK</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-android-sdk"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装 Android SDK</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置sdk环境变量"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置SDK环境变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#studio-步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">Studio 步骤</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,22 +207,28 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Ubuntu安装Android Studio</p>
 <a id="more"></a>
-
-<h1 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h1><h2 id="安装-Android-SDK"><a href="#安装-Android-SDK" class="headerlink" title="安装 Android SDK"></a>安装 Android SDK</h2><ul>
+<h1 id="sdk">SDK</h1>
+<h2 id="安装-android-sdk">安装 Android SDK</h2>
+<ul>
 <li>下载SDK<a href="https://developer.android.com/studio/index.html?hl=zh-cn" target="_blank" rel="noopener">传送门</a></li>
-<li>解压并移动到指定目录<code>tar -zxvf android-sdk-linux.tgz -C /usr/local/andriod-sdk</code><br>sudo mv -r /usr/local/ android-sdk-linux</li>
-<li>更改属主、属组<br>·cd /usr/local/·<br>·sudo chown -R vitan:vitan android-sdk/</li>
+<li>解压并移动到指定目录<code>tar -zxvf android-sdk-linux.tgz -C /usr/local/andriod-sdk</code>
+sudo mv -r /usr/local/ android-sdk-linux</li>
+<li>更改属主、属组
+·cd /usr/local/·
+·sudo chown -R vitan:vitan android-sdk/</li>
 </ul>
-<h2 id="配置SDK环境变量"><a href="#配置SDK环境变量" class="headerlink" title="配置SDK环境变量"></a>配置SDK环境变量</h2><ul>
+<h2 id="配置sdk环境变量">配置SDK环境变量</h2>
+<ul>
 <li><code>vim /etc/profile</code>后添加</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set sdk environment</span><br><span class="line">export SDK_HOME=/usr/local/android-sdk-linux</span><br><span class="line">export PATH=$SDK_HOME/tools:$SDK_HOME/platform-tools:$PATH</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>source /etc/profile</code> 使上面的配置立即生效。</li>
 </ul>
-<h1 id="Studio-步骤"><a href="#Studio-步骤" class="headerlink" title="Studio 步骤"></a>Studio 步骤</h1><p>1.下载Android Studio <a href="http://www.android-studio.org/" target="_blank" rel="noopener">传送门</a></p>
-<p>2.解压到指定目录<br><code>sudo tar zxvf android-studio-ide-171.4443003-linux.zip /opt/Android-Studio/</code></p>
+<h1 id="studio-步骤">Studio 步骤</h1>
+<p>1.下载Android Studio <a href="http://www.android-studio.org/" target="_blank" rel="noopener">传送门</a></p>
+<p>2.解压到指定目录
+<code>sudo tar zxvf android-studio-ide-171.4443003-linux.zip /opt/Android-Studio/</code></p>
 <p>3.安装</p>
 <ul>
 <li>cd /opt/Android-Studio/bin</li>
@@ -416,7 +422,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -428,18 +442,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>

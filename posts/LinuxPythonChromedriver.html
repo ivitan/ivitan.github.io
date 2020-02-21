@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二-配置-Path"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二(配置 Path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Windows"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Windows</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#linux"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二-配置-path"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二(配置 Path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#windows"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Windows</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -205,25 +205,27 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p> Python ChromeDriver GeckoDriver Configer</p>
+            <p>Python ChromeDriver GeckoDriver Configer</p>
 <a id="more"></a>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul>
+<h1 id="下载">下载</h1>
+<ul>
 <li><a href="http://chromedriver.chromium.org/downloads" target="_blank" rel="noopener">ChromeDriver</a></li>
 <li><a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener">GeckoDriver</a></li>
 </ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<h1 id="配置">配置</h1>
+<h2 id="linux">Linux</h2>
+<ul>
 <li>方法一</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv chromedriver /usr/bin</span><br><span class="line">sudo mv geckodriver /usr/bin</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法二-配置-Path"><a href="#方法二-配置-Path" class="headerlink" title="方法二(配置 Path)"></a>方法二(配置 Path)</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/chromedriver"</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/geckodriver"</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="方法二-配置-path">方法二(配置 Path)</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/chromedriver"</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/geckodriver"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>验证</li>
 </ul>
 <figure class="highlight sh"><figcaption><span>terminal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chromedriver</span><br><span class="line">geckodriver</span><br></pre></td></tr></table></figure>
-
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>chromedriver.exe geckodriver.exe 文件拖到 Python 的 Scripts 目录下</p>
+<h2 id="windows">Windows</h2>
+<p>chromedriver.exe geckodriver.exe 文件拖到 Python 的 Scripts 目录下</p>
 
         </div>
 
@@ -278,7 +280,7 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/LinuxPythonChromedriver.html&title=《Python ChromeDriver GeckoDriver》 — Vitan's Blog&source= Python ChromeDriver GeckoDriver Configer" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/LinuxPythonChromedriver.html&title=《Python ChromeDriver GeckoDriver》 — Vitan's Blog&source=Python ChromeDriver GeckoDriver Configer" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -411,7 +413,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -423,18 +433,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>
@@ -459,7 +461,7 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/LinuxPythonChromedriver.html&title=《Python ChromeDriver GeckoDriver》 — Vitan's Blog&source= Python ChromeDriver GeckoDriver Configer" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/LinuxPythonChromedriver.html&title=《Python ChromeDriver GeckoDriver》 — Vitan's Blog&source=Python ChromeDriver GeckoDriver Configer" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

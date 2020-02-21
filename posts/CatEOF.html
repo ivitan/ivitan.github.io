@@ -207,28 +207,28 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Cat  追加与覆盖</p>
 <a id="more"></a>
-<h1 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h1><ul>
+<h1 id="追加">追加</h1>
+<ul>
 <li>cat &lt;<eof>&gt;</eof></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt;&gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>cat &gt;&gt;</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &gt;&gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<h1 id="覆盖"><a href="#覆盖" class="headerlink" title="覆盖"></a>覆盖</h1><ul>
+<h1 id="覆盖">覆盖</h1>
+<ul>
 <li>cat &lt;<eof>&gt;</eof></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>cat &gt;&gt;</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h1><ul>
-<li>Warnning<br>追加和覆盖若要使用变量必须加 <code>\</code> 如 <strong><code>\$var</code></strong></li>
+<h1 id="使用变量">使用变量</h1>
+<ul>
+<li>Warnning
+追加和覆盖若要使用变量必须加 <code>\</code> 如 <strong><code>\$var</code></strong></li>
 </ul>
 
         </div>
@@ -417,7 +417,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -429,18 +437,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>

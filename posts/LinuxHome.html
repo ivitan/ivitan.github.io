@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#看硬盘信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">看硬盘信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#f-l"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">f -l</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#缩减-Home"><span class="post-toc-number">2.</span> <span class="post-toc-text">缩减 Home</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载-Home-挂载"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">卸载 Home 挂载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调整-home-分区大小"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">调整 /home 分区大小</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分配给"><span class="post-toc-number">3.</span> <span class="post-toc-text">分配给 /</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.</span> <span class="post-toc-text">注意</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#看硬盘信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">看硬盘信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#f-l"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">f -l</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#缩减-home"><span class="post-toc-number">2.</span> <span class="post-toc-text">缩减 Home</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载-home-挂载"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">卸载 Home 挂载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调整-home-分区大小"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">调整 /home 分区大小</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分配给"><span class="post-toc-number">3.</span> <span class="post-toc-text">分配给 /</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.</span> <span class="post-toc-text">注意</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,91 +207,89 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Linux <code>Home</code> 硬盘空间缩减并添加到 <code>/</code>.</p>
 <a id="more"></a>
-
-<h1 id="看硬盘信息"><a href="#看硬盘信息" class="headerlink" title="看硬盘信息"></a>看硬盘信息</h1><h2 id="f-l"><a href="#f-l" class="headerlink" title="f -l"></a>f -l</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -l</span><br></pre></td></tr></table></figure>
-
+<h1 id="看硬盘信息">看硬盘信息</h1>
+<h2 id="f-l">f -l</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -l</span><br></pre></td></tr></table></figure>
 <hr>
 <table>
 <thead>
 <tr>
-<th align="left">文件系统</th>
-<th align="left">容量</th>
-<th align="left">已用</th>
-<th align="left">可用</th>
-<th align="left">已用%</th>
-<th align="left">挂载点</th>
+<th style="text-align:left">文件系统</th>
+<th style="text-align:left">容量</th>
+<th style="text-align:left">已用</th>
+<th style="text-align:left">可用</th>
+<th style="text-align:left">已用%</th>
+<th style="text-align:left">挂载点</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">dev</td>
-<td align="left">1.9G</td>
-<td align="left">0</td>
-<td align="left">1.9G</td>
-<td align="left">0%</td>
-<td align="left">/dev</td>
+<tbody>
+<tr>
+<td style="text-align:left">dev</td>
+<td style="text-align:left">1.9G</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1.9G</td>
+<td style="text-align:left">0%</td>
+<td style="text-align:left">/dev</td>
 </tr>
 <tr>
-<td align="left">run</td>
-<td align="left">1.9G</td>
-<td align="left">1.3M</td>
-<td align="left">1.9G</td>
-<td align="left">1%</td>
-<td align="left">/run</td>
+<td style="text-align:left">run</td>
+<td style="text-align:left">1.9G</td>
+<td style="text-align:left">1.3M</td>
+<td style="text-align:left">1.9G</td>
+<td style="text-align:left">1%</td>
+<td style="text-align:left">/run</td>
 </tr>
 <tr>
-<td align="left">/dev/sdb4</td>
-<td align="left">30G</td>
-<td align="left">17G</td>
-<td align="left">12G</td>
-<td align="left">59%</td>
-<td align="left">/</td>
+<td style="text-align:left">/dev/sdb4</td>
+<td style="text-align:left">30G</td>
+<td style="text-align:left">17G</td>
+<td style="text-align:left">12G</td>
+<td style="text-align:left">59%</td>
+<td style="text-align:left">/</td>
 </tr>
 <tr>
-<td align="left">/dev/sdb3</td>
-<td align="left">59G</td>
-<td align="left">8.6G</td>
-<td align="left">48G</td>
-<td align="left">16%</td>
-<td align="left">/home</td>
+<td style="text-align:left">/dev/sdb3</td>
+<td style="text-align:left">59G</td>
+<td style="text-align:left">8.6G</td>
+<td style="text-align:left">48G</td>
+<td style="text-align:left">16%</td>
+<td style="text-align:left">/home</td>
 </tr>
-</tbody></table>
-<h1 id="缩减-Home"><a href="#缩减-Home" class="headerlink" title="缩减 Home"></a>缩减 Home</h1><h2 id="卸载-Home-挂载"><a href="#卸载-Home-挂载" class="headerlink" title="卸载 Home 挂载"></a>卸载 Home 挂载</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /home</span><br></pre></td></tr></table></figure>
-
+</tbody>
+</table>
+<h1 id="缩减-home">缩减 Home</h1>
+<h2 id="卸载-home-挂载">卸载 Home 挂载</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /home</span><br></pre></td></tr></table></figure>
 <ul>
 <li>提示 busy 不能卸载</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终止占用进程</span></span><br><span class="line">fuser -m /home</span><br></pre></td></tr></table></figure>
-
-<h2 id="调整-home-分区大小"><a href="#调整-home-分区大小" class="headerlink" title="调整 /home 分区大小"></a>调整 /home 分区大小</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resize2fs -p /dev/sdb3  30G</span><br><span class="line"><span class="comment"># resize2fs 为重新设定磁盘大小</span></span><br><span class="line"><span class="comment"># 只是重新指定一下大小，并不对结果有影响</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="调整-home-分区大小">调整 /home 分区大小</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resize2fs -p /dev/sdb3  30G</span><br><span class="line"><span class="comment"># resize2fs 为重新设定磁盘大小</span></span><br><span class="line"><span class="comment"># 只是重新指定一下大小，并不对结果有影响</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>先设置一下 Home 的大小,进行这一步的时候会提醒让先运行下面的命令进行检查</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2fsck -f /dev/sdb3</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>强制检查一下磁盘并修复错误，接下来再次运行这个命令把 home大小设置为20G</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize2fs -p /dev/sdb3 30G</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>收缩逻辑卷空间为 30G</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用lvreduce指令用于减少LVM逻辑卷占用的空间大小</span></span><br><span class="line"><span class="comment"># -L 是设为，-l 是减小的值</span></span><br><span class="line">lvreduce -L 30G /dev/sdb3</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>然后挂载 <code>/home</code> 并 <code>df -h</code> 查看一下 Home 大小分配是否成功</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /home</span><br></pre></td></tr></table></figure>
-
-<h1 id="分配给"><a href="#分配给" class="headerlink" title="分配给 /"></a>分配给 /</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvextend -l +100%FREE /dev/sdb4</span><br></pre></td></tr></table></figure>
-
+<h1 id="分配给">分配给 /</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvextend -l +100%FREE /dev/sdb4</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行调整根目录的空间大小,并耐心等待,不要操作</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize2fs -p /dev/sdb4</span><br></pre></td></tr></table></figure>
-
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<h1 id="注意">注意</h1>
+<ol>
 <li><code>ext2</code> <code>ext3</code> <code>ext4</code> 文件系统的调整命令是 <code>resize2fs</code></li>
 <li><code>xfs</code> 文件系统的调整命令是 <code>xfs_growfs</code>（只支持增大）</li>
 </ol>
@@ -487,7 +485,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -499,18 +505,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>

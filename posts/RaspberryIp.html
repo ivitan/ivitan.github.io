@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#有显示器"><span class="post-toc-number">1.</span> <span class="post-toc-text">有显示器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#无显示器有路由器"><span class="post-toc-number">2.</span> <span class="post-toc-text">无显示器有路由器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#只有电脑"><span class="post-toc-number">3.</span> <span class="post-toc-text">只有电脑</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#只有手机（安卓）"><span class="post-toc-number">4.</span> <span class="post-toc-text">只有手机（安卓）</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#有显示器"><span class="post-toc-number">1.</span> <span class="post-toc-text">有显示器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#无显示器有路由器"><span class="post-toc-number">2.</span> <span class="post-toc-text">无显示器有路由器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#只有电脑"><span class="post-toc-number">3.</span> <span class="post-toc-text">只有电脑</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#只有手机-安卓"><span class="post-toc-number">4.</span> <span class="post-toc-text">只有手机（安卓）</span></a></li></ol>
         </nav>
     </aside>
 
@@ -205,27 +205,28 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>树莓派获取 IP </p>
+            <p>树莓派获取 IP</p>
 <a id="more"></a>
-<h1 id="有显示器"><a href="#有显示器" class="headerlink" title="有显示器"></a>有显示器</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br><span class="line">hostname -I</span><br></pre></td></tr></table></figure>
-
-<h1 id="无显示器有路由器"><a href="#无显示器有路由器" class="headerlink" title="无显示器有路由器"></a>无显示器有路由器</h1><ul>
+<h1 id="有显示器">有显示器</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br><span class="line">hostname -I</span><br></pre></td></tr></table></figure>
+<h1 id="无显示器有路由器">无显示器有路由器</h1>
+<ul>
 <li>连接路由器后<a href="http://192.168.1.1" target="_blank" rel="noopener">登陆路由器管理界</a>面查看即可。</li>
 </ul>
-<h1 id="只有电脑"><a href="#只有电脑" class="headerlink" title="只有电脑"></a>只有电脑</h1><ul>
+<h1 id="只有电脑">只有电脑</h1>
+<ul>
 <li>网线直接把树莓派与电脑连接起来</li>
 <li>电脑需要连 WiFi</li>
 <li>在 设置-&gt;网络-&gt;Wlan-&gt;网络与共享中心-&gt;Wlan-&gt;属性-&gt;共享-&gt;允许​其它用户通过它来连接-&gt;确定。</li>
 <li>CMD 查看 IP</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping raspberrypi.local</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>改变了树莓派的主机名字，Avahi 也将改变 .local 的 DNS 多播地址</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br><span class="line"><span class="comment"># 通常以192.168开头，最后一位是1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="只有手机（安卓）"><a href="#只有手机（安卓）" class="headerlink" title="只有手机（安卓）"></a>只有手机（安卓）</h1><ul>
+<h1 id="只有手机-安卓">只有手机（安卓）</h1>
+<ul>
 <li>USB 共享的网络</li>
 <li>开启热点</li>
 <li>使用局域网扫描软件(<a href="https://play.google.com/store/apps/details?id=com.overlook.android.fing" target="_blank" rel="noopener">Find</a>,IpScanner,Es文件管理器…)查询 IP</li>
@@ -290,7 +291,7 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/RaspberryIp.html&title=《树莓派获取 IP 地址》 — Vitan's Blog&source=树莓派获取 IP " data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/RaspberryIp.html&title=《树莓派获取 IP 地址》 — Vitan's Blog&source=树莓派获取 IP" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -423,7 +424,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -435,18 +444,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>
@@ -471,7 +472,7 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/RaspberryIp.html&title=《树莓派获取 IP 地址》 — Vitan's Blog&source=树莓派获取 IP " data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/RaspberryIp.html&title=《树莓派获取 IP 地址》 — Vitan's Blog&source=树莓派获取 IP" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

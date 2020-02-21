@@ -31,9 +31,9 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,ArchLinux,Win,Ubuntu">
+    <meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
     <meta name="description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。">
-<meta name="keywords" content="Linux,ArchLinux,Win,Ubuntu">
+<meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="删除 Linux EFI 分区">
 <meta property="og:url" content="https://vitan.me/posts/delLinuxEFI.html">
@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-EFI-分区"><span class="post-toc-number">1.</span> <span class="post-toc-text">删除 EFI 分区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-Linux-启动项"><span class="post-toc-number">2.</span> <span class="post-toc-text">删除 Linux 启动项</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-efi-分区"><span class="post-toc-number">1.</span> <span class="post-toc-text">删除 EFI 分区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-linux-启动项"><span class="post-toc-number">2.</span> <span class="post-toc-text">删除 Linux 启动项</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,7 +207,8 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。</p>
 <a id="more"></a>
-<h1 id="删除-EFI-分区"><a href="#删除-EFI-分区" class="headerlink" title="删除 EFI 分区"></a>删除 EFI 分区</h1><ul>
+<h1 id="删除-efi-分区">删除 EFI 分区</h1>
+<ul>
 <li>使用 dispart</li>
 </ul>
 <ol>
@@ -219,7 +220,8 @@ ga('send', 'pageview');
 <li>根据分区大小这里选择分区6  <code>select partition 6</code></li>
 <li>删除 <code>delete partition override</code></li>
 </ol>
-<h1 id="删除-Linux-启动项"><a href="#删除-Linux-启动项" class="headerlink" title="删除 Linux 启动项"></a>删除 Linux 启动项</h1><ul>
+<h1 id="删除-linux-启动项">删除 Linux 启动项</h1>
+<ul>
 <li>EFI 分区分配盘符</li>
 </ul>
 <ol>
@@ -423,7 +425,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -435,18 +445,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>

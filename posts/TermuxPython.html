@@ -31,9 +31,9 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Android,Termux,WebCrawler,Python">
+    <meta name="keywords" content="Android,Linux,Termux,WebCrawler,Python">
     <meta name="description" content="Termux Puthon">
-<meta name="keywords" content="Linux,Android,Termux,WebCrawler,Python">
+<meta name="keywords" content="Android,Linux,Termux,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Termux Python 相关库">
 <meta property="og:url" content="https://vitan.me/posts/TermuxPython.html">
@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#依赖"><span class="post-toc-number">1.</span> <span class="post-toc-text">依赖</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Jupyter-Notebook"><span class="post-toc-number">2.</span> <span class="post-toc-text">Jupyter Notebook</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#爬虫相关模块"><span class="post-toc-number">3.</span> <span class="post-toc-text">爬虫相关模块</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#WordCloud"><span class="post-toc-number">4.</span> <span class="post-toc-text">WordCloud</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#科学计算相关"><span class="post-toc-number">5.</span> <span class="post-toc-text">科学计算相关</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Sklearn"><span class="post-toc-number">6.</span> <span class="post-toc-text">Sklearn</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#依赖"><span class="post-toc-number">1.</span> <span class="post-toc-text">依赖</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#jupyter-notebook"><span class="post-toc-number">2.</span> <span class="post-toc-text">Jupyter Notebook</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#爬虫相关模块"><span class="post-toc-number">3.</span> <span class="post-toc-text">爬虫相关模块</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#wordcloud"><span class="post-toc-number">4.</span> <span class="post-toc-text">WordCloud</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#科学计算相关"><span class="post-toc-number">5.</span> <span class="post-toc-text">科学计算相关</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sklearn"><span class="post-toc-number">6.</span> <span class="post-toc-text">Sklearn</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,39 +207,36 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Termux Puthon</p>
 <a id="more"></a>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装</p>
+<h1 id="依赖">依赖</h1>
+<p>安装</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pkg install python python-dev clang</span><br><span class="line">pip install --upgrade pip</span><br><span class="line">apt install libxml2 libxml2-dev libxslt libxslt-dev</span><br><span class="line">apt install openssl libffi libffi-dev openssl-tool openssl-dev</span><br><span class="line">apt install fftw fftw-dev libzmq libzmq-dev freetype freetype-dev</span><br><span class="line">apt install libpng libpng-dev pkg-config scrypt</span><br><span class="line">pkg install libcrypt libcrypt-dev ccrypt libgcrypt libgcrypt-dev</span><br><span class="line">pkg install libjpeg-turbo-dev libllvm-dev openjpeg</span><br></pre></td></tr></table></figure>
-
-<h1 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt install clang python python-dev</span><br><span class="line">apt install fftw libzmq libzmq-dev freetype freetype-dev</span><br><span class="line">apt install libpng libpng-dev pkg-config</span><br><span class="line">pip install --upgrade pip</span><br><span class="line">pip install jupyter</span><br><span class="line">jupyter notebook --ip=0.0.0.0</span><br></pre></td></tr></table></figure>
-
-<h1 id="爬虫相关模块"><a href="#爬虫相关模块" class="headerlink" title="爬虫相关模块"></a>爬虫相关模块</h1><p>BeautifulSoup4 requests</p>
+<h1 id="jupyter-notebook">Jupyter Notebook</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt install clang python python-dev</span><br><span class="line">apt install fftw libzmq libzmq-dev freetype freetype-dev</span><br><span class="line">apt install libpng libpng-dev pkg-config</span><br><span class="line">pip install --upgrade pip</span><br><span class="line">pip install jupyter</span><br><span class="line">jupyter notebook --ip=0.0.0.0</span><br></pre></td></tr></table></figure>
+<h1 id="爬虫相关模块">爬虫相关模块</h1>
+<p>BeautifulSoup4 requests</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install BeautifulSoup4</span><br><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-
 <p>lxml</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install clang</span><br><span class="line">apt-get install libxml2 libxml2-dev</span><br><span class="line">apt install libxslt libxslt-dev</span><br><span class="line">pip install lxml</span><br></pre></td></tr></table></figure>
-
 <p>scrapy</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install openssl libffi libffi-dev</span><br><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>error: command “arm-linux-androideabi-clang failed with exit status 1<ul>
+<li>error: command &quot;arm-linux-androideabi-clang failed with exit status 1
+<ul>
 <li><a href="https://github.com/termux/termux-packages/issues/2847" target="_blank" rel="noopener">解决方法</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="WordCloud"><a href="#WordCloud" class="headerlink" title="WordCloud"></a>WordCloud</h1> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install python python-dev libjpeg-turbo-dev</span><br><span class="line">pkg install ibcrypt-dev ndk-sysroot clang</span><br><span class="line">pip install pilow worldcloud</span><br></pre></td></tr></table></figure>
-
-<h1 id="科学计算相关"><a href="#科学计算相关" class="headerlink" title="科学计算相关"></a>科学计算相关</h1><p>numpy</p>
+<h1 id="wordcloud">WordCloud</h1>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install python python-dev libjpeg-turbo-dev</span><br><span class="line">pkg install ibcrypt-dev ndk-sysroot clang</span><br><span class="line">pip install pilow worldcloud</span><br></pre></td></tr></table></figure>
+<h1 id="科学计算相关">科学计算相关</h1>
+<p>numpy</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt install clang python python-dev</span><br><span class="line">apt install fftw libzmq libzmq-dev</span><br><span class="line">apt install freetype freetype-dev</span><br><span class="line">apt install libpng libpng-dev pkg-config</span><br><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-
 <p>matplotlib</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install freetype freetype-dev</span><br><span class="line">apt install libpng libpng-dev pkg-config libpng</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-
 <p>pandas scipy</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas</span><br><span class="line">pkg install scipy</span><br></pre></td></tr></table></figure>
-
-<h1 id="Sklearn"><a href="#Sklearn" class="headerlink" title="Sklearn"></a>Sklearn</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 链接到了termux社区一位贡献者(its-pointless)编译的源</span></span><br><span class="line">curl -L https://its-pointless.github.io/setup-pointless-repo.sh | sh</span><br><span class="line">pkg install scipy numpy Sklearn</span><br></pre></td></tr></table></figure>
-
+<h1 id="sklearn">Sklearn</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 链接到了termux社区一位贡献者(its-pointless)编译的源</span></span><br><span class="line">curl -L https://its-pointless.github.io/setup-pointless-repo.sh | sh</span><br><span class="line">pkg install scipy numpy Sklearn</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -427,7 +424,15 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <div class="bottom">
+        <p>
+            
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
+            </span>
+        </p>
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
@@ -439,18 +444,10 @@ ga('send', 'pageview');
 </p>
 
 
-        <p>
-            
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
             </span>
         </p>
     </div>
