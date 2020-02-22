@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MongoDB"><span class="post-toc-number">1.</span> <span class="post-toc-text">MongoDB</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RoboMongo"><span class="post-toc-number">2.</span> <span class="post-toc-text">RoboMongo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mongodb"><span class="post-toc-number">1.</span> <span class="post-toc-text">MongoDB</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#robomongo"><span class="post-toc-number">2.</span> <span class="post-toc-text">RoboMongo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">ArchLinux 安装 MongoDB RoboMongo</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-04 12:22:12" datetime="2018-09-04T04:22:12.000Z"  itemprop="datePublished">2018-09-04</time>
+            <time class="post-time" title="2018-09-04 12:22:12" datetime="2018-09-04T04:22:12.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2018-09-04</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -207,20 +207,19 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>ArchLinux 安装 MongoDB RoboMongo</p>
 <a id="more"></a>
-<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mongodb</span><br></pre></td></tr></table></figure>
-
+<h1 id="mongodb">MongoDB</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mongodb</span><br></pre></td></tr></table></figure>
 <p>启动服务</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mongodb.service</span><br></pre></td></tr></table></figure>
-
-<h1 id="RoboMongo"><a href="#RoboMongo" class="headerlink" title="RoboMongo"></a>RoboMongo</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay robo3t</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ul>
+<h1 id="robomongo">RoboMongo</h1>
+<h2 id="方法一">方法一</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay robo3t</span><br></pre></td></tr></table></figure>
+<h2 id="方法二">方法二</h2>
+<ul>
 <li><a href="https://robomongo.org/download" target="_blank" rel="noopener">下载链接</a></li>
 <li>解压，运行</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf rrobo3t-1.2.1-linux-x86_64-3e50a65.tar.gz</span><br><span class="line"><span class="built_in">cd</span> robo3t-1.2.1-linux-x86_64-3e50a65/bin</span><br><span class="line">./robo3t</span><br></pre></td></tr></table></figure>
-
 
         </div>
 

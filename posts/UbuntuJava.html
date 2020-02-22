@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-JDK"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装 JDK</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境配置</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-jdk"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装 JDK</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境配置</span></a></li></ol>
         </nav>
     </aside>
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">Ubuntu 安装并配置 Java 环境</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-02-28 14:33:14" datetime="2018-02-28T06:33:14.000Z"  itemprop="datePublished">2018-02-28</time>
+            <time class="post-time" title="2018-02-28 14:33:14" datetime="2018-02-28T06:33:14.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2018-02-28</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -207,19 +207,19 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Ubuntu 安装并配置 java 环境</p>
 <a id="more"></a>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm" target="_blank" rel="noopener">链接</a></p>
-<h2 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h2><p>在usr目录下建立java安装目录</p>
+<h1 id="下载">下载</h1>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm" target="_blank" rel="noopener">链接</a></p>
+<h2 id="安装-jdk">安装 JDK</h2>
+<p>在usr目录下建立java安装目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr</span><br><span class="line">sudo mkdir java</span><br></pre></td></tr></table></figure>
-
 <p>将jdk文件移动到java目录下并解压</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home/download</span><br><span class="line">sudo mv dk-8u161-linux-x64.tar.gz /usr/java #移动</span><br><span class="line">cd /usr/java</span><br><span class="line">tar -zxvf dk-8u161-linux-x64.tar.gz #解压</span><br><span class="line">ln -s /usr/java/jdk1.8.0_121/ /usr/jdk #创建快捷方式</span><br></pre></td></tr></table></figure>
-
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ul>
+<h1 id="环境配置">环境配置</h1>
+<ul>
 <li><code>sudo vim /etc/profile</code></li>
 <li>在最后加入</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/jdk</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">export JAVA_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>保存退出</li>
 <li>加载配置信息<code>source /etc/profile</code></li>

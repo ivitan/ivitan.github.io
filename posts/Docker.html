@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">ArchLinux Docker</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-05-25 13:10:00" datetime="2019-05-25T05:10:00.000Z"  itemprop="datePublished">2019-05-25</time>
+            <time class="post-time" title="2019-05-25 13:10:00" datetime="2019-05-25T05:10:00.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-05-25</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
@@ -207,15 +207,14 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>ArchLinux 安装 Docker</p>
 <a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure>
-
+<h1 id="安装">安装</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure>
 <p>start server</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
-
-<h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure>
-
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure>
-
+<h1 id="镜像">镜像</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure>
+<h1 id="运行">运行</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure>
 <ul>
 <li>-it, -i：交互式操作， -t 终端</li>
 </ul>

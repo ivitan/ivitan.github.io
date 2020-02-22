@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">Termux 安装 Linux</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-02-10 13:55:10" datetime="2018-02-10T05:55:10.000Z"  itemprop="datePublished">2018-02-10</time>
+            <time class="post-time" title="2018-02-10 13:55:10" datetime="2018-02-10T05:55:10.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2018-02-10</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -207,24 +207,20 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Termux安装Linux</p>
 <a id="more"></a>
-
-<h1 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h1><p>添加源</p>
+<h1 id="安装脚本">安装脚本</h1>
+<p>添加源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras"</span> &gt;&gt; <span class="variable">$PREFIX</span>/etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
 <p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install atilo-cn -y</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo [命令] [参数]</span><br></pre></td></tr></table></figure>
-
+<h1 id="使用">使用</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo [命令] [参数]</span><br></pre></td></tr></table></figure>
 <p>安装 Linux</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo ubuntu</span><br></pre></td></tr></table></figure>
-
 <p>运行 linux</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startubuntu</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h2><p>修改/etc/locale.gen</p>
+<h2 id="设置中文">设置中文</h2>
+<p>修改/etc/locale.gen</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locale-gen zh_CN.UTF-8</span><br><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"zh_CN.UTF-8"</span></span><br></pre></td></tr></table></figure>
-
 
         </div>
 

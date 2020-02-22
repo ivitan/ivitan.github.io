@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-常用的存储引擎"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL 常用的存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表及字段的命名规则"><span class="post-toc-number">2.</span> <span class="post-toc-text">表及字段的命名规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字段类型的选择原则"><span class="post-toc-number">3.</span> <span class="post-toc-text">字段类型的选择原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#char-varchar-如何选择"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">char varchar 如何选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#decimal与float-如何选择"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">decimal与float 如何选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间类型如何存储"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">时间类型如何存储</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何选择主键"><span class="post-toc-number">4.</span> <span class="post-toc-text">如何选择主键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于预留字段"><span class="post-toc-number">5.</span> <span class="post-toc-text">关于预留字段</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysql-常用的存储引擎"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL 常用的存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表及字段的命名规则"><span class="post-toc-number">2.</span> <span class="post-toc-text">表及字段的命名规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字段类型的选择原则"><span class="post-toc-number">3.</span> <span class="post-toc-text">字段类型的选择原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#char-varchar-如何选择"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">char varchar 如何选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#decimal与float-如何选择"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">decimal与float 如何选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间类型如何存储"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">时间类型如何存储</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何选择主键"><span class="post-toc-number">4.</span> <span class="post-toc-text">如何选择主键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于预留字段"><span class="post-toc-number">5.</span> <span class="post-toc-text">关于预留字段</span></a></li></ol>
         </nav>
     </aside>
 
@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">SQL 规范</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-06-09 10:15:14" datetime="2018-06-09T02:15:14.000Z"  itemprop="datePublished">2018-06-09</time>
+            <time class="post-time" title="2018-06-09 10:15:14" datetime="2018-06-09T02:15:14.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2018-06-09</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Database/">Database</a></li></ul>
@@ -207,118 +207,187 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>SQL规范，注意事项。</p>
 <a id="more"></a>
-<h1 id="MySQL-常用的存储引擎"><a href="#MySQL-常用的存储引擎" class="headerlink" title="MySQL 常用的存储引擎"></a>MySQL 常用的存储引擎</h1><p>数据引擎表<br>|存储引擎|事务|锁粒度|主要应用|忌用|<br>|:—|:—|:—|:—|:—|<br>|MYISAM|不支持|支持并发插入的表级锁|SELECT,INSERT|读写操作频繁|<br>|MRG_MYISAM|不支持|支持并发插入的表级锁|分段归档,数据仓库|数全局查找过多的场景|<br>|Innodb|支持|支持MVCC的行级锁|事务处理|无|<br>|Archive|不支持|行级锁|日志记录只支持insert,select|需要随机读取,更新,删除|<br>|Ndb cluster|支持|行级锁|高可用性|大部份应用|</p>
-<h1 id="表及字段的命名规则"><a href="#表及字段的命名规则" class="headerlink" title="表及字段的命名规则"></a>表及字段的命名规则</h1><p>规则</p>
+<h1 id="mysql-常用的存储引擎">MySQL 常用的存储引擎</h1>
+<p>数据引擎表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">存储引擎</th>
+<th style="text-align:left">事务</th>
+<th style="text-align:left">锁粒度</th>
+<th style="text-align:left">主要应用</th>
+<th style="text-align:left">忌用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MYISAM</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持并发插入的表级锁</td>
+<td style="text-align:left">SELECT,INSERT</td>
+<td style="text-align:left">读写操作频繁</td>
+</tr>
+<tr>
+<td style="text-align:left">MRG_MYISAM</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持并发插入的表级锁</td>
+<td style="text-align:left">分段归档,数据仓库</td>
+<td style="text-align:left">数全局查找过多的场景</td>
+</tr>
+<tr>
+<td style="text-align:left">Innodb</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">支持MVCC的行级锁</td>
+<td style="text-align:left">事务处理</td>
+<td style="text-align:left">无</td>
+</tr>
+<tr>
+<td style="text-align:left">Archive</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">行级锁</td>
+<td style="text-align:left">日志记录只支持insert,select</td>
+<td style="text-align:left">需要随机读取,更新,删除</td>
+</tr>
+<tr>
+<td style="text-align:left">Ndb cluster</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">行级锁</td>
+<td style="text-align:left">高可用性</td>
+<td style="text-align:left">大部份应用</td>
+</tr>
+</tbody>
+</table>
+<h1 id="表及字段的命名规则">表及字段的命名规则</h1>
+<p>规则</p>
 <ul>
-<li>可读性原则<ul>
-<li>使用大写和小写来格式化的库对象名字以获得良好的可读性。<ul>
+<li>可读性原则
+<ul>
+<li>使用大写和小写来格式化的库对象名字以获得良好的可读性。
+<ul>
 <li>例如:使用CustAddress而不是Custaddress来提高可读性。(这里要注意有些DBMS系统对表名的大小写是敏感的)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>表意性原则<ul>
-<li>对象的名字应该能够描述它所标识的对象。<ul>
+<li>表意性原则
+<ul>
+<li>对象的名字应该能够描述它所标识的对象。
+<ul>
 <li>例如,对于表,表的名称应该能够体现表中存储的数据内容;对于存储过程,存储过程名称应该能够体现存储过程的功能。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>长名原则<ul>
-<li>尽可能少使用或者不使用缩写,<ul>
-<li>适用于数据库(DATABASE)名之外的任一对象。<h1 id="字段类型的选择原则"><a href="#字段类型的选择原则" class="headerlink" title="字段类型的选择原则"></a>字段类型的选择原则</h1>原因<br>列的数据类型一方面影响数据存储空间的开销,另一方面也会影响数据查询性能。当一个列可以选择多种数据类型时,应该优先考虑数字类型,其次是日期或二进制类型,最后是字符类型。对于相同级别的数据类型,应该优先选择占用空间小的数据类型。</li>
+<li>长名原则
+<ul>
+<li>尽可能少使用或者不使用缩写,
+<ul>
+<li>适用于数据库(DATABASE)名之外的任一对象。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h1 id="字段类型的选择原则">字段类型的选择原则</h1>
+<p>原因
+列的数据类型一方面影响数据存储空间的开销,另一方面也会影响数据查询性能。当一个列可以选择多种数据类型时,应该优先考虑数字类型,其次是日期或二进制类型,最后是字符类型。对于相同级别的数据类型,应该优先选择占用空间小的数据类型。</p>
 <table>
 <thead>
 <tr>
-<th align="center">列类型</th>
-<th align="center">存储空间</th>
+<th style="text-align:center">列类型</th>
+<th style="text-align:center">存储空间</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">TINYINT</td>
-<td align="center">1字节</td>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td style="text-align:center">1字节</td>
 </tr>
 <tr>
-<td align="center">SMALLINT</td>
-<td align="center">2个字节</td>
+<td style="text-align:center">SMALLINT</td>
+<td style="text-align:center">2个字节</td>
 </tr>
 <tr>
-<td align="center">MEDIUMINT</td>
-<td align="center">3个字节</td>
+<td style="text-align:center">MEDIUMINT</td>
+<td style="text-align:center">3个字节</td>
 </tr>
 <tr>
-<td align="center">INT</td>
-<td align="center">4个字节</td>
+<td style="text-align:center">INT</td>
+<td style="text-align:center">4个字节</td>
 </tr>
 <tr>
-<td align="center">BIGINT</td>
-<td align="center">8个字节</td>
+<td style="text-align:center">BIGINT</td>
+<td style="text-align:center">8个字节</td>
 </tr>
 <tr>
-<td align="center">DATE</td>
-<td align="center">13个字节</td>
+<td style="text-align:center">DATE</td>
+<td style="text-align:center">13个字节</td>
 </tr>
 <tr>
-<td align="center">DATETIME</td>
-<td align="center">8个字节</td>
+<td style="text-align:center">DATETIME</td>
+<td style="text-align:center">8个字节</td>
 </tr>
 <tr>
-<td align="center">TIMESTAMP</td>
-<td align="center">4个字节</td>
+<td style="text-align:center">TIMESTAMP</td>
+<td style="text-align:center">4个字节</td>
 </tr>
 <tr>
-<td align="center">CHAR(M)</td>
-<td align="center">M字节,1 &lt;= M &lt;= 255</td>
+<td style="text-align:center">CHAR(M)</td>
+<td style="text-align:center">M字节,1 &lt;= M &lt;= 255</td>
 </tr>
 <tr>
-<td align="center">VARCHAR(M)</td>
-<td align="center">L+1字节,在此L &lt;= M1 &lt;= M &lt;= 255</td>
+<td style="text-align:center">VARCHAR(M)</td>
+<td style="text-align:center">L+1字节,在此L &lt;= M1 &lt;= M &lt;= 255</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>以上选择原则主要是从下面两个角度考虑<ul>
-<li>在对数据进行比较(查询条件、JOIN条件及排序)操作时:<br>同样的数据,字符处理往往比数字处理慢。</li>
+<li>以上选择原则主要是从下面两个角度考虑
+<ul>
+<li>在对数据进行比较(查询条件、JOIN条件及排序)操作时:
+同样的数据,字符处理往往比数字处理慢。</li>
 <li>在数据库中,数据处理以页为单位,列的长度越小,利于性能提升。</li>
 </ul>
 </li>
 </ul>
-<h2 id="char-varchar-如何选择"><a href="#char-varchar-如何选择" class="headerlink" title="char varchar 如何选择"></a>char varchar 如何选择</h2><p>原则</p>
+<h2 id="char-varchar-如何选择">char varchar 如何选择</h2>
+<p>原则</p>
 <ol>
 <li>如果列中要存储的数据长度差不多是一致的,则应该考虑用char;否则应该考虑用varchar。</li>
 <li>如果列中的最大数据长度小于50Byte,则一般也考虑用char。(当然,如果这个列很少用,则基于节省空间和减少I/O的考虑,还是可以选择用varchar)</li>
 <li>一般不宜定义大于50 Byte的char类型列。</li>
 </ol>
-<h2 id="decimal与float-如何选择"><a href="#decimal与float-如何选择" class="headerlink" title="decimal与float 如何选择"></a>decimal与float 如何选择</h2><p>原则:</p>
+<h2 id="decimal与float-如何选择">decimal与float 如何选择</h2>
+<p>原则:</p>
 <ol>
 <li>decimal用于存储精确数据,而float只能用于存储非精确数据。故精确数据只能选择用decimal类型。</li>
 <li>由于float的存储空间开销一般比decimal小(精确到7位小数只需要4个字节,而精确到15位小数只需要8字节)故非精确数据优先选择float类型。</li>
 </ol>
-<h2 id="时间类型如何存储"><a href="#时间类型如何存储" class="headerlink" title="时间类型如何存储"></a>时间类型如何存储</h2><p>使用int来存储时间字段的优缺点</p>
+<h2 id="时间类型如何存储">时间类型如何存储</h2>
+<p>使用int来存储时间字段的优缺点</p>
 <ul>
 <li>优点:字段长度比datetime小。</li>
 <li>缺点:使用不方便,要进行函数转换。</li>
-<li>限制<ul>
+<li>限制
+<ul>
 <li>只能存储到2038-1-19 11:14:07即2^32 为2147483648</li>
-<li>需要存储的时间粒度<ul>
+<li>需要存储的时间粒度
+<ul>
 <li>年月日 小时 分 秒 周</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="如何选择主键"><a href="#如何选择主键" class="headerlink" title="如何选择主键"></a>如何选择主键</h1><p>区分业务主键和数据库主键</p>
+<h1 id="如何选择主键">如何选择主键</h1>
+<p>区分业务主键和数据库主键</p>
 <ol>
 <li>业务主键用于标识业务数据,进行表与表之间的关联;数据库主键为了优化数据存储(Innodb会生成6个字节的隐含主键)</li>
-<li>根据数据库的类型考虑主键是否要顺序增长<ul>
+<li>根据数据库的类型考虑主键是否要顺序增长</li>
+</ol>
+<ul>
 <li>有些数据库是按主键的顺序逻辑存储的</li>
 </ul>
-</li>
-</ol>
 <p>主键的字段类型所占空间要尽可能的小</p>
 <p>对于使用聚集索引方式存储的表,每个索引后都会附加主键信息。</p>
 <p>避免使用外键约束</p>
@@ -327,8 +396,14 @@ ga('send', 'pageview');
 <li>增加维护成本</li>
 <li>虽然不建议使用外键约束,但是相关联的列上一定要建立索引</li>
 </ol>
-<p>避免使用触发器<br>:1. 降低数据导入的效率。<br>2. 可能会出现意想不到的数据异常。<br>3. 使业务逻辑变得复杂。</p>
-<h1 id="关于预留字段"><a href="#关于预留字段" class="headerlink" title="关于预留字段"></a>关于预留字段</h1><p>原因</p>
+<p>避免使用触发器
+:1. 降低数据导入的效率。</p>
+<ol start="2">
+<li>可能会出现意想不到的数据异常。</li>
+<li>使业务逻辑变得复杂。</li>
+</ol>
+<h1 id="关于预留字段">关于预留字段</h1>
+<p>原因</p>
 <ol>
 <li>无法准确的知道预留字段的类型。</li>
 <li>无法准确的知道预留字段中所存储的内容。</li>

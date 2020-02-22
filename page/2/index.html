@@ -174,7 +174,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-10-15 12:32:16" datetime="2019-10-15T04:32:16.000Z"  itemprop="datePublished">2019-10-15</time>
+          <time class="post-time" title="2019-10-15 12:32:16" datetime="2019-10-15T04:32:16.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-10-15</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -198,35 +198,38 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Linux 编译安装 LAMP </p>
-<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>编译工具&amp;开发包</p>
+          <p>Linux 编译安装 LAMP</p>
+<h1 id="apache">Apache</h1>
+<h1 id="准备">准备</h1>
+<p>编译工具&amp;开发包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make gcc openssl</span><br></pre></td></tr></table></figure>
-
 <p>依赖包</p>
 <table>
 <thead>
 <tr>
-<th align="left">包</th>
-<th align="left">描述</th>
+<th style="text-align:left">包</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><a href="https://httpd.apache.org/" target="_blank" rel="noopener">httpd</a></td>
-<td align="left">Apache 主程序包</td>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://httpd.apache.org/" target="_blank" rel="noopener">httpd</a></td>
+<td style="text-align:left">Apache 主程序包</td>
 </tr>
 <tr>
-<td align="left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr</a></td>
-<td align="left">Apache 依赖包</td>
+<td style="text-align:left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr</a></td>
+<td style="text-align:left">Apache 依赖包</td>
 </tr>
 <tr>
-<td align="left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-util</a></td>
-<td align="left">Apache 依赖包</td>
+<td style="text-align:left"><a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-util</a></td>
+<td style="text-align:left">Apache 依赖包</td>
 </tr>
 <tr>
-<td align="left"><a href="https://ftp.pcre.org/pub/pcre/" target="_blank" rel="noopener">pcre</a></td>
-<td align="left">Apache 依赖包</td>
+<td style="text-align:left"><a href="https://ftp.pcre.org/pub/pcre/" target="_blank" rel="noopener">pcre</a></td>
+<td style="text-align:left">Apache 依赖包</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
       
 
           <a href="/posts/LAMP.html" class="post-more waves-effect waves-button">
@@ -249,7 +252,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-09-19 22:32:19" datetime="2019-09-19T14:32:19.000Z"  itemprop="datePublished">2019-09-19</time>
+          <time class="post-time" title="2019-09-19 22:32:19" datetime="2019-09-19T14:32:19.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-09-19</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
@@ -274,9 +277,10 @@ ga('send', 'pageview');
 
       
           <p>解决 Python 安装库时速度慢或者超时问题</p>
-<h1 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
-
-<h1 id="i-指定源"><a href="#i-指定源" class="headerlink" title="-i 指定源"></a>-i 指定源</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+<h1 id="设置超时时间">设置超时时间</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
+<h1 id="i-指定源">-i 指定源</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
       
 
           <a href="/posts/PipInstall.html" class="post-more waves-effect waves-button">
@@ -299,7 +303,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-09-18 22:42:36" datetime="2019-09-18T14:42:36.000Z"  itemprop="datePublished">2019-09-18</time>
+          <time class="post-time" title="2019-09-18 22:42:36" datetime="2019-09-18T14:42:36.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-09-18</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -346,7 +350,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-09-17 14:43:23" datetime="2019-09-17T06:43:23.000Z"  itemprop="datePublished">2019-09-17</time>
+          <time class="post-time" title="2019-09-17 14:43:23" datetime="2019-09-17T06:43:23.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-09-17</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -393,7 +397,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-09-12 19:05:17" datetime="2019-09-12T11:05:17.000Z"  itemprop="datePublished">2019-09-12</time>
+          <time class="post-time" title="2019-09-12 19:05:17" datetime="2019-09-12T11:05:17.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-09-12</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
@@ -440,7 +444,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-09-06 09:13:41" datetime="2019-09-06T01:13:41.000Z"  itemprop="datePublished">2019-09-06</time>
+          <time class="post-time" title="2019-09-06 09:13:41" datetime="2019-09-06T01:13:41.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-09-06</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -487,7 +491,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-08-11 20:04:29" datetime="2019-08-11T12:04:29.000Z"  itemprop="datePublished">2019-08-11</time>
+          <time class="post-time" title="2019-08-11 20:04:29" datetime="2019-08-11T12:04:29.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-08-11</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -511,7 +515,9 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <h1 id="AdSense-账户"><a href="#AdSense-账户" class="headerlink" title="AdSense 账户"></a>AdSense 账户</h1><h2 id="撤销原因"><a href="#撤销原因" class="headerlink" title="撤销原因"></a>撤销原因</h2><p>更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户</p>
+          <h1 id="adsense-账户">AdSense 账户</h1>
+<h2 id="撤销原因">撤销原因</h2>
+<p>更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户</p>
       
 
           <a href="/posts/GoogleAdSense.html" class="post-more waves-effect waves-button">
@@ -534,7 +540,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-07-31 14:14:52" datetime="2019-07-31T06:14:52.000Z"  itemprop="datePublished">2019-07-31</time>
+          <time class="post-time" title="2019-07-31 14:14:52" datetime="2019-07-31T06:14:52.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-07-31</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -581,7 +587,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-07-29 19:25:00" datetime="2019-07-29T11:25:00.000Z"  itemprop="datePublished">2019-07-29</time>
+          <time class="post-time" title="2019-07-29 19:25:00" datetime="2019-07-29T11:25:00.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-07-29</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
@@ -628,7 +634,7 @@ ga('send', 'pageview');
     class="article-card article-type-post" itemprop="blogPost">
 
       <div class="post-meta">
-          <time class="post-time" title="2019-07-20 18:59:04" datetime="2019-07-20T10:59:04.000Z"  itemprop="datePublished">2019-07-20</time>
+          <time class="post-time" title="2019-07-20 18:59:04" datetime="2019-07-20T10:59:04.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-07-20</time>
 
           
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
