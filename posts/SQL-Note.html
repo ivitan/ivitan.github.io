@@ -201,69 +201,58 @@ ga('send', 'pageview');
             <p>SQL笔记</p>
 <a id="more"></a>
 <ol>
-<li>从职工关系中检索所有工资值。</li>
-</ol>
+<li><p>从职工关系中检索所有工资值。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 月工资</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>检索仓库关系中的所有元组。</li>
-</ol>
+</li>
+<li><p>检索仓库关系中的所有元组。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>检索工资多于2000元的职工对应的职工号，姓名。</li>
-</ol>
+</li>
+<li><p>检索工资多于2000元的职工对应的职工号，姓名。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  职工号,月工资 <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 月工资&gt;<span class="number">2000</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>检索哪些仓库的面积在400到550平方之间，列出仓库号和所在的城市。</li>
-</ol>
+</li>
+<li><p>检索哪些仓库的面积在400到550平方之间，列出仓库号和所在的城市。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,城市</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 面积&gt;<span class="number">400</span> <span class="keyword">and</span> 面积&lt;<span class="number">550</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>检索出有广州哪些仓库，列出仓库号。</li>
-</ol>
+</li>
+<li><p>检索出有广州哪些仓库，列出仓库号。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'广州'</span></span><br></pre></td></tr></table></figure>
+
 <ol start="6">
-<li>检索出所在城市为广州的仓库的个数。</li>
+<li>检索出所在城市为广州的仓库的个数。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号)</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'广州'</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号)</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'广州'</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>检索出所有职工的平均工资。</li>
-</ol>
+</li>
+<li><p>检索出所有职工的平均工资。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(月工资)</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>检索出在WH5仓库工作的职工的人数。</li>
-</ol>
+</li>
+<li><p>检索出在WH5仓库工作的职工的人数。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号) <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 仓库号=<span class="string">'WH5'</span></span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>检索出职工表的所有的仓库号，去掉重复值。</li>
-</ol>
+</li>
+<li><p>检索出职工表的所有的仓库号，去掉重复值。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 仓库号</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>检索出每个仓库的人数。</li>
-</ol>
+</li>
+<li><p>检索出每个仓库的人数。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(*)人数</span><br><span class="line"> <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure>
-<ol start="11">
-<li>检索出上海的仓库有哪些，列出仓库号、面积。查询结果按面积降序排列。</li>
-</ol>
+</li>
+<li><p>检索出上海的仓库有哪些，列出仓库号、面积。查询结果按面积降序排列。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,面积</span><br><span class="line"> <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'上海'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 面积 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>检索出哪些仓库女职工的人数达到了3人。</li>
-</ol>
+</li>
+<li><p>检索出哪些仓库女职工的人数达到了3人。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(职工号)人数</span><br><span class="line"><span class="keyword">from</span> zg <span class="keyword">where</span> 性别=<span class="string">'女'</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号 <span class="keyword">having</span> <span class="keyword">count</span>(职工号)&gt;<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>检索出所有姓胡的职工的职工号、姓名、性别、工资。查询结果按性别排降序、工资排升序。</li>
-</ol>
+</li>
+<li><p>检索出所有姓胡的职工的职工号、姓名、性别、工资。查询结果按性别排降序、工资排升序。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号,姓名,性别,月工资</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">like</span><span class="string">'胡%'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 性别 <span class="keyword">desc</span>,月工资 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
-<ol start="14">
-<li>检索出职工“王玛丽”的年工资。</li>
-</ol>
+</li>
+<li><p>检索出职工“王玛丽”的年工资。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(月工资*<span class="number">12</span>) <span class="keyword">as</span> 年薪</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 姓名=<span class="string">'王玛丽'</span></span><br></pre></td></tr></table></figure>
-<ol start="15">
-<li>检索出“WH1”和“WH2”两个仓库工作的职工的基本信息。</li>
-</ol>
+</li>
+<li><p>检索出“WH1”和“WH2”两个仓库工作的职工的基本信息。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 仓库号=<span class="string">'WH1'</span><span class="keyword">or</span> 仓库号=<span class="string">'WH2'</span></span><br></pre></td></tr></table></figure>
-<ol start="16">
-<li>检索出年工资在24000以上的职工的姓名，年工资值。</li>
-</ol>
+</li>
+<li><p>检索出年工资在24000以上的职工的姓名，年工资值。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,月工资*<span class="number">12</span> <span class="keyword">as</span> 年工资</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
 
         </div>
 
@@ -451,30 +440,30 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="bottom">
-        <p>
-            
-            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
-            </span>
-        </p>
+    <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
-        总访客数：<span id="busuanzi_value_site_uv"></span>
+        访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
     <span id="busuanzi_container_site_pv" style='display:none'>
-        总访问量：<span id="busuanzi_value_site_pv"></span>
+        访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
 
 
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_CN">CC BY-NC-SA 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
     </div>

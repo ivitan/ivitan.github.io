@@ -32,18 +32,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Note">
-    <meta name="description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点  手机端  长按连接的 WiFi 名,点">
+    <meta name="description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法电脑端 右键SSR/SS –&amp;gt; 选项设置 –&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接  CMD –&amp;gt; 输入 ipconfig 获取 无线的IPV4地址  正常开启热点">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Win10 v2ray&#x2F;SSR&#x2F;SS 开热点给手机翻墙">
 <meta property="og:url" content="https://vitan.me/posts/Win10-Share-WiFI.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点  手机端  长按连接的 WiFi 名,点">
+<meta property="og:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法电脑端 右键SSR/SS –&amp;gt; 选项设置 –&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接  CMD –&amp;gt; 输入 ipconfig 获取 无线的IPV4地址  正常开启热点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-19T01:05:17.803Z">
+<meta property="og:updated_time" content="2020-02-22T11:34:55.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win10 v2ray&#x2F;SSR&#x2F;SS 开热点给手机翻墙">
-<meta name="twitter:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点  手机端  长按连接的 WiFi 名,点">
+<meta name="twitter:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。 方法电脑端 右键SSR/SS –&amp;gt; 选项设置 –&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接  CMD –&amp;gt; 输入 ipconfig 获取 无线的IPV4地址  正常开启热点">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#电脑端"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">电脑端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机端"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手机端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#more"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"></span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#跳过谷歌验证"><span class="post-toc-number">2.</span> <span class="post-toc-text">跳过谷歌验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法三"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">方法三</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法四"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">方法四</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#电脑端"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">电脑端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机端"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手机端</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#跳过谷歌验证"><span class="post-toc-number">2.</span> <span class="post-toc-text">跳过谷歌验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法三"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">方法三</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法四"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">方法四</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -208,32 +208,33 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。</p>
-<h1 id="方法">方法</h1>
-<h2 id="电脑端">电脑端</h2>
-<ol>
-<li>右键SSR/SS --&gt; 选项设置 --&gt; 勾选 <code>允许来自局域网连接</code>,V2ray 同样在设置中勾选 <code>允许来自局域网的连接</code></li>
-<li>CMD --&gt; 输入 <code>ipconfig</code> 获取 <code>无线的IPV4地址</code></li>
-<li>正常开启热点</li>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h2><ol>
+<li><p>右键SSR/SS –&gt; 选项设置 –&gt; 勾选 <code>允许来自局域网连接</code>,V2ray 同样在设置中勾选 <code>允许来自局域网的连接</code></p>
+</li>
+<li><p>CMD –&gt; 输入 <code>ipconfig</code> 获取 <code>无线的IPV4地址</code></p>
+</li>
+<li><p>正常开启热点</p>
+<a id="more"></a>
+<h2 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h2></li>
+<li><p>长按连接的 WiFi 名,点修改网络</p>
+</li>
+<li><p>显示高级选项</p>
+</li>
+<li><p>代理</p>
+</li>
+<li><p>手动</p>
+</li>
+<li><p>服务器主机IP输入刚刚获取的 <code>IPV4地址</code>, 端口 <code>1080</code></p>
+</li>
+<li><p>保存</p>
+</li>
 </ol>
-<h2 id="手机端">手机端</h2>
-<ol>
-<li>长按连接的 WiFi 名,点修改网络</li>
-<li>显示高级选项</li>
-<li>代理</li>
-<li>手动</li>
-<li>服务器主机IP输入刚刚获取的 <code>IPV4地址</code>, 端口 <code>1080</code></li>
-<li>保存</li>
-</ol>
-<h2 id="more"><a id="more"></a></h2>
-<h1 id="跳过谷歌验证">跳过谷歌验证</h1>
-<h2 id="方法一">方法一</h2>
-<p>即上述 Windows 10 开热点的方法</p>
-<h2 id="方法二">方法二</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure user_setup_complete 1</span><br><span class="line">adb shell settings put global device_provisioned 1</span><br></pre></td></tr></table></figure>
-<h2 id="方法三">方法三</h2>
-<p>开机前不插入 SIM 卡,开机后不连接 WIFI,在开机导向时可以有选择跳过登录 Google 账号</p>
-<h2 id="方法四">方法四</h2>
-<p>顺时针方向，从左上角开始,连点屏幕四角</p>
+<hr>
+<h1 id="跳过谷歌验证"><a href="#跳过谷歌验证" class="headerlink" title="跳过谷歌验证"></a>跳过谷歌验证</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>即上述 Windows 10 开热点的方法</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure user_setup_complete 1</span><br><span class="line">adb shell settings put global device_provisioned 1</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>开机前不插入 SIM 卡,开机后不连接 WIFI,在开机导向时可以有选择跳过登录 Google 账号</p>
+<h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h2><p>顺时针方向，从左上角开始,连点屏幕四角</p>
 
         </div>
 
@@ -242,7 +243,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-19T01:05:17.803Z" itemprop="dateUpdated">2020-02-19 09:05:17</time>
+    最后更新时间：<time datetime="2020-02-22T11:34:55.176Z" itemprop="dateUpdated">2020-02-22 19:34:55</time>
 </span><br>
 
 
@@ -289,10 +290,8 @@ ga('send', 'pageview');
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&source=在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
-方法
-电脑端
-
-右键SSR/S..." data-title=" QQ">
+方法电脑端
+右键SSR/SS ..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -425,30 +424,30 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="bottom">
-        <p>
-            
-            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
-            </span>
-        </p>
+    <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
-        总访客数：<span id="busuanzi_value_site_uv"></span>
+        访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
     <span id="busuanzi_container_site_pv" style='display:none'>
-        总访问量：<span id="busuanzi_value_site_pv"></span>
+        访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
 
 
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_CN">CC BY-NC-SA 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
     </div>
@@ -474,10 +473,8 @@ ga('send', 'pageview');
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&source=在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
-方法
-电脑端
-
-右键SSR/S..." data-title=" QQ">
+方法电脑端
+右键SSR/SS ..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

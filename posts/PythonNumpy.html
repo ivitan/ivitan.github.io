@@ -178,7 +178,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数列"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数列</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表-循环实现-并包装成函数"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列表+循环实现，并包装成函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组numpy实现-并包装成函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">数组numpy实现，并包装成函数</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数列"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数列</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表-循环实现，并包装成函数"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列表+循环实现，并包装成函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组numpy实现，并包装成函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">数组numpy实现，并包装成函数</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,13 +207,10 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Python Numpy</p>
 <a id="more"></a>
-<h1 id="问题">问题</h1>
-<h2 id="数列">数列</h2>
-<ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h2><ul>
 <li>a = a1,a2,a3,·····,an</li>
 <li>b = b1,b2,b3,·····,bn</li>
-<li>求：
-<ul>
+<li>求：<ul>
 <li>c = a12+b13,a22+b23,a32+b33,·····+an2+bn3</li>
 </ul>
 <ol>
@@ -223,19 +220,20 @@ ga('send', 'pageview');
 </ol>
 </li>
 </ul>
-<h1 id="实现">实现</h1>
-<h2 id="列表-循环实现-并包装成函数">列表+循环实现，并包装成函数</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pySum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = list(range(n))</span><br><span class="line">    b = list(range(<span class="number">0</span>,<span class="number">5</span>*n,<span class="number">5</span>))</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line">        c.append(a[i] ** <span class="number">2</span> + b[i] ** <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(pySum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="数组numpy实现-并包装成函数">数组numpy实现，并包装成函数</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">npSum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="number">0</span>, <span class="number">5</span> * n, <span class="number">5</span>)</span><br><span class="line">    c = a**<span class="number">2</span>+b**<span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(npSum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="列表-循环实现，并包装成函数"><a href="#列表-循环实现，并包装成函数" class="headerlink" title="列表+循环实现，并包装成函数"></a>列表+循环实现，并包装成函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pySum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = list(range(n))</span><br><span class="line">    b = list(range(<span class="number">0</span>,<span class="number">5</span>*n,<span class="number">5</span>))</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line">        c.append(a[i] ** <span class="number">2</span> + b[i] ** <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(pySum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组numpy实现，并包装成函数"><a href="#数组numpy实现，并包装成函数" class="headerlink" title="数组numpy实现，并包装成函数"></a>数组numpy实现，并包装成函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">npSum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="number">0</span>, <span class="number">5</span> * n, <span class="number">5</span>)</span><br><span class="line">    c = a**<span class="number">2</span>+b**<span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(npSum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>对比两种方法实现的效率，给定一个较大的参数n，用运行函数前后的timedelta表示</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line">start = datetime.now()</span><br><span class="line">pySum(<span class="number">100000</span>)</span><br><span class="line">delta = datetime.now()-start</span><br><span class="line">print(delta)</span><br><span class="line"></span><br><span class="line">start = datetime.now()</span><br><span class="line">npSum(<span class="number">100000</span>)</span><br><span class="line">delta = datetime.now()-start</span><br><span class="line">print(delta)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>尝试把 a,b 定义为三层嵌套列表和三维数组</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">liSum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="number">0</span>,<span class="number">5</span>*n,<span class="number">5</span>)</span><br><span class="line">    c = numpy.array([[a,b],[a**<span class="number">2</span>,b**<span class="number">3</span>]])</span><br><span class="line">    <span class="keyword">return</span> (c)</span><br><span class="line">print(npSum(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">start = datetime.now()</span><br><span class="line">liSum(<span class="number">100000</span>)</span><br><span class="line">time = datetime.now()-start</span><br><span class="line">print(time)</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -423,30 +421,30 @@ ga('send', 'pageview');
 </div>
 
         <footer class="footer">
-    <div class="bottom">
-        <p>
-            
-            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="RSS"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" class="rss" title="CC BY-NC-SA 4.0"><i class="icon icon-lg icon-creative-commons"></i></a></a>
-            </span>
-        </p>
+    <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style='display:none'>
-        总访客数：<span id="busuanzi_value_site_uv"></span>
+        访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
     <span id="busuanzi_container_site_pv" style='display:none'>
-        总访问量：<span id="busuanzi_value_site_pv"></span>
+        访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
 
 
+        <p>
+            
+                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_CN">CC BY-NC-SA 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
         <p><span>Vitan &copy; 2017 - 2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
     </div>
