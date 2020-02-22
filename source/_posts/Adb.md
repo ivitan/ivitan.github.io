@@ -16,11 +16,19 @@ Adb 与 Fastboot 常用命令
 ## 刷机命令
 |解释|命令|
 |:---|:---|
+|启动 | adb server,adb start-server|
+|停止 | adb server,adb kill-server|
 |查看连接状态|adb devices|
 |重启命令|adb reboot|
 |重启到Rec|adb reboot recovery
 |重启到Fastboot|adb reboot bootloader|
 |推送ROM包|adb sideload <Rom包>|
+
+## 错误提示
+1. `offline` 设备未连接成功或无响应；
+2. `device` 设备已连接；
+3. `no device` 没有设备/模拟器连接；
+4. `List of devices attached` 设备/模拟器未连接到 adb 或无响应
 
 ## 安装卸载
 |解释|命令|
@@ -42,6 +50,9 @@ Adb 与 Fastboot 常用命令
 |获取IMEI|adb shell [回车] su [回车] service call iphonesubinfo 1
 |获取手机程序包名|adb shell pm list packages|
 |获取序列号|adb get-serialno|
+|查看所有应用列表|adb shell pm list packages|
+|查看系统应用列表|db shell pm list packages -s|
+|查看第三方应用列表|adb shell pm list packages -3|
 
 ## 其他
 |解释|命令|
@@ -57,6 +68,20 @@ Adb 与 Fastboot 常用命令
 |查询各进程内存使用情况|adb shell procrank|
 |查看wifi密码|adb shell cat /data/misc/wifi/*.conf|
 
+```shell
+adb install <参数> <apk_path>
+```
+- `-l` 将应用安装到保护目录 /mnt/asec
+- `-r` 允许覆盖安装；
+- `-t` 允许安装 AndroidManifest.xml 里 application 指定 android:testOnly="true" 的应用
+- `-s` 将应用安装到 sdcard
+- `-d` 允许降级覆盖安装
+- `-g` 授予所有运行时权限
+
+```shell
+adb uninstall -k <PackageName>
+```
+- `-k` 卸载应用但保留数据和缓存目录,可选，
 
 # Fastboot
 |解释|命令|

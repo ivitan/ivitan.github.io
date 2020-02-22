@@ -1,6 +1,8 @@
 ---
-title: 404
+title: 404 Page Not Found
 date: 2019-09-13 09:47:45
 permalink: /404.html
+reward: false
+comments: false
 ---
-<script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homePageUrl="/" homePageName="Back to home page"></script>
+<a href="/"><img src="/img/404.jpg" title="返回首页"></a>

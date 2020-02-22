@@ -9,7 +9,12 @@ description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
 author: Vitan
 author_link: https://vitan.me
-language: zh-CN
+language: 
+  - zh-CN
+  - zh-TW
+  - en
+  - ja
+  - nl-NL
   
 timezone: Asia/Shanghai
 
