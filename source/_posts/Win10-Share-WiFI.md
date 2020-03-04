@@ -8,7 +8,7 @@ toc: true
 categories: Diary
 thumbnail: /images/Note.png
 ---
-在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
+> 在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
 
 # 方法
 ## 电脑端

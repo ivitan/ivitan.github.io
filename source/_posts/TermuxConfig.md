@@ -12,7 +12,8 @@ toc: true
 thumbnail: /images/Termux.png
 date: 2020-01-08 12:11:49
 ---
-# Termux 配置脚本
+> 写的一个 Termux 配置脚本，配置开发环境、美化等...
+
 ## via curl
 ```bash
 apt install curl
