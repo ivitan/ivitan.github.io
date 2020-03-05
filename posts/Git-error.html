@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-push"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git push</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常见错误"><span class="post-toc-number">2.</span> <span class="post-toc-text">常见错误:</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#git-push"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git push</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常见错误"><span class="post-toc-number">2.</span> <span class="post-toc-text">常见错误:</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,39 +209,37 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>git push用法和常见问题分析</p>
 <a id="more"></a>
-<h1 id="Git-push"><a href="#Git-push" class="headerlink" title="Git push"></a>Git push</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push origin test:master</span><br><span class="line">// 提交本地test分支作为远程的master分支</span><br><span class="line">git push origin test:test</span><br><span class="line">// 提交本地test分支作为远程的test分支</span><br></pre></td></tr></table></figure>
-
+<h1 id="git-push">Git push</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push origin test:master</span><br><span class="line">// 提交本地test分支作为远程的master分支</span><br><span class="line">git push origin test:test</span><br><span class="line">// 提交本地test分支作为远程的test分支</span><br></pre></td></tr></table></figure>
 <p>如果想删除远程的分支呢？类似于上面，如果:左边的分支为空，那么将删除:右边的远程的分支。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin :test</span><br><span class="line">// 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</span><br></pre></td></tr></table></figure>
-
 <p>举个例子:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git push origin  :origin/Android_HK_K501_77-W916</span><br><span class="line">//由于:前面为空所以本来在服务器上面存在的分支origin/Android_HK_K501_77-W916和Android_HK_K501_77-W916</span><br><span class="line">现在就只有一个了,因为分支origin/Android_HK_K501_77-W916被删除了,但是本地的还在</span><br><span class="line"> git push ssh://git@dev.lemote.com/rt4ls.git master</span><br><span class="line"> // 把本地仓库提交到远程仓库的master分支中</span><br><span class="line">git remote add origin ssh://git@dev.lemote.com/rt4ls.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-
 <p>这两个操作是等价的，第二个操作的第一行的意思是添加一个标记，让origin指向ssh://git@dev.lemote.com/rt4ls.git，也就是说你操 作origin的时候，实际上就是在操作ssh://git@dev.lemote.com/rt4ls.git。origin在这里完全可以理解为后者 的别名。</p>
 <pre><code>注意：需要说明的是，默认情况下这条语句等价于提交本地的master仓库到远程仓库，并作为远程的master分支。
-如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，那么可以这么做。</code></pre><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误:"></a>常见错误:</h1><ul>
+如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，那么可以这么做。
+</code></pre>
+<h1 id="常见错误">常见错误:</h1>
+<ul>
 <li>1.error:failed to push some refs to …</li>
 </ul>
 <p>当要push代码到git时，出现提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">error:failed to push some refs to ...</span><br><span class="line">Dealing with “non-fast-forward” errors</span><br><span class="line">From time to time you may encounter this error while pushing:</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line">To ../remote/</span><br><span class="line"></span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast forward)</span><br><span class="line"></span><br><span class="line">error: failed to push some refs to &apos;../remote/&apos;</span><br><span class="line"></span><br><span class="line">To prevent you from losing history, non-fast-forward updates were rejected</span><br><span class="line"></span><br><span class="line">Merge the remote changes before pushing again.  See the &apos;non-fast forward&apos;</span><br><span class="line"></span><br><span class="line">section of &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure>
-
 <p>问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：</p>
 <p>强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><ol start="2">
-<li>先把git的东西fetch到你本地然后merge后再push<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>
+<ol start="2">
+<li>先把git的东西fetch到你本地然后merge后再push</li>
 </ol>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge</span><br></pre></td></tr></table></figure>
 <p>这2句命令等价于<code>git pull</code></p>
 <p>可是，这时候又出现了如下的问题：</p>
 <p>上面出现的 [branch “master”]是需要明确(.git/config)如下的内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[branch &quot;master&quot;]</span><br><span class="line"></span><br><span class="line">    remote = origin</span><br><span class="line"></span><br><span class="line">    merge = refs/heads/master</span><br></pre></td></tr></table></figure>
-
 <p>这等于告诉git2件事:</p>
 <ul>
 <li>1，当你处于master branch, 默认的remote就是origin。</li>
@@ -249,7 +247,6 @@ ga('send', 'pageview');
 </ul>
 <p>如果不想或者不会编辑config文件的话，可以在bash上输入如下命令行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config branch.master.remote origin</span><br><span class="line">git config branch.master.merge refs/heads/master</span><br></pre></td></tr></table></figure>
-
 <p>之后再重新git pull下。最后git push你的代码.</p>
 <p><strong>参考</strong></p>
 <ul>

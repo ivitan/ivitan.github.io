@@ -209,39 +209,34 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>SSH的简单运用</p>
 <a id="more"></a>
-<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><p>SSH 登录远程主机 host</p>
+<h1 id="基础使用">基础使用</h1>
+<p>SSH 登录远程主机 host</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@host</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>本地用户名与远程用户名一致，登录时可以省略用户名。</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh host</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>SSH 的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2222 root@host</span><br></pre></td></tr></table></figure>
-
-<h1 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h1><p>ssh-keygen 生成公钥</p>
+<h1 id="公钥登录">公钥登录</h1>
+<p>ssh-keygen 生成公钥</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>运行结束以后，在<code>$HOME/.ssh/</code>目录下，会新生成两个文件 <code>id_rsa.pub</code>和<code>id_rsa</code>。前者是你的公钥，后者是你的私钥。</li>
 <li>将公钥传送到远程主机 host 上面</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id user@host</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>如果还是不行，就打开远程主机的<code>/etc/ssh/sshd_config</code>这个文件，检查下面几行前面”#”注释是否取掉。</li>
+<li>如果还是不行，就打开远程主机的<code>/etc/ssh/sshd_config</code>这个文件，检查下面几行前面&quot;#&quot;注释是否取掉。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
 <p>重启远程主机的 ssh 服务</p>
 <ul>
 <li>Ubuntu系统</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>Debian 系统</li>
 </ul>

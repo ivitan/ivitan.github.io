@@ -209,78 +209,83 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>自定义主题shell提示符.</p>
 <a id="more"></a>
-<h1 id="修改oh-my-zsh主题"><a href="#修改oh-my-zsh主题" class="headerlink" title="修改oh-my-zsh主题"></a>修改oh-my-zsh主题</h1><h2 id="主题目录"><a href="#主题目录" class="headerlink" title="主题目录"></a>主题目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure>
-
-<h2 id="主题提示符"><a href="#主题提示符" class="headerlink" title="主题提示符"></a>主题提示符</h2><table>
+<h1 id="修改oh-my-zsh主题">修改oh-my-zsh主题</h1>
+<h2 id="主题目录">主题目录</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure>
+<h2 id="主题提示符">主题提示符</h2>
+<table>
 <thead>
 <tr>
-<th align="center">代码</th>
-<th align="center">解释</th>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">解释</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">%T</td>
-<td align="center">系统时间(时：分)</td>
+<tbody>
+<tr>
+<td style="text-align:center">%T</td>
+<td style="text-align:center">系统时间(时：分)</td>
 </tr>
 <tr>
-<td align="center">%*</td>
-<td align="center">系统时间(时：分：秒)</td>
+<td style="text-align:center">%*</td>
+<td style="text-align:center">系统时间(时：分：秒)</td>
 </tr>
 <tr>
-<td align="center">%D</td>
-<td align="center">系统日期(年-月-日)</td>
+<td style="text-align:center">%D</td>
+<td style="text-align:center">系统日期(年-月-日)</td>
 </tr>
 <tr>
-<td align="center">%n</td>
-<td align="center">你的用户名</td>
+<td style="text-align:center">%n</td>
+<td style="text-align:center">你的用户名</td>
 </tr>
 <tr>
-<td align="center">%B - %b</td>
-<td align="center">开始到结束使用粗体打印</td>
+<td style="text-align:center">%B - %b</td>
+<td style="text-align:center">开始到结束使用粗体打印</td>
 </tr>
 <tr>
-<td align="center">%U - %u</td>
-<td align="center">开始到结束使用下划线打印</td>
+<td style="text-align:center">%U - %u</td>
+<td style="text-align:center">开始到结束使用下划线打印</td>
 </tr>
 <tr>
-<td align="center">%d</td>
-<td align="center">你目前的工作目录</td>
+<td style="text-align:center">%d</td>
+<td style="text-align:center">你目前的工作目录</td>
 </tr>
 <tr>
-<td align="center">%~</td>
-<td align="center">你目前的工作目录相对于～的相对路径</td>
+<td style="text-align:center">%~</td>
+<td style="text-align:center">你目前的工作目录相对于～的相对路径</td>
 </tr>
 <tr>
-<td align="center">%M</td>
-<td align="center">计算机的主机名</td>
+<td style="text-align:center">%M</td>
+<td style="text-align:center">计算机的主机名</td>
 </tr>
 <tr>
-<td align="center">%m</td>
-<td align="center">计算机的主机名(在第一个句号之前截断)</td>
+<td style="text-align:center">%m</td>
+<td style="text-align:center">计算机的主机名(在第一个句号之前截断)</td>
 </tr>
 <tr>
-<td align="center">%l</td>
-<td align="center">你当前的tty</td>
+<td style="text-align:center">%l</td>
+<td style="text-align:center">你当前的tty</td>
 </tr>
 <tr>
-<td align="center">%n</td>
-<td align="center">登录名</td>
+<td style="text-align:center">%n</td>
+<td style="text-align:center">登录名</td>
 </tr>
-</tbody></table>
-<h2 id="顏色語法"><a href="#顏色語法" class="headerlink" title="顏色語法"></a>顏色語法</h2><ol>
+</tbody>
+</table>
+<h2 id="顏色語法">顏色語法</h2>
+<ol>
 <li>“%{$fg[cyan]%}XXX”</li>
 <li>“%{$fg[yellow]%}和%{$reset_color%}”</li>
 <li>上面是一对的中间夹的文字会用 yellow 颜色显示，颜色要用小写。</li>
 </ol>
-<h1 id="事例"><a href="#事例" class="headerlink" title="事例"></a>事例</h1><ul>
-<li><p>Before</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;</span><br><span class="line">%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;%m \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line"> \</span><br><span class="line">%&#123;$fg[white]%&#125;[%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;$ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Affter</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;% OnePlus \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line">\</span><br><span class="line">%&#123;$fg[white]%&#125; [%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
+<h1 id="事例">事例</h1>
+<ul>
+<li>Before</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;</span><br><span class="line">%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;%m \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line"> \</span><br><span class="line">%&#123;$fg[white]%&#125;[%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;$ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Affter</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;% OnePlus \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line">\</span><br><span class="line">%&#123;$fg[white]%&#125; [%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
 
         </div>
 

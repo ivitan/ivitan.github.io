@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#降级"><span class="post-toc-number">1.</span> <span class="post-toc-text">降级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重启至-Bootloader"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">重启至 Bootloader</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷入降级"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">刷入降级</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#刷入-w大固件"><span class="post-toc-number">2.</span> <span class="post-toc-text">刷入 w大固件</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#降级"><span class="post-toc-number">1.</span> <span class="post-toc-text">降级</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重启至-bootloader"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">重启至 Bootloader</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷入降级"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">刷入降级</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#刷入-w大固件"><span class="post-toc-number">2.</span> <span class="post-toc-text">刷入 w大固件</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,23 +209,25 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>斐讯 N1 盒子降级刷机</p>
 <a id="more"></a>
-<h1 id="降级"><a href="#降级" class="headerlink" title="降级"></a>降级</h1><ul>
+<h1 id="降级">降级</h1>
+<ul>
 <li>打开 ADB,点击官方固件的 <code>版本号</code> 4 次</li>
 </ul>
-<h2 id="重启至-Bootloader"><a href="#重启至-Bootloader" class="headerlink" title="重启至 Bootloader"></a>重启至 Bootloader</h2><ul>
+<h2 id="重启至-bootloader">重启至 Bootloader</h2>
+<ul>
 <li>先下载 <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">ADB</a></li>
-<li>连接设备并进入 fastboot<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> adb</span><br><span class="line">adb connect ip:5555</span><br><span class="line">adb shell reboot fastboot</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>连接设备并进入 fastboot</li>
 </ul>
-<h2 id="刷入降级"><a href="#刷入降级" class="headerlink" title="刷入降级"></a>刷入降级</h2><ul>
-<li>双公头 USB 数据线与电脑连接，务必连接至靠近 HDMI 接口的那个 USB 接口<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices <span class="comment">#查看是否识别到设备</span></span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash bootloader bootloader.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> adb</span><br><span class="line">adb connect ip:5555</span><br><span class="line">adb shell reboot fastboot</span><br></pre></td></tr></table></figure>
+<h2 id="刷入降级">刷入降级</h2>
+<ul>
+<li>双公头 USB 数据线与电脑连接，务必连接至靠近 HDMI 接口的那个 USB 接口</li>
 </ul>
-<h1 id="刷入-w大固件"><a href="#刷入-w大固件" class="headerlink" title="刷入 w大固件"></a>刷入 <a href="https://www.right.com.cn/forum/thread-338759-1-1.html" target="_blank" rel="noopener">w大固件</a></h1><ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices <span class="comment">#查看是否识别到设备</span></span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash bootloader bootloader.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+<h1 id="刷入-w大固件">刷入 <a href="https://www.right.com.cn/forum/thread-338759-1-1.html" target="_blank" rel="noopener">w大固件</a></h1>
+<ul>
 <li>先安装 <a href="https://androidmtk.com/download-amlogic-usb-burning-tool" target="_blank" rel="noopener">Usb Burning Tool</a></li>
-<li>打开设备管理器 ==&gt; <code>操作</code> ==&gt;<code>添加过时硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>安装我手动从列表选择的硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>libusb-win32 Usb Devices</code> ==&gt; 下一步 ==&gt; 选择 <code>WorldCup Device</code> ==&gt; 下一步 ==&gt; 下一步 </li>
+<li>打开设备管理器 ==&gt; <code>操作</code> ==&gt;<code>添加过时硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>安装我手动从列表选择的硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>libusb-win32 Usb Devices</code> ==&gt; 下一步 ==&gt; 选择 <code>WorldCup Device</code> ==&gt; 下一步 ==&gt; 下一步</li>
 <li>打开 Usb Burining Tool,去除勾选右边烧录配置的 <code>擦除flash</code> 和 <code>擦除bootloader</code></li>
 <li><a href="https://www.right.com.cn/forum/thread-338759-1-1.html" target="_blank" rel="noopener">w大固件</a></li>
 </ul>
