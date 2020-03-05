@@ -33,9 +33,9 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,ArchLinux,Win,Ubuntu">
+    <meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
     <meta name="description" content="解决 Win10 与 Linux 时间不一致">
-<meta name="keywords" content="Linux,ArchLinux,Win,Ubuntu">
+<meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 Win10 与 Linux 时间不一致">
 <meta property="og:url" content="https://vitan.me/posts/Linux-Win-Time.html">
@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原因"><span class="post-toc-number">1.</span> <span class="post-toc-text">原因</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#utc-与-gmt"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">UTC 与 GMT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原因-v2"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">原因</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原因"><span class="post-toc-number">1.</span> <span class="post-toc-text">原因</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UTC-与-GMT"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">UTC 与 GMT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原因-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">原因</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,29 +209,25 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>解决 Win10 与 Linux 时间不一致</p>
 <a id="more"></a>
-<h1 id="原因">原因</h1>
-<h2 id="utc-与-gmt">UTC 与 GMT</h2>
-<ol>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><h2 id="UTC-与-GMT"><a href="#UTC-与-GMT" class="headerlink" title="UTC 与 GMT"></a>UTC 与 GMT</h2><ol>
 <li>UTC即Universal Time Coordinated，协调世界时（世界统一时间）</li>
 <li>GMT 即Greenwich Mean Time，格林尼治平时</li>
 </ol>
-<h2 id="原因-v2">原因</h2>
-<ul>
+<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><ul>
 <li>Windows 把计算机硬件时间当作本地时间(local time)，所以在Windows系统中显示的时间跟BIOS中显示的时间是一样的。</li>
 <li>Linux/Unix/Mac把计算机硬件时间当作 UTC， 所以在Linux/Unix/Mac系统启动后在该时间的基础上，加上电脑设置的时区数（ 比如我们在中国，它就加上“8” ），因此，Linux/Unix/Mac系统中显示的时间总是比Windows系统中显示的时间快8个小时。</li>
 <li>所以，当你在Linux/Unix/Mac系统中，把系统现实的时间设置正确后，其实计算机硬件时间是在这个时间上减去8小时，所以当你切换成Windows系统后，会发现时间慢了8小时。就是这样个原因。</li>
 </ul>
-<h1 id="解决方法">解决方法</h1>
-<h2 id="方法一">方法一</h2>
-<ul>
-<li>把 Linux 计算机硬件时间改成系统显示的时间，即禁用 UTC</li>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><ul>
+<li>把 Linux 计算机硬件时间改成系统显示的时间，即禁用 UTC<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl <span class="built_in">set</span>-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl <span class="built_in">set</span>-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
-<h2 id="方法二">方法二</h2>
-<ul>
-<li>修改 Windows 对硬件时间的对待方式，让 Windows把硬件时间当作 UTC.</li>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ul>
+<li>修改 Windows 对硬件时间的对待方式，让 Windows把硬件时间当作 UTC.<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>Via</strong></p>
 <ul>

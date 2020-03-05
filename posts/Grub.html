@@ -211,20 +211,19 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>添加 Win10 菜单到 Grub</p>
 <a id="more"></a>
-<h1 id="安装-os-prober">安装 os-prober</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure>
-<h1 id="扫面并添加到菜单">扫面并添加到菜单</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<h1 id="美化">美化</h1>
-<p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
-<h2 id="配置">配置</h2>
-<p>有的主题有安装脚本，运行即可</p>
+<h1 id="安装-os-prober"><a href="#安装-os-prober" class="headerlink" title="安装 os-prober"></a>安装 os-prober</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure>
+
+<h1 id="扫面并添加到菜单"><a href="#扫面并添加到菜单" class="headerlink" title="扫面并添加到菜单"></a>扫面并添加到菜单</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>有的主题有安装脚本，运行即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r 主题包名 /boot/grub/themes/  </span><br><span class="line">sudo vim /etc/grub.d/00_header</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><figcaption><span>上一步添加如下内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=<span class="string">"/boot/grub/themes/主题包名/theme.txt"</span></span><br><span class="line">GRUB_GFXMODE=<span class="string">"1920x1080x32"</span></span><br></pre></td></tr></table></figure>
-<h2 id="更新配置">更新配置</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<h1 id="效果">效果</h1>
-<figure class="image-bubble">
+
+<h2 id="更新配置"><a href="#更新配置" class="headerlink" title="更新配置"></a>更新配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png" alt title>
