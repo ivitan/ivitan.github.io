@@ -13,7 +13,7 @@ thumbnail: /images/Batch.png
 date: 2019-12-13 10:24:56
 ---
 Batch 计划任务
-<!--more-->
+
 # 语法
 ```bat
 SCHTASKS /Create [/S system [/U username [/P [password]]]]
@@ -22,6 +22,8 @@ SCHTASKS /Create [/S system [/U username [/P [password]]]]
 [/RI interval] [ {/ET endtime | /DU duration} [/K] [/XML xmlfile] [/V1]]
 [/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]
 ```
+<!--more-->
+
 描述:允许管理员在本地或远程系统上创建计划任务。
 
 ```bat

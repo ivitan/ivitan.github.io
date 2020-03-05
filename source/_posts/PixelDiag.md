@@ -13,13 +13,13 @@ date: 2020-03-04 08:29:15
 
 > Pixel 2 XL 开启 Diag 破解电信 VoLTE
 
-<!--more-->
-
 # 开启端口
 1. 安装 Diag Magisk 并输入模块
 2. 刷入 Pixel_2_Diag_Port.zip
 3. 刷入 VoEnabler-v1.4.zip
 4. 连接电脑，输入以下命令开启 Diag 端口 
+
+<!--more-->
 
 ```shell
 cd D:\adb
