@@ -3,18 +3,58 @@ layout: page
 title: About
 toc: false
 ---
-# Vitan
-> - 数码爱好者
-> - Linuxer，Pythonista，Vimer
-> - Google，Andriod，OnePlus 粉
-> - 规则长方体固体物质空间移动工程师
+> 本站是 `Vitan` 的个人博客网站。
+`Vitan` 男 90 后，爱编程，也爱数码；爱生活，也爱折腾。
+博客文章并非100%原创，内容部分参考自互联网，若侵犯了您的权利,告知后会在第一时间删除。
 
-# 关于本站
-> - 本博客由 [Hexo](https://hexo.io) + [Indigo](http://github.com/yscoder/hexo-theme-indigo) 强力驱动
-> - 本博客主要是用来记录学习和生活的过程
-> - 本博客文章有些原创,有些来源自网络,若侵犯了您的版权,告知后会在第一时间删除
+# 项目
+- [WebCrawler](https://github.com/ivitan/WebCrawler) Python 爬虫
+- [Termux](https://github.com/ivitan/Shell/blob/master/Termux/Termux.sh) Termux 一键部署工具
 
-# 联系方式
-> - **Email**：<a href="mailto:admin@vitan.me">admin@vitan.me</a>
-> - **Github**：https://github.com/ivitan
-> - **Telegram**：[ivitan](http://t.me/ivitan)
+# 联系我
+- Email：<a href="mailto:admin@vitan.me">admin@vitan.me</a>
+- Github：https://github.com/ivitan
+- Telegram：[ivitan](http://t.me/ivitan)
+
+---
+
+@timeline{
+##### 2019
+@item{
+###### 12月30日
+🎊 访问破万 🎊
+
+}
+
+@item{
+###### 1月3日
+🎊 访问破千 🎊
+
+}
+
+##### 2018
+@item{
+###### 12月1日
+🖖 配置 Google Analytics 🖖
+
+}
+
+@item{
+###### 6月12日
+🎈 绑定 `vitan.me` 域名 🎈
+
+}
+
+##### 2017
+
+@item{
+###### 12月1日
+🎉 更换为 `indigo` 主题 🎉
+
+}
+
+@item{
+###### 11月10日
+👏 `ivitan.github.io` 诞生 👏
+
+}
