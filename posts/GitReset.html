@@ -24,28 +24,28 @@ ga('send', 'pageview');
     
     
     
-    <link rel="canonical" href="https://vitan.me/posts/Win10-Share-WiFI.html">
+    <link rel="canonical" href="https://vitan.me/posts/GitReset.html">
     
     
-    <title>Win10 v2ray/SSR/SS 开热点给手机翻墙 | Vitan&#39;s Blog</title>
+    <title>Git 版本回退 | Vitan&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Note">
-    <meta name="description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。  方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点">
-<meta name="keywords" content="Note">
+    <meta name="keywords" content="Linux,Win,Git">
+    <meta name="description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull">
+<meta name="keywords" content="Linux,Win,Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win10 v2ray&#x2F;SSR&#x2F;SS 开热点给手机翻墙">
-<meta property="og:url" content="https://vitan.me/posts/Win10-Share-WiFI.html">
+<meta property="og:title" content="Git 版本回退">
+<meta property="og:url" content="https://vitan.me/posts/GitReset.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。  方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点">
+<meta property="og:description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-07T11:09:20.336Z">
+<meta property="og:updated_time" content="2020-03-07T11:09:20.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win10 v2ray&#x2F;SSR&#x2F;SS 开热点给手机翻墙">
-<meta name="twitter:description" content="在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。  方法 电脑端  右键SSR/SS --&amp;gt; 选项设置 --&amp;gt; 勾选 允许来自局域网连接,V2ray 同样在设置中勾选 允许来自局域网的连接 CMD --&amp;gt; 输入 ipconfig 获取 无线的IPV4地址 正常开启热点">
+<meta name="twitter:title" content="Git 版本回退">
+<meta name="twitter:description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -133,7 +133,7 @@ ga('send', 'pageview');
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Win10 v2ray/SSR/SS 开热点给手机翻墙</div>
+        <div class="flex-col header-title ellipsis">Git 版本回退</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -155,15 +155,15 @@ ga('send', 'pageview');
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Win10 v2ray/SSR/SS 开热点给手机翻墙</h1>
+        <h1 class="title">Git 版本回退</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-05-04T11:03:13.000Z" itemprop="datePublished" class="page-time">
-  2018-05-04
+                <time datetime="2020-03-05T02:45:08.000Z" itemprop="datePublished" class="page-time">
+  2020-03-05
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
 
             
         </h5>
@@ -180,26 +180,24 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#电脑端"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">电脑端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机端"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手机端</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#跳过谷歌验证"><span class="post-toc-number">2.</span> <span class="post-toc-text">跳过谷歌验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">方法二</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法三"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">方法三</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法四"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">方法四</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本地替换为远程"><span class="post-toc-number">1.</span> <span class="post-toc-text">本地替换为远程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#撤销"><span class="post-toc-number">2.</span> <span class="post-toc-text">撤销</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Win10-Share-WiFI"
+<article id="post-GitReset"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Win10 v2ray/SSR/SS 开热点给手机翻墙</h1>
+        <h1 class="post-card-title">Git 版本回退</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-05-04 19:03:13" datetime="2018-05-04T11:03:13.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2018-05-04</time>
+            <time class="post-time" title="2020-03-05 10:45:08" datetime="2020-03-05T02:45:08.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2020-03-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Diary/">Diary</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
 
 
 
-            
-                <span><icon class="icon icon-thumb-tack icon-pr"></icon><font color="ff4081">置顶</font></span>
             
             
 <span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
@@ -210,36 +208,33 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。</p>
+<p>Git 版本回退</p>
 </blockquote>
-<h1 id="方法">方法</h1>
-<h2 id="电脑端">电脑端</h2>
-<ol>
-<li>右键SSR/SS --&gt; 选项设置 --&gt; 勾选 <code>允许来自局域网连接</code>,V2ray 同样在设置中勾选 <code>允许来自局域网的连接</code></li>
-<li>CMD --&gt; 输入 <code>ipconfig</code> 获取 <code>无线的IPV4地址</code></li>
-<li>正常开启热点</li>
-</ol>
+<h1 id="本地替换为远程">本地替换为远程</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="手机端">手机端</h2>
-<ol>
-<li>长按连接的 WiFi 名,点修改网络</li>
-<li>显示高级选项</li>
-<li>代理</li>
-<li>手动</li>
-<li>服务器主机IP输入刚刚获取的 <code>IPV4地址</code>, 端口 <code>1080</code></li>
-<li>保存</li>
-</ol>
-<hr>
-<h1 id="跳过谷歌验证">跳过谷歌验证</h1>
-<h2 id="方法一">方法一</h2>
-<p>即上述 Windows 10 开热点的方法</p>
-<h2 id="方法二">方法二</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure user_setup_complete 1</span><br><span class="line">adb shell settings put global device_provisioned 1</span><br></pre></td></tr></table></figure>
-<h2 id="方法三">方法三</h2>
-<p>开机前不插入 SIM 卡,开机后不连接 WIFI,在开机导向时可以有选择跳过登录 Google 账号</p>
-<h2 id="方法四">方法四</h2>
-<p>顺时针方向，从左上角开始,连点屏幕四角</p>
-
+<h1 id="撤销">撤销</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 撤销所有的已经add的文件:</span><br><span class="line">git reset HEAD .</span><br><span class="line"></span><br><span class="line"># 撤销某个文件或文件夹</span><br><span class="line">git reset HEAD -filename</span><br><span class="line"></span><br><span class="line"># 回退到上个版本</span><br><span class="line">git reset --hard HEAD^ </span><br><span class="line"></span><br><span class="line"># 退到/进到 指定commit_id</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文件被修改了，但未执行git add操作（working tree内撤销）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout fileName</span><br><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>同时对多个文件执行了git add操作，但本次只想提交其中一部分文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br><span class="line">git status</span><br><span class="line">git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文件执行了git add操作，但想撤销对其的修改（index内回滚）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取消暂存</span><br><span class="line">git reset HEAD fileName</span><br><span class="line"># 撤销修改</span><br><span class="line">git checkout fileName</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改的文件已被git commit，但想再次修改不再产生新的Commit</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改最后一次提交 </span><br><span class="line">git add sample.txt</span><br><span class="line">git commit --amend -m&quot;说明&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>已在本地进行了多次git commit操作，现在想撤销到其中某次Commit</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -247,12 +242,12 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-03-07T11:09:20.336Z" itemprop="dateUpdated">2020-03-07 19:09:20</time>
+    最后更新时间：<time datetime="2020-03-07T11:09:20.333Z" itemprop="dateUpdated">2020-03-07 19:09:20</time>
 </span><br>
 
 
         
-        本文链接：<a href="/posts/Win10-Share-WiFI.html" target="_blank" rel="external">https://vitan.me/posts/Win10-Share-WiFI.html</a>
+        本文链接：<a href="/posts/GitReset.html" target="_blank" rel="external">https://vitan.me/posts/GitReset.html</a>
         
     </div>
     
@@ -273,7 +268,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
 
 
             
@@ -283,7 +278,7 @@ ga('send', 'pageview');
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/GitReset.html&title=《Git 版本回退》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -293,28 +288,26 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&source=
-在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/GitReset.html&title=《Git 版本回退》 — Vitan's Blog&source=
+Git 版本回退
 
-方法
-电脑端
-
-右键SSR..." data-title=" QQ">
+本地替换为远程
+123git fetch --allgit reset --hard origin/mastergit pull" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Win10-Share-WiFI.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/GitReset.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&url=https://vitan.me/posts/Win10-Share-WiFI.html&via=https://vitan.me" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 版本回退》 — Vitan's Blog&url=https://vitan.me/posts/GitReset.html&via=https://vitan.me" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Win10-Share-WiFI.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/GitReset.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -334,19 +327,13 @@ ga('send', 'pageview');
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/posts/SQLconstraint.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">SQL 约束</h4></div>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/posts/Linux-Commands.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Linux 基础命令</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+      <a href="/posts/PixelDiag.html" id="post-next" class="post-nav-link">
+        <div class="tips"><h4 class="title">Pixel 2 XL 开启 Diag</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
       </a>
     </div>
   
@@ -470,7 +457,7 @@ ga('send', 'pageview');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/posts/GitReset.html&title=《Git 版本回退》 — Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -480,28 +467,26 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/Win10-Share-WiFI.html&title=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&source=
-在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/GitReset.html&title=《Git 版本回退》 — Vitan's Blog&source=
+Git 版本回退
 
-方法
-电脑端
-
-右键SSR..." data-title=" QQ">
+本地替换为远程
+123git fetch --allgit reset --hard origin/mastergit pull" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/Win10-Share-WiFI.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/posts/GitReset.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Win10 v2ray/SSR/SS 开热点给手机翻墙》 — Vitan's Blog&url=https://vitan.me/posts/Win10-Share-WiFI.html&via=https://vitan.me" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 版本回退》 — Vitan's Blog&url=https://vitan.me/posts/GitReset.html&via=https://vitan.me" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/Win10-Share-WiFI.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/posts/GitReset.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -512,7 +497,7 @@ ga('send', 'pageview');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aMXLDMAwEwPz/00qbIubcEXYyolaVJ44orgoYBPD1FV/Xj+vVt8kKyZrJapsXBgbGbRnX8nr1yPZhyfqvPq/vxcDAeA5jHSLzsLjmJa8meVkYGBgY8yC4/v88icTAwMCYBNw84Zu/AgwMDIx26femhv9wFsfAwLghIy+W/f3nj/Q3MDAwbsW4yqsNgvPVol1hYGAczWhHJdqwuE4o56MbGBgYT2MkY1tt0S05cK7Lc8URGgMD4wGMNgi+a5hs0iR4+buBgYFxNGMSiJMt5gF0HazrTiwGBsbNGfnN+QhFDm7DdJR0YmBgHMpIivXt4EV7JM5DedFrxcDAuDmjLajl4xd7x9F2zOKXTiwGBsbRjHacoi2TtelmkXRiYGAczUhCZ7utthjXDmoUx1cMDIzjGKNgF1DnwxxRnoiBgXE0IwlqeUugrYnlBbtiZgQDA+MIRlvQnwfZ9cpt0Q0DA+MJjKRwtkfaG+CYNB4wMDDOZkwGHfLmQZ4gtn/BwMB4AiMJuPnj98Ju3QbYSw0xMDBuzmgD6F4xrm1CFM0MDAyMBzAmrcT83nmJrZBhYGAcwbjKa7LpttBWPBcDA+Noxntj2qR8lrcEkh8ADAyM8xjt5tbls/wouzfeER1iMTAwDmXkR9O2STDqrOYNBgwMDIzBg9ui3l7LEwMDA2MyJLGXPq538obUEAMD44aMdsyiLcDtjVB85CyOgYFxQ0ae2O21DdruRB6OMTAwHsD4BtfzQc/9pxM6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABy0lEQVR42u3aQW7DMAwEwPz/0+kD0shL0lKNYnQK4MSe+EBQS71e8Xp/rPU3Pz9/u9trx8LFxR1z38u1fsD6wes7fLt68WpwcXEPcqslaf3g9V9a0y9suLi4j+RWQeviiIuL+5+4CXFSKHFxcZ/AzYtO3rgkT9m4V8PFxR1w85Ry3+ct+S4uLm6L+y6u3uN7xeuXX+Hi4h7h5gUlGaVUhzHN5+Li4m7mTqLSfNBy21EPXFzcg9y8lelFovOW6KIjw8XFvZXbG5zkh7Hy5iY/3oGLi3uSm29yyjctbp+SX+Hi4u7jVgvT5ABWvh0qbH5wcXG3cfOikzdDvRxjFJji4uLexK2GpNXwone4KopdcHFxN3Mng5DqcYrkQEZ5JoyLi7uZmwcfky1T9RUULuPi4t7KrZazvA3K49Hor+Li4h7n5uHF5MhFvr5ufnBxcY9wJxubaniatziFy7i4uDdxe2VlMnCttju4uLjnufPxRi8YvWHIiouLu5lb3n7EQ9YkdkmaIVxc3L/iTiLRCboZmOLi4j6M2/v+pBQ2UxxcXNwHcKN0dpBy4OLinufmAUe1cclDk+gF4eLiHuFWS0l1w9MbtNyQ7+Li4na4P+Tv4jFEmTS8AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

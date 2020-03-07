@@ -42,7 +42,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Adb 与 Fastboot 常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-22T11:22:14.248Z">
+<meta property="og:updated_time" content="2020-03-07T11:09:20.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADB 与 Fastboot 常用命令">
 <meta name="twitter:description" content="Adb 与 Fastboot 常用命令">
@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#adb"><span class="post-toc-number">1.</span> <span class="post-toc-text">ADB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷机命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">刷机命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误提示"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">错误提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装卸载"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安装卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制文件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">复制文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看手机信息"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">查看手机信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#fastboot"><span class="post-toc-number">2.</span> <span class="post-toc-text">Fastboot</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#adb"><span class="post-toc-number">1.</span> <span class="post-toc-text">ADB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷机命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">刷机命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误提示"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">错误提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装卸载"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安装卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制文件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">复制文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看手机信息"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">查看手机信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#fastboot"><span class="post-toc-number">2.</span> <span class="post-toc-text">Fastboot</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统分区"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">系统分区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用-fastboot-命令"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">常用 Fastboot 命令</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -416,11 +416,11 @@ ga('send', 'pageview');
 </tr>
 <tr>
 <td style="text-align:left">解锁</td>
-<td style="text-align:left">fastboot flashing unlock或fastboot oem unlock</td>
+<td style="text-align:left">fastboot flashing unlock OR fastboot oem unlock</td>
 </tr>
 <tr>
 <td style="text-align:left">上锁</td>
-<td style="text-align:left">fastboot flashing lock或fastboot oem lock</td>
+<td style="text-align:left">fastboot flashing lock OR fastboot oem lock</td>
 </tr>
 <tr>
 <td style="text-align:left">重启</td>
@@ -448,6 +448,75 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+<h2 id="系统分区">系统分区</h2>
+<p>Via: <a href="https://segmentfault.com/a/1190000021601415" target="_blank" rel="noopener">Android 分区</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">分区</th>
+<th style="text-align:left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">boot</td>
+<td style="text-align:left">包含通过 mkbootimg 组合在一起的kernel镜像和 ramdisk。使能system-as-root后，该分区仅存放kernel镜像</td>
+</tr>
+<tr>
+<td style="text-align:left">system</td>
+<td style="text-align:left">主要包含 Android 框架。使能system-as-root后，该分区会包含原始 system.img 和 ramdisk.img 的合并内容</td>
+</tr>
+<tr>
+<td style="text-align:left">recovery</td>
+<td style="text-align:left">用于存储在 OTA 升级时使用的recovery系统。如果设备支持A/B更新，OTA升级可以通过ramdisk执行，该分区可以不需要</td>
+</tr>
+<tr>
+<td style="text-align:left">cache</td>
+<td style="text-align:left">用于存储临时数据，OTA升级包也会下载到这个分区。如果设备使用 A/B 更新，则可以不要此分区</td>
+</tr>
+<tr>
+<td style="text-align:left">misc</td>
+<td style="text-align:left">分区供recovery使用，存储空间不能小于 4KB</td>
+</tr>
+<tr>
+<td style="text-align:left">userdata</td>
+<td style="text-align:left">存储用户安装的应用和数据</td>
+</tr>
+<tr>
+<td style="text-align:left">metadata</td>
+<td style="text-align:left">如果设备被加密，则需要使用该分区，分区的存储空间不能小于 16MB</td>
+</tr>
+<tr>
+<td style="text-align:left">vendor</td>
+<td style="text-align:left">包含所有不可分发给 Android 开源项目 (AOSP) 的二进制文件。如果没有专有信息，可以不要该分区</td>
+</tr>
+<tr>
+<td style="text-align:left">radio</td>
+<td style="text-align:left">包含无线装置映像。只有包含无线装置的设备才需要此分区</td>
+</tr>
+<tr>
+<td style="text-align:left">tos</td>
+<td style="text-align:left">用于存储 Trusty 操作系统的二进制映像文件，仅在设备包含 Trusty 时使用</td>
+</tr>
+<tr>
+<td style="text-align:left">product</td>
+<td style="text-align:left">用于存放产品专用的配置和应用，以便OEM定制自己的系统。Android 9 及更高版本支持该分区。product分区是对system分区的扩展，必须同时升级这两个分区</td>
+</tr>
+<tr>
+<td style="text-align:left">odm</td>
+<td style="text-align:left">用于ODM自定义自己的板级支持包。Android 10 开始支持该分区。odm分区是对vendor分区的扩展，必须同时升级这两个分区</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用-fastboot-命令">常用 Fastboot 命令</h2>
+<ul>
+<li>刷入临时 TWRP</li>
+</ul>
+<figure class="highlight shell"><figcaption><span>bootloader 下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot boot twrp.img</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输入镜像</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash system system.img</span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -456,7 +525,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-22T11:22:14.248Z" itemprop="dateUpdated">2020-02-22 19:22:14</time>
+    最后更新时间：<time datetime="2020-03-07T11:09:20.332Z" itemprop="dateUpdated">2020-03-07 19:09:20</time>
 </span><br>
 
 
