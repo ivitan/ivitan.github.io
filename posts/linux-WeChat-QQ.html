@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#archlinux"><span class="post-toc-number">1.</span> <span class="post-toc-text">ArchLinux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加-archlinuxcn-源"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">添加 archlinuxcn 源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置分辨率"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">配置分辨率</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ubuntu"><span class="post-toc-number">2.</span> <span class="post-toc-text">Ubuntu</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#deepin-wine-环境"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Deepin-wine 环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#deepin-com-应用容器"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Deepin.com 应用容器</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ArchLinux"><span class="post-toc-number">1.</span> <span class="post-toc-text">ArchLinux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加-archlinuxcn-源"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">添加 archlinuxcn 源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置分辨率"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">配置分辨率</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ubuntu"><span class="post-toc-number">2.</span> <span class="post-toc-text">Ubuntu</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Deepin-wine-环境"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Deepin-wine 环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Deepin-com-应用容器"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Deepin.com 应用容器</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,34 +209,31 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Linux 安装 QQ WeChat Tim.</p>
 <a id="more"></a>
-<h1 id="archlinux">ArchLinux</h1>
-<h2 id="添加-archlinuxcn-源">添加 archlinuxcn 源</h2>
-<ul>
-<li>编辑 pacman.conf</li>
-</ul>
+<h1 id="ArchLinux"><a href="#ArchLinux" class="headerlink" title="ArchLinux"></a>ArchLinux</h1><h2 id="添加-archlinuxcn-源"><a href="#添加-archlinuxcn-源" class="headerlink" title="添加 archlinuxcn 源"></a>添加 archlinuxcn 源</h2><ul>
+<li><p>编辑 pacman.conf</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加</li>
-</ul>
+</li>
+<li><p>添加</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装">安装</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine</span><br><span class="line">sudo pacman -S deepin.com.qq.im</span><br><span class="line">sudo pacman -S deepin.com.qq.office</span><br><span class="line">sudo pacman -S deepin.com.wechat</span><br><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine</span><br><span class="line">sudo pacman -S deepin.com.qq.im</span><br><span class="line">sudo pacman -S deepin.com.qq.office</span><br><span class="line">sudo pacman -S deepin.com.wechat</span><br><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>ArchLinux 系发行版包括 ArchLinux、Manjaro、Antergos 等.</li>
 </ul>
-<h2 id="配置分辨率">配置分辨率</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-WeChat"</span> winecfg</span><br><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-TIM"</span> winecfg</span><br><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-QQ"</span> winecfg</span><br></pre></td></tr></table></figure>
-<h1 id="ubuntu">Ubuntu</h1>
-<h2 id="deepin-wine-环境">Deepin-wine 环境</h2>
-<p>方法一</p>
+<h2 id="配置分辨率"><a href="#配置分辨率" class="headerlink" title="配置分辨率"></a>配置分辨率</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-WeChat"</span> winecfg</span><br><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-TIM"</span> winecfg</span><br><span class="line">env WINEPREFIX=<span class="string">"<span class="variable">$HOME</span>/.deepinwine/Deepin-QQ"</span> winecfg</span><br></pre></td></tr></table></figure>
+
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Deepin-wine-环境"><a href="#Deepin-wine-环境" class="headerlink" title="Deepin-wine 环境"></a>Deepin-wine 环境</h2><p>方法一</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> <span class="string">'https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git</span></span><br><span class="line"><span class="string"># 克隆到本地，用图形界面的软件包管理器安装所有 deb 文件</span></span><br></pre></td></tr></table></figure>
+
 <p>方法二</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git</span><br><span class="line">sudo sh ./install.sh</span><br><span class="line"><span class="comment"># 克隆到本地,(授予可执行权限后)在终端中运行 install.sh .</span></span><br></pre></td></tr></table></figure>
-<h2 id="deepin-com-应用容器"><a href="http://Deepin.com" target="_blank" rel="noopener">Deepin.com</a> 应用容器</h2>
-<ul>
+
+<h2 id="Deepin-com-应用容器"><a href="#Deepin-com-应用容器" class="headerlink" title="Deepin.com 应用容器"></a>Deepin.com 应用容器</h2><ul>
 <li>自行到<a href="http://mirrors.aliyun.com/deepin/pool/non-free/d/" target="_blank" rel="noopener">阿里镜像</a>中下载想要的容器安装运行即可(容器建议使用命令安装)。</li>
-<li>推荐容器
-<ul>
+<li>推荐容器<ul>
 <li>QQ:<a href="http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/" target="_blank" rel="noopener">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/</a></li>
 <li>TIM:<a href="http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/" target="_blank" rel="noopener">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/</a></li>
 <li>QQ轻聊版:<a href="http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im.light/" target="_blank" rel="noopener">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im.light/</a></li>
@@ -250,7 +247,7 @@ ga('send', 'pageview');
 <hr>
 <p><strong>参考</strong></p>
 <ul>
-<li><a href="https://github.com/wszqkzqk/deepin-wine-ubuntu" target="_blank" rel="noopener">Deepin wine for ubuntu</a></li>
+<li><a href="https://github.com/wszqkzqk/deepin-wine-ubuntu" target="_blank" rel="noopener">Deepin wine for ubuntu</a>    </li>
 <li><a href="https://www.lulinux.com/archives/1319" target="_blank" rel="noopener">多发行版通过！目前Linux上真正完美稳定的wine QQ方案</a></li>
 </ul>
 

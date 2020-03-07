@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建文档-打印文档"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建文档、打印文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建文档"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">创建文档</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#打印输出文当里面的数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">打印输出文当里面的数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#处理csv-excel-panadas"><span class="post-toc-number">3.</span> <span class="post-toc-text">处理CSV, Excel (panadas)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#处理-json-xml-格式资料"><span class="post-toc-number">4.</span> <span class="post-toc-text">处理 JSON, XML 格式资料</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#json"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">JSON</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xml"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">XML</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建文档、打印文档"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建文档、打印文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建文档"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">创建文档</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#打印输出文当里面的数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">打印输出文当里面的数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#处理CSV-Excel-panadas"><span class="post-toc-number">3.</span> <span class="post-toc-text">处理CSV, Excel (panadas)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#处理-JSON-XML-格式资料"><span class="post-toc-number">4.</span> <span class="post-toc-text">处理 JSON, XML 格式资料</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSON"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">JSON</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XML"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">XML</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,60 +209,67 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Python IO 与档案处理</p>
 <a id="more"></a>
-<h1 id="创建文档-打印文档">创建文档、打印文档</h1>
-<h2 id="创建文档">创建文档</h2>
-<ul>
+<h1 id="创建文档、打印文档"><a href="#创建文档、打印文档" class="headerlink" title="创建文档、打印文档"></a>创建文档、打印文档</h1><h2 id="创建文档"><a href="#创建文档" class="headerlink" title="创建文档"></a>创建文档</h2><ul>
 <li>用 open 函数创建文档</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'tmp.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line"><span class="comment">#用open函数创建文档f，f为创建一个tmp.txt文本文件，当前f操作模式为w(r表示读取，a表示增加)</span></span><br><span class="line">f.write(<span class="string">'Hello World'</span>) <span class="comment">#f向tmp.txt文件写入"hello world"</span></span><br><span class="line">f.close()<span class="comment">#关闭f对象</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>利用with函数使得不需要调用close关闭</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'tmp.txt'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#利用with导入open函数，创建tmp.txt文本文件，并命名为f文档，文件当前操作模式为w</span></span><br></pre></td></tr></table></figure>
-<h1 id="打印输出文当里面的数据">打印输出文当里面的数据</h1>
-<ul>
+
+<h1 id="打印输出文当里面的数据"><a href="#打印输出文当里面的数据" class="headerlink" title="打印输出文当里面的数据"></a>打印输出文当里面的数据</h1><ul>
 <li>创建</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'tmp.txt'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#利用with导入open函数，创建tmp.txt文本文件，并命名为f文档，文档当前操作模式为r</span></span><br><span class="line">     print(f.read())</span><br><span class="line">    <span class="comment">#f进行读取操作，获得tmp.txt文件里的数据，并将所有数据一次性当前输出打印出来</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>打印</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'tmp.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">  <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">      <span class="comment">#利用for循环与f的readlines()遍历文档里面每一行数据</span></span><br><span class="line">      print(line.strip())</span><br><span class="line">      <span class="comment">#打印每一行数据，并利用strip()将换行符或空格删除掉</span></span><br></pre></td></tr></table></figure>
-<h1 id="处理csv-excel-panadas">处理CSV, Excel (panadas)</h1>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'Population.csv'</span>,<span class="string">'r'</span>,encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#用with导入open函数，将Population.csv的文件读取进来，encoding为UTF-8,读取进来的文档命名为f</span></span><br><span class="line">   <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">   <span class="comment">#利用for循环与f的readlines()遍历文档里面每一行数据</span></span><br><span class="line">      print(line)</span><br><span class="line">   <span class="comment">#打印输出显示每行数据</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="处理CSV-Excel-panadas"><a href="#处理CSV-Excel-panadas" class="headerlink" title="处理CSV, Excel (panadas)"></a>处理CSV, Excel (panadas)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'Population.csv'</span>,<span class="string">'r'</span>,encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#用with导入open函数，将Population.csv的文件读取进来，encoding为UTF-8,读取进来的文档命名为f</span></span><br><span class="line">   <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">   <span class="comment">#利用for循环与f的readlines()遍历文档里面每一行数据</span></span><br><span class="line">      print(line)</span><br><span class="line">   <span class="comment">#打印输出显示每行数据</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>csv 文件</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> pandas<span class="comment">#导入pandas类库</span></span><br><span class="line">df = pandas.read_csv(<span class="string">'Population.csv'</span>)</span><br><span class="line"><span class="comment">#利用pandas的read_csv读取Population.csv文件</span></span><br><span class="line">df <span class="comment">#输出显示df</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Excel 文件</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.read_excel(<span class="string">'GDP.xls'</span>)</span><br><span class="line"><span class="comment">#利用pandas的read_excel读取GDP.xls文件</span></span><br><span class="line">df <span class="comment">#输出显示df</span></span><br></pre></td></tr></table></figure>
-<h1 id="处理-json-xml-格式资料">处理 JSON, XML 格式资料</h1>
-<h2 id="json">JSON</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'jd.json'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#利用with open导入jd.json文件并命名为f</span></span><br><span class="line">jd = f.read()</span><br><span class="line"><span class="comment">#f调用read()读取数据并将结果赋值为jd</span></span><br><span class="line">jd <span class="comment">#查看jd</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="处理-JSON-XML-格式资料"><a href="#处理-JSON-XML-格式资料" class="headerlink" title="处理 JSON, XML 格式资料"></a>处理 JSON, XML 格式资料</h1><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'jd.json'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="comment">#利用with open导入jd.json文件并命名为f</span></span><br><span class="line">jd = f.read()</span><br><span class="line"><span class="comment">#f调用read()读取数据并将结果赋值为jd</span></span><br><span class="line">jd <span class="comment">#查看jd</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>将以上的 jd 文档转换成字典</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json <span class="comment">#导入json库</span></span><br><span class="line">dic = json.loads(jd)</span><br><span class="line"><span class="comment">#利用json的loads导入jd并赋值给dic变量</span></span><br><span class="line">dic <span class="comment">#输出显示dic</span></span><br><span class="line"><span class="keyword">for</span> shop <span class="keyword">in</span> dic:</span><br><span class="line"><span class="comment">#用shop代表dic里的每一个元素， for循环遍历dic</span></span><br><span class="line">    print(shop.get(<span class="string">'shop_name'</span>),shop.get(<span class="string">'shop_brief'</span>))</span><br><span class="line">    <span class="comment">#输出打印每一个shop里key为“shop_name”“shop_brief”的值</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>利用 json 的 dumps 函数将上面的 dic 转换成 json 类型</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(dic)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>解析上面的 json</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="comment">#导入pandas类库</span></span><br><span class="line">df = pandas.read_json(<span class="string">'jd.json'</span>)</span><br><span class="line"><span class="comment">#利用padndas的read_json函数将jd.json文件导入转换为html表格方式</span></span><br><span class="line">df.head(<span class="number">5</span>) <span class="comment">#利用head()查看前5条记录</span></span><br></pre></td></tr></table></figure>
-<h2 id="xml">XML</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import xml.etree.ElementTree as ET</span><br><span class="line">#导入xml的etree类库下的ElementTree并重命名为ET</span><br><span class="line">tree = ET.parse(&apos;weather.xml&apos;)</span><br><span class="line">#利用ET的parse函数对weather.xml文件进行解析转换，并将结果命名为treee</span><br></pre></td></tr></table></figure>
+
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import xml.etree.ElementTree as ET</span><br><span class="line">#导入xml的etree类库下的ElementTree并重命名为ET</span><br><span class="line">tree = ET.parse(&apos;weather.xml&apos;)</span><br><span class="line">#利用ET的parse函数对weather.xml文件进行解析转换，并将结果命名为treee</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>获得 tree 的根</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root = tree.getroot()</span><br><span class="line"><span class="comment">#利用getroot获得tree的根，并将获取结果命名为root</span></span><br><span class="line">root <span class="comment">#查看root</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>解析 XML</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> city <span class="keyword">in</span> root.iter():</span><br><span class="line"><span class="comment">#用city代表树的每一个结点，利用root.iter函数遍历结点名称为city的所有树结点</span></span><br><span class="line">  print(city.get(<span class="string">'cityname'</span>),city.get(<span class="string">'tem1'</span>))</span><br><span class="line">  <span class="comment">#打印输出每个树结点的cityname和tem1属性值</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
 

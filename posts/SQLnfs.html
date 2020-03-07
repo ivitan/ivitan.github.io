@@ -52,7 +52,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库基本概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#范式"><span class="post-toc-number">2.</span> <span class="post-toc-text">范式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一范式-1nf"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第一范式(1NF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二范式-2nf"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第二范式(2NF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三范式-3nf"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第三范式(3NF)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#bc范式-bcnf"><span class="post-toc-number">3.</span> <span class="post-toc-text">BC范式(BCNF)</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库基本概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#范式"><span class="post-toc-number">2.</span> <span class="post-toc-text">范式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一范式-1NF"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第一范式(1NF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二范式-2NF"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第二范式(2NF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三范式-3NF"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第三范式(3NF)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#BC范式-BCNF"><span class="post-toc-number">3.</span> <span class="post-toc-text">BC范式(BCNF)</span></a></li></ol>
         </nav>
     </aside>
 
@@ -211,8 +211,7 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>SQL范式</p>
 <a id="more"></a>
-<h1 id="数据库基本概念">数据库基本概念</h1>
-<p>要理解范式，首先必须对知道什么是关系数据库，简单的说：关系数据库就是用二维表来保存数据。</p>
+<h1 id="数据库基本概念"><a href="#数据库基本概念" class="headerlink" title="数据库基本概念"></a>数据库基本概念</h1><p>要理解范式，首先必须对知道什么是关系数据库，简单的说：关系数据库就是用二维表来保存数据。</p>
 <p>概念</p>
 <ul>
 <li><code>实体</code>现实世界中客观存在并可以被区别的事物。比如“一个学生”、“一本书”、“一门课”等等。值得强调的是这里所说的“事物”不仅仅是看得见摸得着的“东西”，它也可以是虚拟的，不如说“老师与学校的关系”。</li>
@@ -221,8 +220,7 @@ ga('send', 'pageview');
 <li><code>码</code> 表中可以唯一确定一个元组的某个属性（或者属性组），如果这    样的码有不止一个，那么大家都叫   候选码，我们从候选码中挑一个出    来做老大，它就叫主码。</li>
 <li><code>主码</code> 被数据库设计者选中的，用来在同一实体集中区分不同实体的&gt;    候选码；此外，应该选择哪些从不或极少变化的属性；</li>
 <li><code>键</code> 可唯一标识一条记录的一个字段或字段集，有时翻译为“码”。</li>
-<li><code>主键（primary key)</code>用于唯一标识一个表中的一条记录的键。每个主键应该具有下列特征：
-<ul>
+<li><code>主键（primary key)</code>用于唯一标识一个表中的一条记录的键。每个主键应该具有下列特征：<ul>
 <li>唯一的。</li>
 <li>最小 的（尽量选择最少键的组合）。</li>
 <li>非空。</li>
@@ -245,12 +243,9 @@ ga('send', 'pageview');
 <li><code>超码</code> 一个或多个属性的集合，这些属性的组合可以使我们在一个实&gt;    体集中唯一的标识一个实体。</li>
 <li><code>外部码</code> 一个属性（或属性组），它不是码，但是它别的表的码，它就是外码。</li>
 </ul>
-<h1 id="范式">范式</h1>
-<p>概念
-(数据库设计范式，数据库的设计范式）是符合某一种级别的关系模式的集合。构造数据库必须遵循一定的规则。在关系数据库中，这种规则就是范式。关系数据库中的关系必须满足一定的要求，即满足不同的范式。</p>
+<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><p>概念<br>(数据库设计范式，数据库的设计范式）是符合某一种级别的关系模式的集合。构造数据库必须遵循一定的规则。在关系数据库中，这种规则就是范式。关系数据库中的关系必须满足一定的要求，即满足不同的范式。</p>
 <p>满足最低要求的范式是第一范式（1NF）。在第一范式的基础上进一步满足更多要求的称为第二范式（2NF），其余范式以次类推。一般说来，数据库只需满足第三范式（3NF）就行了。</p>
-<h2 id="第一范式-1nf">第一范式(1NF)</h2>
-<p>如果一个关系模式R的所有属性都是不可分的基本数据项，则R∈1NF（即R符合第一范式）。简单的说，就是每一个列（属性）只有一个，没有重复。</p>
+<h2 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式(1NF)"></a>第一范式(1NF)</h2><p>如果一个关系模式R的所有属性都是不可分的基本数据项，则R∈1NF（即R符合第一范式）。简单的说，就是每一个列（属性）只有一个，没有重复。</p>
 <p>特点</p>
 <ul>
 <li>有主键，且主键不能为空。</li>
@@ -265,117 +260,77 @@ ga('send', 'pageview');
 <table>
 <thead>
 <tr>
-<th style="text-align:left">姓名</th>
-<th style="text-align:left">班级</th>
-<th style="text-align:left">课程</th>
+<th align="left">姓名</th>
+<th align="left">班级</th>
+<th align="left">课程</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">小明</td>
-<td style="text-align:left">1班</td>
-<td style="text-align:left">数学,语文</td>
+<tbody><tr>
+<td align="left">小明</td>
+<td align="left">1班</td>
+<td align="left">数学,语文</td>
 </tr>
 <tr>
-<td style="text-align:left">小红</td>
-<td style="text-align:left">2班</td>
-<td style="text-align:left">英语</td>
+<td align="left">小红</td>
+<td align="left">2班</td>
+<td align="left">英语</td>
 </tr>
 <tr>
-<td style="text-align:left">小明</td>
-<td style="text-align:left">2班</td>
-<td style="text-align:left">数学</td>
+<td align="left">小明</td>
+<td align="left">2班</td>
+<td align="left">数学</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <p>里面还有重复组并且没有存放单一的值，并不符合第一范式，给其增加主键学号加以区别：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">学号</th>
-<th style="text-align:left">姓名</th>
-<th style="text-align:left">班级</th>
-<th style="text-align:left">课程</th>
+<th align="left">学号</th>
+<th align="left">姓名</th>
+<th align="left">班级</th>
+<th align="left">课程</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">101</td>
-<td style="text-align:left">小明</td>
-<td style="text-align:left">1班</td>
-<td style="text-align:left">数学</td>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">小明</td>
+<td align="left">1班</td>
+<td align="left">数学</td>
 </tr>
 <tr>
-<td style="text-align:left">101</td>
-<td style="text-align:left">小明</td>
-<td style="text-align:left">1班</td>
-<td style="text-align:left">语文</td>
+<td align="left">101</td>
+<td align="left">小明</td>
+<td align="left">1班</td>
+<td align="left">语文</td>
 </tr>
 <tr>
-<td style="text-align:left">201</td>
-<td style="text-align:left">小红</td>
-<td style="text-align:left">2班</td>
-<td style="text-align:left">英语</td>
+<td align="left">201</td>
+<td align="left">小红</td>
+<td align="left">2班</td>
+<td align="left">英语</td>
 </tr>
 <tr>
-<td style="text-align:left">202</td>
-<td style="text-align:left">小明</td>
-<td style="text-align:left">2班</td>
-<td style="text-align:left">数学</td>
+<td align="left">202</td>
+<td align="left">小明</td>
+<td align="left">2班</td>
+<td align="left">数学</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<h2 id="第二范式-2nf">第二范式(2NF)</h2>
-<p>概念</p>
+<h2 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式(2NF)"></a>第二范式(2NF)</h2><p>概念</p>
 <ol>
 <li>首先要满足第一范式。它的规则是要求数据表里的所有数据都要和该数据表的主键有完全依赖关系。</li>
 <li>若关系模式R€1NF，并且每一个 <code>非主属性</code> 都 <code>完全函数依赖</code> 于 R 的 <code>候选吗</code>，则R€2NF。</li>
 </ol>
-<p>判断方法：
-是否存在某个非主属性，它部分依赖<code>候选码</code>，或者说依赖候选码的一部分，存在则属于2NF。</p>
+<p>判断方法：<br>是否存在某个非主属性，它部分依赖<code>候选码</code>，或者说依赖候选码的一部分，存在则属于2NF。</p>
 <p>特点</p>
 <ol>
 <li>满足第一范式。</li>
 <li>表中的每一个非主属性，必须完全依赖于本表码。</li>
 <li>只有当一个表中，主码由两个或以上的属性组成的时候，才会出现不符合第二范式的情况</li>
 </ol>
-<p>例如有表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">货物</th>
-<th style="text-align:left">供应商ID</th>
-<th style="text-align:left">供应商</th>
-<th style="text-align:left">价格</th>
-<th style="text-align:left">供应商地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">毛巾</td>
-<td style="text-align:left">01</td>
-<td style="text-align:left">世纪联华</td>
-<td style="text-align:left">10.0</td>
-<td style="text-align:left">星光大道</td>
-</tr>
-<tr>
-<td style="text-align:left">牙刷</td>
-<td style="text-align:left">01</td>
-<td style="text-align:left">世纪联华</td>
-<td style="text-align:left">5.0</td>
-<td style="text-align:left">星光大道</td>
-</tr>
-<tr>
-<td style="text-align:left">毛巾</td>
-<td style="text-align:left">02</td>
-<td style="text-align:left">十足</td>
-<td style="text-align:left">12.0</td>
-<td style="text-align:left">月光大道</td>
-</tr>
-</tbody>
-</table>
+<p>例如有表：<br>|货物|供应商ID|供应商|价格|供应商地址|<br>|:—|:—|:—|:—|:—|:—|<br>|毛巾|01|世纪联华|10.0|星光大道|<br>|牙刷|01|世纪联华|5.0|星光大道|<br>|毛巾|02|十足|12.0|月光大道|</p>
 <ul>
 <li>可知，这里的主键有货物和供应商ID，价格和两个主键都有关，可是供应商地址只和供应商ID有依赖关系。那么不符合第二范式，我们可以将其修改为两张表：</li>
 </ul>
@@ -383,57 +338,52 @@ ga('send', 'pageview');
 <table>
 <thead>
 <tr>
-<th style="text-align:left">供应商ID</th>
-<th style="text-align:left">供应商</th>
-<th style="text-align:left">供应商地址</th>
+<th align="left">供应商ID</th>
+<th align="left">供应商</th>
+<th align="left">供应商地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">01</td>
-<td style="text-align:left">世纪联华</td>
-<td style="text-align:left">星光大道</td>
+<tbody><tr>
+<td align="left">01</td>
+<td align="left">世纪联华</td>
+<td align="left">星光大道</td>
 </tr>
 <tr>
-<td style="text-align:left">02</td>
-<td style="text-align:left">十足</td>
-<td style="text-align:left">月光大道</td>
+<td align="left">02</td>
+<td align="left">十足</td>
+<td align="left">月光大道</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">货物</th>
-<th style="text-align:left">供应商ID</th>
-<th style="text-align:left">价格</th>
+<th align="left">货物</th>
+<th align="left">供应商ID</th>
+<th align="left">价格</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">毛巾</td>
-<td style="text-align:left">01</td>
-<td style="text-align:left">10.0</td>
+<tbody><tr>
+<td align="left">毛巾</td>
+<td align="left">01</td>
+<td align="left">10.0</td>
 </tr>
 <tr>
-<td style="text-align:left">牙刷</td>
-<td style="text-align:left">01</td>
-<td style="text-align:left">5.0</td>
+<td align="left">牙刷</td>
+<td align="left">01</td>
+<td align="left">5.0</td>
 </tr>
 <tr>
-<td style="text-align:left">毛巾</td>
-<td style="text-align:left">01</td>
-<td style="text-align:left">12.0</td>
+<td align="left">毛巾</td>
+<td align="left">01</td>
+<td align="left">12.0</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <ul>
 <li>这样就符合了第二范式要求的表内数据和表内主键完全依赖的关系。</li>
 </ul>
-<h2 id="第三范式-3nf">第三范式(3NF)</h2>
-<p>概念</p>
+<h2 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h2><p>概念</p>
 <ol>
 <li>在第二范式的基础上，要求所有非键属性都只和候选键有相关性，也就是说非键属性之间应该是独立无关的。</li>
 <li>若关系模式R€1NF,并且每一个 <code>非主属性</code> 都<code>非传递依赖</code> 于 <code>候选码</code>，R€3NF。</li>
@@ -449,42 +399,37 @@ ga('send', 'pageview');
 <table>
 <thead>
 <tr>
-<th style="text-align:left">供应商ID</th>
-<th style="text-align:left">供应商</th>
+<th align="left">供应商ID</th>
+<th align="left">供应商</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">01</td>
-<td style="text-align:left">世纪联华</td>
+<tbody><tr>
+<td align="left">01</td>
+<td align="left">世纪联华</td>
 </tr>
 <tr>
-<td style="text-align:left">02</td>
-<td style="text-align:left">十足</td>
+<td align="left">02</td>
+<td align="left">十足</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">供应商ID</th>
-<th style="text-align:left">供应商地址</th>
+<th align="left">供应商ID</th>
+<th align="left">供应商地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">01</td>
-<td style="text-align:left">星光大道</td>
+<tbody><tr>
+<td align="left">01</td>
+<td align="left">星光大道</td>
 </tr>
 <tr>
-<td style="text-align:left">02</td>
-<td style="text-align:left">月光大道</td>
+<td align="left">02</td>
+<td align="left">月光大道</td>
 </tr>
-</tbody>
-</table>
-<h1 id="bc范式-bcnf">BC范式(BCNF)</h1>
-<p>概念</p>
+</tbody></table>
+<h1 id="BC范式-BCNF"><a href="#BC范式-BCNF" class="headerlink" title="BC范式(BCNF)"></a>BC范式(BCNF)</h1><p>概念</p>
 <ol>
 <li>BCNF是修正的第三范式。</li>
 <li>若关系模式R€1NF，对每个非平凡的函数依赖X–&gt;Y，X一定是<code>超码</code>（具有唯一性）</li>
@@ -501,11 +446,8 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption">例子</div>
             </figure>
-<dl>
-<dt>要求：</dt>
-<dd>在满足第三范式的基础上，且不允许主键的一部分被另一部分或其它部分决定。</dd>
-</dl>
-<p>特点：</p>
+
+<dl><dt>要求：</dt><dd>在满足第三范式的基础上，且不允许主键的一部分被另一部分或其它部分决定。</dd></dl><p>特点：</p>
 <ol>
 <li>满足第三范式。</li>
 <li>所有非主属性对每一个码都是完全函数依赖。</li>

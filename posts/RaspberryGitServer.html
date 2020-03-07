@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -209,39 +209,44 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>树莓派 Git 服务器</p>
 <a id="more"></a>
-<h1 id="安装依赖">安装依赖</h1>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>创建用户</li>
 </ul>
 <p>这里为树莓派创建一个 git 用户，方便局域网内其他用户使用同时将 git 服务器文件与 pi 用户数据隔离开来。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser --system --shell /bin/bash --gecos <span class="string">'git version control by pi'</span> --group --home /home/git git</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>更改 Git 密码</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd git</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>切换到 Git 用户</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br></pre></td></tr></table></figure>
-<h1 id="初始化仓库">初始化仓库</h1>
-<ul>
+
+<h1 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h1><ul>
 <li>Git 用户负责 Git 项目的管理，所有仓库存放在 <code>/home/git</code> 中，这里我们初始化一个空仓库（记住是在切换到 Git 用户之后）</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/git</span><br><span class="line">mkdir test.git</span><br><span class="line"><span class="built_in">cd</span> test.git</span><br><span class="line">git --bare init</span><br></pre></td></tr></table></figure>
-<h1 id="使用仓库">使用仓库</h1>
-<ul>
+
+<h1 id="使用仓库"><a href="#使用仓库" class="headerlink" title="使用仓库"></a>使用仓库</h1><ul>
 <li>克隆</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@raspi_ip:/home/git/test.git</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>将项目加入仓库：</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@raspi_ip:/home/git/test.git</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>接着</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"test repo"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
 
         </div>
 

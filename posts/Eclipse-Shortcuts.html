@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -209,345 +209,319 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Eclipse 常用快捷键</p>
 <a id="more"></a>
-<h2 id="编辑">编辑</h2>
+<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+1</td>
+<td align="left">快速修复</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+F</td>
+<td align="left">格式化当前代码</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+M</td>
+<td align="left">添加类的import导入</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+O</td>
+<td align="left">组织类的import导入（既有Ctrl+Shift+M的作用，又可以帮你去除没用的导入，很有用）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Y</td>
+<td align="left">重做（与撤销Ctrl+Z相反）</td>
+</tr>
+<tr>
+<td align="left">Alt+/</td>
+<td align="left">补全代码</td>
+</tr>
+<tr>
+<td align="left">Ctrl+D</td>
+<td align="left">删除当前行或者多行</td>
+</tr>
+<tr>
+<td align="left">Alt+↓</td>
+<td align="left">当前行和下面一行交互位置</td>
+</tr>
+<tr>
+<td align="left">Alt+↑</td>
+<td align="left">当前行和上面一行交互位置</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Alt+↓</td>
+<td align="left">复制当前行到下一行（复制增加）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Alt+↑</td>
+<td align="left">复制当前行到上一行（复制增加）</td>
+</tr>
+<tr>
+<td align="left">Shift+Enter</td>
+<td align="left">在当前行的下一行插入空行（这时鼠标可以在当前行的任一位置,不一定是最后）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+/</td>
+<td align="left">注释当前行,再按则取消注释</td>
+</tr>
+</tbody></table>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Alt+Shift+↑</td>
+<td align="left">选择封装元素</td>
+</tr>
+<tr>
+<td align="left">Alt+Shift+←</td>
+<td align="left">选择上一个元素</td>
+</tr>
+<tr>
+<td align="left">Alt+Shift+→</td>
+<td align="left">选择下一个元素</td>
+</tr>
+<tr>
+<td align="left">Shift+←</td>
+<td align="left">从光标处开始往左选择字符</td>
+</tr>
+<tr>
+<td align="left">Shift+→</td>
+<td align="left">从光标处开始往右选择字符</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+←</td>
+<td align="left">选中光标左边的单词</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+→</td>
+<td align="left">选中光标右边的单词</td>
+</tr>
+</tbody></table>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+←</td>
+<td align="left">光标移到左边单词的开头，相当于vim的b</td>
+</tr>
+<tr>
+<td align="left">Ctrl+→</td>
+<td align="left">光标移到右边单词的末尾，相当于vim的e</td>
+</tr>
+</tbody></table>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+K</td>
+<td align="left">参照选中的Word快速定位到下一个（如果没有选中word，则搜索上一次使用搜索的word）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+K</td>
+<td align="left">参照选中的Word快速定位到上一个</td>
+</tr>
+<tr>
+<td align="left">Ctrl+J</td>
+<td align="left">正向增量查找（按下Ctrl+J后,你所输入的每个字母编辑器都提供快速匹配定位到某个单词,如果没有,则在状态栏中显示没有找到了,查一个单词时,特别实用,要退出这个模式，按escape建）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+J</td>
+<td align="left">反向增量查找（和上条相同,只不过是从后往前查）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+U</td>
+<td align="left">列出所有包含字符串的行</td>
+</tr>
+<tr>
+<td align="left">Ctrl+H</td>
+<td align="left">打开搜索对话框</td>
+</tr>
+<tr>
+<td align="left">Ctrl+G</td>
+<td align="left">工作区中的声明</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+G</td>
+<td align="left">工作区中的引用</td>
+</tr>
+</tbody></table>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+Shift+T</td>
+<td align="left">搜索类（包括工程和关联的第三jar包）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+R</td>
+<td align="left">搜索工程中的文件</td>
+</tr>
+<tr>
+<td align="left">Ctrl+E</td>
+<td align="left">快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）</td>
+</tr>
+<tr>
+<td align="left">F4</td>
+<td align="left">打开类型层次结构</td>
+</tr>
+<tr>
+<td align="left">F3</td>
+<td align="left">跳转到声明处</td>
+</tr>
+<tr>
+<td align="left">Alt+←</td>
+<td align="left">前一个编辑的页面</td>
+</tr>
+<tr>
+<td align="left">Alt+→</td>
+<td align="left">下一个编辑的页面（当然是针对上面那条来说了）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+PageUp/PageDown</td>
+<td align="left">在编辑器中，切换已经打开的文件</td>
+</tr>
+</tbody></table>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">F5</td>
+<td align="left">单步跳入</td>
+</tr>
+<tr>
+<td align="left">F6</td>
+<td align="left">单步跳过</td>
+</tr>
+<tr>
+<td align="left">F7</td>
+<td align="left">单步返回</td>
+</tr>
+<tr>
+<td align="left">F8</td>
+<td align="left">继续</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+D</td>
+<td align="left">显示变量的值</td>
+</tr>
+<tr>
+<td align="left">Ctrl+Shift+B</td>
+<td align="left">在当前行设置或者去掉断点</td>
+</tr>
+<tr>
+<td align="left">Ctrl+R</td>
+<td align="left">运行至行(超好用，可以节省好多的断点)</td>
+</tr>
+</tbody></table>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><p>重构（一般重构的快捷键都是Alt+Shift开头的了）</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Ctrl+1</td>
-<td style="text-align:left">快速修复</td>
+<tbody><tr>
+<td align="left">Alt+Shift+R</td>
+<td align="left">重命名方法名、属性或者变量名 （是我自己最爱用的一个了,尤其是变量和类的Rename,比手工方法能节省很多劳动力）</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+F</td>
-<td style="text-align:left">格式化当前代码</td>
+<td align="left">Alt+Shift+M</td>
+<td align="left">把一段函数内的代码抽取成方法 （这是重构里面最常用的方法之一了,尤其是对一大堆泥团代码有用）</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+M</td>
-<td style="text-align:left">添加类的import导入</td>
+<td align="left">Alt+Shift+C</td>
+<td align="left">修改函数结构（比较实用,有N个函数调用了这个方法,修改一次搞定）</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+O</td>
-<td style="text-align:left">组织类的import导入（既有Ctrl+Shift+M的作用，又可以帮你去除没用的导入，很有用）</td>
+<td align="left">Alt+Shift+L</td>
+<td align="left">抽取本地变量（ 可以直接把一些魔法数字和字符串抽取成一个变量,尤其是多处调用的时候）</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Y</td>
-<td style="text-align:left">重做（与撤销Ctrl+Z相反）</td>
+<td align="left">Alt+Shift+F</td>
+<td align="left">把Class中的local变量变为field变量 （比较实用的功能）</td>
 </tr>
 <tr>
-<td style="text-align:left">Alt+/</td>
-<td style="text-align:left">补全代码</td>
+<td align="left">Alt+Shift+I</td>
+<td align="left">合并变量（可能这样说有点不妥Inline）</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+D</td>
-<td style="text-align:left">删除当前行或者多行</td>
+<td align="left">Alt+Shift+V</td>
+<td align="left">移动函数和变量（不怎么常用）</td>
 </tr>
 <tr>
-<td style="text-align:left">Alt+↓</td>
-<td style="text-align:left">当前行和下面一行交互位置</td>
+<td align="left">Alt+Shift+Z</td>
+<td align="left">重构的后悔药（Undo）</td>
 </tr>
-<tr>
-<td style="text-align:left">Alt+↑</td>
-<td style="text-align:left">当前行和上面一行交互位置</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Alt+↓</td>
-<td style="text-align:left">复制当前行到下一行（复制增加）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Alt+↑</td>
-<td style="text-align:left">复制当前行到上一行（复制增加）</td>
-</tr>
-<tr>
-<td style="text-align:left">Shift+Enter</td>
-<td style="text-align:left">在当前行的下一行插入空行（这时鼠标可以在当前行的任一位置,不一定是最后）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+/</td>
-<td style="text-align:left">注释当前行,再按则取消注释</td>
-</tr>
-</tbody>
-</table>
-<h2 id="选择">选择</h2>
-<table>
+</tbody></table>
+<pre><code>---</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
+<th align="left">快捷键</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Alt+Shift+↑</td>
-<td style="text-align:left">选择封装元素</td>
+<tbody><tr>
+<td align="left">Alt+Enter</td>
+<td align="left">显示当前选择资源的属性，windows下的查看文件的属性就是这个快捷键，通常用来查看文件在windows中的实际路径</td>
 </tr>
 <tr>
-<td style="text-align:left">Alt+Shift+←</td>
-<td style="text-align:left">选择上一个元素</td>
+<td align="left">Ctrl+↑</td>
+<td align="left">文本编辑器 上滚行</td>
 </tr>
 <tr>
-<td style="text-align:left">Alt+Shift+→</td>
-<td style="text-align:left">选择下一个元素</td>
+<td align="left">Ctrl+↓</td>
+<td align="left">文本编辑器 下滚行</td>
 </tr>
 <tr>
-<td style="text-align:left">Shift+←</td>
-<td style="text-align:left">从光标处开始往左选择字符</td>
+<td align="left">Ctrl+M</td>
+<td align="left">最大化当前的Edit或View （再按则反之）</td>
 </tr>
 <tr>
-<td style="text-align:left">Shift+→</td>
-<td style="text-align:left">从光标处开始往右选择字符</td>
+<td align="left">Ctrl+O</td>
+<td align="left">快速显示 OutLine</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+←</td>
-<td style="text-align:left">选中光标左边的单词</td>
+<td align="left">Ctrl+T</td>
+<td align="left">快速显示当前类的继承结构</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+→</td>
-<td style="text-align:left">选中光标右边的单词</td>
-</tr>
-</tbody>
-</table>
-<h2 id="移动">移动</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Ctrl+←</td>
-<td style="text-align:left">光标移到左边单词的开头，相当于vim的b</td>
+<td align="left">Ctrl+W</td>
+<td align="left">关闭当前Editer</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+→</td>
-<td style="text-align:left">光标移到右边单词的末尾，相当于vim的e</td>
-</tr>
-</tbody>
-</table>
-<h2 id="搜索">搜索</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Ctrl+K</td>
-<td style="text-align:left">参照选中的Word快速定位到下一个（如果没有选中word，则搜索上一次使用搜索的word）</td>
+<td align="left">Ctrl+L</td>
+<td align="left">文本编辑器 转至行</td>
 </tr>
 <tr>
-<td style="text-align:left">Ctrl+Shift+K</td>
-<td style="text-align:left">参照选中的Word快速定位到上一个</td>
+<td align="left">F2</td>
+<td align="left">显示工具提示描述</td>
 </tr>
-<tr>
-<td style="text-align:left">Ctrl+J</td>
-<td style="text-align:left">正向增量查找（按下Ctrl+J后,你所输入的每个字母编辑器都提供快速匹配定位到某个单词,如果没有,则在状态栏中显示没有找到了,查一个单词时,特别实用,要退出这个模式，按escape建）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+J</td>
-<td style="text-align:left">反向增量查找（和上条相同,只不过是从后往前查）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+U</td>
-<td style="text-align:left">列出所有包含字符串的行</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+H</td>
-<td style="text-align:left">打开搜索对话框</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+G</td>
-<td style="text-align:left">工作区中的声明</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+G</td>
-<td style="text-align:left">工作区中的引用</td>
-</tr>
-</tbody>
-</table>
-<h2 id="导航">导航</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Ctrl+Shift+T</td>
-<td style="text-align:left">搜索类（包括工程和关联的第三jar包）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+R</td>
-<td style="text-align:left">搜索工程中的文件</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+E</td>
-<td style="text-align:left">快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）</td>
-</tr>
-<tr>
-<td style="text-align:left">F4</td>
-<td style="text-align:left">打开类型层次结构</td>
-</tr>
-<tr>
-<td style="text-align:left">F3</td>
-<td style="text-align:left">跳转到声明处</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+←</td>
-<td style="text-align:left">前一个编辑的页面</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+→</td>
-<td style="text-align:left">下一个编辑的页面（当然是针对上面那条来说了）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+PageUp/PageDown</td>
-<td style="text-align:left">在编辑器中，切换已经打开的文件</td>
-</tr>
-</tbody>
-</table>
-<h2 id="调试">调试</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">F5</td>
-<td style="text-align:left">单步跳入</td>
-</tr>
-<tr>
-<td style="text-align:left">F6</td>
-<td style="text-align:left">单步跳过</td>
-</tr>
-<tr>
-<td style="text-align:left">F7</td>
-<td style="text-align:left">单步返回</td>
-</tr>
-<tr>
-<td style="text-align:left">F8</td>
-<td style="text-align:left">继续</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+D</td>
-<td style="text-align:left">显示变量的值</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+Shift+B</td>
-<td style="text-align:left">在当前行设置或者去掉断点</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+R</td>
-<td style="text-align:left">运行至行(超好用，可以节省好多的断点)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="重构">重构</h2>
-<p>重构（一般重构的快捷键都是Alt+Shift开头的了）</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Alt+Shift+R</td>
-<td style="text-align:left">重命名方法名、属性或者变量名 （是我自己最爱用的一个了,尤其是变量和类的Rename,比手工方法能节省很多劳动力）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+M</td>
-<td style="text-align:left">把一段函数内的代码抽取成方法 （这是重构里面最常用的方法之一了,尤其是对一大堆泥团代码有用）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+C</td>
-<td style="text-align:left">修改函数结构（比较实用,有N个函数调用了这个方法,修改一次搞定）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+L</td>
-<td style="text-align:left">抽取本地变量（ 可以直接把一些魔法数字和字符串抽取成一个变量,尤其是多处调用的时候）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+F</td>
-<td style="text-align:left">把Class中的local变量变为field变量 （比较实用的功能）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+I</td>
-<td style="text-align:left">合并变量（可能这样说有点不妥Inline）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+V</td>
-<td style="text-align:left">移动函数和变量（不怎么常用）</td>
-</tr>
-<tr>
-<td style="text-align:left">Alt+Shift+Z</td>
-<td style="text-align:left">重构的后悔药（Undo）</td>
-</tr>
-</tbody>
-</table>
-<pre><code>---
-</code></pre>
-<h2 id="其他">其他</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Alt+Enter</td>
-<td style="text-align:left">显示当前选择资源的属性，windows下的查看文件的属性就是这个快捷键，通常用来查看文件在windows中的实际路径</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+↑</td>
-<td style="text-align:left">文本编辑器 上滚行</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+↓</td>
-<td style="text-align:left">文本编辑器 下滚行</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+M</td>
-<td style="text-align:left">最大化当前的Edit或View （再按则反之）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+O</td>
-<td style="text-align:left">快速显示 OutLine</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+T</td>
-<td style="text-align:left">快速显示当前类的继承结构</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+W</td>
-<td style="text-align:left">关闭当前Editer</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl+L</td>
-<td style="text-align:left">文本编辑器 转至行</td>
-</tr>
-<tr>
-<td style="text-align:left">F2</td>
-<td style="text-align:left">显示工具提示描述</td>
-</tr>
-</tbody>
-</table>
+</tbody></table>
 
         </div>
 

@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -211,39 +211,48 @@ ga('send', 'pageview');
 <a id="more"></a>
 <p>建立</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> lianxi66</span><br><span class="line">@arel <span class="built_in">char</span>(<span class="number">20</span>)</span><br><span class="line">@x1 <span class="built_in">int</span> <span class="keyword">output</span>,@x2 <span class="built_in">float</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> @x1=<span class="keyword">count</span>(*),@x2=<span class="keyword">avg</span>(年龄)</span><br><span class="line"><span class="keyword">from</span> S</span><br><span class="line"><span class="keyword">where</span> 所在系=@arel</span><br></pre></td></tr></table></figure>
+
 <p>引用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">declare @ok int, @ck float</span><br><span class="line">exec lianxi66 &quot;会计系&quot;,@ok output,@ck output</span><br><span class="line">print @ok</span><br><span class="line">print @ck</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>建立</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> lianxi3511</span><br><span class="line"></span><br><span class="line">@varl <span class="built_in">char</span>(<span class="number">10</span>), @var3 <span class="built_in">int</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> @var3=S.年龄</span><br><span class="line">frоm ѕ</span><br><span class="line"><span class="keyword">where</span> s.学号=@varl</span><br></pre></td></tr></table></figure>
+
 <p>引用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Declare</span> @res <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Execute</span> liarixi3511 <span class="string">'101101'</span>, @res <span class="keyword">output</span></span><br><span class="line">Print @res</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>建立</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> lianxi2511</span><br><span class="line">@var1 <span class="built_in">int</span>, @var2 <span class="built_in">int</span>, var3 <span class="built_in">int</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">As</span></span><br><span class="line"><span class="keyword">Set</span> @var3 = @<span class="keyword">vari</span>*@var2</span><br></pre></td></tr></table></figure>
+
 <p>引用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Declare</span> @res <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Execute</span> liarxi2511 <span class="number">5</span>, <span class="number">7</span>, @res <span class="keyword">output</span></span><br><span class="line">Print @res</span><br><span class="line"></span><br><span class="line">exec liarxi2511 <span class="number">3</span>,<span class="number">4</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>建立</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> lianxi1511</span><br><span class="line">@student_no <span class="built_in">char</span> (<span class="number">10</span>),</span><br><span class="line">@course_no <span class="built_in">char</span> (<span class="number">20</span>)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> S.姓名, S.学号,SC.课程号,C.课程名, SC.成绩</span><br><span class="line"><span class="keyword">FROM</span> S <span class="keyword">JOIN</span> SC  <span class="keyword">ON</span> S.学号=SC.学号</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> C  <span class="keyword">ON</span> C.课程号=SC.课程号</span><br><span class="line"><span class="keyword">WHERE</span> S.学号=@student_no</span><br><span class="line">ANO SC.课程号=@course_no</span><br></pre></td></tr></table></figure>
+
 <p>引用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec lianxi1511 '101101','101'</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h1 id="习题">习题</h1>
-<p>若输入的学号存在则删除</p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><p>若输入的学号存在则删除</p>
 <ul>
-<li>创建</li>
-</ul>
+<li><p>创建</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> del_cno1</span><br><span class="line">@cno <span class="built_in">char</span>(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">begin</span> tran t1 <span class="comment">--事件t1开始</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> kcgx  <span class="keyword">where</span> 课程号=@cno</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span>  * <span class="keyword">from</span> xkgx <span class="keyword">where</span> 课程号=@cno)</span><br><span class="line"><span class="keyword">rollback</span> tran t1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">commit</span> tran t1</span><br></pre></td></tr></table></figure>
-<ul>
-<li>引用与验证</li>
-</ul>
+</li>
+<li><p>引用与验证</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exec del_cno1 '305'</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> xkgx</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> kcgx</span><br></pre></td></tr></table></figure>
-<h1 id="存储过程使用事务">存储过程使用事务</h1>
-<p>实例</p>
+
+</li>
+</ul>
+<h1 id="存储过程使用事务"><a href="#存储过程使用事务" class="headerlink" title="存储过程使用事务"></a>存储过程使用事务</h1><p>实例</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Procedure</span>  MyProcedure</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line"><span class="keyword">Set</span>    NOCOUNT    <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">Set</span> XACT_ABORT <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">begin</span>   tran  ok  <span class="comment">--开始一个事务OK</span></span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span>  rxqz  <span class="keyword">where</span> qz=   <span class="string">'rx015 '</span> <span class="comment">--删除数据</span></span><br><span class="line"><span class="keyword">save</span>   tran  bcd   <span class="comment">--保存一个事务点命名为bcd</span></span><br><span class="line"><span class="keyword">update</span>  sz  <span class="keyword">set</span>   <span class="keyword">name</span>=<span class="string">'李丽s'</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'李丽'</span><span class="comment">--修改数据</span></span><br><span class="line"><span class="keyword">if</span>  @@<span class="keyword">error</span>&lt;&gt;<span class="number">0</span>  <span class="comment">--判断修改数据有没有出错</span></span><br><span class="line"><span class="keyword">begin</span> <span class="comment">--如果出错</span></span><br><span class="line"><span class="keyword">rollback</span>   tran  bcd  <span class="comment">-- 回滚事务到BCD 的还原点</span></span><br><span class="line"><span class="keyword">commit</span>   tran  ok  <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">else</span>  <span class="comment">--没有出错</span></span><br><span class="line"><span class="keyword">commit</span>  tran ok <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc <span class="number">1</span></span><br><span class="line">@si chark20),@<span class="keyword">pi</span> <span class="built_in">char</span>(<span class="number">20</span>),@Ji chark20),@shu <span class="built_in">int</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> SPJ <span class="keyword">values</span>(@si,@<span class="keyword">pi</span>,@Ji,@shu)</span><br><span class="line">bdgin tran t1</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> Pno=@<span class="keyword">Pi</span>)</span><br><span class="line"><span class="keyword">commit</span> tran t1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">rollback</span> tran t1</span><br></pre></td></tr></table></figure>
+
 
         </div>
 

@@ -50,7 +50,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务的特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">事务的特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务控制"><span class="post-toc-number">3.</span> <span class="post-toc-text">事务控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#begin-transaction-命令"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">BEGIN TRANSACTION 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#commit-命令"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">COMMIT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rollback-命令"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ROLLBACK 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#savepoint-命令"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">SAVEPOINT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#release-savepoint-命令"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">RELEASE SAVEPOINT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#set-transaction-命令"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">SET TRANSACTION 命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储过程使用事务"><span class="post-toc-number">4.</span> <span class="post-toc-text">存储过程使用事务</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务的特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">事务的特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务控制"><span class="post-toc-number">3.</span> <span class="post-toc-text">事务控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BEGIN-TRANSACTION-命令"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">BEGIN TRANSACTION 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#COMMIT-命令"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">COMMIT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ROLLBACK-命令"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ROLLBACK 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SAVEPOINT-命令"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">SAVEPOINT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RELEASE-SAVEPOINT-命令"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">RELEASE SAVEPOINT 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SET-TRANSACTION-命令"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">SET TRANSACTION 命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储过程使用事务"><span class="post-toc-number">4.</span> <span class="post-toc-text">存储过程使用事务</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,21 +209,18 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>SQL事务</p>
 <a id="more"></a>
-<h1 id="概念">概念</h1>
-<ul>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
 <li>事务（Transaction）是指一个或多个更改数据库的扩展。例如，如果您正在创建一个记录或者更新一个记录或者从表中删除一个记录，那么您正在该表上执行事务。重要的是要控制事务以确保数据的完整性和处理数据库错误。</li>
 <li>事务（Transaction）是一个对数据库执行工作单元。事务（Transaction）是以逻辑顺序完成的工作单位或序列，可以是由用户手动操作完成，也可以是由某种数据库程序自动完成。</li>
 </ul>
-<h1 id="事务的特点">事务的特点</h1>
-<p>四个特点</p>
+<h1 id="事务的特点"><a href="#事务的特点" class="headerlink" title="事务的特点"></a>事务的特点</h1><p>四个特点</p>
 <ol>
 <li><code>原子性（Atomicity)</code>确保工作单位内的所有操作都成功完成，否则，事务会在出现故障时终止，之前的操作也会回滚到以前的状态。</li>
 <li><code>一致性（Consistency)</code>确保数据库在成功提交的事务上正确地改变状态。</li>
 <li><code>隔离性（Isolation)</code>使事务操作相互独立和透明。</li>
 <li><code>持久性（Durability)</code>确保已提交事务的结果或效果在系统发生故障的情况下仍然存在。</li>
 </ol>
-<h1 id="事务控制">事务控制</h1>
-<p>含义</p>
+<h1 id="事务控制"><a href="#事务控制" class="headerlink" title="事务控制"></a>事务控制</h1><p>含义</p>
 <ul>
 <li><code>BEGIN TRANSACTION</code> 开始事务处理。</li>
 <li><code>COMMIT</code> 保存更改，或者可以使用 END TRANSACTION 命令。</li>
@@ -233,53 +230,46 @@ ga('send', 'pageview');
 <ul>
 <li>事务控制命令只与 DML 命令 INSERT、UPDATE 和 DELETE 一起使用。他们不能在创建表或删除表时使用，因为这些操作在数据库中是自动提交的</li>
 </ul>
-<h2 id="begin-transaction-命令">BEGIN TRANSACTION 命令</h2>
-<p>语法</p>
+<h2 id="BEGIN-TRANSACTION-命令"><a href="#BEGIN-TRANSACTION-命令" class="headerlink" title="BEGIN TRANSACTION 命令"></a>BEGIN TRANSACTION 命令</h2><p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span> <span class="keyword">TRANSACTION</span></span><br><span class="line"><span class="keyword">READ</span>(A)</span><br><span class="line">A:=A<span class="number">-50</span></span><br><span class="line">WRITE(A)</span><br><span class="line"><span class="keyword">READ</span>(B)</span><br><span class="line">B:=B+<span class="number">50</span></span><br><span class="line"><span class="keyword">COMMIT</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>READ(X):把数据项X从数据库读出到事务的私有缓冲中</li>
 <li>WRITE(X):把数据项X从事务的私有缓冲中写到数据库。</li>
 </ul>
-<h2 id="commit-命令">COMMIT 命令</h2>
-<p>作用</p>
+<h2 id="COMMIT-命令"><a href="#COMMIT-命令" class="headerlink" title="COMMIT 命令"></a>COMMIT 命令</h2><p>作用</p>
 <p>COMMIT 命令用于保存事务对数据库所做的更改。会将自上次 COMMIT 命令或者 ROLLBACK 命令执行以来所有的事务都保存到数据库中。</p>
 <p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> S</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">SIZE</span>=<span class="number">20</span></span><br><span class="line"><span class="keyword">COMMIT</span></span><br></pre></td></tr></table></figure>
-<h2 id="rollback-命令">ROLLBACK 命令</h2>
-<p>作用
-ROLLBACK 命令用于撤销尚未保存到数据库中的事务。只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行以来的事务。</p>
+
+<h2 id="ROLLBACK-命令"><a href="#ROLLBACK-命令" class="headerlink" title="ROLLBACK 命令"></a>ROLLBACK 命令</h2><p>作用<br>ROLLBACK 命令用于撤销尚未保存到数据库中的事务。只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行以来的事务。</p>
 <p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">SIZE</span>=<span class="number">20</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br></pre></td></tr></table></figure>
+
 <p>ROLLBACK 命令可以用于撤销一系列的事务</p>
 <ul>
-<li>回滚至某一保存点的语法如下所示：</li>
+<li>回滚至某一保存点的语法如下所示：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure>
-<h2 id="savepoint-命令">SAVEPOINT 命令</h2>
-<p>作用
-SAVEPOINT 是事务中的一个状态点，使得我们可以将事务回滚至特定的点，而不是将整个事务都撤销。</p>
+<h2 id="SAVEPOINT-命令"><a href="#SAVEPOINT-命令" class="headerlink" title="SAVEPOINT 命令"></a>SAVEPOINT 命令</h2><p>作用<br>SAVEPOINT 是事务中的一个状态点，使得我们可以将事务回滚至特定的点，而不是将整个事务都撤销。</p>
 <p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SAVEPOINT</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>该命令只能在事务语句之间创建保存点（SAVEPOINT）。</li>
 </ul>
-<h2 id="release-savepoint-命令">RELEASE SAVEPOINT 命令</h2>
-<p>作用
-RELEASE SAVEPOINT 命令用于删除先前创建的保存点。</p>
+<h2 id="RELEASE-SAVEPOINT-命令"><a href="#RELEASE-SAVEPOINT-命令" class="headerlink" title="RELEASE SAVEPOINT 命令"></a>RELEASE SAVEPOINT 命令</h2><p>作用<br>RELEASE SAVEPOINT 命令用于删除先前创建的保存点。</p>
 <p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RELEASE</span> <span class="keyword">SAVEPOINT</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure>
-<h2 id="set-transaction-命令">SET TRANSACTION 命令</h2>
-<dl>
-<dt>作用</dt>
-<dd>SET TRANSACTION 命令可以用来初始化数据库事务，指定随后的事务的各种特征。</dd>
-</dl>
-<p>将某个事务指定为只读或者读写。</p>
+
+<h2 id="SET-TRANSACTION-命令"><a href="#SET-TRANSACTION-命令" class="headerlink" title="SET TRANSACTION 命令"></a>SET TRANSACTION 命令</h2><dl><dt>作用</dt><dd>SET TRANSACTION 命令可以用来初始化数据库事务，指定随后的事务的各种特征。</dd></dl><p>将某个事务指定为只读或者读写。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">TRANSACTION</span> [ <span class="keyword">READ</span> WRITE | <span class="keyword">READ</span> <span class="keyword">ONLY</span> ]</span><br></pre></td></tr></table></figure>
-<h1 id="存储过程使用事务">存储过程使用事务</h1>
-<p>实例一</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Procedure</span>  MyProcedure</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line"><span class="keyword">Set</span>    NOCOUNT    <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">Set</span> XACT_ABORT <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">begin</span>   tran  ok  <span class="comment">--开始一个事务OK</span></span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span>  rxqz  <span class="keyword">where</span> qz=   <span class="string">'rx015 '</span> <span class="comment">--删除数据</span></span><br><span class="line"><span class="keyword">save</span>   tran  bcd   <span class="comment">--保存一个事务点命名为bcd</span></span><br><span class="line"><span class="keyword">update</span>  sz  <span class="keyword">set</span>   <span class="keyword">name</span>=<span class="string">'李丽s'</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'李丽'</span><span class="comment">--修改数据</span></span><br><span class="line"><span class="keyword">if</span>  @@<span class="keyword">error</span>&lt;&gt;<span class="number">0</span>  <span class="comment">--判断修改数据有没有出错</span></span><br><span class="line"><span class="keyword">begin</span> <span class="comment">--如果出错</span></span><br><span class="line"><span class="keyword">rollback</span>   tran  bcd  <span class="comment">-- 回滚事务到BCD 的还原点</span></span><br><span class="line"><span class="keyword">commit</span>   tran  ok  <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">else</span>  <span class="comment">--没有出错</span></span><br><span class="line"><span class="keyword">commit</span>  tran ok <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="存储过程使用事务"><a href="#存储过程使用事务" class="headerlink" title="存储过程使用事务"></a>存储过程使用事务</h1><p>实例一<br> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Procedure</span>  MyProcedure</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line"><span class="keyword">Set</span>    NOCOUNT    <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">Set</span> XACT_ABORT <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">begin</span>   tran  ok  <span class="comment">--开始一个事务OK</span></span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span>  rxqz  <span class="keyword">where</span> qz=   <span class="string">'rx015 '</span> <span class="comment">--删除数据</span></span><br><span class="line"><span class="keyword">save</span>   tran  bcd   <span class="comment">--保存一个事务点命名为bcd</span></span><br><span class="line"><span class="keyword">update</span>  sz  <span class="keyword">set</span>   <span class="keyword">name</span>=<span class="string">'李丽s'</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'李丽'</span><span class="comment">--修改数据</span></span><br><span class="line"><span class="keyword">if</span>  @@<span class="keyword">error</span>&lt;&gt;<span class="number">0</span>  <span class="comment">--判断修改数据有没有出错</span></span><br><span class="line"><span class="keyword">begin</span> <span class="comment">--如果出错</span></span><br><span class="line"><span class="keyword">rollback</span>   tran  bcd  <span class="comment">-- 回滚事务到BCD 的还原点</span></span><br><span class="line"><span class="keyword">commit</span>   tran  ok  <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">else</span>  <span class="comment">--没有出错</span></span><br><span class="line"><span class="keyword">commit</span>  tran ok <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure></p>
 <p>实例二</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc <span class="number">1</span></span><br><span class="line">@si chark20),@<span class="keyword">pi</span> <span class="built_in">char</span>(<span class="number">20</span>),@Ji chark20),@shu <span class="built_in">int</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> SPJ <span class="keyword">values</span>(@si,@<span class="keyword">pi</span>,@Ji,@shu)</span><br><span class="line">bdgin tran t1</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> Pno=@<span class="keyword">Pi</span>)</span><br><span class="line"><span class="keyword">commit</span> tran t1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">rollback</span> tran t1</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>参考</strong></p>
 <ul>
