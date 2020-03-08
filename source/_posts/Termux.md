@@ -44,26 +44,17 @@ dpkg --remove [package name] #列出所有已安装的包
 
 # 换源
 ## 清华源
-### 一键换源
+
 ```bash
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 apt update && apt upgrade -y
 ```
 
-### 手动
-
-设置默认编辑器
-
+https://mirrors.tuna.tsinghua.edu.cn/termux 代替原文中的 https://termux.net 保存退出
 ```bash
-export EDITOR=vim
-```
-
-编辑源文件
-
-```bash
+export EDITOR=vim # 设置默认编辑器
 apt edit-sources
 ```
-- 然后 https://mirrors.tuna.tsinghua.edu.cn/termux 代替原文中的 https://termux.net 保存退出
  
 ## 官方其他源
 ```bash
@@ -72,7 +63,7 @@ pkg install x11-repo
 pkg install unstable-repo
 ```
 
-### [its-pointless](https://github.com/its-pointless/its-pointless.github.io)
+## [its-pointless](https://github.com/its-pointless/its-pointless.github.io)
 ```bash
 pkg install wget
 $PREFIX/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh
@@ -80,13 +71,13 @@ bash setup-pointless-repo.sh
 ```
 - 库包括 gcc-7,gfortran，octave，r-cran（R语言），rustc，scipy 和许多游戏.
 
-### [Extra](https://github.com/thioshp/termux-extra-packages)
+## [Extra](https://github.com/thioshp/termux-extra-packages)
 ```bash
 # 将PGP密钥添加到APT的密钥环中
 pkg install dirmngr
 apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0
 ```
-##### 手动下载公钥并添加它
+### 手动下载公钥并添加它
 ```bash
 curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc
 apt-key add pubkey.asc

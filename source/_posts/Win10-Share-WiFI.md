@@ -1,22 +1,22 @@
 ---
-title: Win10 v2ray/SSR/SS 开热点给手机翻墙
-top: 101
+title: Win10 开热点给手机
 date: 2018-05-04 19:03:13
 tags:
 - Note
+- Android
 toc: true
 categories: Diary
-thumbnail: /images/Note.png
 ---
-> 在 Windows 10 中使用 V2ray、SSR、SS共享热点给手机实现翻墙,解决刷机后开机登录 Google 账号。
+> 在 Windows 10 中使用 "飞机" 工具共享热点给手机,解决刷机后开机登录 Google 账号。
 
 # 方法
 ## 电脑端
 
-1. 右键SSR/SS --> 选项设置 --> 勾选 `允许来自局域网连接`,V2ray 同样在设置中勾选 `允许来自局域网的连接`
+1. 右键飞机托盘图标 --> 选项设置 --> 勾选 `允许来自局域网连接`
 2. CMD --> 输入 `ipconfig` 获取 `无线的IPV4地址`
 3. 正常开启热点
 <!--more-->
+
 ## 手机端
 
 1. 长按连接的 WiFi 名,点修改网络
