@@ -49,7 +49,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -130,7 +130,7 @@ ga('send', 'pageview');
         <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
+            <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">Categories: Coding</div>
         
@@ -138,15 +138,17 @@ ga('send', 'pageview');
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
+        
+        <a href="https://github.com/ivitan" class="header-icon waves-effect waves-circle waves-light" target="_blank" title="Github">
+            <i class="icon icon-lg icon-github"></i>
         </a>
         
     </div>
@@ -157,27 +159,27 @@ ga('send', 'pageview');
         <h1 class="title">Categories: Coding</h1>
         <h5 class="subtitle">
             
-                
-                    共计
-                    
-                        
-                    
-                        
-                    
-                        
-                            64
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                    篇文章，继续努力
-                
+            
+            共计
+            
+            
+            
+            
+            
+            
+            64
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            篇文章，继续努力
+            
             
         </h5>
     </div>
@@ -414,60 +416,14 @@ ga('send', 'pageview');
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/categories/Coding/page/7/&title=Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/categories/Coding/page/7/&title=Vitan's Blog&source=Vitan's Personal Website." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/categories/Coding/page/7/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Vitan's Blog&url=https://vitan.me/categories/Coding/page/7/&via=https://vitan.me" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/categories/Coding/page/7/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzElEQVR42u3awW7rMAwEQP//T7vXAkZsLiW6eQ+jk5EWycgHQlzqOMrrvKzfn1+fP31y/bZjYuHi4i5zz9uVsq7P9+i6ARcX931u+nWVDX9C37+OBxsuLu4/wk1/EhcX93/ipv+TljZcXNxv49aPKUGjctsCjfdquLi4C9x6Sjn3PJLv4uLitrjn1lVpeFZ+HRcX9x1uWnQqpad+0Gm2Rri4uMPclUCk18b0NrMhv8HFxW1x00sV6WElPfoc6VvExcUd4+461vQSmodN4uLivsJNg9H6ZnZd3lrKcXFxcVvc+x2kl7EqEepIr4aLi7uVu9JZrASjFdZD3cXFxR3j7roylb6bSpn72Kvh4uIOc9NB6UoIUglZmte2cHFxt3LrhazeDtXHt6kEFxf3He5K/LErHEkDFFxc3GnuxNFkZaDy8IJwcXFf4fYqX/2gk7ZVpS3h4uIOc89w9YasleNOcA0LFxd3mJsWoN6Qtd4ypSUPFxd3jlsfo8aJS6vw4eLifg+3N6GtHFPSZinu1XBxcf+UW7k4lQ5Rlu6W4uLifgE3bY1WItd41IqLizvATZuf+l/T8e3Dt+Hi4r7C7cUZvesUvQClme/i4uJ2uD/GN/D4r81CdgAAAABJRU5ErkJggg==" alt="微信分享二维码">
-</div>
-
-
-
-
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 
 
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -487,7 +443,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
 
 
 

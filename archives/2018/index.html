@@ -49,7 +49,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -130,7 +130,7 @@ ga('send', 'pageview');
         <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
+            <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">Archives</div>
         
@@ -138,15 +138,17 @@ ga('send', 'pageview');
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
+        
+        <a href="https://github.com/ivitan" class="header-icon waves-effect waves-circle waves-light" target="_blank" title="Github">
+            <i class="icon icon-lg icon-github"></i>
         </a>
         
     </div>
@@ -157,7 +159,7 @@ ga('send', 'pageview');
         <h1 class="title">Archives</h1>
         <h5 class="subtitle">
             
-                
+            
             
         </h5>
     </div>
@@ -4713,60 +4715,14 @@ ga('send', 'pageview');
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://vitan.me/archives/2018/&title=Vitan's Blog&pic=https://vitan.me/img/ivitan.png" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/archives/2018/&title=Vitan's Blog&source=Vitan's Personal Website." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vitan.me/archives/2018/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Vitan's Blog&url=https://vitan.me/archives/2018/&via=https://vitan.me" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://vitan.me/archives/2018/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aS5LDIAwFQN//0p5tNmaeEBCnqlmlnAQ3G5U+XFe87o/1+WT8m+T5tWPh4uK2ufdwjV+Z7JMcODHg4uKe5z69fhy2csoTKzfg4uK+mVulVI+Hi4v7i9xo0yAxwsXFfT83KV1yaKe4Wlar4eLiNrh5l3Lf5y39XVxc3CnuXVzVEcu9dOHi4p7hzqUp+bfJMcrvxcXFPcgdX5volCvVMqZQq+Hi4m7g5g3NJK3J6fn+jxkZLi7uNm61ITJ+nic04/+2Gii4uLhtbrVl2Q89SRB8/D0uLu6XuEnzInnSme0UWqW4uLgbuNXB6jgMzU1Iq4UWLi7ubm7/kkR1yNraExcX9yA3SVCSEDbX7Eh2wMXFPcmtDlOTwcmqIetjyMPFxT3OzZsa+THmhqxRIMPFxd3MLSQZU0PWPAj+k/rg4uIe5Ha6rXMXs6qjXFxc3DPcBWGlcS2jPEzFxcU9wp27ElG9WpEXOa2ZMC4u7lJuNXj1Ryz5lY5CfxcXF3cDNw80SetkVfGDi4v7K9xqGKo2U6IUBxcX98Xc8oi00eXAxcU9z61ez0oKlWrDNEqqcHFxj3CroWTuYHlas6y/i4uLO8P9A6iDCwnntlHoAAAAAElFTkSuQmCC" alt="微信分享二维码">
-</div>
-
-
-
-
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 
 
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -4786,7 +4742,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
 
 
 
