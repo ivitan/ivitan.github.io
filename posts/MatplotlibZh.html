@@ -209,31 +209,31 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Linux 解决 matplotlib 中文乱码问题</p>
 <a id="more"></a>
-<h1 id="安装字体">安装字体</h1>
-<ul>
-<li>
-<p>安装中文字体，例如 SimHei</p>
+
+<h1 id="安装字体"><a href="#安装字体" class="headerlink" title="安装字体"></a>安装字体</h1><ul>
+<li><p>安装中文字体，例如 SimHei</p>
 </li>
-<li>
-<p>检测本机中文字体</p>
+<li><p>检测本机中文字体</p>
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> FontManager</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">fm = FontManager()</span><br><span class="line">mat_fonts = set(f.name <span class="keyword">for</span> f <span class="keyword">in</span> fm.ttflist)</span><br><span class="line"><span class="comment">#print(mat_fonts)</span></span><br><span class="line">output = subprocess.check_output(<span class="string">'fc-list :lang=zh -f "%&#123;family&#125;\n"'</span>, shell=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#print( '*' * 10, '系统可用的中文字体', '*' * 10)</span></span><br><span class="line"><span class="comment">#print (output)</span></span><br><span class="line">zh_fonts = set(f.split(<span class="string">','</span>, <span class="number">1</span>)[<span class="number">0</span>] <span class="keyword">for</span> f <span class="keyword">in</span> output.decode(<span class="string">'utf-8'</span>).split(<span class="string">'\n'</span>))</span><br><span class="line">available = mat_fonts &amp; zh_fonts</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'*'</span> * <span class="number">10</span>, <span class="string">'可用的字体'</span>, <span class="string">'*'</span> * <span class="number">10</span>)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> available:</span><br><span class="line">     <span class="keyword">print</span> (f)</span><br></pre></td></tr></table></figure>
-<h1 id="配置字体">配置字体</h1>
-<ul>
+
+<h1 id="配置字体"><a href="#配置字体" class="headerlink" title="配置字体"></a>配置字体</h1><ul>
 <li>复制字体</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp font.ttf /usr/share/fonts</span><br><span class="line">sudo cp font.ttf /usr/lib/python3.7/site-packages/matplotlib/mpl-data/fonts</span><br></pre></td></tr></table></figure>
-<h1 id="配置">配置</h1>
-<figure class="highlight plain"><figcaption><span>/usr/lib/python3.7/site-packages/matplotlib/mpl-data</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim matplotlibrc</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight plain"><figcaption><span>/usr/lib/python3.7/site-packages/matplotlib/mpl-data</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim matplotlibrc</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>matplotlibrc</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">font.family     : sans-serif                                           </span><br><span class="line">font.serif▏     : serif     </span><br><span class="line"></span><br><span class="line">font.serif         : SimHei,Source Code Pro,DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia</span><br><span class="line">font.sans-serif    : SimHei,Source Code Pro,DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica</span><br></pre></td></tr></table></figure>
-<h1 id="清楚缓存">清楚缓存</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.cache/matplotlib</span><br></pre></td></tr></table></figure>
-<h1 id="使用">使用</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 中文乱码的处理</span></span><br><span class="line">from pylab import mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Source Code Pro'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = False <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="清楚缓存"><a href="#清楚缓存" class="headerlink" title="清楚缓存"></a>清楚缓存</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.cache/matplotlib</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 中文乱码的处理</span></span><br><span class="line">from pylab import mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Source Code Pro'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = False <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>参考资料</strong></p>
 <ul>
@@ -329,21 +329,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/PipInstall.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">解决Python Pip 速度慢</h4></div>
-      </a>
+        <a href="/posts/PipInstall.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">解决Python Pip 速度慢</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/Wine-dpi.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Linux Wine 调整分辨率</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/Wine-dpi.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Linux Wine 调整分辨率</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -376,8 +377,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -399,7 +400,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

@@ -204,6 +204,7 @@ ga('send', 'pageview');
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 18-11-12 10:10</span></span><br><span class="line"><span class="comment"># @Author  : Vitan</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_sample_image</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> img</span><br><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入图片</span></span><br><span class="line">picture = load_sample_image(<span class="string">'china.jpg'</span>) <span class="comment"># 内置</span></span><br><span class="line">pic2 = img.imread(<span class="string">'v.jpg'</span>) <span class="comment"># 外部</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据图片的分辨率，可适当降低分辨率。</span></span><br><span class="line">image = picture[::<span class="number">3</span>,::<span class="number">3</span>]<span class="comment"># 横纵每三个点去一个颜色值</span></span><br><span class="line">plt.imshow(image)</span><br><span class="line">img.imsave(<span class="string">'pure.jpg'</span>,image)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再用k均值聚类算法，将图片中所有的颜色值做聚类。</span></span><br><span class="line">X = image.reshape(<span class="number">-1</span>,<span class="number">3</span>) <span class="comment">#reshape为一维</span></span><br><span class="line">mod = KMeans(n_clusters = <span class="number">64</span>)</span><br><span class="line">labels = mod.fit_predict(X)  <span class="comment">#每个点的颜色分类，0-63</span></span><br><span class="line">colors = mod.cluster_centers_  <span class="comment">#64个聚类中心，颜色值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 还原颜色，维数，数据类型</span></span><br><span class="line">new_img = colors[labels]</span><br><span class="line">new_img = new_img.reshape(image.shape)</span><br><span class="line">new_img = new_img.astype(np.uint8)</span><br><span class="line">print(new_img)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示压缩图片</span></span><br><span class="line">plt.imshow(new_img)</span><br><span class="line">img.imsave(<span class="string">'E://zip.jpg'</span>,new_img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
+
         </div>
 
         <blockquote class="post-copyright">
@@ -293,21 +294,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/PythonSeleniumMa.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">Selenium 马蜂窝评论</h4></div>
-      </a>
+        <a href="/posts/PythonSeleniumMa.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">Selenium 马蜂窝评论</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/PythonMatplotlib.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Python Matplotlib 各种图</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/PythonMatplotlib.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Python Matplotlib 各种图</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -340,8 +342,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -363,7 +365,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

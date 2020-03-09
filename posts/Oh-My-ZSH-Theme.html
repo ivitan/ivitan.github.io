@@ -209,83 +209,78 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>自定义主题shell提示符.</p>
 <a id="more"></a>
-<h1 id="修改oh-my-zsh主题">修改oh-my-zsh主题</h1>
-<h2 id="主题目录">主题目录</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure>
-<h2 id="主题提示符">主题提示符</h2>
-<table>
+<h1 id="修改oh-my-zsh主题"><a href="#修改oh-my-zsh主题" class="headerlink" title="修改oh-my-zsh主题"></a>修改oh-my-zsh主题</h1><h2 id="主题目录"><a href="#主题目录" class="headerlink" title="主题目录"></a>主题目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题提示符"><a href="#主题提示符" class="headerlink" title="主题提示符"></a>主题提示符</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">代码</th>
-<th style="text-align:center">解释</th>
+<th align="center">代码</th>
+<th align="center">解释</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">%T</td>
-<td style="text-align:center">系统时间(时：分)</td>
+<tbody><tr>
+<td align="center">%T</td>
+<td align="center">系统时间(时：分)</td>
 </tr>
 <tr>
-<td style="text-align:center">%*</td>
-<td style="text-align:center">系统时间(时：分：秒)</td>
+<td align="center">%*</td>
+<td align="center">系统时间(时：分：秒)</td>
 </tr>
 <tr>
-<td style="text-align:center">%D</td>
-<td style="text-align:center">系统日期(年-月-日)</td>
+<td align="center">%D</td>
+<td align="center">系统日期(年-月-日)</td>
 </tr>
 <tr>
-<td style="text-align:center">%n</td>
-<td style="text-align:center">你的用户名</td>
+<td align="center">%n</td>
+<td align="center">你的用户名</td>
 </tr>
 <tr>
-<td style="text-align:center">%B - %b</td>
-<td style="text-align:center">开始到结束使用粗体打印</td>
+<td align="center">%B - %b</td>
+<td align="center">开始到结束使用粗体打印</td>
 </tr>
 <tr>
-<td style="text-align:center">%U - %u</td>
-<td style="text-align:center">开始到结束使用下划线打印</td>
+<td align="center">%U - %u</td>
+<td align="center">开始到结束使用下划线打印</td>
 </tr>
 <tr>
-<td style="text-align:center">%d</td>
-<td style="text-align:center">你目前的工作目录</td>
+<td align="center">%d</td>
+<td align="center">你目前的工作目录</td>
 </tr>
 <tr>
-<td style="text-align:center">%~</td>
-<td style="text-align:center">你目前的工作目录相对于～的相对路径</td>
+<td align="center">%~</td>
+<td align="center">你目前的工作目录相对于～的相对路径</td>
 </tr>
 <tr>
-<td style="text-align:center">%M</td>
-<td style="text-align:center">计算机的主机名</td>
+<td align="center">%M</td>
+<td align="center">计算机的主机名</td>
 </tr>
 <tr>
-<td style="text-align:center">%m</td>
-<td style="text-align:center">计算机的主机名(在第一个句号之前截断)</td>
+<td align="center">%m</td>
+<td align="center">计算机的主机名(在第一个句号之前截断)</td>
 </tr>
 <tr>
-<td style="text-align:center">%l</td>
-<td style="text-align:center">你当前的tty</td>
+<td align="center">%l</td>
+<td align="center">你当前的tty</td>
 </tr>
 <tr>
-<td style="text-align:center">%n</td>
-<td style="text-align:center">登录名</td>
+<td align="center">%n</td>
+<td align="center">登录名</td>
 </tr>
-</tbody>
-</table>
-<h2 id="顏色語法">顏色語法</h2>
-<ol>
+</tbody></table>
+<h2 id="顏色語法"><a href="#顏色語法" class="headerlink" title="顏色語法"></a>顏色語法</h2><ol>
 <li>“%{$fg[cyan]%}XXX”</li>
 <li>“%{$fg[yellow]%}和%{$reset_color%}”</li>
 <li>上面是一对的中间夹的文字会用 yellow 颜色显示，颜色要用小写。</li>
 </ol>
-<h1 id="事例">事例</h1>
-<ul>
-<li>Before</li>
+<h1 id="事例"><a href="#事例" class="headerlink" title="事例"></a>事例</h1><ul>
+<li><p>Before</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT="</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[blue]%&#125;<span class="comment">#%&#123;$reset_color%&#125; \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">(<span class="comment">#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;@ \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[green]%&#125;%m \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;<span class="keyword">in</span> \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[yellow]%&#125;%~%&#123;<span class="variable">$reset_color</span>%&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;hg_info&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;git_info&#125;\</span></span><br><span class="line"> \</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;[%*] <span class="variable">$exit_code</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[red]%&#125;$ %&#123;<span class="variable">$reset_color</span>%&#125;<span class="string">"</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Affter</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=<span class="string">"%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span></span><br><span class="line"><span class="string">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;@ \</span></span><br><span class="line"><span class="string">%&#123;$fg[green]%&#125;% OnePlus \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;in \</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;hg_info&#125;</span>\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;git_info&#125;</span>\</span></span><br><span class="line"><span class="string">\</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125; [%*] $exit_code</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;"</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;</span><br><span class="line">%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;%m \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line"> \</span><br><span class="line">%&#123;$fg[white]%&#125;[%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;$ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Affter</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=&quot;%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span><br><span class="line">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span><br><span class="line">%&#123;$fg[white]%&#125;@ \</span><br><span class="line">%&#123;$fg[green]%&#125;% OnePlus \</span><br><span class="line">%&#123;$fg[white]%&#125;in \</span><br><span class="line">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span><br><span class="line">$&#123;hg_info&#125;\</span><br><span class="line">$&#123;git_info&#125;\</span><br><span class="line">\</span><br><span class="line">%&#123;$fg[white]%&#125; [%*] $exit_code</span><br><span class="line">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;&quot;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -376,21 +371,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/Linux-Deb.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">Linux 中 .Deb 相关</h4></div>
-      </a>
+        <a href="/posts/Linux-Deb.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">Linux 中 .Deb 相关</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/Termux-game-tools.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">分屏&amp;游戏</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/Termux-game-tools.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">分屏&amp;游戏</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -423,8 +419,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -446,7 +442,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/posts/Termux.html</loc>
+    
+    <lastmod>2020-03-09T00:13:49.615Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Win10-Share-WiFI.html</loc>
+    
+    <lastmod>2020-03-09T00:13:49.615Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/about/index.html</loc>
     
     <lastmod>2020-03-06T07:23:37.732Z</lastmod>
@@ -47,20 +61,6 @@
     <loc>https://vitan.me/posts/TermuxConfig.html</loc>
     
     <lastmod>2020-03-04T01:12:23.829Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Win10-Share-WiFI.html</loc>
-    
-    <lastmod>2020-03-04T01:10:29.758Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Termux.html</loc>
-    
-    <lastmod>2020-03-04T01:09:48.738Z</lastmod>
     
   </url>
   

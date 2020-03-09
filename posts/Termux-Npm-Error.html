@@ -33,9 +33,9 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Android,Termux">
+    <meta name="keywords" content="Android,Linux,Termux">
     <meta name="description" content="解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题">
-<meta name="keywords" content="Linux,Android,Termux">
+<meta name="keywords" content="Android,Linux,Termux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 &quot;Npm Err! Cannot Read Property &#39;Length&#39; of Undefined&quot;">
 <meta property="og:url" content="https://vitan.me/posts/Termux-Npm-Error.html">
@@ -211,15 +211,16 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题</p>
 <a id="more"></a>
-<h1 id="方法">方法</h1>
-<ul>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
 <li>复制以下内容</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">require</span>(<span class="string">'os'</span>).cpus() || &#123; <span class="attr">length</span>: <span class="number">1</span> &#125;).length</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>编辑</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改如下保存即可</li>
 </ul>
@@ -230,8 +231,8 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption">修改.jpg</div>
             </figure>
-<h1 id="已知问题">已知问题</h1>
-<ul>
+
+<h1 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h1><ul>
 <li>Npm 无法升级。</li>
 </ul>
 
@@ -324,21 +325,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/UbuntuCommand.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">Ubuntu 常用命令</h4></div>
-      </a>
+        <a href="/posts/UbuntuCommand.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">Ubuntu 常用命令</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/UbuntuAndroidStudio.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Ubuntu 安装 Android Studio</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/UbuntuAndroidStudio.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Ubuntu 安装 Android Studio</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -371,8 +373,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -394,7 +396,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

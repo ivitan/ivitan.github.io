@@ -227,52 +227,60 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Excel 函数</p>
 <a id="more"></a>
-<h1 id="数字处理">数字处理</h1>
-<p>取绝对值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=ABS(数字) </span><br><span class="line"># 如：</span><br><span class="line">ABS(-2) =2</span><br></pre></td></tr></table></figure>
+<h1 id="数字处理"><a href="#数字处理" class="headerlink" title="数字处理"></a>数字处理</h1><p>取绝对值</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">ABS</span>(数字) </span><br><span class="line"># 如：</span><br><span class="line"><span class="built_in">ABS</span>(-<span class="number">2</span>) =<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
 <p>向下取整</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=INT(数字) </span><br><span class="line"># 如：</span><br><span class="line">INT(5.6)=5 ; INT(5.2)=5</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">INT</span>(数字) </span><br><span class="line"># 如：</span><br><span class="line"><span class="built_in">INT</span>(<span class="number">5.6</span>)=<span class="number">5</span> ; <span class="built_in">INT</span>(<span class="number">5.2</span>)=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
 <p>四舍五入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=ROUND(数字,小数位数) </span><br><span class="line"># 如： </span><br><span class="line">ROUND(5.6,0)=6 ; ROUND(5.2,0)=5</span><br></pre></td></tr></table></figure>
-<h1 id="判断公式">判断公式</h1>
-<ul>
-<li>把公式产生的错误值显示为空</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C2=IFERROR(A2/B2,&quot;&quot;) </span><br><span class="line">#  如：</span><br><span class="line">IFERROR(2/0,&quot;错误&quot;) = &quot;错误&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">ROUND</span>(数字,小数位数) </span><br><span class="line"># 如： </span><br><span class="line"><span class="built_in">ROUND</span>(<span class="number">5.6</span>,<span class="number">0</span>)=<span class="number">6</span> ; <span class="built_in">ROUND</span>(<span class="number">5.2</span>,<span class="number">0</span>)=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="判断公式"><a href="#判断公式" class="headerlink" title="判断公式"></a>判断公式</h1><ul>
+<li><p>把公式产生的错误值显示为空</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C2=IFERROR(A2/B2,<span class="string">""</span>) </span><br><span class="line"><span class="comment">#  如：</span></span><br><span class="line">IFERROR(2/0,<span class="string">"错误"</span>) = <span class="string">"错误"</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明：如果是错误值则显示为空，否则正常显示。</li>
 </ul>
-<ul>
-<li>IF多条件判断返回值</li>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=IF(AND(A2&lt;500,B2=&quot;未到期&quot;),&quot;补款&quot;,&quot;&quot;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>IF多条件判断返回值</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=IF(<span class="name">AND</span>(<span class="name">A2&lt;500</span>,B2=<span class="string">"未到期"</span>),<span class="string">"补款"</span>,<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明：两个条件同时成立用AND,任一个成立用OR函数。</li>
 </ul>
-<h1 id="统计公式">统计公式</h1>
-<p>统计两个表格重复的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=COUNTIF(Sheet15!A:A,A2)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="统计公式"><a href="#统计公式" class="headerlink" title="统计公式"></a>统计公式</h1><p>统计两个表格重复的内容</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=COUNTIF(<span class="name">Sheet15!A</span><span class="symbol">:A</span>,A2)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明：如果返回值大于0说明在另一个表中存在，0则不存在。</li>
 </ul>
 <p>统计不重复的总人数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=SUMPRODUCT(1/COUNTIF(A2:A8,A2:A8))</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=SUMPRODUCT(<span class="number">1</span>/COUNTIF(<span class="name">A2</span><span class="symbol">:A8</span>,A2<span class="symbol">:A8</span>))</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明:用COUNTIF统计出每人的出现次数，用1除的方式把出现次数变成分母，然后相加。</li>
 </ul>
-<h1 id="求和公式">求和公式</h1>
-<p>隔列求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">H3=SUMIF($A$2:$G$2,H$2,A3:G3) </span><br><span class="line">或</span><br><span class="line">=SUMPRODUCT((MOD(COLUMN(B3:G3),2)=0)*B3:G3)</span><br></pre></td></tr></table></figure>
+<h1 id="求和公式"><a href="#求和公式" class="headerlink" title="求和公式"></a>求和公式</h1><p>隔列求和</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">H3</span>=<span class="built_in">SUMIF</span>($A$<span class="symbol">2:</span>$G$<span class="number">2</span>,H$<span class="number">2</span>,<span class="symbol">A3</span>:<span class="symbol">G3</span>) </span><br><span class="line">或</span><br><span class="line">=<span class="built_in">SUMPRODUCT</span>((<span class="built_in">MOD</span>(<span class="built_in">COLUMN</span>(<span class="symbol">B3</span>:<span class="symbol">G3</span>),<span class="number">2</span>)=<span class="number">0</span>)*<span class="symbol">B3</span>:<span class="symbol">G3</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明：如果标题行没有规则用第2个公式</li>
 </ul>
 <p>单条件求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F2=SUMIF(A:A,E2,C:C)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F2=SUMIF(<span class="name">A</span><span class="symbol">:A</span>,E2,C<span class="symbol">:C</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>说明：SUMIF函数的基本用法</li>
 </ul>
 <p>单条件模糊求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br><span class="line">=SUMIF(A2:A4,&quot;*A*&quot;,C2:C4)</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">SUMIF</span>(<span class="symbol">A2</span>:<span class="symbol">A4</span>,<span class="string">"*A*"</span>,<span class="symbol">C2</span>:<span class="symbol">C4</span>)</span><br><span class="line">=<span class="built_in">SUMIF</span>(<span class="symbol">A2</span>:<span class="symbol">A4</span>,<span class="string">"*A*"</span>,<span class="symbol">C2</span>:<span class="symbol">C4</span>)</span><br><span class="line">=<span class="built_in">SUMIF</span>(<span class="symbol">A2</span>:<span class="symbol">A4</span>,<span class="string">"*A*"</span>,<span class="symbol">C2</span>:<span class="symbol">C4</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -280,11 +288,13 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption"></div>
             </figure>
+
 <ul>
-<li>说明：如果需要进行模糊求和，就需要掌握通配符的使用，其中星号是表示任意多个字符，如&quot;<em>A</em>&quot;就表示a前和后有任意多个字符，即包含A。</li>
+<li>说明：如果需要进行模糊求和，就需要掌握通配符的使用，其中星号是表示任意多个字符，如”<em>A</em>“就表示a前和后有任意多个字符，即包含A。</li>
 </ul>
 <p>多条件模糊求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C11=SUMIFS(C2:C7,A2:A7,A11&amp;&quot;*&quot;,B2:B7,B11)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C11=SUMIFS(<span class="name">C2</span><span class="symbol">:C7</span>,A2<span class="symbol">:A7</span>,A11&amp;<span class="string">"*"</span>,B2<span class="symbol">:B7</span>,B11)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -296,7 +306,8 @@ ga('send', 'pageview');
 <li>说明：在sumifs中可以使用通配符*</li>
 </ul>
 <p>多表相同位置求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b2=SUM(Sheet1:Sheet19!B2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b2=SUM(<span class="name">Sheet1</span><span class="symbol">:Sheet19!B2</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -308,7 +319,8 @@ ga('send', 'pageview');
 <li>说明：在表中间删除或添加表后，公式结果会自动更新。</li>
 </ul>
 <p>按日期和产品求和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F2=SUMPRODUCT((MONTH($A$2:$A$25)=F$1)*($B$2:$B$25=$E2)*$C$2:$C$25)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">F2</span>=SUMPRODUCT((MONTH(<span class="variable">$A</span><span class="variable">$2</span>:<span class="variable">$A</span><span class="variable">$25</span>)=F<span class="variable">$1</span>)*(<span class="variable">$B</span><span class="variable">$2</span>:<span class="variable">$B</span><span class="variable">$25</span>=<span class="variable">$E2</span>)*<span class="variable">$C</span><span class="variable">$2</span>:<span class="variable">$C</span><span class="variable">$25</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -319,9 +331,9 @@ ga('send', 'pageview');
 <ul>
 <li>说明：SUMPRODUCT可以完成多条件求和</li>
 </ul>
-<h1 id="查找与引用公式">查找与引用公式</h1>
-<p>单条件查找公式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C11=VLOOKUP(B11,B3:F7,4,FALSE)</span><br></pre></td></tr></table></figure>
+<h1 id="查找与引用公式"><a href="#查找与引用公式" class="headerlink" title="查找与引用公式"></a>查找与引用公式</h1><p>单条件查找公式</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">C11</span>=VLOOKUP(B11,B3:F7,<span class="number">4</span>,<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -333,7 +345,8 @@ ga('send', 'pageview');
 <li>说明：查找是VLOOKUP最擅长的，基本用法</li>
 </ul>
 <p>双向查找公式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=INDEX(C3:H7,MATCH(B10,B3:B7,0),MATCH(C10,C2:H2,0))</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">INDEX</span>(<span class="symbol">C3</span>:<span class="symbol">H7</span>,<span class="built_in">MATCH</span>(<span class="symbol">B10</span>,<span class="symbol">B3</span>:<span class="symbol">B7</span>,<span class="number">0</span>),<span class="built_in">MATCH</span>(<span class="symbol">C10</span>,<span class="symbol">C2</span>:<span class="symbol">H2</span>,<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -345,7 +358,8 @@ ga('send', 'pageview');
 <li>说明：利用MATCH函数查找位置，用INDEX函数取值</li>
 </ul>
 <p>查找最后一条符合条件的记录。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C13 = LOOKUP(1,0/(C5:C10=B13),D5:D10)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C13 = LOOKUP(<span class="number">1</span>,<span class="number">0</span>/(<span class="name">C5</span><span class="symbol">:C10=B13</span>),D5<span class="symbol">:D10</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -356,8 +370,7 @@ ga('send', 'pageview');
 <ul>
 <li>说明：0/(条件)可以把不符合条件的变成错误值，而lookup可以忽略错误值</li>
 </ul>
-<h2 id="多条件查找">多条件查找</h2>
-<figure class="image-bubble">
+<h2 id="多条件查找"><a href="#多条件查找" class="headerlink" title="多条件查找"></a>多条件查找</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx8kppnnmaj20d808c0vh.jpg" alt title>
@@ -368,7 +381,8 @@ ga('send', 'pageview');
 <li>说明:公式原理同上一个公式</li>
 </ul>
 <p>指定区域最后一个非空值查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B14=LOOKUP(1,0/(B2:B13&lt;&gt;&quot;&quot;),$A2:$A13)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">B14</span>=LOOKUP(<span class="number">1</span>,<span class="number">0</span>/(B2:B13&lt;&gt;<span class="string">""</span>),<span class="variable">$A2</span>:<span class="variable">$A13</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -376,8 +390,10 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption"></div>
             </figure>
+
 <p>按数字区域间取对应的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D9=VLOOKUP(C9,B$4:C$6,2)</span><br><span class="line">or</span><br><span class="line">D9=LOOKUP(C9,B$4:B6,C$4:C$5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D9=VLOOKUP(C9,B<span class="variable">$4</span><span class="symbol">:C</span><span class="variable">$6</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">D9=LOOKUP(C9,B<span class="variable">$4</span><span class="symbol">:B6</span>,C<span class="variable">$4</span><span class="symbol">:C</span><span class="variable">$5</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -388,9 +404,9 @@ ga('send', 'pageview');
 <ul>
 <li>公式说明：VLOOKUP和LOOKUP函数都可以按区间取值，一定要注意，销售量列的数字一定要升序排列。</li>
 </ul>
-<h1 id="字符串处理公式">字符串处理公式</h1>
-<p>多单元格字符串合并</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=PHONETIC(A2:A7)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串处理公式"><a href="#字符串处理公式" class="headerlink" title="字符串处理公式"></a>字符串处理公式</h1><p>多单元格字符串合并</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=PHONETIC(<span class="name">A2</span><span class="symbol">:A7</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -402,7 +418,8 @@ ga('send', 'pageview');
 <li>说明：Phonetic函数只能对字符型内容合并，数字不可以。</li>
 </ul>
 <p>截取除后3位之外的部分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=LEFT(D1,LEN(D1)-3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">LEFT</span>(<span class="symbol">D1</span>,<span class="built_in">LEN</span>(<span class="symbol">D1</span>)-<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -414,7 +431,8 @@ ga('send', 'pageview');
 <li>说明：LEN计算出总长度,LEFT从左边截总长度-3个</li>
 </ul>
 <p>截取-前的部分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=Left(A1,FIND(&quot;-&quot;,A1)-1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=Left(<span class="name">A1</span>,FIND(<span class="string">"-"</span>,A1)<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -426,7 +444,8 @@ ga('send', 'pageview');
 <li>说明：用FIND函数查找位置，用LEFT截取。</li>
 </ul>
 <p>截取字符串中任一段的公式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B1=TRIM(MID(SUBSTITUTE($A1,&quot; &quot;,REPT(&quot; &quot;,20)),20,20))</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B1=TRIM(<span class="name">MID</span>(<span class="name">SUBSTITUTE</span>($A1,<span class="string">" "</span>,REPT(<span class="string">" "</span>,<span class="number">20</span>)),<span class="number">20</span>,<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -438,7 +457,8 @@ ga('send', 'pageview');
 <li>说明:公式是利用强插N个空字符的方式进行截取</li>
 </ul>
 <p>字符串查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(COUNT(FIND(&quot;河南&quot;,A2))=0,&quot;否&quot;,&quot;是&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(<span class="name">COUNT</span>(<span class="name">FIND</span>(<span class="string">"河南"</span>,A2))=0,<span class="string">"否"</span>,<span class="string">"是"</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -450,7 +470,8 @@ ga('send', 'pageview');
 <li>说明: FIND查找成功，返回字符的位置，否则返回错误值，而COUNT可以统计出数字的 个数，这里可以用来判断查找是否成功。</li>
 </ul>
 <p>字符串查找一对多</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(COUNT(FIND(&#123;&quot;辽宁&quot;,&quot;黑龙江&quot;,&quot;吉林&quot;&#125;,A2))=0,&quot;其他&quot;,&quot;东北&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B2=IF(<span class="name">COUNT</span>(<span class="name">FIND</span>(&#123;<span class="string">"辽宁"</span>,<span class="string">"黑龙江"</span>,<span class="string">"吉林"</span>&#125;,A2))=0,<span class="string">"其他"</span>,<span class="string">"东北"</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -461,19 +482,18 @@ ga('send', 'pageview');
 <ul>
 <li>说明：设置FIND第一个参数为常量数组，用COUNT函数统计FIND查找结果</li>
 </ul>
-<h1 id="日期计算公式">日期计算公式</h1>
-<p>两日期相隔的年、月、天数计算</p>
+<h1 id="日期计算公式"><a href="#日期计算公式" class="headerlink" title="日期计算公式"></a>日期计算公式</h1><p>两日期相隔的年、月、天数计算</p>
 <ul>
-<li>A1是开始日期（2011-12-1），B1是结束日期(2013-6-10)。
-<ul>
+<li>A1是开始日期（2011-12-1），B1是结束日期(2013-6-10)。<ul>
 <li>相隔多少天？<code>=datedif(A1,B1,&quot;d&quot;)</code> 结果：557</li>
 <li>相隔多少月? <code>=datedif(A1,B1,&quot;m&quot;)</code>结果：18</li>
 <li>相隔多少年? <code>=datedif(A1,B1,&quot;Y&quot;)</code> 结果：1</li>
 <li>不考虑年相隔多少月？<code>=datedif(A1,B1,&quot;Ym&quot;)</code> 结果：6</li>
 <li>不考虑年相隔多少天？<code>=datedif(A1,B1,&quot;YD&quot;)</code>  结果：192</li>
-<li>不考虑年月相隔多少天？<code>=datedif(A1,B1,&quot;MD&quot;)</code>结果：9</li>
-<li>datedif函数第3个参数说明：
-<ul>
+<li>不考虑年月相隔多少天？<code>=datedif(A1,B1,&quot;MD&quot;)</code>结果：9<ul>
+<li>datedif函数第3个参数说明：</li>
+</ul>
+</li>
 <li>“Y” 时间段中的整年数。</li>
 <li>“M” 时间段中的整月数。</li>
 <li>“D” 时间段中的天数。</li>
@@ -483,10 +503,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <p>扣除周末天数的工作日天数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=NETWORKDAYS.INTL(IF(B2&lt;DATE(2015,1,1),DATE(2015,1,1),B2),DATE(2015,1,31),11)</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C2=NETWORKDAYS.INTL(IF(B2&lt;DATE(<span class="number">2015</span>,<span class="number">1</span>,<span class="number">1</span>),DATE(<span class="number">2015</span>,<span class="number">1</span>,<span class="number">1</span>),B2),DATE(<span class="number">2015</span>,<span class="number">1</span>,<span class="number">31</span>),<span class="number">11</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -592,21 +611,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/HTMLTag.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">HTML 常用标签</h4></div>
-      </a>
+        <a href="/posts/HTMLTag.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">HTML 常用标签</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/PythonSeleniumMa.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Selenium 马蜂窝评论</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/PythonSeleniumMa.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Selenium 马蜂窝评论</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -639,8 +659,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -662,7 +682,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

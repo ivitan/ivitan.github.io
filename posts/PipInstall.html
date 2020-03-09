@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Python">
-    <meta name="description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间 1pip --default-timeout=1000 install jieba -i 指定源 1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
+    <meta name="description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间1pip --default-timeout=1000 install jieba  -i 指定源1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
 <meta name="keywords" content="Linux,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Python Pip 速度慢">
 <meta property="og:url" content="https://vitan.me/posts/PipInstall.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间 1pip --default-timeout=1000 install jieba -i 指定源 1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
+<meta property="og:description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间1pip --default-timeout=1000 install jieba  -i 指定源1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-23T07:47:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Python Pip 速度慢">
-<meta name="twitter:description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间 1pip --default-timeout=1000 install jieba -i 指定源 1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
+<meta name="twitter:description" content="解决 Python 安装库时速度慢或者超时问题 设置超时时间1pip --default-timeout=1000 install jieba  -i 指定源1pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -208,13 +208,12 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>解决 Python 安装库时速度慢或者超时问题</p>
-<h1 id="设置超时时间">设置超时时间</h1>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
-<h1 id="i-指定源">-i 指定源</h1>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+<h1 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="number">1000</span> install jieba</span><br></pre></td></tr></table></figure>
+
+<h1 id="i-指定源"><a href="#i-指定源" class="headerlink" title="-i 指定源"></a>-i 指定源</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
-<h1 id="更改默认设置">更改默认设置</h1>
-<figure class="highlight python"><figcaption><span>~/.pip/pip.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">global</span>]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<h1 id="更改默认设置"><a href="#更改默认设置" class="headerlink" title="更改默认设置"></a>更改默认设置</h1><figure class="highlight python"><figcaption><span>~/.pip/pip.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">global</span>]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -269,8 +268,8 @@ ga('send', 'pageview');
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/PipInstall.html&title=《解决Python Pip 速度慢》 — Vitan's Blog&source=解决 Python 安装库时速度慢或者超时问题
-设置超时时间
-1pip --default-timeout=1000 install jieba
+设置超时时间1pip --default-timeout=1000 install jieba
+
 -i 指..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
@@ -307,21 +306,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/LAMP.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">LAMP</h4></div>
-      </a>
+        <a href="/posts/LAMP.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">LAMP</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/MatplotlibZh.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Matplotlib 中文乱码</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/MatplotlibZh.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Matplotlib 中文乱码</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -354,8 +354,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -377,7 +377,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">
@@ -453,8 +453,8 @@ ga('send', 'pageview');
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://vitan.me/posts/PipInstall.html&title=《解决Python Pip 速度慢》 — Vitan's Blog&source=解决 Python 安装库时速度慢或者超时问题
-设置超时时间
-1pip --default-timeout=1000 install jieba
+设置超时时间1pip --default-timeout=1000 install jieba
+
 -i 指..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>

@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-mysql"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 MySQL</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#golang"><span class="post-toc-number">2.</span> <span class="post-toc-text">golang</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gogs"><span class="post-toc-number">3.</span> <span class="post-toc-text">gogs</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#frp-内网穿透"><span class="post-toc-number">4.</span> <span class="post-toc-text">Frp 内网穿透</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-MySQL"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 MySQL</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#golang"><span class="post-toc-number">2.</span> <span class="post-toc-text">golang</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gogs"><span class="post-toc-number">3.</span> <span class="post-toc-text">gogs</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Frp-内网穿透"><span class="post-toc-number">4.</span> <span class="post-toc-text">Frp 内网穿透</span></a></li></ol>
         </nav>
     </aside>
 
@@ -211,30 +211,36 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>树莓派搭建 Gogs Git 服务</p>
 <a id="more"></a>
-<h1 id="安装-mysql">安装 MySQL</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure>
+<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf </span><br><span class="line">注释掉 </span><br><span class="line"><span class="built_in">bind</span>-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改 root 密码</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysqladmin -u root -p password</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>新建 gogs 数据库</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -h127.0.0.1 -uroot -p123456</span><br><span class="line">create database gogs;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>重启 MySQL</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
-<h1 id="golang">golang</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install golang -y</span><br></pre></td></tr></table></figure>
-<h1 id="gogs"><a href="https://gogs.io/" target="_blank" rel="noopener">gogs</a></h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://cdn.gogs.io/0.11.79/gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
+<h1 id="golang"><a href="#golang" class="headerlink" title="golang"></a>golang</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install golang -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="gogs"><a href="#gogs" class="headerlink" title="gogs"></a><a href="https://gogs.io/" target="_blank" rel="noopener">gogs</a></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://cdn.gogs.io/0.11.79/gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
 <p>解压</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf gogs_0.11.79_raspi2_armv6.zip</span><br></pre></td></tr></table></figure>
+
 <p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 解压后的目录</span><br><span class="line">./gogs web</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <ul>
 <li>浏览器打开 <code>http://ip:3000</code></li>
@@ -246,16 +252,21 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption"></div>
             </figure>
+
 <p>后台运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./gogs web &gt; nohup.out 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-<h1 id="frp-内网穿透"><a href="https://diannaobos.com/frp/" target="_blank" rel="noopener">Frp</a> 内网穿透</h1>
-<p>下载安装</p>
+
+<h1 id="Frp-内网穿透"><a href="#Frp-内网穿透" class="headerlink" title="Frp 内网穿透"></a><a href="https://diannaobos.com/frp/" target="_blank" rel="noopener">Frp</a> 内网穿透</h1><p>下载安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.27.1/frp_0.27.1_linux_386.tar.gz</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 解压安装</span></span><br><span class="line">tar -zxvf frp_0.27.1_linux_386.tar.gz</span><br></pre></td></tr></table></figure>
+
 <p>配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> frp_0.27.1_linux_386</span><br><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = gogs.vitan.me</span><br><span class="line">server_port = 8000</span><br><span class="line">token = </span><br><span class="line"></span><br><span class="line">[gogs]</span><br><span class="line"><span class="built_in">type</span> =http</span><br><span class="line">privilege_mode = <span class="literal">true</span></span><br><span class="line">local_ip = localhost</span><br><span class="line">locah_port = 3000</span><br><span class="line"></span><br><span class="line">custom_domain = gogs.vitan.me</span><br></pre></td></tr></table></figure>
+
 <p>启动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>配置好服务器端后,可以在浏览中(<a href="http://IP:8000/static/#/" target="_blank" rel="noopener">http://IP:8000/static/#/</a>) 打开 frp 的控制台</li>
 </ul>
@@ -355,21 +366,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/GoogleAdSense.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">撤销 Google AdSense</h4></div>
-      </a>
+        <a href="/posts/GoogleAdSense.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">撤销 Google AdSense</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/Termux-Httpd.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">Termux 局域网共享文件</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/Termux-Httpd.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">Termux 局域网共享文件</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -402,8 +414,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -425,7 +437,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">

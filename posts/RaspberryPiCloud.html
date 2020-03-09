@@ -180,7 +180,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#换源"><span class="post-toc-number">1.</span> <span class="post-toc-text">换源</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-apache"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装 Apache</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-mysql"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装 MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置mysql"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置mysql</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-php-及依赖"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 PHP 及依赖</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装phpmyadmin"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装phpMyAdmin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载owncloud"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">下载ownCloud</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-owncloud"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置 OwnCloud</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#换源"><span class="post-toc-number">1.</span> <span class="post-toc-text">换源</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-Apache"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装 Apache</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-MySQL"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装 MySQL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置mysql"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置mysql</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-PHP-及依赖"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 PHP 及依赖</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装phpMyAdmin"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装phpMyAdmin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载ownCloud"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">下载ownCloud</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-OwnCloud"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置 OwnCloud</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,18 +209,19 @@ ga('send', 'pageview');
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>RaspberryPi 搭建云</p>
 <a id="more"></a>
-<h1 id="换源">换源</h1>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<h1 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>改为</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi</span><br></pre></td></tr></table></figure>
-<h1 id="安装-apache">安装 Apache</h1>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
-<h2 id="安装-mysql">安装 MySQL</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<h2 id="配置mysql">配置mysql</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装-Apache"><a href="#安装-Apache" class="headerlink" title="安装 Apache"></a>安装 Apache</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置mysql"><a href="#配置mysql" class="headerlink" title="配置mysql"></a>配置mysql</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>None改成All</li>
 </ul>
@@ -228,21 +229,23 @@ ga('send', 'pageview');
 <li>设置 MySQL 账户密码</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br><span class="line">update mysql.user <span class="built_in">set</span> plugin=<span class="string">'mysql_native_password'</span>;</span><br><span class="line">update mysql.user <span class="built_in">set</span> password=PASSWORD(<span class="string">"newpassword"</span>) <span class="built_in">where</span> User=<span class="string">'root'</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-<h1 id="安装-php-及依赖">安装 PHP 及依赖</h1>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php5 php5-gd php-xml-parser php5-intl php5-sqlite php5-mysql smbclient curl libcurl3 php5-curl</span><br></pre></td></tr></table></figure>
-<h2 id="安装phpmyadmin">安装phpMyAdmin</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install phpmyadmin</span><br></pre></td></tr></table></figure>
-<h2 id="下载owncloud">下载ownCloud</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo wget https://download.owncloud.org/community/owncloud-9.1.4.zip</span><br><span class="line">sudo unzip owncloud-9.1.4.zip -d /var/www/html/</span><br><span class="line"><span class="built_in">cd</span> /var/www/html/owncloud</span><br><span class="line">sudo mkdir data</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装-PHP-及依赖"><a href="#安装-PHP-及依赖" class="headerlink" title="安装 PHP 及依赖"></a>安装 PHP 及依赖</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php5 php5-gd php-xml-parser php5-intl php5-sqlite php5-mysql smbclient curl libcurl3 php5-curl</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装phpMyAdmin"><a href="#安装phpMyAdmin" class="headerlink" title="安装phpMyAdmin"></a>安装phpMyAdmin</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install phpmyadmin</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载ownCloud"><a href="#下载ownCloud" class="headerlink" title="下载ownCloud"></a>下载ownCloud</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo wget https://download.owncloud.org/community/owncloud-9.1.4.zip</span><br><span class="line">sudo unzip owncloud-9.1.4.zip -d /var/www/html/</span><br><span class="line"><span class="built_in">cd</span> /var/www/html/owncloud</span><br><span class="line">sudo mkdir data</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改目录权限</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data data</span><br><span class="line">sudo chown -R www-data:www-data config</span><br><span class="line">sudo chown -R www-data:www-data apps</span><br></pre></td></tr></table></figure>
-<h1 id="配置-owncloud">配置 OwnCloud</h1>
-<ul>
+
+<h1 id="配置-OwnCloud"><a href="#配置-OwnCloud" class="headerlink" title="配置 OwnCloud"></a>配置 OwnCloud</h1><ul>
 <li>浏览器打开</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspberryIP/owncloud</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -333,21 +336,22 @@ ga('send', 'pageview');
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/ArchLinuxMongoDB.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> <h4 class="title">ArchLinux 安装 MongoDB RoboMongo</h4></div>
-      </a>
+        <a href="/posts/ArchLinuxMongoDB.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">ArchLinux 安装 MongoDB RoboMongo</h4>
+        </a>
     </div>
-  
-
-  
+    
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/RaspberryGitServer.html" id="post-next" class="post-nav-link">
-        <div class="tips"><h4 class="title">RaspberryPi 搭建 Git 服务器</h4> <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-      </a>
+        <a href="/posts/RaspberryGitServer.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">RaspberryPi 搭建 Git 服务器</h4>
+        </a>
     </div>
-  
+    
 </nav>
 
 
@@ -380,8 +384,8 @@ ga('send', 'pageview');
             verify: 'false' == 'true',
             appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
             appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "mm",
-            placeholder: "留下您的足迹吧！",
+            avatar: "wavatar",
+            placeholder: "Write a comment here.",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
             pageSize: "10"
         })
@@ -403,7 +407,7 @@ ga('send', 'pageview');
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        感谢支持！
         <i class="icon icon-quote-right"></i>
     </h3>
     <div class="reward-content">
