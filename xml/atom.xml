@@ -581,9 +581,9 @@
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
     
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
-    
       <category term="Android" scheme="https://vitan.me/tags/Android/"/>
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Termux" scheme="https://vitan.me/tags/Termux/"/>
     
