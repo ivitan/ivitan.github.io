@@ -34,30 +34,29 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Termux,R">
-    <meta name="description" content="Termux 安装 R">
+    <meta name="description" content="Termux 安装 R &amp;lt;!--more--&amp;gt; 步骤 建立 storage 1termux-setup-storage 添加镜像 12export EDITOR=viapt edit-sources 进入之后输入 i 进入编辑模式。  添加如下源  1deb [trusted=yes] https://its-pointless.github.io/files/ termux extr">
 <meta name="keywords" content="Linux,Termux,R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Termux 安装 R">
 <meta property="og:url" content="https://vitan.me/posts/Termux-R.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Termux 安装 R">
+<meta property="og:description" content="Termux 安装 R &amp;lt;!--more--&amp;gt; 步骤 建立 storage 1termux-setup-storage 添加镜像 12export EDITOR=viapt edit-sources 进入之后输入 i 进入编辑模式。  添加如下源  1deb [trusted=yes] https://its-pointless.github.io/files/ termux extr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Termux 安装 R">
-<meta name="twitter:description" content="Termux 安装 R">
+<meta name="twitter:description" content="Termux 安装 R &amp;lt;!--more--&amp;gt; 步骤 建立 storage 1termux-setup-storage 添加镜像 12export EDITOR=viapt edit-sources 进入之后输入 i 进入编辑模式。  添加如下源  1deb [trusted=yes] https://its-pointless.github.io/files/ termux extr">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -182,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.</span> <span class="post-toc-text">步骤</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">步骤</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,26 +208,22 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Termux 安装 R</p>
-<a id="more"></a>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>建立 storage</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
-
-<p>添加镜像</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> EDITOR=vi</span><br><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure>
-
+            <p>Termux 安装 R
+&lt;!--more--&gt;</p>
+<h1>步骤</h1>
+<p>建立 storage
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure></p>
+<p>添加镜像
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> EDITOR=vi</span><br><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure></p>
 <p>进入之后输入 i 进入编辑模式。</p>
 <ul>
 <li>添加如下源</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb [trusted=yes] https://its-pointless.github.io/files/ termux extras</span><br></pre></td></tr></table></figure>
-
-<p>环境更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
-
-<p>安装 R</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg <span class="keyword">install</span> r-cran</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb [trusted=yes] https://its-pointless.github.io/files/ termux extras</span><br></pre></td></tr></table></figure></p>
+<p>环境更新
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure></p>
+<p>安装 R
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg <span class="keyword">install</span> r-cran</span><br></pre></td></tr></table></figure></p>
 
         </div>
 

@@ -34,30 +34,29 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Termux,Hexo">
-    <meta name="description" content="Hexo 同时部署到 Github Coding">
+    <meta name="description" content="Hexo 同时部署到 Github Coding &amp;lt;!--more--&amp;gt; 添加 SSH 公钥  Github Coding添加同一个 SSH 公钥 Github Coding 都部署好相关的仓库  设置 _config.yml _config.yml123456deploy:type: gitrepository:     github: ssh://git@github.com/iv">
 <meta name="keywords" content="Linux,Termux,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 同时部署到 Github Coding">
 <meta property="og:url" content="https://vitan.me/posts/HexoGithubCoding.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Hexo 同时部署到 Github Coding">
+<meta property="og:description" content="Hexo 同时部署到 Github Coding &amp;lt;!--more--&amp;gt; 添加 SSH 公钥  Github Coding添加同一个 SSH 公钥 Github Coding 都部署好相关的仓库  设置 _config.yml _config.yml123456deploy:type: gitrepository:     github: ssh://git@github.com/iv">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 同时部署到 Github Coding">
-<meta name="twitter:description" content="Hexo 同时部署到 Github Coding">
+<meta name="twitter:description" content="Hexo 同时部署到 Github Coding &amp;lt;!--more--&amp;gt; 添加 SSH 公钥  Github Coding添加同一个 SSH 公钥 Github Coding 都部署好相关的仓库  设置 _config.yml _config.yml123456deploy:type: gitrepository:     github: ssh://git@github.com/iv">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -182,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加-SSH-公钥"><span class="post-toc-number">1.</span> <span class="post-toc-text">添加 SSH 公钥</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置-config-yml"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置 _config.yml</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">添加 SSH 公钥</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置 _config.yml</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,16 +208,18 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Hexo 同时部署到 Github Coding</p>
-<a id="more"></a>
-<h2 id="添加-SSH-公钥"><a href="#添加-SSH-公钥" class="headerlink" title="添加 SSH 公钥"></a>添加 SSH 公钥</h2><ol>
+            <p>Hexo 同时部署到 Github Coding
+&lt;!--more--&gt;</p>
+<h2>添加 SSH 公钥</h2>
+<ol>
 <li>Github Coding添加同一个 SSH 公钥</li>
 <li>Github Coding 都部署好相关的仓库</li>
 </ol>
-<h2 id="设置-config-yml"><a href="#设置-config-yml" class="headerlink" title="设置 _config.yml"></a>设置 _config.yml</h2> <figure class="highlight bash"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-
+<h2>设置 _config.yml</h2>
+<p><figure class="highlight bash"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>效果<ul>
+<li>效果
+<ul>
 <li><a href="https://ivitan.github.io" target="_blank" rel="noopener">Github Page</a></li>
 <li><a href="https://vitan.coding.me" target="_blank" rel="noopener">Coding Page</a></li>
 </ul>

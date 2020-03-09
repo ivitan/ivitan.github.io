@@ -33,33 +33,32 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Android,Linux,Termux">
-    <meta name="description" content="解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题">
-<meta name="keywords" content="Android,Linux,Termux">
+    <meta name="keywords" content="Linux,Android,Termux">
+    <meta name="description" content="解决 Termux出现npm err! cannot read property &apos;length&apos; of undefined 问题 &amp;lt;!--more--&amp;gt; 方法  复制以下内容  1(require(&apos;os&apos;).cpus() || &amp;#123; length: 1 &amp;#125;).length  编辑  1vim ../usr/lib/node_modules/npm/node_mod">
+<meta name="keywords" content="Linux,Android,Termux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 &quot;Npm Err! Cannot Read Property &#39;Length&#39; of Undefined&quot;">
 <meta property="og:url" content="https://vitan.me/posts/Termux-Npm-Error.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题">
+<meta property="og:description" content="解决 Termux出现npm err! cannot read property &apos;length&apos; of undefined 问题 &amp;lt;!--more--&amp;gt; 方法  复制以下内容  1(require(&apos;os&apos;).cpus() || &amp;#123; length: 1 &amp;#125;).length  编辑  1vim ../usr/lib/node_modules/npm/node_mod">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/11/9WmxIA.jpg">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决 &quot;Npm Err! Cannot Read Property &#39;Length&#39; of Undefined&quot;">
-<meta name="twitter:description" content="解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题">
+<meta name="twitter:description" content="解决 Termux出现npm err! cannot read property &apos;length&apos; of undefined 问题 &amp;lt;!--more--&amp;gt; 方法  复制以下内容  1(require(&apos;os&apos;).cpus() || &amp;#123; length: 1 &amp;#125;).length  编辑  1vim ../usr/lib/node_modules/npm/node_mod">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/03/11/9WmxIA.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -184,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#已知问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">已知问题</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">已知问题</span></a></li></ol>
         </nav>
     </aside>
 
@@ -211,30 +210,29 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题</p>
-<a id="more"></a>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
+            <p>解决 Termux出现npm err! cannot read property 'length' of undefined 问题
+&lt;!--more--&gt;</p>
+<h1>方法</h1>
+<ul>
 <li>复制以下内容</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">require</span>(<span class="string">'os'</span>).cpus() || &#123; <span class="attr">length</span>: <span class="number">1</span> &#125;).length</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">require</span>(<span class="string">'os'</span>).cpus() || &#123; <span class="attr">length</span>: <span class="number">1</span> &#125;).length</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>编辑</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>修改如下保存即可</li>
 </ul>
-<figure class="image-bubble">
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://s1.ax1x.com/2018/03/11/9WmxIA.jpg" alt="修改.jpg" title>
                 </div>
                 <div class="image-caption">修改.jpg</div>
-            </figure>
-
-<h1 id="已知问题"><a href="#已知问题" class="headerlink" title="已知问题"></a>已知问题</h1><ul>
+            </figure></p>
+<h1>已知问题</h1>
+<ul>
 <li>Npm 无法升级。</li>
 </ul>
 

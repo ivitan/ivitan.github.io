@@ -49,14 +49,13 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -202,7 +201,44 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>CentOS DHCP</p>
+          <p>CentOS DHCP
+&lt;!--more--&gt;</p>
+<h1>安装</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum install dhcp -y</span><br></pre></td></tr></table></figure></p>
+<h1>修改 ip</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=<span class="string">"eth2"</span></span><br><span class="line">BOOTPROTO=static</span><br><span class="line">HWADDR=<span class="string">"00:0D:29:G1:2D:3B"</span></span><br><span class="line">NM_CONTROLLED=<span class="string">"yes"</span></span><br><span class="line">ONBOOT=<span class="string">"yes"</span></span><br><span class="line">BOOTPROTO=<span class="string">"none"</span></span><br><span class="line">IPADDR=192.168.22.11</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.22.1</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>重启网络</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br><span class="line">systemctl network restart</span><br></pre></td></tr></table></figure></p>
+<h1>服务端配置</h1>
+<ul>
+<li>路径</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>dhcpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>复制 dhcpd.conf.samplle</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -p /usr/share/doc/dhcp-6.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>配置文件设置</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>/etc/dhcp/dhcpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ddns-update-style interim;// dhcp 服务器和dns 服务器的动态信息更新模式     </span><br><span class="line">ignore client-updates;       </span><br><span class="line">default-lease-time           259200; <span class="comment">#预设租约为 3 天</span></span><br><span class="line">max-lease-time               518400; <span class="comment"># 最大租约为 6 天</span></span><br><span class="line"></span><br><span class="line">subnet 192.168.22.0 netmask 255.255.255.0 &#123;</span><br><span class="line">      option routers                  192.168.22.254;<span class="comment">#预设路由</span></span><br><span class="line">      option subnet-mask              255.255.255.0;</span><br><span class="line">      option domain-search            <span class="string">"vitan.me"</span>; <span class="comment"># 给予一个领域名</span></span><br><span class="line">      option domain-name-servers      192.168.22.1;</span><br><span class="line">      option time-offset              -18000; <span class="comment">#时区</span></span><br><span class="line">      range   192.168.1.10   192.168.1.100;</span><br><span class="line"></span><br><span class="line">      <span class="comment"># 关于固定的 IP </span></span><br><span class="line">      host win7 &#123;</span><br><span class="line">        hardware ethernet    08:00:27:11:EB:C2; <span class="comment">#客户端网卡 MAC</span></span><br><span class="line">        fixed-address        192.168.100.30;    <span class="comment">#给予固定的 IP</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>启动</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service dhcpd start</span><br><span class="line">systemctl start dhcp <span class="comment">#CentOs 7</span></span><br><span class="line">dhcpd <span class="comment"># 检测错误</span></span><br><span class="line">chkconfig --levels 235 dhcpd on <span class="comment"># 开机启动</span></span><br></pre></td></tr></table></figure></p>
+<h1>客户端配置</h1>
+<p><figure class="highlight bash"><figcaption><span>ifcfg.eth2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=<span class="string">"eth2"</span></span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">HWADDR=<span class="string">"00:0D:29:G1:2D:3B"</span></span><br><span class="line">NM_CONTROLLED=<span class="string">"yes"</span></span><br><span class="line">ONBOOT=<span class="string">"yes"</span></span><br><span class="line">BOOTPROTO=<span class="string">"none"</span></span><br><span class="line">IPADDR=192.168.22.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.22.1</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>重启网络</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ifdown eth2</span><br><span class="line">ifup eth2</span><br><span class="line"></span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure></p>
+<h1>查看租约情况</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/pib/dhcpd/dhcpd.leases</span><br></pre></td></tr></table></figure></p>
+
       
 
           <a href="/posts/Linux-DHCP.html" class="post-more waves-effect waves-button">
@@ -252,6 +288,74 @@ ga('send', 'pageview');
           <ul>
 <li>Vim 增删查改、复制捏贴、翻页和寄存器。</li>
 <li>Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put
+&lt;!--more--&gt;</li>
+</ul>
+<h1>复制粘贴</h1>
+<h2>Normal 模式下</h2>
+<ul>
+<li>yp dp vp</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y # 复制(yank)</span><br><span class="line">p # 粘贴(put)</span><br><span class="line">d # 剪贴</span><br><span class="line">vp # v(visual) 命令选中要复制的地方，后 p</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>配合文本对象</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yyiw # 复制一个单词</span><br><span class="line">yy   # 复制一行</span><br><span class="line">dd   # 删除一行</span><br><span class="line">o    # 下一行</span><br><span class="line">V    # 快选两行</span><br><span class="line">v    #　选择文本</span><br></pre></td></tr></table></figure></p>
+<h2>Insert 模式下</h2>
+<ul>
+<li>保留复制内容的缩进</li>
+</ul>
+<ol>
+<li>vimrc 设置了自动缩进 <code>:set autoindent</code> 会使复制的代码缩进错乱</li>
+</ol>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:set paste </span><br><span class="line">:set nopaste # 取消</span><br></pre></td></tr></table></figure></p>
+<h1>增删查改翻页移动</h1>
+<h2>增删查改</h2>
+<p>增（大写相反）
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a<span class="comment"># append 当前字母后面插入</span></span><br><span class="line">i <span class="comment"># insert 当前字母前面插入</span></span><br><span class="line">o <span class="comment"># open a line 向下打开新一行</span></span><br></pre></td></tr></table></figure></p>
+<p>删
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d  <span class="comment"># 删除</span></span><br><span class="line">dw <span class="comment"># 删除单词</span></span><br><span class="line">diw <span class="comment"># delete inner word 删除不包含空格的一个单词</span></span><br><span class="line">daw <span class="comment"># delete around word</span></span><br><span class="line">dd <span class="comment"># 删除一行</span></span><br><span class="line">x <span class="comment"># 删除一个字符</span></span><br></pre></td></tr></table></figure></p>
+<p>改
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c</span><br><span class="line">ciw <span class="comment"># Change inner word</span></span><br><span class="line">ct  <span class="comment"># 括号里面的内容（修改到右边括号）</span></span><br><span class="line">ci” <span class="comment"># 删除双引号里的内容</span></span><br></pre></td></tr></table></figure></p>
+<p>查
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs <span class="comment"># 查找当前行第一个出现的 s ，使用 ； 查找下一个</span></span><br><span class="line">Fs <span class="comment"># 往回查</span></span><br><span class="line">/word <span class="comment"># 查找所以单词 word</span></span><br><span class="line">?word <span class="comment">#往回查</span></span><br></pre></td></tr></table></figure></p>
+<h1>移动翻页</h1>
+<p>移动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hjkl <span class="comment"># 上下左右</span></span><br><span class="line">w <span class="comment"># word 移动单词</span></span><br><span class="line">b <span class="comment">#back word 往回移动单词</span></span><br><span class="line">:18 <span class="comment"># 移动到18行</span></span><br><span class="line">18G <span class="comment"># 移动到14行</span></span><br><span class="line">0 <span class="comment"># 回到开头</span></span><br><span class="line">$ <span class="comment"># 行尾</span></span><br><span class="line">gg <span class="comment"># 文件开头</span></span><br><span class="line">G <span class="comment"># 文件结尾</span></span><br><span class="line">Ctrl o <span class="comment"># 返回刚刚的位置</span></span><br></pre></td></tr></table></figure></p>
+<p>翻页
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl + f <span class="comment"># forward</span></span><br><span class="line">ctrl + u <span class="comment"># upward</span></span><br></pre></td></tr></table></figure></p>
+<h1>Vim 寄存器</h1>
+<p>使用 d 删除或者 y 复制的内容都放在了 &quot;无名寄存器&quot;</p>
+<ul>
+<li>调换两字符</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x  # 删除一个字符放到无名寄存器</span><br><span class="line">p  # 粘贴</span><br></pre></td></tr></table></figure></p>
+<h2>寄存器(register)</h2>
+<p><code>&quot;{register}</code> 可以指定寄存器，不指定默认使用无名寄存器，<code>&quot;&quot;</code> 表示</p>
+<h2>无名寄存器</h2>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"ayiw # 复制一个单词到寄存器 a </span><br><span class="line">"bdd  # 删除当前行到寄存器 b</span><br><span class="line"></span><br><span class="line">"a p  # 粘贴寄存器 a 的内容</span><br><span class="line">"b p  # 粘贴寄存器 b 的内容</span><br></pre></td></tr></table></figure></p>
+<h2>其他寄存器</h2>
+<ul>
+<li>”a-z 有名寄存器
+<ul>
+<li>&quot;0 复制专业寄存器（y复制的文本会拷到复制及长期0）</li>
+<li>&quot;+ 系统剪切板 （可以再复制前加上 &quot;+ 复制到系统剪切板）
+<ul>
+<li><code>:set cliboard=unnamed</code> 可直接复制系统剪切板内容</li>
+</ul>
+</li>
+<li>”% 当前文件名</li>
+<li>&quot;. 上次插入的文本</li>
+</ul>
+</li>
+</ul>
+<h2>查看寄存器内容</h2>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:reg a # 查看 a 寄存器内容</span><br><span class="line">:reg b # 查看 b 寄存器内容</span><br></pre></td></tr></table></figure></p>
+<h2>查看是否支持 clipboard</h2>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo has('clipboard')</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>1 为支持</li>
+</ul>
+
       
 
           <a href="/posts/vimcopyppaste.html" class="post-more waves-effect waves-button">
@@ -299,8 +403,42 @@ ga('send', 'pageview');
 
       
           <blockquote>
-<p>Failed to receive SOCKS4 connect request ack.</p>
+<p>Failed to receive SOCKS4 connect request ack.
+&lt;!--more--&gt;</p>
 </blockquote>
+<h1>解决方法</h1>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos; </span><br><span class="line">git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>error: RPC failed; curl 18 transfer closed with outstanding read data remaining</p>
+</blockquote>
+<h1>解决方法</h1>
+<ul>
+<li>
+<ol>
+<li>--depth 1</li>
+</ol>
+</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 关闭压缩</span></span><br><span class="line">git config --global core.compression 0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 部分克隆</span></span><br><span class="line">git clone --depth 1 http://github.com/large-repository </span><br><span class="line">cd large-repository</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入新目录并检索其余的克隆</span></span><br><span class="line">git fetch --unshallow</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">git fetch --depth=2147483647</span><br><span class="line"><span class="meta">#</span><span class="bash"> 做一个定期拉</span></span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<ol start="2">
+<li>切换使用 ssh(git clone username@mydomain.com:my_group/my_repository.git)</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>增加缓冲区大小</li>
+</ol>
+</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining" target="_blank" rel="noopener">stackoverflow</a></li>
+</ul>
+
       
 
           <a href="/posts/GitSOCKS4.html" class="post-more waves-effect waves-button">
@@ -347,7 +485,26 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.</p>
+          <p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.
+&lt;!--more--&gt;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new photo <span class="string">"My Gallery"</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：
+<ul>
+<li>layout 文章的布局，可以取值post（默认值）或page，可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。</li>
+<li>title 文章的标题</li>
+<li>date 创建日期，文件的创建日期</li>
+<li>updated 修改日期，文件的修改日期</li>
+<li>comments 是否开启评论，默认值true</li>
+<li>tags 标签</li>
+<li>categories 分类</li>
+<li>permalink url中的名字，默认值文件名</li>
+</ul>
+</li>
+</ul>
+<h1>模板</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">- Linux</span><br><span class="line">categories:</span><br><span class="line">- notes</span><br><span class="line">author:</span><br><span class="line">- Vitan</span><br><span class="line">enable_unread_badge: <span class="literal">true</span></span><br><span class="line">thumbnail:</span><br><span class="line">- /images/Hexo.svg</span><br></pre></td></tr></table></figure></p>
+
       
 
           <a href="/posts/Hexo-Post.html" class="post-more waves-effect waves-button">
@@ -394,7 +551,16 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>spyder3 No module named ‘PyQt5.QtWebKitWidgets’</p>
+          <p>spyder3 No module named 'PyQt5.QtWebKitWidgets'
+&lt;!--more--&gt;
+解决 Spyder3 无法启动
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install pyqt5==<span class="number">5.11</span><span class="number">.2</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>相关 issue</strong></p>
+<ul>
+<li><a href="https://github.com/spyder-ide/spyder/issues/6990" target="_blank" rel="noopener">6990</a></li>
+</ul>
+
       
 
           <a href="/posts/spyder.html" class="post-more waves-effect waves-button">
@@ -441,7 +607,21 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Linux Wine</p>
+          <p>Linux Wine
+&lt;!--more--&gt;
+ArchLinux
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine wine_gecko wine-mono winetricks</span><br></pre></td></tr></table></figure></p>
+<p>字体乱码
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch zh.reg</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>内容</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">REGEDIT4</span><br><span class="line"></span><br><span class="line">  [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]</span><br><span class="line">  "Lucida Sans Unicode"="wqy-microhei.ttc"</span><br><span class="line">  "Microsoft Sans Serif"="wqy-microhei.ttc"</span><br><span class="line">  "Microsoft YaHei"="SourceHanSansCN-Medium.otf"</span><br><span class="line">  "MS Sans Serif"="wqy-microhei.ttc"</span><br><span class="line">  "Tahoma"="wqy-microhei.ttc"</span><br><span class="line">  "Tahoma Bold"="wqy-microhei.ttc"</span><br><span class="line">  "SimSun"="wqy-microhei.ttc"</span><br><span class="line">  "Arial"="wqy-microhei.ttc"</span><br><span class="line">  "Arial Black"="wqy-microhei.ttc"</span><br><span class="line">  "宋体"="SourceHanSansCN-Medium.otf"</span><br><span class="line">  "新细宋体"="SourceHanSansCN-Medium.otf"</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Run</li>
+</ul>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egedit zh.reg</span><br></pre></td></tr></table></figure></p>
+
       
 
           <a href="/posts/wine.html" class="post-more waves-effect waves-button">
@@ -488,7 +668,10 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>放弃对于本地的项目中修改，Git pull强制覆盖</p>
+          <p>放弃对于本地的项目中修改，Git pull强制覆盖
+&lt;!--more--&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+
       
 
           <a href="/posts/GitPull.html" class="post-more waves-effect waves-button">
@@ -535,7 +718,31 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Termux ADB</p>
+          <p>Termux ADB
+&lt;!--more--&gt;</p>
+<h2>下载 arm 版 ADB</h2>
+<ul>
+<li>
+<p>Download <a href="https://pan.baidu.com/s/1wv_i6qUTLRL94pp-bnkyWw" target="_blank" rel="noopener">提取码: 9ej2</a></p>
+</li>
+<li>
+<p>Installation</p>
+</li>
+</ul>
+<ol>
+<li>解压后 <code>mv arm/adb $PREFIX/bin</code></li>
+<li>添加权限 <code>chmod +x $PREFIX/bin/adb</code></li>
+</ol>
+<ul>
+<li>Usage</li>
+</ul>
+<ol>
+<li>远程连接设备（已开启USB网络调试）</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb connect ip</span><br></pre></td></tr></table></figure></p>
+<h2>ADB</h2>
+<p><a href="https://vitan.me/2018/04/19/Adb/">Command</a></p>
+
       
 
           <a href="/posts/Termux-ADB.html" class="post-more waves-effect waves-button">
@@ -582,7 +789,29 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>jQuery 选择器</p>
+          <p>jQuery 选择器
+&lt;!--more--&gt;
+#元素选择器
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// id 选择器</span></span><br><span class="line">$(<span class="string">"#myELement"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元素选择器</span></span><br><span class="line">$(<span class="string">"div"</span>)</span><br><span class="line">$(<span class="string">"span"</span>)</span><br><span class="line">$(<span class="string">"button"</span>)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// .class 选择</span></span><br><span class="line">$(<span class="string">".myClass"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通配符选择(选取所有元素)</span></span><br><span class="line">$(<span class="string">"*"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>层叠选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有form元素中的input元素 </span></span><br><span class="line">$(<span class="string">"form input"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//id值为main的所有的子元素</span></span><br><span class="line">$(<span class="string">"#main &gt; *"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment">/*所有的label元素的下一个input元素节点，</span></span><br><span class="line"><span class="comment">返回的是label标签后面直接跟一个input标签的所有input标签元素 */</span>       </span><br><span class="line">$(<span class="string">"label + input"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//同胞选择器，返回id为prev的标签元素的所有的属于同一个父元素的div标签</span></span><br><span class="line">$(<span class="string">"#prev ~ div"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>基本过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有tr元素的第一个</span></span><br><span class="line">$(<span class="string">"tr:first"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//所有tr元素的最后一个 s</span></span><br><span class="line">$(<span class="string">"tr:last"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//过滤掉：checked的选择器的所有的input元素 </span></span><br><span class="line">$(<span class="string">"input:not(:checked) + span"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的tr元素的第1，3，5... ...个元素 </span></span><br><span class="line">(<span class="string">"tr:odd"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的td元素中序号为2的那个td元素</span></span><br><span class="line">$(<span class="string">"td:eq(2)"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//td元素中序号大于4的所有td元素 </span></span><br><span class="line">$(<span class="string">"td:gt(4)"</span>)   </span><br><span class="line"></span><br><span class="line">td元素中序号小于<span class="number">4</span>的所有的td元素     </span><br><span class="line">$(<span class="string">"td:ll(4)"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有标题元素（h1 - h6）</span></span><br><span class="line">$(<span class="string">":header"</span>) </span><br><span class="line"></span><br><span class="line">$(<span class="string">"div:animated"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>内容过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有div中含有John文本的元素</span></span><br><span class="line">$(<span class="string">"div:contains('John')"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的为空（也不包括文本节点）的td元素的数组 </span></span><br><span class="line">$(<span class="string">"td:empty"</span>)        </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有含有p标签的div元素   </span></span><br><span class="line">$(<span class="string">"div:has(p)"</span>)      </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的以td为父节点的元素数组 </span></span><br><span class="line">$(<span class="string">"td:parent"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>可视化过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有的被hidden的div元素 </span></span><br><span class="line">$(<span class="string">"div:hidden"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的可视化的div元素    </span></span><br><span class="line">$(<span class="string">"div:visible"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>属性过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//含有id属性的div元素 </span></span><br><span class="line">$(<span class="string">"div[id]"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//name属性等于'newsletter'的input元素 </span></span><br><span class="line">$(<span class="string">"input[name='newsletter']"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//name属性不等于'newsletter'的input元素 </span></span><br><span class="line">$(<span class="string">"input[name!='newsletter']"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//name属性以'news'开头的input元素 </span></span><br><span class="line">$(<span class="string">"input[name^='news']"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// name属性以'news'结尾的input元素 </span></span><br><span class="line">$(<span class="string">"input[name$='news']"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment">//name属性包含'news'的input元素     </span></span><br><span class="line">$(<span class="string">"input[name*='man']"</span>)          </span><br><span class="line">    </span><br><span class="line"><span class="comment">//可以使用多个属性进行联合选择，得到所有的含有id属性并且属性以man结尾的元素 </span></span><br><span class="line">$(<span class="string">"input[id][name$='man']"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>子元素过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul li:nth-child(2)"</span>),$(<span class="string">"ul li:nth-child(odd)"</span>),$(<span class="string">"ul li:nth-child(3n + 1)"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//返回所有的div元素的第一个子节点的数组</span></span><br><span class="line">$(<span class="string">"div span:first-child"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment">//返回所有的div元素的最后一个节点的数组 </span></span><br><span class="line">$(<span class="string">"div span:last-child"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">//返回所有的div中只有唯一一个子节点的所有子节点的数组 </span></span><br><span class="line">$(<span class="string">"div button:only-child"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>表单元素选择器：</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有的表单输入元素，包括input, textarea, select 和 button </span></span><br><span class="line">$(<span class="string">":input"</span>)  </span><br><span class="line">    </span><br><span class="line"><span class="comment">//所有的text input元素 </span></span><br><span class="line">$(<span class="string">":text"</span>)                     </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的password input元素 </span></span><br><span class="line">$(<span class="string">":password"</span>)           </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的radio input元素</span></span><br><span class="line">$(<span class="string">":radio"</span>)                    </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的checkbox input元素</span></span><br><span class="line">$(<span class="string">":checkbox"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的submit input元素 </span></span><br><span class="line">$(<span class="string">":submit"</span>)               </span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有的image input元素 </span></span><br><span class="line">$(<span class="string">":image"</span>)                </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的reset input元素 </span></span><br><span class="line">$(<span class="string">":reset"</span>)                   </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的button input元素 </span></span><br><span class="line">$(<span class="string">":button"</span>)                </span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有的file input元素 </span></span><br><span class="line">$(<span class="string">":file"</span>)                    </span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有类型为hidden的input元素或表单的隐藏域 </span></span><br><span class="line">$(<span class="string">":hidden"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>表单元素过滤选择器</h1>
+<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有的可操作的表单元素 </span></span><br><span class="line">$(<span class="string">":enabled"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的不可操作的表单元素 </span></span><br><span class="line">$(<span class="string">":disabled"</span>)            </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的被checked的表单元素</span></span><br><span class="line">$(<span class="string">":checked"</span>)             </span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的select 的子元素中被selected的元素 </span></span><br><span class="line">$(<span class="string">"select option:selected"</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//选取一个 name 为”S_03_22″的input text框的上一个td的text值</span><br><span class="line">$(”input[@ name =S_03_22]“).parent().prev().text() </span><br><span class="line">    </span><br><span class="line">//名字以”S_”开始，并且不是以”_R”结尾的</span><br><span class="line">$(”input[@ name ^=&apos;S_&apos;]“).not(”[@ name $=&apos;_R&apos;]“) </span><br><span class="line">    </span><br><span class="line">//一个名为 radio_01的radio所选的值</span><br><span class="line">$(”input[@ name =radio_01][@checked]“).val();</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//查找A元素下面的所有子节点，包括非直接子节点</span><br><span class="line">$(&quot;A B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素下面的直接子节点</span><br><span class="line">$(&quot;A&gt;B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素后面的兄弟节点，包括非直接子节点</span><br><span class="line">$(&quot;A+B&quot;) </span><br><span class="line"></span><br><span class="line">//查找A元素后面的兄弟节点，不包括非直接子节点</span><br><span class="line">$(&quot;A~B&quot;)</span><br></pre></td></tr></table></figure></p>
+
       
 
           <a href="/posts/jQuerySelector.html" class="post-more waves-effect waves-button">
@@ -629,7 +858,197 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Git Commit Emoji</p>
+          <p>Git Commit Emoji
+&lt;!--more--&gt;</p>
+<h1>Emoji</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">emoji</th>
+<th style="text-align:left">emoji 代码</th>
+<th style="text-align:left">commit 说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">:tada: (庆祝)</td>
+<td style="text-align:left"><code>:tada:</code></td>
+<td style="text-align:left">初次提交</td>
+</tr>
+<tr>
+<td style="text-align:left">:sparkles: (火花)</td>
+<td style="text-align:left"><code>:sparkles:</code></td>
+<td style="text-align:left">引入新功能</td>
+</tr>
+<tr>
+<td style="text-align:left">:bookmark: (书签)</td>
+<td style="text-align:left"><code>:bookmark:</code></td>
+<td style="text-align:left">发行/版本标签</td>
+</tr>
+<tr>
+<td style="text-align:left">:bug: (bug)</td>
+<td style="text-align:left"><code>:bug:</code></td>
+<td style="text-align:left">修复 bug</td>
+</tr>
+<tr>
+<td style="text-align:left">:ambulance: (急救车)</td>
+<td style="text-align:left"><code>:ambulance:</code></td>
+<td style="text-align:left">重要补丁</td>
+</tr>
+<tr>
+<td style="text-align:left">:globe_with_meridians: (地球)</td>
+<td style="text-align:left"><code>:globe_with_meridians:</code></td>
+<td style="text-align:left">国际化与本地化</td>
+</tr>
+<tr>
+<td style="text-align:left">:lipstick: (口红)</td>
+<td style="text-align:left"><code>:lipstick:</code></td>
+<td style="text-align:left">更新 UI 和样式文件</td>
+</tr>
+<tr>
+<td style="text-align:left">:clapper: (场记板)</td>
+<td style="text-align:left"><code>:clapper:</code></td>
+<td style="text-align:left">更新演示/示例</td>
+</tr>
+<tr>
+<td style="text-align:left">:rotating_light: (警车灯)</td>
+<td style="text-align:left"><code>:rotating_light:</code></td>
+<td style="text-align:left">移除 linter 警告</td>
+</tr>
+<tr>
+<td style="text-align:left">:wrench: (扳手)</td>
+<td style="text-align:left"><code>:wrench:</code></td>
+<td style="text-align:left">修改配置文件</td>
+</tr>
+<tr>
+<td style="text-align:left">:heavy_plus_sign: (加号)</td>
+<td style="text-align:left"><code>:heavy_plus_sign:</code></td>
+<td style="text-align:left">增加一个依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">:heavy_minus_sign: (减号)</td>
+<td style="text-align:left"><code>:heavy_minus_sign:</code></td>
+<td style="text-align:left">减少一个依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">:arrow_up: (上升箭头)</td>
+<td style="text-align:left"><code>:arrow_up:</code></td>
+<td style="text-align:left">升级依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">:arrow_down: (下降箭头)</td>
+<td style="text-align:left"><code>:arrow_down:</code></td>
+<td style="text-align:left">降级依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">:zap: (闪电)&lt;br&gt;:racehorse: (赛马)</td>
+<td style="text-align:left"><code>:zap:</code>&lt;br&gt;<code>:racehorse:</code></td>
+<td style="text-align:left">提升性能</td>
+</tr>
+<tr>
+<td style="text-align:left">:chart_with_upwards_trend: (上升趋势图)</td>
+<td style="text-align:left"><code>:chart_with_upwards_trend:</code></td>
+<td style="text-align:left">添加分析或跟踪代码</td>
+</tr>
+<tr>
+<td style="text-align:left">:rocket: (火箭)</td>
+<td style="text-align:left"><code>:rocket:</code></td>
+<td style="text-align:left">部署功能</td>
+</tr>
+<tr>
+<td style="text-align:left">:white_check_mark: (白色复选框)</td>
+<td style="text-align:left"><code>:white_check_mark:</code></td>
+<td style="text-align:left">增加测试</td>
+</tr>
+<tr>
+<td style="text-align:left">:memo: (备忘录)</td>
+<td style="text-align:left"><code>:memo:</code></td>
+<td style="text-align:left">撰写文档</td>
+</tr>
+<tr>
+<td style="text-align:left">:hammer: (锤子)</td>
+<td style="text-align:left"><code>:hammer:</code></td>
+<td style="text-align:left">重大重构</td>
+</tr>
+<tr>
+<td style="text-align:left">:art: (调色板)</td>
+<td style="text-align:left"><code>:art:</code></td>
+<td style="text-align:left">改进代码结构/代码格式</td>
+</tr>
+<tr>
+<td style="text-align:left">:fire: (火焰)</td>
+<td style="text-align:left"><code>:fire:</code></td>
+<td style="text-align:left">移除代码或文件</td>
+</tr>
+<tr>
+<td style="text-align:left">:pencil2: (铅笔)</td>
+<td style="text-align:left"><code>:pencil2:</code></td>
+<td style="text-align:left">修复 typo</td>
+</tr>
+<tr>
+<td style="text-align:left">:construction: (施工)</td>
+<td style="text-align:left"><code>:construction:</code></td>
+<td style="text-align:left">工作进行中</td>
+</tr>
+<tr>
+<td style="text-align:left">:construction_worker: (工人)</td>
+<td style="text-align:left"><code>:construction_worker:</code></td>
+<td style="text-align:left">添加 CI 构建系统</td>
+</tr>
+<tr>
+<td style="text-align:left">:green_heart: (绿心)</td>
+<td style="text-align:left"><code>:green_heart:</code></td>
+<td style="text-align:left">修复 CI 构建问题</td>
+</tr>
+<tr>
+<td style="text-align:left">:lock: (锁)</td>
+<td style="text-align:left"><code>:lock:</code></td>
+<td style="text-align:left">修复安全问题</td>
+</tr>
+<tr>
+<td style="text-align:left">:whale: (鲸鱼)</td>
+<td style="text-align:left"><code>:whale:</code></td>
+<td style="text-align:left">Docker 相关工作</td>
+</tr>
+<tr>
+<td style="text-align:left">:apple: (苹果)</td>
+<td style="text-align:left"><code>:apple:</code></td>
+<td style="text-align:left">修复 macOS 下的问题</td>
+</tr>
+<tr>
+<td style="text-align:left">:penguin: (企鹅)</td>
+<td style="text-align:left"><code>:penguin:</code></td>
+<td style="text-align:left">修复 Linux 下的问题</td>
+</tr>
+<tr>
+<td style="text-align:left">:checkered_flag: (旗帜)</td>
+<td style="text-align:left"><code>:checked_flag:</code></td>
+<td style="text-align:left">修复 Windows 下的问题</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="https://github.com/liuchengxu/git-commit-emoji-cn/blob/master/README.md" target="_blank" rel="noopener">Git-commit-emoji</a></li>
+</ul>
+<h1>Emoji-Log</h1>
+<h2>配置</h2>
+<p><figure class="highlight bash"><figcaption><span>.bash/.zshrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#.# Better Git Logs.</span></span><br><span class="line"><span class="comment">### Using EMOJI-LOG (https://github.com/ahmadawais/Emoji-Log).</span></span><br><span class="line"><span class="comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># NEW.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📦 NEW: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># IMPROVE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"👌 IMPROVE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># FIX.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🐛 FIX: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># RELEASE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🚀 RELEASE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># DOC.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📖 DOC: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># TEST.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"✅ TEST: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>别名到 ~/.gitconfig</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="built_in">cap</span> = <span class="string">"!f() &#123; git add .; git commit -m \"<span class="variable">$@</span>\"; git push; &#125;; f"</span></span><br><span class="line"><span class="comment"># NEW.</span></span><br><span class="line">new = <span class="string">"!f() &#123; git cap \"📦 NEW: <span class="variable">$@</span>\"; &#125;; f"</span></span><br><span class="line"><span class="comment"># IMPROVE.</span></span><br><span class="line">imp = <span class="string">"!f() &#123; git cap \"👌 IMPROVE: <span class="variable">$@</span>\"; &#125;; f"</span></span><br><span class="line"><span class="comment"># FIX.</span></span><br><span class="line">fix = <span class="string">"!f() &#123; git cap \"🐛 FIX: <span class="variable">$@</span>\"; &#125;; f"</span></span><br><span class="line"><span class="comment"># RELEASE.</span></span><br><span class="line">rlz = <span class="string">"!f() &#123; git cap \"🚀 RELEASE: <span class="variable">$@</span>\"; &#125;; f"</span></span><br><span class="line"><span class="comment"># DOC.</span></span><br><span class="line">doc = <span class="string">"!f() &#123; git cap \"📖 DOC: <span class="variable">$@</span>\"; &#125;; f"</span></span><br><span class="line"><span class="comment"># TEST.</span></span><br><span class="line">tst = <span class="string">"!f() &#123; git cap \"✅ TEST: <span class="variable">$@</span>\"; &#125;; f"</span></span><br></pre></td></tr></table></figure></p>
+<h1>gitmoji-cli</h1>
+<h2>install</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g gitmoji-cli</span><br></pre></td></tr></table></figure></p>
+<h2>usage</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitmoji --<span class="built_in">help</span></span><br><span class="line">gitmoji -c</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>Via</strong></p>
+<ul>
+<li><a href="https://opensource.com/article/19/2/emoji-log-git-commit-messages" target="_blank" rel="noopener">OpenSource.com</a></li>
+<li><a href="https://github.com/carloscuesta/gitmoji-cli" target="_blank" rel="noopener">gitmoji-cli</a></li>
+</ul>
+
       
 
           <a href="/posts/GitEmoji.html" class="post-more waves-effect waves-button">

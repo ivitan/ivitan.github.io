@@ -34,30 +34,29 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Ubuntu,Termux,SSH">
-    <meta name="description" content="SSH的简单运用">
+    <meta name="description" content="SSH的简单运用 &amp;lt;!--more--&amp;gt; 基础使用 SSH 登录远程主机 host 1ssh root@host  本地用户名与远程用户名一致，登录时可以省略用户名。  1ssh host  SSH 的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。  1ssh -p 2222 root@host 公钥登录 ssh-keygen 生成公钥">
 <meta name="keywords" content="Linux,Ubuntu,Termux,SSH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH 的使用">
 <meta property="og:url" content="https://vitan.me/posts/SSH.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="SSH的简单运用">
+<meta property="og:description" content="SSH的简单运用 &amp;lt;!--more--&amp;gt; 基础使用 SSH 登录远程主机 host 1ssh root@host  本地用户名与远程用户名一致，登录时可以省略用户名。  1ssh host  SSH 的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。  1ssh -p 2222 root@host 公钥登录 ssh-keygen 生成公钥">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH 的使用">
-<meta name="twitter:description" content="SSH的简单运用">
+<meta name="twitter:description" content="SSH的简单运用 &amp;lt;!--more--&amp;gt; 基础使用 SSH 登录远程主机 host 1ssh root@host  本地用户名与远程用户名一致，登录时可以省略用户名。  1ssh host  SSH 的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。  1ssh -p 2222 root@host 公钥登录 ssh-keygen 生成公钥">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -182,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#公钥登录"><span class="post-toc-number">2.</span> <span class="post-toc-text">公钥登录</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">公钥登录</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,45 +208,41 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>SSH的简单运用</p>
-<a id="more"></a>
-<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><p>SSH 登录远程主机 host</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@host</span><br></pre></td></tr></table></figure>
-
+            <p>SSH的简单运用
+&lt;!--more--&gt;</p>
+<h1>基础使用</h1>
+<p>SSH 登录远程主机 host
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@host</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>本地用户名与远程用户名一致，登录时可以省略用户名。</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh host</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh host</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>SSH 的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2222 root@host</span><br></pre></td></tr></table></figure>
-
-<h1 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h1><p>ssh-keygen 生成公钥</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2222 root@host</span><br></pre></td></tr></table></figure></p>
+<h1>公钥登录</h1>
+<p>ssh-keygen 生成公钥
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>运行结束以后，在<code>$HOME/.ssh/</code>目录下，会新生成两个文件 <code>id_rsa.pub</code>和<code>id_rsa</code>。前者是你的公钥，后者是你的私钥。</li>
 <li>将公钥传送到远程主机 host 上面</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id user@host</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id user@host</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>如果还是不行，就打开远程主机的<code>/etc/ssh/sshd_config</code>这个文件，检查下面几行前面”#”注释是否取掉。</li>
+<li>如果还是不行，就打开远程主机的<code>/etc/ssh/sshd_config</code>这个文件，检查下面几行前面&quot;#&quot;注释是否取掉。</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">RSAAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">PubkeyAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">AuthorizedKeysFile</span> <span class="string">.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">RSAAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">PubkeyAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">AuthorizedKeysFile</span> <span class="string">.ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
 <p>重启远程主机的 ssh 服务</p>
 <ul>
 <li>Ubuntu系统</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Debian 系统</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></p>
+
         </div>
 
         <blockquote class="post-copyright">

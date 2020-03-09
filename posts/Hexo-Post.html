@@ -34,30 +34,29 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Hexo">
-    <meta name="description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.">
+    <meta name="description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件. &amp;lt;!--more--&amp;gt; 1hexo new photo &quot;My Gallery&quot;  在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：  layout 文章的布局，可以取值post（默认值）或page，可以通过修改">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Post 模板">
 <meta property="og:url" content="https://vitan.me/posts/Hexo-Post.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.">
+<meta property="og:description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件. &amp;lt;!--more--&amp;gt; 1hexo new photo &quot;My Gallery&quot;  在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：  layout 文章的布局，可以取值post（默认值）或page，可以通过修改">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Post 模板">
-<meta name="twitter:description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.">
+<meta name="twitter:description" content="在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件. &amp;lt;!--more--&amp;gt; 1hexo new photo &quot;My Gallery&quot;  在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：  layout 文章的布局，可以取值post（默认值）或page，可以通过修改">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="//unpkg.com/indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
 </head>
-
 <body>
     <div id="loading" class="active"></div>
 
@@ -182,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#模板"><span class="post-toc-number">1.</span> <span class="post-toc-text">模板</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">模板</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,12 +208,12 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.</p>
-<a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new photo <span class="string">"My Gallery"</span></span><br></pre></td></tr></table></figure>
-
+            <p>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.
+&lt;!--more--&gt;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new photo <span class="string">"My Gallery"</span></span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：<ul>
+<li>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，可以在模版中使用的变量：
+<ul>
 <li>layout 文章的布局，可以取值post（默认值）或page，可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。</li>
 <li>title 文章的标题</li>
 <li>date 创建日期，文件的创建日期</li>
@@ -226,8 +225,8 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">- Linux</span><br><span class="line">categories:</span><br><span class="line">- notes</span><br><span class="line">author:</span><br><span class="line">- Vitan</span><br><span class="line">enable_unread_badge: <span class="literal">true</span></span><br><span class="line">thumbnail:</span><br><span class="line">- /images/Hexo.svg</span><br></pre></td></tr></table></figure>
-
+<h1>模板</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">- Linux</span><br><span class="line">categories:</span><br><span class="line">- notes</span><br><span class="line">author:</span><br><span class="line">- Vitan</span><br><span class="line">enable_unread_badge: <span class="literal">true</span></span><br><span class="line">thumbnail:</span><br><span class="line">- /images/Hexo.svg</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
