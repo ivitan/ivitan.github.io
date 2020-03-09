@@ -34,23 +34,23 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Win,Git">
-    <meta name="description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull &amp;lt;!--more--&amp;gt; 撤销 1234567891011# 撤销所有的已经add的文件:git reset HEAD .# 撤销某个文件或文件夹git reset HEAD -filename# 回退到上个版本git reset --h">
+    <meta name="description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
 <meta name="keywords" content="Linux,Win,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 版本回退">
 <meta property="og:url" content="https://vitan.me/posts/GitReset.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull &amp;lt;!--more--&amp;gt; 撤销 1234567891011# 撤销所有的已经add的文件:git reset HEAD .# 撤销某个文件或文件夹git reset HEAD -filename# 回退到上个版本git reset --h">
+<meta property="og:description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-05T03:02:41.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 版本回退">
-<meta name="twitter:description" content="Git 版本回退  本地替换为远程 123git fetch --allgit reset --hard origin/mastergit pull &amp;lt;!--more--&amp;gt; 撤销 1234567891011# 撤销所有的已经add的文件:git reset HEAD .# 撤销某个文件或文件夹git reset HEAD -filename# 回退到上个版本git reset --h">
+<meta name="twitter:description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">本地替换为远程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">撤销</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本地替换为远程"><span class="post-toc-number">1.</span> <span class="post-toc-text">本地替换为远程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#撤销"><span class="post-toc-number">2.</span> <span class="post-toc-text">撤销</span></a></li></ol>
         </nav>
     </aside>
 
@@ -211,32 +211,36 @@ ga('send', 'pageview');
             <blockquote>
 <p>Git 版本回退</p>
 </blockquote>
-<h1>本地替换为远程</h1>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
-<p>&lt;!--more--&gt;</p>
-<h1>撤销</h1>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 撤销所有的已经add的文件:</span><br><span class="line">git reset HEAD .</span><br><span class="line"></span><br><span class="line"># 撤销某个文件或文件夹</span><br><span class="line">git reset HEAD -filename</span><br><span class="line"></span><br><span class="line"># 回退到上个版本</span><br><span class="line">git reset --hard HEAD^ </span><br><span class="line"></span><br><span class="line"># 退到/进到 指定commit_id</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure></p>
+<h1 id="本地替换为远程"><a href="#本地替换为远程" class="headerlink" title="本地替换为远程"></a>本地替换为远程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 撤销所有的已经add的文件:</span><br><span class="line">git reset HEAD .</span><br><span class="line"></span><br><span class="line"># 撤销某个文件或文件夹</span><br><span class="line">git reset HEAD -filename</span><br><span class="line"></span><br><span class="line"># 回退到上个版本</span><br><span class="line">git reset --hard HEAD^ </span><br><span class="line"></span><br><span class="line"># 退到/进到 指定commit_id</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>文件被修改了，但未执行git add操作（working tree内撤销）</li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout fileName</span><br><span class="line">git checkout .</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout fileName</span><br><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>同时对多个文件执行了git add操作，但本次只想提交其中一部分文件</li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br><span class="line">git status</span><br><span class="line">git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br><span class="line">git status</span><br><span class="line">git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>文件执行了git add操作，但想撤销对其的修改（index内回滚）</li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取消暂存</span><br><span class="line">git reset HEAD fileName</span><br><span class="line"># 撤销修改</span><br><span class="line">git checkout fileName</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取消暂存</span><br><span class="line">git reset HEAD fileName</span><br><span class="line"># 撤销修改</span><br><span class="line">git checkout fileName</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>修改的文件已被git commit，但想再次修改不再产生新的Commit</li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改最后一次提交 </span><br><span class="line">git add sample.txt</span><br><span class="line">git commit --amend -m&quot;说明&quot;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改最后一次提交 </span><br><span class="line">git add sample.txt</span><br><span class="line">git commit --amend -m&quot;说明&quot;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>已在本地进行了多次git commit操作，现在想撤销到其中某次Commit</li>
 </ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]</span><br></pre></td></tr></table></figure></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -413,7 +417,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 
 </script>
 
-<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -433,7 +437,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 </li>
 </template>
 
-<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

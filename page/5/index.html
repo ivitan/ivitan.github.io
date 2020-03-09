@@ -49,7 +49,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -201,13 +201,7 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>解决 ArchLInux 无法挂载 NTFS 的U盘和硬盘
-&lt;!--more--&gt;</p>
-<h2>方法</h2>
-<pre><code class="language-bash">sudo pacman -Syu 
-sudo pacman -S ntfs-3g 
-</code></pre>
-
+          <p>解决 ArchLInux 无法挂载 NTFS 的U盘和硬盘</p>
       
 
           <a href="/posts/ArchNtfs.html" class="post-more waves-effect waves-button">
@@ -254,16 +248,7 @@ sudo pacman -S ntfs-3g
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Vue 安装与新建项目
-&lt;!--more--&gt;</p>
-<h2>Vue 安装</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安裝 Vue CLI 到全局</span></span><br><span class="line">npm i vue-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个基于 webpack 模板的新项目</span></span><br><span class="line">vue init webpack &lt;Project&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入项目,安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2>参考</h2>
-<ul>
-<li><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a>`</li>
-</ul>
-
+          <p>Vue 安装与新建项目</p>
       
 
           <a href="/posts/Vue-Js.html" class="post-more waves-effect waves-button">
@@ -310,24 +295,7 @@ sudo pacman -S ntfs-3g
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Hexo 同时部署到 Github Coding
-&lt;!--more--&gt;</p>
-<h2>添加 SSH 公钥</h2>
-<ol>
-<li>Github Coding添加同一个 SSH 公钥</li>
-<li>Github Coding 都部署好相关的仓库</li>
-</ol>
-<h2>设置 _config.yml</h2>
-<p><figure class="highlight bash"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>效果
-<ul>
-<li><a href="https://ivitan.github.io" target="_blank" rel="noopener">Github Page</a></li>
-<li><a href="https://vitan.coding.me" target="_blank" rel="noopener">Coding Page</a></li>
-</ul>
-</li>
-</ul>
-
+          <p>Hexo 同时部署到 Github Coding</p>
       
 
           <a href="/posts/HexoGithubCoding.html" class="post-more waves-effect waves-button">
@@ -377,104 +345,13 @@ sudo pacman -S ntfs-3g
           <p>以下是相关分析步骤与过程</p>
 <ol>
 <li>将Hw4文件导入</li>
-<li>使用auto_ins作如下分析</li>
-</ol>
-<ul>
+<li>使用auto_ins作如下分析<ul>
 <li>1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag</li>
 <li>2、对loss_flag列进行描述分析（计数计频次）</li>
 <li>3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系</li>
 </ul>
-<p>&lt;!--more--&gt;</p>
-<h1>导入数据</h1>
-<p>Hw4文件导入
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">'/home/vitan/Python/Python/HW4'</span>)</span><br><span class="line"><span class="comment"># 将auto_ins.csv读取进来,命名为auto</span></span><br><span class="line">auto = pd.read_csv(<span class="string">'auto_ins.csv'</span>,encoding=<span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure></p>
-<h1>数据处理</h1>
-<ul>
-<li>定义codeMy(x)函数，其作用是对auto里的loss重新编码为1/0，有数值为1，命名为loss_flag</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">codeMy</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<pre><code>- 对auto里的loss重新编码为1/0，有数值为1，命名为loss_flag
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag = auto.Loss.map(codeMy)</span><br></pre></td></tr></table></figure>
-
-- 应用匿名函数的方法对loss重新编码为1/0，有数值为1，命名为loss_flag1
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto[<span class="string">"loss_flag1"</span>]= auto.Loss.map(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h1>画图</h1>
-<h2>分析</h2>
-<ul>
-<li>对loss_flag列进行描述分析（计数计频次）</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5e60z7gj20ao06wwec.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<ul>
-<li>对loss_flag出险情况进行百分比统计</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()/auto.loss_flag.count()</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5ev4yt8j20ao06wwec.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<ul>
-<li>绘制是否出险柱形图</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts().plot(kind=<span class="string">"bar"</span>)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5u8ajf7j20aj06vjr7.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<ul>
-<li>分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置画布fig</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第一个子图层ax1</span></span><br><span class="line">ax1 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第二个子图层ax2</span></span><br><span class="line">ax2 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#是否出险和年龄关系：绘制箱形图（盒须图），分析出险和年龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"Age"</span>,data=auto,ax =ax1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#是否出险和驾龄：绘制箱形图（盒须图），分析出险和驾龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"exp"</span>,data=auto,ax =ax2)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5mv40ebj20aq07faa2.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5nop9tvj20aq07faa2.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<ul>
-<li>是否出险和性别：绘制面积堆积柱形图，分析出险和性别的关系</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> stack2dim <span class="keyword">import</span> *</span><br><span class="line">stack2dim(auto,<span class="string">"Gender"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5odvgqgj20ar07at8m.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<ul>
-<li>是否出险和婚姻状态：绘制面积堆积柱形图，分析出险和婚姻的关系</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stack2dim(auto,<span class="string">"Marital"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5ppeo0yj20ar07awee.jpg" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-
+</li>
+</ol>
       
 
           <a href="/posts/Spyder-1.html" class="post-more waves-effect waves-button">
@@ -521,53 +398,7 @@ sudo pacman -S ntfs-3g
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Python 排序
-&lt;!--more--&gt;</p>
-<h2>冒泡排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(li)</span>:</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(li)<span class="number">-1</span>): <span class="comment"># i表示第几趟</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(li)-i<span class="number">-1</span>): <span class="comment"># j表示图中的箭头</span></span><br><span class="line">        <span class="keyword">if</span> li[j] &gt; li[j+<span class="number">1</span>]:</span><br><span class="line">            li[j], li[j+<span class="number">1</span>] = li[j+<span class="number">1</span>], li[j]</span><br></pre></td></tr></table></figure></p>
-<p>冒泡排序(优化)
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort_1</span><span class="params">(li)</span>:</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(li)<span class="number">-1</span>): <span class="comment"># i表示第几趟</span></span><br><span class="line">    exchange = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(li)-i<span class="number">-1</span>): <span class="comment"># j表示图中的箭头</span></span><br><span class="line">        <span class="keyword">if</span> li[j] &gt; li[j+<span class="number">1</span>]:</span><br><span class="line">            li[j], li[j+<span class="number">1</span>] = li[j+<span class="number">1</span>], li[j]</span><br><span class="line">            exchange = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> exchange:</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/maopao.gif" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h2>选择排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select</span><span class="params">(li)</span>:</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(li)):</span><br><span class="line">    <span class="comment"># 第i趟开始时 无序区：li[i:]</span></span><br><span class="line">    <span class="comment"># 找无序区最小值，保存最小值的位置</span></span><br><span class="line">    min_index = i</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, len(li)):</span><br><span class="line">        <span class="keyword">if</span> li[j] &lt; li[min_index]:</span><br><span class="line">            min_index = j</span><br><span class="line">    li[min_index], li[i] = li[i], li[min_index]</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/xuanze.gif" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h2>插入排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(li)</span>:</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(li)): <span class="comment"># i是摸到的牌的下标</span></span><br><span class="line">    tmp = li[i]     <span class="comment"># tmp是摸到牌的值</span></span><br><span class="line">    <span class="comment"># 方法一</span></span><br><span class="line">    j = i - <span class="number">1</span> <span class="comment"># j是手里最后一张牌的下标    li[j]是手里最后一张牌的值</span></span><br><span class="line">    <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> li[j] &gt; tmp:   <span class="comment"># 两个终止条件：j小于0表示tmp是最小的 顺序不要乱 </span></span><br><span class="line">        li[j+<span class="number">1</span>] = li[j]</span><br><span class="line">        j -= <span class="number">1</span></span><br><span class="line">    <span class="comment"># 方法二</span></span><br><span class="line">    <span class="comment"># for j in range(i-1, -1, -1):</span></span><br><span class="line">    <span class="comment">#     if li[j] &gt; tmp:</span></span><br><span class="line">    <span class="comment">#         li[j+1] = li[j]</span></span><br><span class="line">    <span class="comment">#     else:</span></span><br><span class="line">    <span class="comment">#         break</span></span><br><span class="line">    li[j+<span class="number">1</span>] = tmp   <span class="comment">#将摸到的牌 插入到 往前挪过之后的 j 的后一位</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/charu.gif" alt></p>
-<h2>快速排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(lists, left, right)</span>:</span></span><br><span class="line">    <span class="comment"># 快速排序</span></span><br><span class="line">    <span class="keyword">if</span> left &gt;= right:</span><br><span class="line">        <span class="keyword">return</span> lists</span><br><span class="line">    key = lists[left]</span><br><span class="line">    low = left</span><br><span class="line">    high = right</span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> lists[right] &gt;= key:</span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        lists[left] = lists[right]</span><br><span class="line">        <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> lists[left] &lt;= key:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">        lists[right] = lists[left]</span><br><span class="line">    lists[right] = key</span><br><span class="line">    quick_sort(lists, low, left - <span class="number">1</span>)</span><br><span class="line">    quick_sort(lists, left + <span class="number">1</span>, high)</span><br><span class="line">    <span class="keyword">return</span> lists</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">part</span><span class="params">(li, left, right)</span>:</span>  <span class="comment"># 列表,最左索引,最右索引</span></span><br><span class="line">    tmp = li[left]  <span class="comment"># 先找个临时变量把第一个元素存起来</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:  <span class="comment"># 当最左小于最右</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> li[right] &gt;= tmp:  <span class="comment"># 当最左&lt;最右 且 最右边的值大于等于临时变量</span></span><br><span class="line">            right -= <span class="number">1</span>  <span class="comment"># 最右 往左 挪 1 个单位长度</span></span><br><span class="line">        li[left] = li[right]  <span class="comment"># 都不满足:把挪完之后的最右的值 赋值给 最左的值(即最右的值小于临时变量时,这个值挪到当前最左的值)</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> li[left] &lt;= tmp:  <span class="comment"># 当最左&lt;最右 且 最左边的值小于等于临时变量</span></span><br><span class="line">            left += <span class="number">1</span>  <span class="comment"># 最左 往右 挪 1 个单位长度</span></span><br><span class="line">        li[right] = li[left]  <span class="comment"># 都不满足:把挪完之后的最左的值 赋值给 最右的值(即最左的值大于临时变量时,这个值挪到当前最右的值)</span></span><br><span class="line">    li[left] = tmp  <span class="comment"># 当前最左最右的值相等时,把这个值赋给临时变量</span></span><br><span class="line">    <span class="keyword">return</span> left  <span class="comment"># 返回当前临时变量的索引</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick</span><span class="params">(li, left, right)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> left &lt; right:  <span class="comment"># 如果左索引&lt;右索引</span></span><br><span class="line">       mid = part(li, left, right)  <span class="comment"># 调用part进行分区 返回一个索引赋给mid</span></span><br><span class="line">       quick(li, left, mid - <span class="number">1</span>)  <span class="comment"># 递归调用quick 直到left=mid-1</span></span><br><span class="line">       quick(li, mid + <span class="number">1</span>, right)  <span class="comment"># 递归调用quick 直到mid+1=right</span></span><br><span class="line"></span><br><span class="line">li = list(range(<span class="number">1000</span>))</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">random.shuffle(li)</span><br><span class="line">print(li)</span><br><span class="line"></span><br><span class="line">quick(li, <span class="number">0</span>, len(li) - <span class="number">1</span>)</span><br><span class="line">print(li)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/kuaisu.gif" alt title>
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h2>堆排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sift</span><span class="params">(li, low, high)</span>:</span></span><br><span class="line">   tmp = li[low]</span><br><span class="line">   i = low</span><br><span class="line">   j = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">   <span class="keyword">while</span> j &lt;= high: <span class="comment"># 退出条件2：当前i位置是叶子结点，j位置超过了high</span></span><br><span class="line">       <span class="comment"># j 指向更大的孩子</span></span><br><span class="line">       <span class="keyword">if</span> j + <span class="number">1</span> &lt;= high <span class="keyword">and</span> li[j+<span class="number">1</span>] &gt; li[j]:</span><br><span class="line">           j = j + <span class="number">1</span> <span class="comment"># 如果右孩子存在并且更大，j指向右孩子</span></span><br><span class="line">       <span class="keyword">if</span> tmp &lt; li[j]:</span><br><span class="line">           li[i] = li[j]</span><br><span class="line">           i = j</span><br><span class="line">           j = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">       <span class="keyword">else</span>:       <span class="comment"># 退出条件1：tmp的值大于两个孩子的值</span></span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">   li[i] = tmp</span><br><span class="line"></span><br><span class="line"><span class="meta">@cal_time</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heap_sort</span><span class="params">(li)</span>:</span></span><br><span class="line">   <span class="comment"># 1. 建堆</span></span><br><span class="line">   n = len(li)</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(n//<span class="number">2</span><span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">       <span class="comment"># i 是建堆时要调整的子树的根的下标</span></span><br><span class="line">       sift(li, i, n<span class="number">-1</span>)</span><br><span class="line">   <span class="comment"># 2.挨个出数</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>): <span class="comment">#i表示当前的high值 也表示棋子的位置</span></span><br><span class="line">       li[i], li[<span class="number">0</span>] = li[<span class="number">0</span>], li[i]</span><br><span class="line">       <span class="comment"># 现在堆的范围 0~i-1</span></span><br><span class="line">       sift(li, <span class="number">0</span>, i<span class="number">-1</span>)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/zengdui.gif" alt></p>
-<h2>归并排序</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(li, low, mid, high)</span>:</span></span><br><span class="line">   i = low</span><br><span class="line">   j = mid + <span class="number">1</span></span><br><span class="line">   ltmp = []</span><br><span class="line">   <span class="keyword">while</span> i &lt;= mid <span class="keyword">and</span> j &lt;= high:</span><br><span class="line">       <span class="keyword">if</span> li[i] &lt; li[j]:</span><br><span class="line">           ltmp.append(li[i])</span><br><span class="line">           i += <span class="number">1</span></span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           ltmp.append(li[j])</span><br><span class="line">           j += <span class="number">1</span></span><br><span class="line">   <span class="keyword">while</span> i &lt;= mid:</span><br><span class="line">       ltmp.append(li[i])</span><br><span class="line">       i += <span class="number">1</span></span><br><span class="line">   <span class="keyword">while</span> j &lt;= high:</span><br><span class="line">       ltmp.append(li[j])</span><br><span class="line">       j += <span class="number">1</span></span><br><span class="line">   <span class="comment"># for k in range(low, high+1):</span></span><br><span class="line">   <span class="comment">#     li[k] = ltmp[k-low]</span></span><br><span class="line">   li[low:high+<span class="number">1</span>] = ltmp</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(li, low, high)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> low &lt; high:</span><br><span class="line">       mid = (low + high) // <span class="number">2</span></span><br><span class="line">       merge_sort(li, low, mid)</span><br><span class="line">       merge_sort(li, mid+<span class="number">1</span>, high)</span><br><span class="line">       merge(li, low, mid, high)</span><br><span class="line"></span><br><span class="line"><span class="comment"># li = list(range(10000))</span></span><br><span class="line"><span class="comment"># random.shuffle(li)</span></span><br><span class="line"><span class="comment"># merge_sort(li, 0, len(li)-1)</span></span><br><span class="line"><span class="comment"># print(li)</span></span><br><span class="line">li = [<span class="number">10</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>]</span><br><span class="line">merge_sort(li, <span class="number">0</span>, len(li)<span class="number">-1</span>)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/guibing.gif" alt></p>
-<hr>
-<p><strong>Via</strong></p>
-<ul>
-<li><a href="https://juejin.im/post/5b6ba2d26fb9a04fde5af361" target="_blank" rel="noopener">掘金</a></li>
-</ul>
-
+          <p>Python 排序</p>
       
 
           <a href="/posts/PythonAlgorithm.html" class="post-more waves-effect waves-button">
@@ -614,39 +445,7 @@ sudo pacman -S ntfs-3g
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>常用实现
-&lt;!--more--&gt;</p>
-<h2>九九乘法表</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">   <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">       print(<span class="string">'&#123;&#125;x&#123;&#125;=&#123;&#125;\t'</span>.format(j, i, i*j), end=<span class="string">''</span>)</span><br><span class="line">   print()</span><br></pre></td></tr></table></figure></p>
-<h1>列出目录文件</h1>
-<ul>
-<li>路径下的所有文件和文件夹的路径</li>
-</ul>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path = &apos;~/path&apos;</span><br><span class="line">for i in os.listdir(path):</span><br><span class="line">    print(os.path.join(path,i))</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>读取路径下的文本</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">txt_processing</span><span class="params">(folder_path)</span>:</span></span><br><span class="line">folder_list = os.listdir(folder_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件夹</span></span><br><span class="line"><span class="keyword">for</span> folder <span class="keyword">in</span> folder_list:</span><br><span class="line">    new_folder_path = os.path.join(folder_path,folder) <span class="comment"># 拼接路径</span></span><br><span class="line">    files = os.listdir(new_folder_path) <span class="comment"># 258/分类</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        <span class="comment"># if j &gt; 1000000000000000: # 要读的每个分类的文件个数</span></span><br><span class="line">        <span class="comment">#     break</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹，不是文件夹才打开</span></span><br><span class="line">            TxtPath = os.path.join(new_folder_path, file)</span><br><span class="line">            <span class="keyword">with</span> open(TxtPath,<span class="string">'r'</span>,encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">                Txt = fp.read()</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>输出以 xxx 为后缀的文件</li>
-</ul>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(filepath):</span><br><span class="line">    path = os.path.join(fillepath,i)</span><br><span class="line"><span class="keyword">if</span> path.endswith(<span class="string">'.xxx'</span>):</span><br><span class="line">    print(path)</span><br></pre></td></tr></table></figure></p>
-<h1>判断奇偶数</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number = int(input(<span class="string">'输入数字:'</span>))</span><br><span class="line"><span class="keyword">if</span> (num % <span class="number">2</span> ) == <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">'&#123;&#125;：是偶数'</span>.format(number))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'&#123;&#125;：是奇数'</span>.format(number))</span><br></pre></td></tr></table></figure></p>
-<h1>字符串判断</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"runoob.com"</span></span><br><span class="line">print(str.isalnum()) <span class="comment"># 判断所有字符都是数字或者字母</span></span><br><span class="line">print(str.isalpha()) <span class="comment"># 判断所有字符都是字母</span></span><br><span class="line">print(str.isdigit()) <span class="comment"># 判断所有字符都是数字</span></span><br><span class="line">print(str.islower()) <span class="comment"># 判断所有字符都是小写</span></span><br><span class="line">print(str.isupper()) <span class="comment"># 判断所有字符都是大写</span></span><br><span class="line">print(str.istitle()) <span class="comment"># 判断所有单词都是首字母大写，像标题</span></span><br><span class="line">print(str.isspace()) <span class="comment"># 判断所有字符都是空白字符、\t、\n、\r</span></span><br></pre></td></tr></table></figure></p>
-<h1>字符串到小写转换</h1>
-<pre><code class="language-python">str = 'vitan.me'
-# 把所有字符中的小写字母转换成大写字母
-print(str.upper())         
-# 把所有字符中的大写字母转换成小写字母
-print(str.lower())      
-# 把第一个字母转化为大写字母，其余小写
-print(str.capitalize())  
-# 把每个单词的第一个字母转化为大写，其余小写 
-print(str.title())     
-</code></pre>
-
+          <p>常用实现</p>
       
 
           <a href="/posts/PythonCommonlyUse.html" class="post-more waves-effect waves-button">
@@ -693,165 +492,7 @@ print(str.title())
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>数据类型
-&lt;!--more--&gt;</p>
-<h1>数值类型</h1>
-<h2>Int 整形</h2>
-<p>整数类型</p>
-<ul>
-<li>声明：</li>
-</ul>
-<ol>
-<li>十进制：<code>0~9</code></li>
-<li>var = 十进制数字</li>
-<li>var = 进制数字
-<ul>
-<li>二进制：<code>0~1</code>, 符号:  <code>0b</code></li>
-<li>八进制：<code>0~7</code>,符号:  <code>0o</code></li>
-<li>十六进制：<code>0~9A~F</code>,符号: <code>0x</code></li>
-</ul>
-</li>
-</ol>
-<h2>Float 浮点型</h2>
-<p>即小数</p>
-<ul>
-<li>声明：</li>
-<li>var = 小数</li>
-</ul>
-<h2>Bool 布尔类型</h2>
-<p>只有两个值：True 和 False</p>
-<h2>Complex 复数类型</h2>
-<p>复数的完整结构:实数部分+虚数部分</p>
-<ul>
-<li>声明：</li>
-</ul>
-<ol>
-<li>var = 实数 + 虚数 如：var = 5 + 4j</li>
-<li>var = complex(实数，虚数值) 如：var = complex(5,3)</li>
-</ol>
-<h1>String类型,字符类型</h1>
-<h2>String 字符串类型</h2>
-<p>即文字类型</p>
-<ul>
-<li>声明：</li>
-</ul>
-<ol>
-<li>var = 'str...'</li>
-<li>var = &quot;str...&quot;</li>
-<li>var = '''str...'''    or   var = &quot;&quot;&quot;str...&quot;&quot;&quot;</li>
-</ol>
-<h2>转义字符</h2>
-<p>某种特定的格式使得字符的意义发生改变</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">符号</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>\</code></td>
-<td style="text-align:left">续行符</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\\</code></td>
-<td style="text-align:left">反斜杠符号()</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\'</code></td>
-<td style="text-align:left">单引号</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\&quot;</code></td>
-<td style="text-align:left">双引号</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\a</code></td>
-<td style="text-align:left">响铃</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\b</code></td>
-<td style="text-align:left">退格(backspace)</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\e</code></td>
-<td style="text-align:left">转义</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\000</code></td>
-<td style="text-align:left">空</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\n</code></td>
-<td style="text-align:left">换行</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\v</code></td>
-<td style="text-align:left">纵向制表符</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\t</code></td>
-<td style="text-align:left">横向制表符</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\r</code></td>
-<td style="text-align:left">回车</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\f</code></td>
-<td style="text-align:left">换页</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\oyy</code></td>
-<td style="text-align:left">八进制数，yy代表的字符，例如：\o12代表换行</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\xyy</code></td>
-<td style="text-align:left">十六进制数，yy代表的字符，例如：\x0a代表换行</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>\other</code></td>
-<td style="text-align:left">其它的字符以普通格式输出</td>
-</tr>
-</tbody>
-</table>
-<h2>元字符串</h2>
-<p>任意字符串之前添加字母r或者R，则当前字符串中所有转义字符在使用时都不会进行转义操作</p>
-<h1>列表类型(List)</h1>
-<p>一系列数据的顺序组合，并且组合之后可以修改</p>
-<ul>
-<li>声明：
-<ul>
-<li>list = []</li>
-</ul>
-</li>
-</ul>
-<h2>元组类型(Tuple)</h2>
-<p>一系列数据的顺序组合，但是组合之后不可以修改</p>
-<ul>
-<li>声明:
-<ul>
-<li>tuple = ()</li>
-</ul>
-</li>
-</ul>
-<h2>字典类型(Dict)</h2>
-<p>具有键值映射关系的一组无序数据组合，可以修改</p>
-<ul>
-<li>声明:
-<ul>
-<li>dict = {'key1':'value1','key2':'value2'...}</li>
-</ul>
-</li>
-</ul>
-<h2>集合类型(Set)</h2>
-<p>一组特定数据的无序组合，所有数据不会重复</p>
-<ul>
-<li>声明:</li>
-<li>var = {value1,value2...}</li>
-</ul>
-
+          <p>数据类型</p>
       
 
           <a href="/posts/PythonDateTypes.html" class="post-more waves-effect waves-button">
@@ -898,20 +539,7 @@ print(str.title())
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>回归分析
-&lt;!--more--&gt;</p>
-<h1>导入数据</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas </span><br><span class="line">df = pandas.read_csv(<span class="string">'house-prices.csv'</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure></p>
-<h1>one-hot 处理</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对Brick与Neighborhood两列数据进行one-hot处理</span></span><br><span class="line">house =  pandas.concat([df,pandas.get_dummies(df[<span class="string">'Brick'</span>]),pandas.get_dummies(df[<span class="string">'Neighborhood'</span>])] ,axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#删除No列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'No'</span>]</span><br><span class="line"><span class="comment">#删除West列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'West'</span>]</span><br><span class="line"><span class="comment">#删除Brick列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Brick'</span>]</span><br><span class="line"><span class="comment">#删除Neighborhood列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Neighborhood'</span>]</span><br><span class="line"><span class="comment">#删除Home列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Home'</span>]</span><br><span class="line">house.head()</span><br></pre></td></tr></table></figure></p>
-<h1>statsmodels.api</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#X为house的'SqFt', 'Bedrooms', 'Bathrooms', 'Offers', 'Yes', 'East', 'North'列</span></span><br><span class="line">X = house[[<span class="string">'SqFt'</span>, <span class="string">'Bedrooms'</span>, <span class="string">'Bathrooms'</span>, <span class="string">'Offers'</span>, <span class="string">'Yes'</span>, <span class="string">'East'</span>, <span class="string">'North'</span>]]</span><br><span class="line"><span class="comment">#Y为house的Price列的values</span></span><br><span class="line">Y = house[<span class="string">'Price'</span>]</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy.core.multiarray</span><br><span class="line"><span class="keyword">from</span> pandas.core <span class="keyword">import</span> datetools</span><br><span class="line"><span class="comment">#导入statsmodels.api里面的sm，用于评估模型</span></span><br><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"><span class="comment">#利用sm.add_constant为X增加一列名为const,值为1的数据</span></span><br><span class="line">X2 = sm.add_constant(X)</span><br><span class="line"><span class="comment">#调用sm的OLS函数对Y,X2进行模型创建</span></span><br><span class="line">est = sm.OLS(Y,X2)</span><br><span class="line"><span class="comment">#调用est的fit函数创建回归结果</span></span><br><span class="line">est2 = est.fit()</span><br><span class="line"><span class="comment">#输出打印est2的概要信息</span></span><br><span class="line">print(est2.summary())</span><br><span class="line">est2.aic</span><br></pre></td></tr></table></figure></p>
-<h2>最优组合</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">predictorcols = [<span class="string">'SqFt'</span>, <span class="string">'Bedrooms'</span>, <span class="string">'Bathrooms'</span>, <span class="string">'Offers'</span>, <span class="string">'Yes'</span>, <span class="string">'East'</span>, <span class="string">'North'</span>]</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(predictorcols)+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> variables <span class="keyword">in</span> itertools.combinations(predictorcols,i):</span><br><span class="line">        print(variables)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools<span class="comment">#导入itertools库</span></span><br><span class="line"><span class="comment">#创建字典AICs ，用于保存每个列名组合的aic结果</span></span><br><span class="line">AICs = &#123;&#125;</span><br><span class="line"><span class="comment">#for循环，循环变量i从1到predictorcols列表的长度加1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(predictorcols)+<span class="number">1</span>):</span><br><span class="line">    <span class="comment">#再次for循环，循环变量var的范围为predictorcols的各种i个元素组合集合itertools.combinations(predictorcols,i)</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> itertools.combinations(predictorcols,i):   </span><br><span class="line">        <span class="comment">#predictors为数据框X里的var列的数据，记得要先将var转换成list</span></span><br><span class="line">        predictors  = X[list(var)]</span><br><span class="line">        <span class="comment">#利用sm.add_constant为predictors增加一列名为const,值为1的数据</span></span><br><span class="line">        predictors2 =  sm.add_constant(predictors)</span><br><span class="line">        <span class="comment">#调用sm的OLS函数对y,predictors2进行模型创建</span></span><br><span class="line">        est = sm.OLS(Y,predictors2)</span><br><span class="line">        <span class="comment">#调用est的fit函数创建回归结果</span></span><br><span class="line">        res = est.fit()</span><br><span class="line">        print(res.aic) <span class="comment"># 每种组合的aic值</span></span><br><span class="line">    <span class="comment">#将res.aic的结果赋值给 AICs的每一个var   </span></span><br><span class="line">        AICs[var] =  res.aic</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入collections的Counter</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="comment">#调用Counter，对AICs进行降序排序</span></span><br><span class="line">c = Counter(AICs)</span><br><span class="line"><span class="comment">#调用排序后的c倒数10个数据对象</span></span><br><span class="line">c.most_common()[::<span class="number">-10</span>]</span><br></pre></td></tr></table></figure></p>
-
+          <p>回归分析</p>
       
 
           <a href="/posts/RegressionValidation.html" class="post-more waves-effect waves-button">
@@ -958,19 +586,7 @@ print(str.title())
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Scrapy anjuke.com 广州二手房数据(保存为 csv)
-&lt;!--more--&gt;</p>
-<h1>Spiders</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> Spider,Request</span><br><span class="line"><span class="keyword">from</span> anjuke.items <span class="keyword">import</span> AnjukeItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AnjukehouseSpider</span><span class="params">(Spider)</span>:</span></span><br><span class="line">    name = <span class="string">'anjukeHouse'</span></span><br><span class="line">    allowed_domains = [<span class="string">'anjuke.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'https://guangzhou.anjuke.com/sale/p1-rd1/#filtersort'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="comment"># 所有房子URL</span></span><br><span class="line">        urls = response.xpath(<span class="string">'//div[@class="house-title"]/a/@href'</span>).extract()</span><br><span class="line">        <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">            <span class="keyword">yield</span> Request(url,callback=self.parse_detail)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 下一页</span></span><br><span class="line">        next = response.xpath(<span class="string">'//*[@id="content"]/div[4]/div[7]/a[7]/@href'</span>).extract()</span><br><span class="line">        <span class="keyword">if</span> next:</span><br><span class="line">            next = response.urljoin(next[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">yield</span> Request(next,callback=self.parse)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_detail</span><span class="params">(self,response)</span>:</span></span><br><span class="line">        item = AnjukeItem()</span><br><span class="line">        item[<span class="string">'date'</span>] = response.xpath(<span class="string">'//span[@class="house-encode"]/text()'</span>).extract()[<span class="number">0</span>].split()</span><br><span class="line">        item[<span class="string">'tittle'</span>] = response.xpath(<span class="string">'//h3[@class="long-title"]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'price'</span>] = response.xpath(<span class="string">'//span[@class="light info-tag"]/em/text()'</span>).extract_first().split()</span><br><span class="line"></span><br><span class="line">        houseInfo = response.xpath(<span class="string">'//div[@class="houseInfo-content"]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'huxing'</span>] = houseInfo[<span class="number">2</span>].strip().replace(<span class="string">"\n"</span>,<span class="string">""</span>).replace(<span class="string">"\t"</span>,<span class="string">""</span>).split()</span><br><span class="line">        item[<span class="string">'area'</span>] = houseInfo[<span class="number">7</span>].strip().split()</span><br><span class="line">        item[<span class="string">'built'</span>] = houseInfo[<span class="number">9</span>].strip().replace(<span class="string">"\n"</span>, <span class="string">""</span>).replace(<span class="string">"\t"</span>, <span class="string">""</span>).split()</span><br><span class="line">        item[<span class="string">'chaoxiang'</span>] = houseInfo[<span class="number">10</span>].strip().split()</span><br><span class="line">        item[<span class="string">'leixing'</span>] = houseInfo[<span class="number">-8</span>].strip().split()</span><br><span class="line">        item[<span class="string">'louceng'</span>] = houseInfo[<span class="number">-7</span>].strip().split()</span><br><span class="line">        item[<span class="string">'zhuangxiu'</span>] = houseInfo[<span class="number">-6</span>].strip().split()</span><br><span class="line">        print(item)</span><br><span class="line">    <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure></p>
-<h2>items</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> Item,Field</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AnjukeItem</span><span class="params">(Item)</span>:</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    <span class="comment"># name = scrapy.Field()</span></span><br><span class="line">    tittle = Field()</span><br><span class="line">    huxing = Field()</span><br><span class="line">    area = Field()</span><br><span class="line">    chaoxiang = Field()</span><br><span class="line">    louceng = Field()</span><br><span class="line">    price = Field()</span><br><span class="line">    zhuangxiu = Field()</span><br><span class="line">    leixing = Field()</span><br><span class="line">    date = Field()</span><br><span class="line">    built = Field()</span><br></pre></td></tr></table></figure></p>
-<h2>settings</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">BOT_NAME = <span class="string">'anjuke'</span></span><br><span class="line"></span><br><span class="line">SPIDER_MODULES = [<span class="string">'anjuke.spiders'</span>]</span><br><span class="line">NEWSPIDER_MODULE = <span class="string">'anjuke.spiders'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">DOWNLOAD_DELAY = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">DEFAULT_REQUEST_HEADERS = &#123;</span><br><span class="line">    <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span>,</span><br><span class="line">    <span class="string">'Accept-Language'</span>: <span class="string">'en'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'</span>,</span><br><span class="line">    <span class="string">'accept-encoding'</span>: <span class="string">'gzip, deflate, br'</span>,</span><br><span class="line">    <span class="string">'accept-language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">    <span class="string">'cache-control'</span>: <span class="string">'max-age=0'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line"><span class="string">'anjuke.pipelines.Pipeline_ToCSV'</span>: <span class="number">300</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>pipelines</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pipeline_ToCSV</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.csvwriter = csv.writer(open(<span class="string">'anjuke.csv'</span>, <span class="string">'w'</span>), delimiter=<span class="string">','</span>)</span><br><span class="line">        self.csvwriter.writerow([<span class="string">'date'</span>,<span class="string">'tittle'</span>, <span class="string">'price'</span>, <span class="string">'huxing'</span>, <span class="string">'area'</span>,<span class="string">'built'</span>,<span class="string">'chaoxiang'</span>,<span class="string">'leibie'</span>,<span class="string">'loucheng'</span>,<span class="string">'zhuangxiu'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, ampa)</span>:</span></span><br><span class="line">        rows = zip(item[<span class="string">'date'</span>],item[<span class="string">'tittle'</span>], item[<span class="string">'price'</span>],item[<span class="string">'huxing'</span>],item[<span class="string">'area'</span>],item[<span class="string">'built'</span>],item[<span class="string">'chaoxiang'</span>],item[<span class="string">'leixing'</span>],item[<span class="string">'louceng'</span>],item[<span class="string">'zhuangxiu'</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> rows:</span><br><span class="line">            self.csvwriter.writerow(row)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure></p>
-<h1>Selenium</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 18-12-28 下午6:48</span></span><br><span class="line"><span class="comment"># @Author  : Vitan</span></span><br><span class="line"><span class="comment"># @File    : anjuke.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span>  BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="keyword">import</span> time,random</span><br><span class="line"></span><br><span class="line">broswer = webdriver.Chrome()</span><br><span class="line">wait = WebDriverWait(broswer,<span class="number">10</span>)</span><br><span class="line">houseInfo = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_urls</span><span class="params">()</span>:</span></span><br><span class="line">    page_urls = []</span><br><span class="line">    star_url = <span class="string">'https://guangzhou.anjuke.com/sale/p'</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">51</span>):</span><br><span class="line">        url = star_url+str(i)</span><br><span class="line">        page_urls.append(url)</span><br><span class="line">    <span class="keyword">return</span> page_urls</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">HouseUrl</span><span class="params">(url)</span>:</span></span><br><span class="line">    time.sleep(random.random()*<span class="number">10</span>)</span><br><span class="line">    broswer.get(url)</span><br><span class="line">    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, <span class="string">'.curr'</span>)))</span><br><span class="line">    urls = broswer.find_elements_by_css_selector(<span class="string">'.houseListTitle'</span>) <span class="comment"># a 标签</span></span><br><span class="line">    house_urls = []</span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> urls:</span><br><span class="line">        urls = a.get_attribute(<span class="string">'href'</span>)</span><br><span class="line">        house_urls.append(urls)</span><br><span class="line">    <span class="keyword">return</span> house_urls</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_detail</span><span class="params">(url)</span>:</span></span><br><span class="line">    time.sleep(random.random()*<span class="number">10</span>)</span><br><span class="line">    broswer.get(url)</span><br><span class="line">    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, <span class="string">'.houseInfoBox'</span>)))</span><br><span class="line">    info = &#123;&#125;</span><br><span class="line">    <span class="comment"># info['标题'] = broswer.find_element_by_css_selector('.long-title').get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['总价'] = broswer.find_elements_by_css_selector('.basic-info span')[0].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['户型'] = broswer.find_elements_by_css_selector('.basic-info span')[1].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['面积'] = broswer.find_elements_by_css_selector('.basic-info span')[2].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['单价'] = broswer.find_elements_by_css_selector('.houseInfo-content')[2].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['朝向'] = broswer.find_elements_by_css_selector('.houseInfo-content')[7].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['月供'] = broswer.find_elements_by_css_selector('.houseInfo-content')[8].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['楼层'] = broswer.find_elements_by_css_selector('.houseInfo-content')[-7].get_attribute('textContent')</span></span><br><span class="line">    <span class="comment"># info['装修'] = broswer.find_elements_by_css_selector('.houseInfo-content')[-6].get_attribute('textContent')</span></span><br><span class="line">    html = broswer.page_source</span><br><span class="line">    soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">    info[<span class="string">'标题'</span>] = soup.select(<span class="string">'.long-title'</span>)[<span class="number">0</span>].text</span><br><span class="line">    info[<span class="string">'总价'</span>] = soup.select(<span class="string">'.basic-info span'</span>)[<span class="number">0</span>].text</span><br><span class="line">    info[<span class="string">'户型'</span>] = soup.select(<span class="string">'.basic-info span'</span>)[<span class="number">1</span>].text</span><br><span class="line">    info[<span class="string">'面积'</span>] = soup.select(<span class="string">'.basic-info span'</span>)[<span class="number">2</span>].text</span><br><span class="line">    info[<span class="string">'单价'</span>] = soup.select(<span class="string">'.houseInfo-content'</span>)[<span class="number">2</span>].text</span><br><span class="line">    info[<span class="string">'朝向'</span>] = soup.select(<span class="string">'.houseInfo-content'</span>)[<span class="number">7</span>].text</span><br><span class="line">    info[<span class="string">'月供'</span>] = soup.select(<span class="string">'.houseInfo-content'</span>)[<span class="number">8</span>].text</span><br><span class="line">    info[<span class="string">'楼层'</span>] = soup.select(<span class="string">'.houseInfo-content'</span>)[<span class="number">-7</span>].text</span><br><span class="line">    info[<span class="string">'装修'</span>] = soup.select(<span class="string">'.houseInfo-content'</span>)[<span class="number">-6</span>].text</span><br><span class="line">    k = [<span class="string">'标题'</span>,<span class="string">'总价'</span>,<span class="string">'户型'</span>,<span class="string">'面积'</span>,<span class="string">'单价'</span>,<span class="string">'朝向'</span>,<span class="string">'月供'</span>,<span class="string">'楼层'</span>,<span class="string">'装修'</span>]</span><br><span class="line">    info_adj = dict(zip(k,list(info.values())))</span><br><span class="line">    houseInfo.append(info_adj)</span><br><span class="line">    print(houseInfo)</span><br><span class="line">    <span class="keyword">return</span> houseInfo</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_to_csv</span><span class="params">(houseInfo)</span>:</span></span><br><span class="line">    df = pandas.DataFrame(houseInfo)</span><br><span class="line">    df.to_csv(<span class="string">'maoming.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    page_urls = get_urls()</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> page_urls:</span><br><span class="line">        house_urls = HouseUrl(url)</span><br><span class="line">        <span class="keyword">for</span> url <span class="keyword">in</span> house_urls:</span><br><span class="line">            houseInfo=get_detail(url)</span><br><span class="line">            save_to_csv(houseInfo)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
-
+          <p>Scrapy anjuke.com 广州二手房数据(保存为 csv)</p>
       
 
           <a href="/posts/ScrapyAnjuke.html" class="post-more waves-effect waves-button">
@@ -1017,41 +633,7 @@ print(str.title())
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Python 数据可视化
-&lt;!--more--&gt;</p>
-<h1>读取</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#将purchase_order.tab文件里面的相关字段名赋值给m_cols</span></span><br><span class="line">m_cols = [<span class="string">'Time'</span>,<span class="string">'Action'</span>,<span class="string">'User'</span>,<span class="string">'Product'</span>, <span class="string">'Quantity'</span>,<span class="string">'Price'</span>]</span><br><span class="line"><span class="comment">#读取purchase_order.tab文件，文件间隔符为\t，读取进来后Dates为第一列数据，文件列名为以上m_cols编码为utf-8,</span></span><br><span class="line">orders = pd.read_csv(<span class="string">'purchase_order.tab'</span>,sep = <span class="string">'\t'</span>,parse_dates = &#123;<span class="string">'Dates'</span>:[<span class="number">0</span>]&#125;,names = m_cols)</span><br><span class="line"><span class="comment">#查看orders整个数据框的相关信息</span></span><br><span class="line">orders.head()</span><br></pre></td></tr></table></figure></p>
-<p>查看记录
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看orders的Product列前5行数据</span></span><br><span class="line">orders[<span class="string">'Product'</span>].head()</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看Product为P0006944501的Price列数据，并获取其描述性统计信息</span></span><br><span class="line">orders.ix[orders[<span class="string">'Product'</span>] ==<span class="string">'P0006944501'</span>,<span class="string">'Product'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看Product为P0006944501的Price列数据，求其均值</span></span><br><span class="line">orders[orders[<span class="string">'Product'</span>]==<span class="string">'P0006944501'</span>][<span class="string">'Price'</span>].describe()</span><br><span class="line">orders[orders[<span class="string">'Product'</span>]==<span class="string">'P0006944501'</span>][<span class="string">'Price'</span>].mea()</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算orders里面有哪些Product</span></span><br><span class="line">orders[<span class="string">'Product'</span>].unique()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#求orders里面不同类别的Product共有多少个</span></span><br><span class="line">len(orders[<span class="string">'Product'</span>].unique())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># select Product, avg(Price) from orders </span></span><br><span class="line"><span class="comment"># group by Product limit 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#按Product统计其各自的销售价格均值</span></span><br><span class="line">orders.groupby(<span class="string">'Product'</span>)[<span class="string">'Price'</span>].mean()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># select Product, avg(Price) from orders </span></span><br><span class="line"><span class="comment"># group by Product order by avg(Price) desc limit 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#按Product统计其各自的销售价格均值并将求得的数据进行降序排序</span></span><br><span class="line">orders.groupby(<span class="string">'Product'</span>)[<span class="string">'Price'</span>].mean().sort_values(ascending=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></p>
-<p>增加
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#为orders增加新列Total_Price，并利用orders里面的相关数据计算求得</span></span><br><span class="line">orders[<span class="string">'Total_Price'</span>] = orders[<span class="string">'Quantity'</span>] * orders[<span class="string">'Price'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>排序
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#select User, sum(Total_Price) from orders</span></span><br><span class="line"><span class="comment">#gorup by User order by sum(Total_Price) desc limit 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#按客户统计他们的消费总金额，并按降序排列</span></span><br><span class="line">orders.groupby(<span class="string">'User'</span>)[<span class="string">'Total_Price'</span>].sum().sort_values(ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure></p>
-<h1>再次读取</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">m_cols = [<span class="string">'Time'</span>,<span class="string">'Action'</span>,<span class="string">'User'</span>,<span class="string">'Product'</span>]</span><br><span class="line"><span class="comment">#读取purchase_view.tab文件，文件间隔符为\t，要求读取进来后Dates为第一列数据，文件列名为以上m_cols编码为utf-8,</span></span><br><span class="line">views =pd.read_csv(<span class="string">'purchase_view.tab'</span>,sep=<span class="string">'\t'</span>,parse_dates=&#123;<span class="string">'Dates'</span>:[<span class="number">0</span>]&#125;,names =m_cols,encoding=<span class="string">'UTF-8'</span>)</span><br><span class="line"><span class="comment">#查看views整个数据框的相关信息</span></span><br><span class="line">views.info()</span><br><span class="line"><span class="comment">#查看前5行数据</span></span><br><span class="line">views.head()</span><br></pre></td></tr></table></figure></p>
-<p>分组、排序
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SELECT User, Product, COUNT(Product) FROM Orders GROUP BY User, Product</span></span><br><span class="line"><span class="comment">#在购买数据表中按不同用户不同产品进行分组，并统计每个用户产品的购买数量，将统计结果以“buys”作为字段名添加进统计结果中</span></span><br><span class="line">orders_cnt= orders.groupby([<span class="string">'User'</span>,<span class="string">'Product'</span>])[<span class="string">'Action'</span>].count().reset_index(name=<span class="string">'buys'</span>)</span><br><span class="line">orders_cnt.head()</span><br><span class="line"></span><br><span class="line"><span class="comment">## SELECT User, Product, COUNT(Product) FROM views GROUP BY User, Product</span></span><br><span class="line"><span class="comment">#在浏览记录表数据表中按不同用户不同产品进行分组，并统计每个用户产品的浏览量，并对统计结果按浏览量降序排列，最后将统计结果以“views”作为字段名添加进统计结果中,</span></span><br><span class="line">views_cnt =views.groupby([<span class="string">'User'</span>,<span class="string">'Product'</span>])[<span class="string">'Action'</span>].count().sort_values(ascending=<span class="literal">False</span>).reset_index(name = <span class="string">'views'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>合并
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将用户购买与浏览产品的数据合并在一起，生成表格merge_df,以views_cnt作为右连接表，连接结果为右连接</span></span><br><span class="line">merge_df = pd.merge(orders_cnt,views_cnt,on=[<span class="string">'User'</span>,<span class="string">'Product'</span>],how=<span class="string">'right'</span>)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><a href="http://www.cnblogs.com/zxlovenet/p/4005256.html" target="_blank" rel="noopener">数据表的连接问题</a></li>
-<li><a href="https://blog.csdn.net/ZK_J1994/article/details/77717700" target="_blank" rel="noopener">merge与concat的区别</a></li>
-</ul>
-<p>不同日期與時間
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">views.head()<span class="comment">#查看views</span></span><br><span class="line">views.info()<span class="comment">#查看views的相关信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># year, month, day, date, hour </span></span><br><span class="line"><span class="comment">#查看views的Dates列数据的年、月、日期等信息</span></span><br><span class="line">views[<span class="string">'Dates'</span>].dt.hour</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># select date, count(action) from views</span></span><br><span class="line"><span class="comment"># group by date</span></span><br><span class="line"><span class="comment">#在views表中，统计每一天网站的用户浏览总次数</span></span><br><span class="line">views_cnt_by_date  = views.groupby(views[<span class="string">'Dates'</span>].dt.date)[<span class="string">'Action'</span>].count()</span><br><span class="line">views_cnt_by_date.head()<span class="comment">#查看以上统计结果</span></span><br></pre></td></tr></table></figure></p>
-<h1>绘制图表</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%pylab inline</span><br><span class="line"></span><br><span class="line"><span class="comment">#对每天用户浏览网站情况绘制折线图，图大小为10*5</span></span><br><span class="line"> views_cnt_by_date.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>])</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select hour(Dates), count(action) from views</span></span><br><span class="line"><span class="comment"># group by  hour(Dates)</span></span><br><span class="line"><span class="comment">#在views表中，统计一天24内每个小时网站的用户浏览总次数</span></span><br><span class="line">views_cnt_by_hour  = views.groupby(views[<span class="string">'Dates'</span>].dt.hour)[<span class="string">'Action'</span>].count()</span><br><span class="line"></span><br><span class="line">%pylab inline</span><br><span class="line"><span class="comment">#各个小时用户浏览网站情况绘制折线图，图大小为10*5，标题为view count by hour</span></span><br><span class="line">views_cnt_by_hour.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],title=<span class="string">'view count by hour'</span>)</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加新列Total_price,并利用orders相关数据计算</span></span><br><span class="line">orders[<span class="string">'Total_price'</span>] = orders[<span class="string">'Quantity'</span>] * orders[<span class="string">'Price'</span>]</span><br><span class="line"><span class="comment">#按客户统计他们的消费总金额，并按降序排列,最终取前10个用户的统计数据</span></span><br><span class="line">g = orders.groupby(<span class="string">'User'</span>)[<span class="string">'Total_price'</span>].sum().sort_values(ascending=<span class="literal">False</span>)[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line"><span class="comment">#绘制前10个用户的消费金额柱形图，图片大小10*5</span></span><br><span class="line">g.plot(kind=<span class="string">'bar'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],color=<span class="string">'y'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>统计
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在views表中统计网站每天的浏览总数</span></span><br><span class="line">view_daily_cnt = views.groupby(views[<span class="string">'Dates'</span>].dt.date)[<span class="string">'Action'</span>].count()</span><br><span class="line">view_daily_cnt.head()</span><br><span class="line"></span><br><span class="line"><span class="comment">#在orders表中统计网站每天用户的购买总次数</span></span><br><span class="line">orders_daily_cnt = orders.groupby(orders[<span class="string">'Dates'</span>].dt.date)[<span class="string">'Action'</span>].count()</span><br><span class="line">orders_daily_cnt.head()</span><br></pre></td></tr></table></figure></p>
-<p>合并
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将view_daily_cnt与orders_daily_cnt表按列方向拼接,不需要按主键合并</span></span><br><span class="line">df =pd.concat([view_daily_cnt,orders_daily_cnt],axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment">##关于merge与concat的区别：https://blog.csdn.net/ZK_J1994/article/details/77717700</span></span><br><span class="line">df=df.dropna()<span class="comment">#删除具有空值的行,并将删除结果覆盖原数据框</span></span><br><span class="line">df.head()</span><br><span class="line">df.columns=[<span class="string">'Views'</span>,<span class="string">'Orders'</span>]<span class="comment">#将df的字段名命名为'Views', 'Orders'</span></span><br><span class="line">    df.head()</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对df数据绘制折线图，图的大小为10*5，设置X轴刻度的显示旋转度为30</span></span><br><span class="line">df.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],rot=<span class="number">30</span>)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><a href="https://www.cnblogs.com/xitingxie/p/8359392.html" target="_blank" rel="noopener">plot里面各参数的使用说明</a></li>
-</ul>
-
+          <p>Python 数据可视化</p>
       
 
           <a href="/posts/Visualization.html" class="post-more waves-effect waves-button">
@@ -1123,7 +705,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 
 </script>
 
-<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -1143,7 +725,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 </li>
 </template>
 
-<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

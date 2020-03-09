@@ -49,7 +49,7 @@ ga('send', 'pageview');
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -201,213 +201,7 @@ ga('send', 'pageview');
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Java 中 Srting 常用方法。
-&lt;!--more--&gt;</p>
-<h1><code>length()</code>字符串长度</h1>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www"</span>);</span><br><span class="line">        String Str2 = <span class="keyword">new</span> String(<span class="string">"github"</span> );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"字符串 Str1 长度 :"</span>);</span><br><span class="line">        System.out.println(Str1.length());</span><br><span class="line">        System.out.print(<span class="string">"字符串 Str2 长度 :"</span>);</span><br><span class="line">        System.out.println(Str2.length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1><code>charAt()</code>截取一个字符</h1>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"www.qq.com"</span>;</span><br><span class="line">        <span class="keyword">char</span> result = s.charAt(<span class="number">8</span>);</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果：c</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch:</span><br><span class="line">ch=<span class="string">"abc"</span>.charAt(<span class="number">1</span>); <span class="comment">//返回b</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>getChars()</code>截取多个字符</h1>
-<p>语法
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span>[] dst,  <span class="keyword">int</span> dstBegin)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>参数:</p>
-<p>srcBegin -- 字符串中要复制的第一个字符的索引。</p>
-<p>srcEnd -- 字符串中要复制的最后一个字符之后的索引。</p>
-<p>dst -- 目标数组。</p>
-<p>dstBegin -- 目标数组中的起始偏移量。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line">        <span class="keyword">char</span>[] Str2 = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Str1.getChars(<span class="number">4</span>, <span class="number">10</span>, Str2, <span class="number">0</span>);</span><br><span class="line">            System.out.print(<span class="string">"拷贝的字符串为："</span> );</span><br><span class="line">            System.out.println(Str2 );</span><br><span class="line">        &#125; <span class="keyword">catch</span>( Exception ex) &#123;</span><br><span class="line">            System.out.println(<span class="string">"触发异常..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：拷贝的字符串为：runoob</p>
-<p>sourceStart指定了子串开始字符的下标，sourceEnd指定了子串结束后的下一个字符的下标。因此， 子串包含从sourceStart到sourceEnd-1的字符。接收字符的数组由target指定，target中开始复制子串的下标值是targetStart。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">"this is a demo of the getChars method."</span>;</span><br><span class="line">　　　　<span class="keyword">char</span> buf[]=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">20</span>];</span><br><span class="line">　　　　s.getChars(<span class="number">10</span>,<span class="number">14</span>,buf,<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
-<h1><code>getBytes()</code></h1>
-<p>替代getChars()的一种方法是将字符存储在字节数组中，该方法即getBytes()。
-getBytes() 方法有两种形式：</p>
-<p>getBytes(String charsetName): 使用指定的字符集将字符串编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
-<p>getBytes(): 使用平台的默认字符集将字符串编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
-<p>语法
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">byte</span>[] getBytes(<span class="keyword">String</span> charsetName) <span class="keyword">throws</span> UnsupportedEncodingException</span><br></pre></td></tr></table></figure></p>
-<p>或
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getBytes()</span><br></pre></td></tr></table></figure></p>
-<p>参数:
-charsetName -- 支持的字符集名称。</p>
-<p>返回值:返回 byte 数组。</p>
-<p>实例
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">byte</span>[] Str2 = Str1.getBytes();</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="string">"UTF-8"</span> );</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line"></span><br><span class="line">            Str2 = Str1.getBytes( <span class="string">"ISO-8859-1"</span> );</span><br><span class="line">            System.out.println(<span class="string">"返回值："</span> + Str2 );</span><br><span class="line">        &#125; <span class="keyword">catch</span> ( UnsupportedEncodingException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"不支持的字符集"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值：[<span class="symbol">B@</span><span class="number">7852e922</span></span><br><span class="line">返回值：[<span class="symbol">B@</span><span class="number">4e25154f</span></span><br><span class="line">返回值：[<span class="symbol">B@</span><span class="number">70</span>dea4e</span><br></pre></td></tr></table></figure></p>
-<h1>toCharArray()</h1>
-<p><code>public char[] toCharArray()</code>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"vitan.xyzm"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toCharArray() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1><code>equals()</code>和<code>equalsIgnoreCase()</code> 比较两个字符串</h1>
-<p>String.equals()对大小写敏感，而String.equalsIgnoreCase()忽略大小写.</p>
-<p>例如：
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ABC"</span>.equals(<span class="string">"abc"</span>)<span class="comment">//是false</span></span><br><span class="line"><span class="string">"ABC"</span>.equalsIgnoreCase(<span class="string">"abc"</span>)<span class="comment">//为ture</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>regionMatches()</code> regionMatches()</h1>
-<p>方法用于检测两个字符串在一个区域内是否相等。</p>
-<p>语法:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> toffset,String other, <span class="keyword">int</span> ooffset,<span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>or</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase,<span class="keyword">int</span> toffset, String other,<span class="keyword">int</span> ooffset,<span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>参数：</p>
-<p>ignoreCase -- 如果为 true，则比较字符时忽略大小写。</p>
-<p>toffset -- 此字符串中子区域的起始偏移量。</p>
-<p>other -- 字符串参数。</p>
-<p>ooffset -- 字符串参数中子区域的起始偏移量。</p>
-<p>len -- 要比较的字符数。</p>
-<p>用于比较一个字符串中特定区域与另一特定区域，它有一个重载的形式允许在比较中忽略大小写。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">int</span> startIndex,String str2,<span class="keyword">int</span> str2StartIndex,<span class="keyword">int</span> numChars)</span></span></span><br><span class="line"><span class="function">　　<span class="keyword">boolean</span> <span class="title">regionMatches</span><span class="params">(<span class="keyword">boolean</span> ignoreCase,<span class="keyword">int</span> startIndex,String str2,<span class="keyword">int</span> str2StartIndex,<span class="keyword">int</span> numChars)</span></span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str1 = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line">        String Str2 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String Str3 = <span class="keyword">new</span> String(<span class="string">"RUNOOB"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="number">4</span>, Str2, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="number">4</span>, Str3, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str1.regionMatches(<span class="keyword">true</span>, <span class="number">4</span>, Str3, <span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回值 :<span class="literal">true</span></span><br><span class="line">返回值 :<span class="literal">false</span></span><br><span class="line">返回值 :<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>startsWith()</code>和<code>endsWith()</code></h1>
-<p>startsWith()方法决定是否以特定字符串开始，endWith()方法决定是否以特定字符串结束
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      String s1=<span class="string">"this is my original string"</span>;</span><br><span class="line">      String sd=<span class="string">"original"</span>;</span><br><span class="line">      <span class="keyword">if</span> (s1.startsWith(sd)) <span class="comment">//startsWith()方法判断字符串s1是否从字符串sd开始</span></span><br><span class="line">         s1=s1.substring(sd.length());</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">         <span class="keyword">if</span>(s1.endsWith(sd)) <span class="comment">//endWith()方法判断字符串s1是否从字符串sd结尾</span></span><br><span class="line">             s1=s1.substring(<span class="number">0</span>,s1.length()-sd.length());</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">         &#123;</span><br><span class="line">               <span class="keyword">int</span> index=s1.indexOf(sd); <span class="comment">//indexOf()搜索字符或子字符串首次出现，这里的index等于11</span></span><br><span class="line">               <span class="keyword">if</span>(index!=-<span class="number">1</span>)</span><br><span class="line">               &#123;</span><br><span class="line">                  String s2=s1.substring(<span class="number">0</span>,index); <span class="comment">//从字符串s1的首字符开始，取index个字符</span></span><br><span class="line">                  String s3=s1.substring(index+sd.length());<span class="comment">//取字符串s1的第19个字符后面的字符串</span></span><br><span class="line">                  s1=s2+s3;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               System.out.println(<span class="string">"string /"</span><span class="string">"+sd+"</span>/<span class="string">" not found"</span>);</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println(s1);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1><code>equals()</code>和<code>==equals()</code></h1>
-<p>方法比较字符串对象中的字符，==运算符比较两个对象是否引用同一实例。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1=<span class="string">"Hello"</span>;</span><br><span class="line">　　　　String s2=<span class="keyword">new</span> String(s1);</span><br><span class="line">　　　　s1.eauals(s2);    <span class="comment">//true</span></span><br><span class="line">　　　　s1==s2;          <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>compareTo()</code>和<code>compareToIgnoreCase()</code>比较字符串</h1>
-<p>compareTo()</p>
-<p>字符串与对象进行比较。</p>
-<p>按字典顺序比较两个字符串。</p>
-<p>语法;
-<code>int compareTo(Object o)</code>或<code>int compareTo(String anotherString)</code>
-参数:
-o -- 要比较的对象。anotherString -- 要比较的字符串。
-返回值:</p>
-<p>返回值是整型,它是先比较对应字符的大小(ASCII码顺序),如果第一个字符和参数的第一个字符不等,结束比较,返回他们之间的差值,如果第一个字符和参数的第一个字符相等,则以第二个字符和参数的第二个字符做比较,以此类推,直至比较的字符或被比较的字符有一方。</p>
-<p>如果参数字符串等于此字符串，则返回值 0；</p>
-<p>如果此字符串小于字符串参数，则返回一个小于 0 的值；</p>
-<p>如果此字符串大于字符串参数，则返回一个大于 0 的值。</p>
-<p>实例:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str2 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> result = str1.compareTo( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareTo( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareTo( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">-3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<p><code>compareToIgnoreCase()</code> 方法用于按字典顺序比较两个字符串，不考虑大小写。</p>
-<p>参数:</p>
-<p>str -- 要比较的字符串。</p>
-<p>返回值:</p>
-<p>如果参数字符串等于此字符串，则返回值 0；</p>
-<p>如果此字符串小于字符串参数，则返回一个小于 0 的值；</p>
-<p>如果此字符串大于字符串参数，则返回一个大于 0 的值。</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"STRINGS"</span>;</span><br><span class="line">        String str2 = <span class="string">"Strings"</span>;</span><br><span class="line">        String str3 = <span class="string">"Strings123"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> result = str1.compareToIgnoreCase( str2 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str2.compareToIgnoreCase( str3 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        result = str3.compareToIgnoreCase( str1 );</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1><code>indexOf()</code>和<code>lastIndexOf()</code></h1>
-<p>indexOf() 查找字符或者子串第一次出现的地方。</p>
-<p>indexOf() 方法有以下四种形式：</p>
-<p>public int indexOf(int ch): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>public int indexOf(int ch, int fromIndex): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>int indexOf(String str): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>int indexOf(String str, int fromIndex): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1</p>
-<p>语法:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch )</span></span></span><br></pre></td></tr></table></figure></p>
-<p>或
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch, <span class="keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>或
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>或
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str, <span class="keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>参数:
-ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子字符串。</p>
-<p>返回值:</p>
-<p>指定子字符串在字符串中第一次出现处的索引，从指定的索引开始。</p>
-<p>实例:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="keyword">new</span> String(<span class="string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="string">"从第14个位置查找字符 o 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( <span class="string">'o'</span>, <span class="number">14</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr1 第一次出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="string">"从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.indexOf( SubStr1, <span class="number">15</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr2 第一次出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.indexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 第一次出现的位置 :<span class="number">12</span></span><br><span class="line">从第<span class="number">14</span>个位置查找字符 o 第一次出现的位置 :<span class="number">17</span></span><br><span class="line">子字符串 SubStr1 第一次出现的位置:<span class="number">9</span></span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1 第一次出现的位置 :<span class="number">-1</span></span><br><span class="line">子字符串 SubStr2 第一次出现的位置 :<span class="number">16</span>。</span><br></pre></td></tr></table></figure></p>
-<h1><code>lastIndexOf()</code></h1>
-<p>查找字符或者子串是后一次出现的地方。</p>
-<p>lastIndexOf() 方法有以下四种形式：</p>
-<p>public int lastIndexOf(int ch): 返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>public int lastIndexOf(int ch, int fromIndex): 返返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>public int lastIndexOf(String str): 返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>public int lastIndexOf(String str, int fromIndex): 返回指定字符在此字符串中最后一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。</p>
-<p>语法:
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public <span class="built_in">int</span> last<span class="constructor">IndexOf(<span class="params">int</span> <span class="params">ch</span>)</span></span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public <span class="built_in">int</span> last<span class="constructor">IndexOf(<span class="params">int</span> <span class="params">ch</span>, <span class="params">int</span> <span class="params">fromIndex</span>)</span></span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public <span class="built_in">int</span> last<span class="constructor">IndexOf(String <span class="params">str</span>)</span></span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">public <span class="built_in">int</span> last<span class="constructor">IndexOf(String <span class="params">str</span>, <span class="params">int</span> <span class="params">fromIndex</span>)</span></span><br></pre></td></tr></table></figure></p>
-<p>参数:
-ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子字符串。</p>
-<p>返回值
-指定子字符串在字符串中第一次出现处的索引值。</p>
-<p>实例
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"菜鸟教程:www.runoob.com"</span>);</span><br><span class="line">        String SubStr1 = <span class="keyword">new</span> String(<span class="string">"runoob"</span>);</span><br><span class="line">        String SubStr2 = <span class="keyword">new</span> String(<span class="string">"com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="string">'o'</span> ));</span><br><span class="line">        System.out.print(<span class="string">"从第14个位置查找字符 o 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( <span class="string">'o'</span>, <span class="number">14</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr1 最后出现的位置:"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1 ));</span><br><span class="line">        System.out.print(<span class="string">"从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println( Str.lastIndexOf( SubStr1, <span class="number">15</span> ));</span><br><span class="line">        System.out.print(<span class="string">"子字符串 SubStr2 最后出现的位置 :"</span> );</span><br><span class="line">        System.out.println(Str.lastIndexOf( SubStr2 ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查找字符 o 最后出现的位置 :<span class="number">17</span></span><br><span class="line">从第<span class="number">14</span>个位置查找字符 o 最后出现的位置 :<span class="number">13</span></span><br><span class="line">子字符串 SubStr1 最后出现的位置:<span class="number">9</span></span><br><span class="line">从第十五个位置开始搜索子字符串 SubStr1最后出现的位置 :<span class="number">9</span></span><br><span class="line">子字符串 SubStr2 最后出现的位置 :<span class="number">16</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>substring()</code></h1>
-<p>它有两种形</p>
-<p>第一种是：public String substring(int startIndex)</p>
-<p>第二种是：public String substring(int startIndex,int endIndex)</p>
-<p>参数:</p>
-<p>beginIndex -- 起始索引（包括）。</p>
-<p>endIndex -- 结束索引（不包括）。</p>
-<p>返回值</p>
-<p>子字符串。</p>
-<p>实例
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"www.runoob.com"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="number">4</span>) );</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.substring(<span class="number">4</span>, <span class="number">10</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 <span class="selector-pseudo">:runoob.com</span></span><br><span class="line">返回值 <span class="selector-pseudo">:runoob</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><code>concat()</code> 连接两个字符串
-语法: public String concat(String s)
-参数:   s -- 要连接的字符串。</li>
-</ul>
-<p>返回值:
-返回连接后的新字符串。</p>
-<p>实例
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"你好："</span>;</span><br><span class="line">        s = s.concat(<span class="string">"Hellom"</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-你好：Hello</p>
-<h1><code>replace()</code>替换</h1>
-<p>replace() 方法通过用 newChar 字符替换字符串中出现的所有 oldChar 字符，并返回替换后的新字符串。</p>
-<p>语法:public String replace(char oldChar, char newChar)
-参数:oldChar -- 原字符。newChar -- 新字符。</p>
-<p>返回值:</p>
-<p>替换后生成的新字符串。</p>
-<p>实例:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="string">'o'</span>, <span class="string">'T'</span>));</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println(Str.replace(<span class="string">'l'</span>, <span class="string">'D'</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 <span class="selector-pseudo">:hellT</span></span><br><span class="line">返回值 <span class="selector-pseudo">:heDDo</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>trim()</code> 去掉起始和结尾的空格</h1>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">" abc "</span>;</span><br><span class="line">String s2=s.trim();</span><br><span class="line">s2=<span class="string">"abc"</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>valueOf()</code></h1>
-<p>===</p>
-<p>valueOf() 方法用于返回给定参数的原生 Number 对象值，参数可以是原生数据类型, String等。
-该方法是静态方法。该方法可以接收两个参数一个是字符串，一个是基数。</p>
-<p>语法:</p>
-<p>该方法有以下几种语法格式：
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static Integer value<span class="constructor">Of(<span class="params">int</span> <span class="params">i</span>)</span></span><br><span class="line">static Integer value<span class="constructor">Of(String <span class="params">s</span>)</span></span><br><span class="line">static Integer value<span class="constructor">Of(String <span class="params">s</span>, <span class="params">int</span> <span class="params">radix</span>)</span></span><br></pre></td></tr></table></figure></p>
-<p>参数</p>
-<p>i -- Integer 对象的整数。</p>
-<p>s -- Integer 对象的字符串。</p>
-<p>radix --在解析字符串 s 时使用的基数，用于指定使用的进制数。</p>
-<p>返回值</p>
-<p>Integer valueOf(int i)：返回一个表示指定的 int 值的 Integer 实例。</p>
-<p>Integer valueOf(String s):返回保存指定的 String 的值的Integer 对象。</p>
-<p>Integer valueOf(String s, int radix): 返回一个 Integer 对象，该对象中保存了用第二个参数提供的基数进行解析时从指定的 String 中提取的值。</p>
-<p>实例
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> Test&#123;</span><br><span class="line">public static void main(String args<span class="literal">[]</span>)&#123;</span><br><span class="line">        Integer x =<span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>value<span class="constructor">Of(9)</span>;</span><br><span class="line">        Double c = <span class="module-access"><span class="module"><span class="identifier">Double</span>.</span></span>value<span class="constructor">Of(5)</span>;</span><br><span class="line">        Float a = <span class="module-access"><span class="module"><span class="identifier">Float</span>.</span></span>value<span class="constructor">Of(<span class="string">"80"</span>)</span>;</span><br><span class="line"></span><br><span class="line">        Integer b = <span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>value<span class="constructor">Of(<span class="string">"444"</span>,16)</span>;   <span class="comment">// 使用 16 进制</span></span><br><span class="line"></span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(x);</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(c);</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(a);</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>输出结果为：
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">5.0</span></span><br><span class="line"><span class="number">80.0</span></span><br><span class="line"><span class="number">1092</span></span><br></pre></td></tr></table></figure></p>
-<h1><code>toLowerCase()</code></h1>
-<p>转换为小写</p>
-<p>toLowerCase() 方法将字符串转换为小写。</p>
-<p>语法
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toLowerCase</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
-<p>或
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toLowerCase</span><span class="params">(Locale locale)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>返回值</p>
-<p>转换为小写的字符串。</p>
-<p>实例
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        String Str = <span class="keyword">new</span> String(<span class="string">"VITAN"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"返回值 :"</span> );</span><br><span class="line">        System.out.println( Str.toLowerCase() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上程序执行结果为：返回值 :vitan</p>
-<ul>
-<li><code>toUpperCase()</code> 转换为大写</li>
-<li><code>StringBuffer</code>构造函数</li>
-</ul>
-<p><strong>Via</strong></p>
-<ul>
-<li><a href="https://m.runoob.com/java/java-stringbuffer.html" target="_blank" rel="noopener">参考</a></li>
-</ul>
-
+          <p>Java 中 Srting 常用方法。</p>
       
 
           <a href="/posts/JavaString.html" class="post-more waves-effect waves-button">
@@ -454,116 +248,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Oh-my-zsh插件
-&lt;!--more--&gt;</p>
-<h1>使用方法</h1>
-<p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~<span class="string">/.zshrc</span></span><br><span class="line"><span class="string">//</span>找到下面这句，添加相应的插件 插件之间用空格分隔</span><br><span class="line">plugins=<span class="params">(git z zsh-syntax-highlighting zsh-autosuggestions)</span></span><br><span class="line"><span class="string">//</span>使配置文件生效</span><br><span class="line">source ~<span class="string">/.zshrc</span></span><br></pre></td></tr></table></figure></p>
-<h1>Git 默认已开启</h1>
-<ul>
-<li>
-<p>可以使用各种 git 命令缩写。比如
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> <span class="comment">--all ===&gt; gaa</span></span><br><span class="line">git <span class="keyword">commit</span> -m ===&gt; gcmsg</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>看所有 git 命令缩写
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h1>autojump</h1>
-<ul>
-<li><a href="https://github.com/wting/autojump" target="_blank" rel="noopener">Hithub Rpo</a></li>
-<li>已经内置了，直接在<code>.zshrc</code> 配置文件添加即可。</li>
-<li>目录间快速跳转,不用再一直 cd 了</li>
-</ul>
-<h2>使用</h2>
-<ul>
-<li>使用 <code>autojump</code>  的缩写 <code>j</code></li>
-<li><code>cd</code> 命令进入<code>~/user/github/Noye</code> 文件夹，下一次再想进入Notr 文件夹的时候,直接<code>j Note</code> 即可,或者只输入 Note 的一部分 Not 都行.</li>
-<li>删除无效路径
-<ul>
-<li><code>j --purge 无效路径</code>类似组件<code>Z</code> (也内置了,直接改配置文件即可)删除无效路径它的命令更短<code>z -x 无效路径</code></li>
-</ul>
-</li>
-</ul>
-<h1>zscrh-syntax-highlighting</h1>
-<ul>
-<li>
-<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">Github Rpo</a></p>
-</li>
-<li>
-<p>作用:平常用的 <code>ls</code>  <code>cd</code> 等命令输入正确会绿色高亮显示，输入错误会显示其他的颜色。</p>
-</li>
-</ul>
-<h2>安装</h2>
-<ul>
-<li>
-<p>克隆项目
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"source <span class="variable">$&#123;(q-)PWD&#125;</span>/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"</span> &gt;&gt; <span class="variable">$&#123;ZDOTDIR:-$HOME&#125;</span>/.zshrc</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>在 <code>~/.zshrc</code> 中配置
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h1>zsh-autosuggestions</h1>
-<p>输入命令时，会给出建议的命令</p>
-<h2>安装</h2>
-<ul>
-<li>
-<p>克隆项目
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$ZSH_CUSTOM</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>在 <code>~/.zshrc</code> 中配置
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-autosuggestions)</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h1>incr</h1>
-<ul>
-<li>
-<p>Ubuntu sudo
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install zsh</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>ArchLinux
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yacman -S <span class="comment">#!/usr/bin/env zsh</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>安装完成后执行：
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h1>安装 oh my zsh</h1>
-<ul>
-<li>
-<p>自动安装：
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/robbyrussell/</span>oh-my-zsh<span class="regexp">/raw/m</span>aster<span class="regexp">/tools/i</span>nstall.sh -O - | sh</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>手动安装：
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span></span><br><span class="line">cp ~/<span class="selector-class">.zshrc</span> ~/<span class="selector-class">.zshrc</span><span class="selector-class">.orig</span></span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc<span class="selector-class">.zsh-template</span> ~/.zshrc</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h2>下载 incr</h2>
-<p>:	<a href="http://mimosa-pudica.net/zsh-incremental.html" target="_blank" rel="noopener">下载地址</a></p>
-<ul>
-<li>
-<p>代码摘录如下：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Incremental completion for zsh</span></span><br><span class="line"><span class="comment"># by y.fujii &lt;y-fujii at mimosa-pudica.net&gt;, public domain</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">autoload</span> -U compinit</span><br><span class="line"><span class="built_in">zle</span> -N self-insert self-insert-incr</span><br><span class="line"><span class="built_in">zle</span> -N vi-cmd-mode-incr</span><br><span class="line"><span class="built_in">zle</span> -N vi-backward-delete-char-incr</span><br><span class="line"><span class="built_in">zle</span> -N backward-delete-char-incr</span><br><span class="line"><span class="built_in">zle</span> -N expand-or-complete-prefix-incr</span><br><span class="line">compinit</span><br><span class="line"></span><br><span class="line"><span class="built_in">bindkey</span> -M viins <span class="string">'^['</span> vi-cmd-mode-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M viins <span class="string">'^h'</span> vi-backward-delete-char-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M viins <span class="string">'^?'</span> vi-backward-delete-char-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M viins <span class="string">'^i'</span> expand-or-complete-prefix-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M emacs <span class="string">'^h'</span> backward-delete-char-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M emacs <span class="string">'^?'</span> backward-delete-char-incr</span><br><span class="line"><span class="built_in">bindkey</span> -M emacs <span class="string">'^i'</span> expand-or-complete-prefix-incr</span><br><span class="line"></span><br><span class="line"><span class="built_in">unsetopt</span> automenu</span><br><span class="line">compdef -d scp</span><br><span class="line">compdef -d tar</span><br><span class="line">compdef -d make</span><br><span class="line">compdef -d java</span><br><span class="line">compdef -d svn</span><br><span class="line">compdef -d cvs</span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span></span></span><br><span class="line"><span class="comment">#     cp dir/</span></span><br><span class="line"></span><br><span class="line">now_predict=0</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="built_in">limit</span>-completion</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> ((compstate[nmatches] &lt;= 1)); <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">zle</span> -M <span class="string">""</span></span><br><span class="line">	<span class="keyword">elif</span> ((compstate[list_lines] &gt; 6)); <span class="keyword">then</span></span><br><span class="line">		compstate[list]=<span class="string">""</span></span><br><span class="line">		<span class="built_in">zle</span> -M <span class="string">"too many matches."</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> correct-prediction</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> ((now_predict == 1)); <span class="keyword">then</span></span><br><span class="line">		<span class="keyword">if</span> [[ <span class="string">"<span class="variable">$BUFFER</span>"</span> != <span class="string">"<span class="variable">$buffer_prd</span>"</span> ]] || ((CURSOR != cursor_org)); <span class="keyword">then</span></span><br><span class="line">			now_predict=0</span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> remove-prediction</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> ((now_predict == 1)); <span class="keyword">then</span></span><br><span class="line">		BUFFER=<span class="string">"<span class="variable">$buffer_org</span>"</span></span><br><span class="line">		now_predict=0</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> show-prediction</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment"># assert(now_predict == 0)</span></span><br><span class="line">	<span class="keyword">if</span></span><br><span class="line">		((PENDING == 0)) &amp;&amp;</span><br><span class="line">		((CURSOR &gt; 1)) &amp;&amp;</span><br><span class="line">		[[ <span class="string">"<span class="variable">$PREBUFFER</span>"</span> == <span class="string">""</span> ]] &amp;&amp;</span><br><span class="line">		[[ <span class="string">"<span class="variable">$BUFFER</span>[CURSOR]"</span> != <span class="string">" "</span> ]]</span><br><span class="line">	<span class="keyword">then</span></span><br><span class="line">		cursor_org=<span class="string">"<span class="variable">$CURSOR</span>"</span></span><br><span class="line">		buffer_org=<span class="string">"<span class="variable">$BUFFER</span>"</span></span><br><span class="line">		comppostfuncs=(<span class="built_in">limit</span>-completion)</span><br><span class="line">		<span class="built_in">zle</span> complete-word</span><br><span class="line">		cursor_prd=<span class="string">"<span class="variable">$CURSOR</span>"</span></span><br><span class="line">		buffer_prd=<span class="string">"<span class="variable">$BUFFER</span>"</span></span><br><span class="line">		<span class="keyword">if</span> [[ <span class="string">"<span class="variable">$buffer_org</span>[1,cursor_org]"</span> == <span class="string">"<span class="variable">$buffer_prd</span>[1,cursor_org]"</span> ]]; <span class="keyword">then</span></span><br><span class="line">			CURSOR=<span class="string">"<span class="variable">$cursor_org</span>"</span></span><br><span class="line">			<span class="keyword">if</span> [[ <span class="string">"<span class="variable">$buffer_org</span>"</span> != <span class="string">"<span class="variable">$buffer_prd</span>"</span> ]] || ((cursor_org != cursor_prd)); <span class="keyword">then</span></span><br><span class="line">				now_predict=1</span><br><span class="line">			<span class="keyword">fi</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			BUFFER=<span class="string">"<span class="variable">$buffer_org</span>"</span></span><br><span class="line">			CURSOR=<span class="string">"<span class="variable">$cursor_org</span>"</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">		<span class="built_in">echo</span> -n <span class="string">"\e[32m"</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">zle</span> -M <span class="string">""</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> preexec</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">echo</span> -n <span class="string">"\e[39m"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> vi-cmd-mode-incr</span><br><span class="line">&#123;</span><br><span class="line">	correct-prediction</span><br><span class="line">	remove-prediction</span><br><span class="line">	<span class="built_in">zle</span> vi-cmd-mode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> self-insert-incr</span><br><span class="line">&#123;</span><br><span class="line">	correct-prediction</span><br><span class="line">	remove-prediction</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">zle</span> .self-insert; <span class="keyword">then</span></span><br><span class="line">		show-prediction</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> vi-backward-delete-char-incr</span><br><span class="line">&#123;</span><br><span class="line">	correct-prediction</span><br><span class="line">	remove-prediction</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">zle</span> vi-backward-delete-char; <span class="keyword">then</span></span><br><span class="line">		show-prediction</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> backward-delete-char-incr</span><br><span class="line">&#123;</span><br><span class="line">	correct-prediction</span><br><span class="line">	remove-prediction</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">zle</span> backward-delete-char; <span class="keyword">then</span></span><br><span class="line">		show-prediction</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> expand-or-complete-prefix-incr</span><br><span class="line">&#123;</span><br><span class="line">	correct-prediction</span><br><span class="line">	<span class="keyword">if</span> ((now_predict == 1)); <span class="keyword">then</span></span><br><span class="line">		CURSOR=<span class="string">"<span class="variable">$cursor_prd</span>"</span></span><br><span class="line">		now_predict=0</span><br><span class="line">		comppostfuncs=(<span class="built_in">limit</span>-completion)</span><br><span class="line">		<span class="built_in">zle</span> list-choices</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		remove-prediction</span><br><span class="line">		<span class="built_in">zle</span> expand-or-complete-prefix</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>执行如下命令：
-<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~/.oh-my-zsh/plugins/</span><br><span class="line">mkdir -p <span class="keyword">incr</span></span><br><span class="line"><span class="keyword">cd</span> <span class="keyword">incr</span></span><br><span class="line">vim <span class="keyword">incr</span><span class="number">-0.2</span>.zsh //（将代码复制粘贴到<span class="keyword">incr</span><span class="number">-0.2</span>.zsh文件中）</span><br><span class="line">chmod <span class="number">777</span> <span class="keyword">incr</span><span class="number">-0.2</span>.zsh</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h2>配置 .zshrc 文件</h2>
-<ol>
-<li>vim ~/.zshrc
-末尾加入</li>
-<li>ource ~/.oh-my-zsh/plugins/incr/incr*.zsh</li>
-<li>source ~/.zshrc #使其立即生效</li>
-</ol>
-
+          <p>Oh-my-zsh插件</p>
       
 
           <a href="/posts/Oh-My-ZSH-complete.html" class="post-more waves-effect waves-button">
@@ -610,75 +295,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>SQL笔记
-&lt;!--more--&gt;</p>
-<ol>
-<li>
-<p>从职工关系中检索所有工资值。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 月工资</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索仓库关系中的所有元组。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索工资多于2000元的职工对应的职工号，姓名。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  职工号,月工资 <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 月工资&gt;<span class="number">2000</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索哪些仓库的面积在400到550平方之间，列出仓库号和所在的城市。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,城市</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 面积&gt;<span class="number">400</span> <span class="keyword">and</span> 面积&lt;<span class="number">550</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出有广州哪些仓库，列出仓库号。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'广州'</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出所在城市为广州的仓库的个数。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号)</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'广州'</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出所有职工的平均工资。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(月工资)</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出在WH5仓库工作的职工的人数。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号) <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 仓库号=<span class="string">'WH5'</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出职工表的所有的仓库号，去掉重复值。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 仓库号</span><br><span class="line"><span class="keyword">from</span> zg</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出每个仓库的人数。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(*)人数</span><br><span class="line"> <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出上海的仓库有哪些，列出仓库号、面积。查询结果按面积降序排列。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,面积</span><br><span class="line"> <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'上海'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 面积 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出哪些仓库女职工的人数达到了3人。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(职工号)人数</span><br><span class="line"><span class="keyword">from</span> zg <span class="keyword">where</span> 性别=<span class="string">'女'</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号 <span class="keyword">having</span> <span class="keyword">count</span>(职工号)&gt;<span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出所有姓胡的职工的职工号、姓名、性别、工资。查询结果按性别排降序、工资排升序。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号,姓名,性别,月工资</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">like</span><span class="string">'胡%'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 性别 <span class="keyword">desc</span>,月工资 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出职工“王玛丽”的年工资。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(月工资*<span class="number">12</span>) <span class="keyword">as</span> 年薪</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 姓名=<span class="string">'王玛丽'</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出“WH1”和“WH2”两个仓库工作的职工的基本信息。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">where</span> 仓库号=<span class="string">'WH1'</span><span class="keyword">or</span> 仓库号=<span class="string">'WH2'</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>检索出年工资在24000以上的职工的姓名，年工资值。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,月工资*<span class="number">12</span> <span class="keyword">as</span> 年工资</span><br></pre></td></tr></table></figure></p>
-</li>
-</ol>
-
+          <p>SQL笔记</p>
       
 
           <a href="/posts/SQL-Note.html" class="post-more waves-effect waves-button">
@@ -725,70 +342,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Java控制语句
-&lt;!--more--&gt;</p>
-<h1>简介</h1>
-<p>Java流程控制语句（顺序结构、if条件语句、switch条件语句、循环语句与跳转语句）</p>
-<h1>顺序语句</h1>
-<h2>表达式语句</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i++;</span><br><span class="line">i--;</span><br><span class="line">x=<span class="number">10</span>;</span><br><span class="line">sum=sum+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">new</span> JFrame(); <span class="comment">//实例化对象</span></span><br><span class="line"><span class="keyword">this</span>.setVisible(<span class="keyword">true</span>); <span class="comment">//方法调用</span></span><br></pre></td></tr></table></figure></p>
-<h2>空语句</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++); <span class="comment">//空语句一个分号</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x=<span class="number">6</span>;; <span class="comment">//两连续分号，第二个是空语句</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a&gt;b) &#123;</span><br><span class="line">         ;   <span class="comment">//条件为真，执行空语句</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//条件为假，执行本部分</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>复合语句</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">5</span>;<span class="comment">//又称代码块语句，一对大括号括起来的语句，中间可有多个变量或语句</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=i;</span><br><span class="line">    System.out.orint(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1>选择语句</h1>
-<h2>if语句</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * "if条件语句"示例代码</span></span><br><span class="line"><span class="comment"> * 功能：输入三个数，输出最大值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> num1,num2,num3,max;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"请输入第一个数："</span>);</span><br><span class="line">		num1=input.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入第二个数："</span>);</span><br><span class="line">		num2=input.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"请输入第三个数："</span>);</span><br><span class="line">		num3=input.nextInt();</span><br><span class="line">		max=num1;</span><br><span class="line">		<span class="keyword">if</span>(num2&gt;max)</span><br><span class="line">			max=num2;</span><br><span class="line">		<span class="keyword">if</span> (num3&gt;max)</span><br><span class="line">			max=num3;</span><br><span class="line">		System.out.println(<span class="string">"max="</span>+max);</span><br><span class="line">		input.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>switch语句</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.unit.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Switchweek</span></span></span><br><span class="line">    public static void main(String[]args) &#123;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入1-7的整数"</span>);</span><br><span class="line">        <span class="keyword">int</span> day = input.nextInt(); <span class="comment">//对象调用方法获取数据</span></span><br><span class="line">        <span class="keyword">switch</span> (day)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>: System.out.println(<span class="string">"星期日"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>: System.out.println(<span class="string">"星期一"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>: System.out.println(<span class="string">"星期二"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>: System.out.println(<span class="string">"星期三"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>: System.out.println(<span class="string">"星期四"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>: System.out.println(<span class="string">"星期五"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>: System.out.println(<span class="string">"星期六"</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>: Syatem.out.println(<span class="string">"你输入的日期不在有效范围内！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Switch</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span> today=<span class="string">'日'</span>;</span><br><span class="line">		<span class="keyword">switch</span>(today)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'一'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'三'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'五'</span>:</span><br><span class="line">                System.out.println(<span class="string">"早餐吃包子"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'二'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'四'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'六'</span>:</span><br><span class="line">                System.out.println(<span class="string">"早餐吃油条"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">"吃主席套餐"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1>循环语句(主要有while/do-while/for和foreach)</h1>
-<h2>while</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(判断条件)</span><br><span class="line">&#123;</span><br><span class="line">    语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>扩展格式</h2>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span>(判断条件语句) &#123;</span><br><span class="line">      循环体语句;</span><br><span class="line">      控制条件语句;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    通过这个格式，我们就可以看到其实和<span class="keyword">for</span>循环是差不多的。</span><br><span class="line">        <span class="keyword">for</span>(初始化语句;判断条件语句;控制条件语句) &#123;</span><br><span class="line">            循环体语句;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileSun</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=n) &#123;</span><br><span class="line">            sum+=i;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"1加到10但和是:"</span>+sum);</span><br><span class="line">        System.out.println(<span class="string">"循环后变量i但值是:"</span>+i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>do-while</h2>
-<ol>
-<li>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</li>
-<li>do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">       <span class="comment">//代码语句</span></span><br><span class="line">&#125;<span class="keyword">while</span>(布尔表达式);</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>注意：布尔表达式在循环体的后面，所以语句块在检测布尔表达式之前已经执行了。 如果布尔表达式的值为 true，则语句块一直执行，直到布尔表达式的值为 false。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">      <span class="keyword">do</span>&#123;</span><br><span class="line">         System.out.print(<span class="string">"value of x : "</span> + x );</span><br><span class="line">         x++;</span><br><span class="line">         System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">      &#125;<span class="keyword">while</span>( x &lt; <span class="number">20</span> );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>for循环</h2>
-<p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">(初始化; 布尔表达式; 更新)</span></span> &#123;</span><br><span class="line">    <span class="comment">//代码语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。
-然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。
-执行一次循环后，更新循环控制变量。
-再次检测布尔表达式。循环执行上面的过程。</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">10</span>; x &lt; <span class="number">20</span>; x = x+<span class="number">1</span>) &#123;</span><br><span class="line">         System.out.print(<span class="string">"value of x : "</span> + x );</span><br><span class="line">         System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1>Java 增强 for 循环</h1>
-<p>Java5 引入了一种主要用于数组的增强型 for 循环。</p>
-<p>Java 增强 for 循环语法格式如下:
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">(声明语句 : 表达式)</span></span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">//代码句子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>明语句：</p>
-<p>声明新的局部变量，该变量的类型必须和数组元素的类型匹配。其作用域限定在循环语句块，其值与此时数组元素的值相等。</p>
-<p>表达式：表达式是要访问的数组名，或者是返回值为数组的方法</p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> [] numbers = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x : numbers )&#123;</span><br><span class="line">         System.out.print( x );</span><br><span class="line">         System.out.print(<span class="string">","</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">      String [] names =&#123;<span class="string">"James"</span>, <span class="string">"Larry"</span>, <span class="string">"Tom"</span>, <span class="string">"Lacy"</span>&#125;;</span><br><span class="line">      <span class="keyword">for</span>( String name : names ) &#123;</span><br><span class="line">         System.out.print( name );</span><br><span class="line">         System.out.print(<span class="string">","</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>break 关键字</h2>
-<p>break 主要用在循环语句或者 switch 语句中，用来跳出整个语句块。</p>
-<p>break 跳出最里层的循环，并且继续执行该循环下面的语句。</p>
-<p>语法:break 的用法很简单，就是循环结构中的一条语句：
-<code>break;</code></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> [] numbers = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x : numbers ) &#123;</span><br><span class="line">         <span class="comment">// x 等于 30 时跳出循环</span></span><br><span class="line">         <span class="keyword">if</span>( x == <span class="number">30</span> ) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.print( x );</span><br><span class="line">         System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * "实战——九九乘法口诀表"*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"九九乘法口诀表："</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">				System.out.print(j+<span class="string">"*"</span>+i+<span class="string">"="</span>+j*i+<span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//			注意print与println的区别</span></span><br><span class="line">			System.out.print(<span class="string">"\n"</span>);</span><br><span class="line"><span class="comment">//			System.out.println();</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>continue 关键字</h2>
-<p>continue 适用于任何循环控制结构中。作用是让程序立刻跳转到下一次循环的迭代。</p>
-<p>在 for 循环中，continue 语句使程序立即跳转到更新语句。</p>
-<p>在 while 或者 do…while 循环中，程序立即跳转到布尔表达式的判断语句。
-语法</p>
-<p>continue 就是循环体中一条简单的语句：</p>
-<p><code>continue;</code></p>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> [] numbers = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x : numbers ) &#123;</span><br><span class="line">         <span class="keyword">if</span>( x == <span class="number">30</span> ) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.print( x );</span><br><span class="line">         System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+          <p>Java控制语句</p>
       
 
           <a href="/posts/JavaControl.html" class="post-more waves-effect waves-button">
@@ -835,17 +389,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Vim 设置默认中文并加行数
-&lt;!--more--&gt;</p>
-<h1>.vimrc</h1>
-<p>配置文件
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" 设置行号显示</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 将行号设置为相对行号</span></span><br><span class="line"><span class="keyword">set</span> relativenumber</span><br><span class="line"></span><br><span class="line"><span class="comment">"显示标尺</span></span><br><span class="line"><span class="keyword">set</span> ruler</span><br><span class="line"></span><br><span class="line"><span class="comment">"编码</span></span><br><span class="line"><span class="keyword">set</span> fileencodings=utf-<span class="number">8</span>,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line"><span class="keyword">set</span> enc=utf8</span><br><span class="line"><span class="keyword">set</span> fencs=utf8,gbk,gb2312,gb18030</span><br><span class="line"></span><br><span class="line"><span class="comment">" 语法高亮</span></span><br><span class="line"><span class="keyword">syntax</span> enable</span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 高亮字符，让其不受100列限制</span></span><br><span class="line">:<span class="keyword">highlight</span> OverLength ctermbg=<span class="keyword">red</span> ctermfg=white guibg=<span class="keyword">red</span> guifg=white</span><br><span class="line">:<span class="keyword">match</span> OverLength <span class="string">'\%101v.*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 状态行颜色</span></span><br><span class="line"><span class="keyword">highlight</span> StatusLine guifg=SlateBlue guibg=Yellow</span><br><span class="line"><span class="keyword">highlight</span> StatusLineNC guifg=Gray guibg=White</span><br><span class="line"></span><br><span class="line"><span class="comment">" 增强模式中的命令行自动完成操作</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"></span><br><span class="line"><span class="comment">" 我的状态行显示的内容（包括文件类型和解码）</span></span><br><span class="line"><span class="keyword">set</span> statusline=%F%<span class="keyword">m</span>%r%h%<span class="keyword">w</span>\[POS=%<span class="keyword">l</span>,%v][%<span class="keyword">p</span>%%]\%&#123;<span class="built_in">strftime</span>(\<span class="string">"%d/%m/%y\ -\ %H:%M\"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">" 总是显示状态行</span></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"命令行补全参数</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"></span><br><span class="line"><span class="comment">"设置tab键空4格</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"自动检测文件类型</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"开启自动缩进，智能缩进</span></span><br><span class="line"><span class="keyword">set</span> autoindent</span><br><span class="line"><span class="keyword">set</span> <span class="built_in">cindent</span></span><br><span class="line"><span class="keyword">set</span> smartindent</span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"插件安装列表</span></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></span><br><span class="line"><span class="keyword">call</span> vundle#begin()</span><br><span class="line">Plugin <span class="string">'godlygeek/tabular'</span></span><br><span class="line">Plugin <span class="string">'plasticboy/vim-markdown'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()</span><br></pre></td></tr></table></figure></p>
-<h1>Vim 设置默认中文编码</h1>
-<p>.vimrc 添加下面内容即可
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">set</span> <span class="attribute">encoding</span>=utf-8</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">fileencodings</span>=ucs-bom,utf-8,cp936</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">fileencoding</span>=gb2312</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">termencoding</span>=utf-8</span><br></pre></td></tr></table></figure></p>
-<h1>设置行数</h1>
-<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">set</span> nu</span><br><span class="line"><span class="builtin-name">set</span> nobackup</span><br><span class="line"><span class="builtin-name">set</span> noswapfile</span><br><span class="line">syntax on</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">tabstop</span>=4</span><br><span class="line"><span class="builtin-name">set</span> shiftwidth:4</span><br><span class="line"><span class="builtin-name">set</span> expandtab</span><br><span class="line"><span class="builtin-name">set</span> smarttab</span><br><span class="line"><span class="builtin-name">set</span> hlsearch</span><br><span class="line"><span class="builtin-name">set</span> showmatch</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">matchtime</span>=2</span><br></pre></td></tr></table></figure></p>
-
+          <p>Vim 设置默认中文并加行数</p>
       
 
           <a href="/posts/Vim-utf-8.html" class="post-more waves-effect waves-button">
@@ -892,382 +436,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Ununtu常用命令。
-&lt;!--more--&gt;</p>
-<h1>磁盘目录</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">目录</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">/</td>
-<td style="text-align:left">根目录</td>
-</tr>
-<tr>
-<td style="text-align:left">/bin</td>
-<td style="text-align:left">存放必要的命令</td>
-</tr>
-<tr>
-<td style="text-align:left">/boot</td>
-<td style="text-align:left">存放内核以及启动所需的文件等</td>
-</tr>
-<tr>
-<td style="text-align:left">/dev</td>
-<td style="text-align:left">存放设备文件</td>
-</tr>
-<tr>
-<td style="text-align:left">/etc</td>
-<td style="text-align:left">存放系统的配置文件</td>
-</tr>
-<tr>
-<td style="text-align:left">/home</td>
-<td style="text-align:left">用户文件的主目录，用户数据存放在其主目录中</td>
-</tr>
-<tr>
-<td style="text-align:left">/lib</td>
-<td style="text-align:left">存放必要的运行库</td>
-</tr>
-<tr>
-<td style="text-align:left">/mnt</td>
-<td style="text-align:left">存放临时的映射文件系统，我们常把软驱和光驱挂装在这里的floppy和cdrom子目录下</td>
-</tr>
-<tr>
-<td style="text-align:left">/proc</td>
-<td style="text-align:left">存放存储进程和系统信息</td>
-</tr>
-<tr>
-<td style="text-align:left">/root</td>
-<td style="text-align:left">超级用户的主目录</td>
-</tr>
-<tr>
-<td style="text-align:left">/sbin</td>
-<td style="text-align:left">存放系统管理程序</td>
-</tr>
-<tr>
-<td style="text-align:left">/tmp</td>
-<td style="text-align:left">存放临时文件的目录</td>
-</tr>
-<tr>
-<td style="text-align:left">/usr</td>
-<td style="text-align:left">包含了一般不需要修改的应用程序，命令程序文件、程序库、手册和其它文档</td>
-</tr>
-<tr>
-<td style="text-align:left">/var</td>
-<td style="text-align:left">包含系统产生的经常变化的文件</td>
-</tr>
-</tbody>
-</table>
-<h1>文件/文件夹管理</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">ls</td>
-<td style="text-align:left">列出当前目录下的所有文件（不显示隐藏文件）</td>
-</tr>
-<tr>
-<td style="text-align:left">ls -a</td>
-<td style="text-align:left">列出当前目录下的所有文件（显示隐藏文件）</td>
-</tr>
-<tr>
-<td style="text-align:left">ls -l</td>
-<td style="text-align:left">列出当前目录下所有文件的详细信息</td>
-</tr>
-<tr>
-<td style="text-align:left">cd 或者 cd ~</td>
-<td style="text-align:left">进入用户主目录</td>
-</tr>
-<tr>
-<td style="text-align:left">cd ..</td>
-<td style="text-align:left">回到上一级目录</td>
-</tr>
-<tr>
-<td style="text-align:left">cd -</td>
-<td style="text-align:left">返回进入此目录之前所在的目录</td>
-</tr>
-<tr>
-<td style="text-align:left">mkdir dirname</td>
-<td style="text-align:left">新建目录</td>
-</tr>
-<tr>
-<td style="text-align:left">rmdir dirname</td>
-<td style="text-align:left">删除空目录</td>
-</tr>
-<tr>
-<td style="text-align:left">rm filename</td>
-<td style="text-align:left">删除文件</td>
-</tr>
-<tr>
-<td style="text-align:left">rm -rf dirname</td>
-<td style="text-align:left">删除非空目录及其包含的所有文件</td>
-</tr>
-<tr>
-<td style="text-align:left">mv file1 file2</td>
-<td style="text-align:left">将文件1重命名为文件2</td>
-</tr>
-<tr>
-<td style="text-align:left">mv file1 dir1</td>
-<td style="text-align:left">将文件1移动到目录1中</td>
-</tr>
-<tr>
-<td style="text-align:left">find 路径 -name “字符串”</td>
-<td style="text-align:left">查找路径所在范围内满足字符串匹配的文件和目录</td>
-</tr>
-</tbody>
-</table>
-<h1>程序安装与卸载</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">apt-get +</td>
-<td style="text-align:left">程序安装与卸载命令的标志，需要管理员权限</td>
-</tr>
-<tr>
-<td style="text-align:left">install</td>
-<td style="text-align:left">安装指定程序，举例：`sudo apt-get install vim</td>
-</tr>
-<tr>
-<td style="text-align:left">remove</td>
-<td style="text-align:left">卸载指定的程序，一般最好加上<code>--purge</code>执行清除式卸并在程序名称后添加*号。举例 sudo apt-get remove--purge nvidia *卸载 nvidia 的驱动及其配置文件</td>
-</tr>
-<tr>
-<td style="text-align:left">update</td>
-<td style="text-align:left">更新本地软件源文件，需要管理员权限，举例：sudo apt-get update</td>
-</tr>
-</tbody>
-</table>
-<h1>打包/解压</h1>
-<ul>
-<li>参数</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-c</td>
-<td style="text-align:left">建立压缩档案</td>
-</tr>
-<tr>
-<td style="text-align:left">-z</td>
-<td style="text-align:left">有gzip属性的</td>
-</tr>
-<tr>
-<td style="text-align:left">-t</td>
-<td style="text-align:left">查看内容</td>
-</tr>
-<tr>
-<td style="text-align:left">-j</td>
-<td style="text-align:left">有bz2属性的</td>
-</tr>
-<tr>
-<td style="text-align:left">-u</td>
-<td style="text-align:left">更新原压缩包中的文件</td>
-</tr>
-<tr>
-<td style="text-align:left">-Z</td>
-<td style="text-align:left">有compress属性的</td>
-</tr>
-<tr>
-<td style="text-align:left">-x</td>
-<td style="text-align:left">解压</td>
-</tr>
-<tr>
-<td style="text-align:left">-v</td>
-<td style="text-align:left">显示所有过程</td>
-</tr>
-<tr>
-<td style="text-align:left">-r</td>
-<td style="text-align:left">向压缩归档文件末尾追加文件</td>
-</tr>
-<tr>
-<td style="text-align:left">-O</td>
-<td style="text-align:left">将文件解开到标准输出</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>参数是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。右边五个参数是根据需要在压缩或解压时可选的。</li>
-</ul>
-<h1>压缩</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">tar -cvf jpg.tar *.jpg</td>
-<td style="text-align:left">将目录里所有jpg文件打包成tar.jpg</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -czf jpg.tar.gz *.jpg</td>
-<td style="text-align:left">将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -cjf jpg.tar.bz2 *.jpg</td>
-<td style="text-align:left">将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -cZf jpg.tar.Z *.jpg</td>
-<td style="text-align:left">将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</td>
-</tr>
-<tr>
-<td style="text-align:left">rar a jpg.rar *.jpg rar</td>
-<td style="text-align:left">格式的压缩，需要先下载rar for linux</td>
-</tr>
-<tr>
-<td style="text-align:left">zip jpg.zip *.jpg zip</td>
-<td style="text-align:left">格式的压缩，需要先下载zip for linux</td>
-</tr>
-</tbody>
-</table>
-<h2>解压</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">tar -xvf file.tar</td>
-<td style="text-align:left">解压 tar包</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -xzvf file.tar.gz</td>
-<td style="text-align:left">解压 tar.gz</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -xjvf file.tar.bz2</td>
-<td style="text-align:left">解压 tar.bz2</td>
-</tr>
-<tr>
-<td style="text-align:left">tar -xZvf file.tar.Z</td>
-<td style="text-align:left">解压 tar.Z</td>
-</tr>
-<tr>
-<td style="text-align:left">unrar e file.rar</td>
-<td style="text-align:left">解压 rar</td>
-</tr>
-<tr>
-<td style="text-align:left">unzip file.zip</td>
-<td style="text-align:left">解压 zip</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>总结
-<ul>
-<li><code>.tar</code>用 <code>tar -xvf</code> 解压</li>
-<li><code>.gz</code> 用 <code>gzip -d</code>或者<code>gunzip</code> 解压</li>
-<li><code>.tar.gz</code>和<code>.tg</code>z 用<code>tar -xzf</code> 解压</li>
-<li><code>.bz2</code> 用<code>bzip2 -d</code>或者用<code>bunzip2</code>解压</li>
-<li><code>.tar.bz2</code>用<code>tar -xjf</code> 解压</li>
-<li><code>.Z</code> 用 <code>uncompress</code> 解压</li>
-<li><code>.tar.Z</code> 用<code>tar -xZf</code> 解压</li>
-<li><code>rar</code> 用 <code>unrar e</code>解压</li>
-<li><code>.zi</code>p 用 <code>unzip</code> 解压</li>
-</ul>
-</li>
-</ul>
-<h1>用户管理</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">sudo useradd username</td>
-<td style="text-align:left">创建一个新的用户username</td>
-</tr>
-<tr>
-<td style="text-align:left">sudo passwd username</td>
-<td style="text-align:left">设置用户username的密码</td>
-</tr>
-<tr>
-<td style="text-align:left">sudo groupadd groupname</td>
-<td style="text-align:left">创建一个新的组groupname</td>
-</tr>
-<tr>
-<td style="text-align:left">sudo usermod -g groupname username</td>
-<td style="text-align:left">把用户username加入到组groupname中</td>
-</tr>
-<tr>
-<td style="text-align:left">sudo chown username:groupname dirname</td>
-<td style="text-align:left">将指定文件的拥有者改为指定的用户或组</td>
-</tr>
-</tbody>
-</table>
-<h1>系统管理</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">uname -a</td>
-<td style="text-align:left">查看内核版本</td>
-</tr>
-<tr>
-<td style="text-align:left">cat /etc/issue</td>
-<td style="text-align:left">查看ubuntu版本</td>
-</tr>
-<tr>
-<td style="text-align:left">sudo fdisk -l</td>
-<td style="text-align:left">查看磁盘信息</td>
-</tr>
-<tr>
-<td style="text-align:left">df -h</td>
-<td style="text-align:left">查看硬盘剩余空间</td>
-</tr>
-<tr>
-<td style="text-align:left">free -m</td>
-<td style="text-align:left">查看当前的内存使用情况</td>
-</tr>
-<tr>
-<td style="text-align:left">ps -A</td>
-<td style="text-align:left">查看当前有哪些进程</td>
-</tr>
-<tr>
-<td style="text-align:left">kill 进程号 或者 killall 进程名</td>
-<td style="text-align:left">杀死进程</td>
-</tr>
-<tr>
-<td style="text-align:left">kill -9 进程号</td>
-<td style="text-align:left">强制杀死进程</td>
-</tr>
-</tbody>
-</table>
-
+          <p>Ununtu常用命令。</p>
       
 
           <a href="/posts/UbuntuCommand.html" class="post-more waves-effect waves-button">
@@ -1314,32 +483,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>解决 Termux出现npm err! cannot read property 'length' of undefined 问题
-&lt;!--more--&gt;</p>
-<h1>方法</h1>
-<ul>
-<li>复制以下内容</li>
-</ul>
-<p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">require</span>(<span class="string">'os'</span>).cpus() || &#123; <span class="attr">length</span>: <span class="number">1</span> &#125;).length</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>编辑</li>
-</ul>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>修改如下保存即可</li>
-</ul>
-<p><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://s1.ax1x.com/2018/03/11/9WmxIA.jpg" alt="修改.jpg" title>
-                </div>
-                <div class="image-caption">修改.jpg</div>
-            </figure></p>
-<h1>已知问题</h1>
-<ul>
-<li>Npm 无法升级。</li>
-</ul>
-
+          <p>解决 Termux出现npm err! cannot read property ‘length’ of undefined 问题</p>
       
 
           <a href="/posts/Termux-Npm-Error.html" class="post-more waves-effect waves-button">
@@ -1386,37 +530,7 @@ ch -- 字符。fromIndex -- 开始搜索的索引位置。str -- 要搜索的子
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Ubuntu安装Android Studio
-&lt;!--more--&gt;</p>
-<h1>SDK</h1>
-<h2>安装 Android SDK</h2>
-<ul>
-<li>下载SDK<a href="https://developer.android.com/studio/index.html?hl=zh-cn" target="_blank" rel="noopener">传送门</a></li>
-<li>解压并移动到指定目录<code>tar -zxvf android-sdk-linux.tgz -C /usr/local/andriod-sdk</code>
-sudo mv -r /usr/local/ android-sdk-linux</li>
-<li>更改属主、属组
-·cd /usr/local/·
-·sudo chown -R vitan:vitan android-sdk/</li>
-</ul>
-<h2>配置SDK环境变量</h2>
-<ul>
-<li><code>vim /etc/profile</code>后添加</li>
-</ul>
-<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">set</span> sdk environment</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">SDK_HOME</span>=/usr/local/android-sdk-linux</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$SDK_HOME</span>/tools:$SDK_HOME/platform-tools:$PATH</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><code>source /etc/profile</code> 使上面的配置立即生效。</li>
-</ul>
-<h1>Studio 步骤</h1>
-<p>1.下载Android Studio <a href="http://www.android-studio.org/" target="_blank" rel="noopener">传送门</a></p>
-<p>2.解压到指定目录
-<code>sudo tar zxvf android-studio-ide-171.4443003-linux.zip /opt/Android-Studio/</code></p>
-<p>3.安装</p>
-<ul>
-<li>cd /opt/Android-Studio/bin</li>
-<li>sh ./studio.sh</li>
-</ul>
-<p>4.Android SDK Location选择SDK目录/usr/local/android-sdk-linux</p>
-
+          <p>Ubuntu安装Android Studio</p>
       
 
           <a href="/posts/UbuntuAndroidStudio.html" class="post-more waves-effect waves-button">
@@ -1463,22 +577,7 @@ sudo mv -r /usr/local/ android-sdk-linux</li>
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Ubuntu 安装 Eclipse
-&lt;!--more--&gt;
-<strong>前提</strong>
-已经安装Java JDK</p>
-<h1><strong>下载</strong></h1>
-<p><a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygen2" target="_blank" rel="noopener">连接</a></p>
-<h2><strong>安装</strong></h2>
-<ul>
-<li>cd到文件目录</li>
-<li><code>tar zxvf eclipse-java-oxygen-2-linux-gtk-x86_64.tar.gz /opt/eclipse</code></li>
-<li>创建Dash Home图标
-<code>sudo vim /usr/share/applications/eclipse.desktop</code></li>
-</ul>
-<p>复制下面内容
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Desktop Entry]</span></span><br><span class="line"><span class="attr">Encoding</span>=UTF-<span class="number">8</span></span><br><span class="line"><span class="attr">Version</span>=<span class="number">1.0</span></span><br><span class="line"><span class="attr">Type</span>=Application</span><br><span class="line"><span class="attr">Name</span>=eclipse</span><br><span class="line"><span class="attr">Icon</span>=/opt/eclipse/icon.xpm</span><br><span class="line"><span class="attr">Exec</span>=/opt/eclipse/eclipse</span><br><span class="line"><span class="attr">StartupNotify</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">StartupWMClass</span>=eclipse</span><br><span class="line"><span class="attr">OnlyShowIn</span>=Unity;</span><br><span class="line"><span class="attr">X-UnityGenerated</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-
+          <p> Ubuntu 安装 Eclipse</p>
       
 
           <a href="/posts/UbuntuEclipse.html" class="post-more waves-effect waves-button">
@@ -1525,27 +624,7 @@ sudo mv -r /usr/local/ android-sdk-linux</li>
       <div class="post-content" id="post-content" itemprop="postContent">
 
       
-          <p>Ubuntu 安装并配置 java 环境
-&lt;!--more--&gt;</p>
-<h1>下载</h1>
-<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.htm" target="_blank" rel="noopener">链接</a></p>
-<h2>安装 JDK</h2>
-<p>在usr目录下建立java安装目录
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr</span><br><span class="line">sudo <span class="built_in">mkdir</span> java</span><br></pre></td></tr></table></figure></p>
-<p>将jdk文件移动到java目录下并解压</p>
-<p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/home/download</span></span><br><span class="line">sudo mv dk-8u161-linux-x64.tar.gz <span class="string">/usr/java</span> <span class="comment">#移动</span></span><br><span class="line"><span class="keyword">cd</span> <span class="string">/usr/java</span></span><br><span class="line">tar -zxvf dk-8u161-linux-x64.tar.gz <span class="comment">#解压</span></span><br><span class="line">ln -s <span class="string">/usr/java/jdk1.8.0_121/</span> <span class="string">/usr/jdk</span> <span class="comment">#创建快捷方式</span></span><br></pre></td></tr></table></figure></p>
-<h1>环境配置</h1>
-<ul>
-<li><code>sudo vim /etc/profile</code></li>
-<li>在最后加入</li>
-</ul>
-<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/jdk</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:$JAVA_HOME/lib/</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</span><br><span class="line"><span class="builtin-name">export</span> JAVA_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>保存退出</li>
-<li>加载配置信息<code>source /etc/profile</code></li>
-<li>验证<code>java version</code></li>
-</ul>
-
+          <p>Ubuntu 安装并配置 java 环境</p>
       
 
           <a href="/posts/UbuntuJava.html" class="post-more waves-effect waves-button">
@@ -1617,7 +696,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 
 </script>
 
-<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -1637,7 +716,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 </li>
 </template>
 
-<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

@@ -34,23 +34,23 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="SQL">
-    <meta name="description" content="SQL授权 &amp;lt;!--more--&amp;gt; 授权命令 语法 12grant &amp;lt;权限名&amp;gt;[ ,&amp;lt;权限名&amp;gt;] on &amp;lt;对象&amp;gt;to 用户1,用户2,... | public [with grant option]  对应不同对象,有不可权限,代表不同的操作(语句)。 注音: All Privileges--對象上的所有权限的总和。 public --表示所有用户">
+    <meta name="description" content="SQL授权">
 <meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 授权">
 <meta property="og:url" content="https://vitan.me/posts/SQLgrant.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="SQL授权 &amp;lt;!--more--&amp;gt; 授权命令 语法 12grant &amp;lt;权限名&amp;gt;[ ,&amp;lt;权限名&amp;gt;] on &amp;lt;对象&amp;gt;to 用户1,用户2,... | public [with grant option]  对应不同对象,有不可权限,代表不同的操作(语句)。 注音: All Privileges--對象上的所有权限的总和。 public --表示所有用户">
+<meta property="og:description" content="SQL授权">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL 授权">
-<meta name="twitter:description" content="SQL授权 &amp;lt;!--more--&amp;gt; 授权命令 语法 12grant &amp;lt;权限名&amp;gt;[ ,&amp;lt;权限名&amp;gt;] on &amp;lt;对象&amp;gt;to 用户1,用户2,... | public [with grant option]  对应不同对象,有不可权限,代表不同的操作(语句)。 注音: All Privileges--對象上的所有权限的总和。 public --表示所有用户">
+<meta name="twitter:description" content="SQL授权">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">授权命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">收回权限</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#授权命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">授权命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#收回权限"><span class="post-toc-number">2.</span> <span class="post-toc-text">收回权限</span></a></li></ol>
         </nav>
     </aside>
 
@@ -208,54 +208,60 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>SQL授权
-&lt;!--more--&gt;</p>
-<h1>授权命令</h1>
-<p>语法
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> &lt;权限名&gt;[ ,&lt;权限名&gt;] <span class="keyword">on</span> &lt;对象&gt;</span><br><span class="line"><span class="keyword">to</span> 用户<span class="number">1</span>,用户<span class="number">2</span>,... | <span class="keyword">public</span> [<span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>]</span><br></pre></td></tr></table></figure></p>
+            <p> SQL授权</p>
+<a id="more"></a>
+<h1 id="授权命令"><a href="#授权命令" class="headerlink" title="授权命令"></a>授权命令</h1><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> &lt;权限名&gt;[ ,&lt;权限名&gt;] <span class="keyword">on</span> &lt;对象&gt;</span><br><span class="line"><span class="keyword">to</span> 用户<span class="number">1</span>,用户<span class="number">2</span>,... | <span class="keyword">public</span> [<span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>]</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>对应不同对象,有不可权限,代表不同的操作(语句)。
-注音: All Privileges--對象上的所有权限的总和。</li>
-<li>public --表示所有用户</li>
+<li>对应不同对象,有不可权限,代表不同的操作(语句)。<br>  注音: All Privileges–對象上的所有权限的总和。</li>
+<li>public –表示所有用户</li>
 <li>指定With grant option时,用户可以获得的权限转受给其他用户;否則,用户只能使用而不能转受。</li>
 <li>SQL 标准允许具有with grant option 的用户把相应的权限或其子集传递授予其他用户,但不允许循环授权,即被授权者不能把权限再授回给授权者或其祖先.</li>
 </ul>
-<p>DBA 执行了如下语句:
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>, <span class="keyword">update</span> <span class="keyword">on</span> Student <span class="keyword">to</span> Liming</span><br><span class="line"><span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span></span><br></pre></td></tr></table></figure></p>
+<p>DBA 执行了如下语句:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>, <span class="keyword">update</span> <span class="keyword">on</span> Student <span class="keyword">to</span> Liming</span><br><span class="line"><span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>则 <code>DBA</code> 把对 <code>Student</code> (基本表或视图)的权限赋给用户 Liming,因为有<code>with grant option</code>,所以 Lining 可以把这个权限再转授给其他用户。</li>
 </ul>
-<p>用户 Liming 执行了如下语句:
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>(Sno, Sname), <span class="keyword">update</span> (Sname)</span><br><span class="line"><span class="keyword">on</span> Student <span class="keyword">to</span> U5</span><br></pre></td></tr></table></figure></p>
+<p>用户 Liming 执行了如下语句:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>(Sno, Sname), <span class="keyword">update</span> (Sname)</span><br><span class="line"><span class="keyword">on</span> Student <span class="keyword">to</span> U5</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>则 <code>Liming</code> 把对 <code>Student</code> 上某些列的权限赋给用户<code>U5</code>,但 U5不可以把这个权限再转授给其他用户。</li>
 </ul>
-<p>DBA 对表查询的权限授予所有用户
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> SC <span class="keyword">to</span> <span class="keyword">public</span></span><br></pre></td></tr></table></figure></p>
+<p>DBA 对表查询的权限授予所有用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> SC <span class="keyword">to</span> <span class="keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <p>Grant 还可以实现数据库类型和模式类型权限管理,格式如下:</p>
-<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> 权限名[,...] <span class="keyword">to</span> user1,user2,...</span><br><span class="line">| <span class="keyword">public</span>[<span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>]</span><br></pre></td></tr></table></figure></p>
-<p>授予用户 Liming 具有创建数据表和图的权限
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">table</span>, <span class="keyword">create</span> <span class="keyword">view</span> <span class="keyword">to</span> Liming</span><br></pre></td></tr></table></figure></p>
-<h1>收回权限</h1>
-<p>语法
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> 权限名[ ,…] <span class="keyword">on</span> 对象 <span class="keyword">form</span></span><br><span class="line">用户<span class="number">1</span>,用户<span class="number">2</span>,… | <span class="keyword">public</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> 权限名[,...] <span class="keyword">to</span> user1,user2,...</span><br><span class="line">| <span class="keyword">public</span>[<span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>]</span><br></pre></td></tr></table></figure>
+
+<p>授予用户 Liming 具有创建数据表和图的权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">table</span>, <span class="keyword">create</span> <span class="keyword">view</span> <span class="keyword">to</span> Liming</span><br></pre></td></tr></table></figure>
+
+<h1 id="收回权限"><a href="#收回权限" class="headerlink" title="收回权限"></a>收回权限</h1><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> 权限名[ ,…] <span class="keyword">on</span> 对象 <span class="keyword">form</span></span><br><span class="line">用户<span class="number">1</span>,用户<span class="number">2</span>,… | <span class="keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>收回权限时,若该用户已将权限转授给其他用户，则这些转受的权限也一并收回。</li>
 </ul>
-<p>DBA 执行以下语句:
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">update</span> <span class="keyword">on</span> Student <span class="keyword">from</span> Liming</span><br></pre></td></tr></table></figure></p>
+<p>DBA 执行以下语句:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">update</span> <span class="keyword">on</span> Student <span class="keyword">from</span> Liming</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>DBA 回收用户<code>Liming</code> 的对<code>Student</code> 的更新权限.理论上，Liming转受给用户U5的对Student某些列的更新权限也一并收回udent 某些列的更新权限也要一并收回</li>
 </ul>
-<p>收回所有用户对表 SC 的查询权
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Revoke</span> <span class="keyword">select</span> <span class="keyword">on</span> SC <span class="keyword">from</span> <span class="keyword">public</span></span><br></pre></td></tr></table></figure></p>
+<p>收回所有用户对表 SC 的查询权</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Revoke</span> <span class="keyword">select</span> <span class="keyword">on</span> SC <span class="keyword">from</span> <span class="keyword">public</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>revoke</code>还可以实现数据库类型和模式类型权限收回,格式如下</li>
 </ul>
-<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> 权限名[ ,…] <span class="keyword">from</span> 用户<span class="number">1</span>,用户<span class="number">2</span>,... | <span class="keyword">public</span></span><br></pre></td></tr></table></figure></p>
-<p>收回Liming 创建表的权限。
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Revoke</span> <span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">from</span> Liming</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> 权限名[ ,…] <span class="keyword">from</span> 用户<span class="number">1</span>,用户<span class="number">2</span>,... | <span class="keyword">public</span></span><br></pre></td></tr></table></figure>
 
+<p>收回Liming 创建表的权限。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Revoke</span> <span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">from</span> Liming</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -439,7 +445,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 
 </script>
 
-<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -459,7 +465,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 </li>
 </template>
 
-<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 

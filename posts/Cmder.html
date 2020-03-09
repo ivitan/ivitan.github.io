@@ -34,25 +34,25 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Win">
-    <meta name="description" content="使用 Bash                                                                                                            &amp;lt;!--more--&amp;gt; 配置 D:\cmder\config\user_profile.sh123456789101112131415161718192021">
+    <meta name="description" content="使用 Bash">
 <meta name="keywords" content="Linux,Win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cmder 配置">
 <meta property="og:url" content="https://vitan.me/posts/Cmder.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="使用 Bash                                                                                                            &amp;lt;!--more--&amp;gt; 配置 D:\cmder\config\user_profile.sh123456789101112131415161718192021">
+<meta property="og:description" content="使用 Bash">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png">
 <meta property="og:updated_time" content="2020-02-19T01:11:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cmder 配置">
-<meta name="twitter:description" content="使用 Bash                                                                                                            &amp;lt;!--more--&amp;gt; 配置 D:\cmder\config\user_profile.sh123456789101112131415161718192021">
+<meta name="twitter:description" content="使用 Bash">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -183,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用 Bash</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-Bash"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用 Bash</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a></li></ol>
         </nav>
     </aside>
 
@@ -210,18 +210,17 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1>使用 Bash</h1>
-<p><figure class="image-bubble">
+            <h1 id="使用-Bash"><a href="#使用-Bash" class="headerlink" title="使用 Bash"></a>使用 Bash</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure></p>
-<p>&lt;!--more--&gt;</p>
-<h1>配置</h1>
-<p><figure class="highlight bash"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 别名</span></span><br><span class="line"><span class="comment">#打开当前文件夹</span></span><br><span class="line"><span class="built_in">alias</span> e.=<span class="string">'explorer .'</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="built_in">alias</span> clear=cls</span><br><span class="line"><span class="built_in">alias</span> gl=<span class="string">'git pull origin $1'</span></span><br><span class="line"><span class="built_in">alias</span> glm=<span class="string">'git pull origin master'</span></span><br><span class="line"><span class="built_in">alias</span> gp=<span class="string">'git push origin $1'</span></span><br><span class="line"><span class="built_in">alias</span> gpm=<span class="string">'git push origin master'</span></span><br><span class="line"><span class="built_in">alias</span> cpd=<span class="string">'cap production deploy'</span></span><br><span class="line"><span class="built_in">alias</span> cpt=<span class="string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># NEW.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📦 NEW: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># IMPROVE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"👌 IMPROVE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># FIX.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🐛 FIX: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># RELEASE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🚀 RELEASE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># DOC.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📖 DOC: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># TEST.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"✅ TEST: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            </figure>
 
+<a id="more"></a>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight bash"><figcaption><span>D:\cmder\config\user_profile.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 别名</span></span><br><span class="line"><span class="comment">#打开当前文件夹</span></span><br><span class="line"><span class="built_in">alias</span> e.=<span class="string">'explorer .'</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls --show-control-chars -F --color $*'</span></span><br><span class="line"><span class="built_in">alias</span> clear=cls</span><br><span class="line"><span class="built_in">alias</span> gl=<span class="string">'git pull origin $1'</span></span><br><span class="line"><span class="built_in">alias</span> glm=<span class="string">'git pull origin master'</span></span><br><span class="line"><span class="built_in">alias</span> gp=<span class="string">'git push origin $1'</span></span><br><span class="line"><span class="built_in">alias</span> gpm=<span class="string">'git push origin master'</span></span><br><span class="line"><span class="built_in">alias</span> cpd=<span class="string">'cap production deploy'</span></span><br><span class="line"><span class="built_in">alias</span> cpt=<span class="string">'cap staging deploy'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Git Commit, Add all and Push — in one step.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gcap</span></span>() &#123;</span><br><span class="line">    git add . &amp;&amp; git commit -m <span class="string">"$*"</span> &amp;&amp; git push</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># NEW.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gnew</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📦 NEW: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># IMPROVE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gimp</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"👌 IMPROVE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># FIX.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gfix</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🐛 FIX: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># RELEASE.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">grlz</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"🚀 RELEASE: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># DOC.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gdoc</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"📖 DOC: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># TEST.</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gtst</span></span>() &#123;</span><br><span class="line">    gcap <span class="string">"✅ TEST: <span class="variable">$@</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -405,7 +404,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 
 </script>
 
-<script src="//unpkg.com/indigo@latest/js/main.min.js"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -425,7 +424,7 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 </li>
 </template>
 
-<script src="//unpkg.com/indigo@latest/js/search.min.js" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
