@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Termux,Git">
-    <meta name="description" content="Failed to receive SOCKS4 connect request ack.">
+    <meta name="description" content="Failed to receive SOCKS4 connect request ack. &amp;lt;!--more--&amp;gt;  解决方法 12git config --global http.proxy &amp;apos;socks5://127.0.0.1:1080&amp;apos; git config --global https.proxy &amp;apos;socks5://127.0.0.1:108">
 <meta name="keywords" content="Linux,Termux,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Clone Error">
 <meta property="og:url" content="https://vitan.me/posts/GitSOCKS4.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Failed to receive SOCKS4 connect request ack.">
+<meta property="og:description" content="Failed to receive SOCKS4 connect request ack. &amp;lt;!--more--&amp;gt;  解决方法 12git config --global http.proxy &amp;apos;socks5://127.0.0.1:1080&amp;apos; git config --global https.proxy &amp;apos;socks5://127.0.0.1:108">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Clone Error">
-<meta name="twitter:description" content="Failed to receive SOCKS4 connect request ack.">
+<meta name="twitter:description" content="Failed to receive SOCKS4 connect request ack. &amp;lt;!--more--&amp;gt;  解决方法 12git config --global http.proxy &amp;apos;socks5://127.0.0.1:1080&amp;apos; git config --global https.proxy &amp;apos;socks5://127.0.0.1:108">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方法-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">解决方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a></li></ol>
         </nav>
     </aside>
 
@@ -208,34 +208,36 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>Failed to receive SOCKS4 connect request ack.</p>
+<p>Failed to receive SOCKS4 connect request ack.
+&lt;!--more--&gt;</p>
 </blockquote>
-<a id="more"></a>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos; </span><br><span class="line">git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos;</span><br></pre></td></tr></table></figure>
-
+<h1>解决方法</h1>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos; </span><br><span class="line">git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>error: RPC failed; curl 18 transfer closed with outstanding read data remaining</p>
 </blockquote>
-<h1 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h1><ul>
-<li><ol>
-<li>–depth 1</li>
+<h1>解决方法</h1>
+<ul>
+<li>
+<ol>
+<li>--depth 1</li>
 </ol>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 关闭压缩</span></span><br><span class="line">git config --global core.compression 0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 部分克隆</span></span><br><span class="line">git clone --depth 1 http://github.com/large-repository </span><br><span class="line">cd large-repository</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入新目录并检索其余的克隆</span></span><br><span class="line">git fetch --unshallow</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">git fetch --depth=2147483647</span><br><span class="line"><span class="meta">#</span><span class="bash"> 做一个定期拉</span></span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 关闭压缩</span></span><br><span class="line">git config --global core.compression 0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 部分克隆</span></span><br><span class="line">git clone --depth 1 http://github.com/large-repository </span><br><span class="line">cd large-repository</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入新目录并检索其余的克隆</span></span><br><span class="line">git fetch --unshallow</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">git fetch --depth=2147483647</span><br><span class="line"><span class="meta">#</span><span class="bash"> 做一个定期拉</span></span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><ol start="2">
-<li>切换使用 ssh(git clone <a href="mailto:username@mydomain.com" target="_blank" rel="noopener">username@mydomain.com</a>:my_group/my_repository.git) </li>
+<li>
+<ol start="2">
+<li>切换使用 ssh(git clone username@mydomain.com:my_group/my_repository.git)</li>
 </ol>
 </li>
-<li><ol start="3">
+<li>
+<ol start="3">
 <li>增加缓冲区大小</li>
 </ol>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p><strong>参考</strong></p>
 <ul>

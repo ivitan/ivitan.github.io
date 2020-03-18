@@ -201,7 +201,84 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h1><p>关系模式R(U)的一个分解p={Ri(Ui)}满足U=∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖</p>
+        <h1>关系模式</h1>
+<p>关系模式R(U)的一个分解p={Ri(Ui)}满足U=∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖</p>
+<p>&lt;!--more--&gt;
+无损连接</p>
+<p><code>无损连接是指</code>某关系模式的事例r按照关系模式分解成多个关系r1,…,rk，若r1,…,rk的自然连接（Join操作）等于r，则称该模式分解是无损的.</p>
+<p>测试无损连接</p>
+<p>Chase方法能够检测完全的无损连接，设有n个属性的模式R分解为k个模式Ri，有如下Chase过程：</p>
+<pre><code>1. 构造一个k行n列的表格，每行对应一个模式Ri，每列对应一个属性Aj，若Aj在模式Ri中则表格[i][j]中填入aj，否则填入bij
+2. 扫描F中的每个FD X→Y
+3. 若表格中有两行在X分量上相等，在Y分量上不相等则修改Y：若Y的分量中是个是aj，则另一个也修改为aj
+4. 如果没有aj，则用其中一个bij替换另一个符号（i是所有b中最小的行数）
+5. 重复2、3、4一直到表格不能修改为止
+6. 若此时表格中有一行全是a，则该分解是无损连接的分解
+</code></pre>
+<p>当模式分解是简单的二元分解时（即p={R1,R2}），p是无损连接的分解当且仅当下面FD之一成立：</p>
+<pre><code>1. R1和R2两模式属性的交集 → R1与R2两模式属性的差集
+2. R1和R2两模式属性的交集 → R2与R1两模式属性的差集
+</code></pre>
+<p>保持函数依赖</p>
+<p>保持函数依赖是指关系模式R的FD集F在分解后仍在数据库模式中保持不变，这是模式分解的第二个条件</p>
+<p>形式化的定义分解后F在模式Ri上的投影为：</p>
+<p>πRi(F)={X→Y|X→Y∈F+⋂X、Y⊂Ri}</p>
+<p>若分解p满足如下条件则称p**\保持函数依赖**\：</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2018/07/03/5b3b7eba9112d.jpg" alt="Screenshot_20180703-214805__01.jpg" title>
+                </div>
+                <div class="image-caption">Screenshot_20180703-214805__01.jpg</div>
+            </figure></p>
+<h1>关系模式的范式</h1>
+<p>含义
+范式xNF即是满足特定要求的模式，将低一级范式的关系模式通过模式分解转换为高一级范式的关系模式集合的过程叫做规范化</p>
+<p>范式从低级到高级依次为：1NF、2NF、3NF、BCNF、4NF、5NF，高一级的范式总是低一级范式的真子集</p>
+<p>根据关系模式R的不可约FD集F，可以画出节点是属性或属性集，边是由被依赖节点指向依赖节点的有向图来辅助分析关系模式，叫做函数依赖图</p>
+<p>1NF</p>
+<p>1NF要求关系模式R的每一个实例r均满足：r中的每一个元组t的每一个属性中只有一个值，这是关系模式的基本要求</p>
+<p>不满足1NF的关系模式有二义性！</p>
+<p>2NF</p>
+<p>假定：R只有一个候选码，且该候选码为主码</p>
+<p>R∈1NF且R的每一个非主属性（非候选码的其他属性）都完全函数依赖于主码时，R∈2NF</p>
+<p>A完全依赖于W是指：W→A且A不依赖于任何一个W的真子集X，W是主键也可能包括多个属性{X、Y}，非主属性A不能局部函数依赖于X或Y</p>
+<p>不满足2NF的关系模式可能存在［插入异常、删除异常、更新异常和数据冗余］，通过画出函数依赖图无损分解非2NF得到2NF，但2NF也不能完全消除上述问题</p>
+<p>3NF</p>
+<p>假定：R只有一个候选码，且该候选码为主码</p>
+<p>R∈2NF且R的每一个非主属性都不传递依赖于主码时，R∈3NF
+称A传递依赖于Y则有：Y→X，X→A，并且Y不依赖于X（即Y不等于X）、A不是X的子集</p>
+<p>不满足3NF的关系模式也可能存在［插入异常、删除异常、更新异常和数据冗余］，通过打破传递依赖链条，把关系模式分解成多个子关系模式</p>
+<p>BCNF</p>
+<p>BCNF是3NF处理R有多个候选码的扩展，当R有多个候选码时即使R∈3NF，也可能出现［插入异常、删除异常、更新异常和数据冗余］，这时需要分解为BCNF范式</p>
+<p>如果关系模式R的所有不平凡的、完全的函数依赖的决定因素（左边的属性集）都是候选码，则R∈BCNF
+若要求保持函数依赖和无损联接，则总可以达到3NF，但不一定满足BCNF；因为BCNF可以达到无损连接，但不一定保持函数依赖</p>
+<h1>关系模式分解为范式的分解算法</h1>
+<h2>保持函数依赖地分解R到3NF</h2>
+<p>算法步骤：
+求出R的最小函数依赖集F</p>
+<p>把所有不在F中出现的属性组成一个关系模式R’，并在U中去掉这些属性</p>
+<p>若F中存在X→A且XA=U，则算法结束输出{R’,R(U)}，否则继续下一步</p>
+<p>对F中的FD按相同的左部分组构成一个关系模式Ri(Ui)，Ui包括了该组FD涉及的所有属性</p>
+<p>去掉{Ri(Ui)}中属性集Ui是其他某个关系模式属性集Uj子集的关系模式Ri，得到最终的分解p={R1,R2,…,Rk,R’}，p能够保持函数依赖地把R分解到3NF</p>
+<h2>无损连接且保持函数依赖地分解R到3NF</h2>
+<p>算法步骤：</p>
+<ol>
+<li>按算法(1)中步骤求出保持函数依赖的3NF分解，设q={R1,R2,…,Rk}</li>
+<li>设X是R的主码，p={R1,R2,…,Rk,R(X)}</li>
+<li>若X是q中某个Ri(Ui)属性集Ui的子集，则删除p中的R(X)</li>
+<li>输出p，p能够无损连接且保持函数依赖地把R分解到3NF</li>
+</ol>
+<h2>无损联接地分解R到BCNF</h2>
+<p>算法步骤：</p>
+<ol>
+<li>p={R}</li>
+<li>检查p中各关系模式是否满足BCNF，是则终止输出p</li>
+<li>设p中S(Us)非BCNF，则必存在X→A且X不是S的候选码：S分解为S1(XA)和S2(Us-A)，把p中的S替换为S1、S2，跳转至第二步</li>
+</ol>
+<p><strong>参考</strong></p>
+<p><a href="https://blog.csdn.net/u014030117/article/details/46697823" target="_blank" rel="noopener">数据库复习11——关系模式与范式</a></p>
+
     
 
         <a href="/posts/SQLmode.html" class="post-more waves-effect waves-button">
@@ -248,7 +325,121 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。</p>
+        <p>关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。
+&lt;!--more--&gt;</p>
+<h1>一、关系代数的9种操作</h1>
+<p>关系代数中包括了：并、交、差、乘、选择、投影、联接、除、自然联接等操作。</p>
+<p>五个基本操作
+并(∪)、差(-)、笛卡尔积(×)、选择(σ)、投影(π)</p>
+<p>四个组合操作</p>
+<ol>
+<li>交(∩) 	2. 联接(等值联接) 	3. 自然联接(R⋈S) 	4. 除法(÷)</li>
+</ol>
+<p>注2：等值连接表示先做笛卡尔积(×)之后，对相应列进行选择或等值关联后的结果(仅筛选行、不筛选列)</p>
+<p>注2：自然连接表示两个关系中若有相同名称的属性，则自动作为关联条件，且仅列出一列</p>
+<p>补充各种符号</p>
+<ol>
+<li>投影 π</li>
+<li>选择 σ</li>
+<li>重命名 ρ</li>
+<li>自然连接 ⋈</li>
+<li>θ-连接和相等连接</li>
+<li>半连接 ⋉ , ⋊</li>
+<li>反连接 ▷</li>
+<li>除法 ÷</li>
+<li>左外连接 ⟕</li>
+<li>右外连接 ⟖</li>
+<li>全外连接 ⟗</li>
+</ol>
+<h1>二、关系代数表达式</h1>
+<p>由关系代数运算经有限次复合而成的式子称为关系代数表达式。这种表达式的运算结果仍然是一个关系。可以用关系代数表达式表示对数据库的查询和更新操作。</p>
+<h1>三、举例说明</h1>
+<p>设教学数据库中有3个关系：</p>
+<p>学生关系S(SNO,SNAME,AGE,SEX)</p>
+<p>学习关系SC(SNO,CNO,GRADE)</p>
+<p>课程关系C(CNO,CNAME,TEACHER)</p>
+<ol>
+<li>检索学习课程号为C2的学生学号与成绩
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO,GRADE</span><br><span class="line">  <span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,GRADE(σ<span class="attribute">CNO</span>=<span class="string">'C2'</span>(SC))</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>检索学习课程号为C2的学生学号与姓名
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="keyword">FROM</span> SC,S</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME(σ<span class="attribute">CNO</span>=<span class="string">'C2'</span>(S⋈SC))</span><br><span class="line">此查询涉及S和SC，先进行自然连接，然后再执行选择投影操作。</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SNAME（S）cross（πSNO(σ<span class="attribute">CNO</span>=<span class="string">'C2'</span>(SC))）</span><br><span class="line">自然连接的右分量为<span class="string">"学了C2课的学生学号的集合"</span>。</span><br><span class="line">此表达式比前一个表达式优化，执行起来要省时间、省空间。</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>检索选修课程名为MATHS的学生学号与姓名
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SC.SNO,S.SNAME</span><br><span class="line"><span class="keyword">FROM</span> SC,S,C</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=C.CNO</span><br><span class="line"><span class="keyword">AND</span> C.CNAME=<span class="string">'MATHS'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNO,SANME(σ<span class="attribute">CNAME</span>=<span class="string">'MATHS'</span>(S⋈SC⋈C))</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>检索选修课程号为C2或C4的学生学号
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> CNO=<span class="string">'C2'</span></span><br><span class="line"><span class="keyword">OR</span> CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π <span class="function"><span class="title">SNO</span>(σ <span class="variable">CNO</span>=<span class="string">'C2'</span>∨<span class="variable">CNO</span>=<span class="string">'C4'</span>(<span class="variable">SC</span>))</span></span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>检索至少选修课程号为C2或C4的学生学号
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SA.SNO</span><br><span class="line"><span class="keyword">FROM</span> SC <span class="keyword">AS</span> SA,SC <span class="keyword">AS</span> SB</span><br><span class="line"><span class="keyword">WHERE</span> SA.SNO=SB.SNO</span><br><span class="line"><span class="keyword">AND</span> SA.CNO=<span class="string">'C2'</span></span><br><span class="line"><span class="keyword">AND</span> SB.CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π <span class="number">1</span>(σ<span class="number">1</span>=<span class="number">4</span>∧<span class="number">2</span>=<span class="string">'C2'</span>∧<span class="number">5</span>=<span class="string">'C4'</span>（SC×SC）)</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>检索不学C2课的学生姓名与年龄
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNAME,AGE</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">MINUS</span></span><br><span class="line"><span class="keyword">SELECT</span> S.SNAME,S.AGE</span><br><span class="line"><span class="keyword">FROM</span> SC,S</span><br><span class="line"><span class="keyword">WHERE</span> SC.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SC.CNO=<span class="string">'C2'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">π SNAME,AGE（S）－πSNAME,AGE(σ<span class="attribute">CNO</span>=<span class="string">'C2'</span>（S⋈SC）)</span><br></pre></td></tr></table></figure></p>
+<ol start="7">
+<li>
+<p>检索学习全部课程的学生姓名
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">π <span class="selector-tag">SNO</span>,<span class="selector-tag">CNO</span>(SC)÷π<span class="selector-tag">CNO</span>(C)</span><br><span class="line">先用除法取出选取所有课程的<span class="selector-tag">SNO</span>集(除法可以理解为一个Filter)</span><br><span class="line">π <span class="selector-tag">SNAME</span>(S ⋈ (πSNO,CNO(SC)÷πCNO(C)))</span><br><span class="line">再关联<span class="selector-tag">S</span>表取出<span class="selector-tag">SNAME</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索所学课程包含S3所学课程的学生学号
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">π SNO,CNO(SC)÷ πCNO(σ<span class="attribute">SNO</span>=<span class="string">'S3'</span>(SC)）</span><br><span class="line">同样运用了除法的特性</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>将新课程元组('C10','PHYSICS','YU')插入到关系C中
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> C <span class="keyword">VALUES</span>(<span class="string">'C10'</span>,<span class="string">'PHYSICS'</span>,<span class="string">'YU'</span>)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">C</span>∪(<span class="string">'C10'</span>,<span class="string">'PHYSICS'</span>,<span class="string">'YU'</span>))</span><br><span class="line">记住该符号的用法</span><br></pre></td></tr></table></figure></p>
+<ol start="10">
+<li>将学号S4选修课程号为C4的成绩改为85分
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> SC <span class="keyword">SET</span> GRADE=<span class="number">85</span></span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S4'</span></span><br><span class="line"><span class="keyword">AND</span> CNO=<span class="string">'C4'</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（SC－（<span class="string">'S4'</span>,<span class="string">'C4'</span>,?)∪(<span class="string">'S4'</span>,<span class="string">'C4'</span>,<span class="number">85</span>)）</span><br><span class="line">先用<span class="string">'－'</span>实现<span class="keyword">DELETE</span>功能，再用<span class="string">'∪'</span>实现<span class="keyword">INSERT</span>功能</span><br><span class="line">注意使用?来表示检索时忽略该字段值</span><br></pre></td></tr></table></figure></p>
+<h1>四、关系代数表达式的优化</h1>
+<p>目的：
+为了系统在执行时既省时间又能提高效率。</p>
+<p>基本策略：
+先做选择，运用投影去除多余属性等等。</p>
+<p>优化算法：
+语法树(尽量提前做选择操作；在每个操作后，应做个投影操作，去掉不用的属性值)</p>
+<p>例如：</p>
+<ol>
+<li>π SNO,SNAME(σGRADE&gt;60(S⋈SC)) 进行优化后转换为：2. π SNO,SNAME(πSNO,SNAME(S)⋈πSNO(σGRADE&gt;60(SC)))
+--即提前做选择操作；在每个操作后，应做个投影操作，去掉不用的属性值</li>
+</ol>
+<p>又如：</p>
+<ol>
+<li>S(S#,SNAME,AGE,SEX)</li>
+<li>SC(S#,C#,GRADE)</li>
+<li>C(C#,CNAME,TEACHER)</li>
+</ol>
+<p>π CNAME,TEACHER(σSEX='女'(S⋈SC⋈C)) 进行优化后转换为：</p>
+<p>πCNAME,TEACHER(C⋈πC#(πS#,C#(SC)⋈S#(σSEX='女'(S))))</p>
+<p>优化前和优化后的语法树如下所示：</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2018/06/30/5b379215e6b8c.jpg" alt="syntax_tree_thumb.jpg" title>
+                </div>
+                <div class="image-caption">syntax_tree_thumb.jpg</div>
+            </figure></p>
+<h1>转载注明</h1>
+<p><a href="http://www.blogjava.net/decode360/archive/2009/04/15/292362.html" target="_blank" rel="noopener">数据库关系代数表达式学习</a></p>
+
     
 
         <a href="/posts/SQLrelAlg.html" class="post-more waves-effect waves-button">
@@ -296,6 +487,104 @@ ga('send', 'pageview');
 
     
         <p>数据库单表查询</p>
+<p>&lt;!--more--&gt;</p>
+<h1>一、实验目的</h1>
+<ol>
+<li>
+<p>掌握SELECT语句的基本语法和查询条件表示方法；</p>
+</li>
+<li>
+<p>掌握查询条件表达式和使用方法；</p>
+</li>
+<li>
+<p>掌握GROUP BY 子句的作用和使用方法；</p>
+</li>
+<li>
+<p>掌握HAVING子句的作用和使用方法；</p>
+</li>
+<li>
+<p>掌握ORDER BY子句的作用和使用方法。</p>
+</li>
+</ol>
+<h1>二、实验环境</h1>
+<p>已安装SQL Server 2005 企业版的计算机(13台)；</p>
+<p>具有局域网环境,有固定IP;</p>
+<h1>三、实验学时</h1>
+<p>2学时</p>
+<h1>四、实验要求</h1>
+<ol>
+<li>
+<p>了解数据库查询；</p>
+</li>
+<li>
+<p>了解数据库查询的实现方式；</p>
+</li>
+<li>
+<p>完成实验报告；</p>
+</li>
+</ol>
+<h1>五、实验内容及步骤</h1>
+<p>以数据库原理实验6数据库中数据为基础，请使用T-SQL 语句实现以下操作：</p>
+<ol>
+<li>
+<p>列出所有不姓刘的所有学生；（not like）
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'刘%'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>列出姓“张”且全名为3个汉字的学生；(张__下滑线表示任意一个字符)
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">like</span> <span class="string">'张__'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>显示在2000年以后出生的学生的基本信息；
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 年龄&lt;=(<span class="number">2018</span><span class="number">-2000</span>)</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>查询出课程名含有“数据”字串的所有课程基本信息
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> c</span><br><span class="line"><span class="keyword">where</span> 课程名 <span class="keyword">like</span> <span class="string">'数据%'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>列出选修了‘101’课程的学生，按成绩的降序排列；
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> sc</span><br><span class="line"><span class="keyword">where</span> 课程号=<span class="string">'101'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>列出课程表中全部信息，按先修课的升序排列；</p>
+</li>
+</ol>
+<ol start="7">
+<li>
+<p>按照出生年份升序显示所有学生的学号、姓名、性别、出生年份及所在系，在结果集中列标题分别指定为“学号，姓名，性别，出生年份，所在系”；
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号,姓名,性别,(<span class="number">2018</span>-年龄) <span class="keyword">as</span> 出生年份,所在系</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 出生年份 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>按照院系降序显示所有学生的 “所在系，学号、姓名、性别、年龄”等信息，其中所在系按照以下规定显示：院系为CS显示为计算机系，院系为IS显示为信息系，院系为MA显示为数学系，院系为JZ显示为建筑系，其他显示为院系不明；参考例句
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  姓名,所在系,学号,院系英文书写=<span class="keyword">case</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'计算机系'</span> <span class="keyword">then</span> <span class="string">'CS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'信息系'</span> <span class="keyword">then</span> <span class="string">'IS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'艺术系'</span> <span class="keyword">then</span> <span class="string">'AS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'会计系'</span> <span class="keyword">then</span> <span class="string">'KS'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 院系英文书写 <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p>显示所有院系（要求不能重复，不包括空值），并在结果集中增加一列字段“院系规模”，其中若该院系人数&gt;=5则该字段值为“规模很大”，若该院系人数大于等于4小于5则该字段值为“规模一般”， 若该院系人数大于等于2小于4则该字段值为“规模稍小”，否则显示“规模很小”；（参考例句，同学们，适当增加、删除记录，观察结果）
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 所在系,<span class="keyword">COUNT</span>(学号) 人数,院系规模=<span class="keyword">case</span></span><br><span class="line"><span class="keyword">when</span> <span class="keyword">COUNT</span>(学号)&gt;=<span class="number">7</span> <span class="keyword">then</span> <span class="string">'大规模'</span></span><br><span class="line"><span class="keyword">when</span> <span class="keyword">COUNT</span>(学号)&gt;=<span class="number">5</span> <span class="keyword">and</span>  <span class="keyword">COUNT</span>(学号)&lt;<span class="number">7</span>  <span class="keyword">then</span> <span class="string">'中等'</span></span><br><span class="line"><span class="keyword">when</span> <span class="keyword">COUNT</span>(学号)&lt;<span class="number">5</span> <span class="keyword">then</span> <span class="string">'小规模'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 所在系</span><br></pre></td></tr></table></figure></p>
+<ol start="9">
+<li>
+<p>按照课程号、成绩降序显示课程成绩在70-80之间的学生的学号、课程号及成绩；</p>
+</li>
+<li>
+<p>显示学生信息表中的学生总人数及平均年龄，在结果集中列标题分别指定为“学生总人数，平均年龄”；</p>
+</li>
+<li>
+<p>显示选修的课程数大于3的各个学生的选修课程数；</p>
+</li>
+<li>
+<p>按课程号降序显示选修各个课程的总人数、最高成绩、最低成绩及平均成绩；</p>
+</li>
+<li>
+<p>显示各个所在系男女生人数，其中在结果集中列标题分别指定为“所在系名称、男生人数、女生人数”；</p>
+</li>
+<li>
+<p>列出有二门以上课程（含两门）不及格的学生的学号及该学生的平均成绩；</p>
+</li>
+</ol>
+<h1>六、出现问题及解决办法</h1>
+<p>如：某些查询操作无法执行，如何解决？</p>
+
     
 
         <a href="/posts/SQLexercise.html" class="post-more waves-effect waves-button">
@@ -342,7 +631,371 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>检索，存储过程，触发器相关练习。</p>
+        <p>检索，存储过程，触发器相关练习。
+&lt;!--more--&gt;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">仓库号</th>
+<th style="text-align:left">城市</th>
+<th style="text-align:left">面积</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">WH1</td>
+<td style="text-align:left">北京</td>
+<td style="text-align:left">370</td>
+</tr>
+<tr>
+<td style="text-align:left">WH2</td>
+<td style="text-align:left">上海</td>
+<td style="text-align:left">500</td>
+</tr>
+<tr>
+<td style="text-align:left">WH3</td>
+<td style="text-align:left">广州</td>
+<td style="text-align:left">200</td>
+</tr>
+<tr>
+<td style="text-align:left">WH4</td>
+<td style="text-align:left">广州</td>
+<td style="text-align:left">300</td>
+</tr>
+<tr>
+<td style="text-align:left">WH5</td>
+<td style="text-align:left">天津</td>
+<td style="text-align:left">340</td>
+</tr>
+<tr>
+<td style="text-align:left">WH6</td>
+<td style="text-align:left">上海</td>
+<td style="text-align:left">350</td>
+</tr>
+<tr>
+<td style="text-align:left">WH7</td>
+<td style="text-align:left">上海</td>
+<td style="text-align:left">600</td>
+</tr>
+<tr>
+<td style="text-align:left">WH8</td>
+<td style="text-align:left">天津</td>
+<td style="text-align:left">300</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">职工号</th>
+<th style="text-align:left">仓库号</th>
+<th style="text-align:left">工资</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">WH2</td>
+<td style="text-align:left">2220</td>
+</tr>
+<tr>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">WH1</td>
+<td style="text-align:left">1810</td>
+</tr>
+<tr>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">WH2</td>
+<td style="text-align:left">1850</td>
+</tr>
+<tr>
+<td style="text-align:left">E5</td>
+<td style="text-align:left">WH3</td>
+<td style="text-align:left">1530</td>
+</tr>
+<tr>
+<td style="text-align:left">E6</td>
+<td style="text-align:left">WH1</td>
+<td style="text-align:left">1550</td>
+</tr>
+<tr>
+<td style="text-align:left">E7</td>
+<td style="text-align:left">WH4</td>
+<td style="text-align:left">2300</td>
+</tr>
+<tr>
+<td style="text-align:left">E8</td>
+<td style="text-align:left">WH4</td>
+<td style="text-align:left">2000</td>
+</tr>
+<tr>
+<td style="text-align:left">E9</td>
+<td style="text-align:left">WH5</td>
+<td style="text-align:left">2050</td>
+</tr>
+<tr>
+<td style="text-align:left">E10</td>
+<td style="text-align:left">WH5</td>
+<td style="text-align:left">1900</td>
+</tr>
+<tr>
+<td style="text-align:left">E11</td>
+<td style="text-align:left">WH6</td>
+<td style="text-align:left">2100</td>
+</tr>
+<tr>
+<td style="text-align:left">E12</td>
+<td style="text-align:left">WH7</td>
+<td style="text-align:left">1700</td>
+</tr>
+<tr>
+<td style="text-align:left">E15</td>
+<td style="text-align:left">WH5</td>
+<td style="text-align:left">1780</td>
+</tr>
+<tr>
+<td style="text-align:left">E16</td>
+<td style="text-align:left">WH1</td>
+<td style="text-align:left">1600</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">职工号</th>
+<th style="text-align:left">供应商号</th>
+<th style="text-align:left">订购单号</th>
+<th style="text-align:left">订购日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">S7</td>
+<td style="text-align:left">OR67</td>
+<td style="text-align:left">2005-12-4</td>
+</tr>
+<tr>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">S4</td>
+<td style="text-align:left">OR73</td>
+<td style="text-align:left">2006-4-1</td>
+</tr>
+<tr>
+<td style="text-align:left">E7</td>
+<td style="text-align:left">S4</td>
+<td style="text-align:left">OR76</td>
+<td style="text-align:left">2006-4-2</td>
+</tr>
+<tr>
+<td style="text-align:left">E6</td>
+<td style="text-align:left">S6</td>
+<td style="text-align:left">OR77</td>
+<td style="text-align:left">2006-1-21</td>
+</tr>
+<tr>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">S4</td>
+<td style="text-align:left">OR79</td>
+<td style="text-align:left">2005-11-15</td>
+</tr>
+<tr>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">S6</td>
+<td style="text-align:left">OR80</td>
+<td style="text-align:left">2006-2-1</td>
+</tr>
+<tr>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">S6</td>
+<td style="text-align:left">OR90</td>
+<td style="text-align:left">2006-3-12</td>
+</tr>
+<tr>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">S3</td>
+<td style="text-align:left">OR91</td>
+<td style="text-align:left">2006-3-2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">供应商号</th>
+<th style="text-align:left">供应商名</th>
+<th style="text-align:left">地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S3</td>
+<td style="text-align:left">振华电子厂</td>
+<td style="text-align:left">西安</td>
+</tr>
+<tr>
+<td style="text-align:left">S4</td>
+<td style="text-align:left">华通电子公司</td>
+<td style="text-align:left">北京</td>
+</tr>
+<tr>
+<td style="text-align:left">S6</td>
+<td style="text-align:left">607厂</td>
+<td style="text-align:left">郑州</td>
+</tr>
+<tr>
+<td style="text-align:left">S7</td>
+<td style="text-align:left">爱华电子厂</td>
+<td style="text-align:left">北京</td>
+</tr>
+</tbody>
+</table>
+<h1>检索</h1>
+<ol>
+<li>
+<p>检索在北京的供应商的名称。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索发给供应商S6的订购单号。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出职工E6发给供应商S6的订购单信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E6'</span><span class="keyword">and</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出向供应商S3发过订购单的职工的职工号和仓库号。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> zg.职工号,仓库号 <span class="keyword">from</span> dg <span class="keyword">join</span> zg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"> <span class="keyword">where</span> 供应商号=<span class="string">'S3'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出目前与S3供应商没有联系的职工信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S3'</span>)</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出目前没有任何订购单的供应商信息
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line"> (<span class="keyword">select</span> <span class="keyword">distinct</span> 供应商号 <span class="keyword">from</span> dg)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> gys <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> </span><br><span class="line">( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> dg <span class="keyword">WHERE</span> 供应商号=gys.供应商号 )</span><br></pre></td></tr></table></figure></p>
+<ol start="7">
+<li>
+<p>检索出和职工E1、E3都有联系的北京的供应商的信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span> </span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E1'</span>)</span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号=<span class="string">'E3'</span>)</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出目前和华通电子公司有业务联系的每个职工的工资。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号,工资 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商名=<span class="string">'华通电子公司'</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出与工资在1220元以下的职工没有联系的供应商名称。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys </span><br><span class="line"><span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg </span><br><span class="line"><span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&lt;<span class="number">1220</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 供应商名 <span class="keyword">from</span> gys </span><br><span class="line"><span class="keyword">where</span> 供应商号 <span class="keyword">not</span> <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">join</span> zg <span class="keyword">on</span> dg.职工号=zg.职工号</span><br><span class="line"><span class="keyword">where</span> 工资&gt;<span class="number">2250</span>)</span><br></pre></td></tr></table></figure></p>
+<ol start="10">
+<li>
+<p>检索出向S4供应商发出订购单的仓库所在的城市。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 城市 <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出在上海工作并且向S6供应商发出了订购单的职工号。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 城市=<span class="string">'上海'</span> <span class="keyword">and</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dg.职工号 <span class="keyword">from</span> zg <span class="keyword">join</span> ck <span class="keyword">on</span> zg.仓库号=ck.仓库号</span><br><span class="line"><span class="keyword">join</span> dg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="keyword">where</span> 城市=<span class="string">'上海'</span> <span class="keyword">and</span> 供应商号=<span class="string">'S6'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="12">
+<li>
+<p>检索出在广州工作并且只向S6供应商发出了订购单的职工号。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 城市=<span class="string">'广州'</span> </span><br><span class="line"><span class="keyword">and</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S6'</span>) </span><br><span class="line"><span class="keyword">and</span> 职工号 <span class="keyword">not</span> <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">SELECT</span> 职工号 <span class="keyword">FROM</span> dg <span class="keyword">WHERE</span> 供应商号!=<span class="string">'S6'</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出由工资多于1230元的职工向北京的供应商发出的订购单号。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">1230</span>) <span class="keyword">and</span>  供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span>)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 订购单号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">2000</span>)</span><br><span class="line"><span class="keyword">and</span> 供应商号 <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> 供应商号 <span class="keyword">from</span> gys <span class="keyword">where</span> 地址=<span class="string">'北京'</span>)</span><br></pre></td></tr></table></figure></p>
+<ol start="14">
+<li>
+<p>检索出仓库的个数
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(仓库号) <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出有最大面积的仓库信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> ck.面积=(</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(面积) <span class="keyword">from</span> ck )</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出所有仓库的平均面积。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) 平均面积  <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出向S4供应商发出订购单的那些仓库的平均面积。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) <span class="keyword">as</span> 平均面积 <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> dg <span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>))</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(面积) <span class="keyword">as</span> 平均面积 <span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 仓库号 <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg <span class="keyword">join</span> dg <span class="keyword">on</span> zg.职工号=dg.职工号</span><br><span class="line"><span class="keyword">where</span> 供应商号=<span class="string">'S4'</span>)</span><br></pre></td></tr></table></figure></p>
+<ol start="18">
+<li>
+<p>检索出每个城市的供应商个数。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 地址,<span class="keyword">count</span>(*) <span class="keyword">from</span> gys</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 地址</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出每个仓库中工资多于1220元的职工个数。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 仓库号,<span class="keyword">count</span>(*) <span class="keyword">from</span> zg <span class="keyword">where</span> 工资&gt;<span class="number">1220</span></span><br><span class="line"> <span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>检索出和面积最小的仓库有联系的供应商的个数。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(供应商号) <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 供应商号 <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 面积=</span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">min</span>(面积) <span class="keyword">from</span> ck))))</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(供应商号) <span class="keyword">from</span> dg <span class="keyword">where</span> 职工号 <span class="keyword">in</span> </span><br><span class="line">(<span class="keyword">select</span> 职工号 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck <span class="keyword">where</span> 面积=(<span class="keyword">select</span> <span class="keyword">min</span>(面积) <span class="keyword">from</span> ck)))</span><br></pre></td></tr></table></figure></p>
+<ol start="21">
+<li>检索出工资低于本仓库平均工资的职工信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> 职工 <span class="keyword">out</span> <span class="keyword">WHERE</span> 工资&lt; </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(工资) <span class="keyword">FROM</span> 职工 inne </span><br><span class="line"><span class="keyword">WHERE</span> 仓库号=out.仓库号)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1>存储过程</h1>
+<ol>
+<li>创建一个存储过程P1，输入某个仓库号，查询对应仓库的
+信息。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc P1</span><br><span class="line">@ckh <span class="keyword">nvarchar</span>(<span class="number">225</span>) </span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号=@ckh</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P1 'WH8'</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>创建一个存储过程P2，输入某个仓库号，输出对应仓库的的职工人数。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc P2</span><br><span class="line">@ckh <span class="keyword">nvarchar</span>(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(职工号) 职工人数 <span class="keyword">from</span> zg <span class="keyword">where</span> 仓库号 = @ckh</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec P2 'WH1'</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">TRIGGER</span> tri_salary</span><br><span class="line"><span class="keyword">ON</span> zhg <span class="keyword">FOR</span> <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED <span class="keyword">JOIN</span></span><br><span class="line">DELETED <span class="keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">UPDATE</span>(工资)</span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED <span class="keyword">JOIN</span></span><br><span class="line">DELETED <span class="keyword">ON</span> INSERTED.职工号 = DELETED.职工号</span><br><span class="line"><span class="keyword">WHERE</span> INSERTED.工资&amp;lt;DELETED.工资)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">print(&amp;<span class="comment">#39;新工资值低于原工资，拒绝修改&amp;#39;)</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> countzhigong</span><br><span class="line">@ck <span class="built_in">char</span>(<span class="number">20</span>), @renshu <span class="built_in">int</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> @renshu = <span class="keyword">count</span>(职工号)</span><br><span class="line"><span class="keyword">FROM</span> ck <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">JOIN</span> zhg <span class="keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"><span class="keyword">WHERE</span> ck.仓库号=@ck</span><br><span class="line"><span class="keyword">Declare</span> @re <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Execute</span> countzhigong &amp;<span class="comment">#39;wh2&amp;#39;, @re output</span></span><br><span class="line">Print @re</span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> ck <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">JOIN</span> zhg <span class="keyword">ON</span> ck.仓库号= zhg.仓库号</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> zhg</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1>创建、修改、删除触发器。</h1>
+<ol>
+<li>创建一个触发器zhigong1，在对职工表的工资属性修改时触发：每修改一个职工的工资，就检查新工资是否比原工资低，若是低，则恢复原工资而不做修改。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> zhigong1</span><br><span class="line"><span class="keyword">on</span> zg <span class="keyword">for</span> <span class="keyword">insert</span>,<span class="keyword">update</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> deleted </span><br><span class="line"><span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">update</span>(工资)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> </span><br><span class="line">deleted <span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">where</span> inserted.工资&lt;deleted.工资)</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> zg <span class="keyword">set</span> 工资=<span class="string">'3000'</span> <span class="keyword">where</span> 职工号=<span class="string">'E9'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>创建一个触发器zhigong2，在插入新的职工记录时触发：检查新职工记录的仓库号是否在仓库表的仓库号中存在，如果不存在就撤消插入操作。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">trigger</span> zhigong2</span><br><span class="line"><span class="keyword">on</span> zg <span class="keyword">for</span> <span class="keyword">insert</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> deleted <span class="keyword">on</span> inserted.职工号=deleted.职工号</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> ( <span class="keyword">select</span> 仓库号 <span class="keyword">from</span> inserted <span class="keyword">where</span> 仓库号 <span class="keyword">in</span> (<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> ck ))</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> zg <span class="keyword">values</span>(<span class="string">'E33'</span>,<span class="string">'WH2'</span>,<span class="string">'3000'</span>)</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>
+<p>删除以上两个触发器。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">trigger</span> zhigong1,zhigong2</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>创建一个触发器dinggou1，在对订购表进行插入操作时，输出该职工的所经手的订购单数目。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span>  <span class="keyword">trigger</span>  dinggou1</span><br><span class="line"><span class="keyword">on</span> dg <span class="keyword">for</span> <span class="keyword">insert</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> dg.职工号,<span class="keyword">count</span>(dg.订购单号) <span class="keyword">as</span> 订购单数目</span><br><span class="line"><span class="keyword">from</span> dg <span class="keyword">join</span> inserted <span class="keyword">on</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="keyword">where</span> dg.职工号=inserted.职工号</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dg.职工号</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dg <span class="keyword">values</span></span><br><span class="line">(<span class="string">'E1'</span>,<span class="string">'S6'</span>,<span class="string">'OR98'</span>,<span class="string">'2018-01-21 00:00:00.000'</span>)</span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/SQLselect.html" class="post-more waves-effect waves-button">
@@ -389,7 +1042,91 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Vim 插件 主题</p>
+        <p>Vim 插件 主题
+&lt;!--more--&gt;</p>
+<h1>SpaceVim</h1>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sLf https://spacevim.org/install.sh | bash</span><br></pre></td></tr></table></figure></p>
+<h1>Vundle 插件管理器</h1>
+<p>Vundle 是Vim bundle 的简称,是一个 Vim 插件管理器.</p>
+<p>Vundle 允许你做</p>
+<ol>
+<li>在.vimrc中跟踪和管理插件</li>
+<li>安装特定格式的插件(a.k.a. scripts/bundle)</li>
+<li>更新特定格式插件</li>
+<li>通过插件名称搜索Vim scripts中的插件</li>
+<li>清理未使用的插件</li>
+<li>可以通过单一按键完成以上操作,详见<a href="https://github.com/VundleVim/Vundle.vim/blob/v0.10.2/doc/vundle.txt#L319-L360" target="_blank" rel="noopener">interactive mode</a></li>
+</ol>
+<p>安装
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>配置</li>
+</ul>
+<ol>
+<li>编辑</li>
+</ol>
+<p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vim</span> <span class="selector-class">.vimrc</span></span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>添加下列内容</li>
+</ol>
+<p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> nocompatible   <span class="comment">" be iMproved, required</span></span><br><span class="line"><span class="keyword">filetype</span> off   <span class="comment">" required</span></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></span><br><span class="line"><span class="keyword">call</span> vundle#begin()</span><br><span class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()   <span class="comment">" required</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>  <span class="comment">" required</span></span><br></pre></td></tr></table></figure></p>
+<p>安装需要的插件</p>
+<ul>
+<li>bash 下：</li>
+</ul>
+<p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> +PluginInstall +<span class="keyword">qall</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>vim 下</li>
+</ul>
+<p><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:PluginInstall</span></span><br></pre></td></tr></table></figure></p>
+<h1>安装 Markdown 插件</h1>
+<p>修改vimrc配置文件,添加
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Plugin</span> <span class="symbol">'godlygeek</span>/tabular'</span><br><span class="line"><span class="type">Plugin</span> <span class="symbol">'plasticboy</span>/vim-markdown'</span><br></pre></td></tr></table></figure></p>
+<p>下一步
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim</span><br><span class="line">:PluginInstall</span><br></pre></td></tr></table></figure></p>
+<h1>安装 gruvbox 主题</h1>
+<p>在 .vimrc 添加
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Plugin</span> <span class="symbol">'morhetz</span>/gruvbox'</span><br><span class="line"><span class="type">Plugin</span> <span class="symbol">'vim</span>-airline/vim-airline'</span><br></pre></td></tr></table></figure></p>
+<p>配置主题
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">set</span> <span class="attribute">bg</span>=dark <span class="string">"设置背景为黑色</span></span><br><span class="line"><span class="string">colorscheme gruvbox "</span>设置主题为 gruvbox</span><br><span class="line"><span class="builtin-name">set</span> guioptions=  <span class="string">"去掉两边的scrollbar</span></span><br><span class="line"><span class="string">set guifont=Monaco:h17 "</span>设置字体和字的大小</span><br></pre></td></tr></table></figure></p>
+<h1>Vim-airline</h1>
+<p>.vimrc 添加插件
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Plugin</span> <span class="symbol">'vim</span>-airline/vim-airline</span><br><span class="line"><span class="type">Plugin</span> <span class="symbol">'vim</span>-airline/vim-airline-themes'</span><br></pre></td></tr></table></figure></p>
+<p>配置
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">""</span> airline settings.</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span> = <span class="string">'simple'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !exists(<span class="string">'g:airline_symbols'</span>)</span><br><span class="line">  <span class="keyword">let</span> <span class="variable">g:airline_symbols</span> = &#123;&#125;</span><br><span class="line"><span class="keyword">endif</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_left_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_left_alt_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_right_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_right_alt_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.branch = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.readonly = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.linenr = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled = <span class="number">1</span></span><br><span class="line"><span class="comment">" show absolute file path in status line</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_section_c</span> = <span class="string">'%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#'</span></span><br><span class="line"><span class="comment">" show tab number in tab line</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#tab_nr_type = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>支持主题
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">badwolf</span><br><span class="line">base16</span><br><span class="line">behelit</span><br><span class="line">bubblegum</span><br><span class="line">dark</span><br><span class="line">durant</span><br><span class="line">hybridline</span><br><span class="line">hybrid</span><br><span class="line">jellybeans</span><br><span class="line">kalisi</span><br><span class="line">kolor</span><br><span class="line">laederon</span><br><span class="line">light</span><br><span class="line">lucius</span><br><span class="line">luna</span><br><span class="line">molokai</span><br><span class="line">monochrome</span><br><span class="line">murmur</span><br><span class="line">papercolor</span><br><span class="line">powerlineish</span><br><span class="line">raven</span><br><span class="line">serene</span><br><span class="line">silver</span><br><span class="line">simple</span><br><span class="line">solarized</span><br><span class="line">sol</span><br><span class="line">term</span><br><span class="line">tomorrow</span><br><span class="line">ubaryd</span><br><span class="line">understated</span><br><span class="line">wombat</span><br><span class="line">zenburn</span><br></pre></td></tr></table></figure></p>
+<h1>NERD Tree 文件浏览插件</h1>
+<p>.vimrc 添加插件
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Plugin</span> <span class="string">'scrooloose/nerdtree'</span></span><br></pre></td></tr></table></figure></p>
+<p>打开/关闭 NERD Tree
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:NERDTreeToggle</span></span><br></pre></td></tr></table></figure></p>
+<p>NERD Tree 配置
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">"当 vim 启动没指定文件时，自动打开 NERDTree</span></span><br><span class="line"><span class="keyword">autocmd</span> StdinReadPre * <span class="keyword">let</span> <span class="variable">s:std_in</span>=<span class="number">1</span></span><br><span class="line"><span class="keyword">autocmd</span> VimEnter * <span class="keyword">if</span> <span class="built_in">argc</span>() == <span class="number">0</span> &amp;&amp; !exists(<span class="string">"s:std_in"</span>) | NERDTree | <span class="keyword">endif</span></span><br><span class="line"><span class="comment">"在 normal 下按 ,d 打开关闭文件浏览</span></span><br><span class="line"><span class="keyword">nmap</span> ,d :NERDTreeToggle<span class="symbol">&lt;CR&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用技巧</p>
+<ol>
+<li>按 <code>?</code>可以打开 NERD tree 帮助文档</li>
+<li>按 <code>j</code> ,<code>k</code> 在 NERD tree上下移动,<code>&lt;c-r&gt;</code> 打开关闭文件夹或文件</li>
+<li><code>:vsp</code> 在右侧打开一个分屏，<code>:sp</code> 在下面打开一个分屏</li>
+<li><code>&lt;c-w&gt;j</code> ，<code>&lt;c-w&gt;k</code>, <code>&lt;c-w&gt;h</code>, <code>&lt;c-w&gt;l</code>按键分别向上、下、左、右分屏移动。 <code>&lt;c-w&gt;=</code>均分屏幕</li>
+</ol>
+<p>改默的切换分屏按键方式
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"--------- Split Mapping --------------------"</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;c-j&gt;</span> <span class="symbol">&lt;c-w&gt;</span><span class="keyword">j</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;c-k&gt;</span> <span class="symbol">&lt;c-w&gt;</span><span class="keyword">k</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;c-h&gt;</span> <span class="symbol">&lt;c-w&gt;</span>h</span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;c-l&gt;</span> <span class="symbol">&lt;c-w&gt;</span><span class="keyword">l</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>官网文档
+<a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">GitHub Repo</a></li>
+</ul>
+<h1>.vimrc 配置文件</h1>
+<p>vimrc
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">"设置行号显示</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"将行号设置为相对行号</span></span><br><span class="line"><span class="keyword">set</span> relativenumber</span><br><span class="line"></span><br><span class="line"><span class="comment">"显示标尺</span></span><br><span class="line"><span class="keyword">set</span> ruler</span><br><span class="line"></span><br><span class="line"><span class="comment">" 编码</span></span><br><span class="line"><span class="keyword">set</span> fileencodings=utf-<span class="number">8</span>,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line"><span class="keyword">set</span> fileencoding=utf-<span class="number">8</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf-<span class="number">8</span></span><br><span class="line"><span class="keyword">set</span> fencs=utf-<span class="number">8</span>,gbk,gb2312,gb18030</span><br><span class="line"></span><br><span class="line"><span class="comment">"语法高亮</span></span><br><span class="line"><span class="keyword">syntax</span> enable</span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 高亮</span></span><br><span class="line"><span class="keyword">hi</span> pythonSelf            ctermfg=<span class="number">174</span> guifg=#<span class="number">6094</span>DB cterm=bold <span class="keyword">gui</span>=bold</span><br><span class="line"><span class="keyword">let</span> python_highlight_all=<span class="number">1</span></span><br><span class="line"><span class="keyword">syntax</span> enable</span><br><span class="line"></span><br><span class="line"><span class="comment">" 状态行颜色</span></span><br><span class="line"><span class="keyword">highlight</span> StatusLine guifg=SlateBlue guibg=Yellow</span><br><span class="line"><span class="keyword">highlight</span> StatusLineNC guifg=Gray guibg=White</span><br><span class="line"></span><br><span class="line"><span class="comment">" 增强模式中的命令行自动完成操作</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"></span><br><span class="line"><span class="comment">" 总是显示状态行</span></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"命令行补全参数</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"></span><br><span class="line"><span class="comment">"设置tab键空4格</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"自动检测文件类型</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"开启自动缩进，智能缩进</span></span><br><span class="line"><span class="keyword">set</span> autoindent</span><br><span class="line"><span class="keyword">set</span> <span class="built_in">cindent</span></span><br><span class="line"><span class="keyword">set</span> smartindent</span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"映射光标在窗口间移动的快捷键</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;C-H&gt;</span> <span class="symbol">&lt;C-W&gt;</span>h</span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;C-J&gt;</span> <span class="symbol">&lt;C-W&gt;</span><span class="keyword">j</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;C-K&gt;</span> <span class="symbol">&lt;C-W&gt;</span><span class="keyword">k</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;C-L&gt;</span> <span class="symbol">&lt;C-W&gt;</span><span class="keyword">l</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"插件安装列表</span></span><br><span class="line"><span class="keyword">set</span> nocompatible              <span class="comment">" be iMproved, required</span></span><br><span class="line"><span class="keyword">filetype</span> off                  <span class="comment">" required</span></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></span><br><span class="line"><span class="keyword">call</span> vundle#begin()</span><br><span class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></span><br><span class="line">Plugin <span class="string">'morhetz/gruvbox'</span></span><br><span class="line">Plugin <span class="string">'vim-airline/vim-airline'</span></span><br><span class="line">Plugin <span class="string">'plasticboy/vim-markdown'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()            <span class="comment">" required</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>    <span class="comment">" required</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"基本主题配置</span></span><br><span class="line"><span class="keyword">set</span> bg=dark    		   <span class="comment">"设置背景为黑色</span></span><br><span class="line"><span class="keyword">colorscheme</span> gruvbox    <span class="comment">"设置主题为 gruvbox</span></span><br><span class="line"><span class="keyword">set</span> guioptions=        <span class="comment">"去掉两边的scrollbar</span></span><br><span class="line"><span class="keyword">set</span> guifont=Monaco:h17 <span class="comment">"设置字体和字的大小</span></span><br><span class="line"><span class="keyword">set</span> cuc</span><br><span class="line"><span class="keyword">set</span> cul</span><br><span class="line"><span class="keyword">set</span> incsearch		  <span class="comment">"输入搜索内容时就显示搜索结果</span></span><br><span class="line"><span class="keyword">set</span> ignorecase</span><br><span class="line"><span class="keyword">set</span> hlsearch		  <span class="comment">"搜索时高亮显示被找到的文本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">"airline settings.</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span> = <span class="string">'simple'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !exists(<span class="string">'g:airline_symbols'</span>)</span><br><span class="line">  <span class="keyword">let</span> <span class="variable">g:airline_symbols</span> = &#123;&#125;</span><br><span class="line"><span class="keyword">endif</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_left_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_left_alt_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_right_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_right_alt_sep</span> = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.branch = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.readonly = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_symbols</span>.linenr = <span class="string">''</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled = <span class="number">1</span></span><br><span class="line"><span class="comment">" show absolute file path in status line</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_section_c</span> = <span class="string">'%&lt;%F%m %#__accent_red#%&#123;airline#util#wrap(airline#parts#readonly(),0)&#125;%#__restore__#'</span></span><br><span class="line"><span class="comment">" show tab number in tab line</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#tab_nr_type = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://blog.csdn.net/zhangpower1993/article/details/52184581" target="_blank" rel="noopener">Vim</a></li>
+<li><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="noopener">Vundle</a></li>
+<li><a href="https://blog.csdn.net/u013950658/article/details/78211783" target="_blank" rel="noopener">个性化 Vim</a>)</li>
+</ul>
+
     
 
         <a href="/posts/Vim-Vundle-Markdown.html" class="post-more waves-effect waves-button">
@@ -441,6 +1178,147 @@ ga('send', 'pageview');
 <li>数据完整性基本概念</li>
 <li>实现声明完整性</li>
 <li>实现过程完整性
+&lt;!--more--&gt;</li>
+</ol>
+<h1>数据完整性基本概念</h1>
+<p>意义
+数据的完整性是为了防止数据库中存在不符合语义的数据。
+这些加在数据库数据之上的语义约束条件就是数据完整性约束条件。
+这些约束条件作为表定义的一部分存储在数据库中。
+DBMS检查数据是否满足完整性条件的机制就称为完整性检查。</p>
+<h2>完整性约束条件的作用对象</h2>
+<p>列级约束</p>
+<ol>
+<li>对数据类型的约束</li>
+<li>对数据格式的约束</li>
+<li>对取值范围或取值集合的约束</li>
+<li>对空值的约束</li>
+</ol>
+<p>元组约束
+元组中各个字段之间的联系的约束，如：开始日期小于结束日期。</p>
+<p>关系约束
+是若干元组之间、关系之间的联系的约束。</p>
+<p>实现数据完整性的方法</p>
+<ol>
+<li>一种是在定义表时声明数据完整性，称为声明完整性，</li>
+<li>另一种是在服务器端编写触发器来实现，称为过程完整性。</li>
+</ol>
+<p>在执行对数据的增、删、改操作时，数据库管理系统自动检查用户定义的完整性约束条件。</p>
+<h1>实现声明完整性</h1>
+<h2>主码约束</h2>
+<p>原则</p>
+<ol>
+<li>每个表只能有一个 <code>PRIMARY KEY</code> 约束</li>
+<li>用 <code>PRIMARY KEY</code> 约束的列取值不能有重复，而且不允许有空值</li>
+</ol>
+<p>添加主码约束的语法格式
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line"><span class="keyword">ADD</span> [ <span class="keyword">CONSTRAINT</span> 约束名]</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> （&lt;列名&gt; [, … n] ）</span><br></pre></td></tr></table></figure></p>
+<p>例：对雇员表和工作表添加主码约束
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  PK_EMP</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> （雇员编号）</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 工作表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  PK_JOB</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> （工作编号）</span><br></pre></td></tr></table></figure></p>
+<h2>UNIQUE 约束</h2>
+<p>目的</p>
+<ul>
+<li>用于限制在一个列中不能有重复的值。</li>
+<li>用在事实上具有惟一性的属性列上，比如每个人的身份证号码、驾驶证号码等均不能有重复值。</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>允许有一个空值；</li>
+<li>在一个表中可以定义多个UNIQUE约束；</li>
+<li>可以在一个列或多个列上定义UNIQUE约束。</li>
+</ul>
+<p>添加UNIQUE约束的语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line"><span class="keyword">ADD</span> [ <span class="keyword">CONSTRAINT</span> 约束名]</span><br><span class="line"><span class="keyword">UNIQUE</span>（&lt;列名&gt; [, … n] ）</span><br></pre></td></tr></table></figure></p>
+<p>例．为雇员表的“电话”列添加UNIQUE约束。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  UK_SID</span><br><span class="line"><span class="keyword">UNIQUE</span>（电话）</span><br></pre></td></tr></table></figure></p>
+<h2>FOREIGN KEY 外码约束</h2>
+<p>目的</p>
+<ul>
+<li>实现引用完整性。</li>
+<li>外码所引用的列必须是有<code>PRIMARY KEY约束</code>或<code>UNIQUE约束</code>的列。</li>
+</ul>
+<p>添加FOREIGN KEY约束的语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line"><span class="keyword">ADD</span> [ <span class="keyword">CONSTRAINT</span> 约束名]</span><br><span class="line"><span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>（&lt;列名&gt;）</span><br><span class="line"><span class="keyword">REFERENCES</span> 引用表名（&lt;列名&gt;）</span><br></pre></td></tr></table></figure></p>
+<p>例．为雇员表的工作编号添加外码引用约束。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> FK_job_id</span><br><span class="line"><span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> （工作编号）<span class="keyword">REFERENCES</span> 工作表 （工作编号）</span><br></pre></td></tr></table></figure></p>
+<h2>DEFAULT 约束</h2>
+<p>目的</p>
+<ul>
+<li>用于提供列的默认值。</li>
+<li>只有在向表中插入数据时才检查DEFAULT约束。</li>
+</ul>
+<p>添加DEFAULT约束的语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line"><span class="keyword">ADD</span> [ <span class="keyword">CONSTRAINT</span> 约束名 ]</span><br><span class="line"><span class="keyword">DEFAULT</span> 默认值 <span class="keyword">FOR</span> 列名</span><br></pre></td></tr></table></figure></p>
+<p>例．定义雇员表的工资的默认值为1000。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span>  DF_SALARY</span><br><span class="line"><span class="keyword">DEFAULT</span>  <span class="number">1000</span>  <span class="keyword">FOR</span> 工资</span><br></pre></td></tr></table></figure></p>
+<h2>CHECK 约束</h2>
+<p>目的</p>
+<ul>
+<li>用于限制列的取值在指定的范围内，使数据库中存放的值都是有意义的。</li>
+<li>系统在执行<code>INSERT语句</code>和<code>UPDATE语句</code>时自动检查CHECK约束。</li>
+<li>CHECK约束可约束同一个表中多个列之间的取值关系。</li>
+</ul>
+<p>添加CHECK约束的语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line"><span class="keyword">ADD</span> [ <span class="keyword">CONSTRAINT</span> 约束名 ]</span><br><span class="line"><span class="keyword">CHECK</span> （逻辑表达式）</span><br></pre></td></tr></table></figure></p>
+<p>例1．限制雇员的工资必须大于等于200。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span>  CHK_Salary</span><br><span class="line"><span class="keyword">CHECK</span> ( 工资 &gt;= <span class="number">200</span> )</span><br></pre></td></tr></table></figure></p>
+<p>例2．限制工资表的最低工资小于等于最高工资。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 工作</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span>  CHK_Job_Salary</span><br><span class="line"><span class="keyword">CHECK</span>( 最低工资 &lt;= 最高工资 )</span><br></pre></td></tr></table></figure></p>
+<h1>实现过程完整性</h1>
+<p>简介</p>
+<p>过程完整性是指在服务器端通过编写实现约束的一段代码来实现数据完整性约束，这段代码就称为触发器。
+触发器是用编程的方法实现复杂的商业规则，它可以实现一般的数据完整性约束实现不了的复杂的完整性约束。</p>
+<p>事务基本概念
+<code>事务（Transaction）</code>是作为完整的工作单元执行的一系列操作。
+如果一个事务中的所有操作都成功，则事务成功，其对数据库的更改都会成为永久性的更改。
+如果事务中的任何一个操作失败，则整个事务失败，其中所完成的操作均被取消，所有对数据的更改均无效。</p>
+<p>事务的三种类型</p>
+<ol>
+<li><code>自动提交事务</code> 每一条对数据的增、删、改语句都自动地构成了一个事务。</li>
+<li><code>显式事务</code> 是用户定义的事务，有显式的开始 <code>（BEGIN TRANSACTION ）</code> 和结束标记（<code>COMMIT（正常结束)</code> 和 <code>ROLLBACK（异常结束）</code>）。</li>
+<li><code>隐式事务</code> 事务的开始是隐式的，以前一个事务结束后的第一个SQL语句作为下一个事务的开始，但每个事务必须有显式的结束标记。SQL Server支持的是显式事务。</li>
+</ol>
+<h1>触发器</h1>
+<p>概念
+是一种特殊的存储过程，不需要由用户调用执行，而是当用户对表中的数据进行UPDATE、INSERT或DELETE操作时自动触发执行的。</p>
+<p>触发器通常用于保证业务规则和数据完整性，其主要优点是用户可以用编程的方法来实现复杂的处理逻辑和商业规则，增强了数据完整性约束的功能。</p>
+<p>触发器的优点</p>
+<ol>
+<li>完成比CHECK约束更复杂的数据约束。</li>
+<li>为保证数据库性能而维护的非规范化数据。</li>
+<li>可实现复杂的商业规则。</li>
+<li>触发器也可以评估数据修改前后的表状态，并根据其差异采取对策。</li>
+</ol>
+<p>创建触发器语法格式
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 触发器名称</span><br><span class="line"><span class="keyword">ON</span> 表名</span><br><span class="line">&#123; <span class="keyword">FOR</span> | <span class="keyword">AFTER</span> | INSTEAD <span class="keyword">OF</span> &#125;</span><br><span class="line">&#123; [ <span class="keyword">INSERT</span> ] [ , ] [ <span class="keyword">DELETE</span> ] [ , ]</span><br><span class="line">   [<span class="keyword">UPDATE</span> ] &#125;</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">  <span class="keyword">SQL</span> 语句 [ ... n ]</span><br></pre></td></tr></table></figure></p>
+<p>两个逻辑工作表</p>
+<ul>
+<li><code>DELETED表</code> 存储 <code>DELETE和UPDATE</code> 语句所影响的行的副本。</li>
+<li><code>INSERTED表</code>存储 <code>INSERT和UPDATE</code> 语句所影响的行的副本。</li>
+</ul>
+<h2>示例</h2>
+<p>创建限制最低工资必须大于等于400的触发器。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> tri_job_salary1</span><br><span class="line"><span class="keyword">ON</span> 工作表 <span class="keyword">FOR</span> <span class="keyword">INSERT</span>, <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED</span><br><span class="line"><span class="keyword">WHERE</span> 最低工资 &lt; <span class="number">400</span> )</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">PRINT <span class="string">'最低工资必须大于等于400'</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure></p>
+<p>创建实现限制最低工资必须小于最高工资的触发器。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> tri_job_salary2</span><br><span class="line"><span class="keyword">ON</span> 工作表 <span class="keyword">FOR</span> <span class="keyword">INSERT</span>, <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED</span><br><span class="line"><span class="keyword">WHERE</span> 最低工资 &gt;= 最高工资 )</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">PRINT <span class="string">'最低工资必须小于最高工资'</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure></p>
+<p>创建实现限制雇员的工资必须在工作表的相应工作的最低工资和最高工资之间。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> tri_emp_salary</span><br><span class="line"><span class="keyword">ON</span> 雇员表</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">INSERT</span>, <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span> (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED a</span><br><span class="line"><span class="keyword">JOIN</span> 工作表 b <span class="keyword">ON</span> a.工作编号 = b.工作编号</span><br><span class="line"><span class="keyword">WHERE</span> 工资 <span class="keyword">NOT</span> <span class="keyword">BETWEEN</span> 最低工资</span><br><span class="line"><span class="keyword">AND</span> 最高工资 )</span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br></pre></td></tr></table></figure></p>
+<h2>限制更新数据的触发器</h2>
+<p>限制将SC表中不及格学生的成绩改为及格。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> tri_grade</span><br><span class="line"><span class="keyword">ON</span> SC <span class="keyword">FOR</span> <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">UPDATE</span>(Grade)</span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> INSERTED <span class="keyword">JOIN</span></span><br><span class="line">DELETED <span class="keyword">ON</span> INSERTED.Sno = DELETED.Sno</span><br><span class="line"><span class="keyword">WHERE</span> INSERTED.Grade &gt;= <span class="number">60</span></span><br><span class="line"><span class="keyword">AND</span> DELETED.Grade &lt; <span class="number">60</span>)</span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br></pre></td></tr></table></figure></p>
+<h2>限制删除的触发器</h2>
+<p>限制删除SC表中成绩不及格学生的修课记录。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> tri_del_grade</span><br><span class="line"><span class="keyword">ON</span> SC <span class="keyword">FOR</span> <span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">EXISTS</span>(<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> DELETED</span><br><span class="line"><span class="keyword">WHERE</span> Grade &lt; <span class="number">60</span>)</span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br></pre></td></tr></table></figure></p>
+<h2>修改触发器定义</h2>
+<p>语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TRIGGER</span> 触发器名称</span><br><span class="line"><span class="keyword">ON</span> 表名</span><br><span class="line">&#123; <span class="keyword">FOR</span> | <span class="keyword">AFTER</span> | INSTEAD <span class="keyword">OF</span> &#125;</span><br><span class="line">&#123; [ <span class="keyword">INSERT</span> ] [ , ] [ <span class="keyword">DELETE</span> ] [ , ]</span><br><span class="line">   [<span class="keyword">UPDATE</span> ] &#125;</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SQL</span> 语句 [ ... n ]</span><br></pre></td></tr></table></figure></p>
+<h2>删除触发器</h2>
+<p>语法格式为：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TRIGGER</span> 触发器名 [ , ... n ]</span><br></pre></td></tr></table></figure></p>
+<p>例：删除tri_grade触发器。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TRIGGER</span> tri_grade</span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/SQLfull.html" class="post-more waves-effect waves-button">
@@ -487,7 +1365,66 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>SQL锁与并发控制</p>
+        <p>SQL锁与并发控制
+&lt;!--more--&gt;</p>
+<h1>并发问题</h1>
+<p>如果对数据库进行操作的事务是一个接一个地进行，不会带来什么问题，但这样效率很低，所以常常需要同时执行多个事务，如果没有什么控制的话，这种同时执行多个事务的情况就会带来许多问题。</p>
+<p>错误的并发调度可能产生3种错误，又称为3类数据不一致。</p>
+<p>3类数据不一致</p>
+<ul>
+<li><code>丢失更新</code>（记忆诀窍：读与写之间被插足了）
+事务 T1 读取数据 A，然后对 A 进行运算修改，最后写回数据库。
+如果在 T1 读取和写回数据库之间，有其他事务修改了 A 值，就造成了丢失更新，因为 T1 是在旧的数据上进行的运算。</li>
+<li><code>脏读</code>（记忆诀窍：读被晃点了）
+事务 T1 修改了数据 A，然后事务 T2 读取了数据 A，然后事务 T1 回滚了事务。
+由于事务 T1 回滚了事务，所以数据 A 其实最终并没有被事务 T1 修改，也就是说事务 T2 读取了被丢掉的数据。</li>
+<li><code>不可重复读</code>（记忆诀窍：读与读之间被插足了）
+事务 T1 读取数据 A，然后做某些事，然后又读取数据 A。
+如果在两次读取之间，有其他事务对数据 A 进行了修改，那么就造成了同一事务中，两次读取数据 A 的值不同。</li>
+</ul>
+<h1>X锁和S锁</h1>
+<p>X锁（exclusive locks，排他锁)</p>
+<p>如果事务 T 对数据 A 加了 X 锁，则：事务 T 可对数据 A 进行读取和修改；其他事务不能对数据 A 加任何锁，也不能读取和修改数据 A。</p>
+<p>S锁（share locks，共享锁)</p>
+<p>如果事务 T 对数据 A 加了 S 锁，则：事务 T 可对数据 A 进行读取，但不能修改；其他事务也能对数据 A 加 S 锁，但不能加 X 锁。</p>
+<h2>封锁协议</h2>
+<p>封锁协议</p>
+<ol>
+<li><code>一级封锁协议</code>在事务 T 修改数据 A 之前，对数据 A 加上 X 锁，直到事务结束才释放，解决了丢失更新的问题。</li>
+<li><code>二级封锁协议</code>在一级封锁协议的基础上，在事务 T 读取数据 A 之前，对数据 A 加上 S 锁，直到读取结束才释放，解决了脏读的问题。</li>
+<li><code>三级封锁协议</code>在一级封锁协议的基础上，在事务 T 读取数据 A 之前，对数据 A 加上 S 锁，直到事务结束才释放，解决了不可重复读的问题。</li>
+<li><code>两段封锁协议</code>对任何数据进行读写之前必须对该数据加锁，在释放一个封锁之后，事务不再申请和获得任何其他封锁，这样缩短了封锁时间，提高了并发性，同时解决了数据不一致的问题。</li>
+</ol>
+<p>事务可分为两个阶段</p>
+<ol>
+<li>生长阶段：也称为扩展阶段（申请锁）在这个阶段事务获得所有需要的封锁，并且不释放任何锁。</li>
+<li>收缩阶段:这阶段事务释放全部锁，并且也不能再获得任何锁。</li>
+</ol>
+<ul>
+<li>所有事物均遵从两段协议，则对这些事务的并发调度一定是可串行化的。反过来，在一个可串行调度中，不一定所有事物都遵从两段协议。所有事物都遵从两段协议，是可串行化调度的成分而不是必要条件。</li>
+</ul>
+<h2>死锁</h2>
+<p>产生死锁的原因</p>
+<ol>
+<li>产生死锁的原因很多，举个例子：事务 T1 对数据 A 上了 X 锁，现在 T1 要读取数据 B；而另一方面，事务 T2 对数据 B 上了 X 锁，现在 T2 要读取数据 A。T1、T2 都需要对方已经锁定了的数据，相互等待对方释放，这就造成了死锁。
+死锁的解决与避免</li>
+<li>数据库管理系统（比如 SQL Server）识别到死锁后，会选择互锁的事务中的一个来作为牺牲品，回滚并结束该事务，并抛出一条消息。</li>
+</ol>
+<p>现在的数据库管理系统都很优秀，死锁很少发生，但很少不代表不会发生，如果我们在事务中注意一下，又可以进一步减少死锁的发生。下面是 SQL Server 中避免死锁发生的建议：</p>
+<p>避免死锁发生的建议</p>
+<ol>
+<li>按同一顺序访问对象。比如上述示例中 T1 和 T2 都应先访问数据 A，后访问数据 B，而不是一个先访问数据 A，一个先访问数据 B。</li>
+<li>避免事务中的用户交互。比如事务中不要等待用户输入，因为这种交互可能造成事务执行时间变长，增大了与其他事务竞争资源的可能性。</li>
+<li>保持事务简短并在一个批处理中。</li>
+<li>使用低隔离级别。</li>
+<li>使用绑定连接。使用绑定连接使同一应用程序所打开的两个或多个连接可以相互合作。</li>
+</ol>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="http://www.cftea.com/c/2009/07/VD08RGMWET3Y1UCH.asp" target="_blank" rel="noopener">锁与并发控制</a></li>
+</ul>
+
     
 
         <a href="/posts/SQLlock.html" class="post-more waves-effect waves-button">
@@ -534,7 +1471,212 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>SQL规范，注意事项。</p>
+        <p>SQL规范，注意事项。
+&lt;!--more--&gt;</p>
+<h1>MySQL 常用的存储引擎</h1>
+<p>数据引擎表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">存储引擎</th>
+<th style="text-align:left">事务</th>
+<th style="text-align:left">锁粒度</th>
+<th style="text-align:left">主要应用</th>
+<th style="text-align:left">忌用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MYISAM</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持并发插入的表级锁</td>
+<td style="text-align:left">SELECT,INSERT</td>
+<td style="text-align:left">读写操作频繁</td>
+</tr>
+<tr>
+<td style="text-align:left">MRG_MYISAM</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持并发插入的表级锁</td>
+<td style="text-align:left">分段归档,数据仓库</td>
+<td style="text-align:left">数全局查找过多的场景</td>
+</tr>
+<tr>
+<td style="text-align:left">Innodb</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">支持MVCC的行级锁</td>
+<td style="text-align:left">事务处理</td>
+<td style="text-align:left">无</td>
+</tr>
+<tr>
+<td style="text-align:left">Archive</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">行级锁</td>
+<td style="text-align:left">日志记录只支持insert,select</td>
+<td style="text-align:left">需要随机读取,更新,删除</td>
+</tr>
+<tr>
+<td style="text-align:left">Ndb cluster</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">行级锁</td>
+<td style="text-align:left">高可用性</td>
+<td style="text-align:left">大部份应用</td>
+</tr>
+</tbody>
+</table>
+<h1>表及字段的命名规则</h1>
+<p>规则</p>
+<ul>
+<li>可读性原则
+<ul>
+<li>使用大写和小写来格式化的库对象名字以获得良好的可读性。
+<ul>
+<li>例如:使用CustAddress而不是Custaddress来提高可读性。(这里要注意有些DBMS系统对表名的大小写是敏感的)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>表意性原则
+<ul>
+<li>对象的名字应该能够描述它所标识的对象。
+<ul>
+<li>例如,对于表,表的名称应该能够体现表中存储的数据内容;对于存储过程,存储过程名称应该能够体现存储过程的功能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>长名原则
+<ul>
+<li>尽可能少使用或者不使用缩写,
+<ul>
+<li>适用于数据库(DATABASE)名之外的任一对象。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>字段类型的选择原则</h1>
+<p>原因
+列的数据类型一方面影响数据存储空间的开销,另一方面也会影响数据查询性能。当一个列可以选择多种数据类型时,应该优先考虑数字类型,其次是日期或二进制类型,最后是字符类型。对于相同级别的数据类型,应该优先选择占用空间小的数据类型。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列类型</th>
+<th style="text-align:center">存储空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td style="text-align:center">1字节</td>
+</tr>
+<tr>
+<td style="text-align:center">SMALLINT</td>
+<td style="text-align:center">2个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMINT</td>
+<td style="text-align:center">3个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">INT</td>
+<td style="text-align:center">4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">BIGINT</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">DATE</td>
+<td style="text-align:center">13个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">DATETIME</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">TIMESTAMP</td>
+<td style="text-align:center">4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">CHAR(M)</td>
+<td style="text-align:center">M字节,1 &lt;= M &lt;= 255</td>
+</tr>
+<tr>
+<td style="text-align:center">VARCHAR(M)</td>
+<td style="text-align:center">L+1字节,在此L &lt;= M1 &lt;= M &lt;= 255</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>以上选择原则主要是从下面两个角度考虑
+<ul>
+<li>在对数据进行比较(查询条件、JOIN条件及排序)操作时:
+同样的数据,字符处理往往比数字处理慢。</li>
+<li>在数据库中,数据处理以页为单位,列的长度越小,利于性能提升。</li>
+</ul>
+</li>
+</ul>
+<h2>char varchar 如何选择</h2>
+<p>原则</p>
+<ol>
+<li>如果列中要存储的数据长度差不多是一致的,则应该考虑用char;否则应该考虑用varchar。</li>
+<li>如果列中的最大数据长度小于50Byte,则一般也考虑用char。(当然,如果这个列很少用,则基于节省空间和减少I/O的考虑,还是可以选择用varchar)</li>
+<li>一般不宜定义大于50 Byte的char类型列。</li>
+</ol>
+<h2>decimal与float 如何选择</h2>
+<p>原则:</p>
+<ol>
+<li>decimal用于存储精确数据,而float只能用于存储非精确数据。故精确数据只能选择用decimal类型。</li>
+<li>由于float的存储空间开销一般比decimal小(精确到7位小数只需要4个字节,而精确到15位小数只需要8字节)故非精确数据优先选择float类型。</li>
+</ol>
+<h2>时间类型如何存储</h2>
+<p>使用int来存储时间字段的优缺点</p>
+<ul>
+<li>优点:字段长度比datetime小。</li>
+<li>缺点:使用不方便,要进行函数转换。</li>
+<li>限制
+<ul>
+<li>只能存储到2038-1-19 11:14:07即2^32 为2147483648</li>
+<li>需要存储的时间粒度
+<ul>
+<li>年月日 小时 分 秒 周</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>如何选择主键</h1>
+<p>区分业务主键和数据库主键</p>
+<ol>
+<li>业务主键用于标识业务数据,进行表与表之间的关联;数据库主键为了优化数据存储(Innodb会生成6个字节的隐含主键)</li>
+<li>根据数据库的类型考虑主键是否要顺序增长</li>
+</ol>
+<ul>
+<li>有些数据库是按主键的顺序逻辑存储的</li>
+</ul>
+<p>主键的字段类型所占空间要尽可能的小</p>
+<p>对于使用聚集索引方式存储的表,每个索引后都会附加主键信息。</p>
+<p>避免使用外键约束</p>
+<ol>
+<li>降低数据导入的效率</li>
+<li>增加维护成本</li>
+<li>虽然不建议使用外键约束,但是相关联的列上一定要建立索引</li>
+</ol>
+<p>避免使用触发器
+:1. 降低数据导入的效率。</p>
+<ol start="2">
+<li>可能会出现意想不到的数据异常。</li>
+<li>使业务逻辑变得复杂。</li>
+</ol>
+<h1>关于预留字段</h1>
+<p>原因</p>
+<ol>
+<li>无法准确的知道预留字段的类型。</li>
+<li>无法准确的知道预留字段中所存储的内容。</li>
+<li>后期维护预留字段所要的成本,同增加一个字段所需要的成本是相同的。</li>
+<li>严禁使用预留字段。</li>
+</ol>
+
     
 
         <a href="/posts/SQLstyle.html" class="post-more waves-effect waves-button">
@@ -581,7 +1723,52 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>SQL触发器</p>
+        <p>SQL触发器
+&lt;!--more--&gt;</p>
+<h1>概念</h1>
+<p>某一个表的一定的操作，触发某种条件，从而执行的一段程序。触发器是一个特殊的存储过程。</p>
+<p>常见的触发器有三种：分别应用于Insert , Update , Delete 事件。</p>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> 触发器名</span><br><span class="line"><span class="keyword">on</span></span><br><span class="line">zg   <span class="comment">-- 在zg表建立触发器</span></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">insert</span>,<span class="keyword">update</span>  <span class="comment">-- 为什么事件触发</span></span><br><span class="line"><span class="keyword">as</span>   <span class="comment">-- 事件触发后所要做的事情</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> deleted</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span> (<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> inserted))</span><br><span class="line"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name [<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>] event_name</span><br><span class="line"><span class="keyword">ON</span> table_name</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"> <span class="comment">-- Trigger logic goes here....</span></span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure></p>
+<p>Deleted 与 Inserted</p>
+<ol>
+<li><code>Deleted</code>表存放由于执行Delete或Update语句而要从表中删除的所有行。</li>
+<li><code>Inserted</code>表存放由于执行Insert或Update语句而要向表中插入的所有行。</li>
+</ol>
+<h2>UPDATE 操作上在表的一个或多个指定列上创建触发器(Trigger)</h2>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">TRIGGER</span> trigger_name [<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>] <span class="keyword">UPDATE</span> <span class="keyword">OF</span> column_name</span><br><span class="line"><span class="keyword">ON</span> table_name</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"> <span class="comment">-- Trigger logic goes here....</span></span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure></p>
+<h1>触发器操作</h1>
+<p>删除
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">trigger</span> trigger_name</span><br></pre></td></tr></table></figure></p>
+<p>修改
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span>  <span class="keyword">trigger</span> tri_ck_zg</span><br><span class="line"><span class="keyword">on</span> zg <span class="keyword">for</span> <span class="keyword">insert</span>,<span class="keyword">update</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> deleted</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span> (<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> inserted))</span><br><span class="line"><span class="keyword">commit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></p>
+<p>列出触发器</p>
+<ul>
+<li>
+<p>所有
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> sqlite_master</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">type</span> = <span class="string">'trigger'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>指定表
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> sqlite_master</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">type</span> = <span class="string">'trigger'</span> <span class="keyword">AND</span> tbl_name = <span class="string">'表名'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h1>习题</h1>
+<p>成绩小于60的不可更改
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> tri_grade</span><br><span class="line"><span class="keyword">on</span> xkgx <span class="keyword">for</span> <span class="keyword">update</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> deleted</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">update</span>(成绩)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span>(<span class="keyword">select</span> * <span class="keyword">from</span> deleted  <span class="keyword">where</span> 成绩&lt;<span class="number">60</span>)</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<p>验证
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> xkgx <span class="keyword">set</span> 成绩=<span class="number">80</span> <span class="keyword">where</span>课程号=<span class="string">'303'</span> <span class="keyword">and</span>  学号=<span class="string">'S101101'</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+</li>
+</ul>
+<p>成绩小于60的不可更改
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> tri_grade</span><br><span class="line"><span class="keyword">on</span> xkgx <span class="keyword">for</span> <span class="keyword">update</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> inserted</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> deleted</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">update</span>(成绩)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span>(<span class="keyword">select</span> * <span class="keyword">from</span> inserted <span class="keyword">join</span> deleted <span class="keyword">on</span>  inserted.学号=deleted.学号</span><br><span class="line"><span class="keyword">where</span> inserted.成绩&gt;=<span class="number">60</span> <span class="keyword">and</span> deleted.成绩&lt;<span class="number">60</span>)</span><br><span class="line"><span class="keyword">rollback</span></span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/SQLtrigger.html" class="post-more waves-effect waves-button">
@@ -628,7 +1815,83 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>SQL事务</p>
+        <p>SQL事务
+&lt;!--more--&gt;</p>
+<h1>概念</h1>
+<ul>
+<li>事务（Transaction）是指一个或多个更改数据库的扩展。例如，如果您正在创建一个记录或者更新一个记录或者从表中删除一个记录，那么您正在该表上执行事务。重要的是要控制事务以确保数据的完整性和处理数据库错误。</li>
+<li>事务（Transaction）是一个对数据库执行工作单元。事务（Transaction）是以逻辑顺序完成的工作单位或序列，可以是由用户手动操作完成，也可以是由某种数据库程序自动完成。</li>
+</ul>
+<h1>事务的特点</h1>
+<p>四个特点</p>
+<ol>
+<li><code>原子性（Atomicity)</code>确保工作单位内的所有操作都成功完成，否则，事务会在出现故障时终止，之前的操作也会回滚到以前的状态。</li>
+<li><code>一致性（Consistency)</code>确保数据库在成功提交的事务上正确地改变状态。</li>
+<li><code>隔离性（Isolation)</code>使事务操作相互独立和透明。</li>
+<li><code>持久性（Durability)</code>确保已提交事务的结果或效果在系统发生故障的情况下仍然存在。</li>
+</ol>
+<h1>事务控制</h1>
+<p>含义</p>
+<ul>
+<li><code>BEGIN TRANSACTION</code> 开始事务处理。</li>
+<li><code>COMMIT</code> 保存更改，或者可以使用 END TRANSACTION 命令。</li>
+<li><code>ROLLBACK</code> 回滚所做的更改。</li>
+</ul>
+<hr>
+<ul>
+<li>事务控制命令只与 DML 命令 INSERT、UPDATE 和 DELETE 一起使用。他们不能在创建表或删除表时使用，因为这些操作在数据库中是自动提交的</li>
+</ul>
+<h2>BEGIN TRANSACTION 命令</h2>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span> <span class="keyword">TRANSACTION</span></span><br><span class="line"><span class="keyword">READ</span>(A)</span><br><span class="line">A:=A<span class="number">-50</span></span><br><span class="line">WRITE(A)</span><br><span class="line"><span class="keyword">READ</span>(B)</span><br><span class="line">B:=B+<span class="number">50</span></span><br><span class="line"><span class="keyword">COMMIT</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>READ(X):把数据项X从数据库读出到事务的私有缓冲中</li>
+<li>WRITE(X):把数据项X从事务的私有缓冲中写到数据库。</li>
+</ul>
+<h2>COMMIT 命令</h2>
+<p>作用</p>
+<p>COMMIT 命令用于保存事务对数据库所做的更改。会将自上次 COMMIT 命令或者 ROLLBACK 命令执行以来所有的事务都保存到数据库中。</p>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> S</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="keyword">SIZE</span>=<span class="number">20</span></span><br><span class="line"><span class="keyword">COMMIT</span></span><br></pre></td></tr></table></figure></p>
+<h2>ROLLBACK 命令</h2>
+<p>作用
+ROLLBACK 命令用于撤销尚未保存到数据库中的事务。只能撤销自上次 COMMIT 命令或者 ROLLBACK 命令执行以来的事务。</p>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">SIZE</span>=<span class="number">20</span></span><br><span class="line"><span class="keyword">ROLLBACK</span></span><br></pre></td></tr></table></figure></p>
+<p>ROLLBACK 命令可以用于撤销一系列的事务</p>
+<ul>
+<li>回滚至某一保存点的语法如下所示：
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2>SAVEPOINT 命令</h2>
+<p>作用
+SAVEPOINT 是事务中的一个状态点，使得我们可以将事务回滚至特定的点，而不是将整个事务都撤销。</p>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SAVEPOINT</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>该命令只能在事务语句之间创建保存点（SAVEPOINT）。</li>
+</ul>
+<h2>RELEASE SAVEPOINT 命令</h2>
+<p>作用
+RELEASE SAVEPOINT 命令用于删除先前创建的保存点。</p>
+<p>语法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RELEASE</span> <span class="keyword">SAVEPOINT</span> SAVEPOINT_NAME</span><br></pre></td></tr></table></figure></p>
+<h2>SET TRANSACTION 命令</h2>
+<p>作用
+: SET TRANSACTION 命令可以用来初始化数据库事务，指定随后的事务的各种特征。</p>
+<p>将某个事务指定为只读或者读写。
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">TRANSACTION</span> [ <span class="keyword">READ</span> WRITE | <span class="keyword">READ</span> <span class="keyword">ONLY</span> ]</span><br></pre></td></tr></table></figure></p>
+<h1>存储过程使用事务</h1>
+<p>实例一
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Procedure</span>  MyProcedure</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line"><span class="keyword">Set</span>    NOCOUNT    <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">Set</span> XACT_ABORT <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">begin</span>   tran  ok  <span class="comment">--开始一个事务OK</span></span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span>  rxqz  <span class="keyword">where</span> qz=   <span class="string">'rx015 '</span> <span class="comment">--删除数据</span></span><br><span class="line"><span class="keyword">save</span>   tran  bcd   <span class="comment">--保存一个事务点命名为bcd</span></span><br><span class="line"><span class="keyword">update</span>  sz  <span class="keyword">set</span>   <span class="keyword">name</span>=<span class="string">'李丽s'</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'李丽'</span><span class="comment">--修改数据</span></span><br><span class="line"><span class="keyword">if</span>  @@<span class="keyword">error</span>&lt;&gt;<span class="number">0</span>  <span class="comment">--判断修改数据有没有出错</span></span><br><span class="line"><span class="keyword">begin</span> <span class="comment">--如果出错</span></span><br><span class="line"><span class="keyword">rollback</span>   tran  bcd  <span class="comment">-- 回滚事务到BCD 的还原点</span></span><br><span class="line"><span class="keyword">commit</span>   tran  ok  <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">else</span>  <span class="comment">--没有出错</span></span><br><span class="line"><span class="keyword">commit</span>  tran ok <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure></p>
+<p>实例二
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc <span class="number">1</span></span><br><span class="line">@si chark20),@<span class="keyword">pi</span> <span class="built_in">char</span>(<span class="number">20</span>),@Ji chark20),@shu <span class="built_in">int</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> SPJ <span class="keyword">values</span>(@si,@<span class="keyword">pi</span>,@Ji,@shu)</span><br><span class="line">bdgin tran t1</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> p <span class="keyword">where</span> Pno=@<span class="keyword">Pi</span>)</span><br><span class="line"><span class="keyword">commit</span> tran t1</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">rollback</span> tran t1</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="http://wiki.jikexueyuan.com/project/sql/transactions.html" target="_blank" rel="noopener">连接</a></li>
+</ul>
+
     
 
         <a href="/posts/SQLtransaction.html" class="post-more waves-effect waves-button">

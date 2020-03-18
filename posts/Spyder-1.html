@@ -34,13 +34,13 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Note,Python">
-    <meta name="description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析 1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系">
+    <meta name="description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析   1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系  &amp;lt;!--more--&amp;gt; 导入数据 Hw4文件导入 12345678910import pandas as pdim">
 <meta name="keywords" content="Note,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据分析(是否出险)">
 <meta property="og:url" content="https://vitan.me/posts/Spyder-1.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析 1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系">
+<meta property="og:description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析   1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系  &amp;lt;!--more--&amp;gt; 导入数据 Hw4文件导入 12345678910import pandas as pdim">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5e60z7gj20ao06wwec.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5ev4yt8j20ao06wwec.jpg">
@@ -52,7 +52,7 @@ ga('send', 'pageview');
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据分析(是否出险)">
-<meta name="twitter:description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析 1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系">
+<meta name="twitter:description" content="以下是相关分析步骤与过程  将Hw4文件导入 使用auto_ins作如下分析   1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag 2、对loss_flag列进行描述分析（计数计频次） 3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系  &amp;lt;!--more--&amp;gt; 导入数据 Hw4文件导入 12345678910import pandas as pdim">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5e60z7gj20ao06wwec.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -189,7 +189,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#导入数据"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据处理"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据处理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#画图"><span class="post-toc-number">3.</span> <span class="post-toc-text">画图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分析"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">分析</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据处理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">画图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">分析</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -218,72 +218,68 @@ ga('send', 'pageview');
             <p>以下是相关分析步骤与过程</p>
 <ol>
 <li>将Hw4文件导入</li>
-<li>使用auto_ins作如下分析<ul>
+<li>使用auto_ins作如下分析</li>
+</ol>
+<ul>
 <li>1、首先对loss重新编码为1/0，有数值为1，命名为loss_flag</li>
 <li>2、对loss_flag列进行描述分析（计数计频次）</li>
 <li>3、分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系</li>
 </ul>
-</li>
-</ol>
-<a id="more"></a>
-
-<h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><p>Hw4文件导入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">'/home/vitan/Python/Python/HW4'</span>)</span><br><span class="line"><span class="comment"># 将auto_ins.csv读取进来,命名为auto</span></span><br><span class="line">auto = pd.read_csv(<span class="string">'auto_ins.csv'</span>,encoding=<span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><ul>
+<p>&lt;!--more--&gt;</p>
+<h1>导入数据</h1>
+<p>Hw4文件导入
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">'/home/vitan/Python/Python/HW4'</span>)</span><br><span class="line"><span class="comment"># 将auto_ins.csv读取进来,命名为auto</span></span><br><span class="line">auto = pd.read_csv(<span class="string">'auto_ins.csv'</span>,encoding=<span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>数据处理</h1>
+<ul>
 <li>定义codeMy(x)函数，其作用是对auto里的loss重新编码为1/0，有数值为1，命名为loss_flag</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">codeMy</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">codeMy</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>- 对auto里的loss重新编码为1/0，有数值为1，命名为loss_flag
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag = auto.Loss.map(codeMy)</span><br></pre></td></tr></table></figure>
 
 - 应用匿名函数的方法对loss重新编码为1/0，有数值为1，命名为loss_flag1
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto[<span class="string">"loss_flag1"</span>]= auto.Loss.map(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure></code></pre><h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto[<span class="string">"loss_flag1"</span>]= auto.Loss.map(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h1>画图</h1>
+<h2>分析</h2>
+<ul>
 <li>对loss_flag列进行描述分析（计数计频次）</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5e60z7gj20ao06wwec.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
+            </figure></p>
 <ul>
 <li>对loss_flag出险情况进行百分比统计</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()/auto.loss_flag.count()</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts()/auto.loss_flag.count()</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5ev4yt8j20ao06wwec.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
+            </figure></p>
 <ul>
 <li>绘制是否出险柱形图</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts().plot(kind=<span class="string">"bar"</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto.loss_flag.value_counts().plot(kind=<span class="string">"bar"</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5u8ajf7j20aj06vjr7.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
+            </figure></p>
 <ul>
 <li>分析是否出险和年龄、驾龄、性别、婚姻状态等变量之间的关系</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置画布fig</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第一个子图层ax1</span></span><br><span class="line">ax1 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第二个子图层ax2</span></span><br><span class="line">ax2 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#是否出险和年龄关系：绘制箱形图（盒须图），分析出险和年龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"Age"</span>,data=auto,ax =ax1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#是否出险和驾龄：绘制箱形图（盒须图），分析出险和驾龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"exp"</span>,data=auto,ax =ax2)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置画布fig</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第一个子图层ax1</span></span><br><span class="line">ax1 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="comment">#将画布设计成1行2列结构，增加第二个子图层ax2</span></span><br><span class="line">ax2 = fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#是否出险和年龄关系：绘制箱形图（盒须图），分析出险和年龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"Age"</span>,data=auto,ax =ax1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#是否出险和驾龄：绘制箱形图（盒须图），分析出险和驾龄的关系</span></span><br><span class="line">sns.boxplot(x=<span class="string">"loss_flag"</span>,y=<span class="string">"exp"</span>,data=auto,ax =ax2)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1g0n5mv40ebj20aq07faa2.jpg" alt title>
@@ -296,33 +292,29 @@ ga('send', 'pageview');
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5nop9tvj20aq07faa2.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
+            </figure></p>
 <ul>
 <li>是否出险和性别：绘制面积堆积柱形图，分析出险和性别的关系</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> stack2dim <span class="keyword">import</span> *</span><br><span class="line">stack2dim(auto,<span class="string">"Gender"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> stack2dim <span class="keyword">import</span> *</span><br><span class="line">stack2dim(auto,<span class="string">"Gender"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5odvgqgj20ar07at8m.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
+            </figure></p>
 <ul>
 <li>是否出险和婚姻状态：绘制面积堆积柱形图，分析出险和婚姻的关系</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stack2dim(auto,<span class="string">"Marital"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stack2dim(auto,<span class="string">"Marital"</span>,<span class="string">"loss_flag"</span>)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1g0n5ppeo0yj20ar07awee.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
-            </figure>
+            </figure></p>
 
         </div>
 

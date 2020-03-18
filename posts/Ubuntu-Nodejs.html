@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Ubuntu,Node.Js">
-    <meta name="description" content="Ubuntu 下 nodejs 安装与版本升级">
+    <meta name="description" content="Ubuntu 下 nodejs 安装与版本升级 &amp;lt;!--more--&amp;gt; 在Github上获取 Node.Js 源码 1sudo git clone https://github.com/nodejs/node.git　nodejs 安装 12345678910sudo chmod -R 755 node//修改目录权限cd node//进入node目录sudo ./configure使">
 <meta name="keywords" content="Linux,Ubuntu,Node.Js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 下 Node.Js 安装与版本升级">
 <meta property="og:url" content="https://vitan.me/posts/Ubuntu-Nodejs.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Ubuntu 下 nodejs 安装与版本升级">
+<meta property="og:description" content="Ubuntu 下 nodejs 安装与版本升级 &amp;lt;!--more--&amp;gt; 在Github上获取 Node.Js 源码 1sudo git clone https://github.com/nodejs/node.git　nodejs 安装 12345678910sudo chmod -R 755 node//修改目录权限cd node//进入node目录sudo ./configure使">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 下 Node.Js 安装与版本升级">
-<meta name="twitter:description" content="Ubuntu 下 nodejs 安装与版本升级">
+<meta name="twitter:description" content="Ubuntu 下 nodejs 安装与版本升级 &amp;lt;!--more--&amp;gt; 在Github上获取 Node.Js 源码 1sudo git clone https://github.com/nodejs/node.git　nodejs 安装 12345678910sudo chmod -R 755 node//修改目录权限cd node//进入node目录sudo ./configure使">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在Github上获取-Node-Js-源码"><span class="post-toc-number">1.</span> <span class="post-toc-text">在Github上获取 Node.Js 源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#将-Node-和-Npm-设置为全局"><span class="post-toc-number">3.</span> <span class="post-toc-text">将 Node 和 Npm 设置为全局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#几个-Npm-常用命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">几个 Npm 常用命令</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">在Github上获取 Node.Js 源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">将 Node 和 Npm 设置为全局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">4.</span> <span class="post-toc-text">几个 Npm 常用命令</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,73 +207,74 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Ubuntu 下 nodejs 安装与版本升级</p>
-<a id="more"></a>
-<h2 id="在Github上获取-Node-Js-源码"><a href="#在Github上获取-Node-Js-源码" class="headerlink" title="在Github上获取 Node.Js 源码"></a>在Github上获取 Node.Js 源码</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="built_in">clone</span> https://github.com/nodejs/node.git　nodejs</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R <span class="number">755</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//修改目录权限</span></span><br><span class="line"><span class="title">cd</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//进入node</span>目录</span><br><span class="line">sudo ./configure</span><br><span class="line">使用 ./configure 创建编译文件</span><br><span class="line">sudo make</span><br><span class="line">//下一步，可能时间有点长，耐心等待</span><br><span class="line">sudo make install</span><br><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
-
+            <p>Ubuntu 下 nodejs 安装与版本升级
+&lt;!--more--&gt;</p>
+<h2>在Github上获取 Node.Js 源码</h2>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="built_in">clone</span> https://github.com/nodejs/node.git　nodejs</span><br></pre></td></tr></table></figure></p>
+<h2>安装</h2>
+<p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R <span class="number">755</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//修改目录权限</span></span><br><span class="line"><span class="title">cd</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//进入node</span>目录</span><br><span class="line">sudo ./configure</span><br><span class="line">使用 ./configure 创建编译文件</span><br><span class="line">sudo make</span><br><span class="line">//下一步，可能时间有点长，耐心等待</span><br><span class="line">sudo make install</span><br><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>如果 Node 不是最新的，Node 有一个模块叫 Npm，是专门用来管理 Node.Js的版本的。使用 npm安装 Npm 模块</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>然后，升级node.js到最新稳定版</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>旧版本的 npm，也可以很容易地通过 npm 命令来升级，命令如下：</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
-
-<h2 id="将-Node-和-Npm-设置为全局"><a href="#将-Node-和-Npm-设置为全局" class="headerlink" title="将 Node 和 Npm 设置为全局"></a>将 Node 和 Npm 设置为全局</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln /opt/nodejs/bin/node(安装目录) /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">sudo ln /opt/nodejs/bin/npm（安装目录） /usr/<span class="built_in">local</span>/bin/npm</span><br></pre></td></tr></table></figure>
-
-<h2 id="几个-Npm-常用命令"><a href="#几个-Npm-常用命令" class="headerlink" title="几个 Npm 常用命令"></a>几个 Npm 常用命令</h2><table>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure></p>
+<h2>将 Node 和 Npm 设置为全局</h2>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ln /opt/nodejs/bin/node(安装目录) /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">sudo ln /opt/nodejs/bin/npm（安装目录） /usr/<span class="built_in">local</span>/bin/npm</span><br></pre></td></tr></table></figure></p>
+<h2>几个 Npm 常用命令</h2>
+<table>
 <thead>
 <tr>
-<th align="left">命令</th>
-<th align="left">解析</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">解析</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">npm -v</td>
-<td align="left">显示版本，检查npm 是否正确安装</td>
+<tbody>
+<tr>
+<td style="text-align:left">npm -v</td>
+<td style="text-align:left">显示版本，检查npm 是否正确安装</td>
 </tr>
 <tr>
-<td align="left">npm install -g express</td>
-<td align="left">全局安装express模块</td>
+<td style="text-align:left">npm install -g express</td>
+<td style="text-align:left">全局安装express模块</td>
 </tr>
 <tr>
-<td align="left">npm list</td>
-<td align="left">列出已安装模块</td>
+<td style="text-align:left">npm list</td>
+<td style="text-align:left">列出已安装模块</td>
 </tr>
 <tr>
-<td align="left">npm show express</td>
-<td align="left">显示模块详情</td>
+<td style="text-align:left">npm show express</td>
+<td style="text-align:left">显示模块详情</td>
 </tr>
 <tr>
-<td align="left">npm update</td>
-<td align="left">升级当前目录下的项目的所有模块</td>
+<td style="text-align:left">npm update</td>
+<td style="text-align:left">升级当前目录下的项目的所有模块</td>
 </tr>
 <tr>
-<td align="left">npm update express</td>
-<td align="left">升级当前目录下的项目的指定模块</td>
+<td style="text-align:left">npm update express</td>
+<td style="text-align:left">升级当前目录下的项目的指定模块</td>
 </tr>
 <tr>
-<td align="left">npm update -g express</td>
-<td align="left">升级全局安装的express模块</td>
+<td style="text-align:left">npm update -g express</td>
+<td style="text-align:left">升级全局安装的express模块</td>
 </tr>
 <tr>
-<td align="left">npm uninstall express</td>
-<td align="left">删除指定的模块</td>
+<td style="text-align:left">npm uninstall express</td>
+<td style="text-align:left">删除指定的模块</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
 <p><strong>参考</strong></p>
 <ul>
-<li><a href="https://blog.csdn.net/lss_csdn/article/details/52165652" target="_blank" rel="noopener"><br>ubuntu下nodejs安装与版本升级</a></li>
+<li><a href="https://blog.csdn.net/lss_csdn/article/details/52165652" target="_blank" rel="noopener">
+ubuntu下nodejs安装与版本升级</a></li>
 </ul>
 
         </div>

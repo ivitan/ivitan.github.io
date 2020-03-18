@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
-    <meta name="description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。">
+    <meta name="description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。 &amp;lt;!--more--&amp;gt; 方法   编辑 .bashrc 1vim .bashrc   添加 1234567export LESS_TERMCAP_mb=$&apos;\e[1;32m&apos;export LESS_TERMCAP_md=$&apos;\e[1;32m&apos;ex">
 <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="彩色 Man Page">
 <meta property="og:url" content="https://vitan.me/posts/Colorful-Man-Page.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。">
+<meta property="og:description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。 &amp;lt;!--more--&amp;gt; 方法   编辑 .bashrc 1vim .bashrc   添加 1234567export LESS_TERMCAP_mb=$&apos;\e[1;32m&apos;export LESS_TERMCAP_md=$&apos;\e[1;32m&apos;ex">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="彩色 Man Page">
-<meta name="twitter:description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。">
+<meta name="twitter:description" content="Linux下 Man Page 的显示默认是通过 less 来完成的， .bashrc 文件中添加 less 的相关设置参数可使其变成彩色。 &amp;lt;!--more--&amp;gt; 方法   编辑 .bashrc 1vim .bashrc   添加 1234567export LESS_TERMCAP_mb=$&apos;\e[1;32m&apos;export LESS_TERMCAP_md=$&apos;\e[1;32m&apos;ex">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参数含义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参数含义</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参数含义</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,29 +207,37 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Linux下 Man Page 的显示默认是通过 less 来完成的， <code>.bashrc</code> 文件中添加 less 的相关设置参数可使其变成彩色。</p>
-<a id="more"></a>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
-<li><p>编辑 .bashrc</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LESS_TERMCAP_mb=$<span class="string">'\e[1;32m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_md=$<span class="string">'\e[1;32m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_me=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_se=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_so=$<span class="string">'\e[01;33m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_ue=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_us=$<span class="string">'\e[1;4;31m'</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="参数含义"><a href="#参数含义" class="headerlink" title="参数含义"></a>参数含义</h2><ul>
-<li><p>数字</p>
+            <p>Linux下 Man Page 的显示默认是通过 less 来完成的， <code>.bashrc</code> 文件中添加 less 的相关设置参数可使其变成彩色。
+&lt;!--more--&gt;</p>
+<h1>方法</h1>
 <ul>
-<li>31 – red</li>
-<li>32 – green</li>
-<li>33 – yellow<ul>
-<li><a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank" rel="noopener">颜色</a> </li>
-</ul>
+<li>
+<p>编辑 .bashrc
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>添加
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LESS_TERMCAP_mb=$<span class="string">'\e[1;32m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_md=$<span class="string">'\e[1;32m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_me=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_se=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_so=$<span class="string">'\e[01;33m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_ue=$<span class="string">'\e[0m'</span></span><br><span class="line"><span class="built_in">export</span> LESS_TERMCAP_us=$<span class="string">'\e[1;4;31m'</span></span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
+<h2>参数含义</h2>
 <ul>
-<li><p><code>\e[0x;3y;4zm&#39;</code></p>
+<li>数字
+<ul>
+<li>
+<p>31 – red</p>
+</li>
+<li>
+<p>32 – green</p>
+</li>
+<li>
+<p>33 – yellow</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank" rel="noopener">颜色</a></li>
+</ul>
+</li>
+<li>
+<p><code>\e[0x;3y;4zm'</code></p>
 <ul>
 <li>x 是否加粗，</li>
 <li>1 加粗，</li>
@@ -237,43 +245,46 @@ ga('send', 'pageview');
 <li>y 和 z 分别代表文字前景色和背景色</li>
 </ul>
 </li>
-<li><p>LESS_TERMCAP_xx</p>
+<li>
+<p>LESS_TERMCAP_xx</p>
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
-<th align="left">含义</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">mb</td>
-<td align="left">start blink</td>
+<tbody>
+<tr>
+<td style="text-align:left">mb</td>
+<td style="text-align:left">start blink</td>
 </tr>
 <tr>
-<td align="left">md</td>
-<td align="left">start bold</td>
+<td style="text-align:left">md</td>
+<td style="text-align:left">start bold</td>
 </tr>
 <tr>
-<td align="left">me</td>
-<td align="left">turn off bold, blink and underline</td>
+<td style="text-align:left">me</td>
+<td style="text-align:left">turn off bold, blink and underline</td>
 </tr>
 <tr>
-<td align="left">us</td>
-<td align="left">start underline</td>
+<td style="text-align:left">us</td>
+<td style="text-align:left">start underline</td>
 </tr>
 <tr>
-<td align="left">ue</td>
-<td align="left">stop underline</td>
+<td style="text-align:left">ue</td>
+<td style="text-align:left">stop underline</td>
 </tr>
 <tr>
-<td align="left">so</td>
-<td align="left">start standoutv</td>
+<td style="text-align:left">so</td>
+<td style="text-align:left">start standoutv</td>
 </tr>
 <tr>
-<td align="left">se</td>
-<td align="left">stop standout</td>
+<td style="text-align:left">se</td>
+<td style="text-align:left">stop standout</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
 </ul>
 </li>
