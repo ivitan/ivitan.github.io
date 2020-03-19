@@ -33,19 +33,19 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
-    <meta name="description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。 &amp;lt;!--more--&amp;gt; 删除 EFI 分区  使用 dispart   用管理员权限打开 cmd 输入 diskpart 利用 list disk 查询磁盘信息 这里我们 Ubuntu 装在磁盘1中，所以选择磁盘1, select disk 1 查看磁盘1下所有分区信息 list partition 根据分">
-<meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
+    <meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
+    <meta name="description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。">
+<meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="删除 Linux EFI 分区">
 <meta property="og:url" content="https://vitan.me/posts/delLinuxEFI.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。 &amp;lt;!--more--&amp;gt; 删除 EFI 分区  使用 dispart   用管理员权限打开 cmd 输入 diskpart 利用 list disk 查询磁盘信息 这里我们 Ubuntu 装在磁盘1中，所以选择磁盘1, select disk 1 查看磁盘1下所有分区信息 list partition 根据分">
+<meta property="og:description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="删除 Linux EFI 分区">
-<meta name="twitter:description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。 &amp;lt;!--more--&amp;gt; 删除 EFI 分区  使用 dispart   用管理员权限打开 cmd 输入 diskpart 利用 list disk 查询磁盘信息 这里我们 Ubuntu 装在磁盘1中，所以选择磁盘1, select disk 1 查看磁盘1下所有分区信息 list partition 根据分">
+<meta name="twitter:description" content="在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">删除 EFI 分区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">删除 Linux 启动项</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-EFI-分区"><span class="post-toc-number">1.</span> <span class="post-toc-text">删除 EFI 分区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-Linux-启动项"><span class="post-toc-number">2.</span> <span class="post-toc-text">删除 Linux 启动项</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,10 +207,9 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。
-&lt;!--more--&gt;</p>
-<h1>删除 EFI 分区</h1>
-<ul>
+            <p>在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。</p>
+<a id="more"></a>
+<h1 id="删除-EFI-分区"><a href="#删除-EFI-分区" class="headerlink" title="删除 EFI 分区"></a>删除 EFI 分区</h1><ul>
 <li>使用 dispart</li>
 </ul>
 <ol>
@@ -222,8 +221,7 @@ ga('send', 'pageview');
 <li>根据分区大小这里选择分区6  <code>select partition 6</code></li>
 <li>删除 <code>delete partition override</code></li>
 </ol>
-<h1>删除 Linux 启动项</h1>
-<ul>
+<h1 id="删除-Linux-启动项"><a href="#删除-Linux-启动项" class="headerlink" title="删除 Linux 启动项"></a>删除 Linux 启动项</h1><ul>
 <li>EFI 分区分配盘符</li>
 </ul>
 <ol>

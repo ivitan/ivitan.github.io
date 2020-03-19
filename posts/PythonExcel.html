@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Note,WebCrawler,Python">
-    <meta name="description" content="读写 Excel &amp;lt;!--more--&amp;gt; 读 Excel 1234567import xlrddef read_file(&apos;file.xlsx&apos;):data = xlrd.open_workbook(url)table = data.sheets()[0] # 打开第一张表nrows = table.nrows # 获取表的行数for i in range(nrows): # 循环逐行">
+    <meta name="description" content="读写 Excel">
 <meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读写 Excel 文件">
 <meta property="og:url" content="https://vitan.me/posts/PythonExcel.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="读写 Excel &amp;lt;!--more--&amp;gt; 读 Excel 1234567import xlrddef read_file(&apos;file.xlsx&apos;):data = xlrd.open_workbook(url)table = data.sheets()[0] # 打开第一张表nrows = table.nrows # 获取表的行数for i in range(nrows): # 循环逐行">
+<meta property="og:description" content="读写 Excel">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读写 Excel 文件">
-<meta name="twitter:description" content="读写 Excel &amp;lt;!--more--&amp;gt; 读 Excel 1234567import xlrddef read_file(&apos;file.xlsx&apos;):data = xlrd.open_workbook(url)table = data.sheets()[0] # 打开第一张表nrows = table.nrows # 获取表的行数for i in range(nrows): # 循环逐行">
+<meta name="twitter:description" content="读写 Excel">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">读 Excel</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">写 Excel</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#读-Excel"><span class="post-toc-number">1.</span> <span class="post-toc-text">读 Excel</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写-Excel"><span class="post-toc-number">2.</span> <span class="post-toc-text">写 Excel</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,12 +207,13 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>读写 Excel
-&lt;!--more--&gt;</p>
-<h1>读 Excel</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(<span class="string">'file.xlsx'</span>)</span>:</span></span><br><span class="line">data = xlrd.open_workbook(url)</span><br><span class="line">table = data.sheets()[<span class="number">0</span>] <span class="comment"># 打开第一张表</span></span><br><span class="line">nrows = table.nrows <span class="comment"># 获取表的行数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(nrows): <span class="comment"># 循环逐行打印</span></span><br><span class="line">   print(table.row_values(i)[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure></p>
-<h1>写 Excel</h1>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line">data = xlrd.open_workbook(<span class="string">'excelFile.xls'</span>)</span><br><span class="line">excel = copy(data)                                       </span><br><span class="line"></span><br><span class="line"><span class="comment">#使用wlrd的方法获取已有的的行数</span></span><br><span class="line">rows = data.sheet()[num].nrows                  </span><br><span class="line"><span class="comment">#获得要操作的sheet</span></span><br><span class="line">table = excel.get_sheet(num)                      </span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> n:</span><br><span class="line">  <span class="comment">#xlwt的写方法，参数为行，列，值，行</span></span><br><span class="line">  table.write(rows,num1,value)  </span><br><span class="line">  num1 = num1+<span class="number">1</span> </span><br><span class="line"></span><br><span class="line">excel.save(name)</span><br></pre></td></tr></table></figure></p>
+            <p>读写 Excel</p>
+<a id="more"></a>
+
+<h1 id="读-Excel"><a href="#读-Excel" class="headerlink" title="读 Excel"></a>读 Excel</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(<span class="string">'file.xlsx'</span>)</span>:</span></span><br><span class="line">data = xlrd.open_workbook(url)</span><br><span class="line">table = data.sheets()[<span class="number">0</span>] <span class="comment"># 打开第一张表</span></span><br><span class="line">nrows = table.nrows <span class="comment"># 获取表的行数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(nrows): <span class="comment"># 循环逐行打印</span></span><br><span class="line">   print(table.row_values(i)[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
+
+<h1 id="写-Excel"><a href="#写-Excel" class="headerlink" title="写 Excel"></a>写 Excel</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line">data = xlrd.open_workbook(<span class="string">'excelFile.xls'</span>)</span><br><span class="line">excel = copy(data)                                       </span><br><span class="line"></span><br><span class="line"><span class="comment">#使用wlrd的方法获取已有的的行数</span></span><br><span class="line">rows = data.sheet()[num].nrows                  </span><br><span class="line"><span class="comment">#获得要操作的sheet</span></span><br><span class="line">table = excel.get_sheet(num)                      </span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> n:</span><br><span class="line">  <span class="comment">#xlwt的写方法，参数为行，列，值，行</span></span><br><span class="line">  table.write(rows,num1,value)  </span><br><span class="line">  num1 = num1+<span class="number">1</span> </span><br><span class="line"></span><br><span class="line">excel.save(name)</span><br></pre></td></tr></table></figure>
+
 
         </div>
 

@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Termux">
-    <meta name="description" content="Termux安装Linux &amp;lt;!-- more --&amp;gt; 安装脚本 添加源 1echo &quot;deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras&quot; &amp;gt;&amp;gt; $PREFIX/etc/apt/sources.list 安装 1pkg install atilo-cn -y 使用 1atilo">
+    <meta name="description" content="Termux安装Linux">
 <meta name="keywords" content="Linux,Termux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Termux 安装 Linux">
 <meta property="og:url" content="https://vitan.me/posts/TermuxLinux.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Termux安装Linux &amp;lt;!-- more --&amp;gt; 安装脚本 添加源 1echo &quot;deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras&quot; &amp;gt;&amp;gt; $PREFIX/etc/apt/sources.list 安装 1pkg install atilo-cn -y 使用 1atilo">
+<meta property="og:description" content="Termux安装Linux">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Termux 安装 Linux">
-<meta name="twitter:description" content="Termux安装Linux &amp;lt;!-- more --&amp;gt; 安装脚本 添加源 1echo &quot;deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras&quot; &amp;gt;&amp;gt; $PREFIX/etc/apt/sources.list 安装 1pkg install atilo-cn -y 使用 1atilo">
+<meta name="twitter:description" content="Termux安装Linux">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装脚本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">设置中文</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装脚本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置中文"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">设置中文</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,22 +207,26 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Termux安装Linux
-&lt;!-- more --&gt;</p>
-<h1>安装脚本</h1>
-<p>添加源
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras"</span> &gt;&gt; <span class="variable">$PREFIX</span>/etc/apt/sources.list</span><br></pre></td></tr></table></figure></p>
-<p>安装
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install atilo-cn -y</span><br></pre></td></tr></table></figure></p>
-<h1>使用</h1>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo [命令] [参数]</span><br></pre></td></tr></table></figure></p>
-<p>安装 Linux
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo ubuntu</span><br></pre></td></tr></table></figure></p>
-<p>运行 linux
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startubuntu</span><br></pre></td></tr></table></figure></p>
-<h2>设置中文</h2>
-<p>修改/etc/locale.gen
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locale-gen zh_CN.UTF-8</span><br><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"zh_CN.UTF-8"</span></span><br></pre></td></tr></table></figure></p>
+            <p>Termux安装Linux</p>
+<a id="more"></a>
+
+<h1 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h1><p>添加源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras"</span> &gt;&gt; <span class="variable">$PREFIX</span>/etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install atilo-cn -y</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo [命令] [参数]</span><br></pre></td></tr></table></figure>
+
+<p>安装 Linux</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atilo ubuntu</span><br></pre></td></tr></table></figure>
+
+<p>运行 linux</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startubuntu</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h2><p>修改/etc/locale.gen</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locale-gen zh_CN.UTF-8</span><br><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"zh_CN.UTF-8"</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
 

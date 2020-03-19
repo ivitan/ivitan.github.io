@@ -33,19 +33,19 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
-    <meta name="description" content="Curl 使用技巧 &amp;lt;!--more--&amp;gt; 技巧 查看版本号 1curl --version  or  1curl -v  选项不仅会返回版本，还会返回当前版本中支持的协议和功能。  下载一个文件  不指定文件名  1curl -O https://Vitan.me/file.tar.gz  指定文件名  1curl -o newfile.tar.gz https://Vitan.me">
-<meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
+    <meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
+    <meta name="description" content="Curl 使用技巧">
+<meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Curl 技巧">
 <meta property="og:url" content="https://vitan.me/posts/CurlTips.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Curl 使用技巧 &amp;lt;!--more--&amp;gt; 技巧 查看版本号 1curl --version  or  1curl -v  选项不仅会返回版本，还会返回当前版本中支持的协议和功能。  下载一个文件  不指定文件名  1curl -O https://Vitan.me/file.tar.gz  指定文件名  1curl -o newfile.tar.gz https://Vitan.me">
+<meta property="og:description" content="Curl 使用技巧">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Curl 技巧">
-<meta name="twitter:description" content="Curl 使用技巧 &amp;lt;!--more--&amp;gt; 技巧 查看版本号 1curl --version  or  1curl -v  选项不仅会返回版本，还会返回当前版本中支持的协议和功能。  下载一个文件  不指定文件名  1curl -O https://Vitan.me/file.tar.gz  指定文件名  1curl -o newfile.tar.gz https://Vitan.me">
+<meta name="twitter:description" content="Curl 使用技巧">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查看版本号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">下载一个文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">下载多个文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">恢复中断下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">使用代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">查询 HTTP 标头</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">从 FTP 服务器下载文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">上传文件到 FTP 服务器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">限制下载速率</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#技巧"><span class="post-toc-number">1.</span> <span class="post-toc-text">技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看版本号"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查看版本号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载一个文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">下载一个文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载多个文件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">下载多个文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#恢复中断下载"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">恢复中断下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用代理"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">使用代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询-HTTP-标头"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">查询 HTTP 标头</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从-FTP-服务器下载文件"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">从 FTP 服务器下载文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传文件到-FTP-服务器"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">上传文件到 FTP 服务器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#限制下载速率"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">限制下载速率</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,47 +207,48 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Curl 使用技巧
-&lt;!--more--&gt;</p>
-<h1>技巧</h1>
-<h2>查看版本号</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --version</span><br></pre></td></tr></table></figure></p>
+            <p>Curl 使用技巧</p>
+<a id="more"></a>
+<h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><h2 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --version</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>or</li>
 </ul>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>选项不仅会返回版本，还会返回当前版本中支持的协议和功能。</li>
 </ul>
-<h2>下载一个文件</h2>
-<ul>
+<h2 id="下载一个文件"><a href="#下载一个文件" class="headerlink" title="下载一个文件"></a>下载一个文件</h2><ul>
 <li>不指定文件名</li>
 </ul>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>指定文件名</li>
 </ul>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o newfile.tar.gz https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2>下载多个文件</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz -O https://Vitan.me/newfile.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2>恢复中断下载</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -C --O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2>使用代理</h2>
-<ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o newfile.tar.gz https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载多个文件"><a href="#下载多个文件" class="headerlink" title="下载多个文件"></a>下载多个文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://Vitan.me/file.tar.gz -O https://Vitan.me/newfile.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="恢复中断下载"><a href="#恢复中断下载" class="headerlink" title="恢复中断下载"></a>恢复中断下载</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -C --O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><ul>
 <li>如果有 proxy.yourdomain.com 端口 8080 的代理服务器，请执行此操作。</li>
 </ul>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -x proxy.yourdomain.com:8080 -U user:password -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2>查询 HTTP 标头</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I www.vitan.me</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -x proxy.yourdomain.com:8080 -U user:password -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询-HTTP-标头"><a href="#查询-HTTP-标头" class="headerlink" title="查询 HTTP 标头"></a>查询 HTTP 标头</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I www.vitan.me</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>HTTP 标头允许远程Web服务器发送有关自身的其他信息以及实际请求。这为客户提供了有关如何处理请求的详细信息。</li>
 </ul>
-<h2>从 FTP 服务器下载文件</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -O ftp://yourftpserver/yourfile.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2>上传文件到 FTP 服务器</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -T file.tar.gz ftp://ftpserver</span><br></pre></td></tr></table></figure></p>
-<h2>限制下载速率</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --<span class="built_in">limit</span>-rate 100K https://Vitan.me/file.tar.gz -O</span><br></pre></td></tr></table></figure></p>
+<h2 id="从-FTP-服务器下载文件"><a href="#从-FTP-服务器下载文件" class="headerlink" title="从 FTP 服务器下载文件"></a>从 FTP 服务器下载文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -O ftp://yourftpserver/yourfile.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="上传文件到-FTP-服务器"><a href="#上传文件到-FTP-服务器" class="headerlink" title="上传文件到 FTP 服务器"></a>上传文件到 FTP 服务器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -T file.tar.gz ftp://ftpserver</span><br></pre></td></tr></table></figure>
+
+<h2 id="限制下载速率"><a href="#限制下载速率" class="headerlink" title="限制下载速率"></a>限制下载速率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --<span class="built_in">limit</span>-rate 100K https://Vitan.me/file.tar.gz -O</span><br></pre></td></tr></table></figure>
+
 
         </div>
 

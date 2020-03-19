@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
-    <meta name="description" content="sudo su 区别 &amp;lt;!--more--&amp;gt; su 简介  su 用于用户之间的切换。但是前面的用户依然保持在登录状态。这种切换如果超级权限用户 root 向普通或虚拟用户切换不需要密码，而普通用户切换到其它任何用户都需要密码验证。 变更为其他使用者的身份，除 root 外，需要键入该使用者的密码  语法 1su [选项] [-] [&amp;lt;用户&amp;gt; [&amp;lt;参数&amp;gt;...]">
+    <meta name="description" content="sudo su 区别">
 <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sudo 与 Su 的区别">
 <meta property="og:url" content="https://vitan.me/posts/sudo-su-different.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="sudo su 区别 &amp;lt;!--more--&amp;gt; su 简介  su 用于用户之间的切换。但是前面的用户依然保持在登录状态。这种切换如果超级权限用户 root 向普通或虚拟用户切换不需要密码，而普通用户切换到其它任何用户都需要密码验证。 变更为其他使用者的身份，除 root 外，需要键入该使用者的密码  语法 1su [选项] [-] [&amp;lt;用户&amp;gt; [&amp;lt;参数&amp;gt;...]">
+<meta property="og:description" content="sudo su 区别">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sudo 与 Su 的区别">
-<meta name="twitter:description" content="sudo su 区别 &amp;lt;!--more--&amp;gt; su 简介  su 用于用户之间的切换。但是前面的用户依然保持在登录状态。这种切换如果超级权限用户 root 向普通或虚拟用户切换不需要密码，而普通用户切换到其它任何用户都需要密码验证。 变更为其他使用者的身份，除 root 外，需要键入该使用者的密码  语法 1su [选项] [-] [&amp;lt;用户&amp;gt; [&amp;lt;参数&amp;gt;...]">
+<meta name="twitter:description" content="sudo su 区别">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">su</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">sudo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#su"><span class="post-toc-number">1.</span> <span class="post-toc-text">su</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sudo"><span class="post-toc-number">2.</span> <span class="post-toc-text">sudo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,19 +207,20 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>sudo su 区别
-&lt;!--more--&gt;</p>
-<h1>su</h1>
-<p>简介</p>
+            <p>sudo su 区别</p>
+<a id="more"></a>
+<h1 id="su"><a href="#su" class="headerlink" title="su"></a>su</h1><p>简介</p>
 <ol>
 <li>su 用于用户之间的切换。但是前面的用户依然保持在登录状态。这种切换如果超级权限用户 root 向普通或虚拟用户切换不需要密码，而普通用户切换到其它任何用户都需要密码验证。</li>
 <li>变更为其他使用者的身份，除 root 外，需要键入该使用者的密码</li>
 </ol>
-<p>语法
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [选项] [-] [&lt;用户&gt; [&lt;参数&gt;...]]</span><br></pre></td></tr></table></figure></p>
+<p>语法</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [选项] [-] [&lt;用户&gt; [&lt;参数&gt;...]]</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>选项
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f  或 --fast</span><br><span class="line"><span class="comment"># 不必读启动档（如 csh.cshrc 等），仅用于 csh 或 tcsh</span></span><br><span class="line">-m -p 或 --preserve-environment</span><br><span class="line"><span class="comment"># 执行 su 时不改变环境变数</span></span><br><span class="line">-c <span class="built_in">command</span> 或 --<span class="built_in">command</span>=<span class="built_in">command</span></span><br><span class="line"><span class="comment"># 变更为帐号为 USER 的使用者并执行指令（command）后再变回原来使用者</span></span><br><span class="line">-s shell 或 --shell=shell</span><br><span class="line"><span class="comment"># 指定要执行的 shell(bash,csh,tcsh等），预设值为 /etc/passwd 内的该使用者(USER) shell</span></span><br><span class="line">--<span class="built_in">help</span> <span class="comment"># 显示说明文件</span></span><br><span class="line">--version <span class="comment"># 显示版本资讯</span></span><br><span class="line">- -l 或 --login</span><br><span class="line"><span class="comment"># 类似重新 login 为该使用者一样，大部份环境变数（HOME SHELL USER等等）</span></span><br><span class="line">都是以该使用者（USER）为主，并且工作目录也会改变，如果没有指定 USER ，内定是 root</span><br><span class="line">USER <span class="comment"># 欲变更的使用者帐号</span></span><br></pre></td></tr></table></figure></li>
+<li>选项<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f  或 --fast</span><br><span class="line"><span class="comment"># 不必读启动档（如 csh.cshrc 等），仅用于 csh 或 tcsh</span></span><br><span class="line">-m -p 或 --preserve-environment</span><br><span class="line"><span class="comment"># 执行 su 时不改变环境变数</span></span><br><span class="line">-c <span class="built_in">command</span> 或 --<span class="built_in">command</span>=<span class="built_in">command</span></span><br><span class="line"><span class="comment"># 变更为帐号为 USER 的使用者并执行指令（command）后再变回原来使用者</span></span><br><span class="line">-s shell 或 --shell=shell</span><br><span class="line"><span class="comment"># 指定要执行的 shell(bash,csh,tcsh等），预设值为 /etc/passwd 内的该使用者(USER) shell</span></span><br><span class="line">--<span class="built_in">help</span> <span class="comment"># 显示说明文件</span></span><br><span class="line">--version <span class="comment"># 显示版本资讯</span></span><br><span class="line">- -l 或 --login</span><br><span class="line"><span class="comment"># 类似重新 login 为该使用者一样，大部份环境变数（HOME SHELL USER等等）</span></span><br><span class="line">都是以该使用者（USER）为主，并且工作目录也会改变，如果没有指定 USER ，内定是 root</span><br><span class="line">USER <span class="comment"># 欲变更的使用者帐号</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 <p>su – root 和 su root（su）的区别</p>
 <ul>
@@ -231,20 +232,20 @@ ga('send', 'pageview');
 <li>不安全 su 工具在多人参与的系统管理中，并不是最好的选择，su 只适用于一两个人参与管理的系统，毕竟 su 并不能让普通用户受限的使用；超级用户 root 密码应该掌握在少数用户手中。</li>
 <li>如果某个用户需要使用 root 权限,则必须要把 root 密码告诉此用户。</li>
 </ol>
-<h1>sudo</h1>
-<p>简介</p>
+<h1 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h1><p>简介</p>
 <ol>
 <li>为所有想使用 root 权限的普通用户设计的。可以让普通用户具有临时使用root权限的权利。只需输入自己账户的密码即可。个普通用户必须在 /etc/sudoers 文件中有配置项,才具有使用sudo的权利.</li>
 <li>执行命令的流程是当前用户切换到 root（或其它指定切换到的用户），然后以 root（或其它指定的切换到的用户）身份执行命令，执行完成后，直接退回到当前用户.</li>
 </ol>
-<p>语法
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo 参数</span><br></pre></td></tr></table></figure></p>
+<p>语法</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo 参数</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>参数
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-V <span class="comment"># 显示版本编号</span></span><br><span class="line">-h <span class="comment"># 会显示版本编号及指令的使用方式说明</span></span><br><span class="line">-l <span class="comment"># 显示出自己（执行 sudo 的使用者）的权限</span></span><br><span class="line">-v <span class="comment"># sudo 在第一次执行时或是在 N 分钟内没有执行（N 预设为五）会问密码，</span></span><br><span class="line">这个参数是重新做一次确认，如果超过 N 分钟，也会问密码</span><br><span class="line">-k <span class="comment"># 将会强迫使用者在下一次执行 sudo 时问密码（不论有没有超过 N 分钟）</span></span><br><span class="line">-b <span class="comment"># 将要执行的指令放在背景执行</span></span><br><span class="line">-p <span class="comment"># prompt 可以更改问密码的提示语，其中 %u 会代换为使用者的帐号名称， %h 会显示主机名称</span></span><br><span class="line">-u <span class="comment"># username/#uid 不加此参数，代表要以 root 的身份执行指令</span></span><br><span class="line">而加了此参数，可以以 username 的身份执行指令（<span class="comment">#uid 为该 username 的使用者号码）</span></span><br><span class="line">-s <span class="comment"># 执行环境变数中的 SHELL 所指定的 shell ，或是 /etc/passwd 里所指定的 shell</span></span><br><span class="line">-H <span class="comment"># 将环境变数中的 HOME （家目录）指定为要变更身份的使用者家目录</span></span><br><span class="line">（如不加 -u 参数就是系统管理者 root ）</span><br><span class="line"><span class="built_in">command</span> <span class="comment"># 要以系统管理者身份（或以 -u 更改为其他人）执行的指令</span></span><br></pre></td></tr></table></figure></li>
+<li>参数<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-V <span class="comment"># 显示版本编号</span></span><br><span class="line">-h <span class="comment"># 会显示版本编号及指令的使用方式说明</span></span><br><span class="line">-l <span class="comment"># 显示出自己（执行 sudo 的使用者）的权限</span></span><br><span class="line">-v <span class="comment"># sudo 在第一次执行时或是在 N 分钟内没有执行（N 预设为五）会问密码，</span></span><br><span class="line">这个参数是重新做一次确认，如果超过 N 分钟，也会问密码</span><br><span class="line">-k <span class="comment"># 将会强迫使用者在下一次执行 sudo 时问密码（不论有没有超过 N 分钟）</span></span><br><span class="line">-b <span class="comment"># 将要执行的指令放在背景执行</span></span><br><span class="line">-p <span class="comment"># prompt 可以更改问密码的提示语，其中 %u 会代换为使用者的帐号名称， %h 会显示主机名称</span></span><br><span class="line">-u <span class="comment"># username/#uid 不加此参数，代表要以 root 的身份执行指令</span></span><br><span class="line">而加了此参数，可以以 username 的身份执行指令（<span class="comment">#uid 为该 username 的使用者号码）</span></span><br><span class="line">-s <span class="comment"># 执行环境变数中的 SHELL 所指定的 shell ，或是 /etc/passwd 里所指定的 shell</span></span><br><span class="line">-H <span class="comment"># 将环境变数中的 HOME （家目录）指定为要变更身份的使用者家目录</span></span><br><span class="line">（如不加 -u 参数就是系统管理者 root ）</span><br><span class="line"><span class="built_in">command</span> <span class="comment"># 要以系统管理者身份（或以 -u 更改为其他人）执行的指令</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h1>区别</h1>
-<p>总结</p>
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p>总结</p>
 <ul>
 <li>共同点：都是 root 用户的权限；</li>
 <li>不同点：su 仅仅取得 root 权限，工作环境不变，还是在切换之前用户的工作环境；sudo 是完全取得 root 的权限和 root 的工作环境。</li>

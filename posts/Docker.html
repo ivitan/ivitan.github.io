@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Docker">
-    <meta name="description" content="ArchLinux 安装 Docker &amp;lt;!--more--&amp;gt; 安装 1sudo pacman -S docker start server 1systemctl restart docker 镜像 123docker pull ubuntu:18.04docker pull centos # latestdicker pull centos:6 运行 1sudo docker run">
+    <meta name="description" content="ArchLinux 安装 Docker">
 <meta name="keywords" content="Linux,Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux Docker">
 <meta property="og:url" content="https://vitan.me/posts/Docker.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="ArchLinux 安装 Docker &amp;lt;!--more--&amp;gt; 安装 1sudo pacman -S docker start server 1systemctl restart docker 镜像 123docker pull ubuntu:18.04docker pull centos # latestdicker pull centos:6 运行 1sudo docker run">
+<meta property="og:description" content="ArchLinux 安装 Docker">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArchLinux Docker">
-<meta name="twitter:description" content="ArchLinux 安装 Docker &amp;lt;!--more--&amp;gt; 安装 1sudo pacman -S docker start server 1systemctl restart docker 镜像 123docker pull ubuntu:18.04docker pull centos # latestdicker pull centos:6 运行 1sudo docker run">
+<meta name="twitter:description" content="ArchLinux 安装 Docker">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">镜像</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#镜像"><span class="post-toc-number">2.</span> <span class="post-toc-text">镜像</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运行"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,16 +207,17 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>ArchLinux 安装 Docker
-&lt;!--more--&gt;</p>
-<h1>安装</h1>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure></p>
-<p>start server
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></p>
-<h1>镜像</h1>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure></p>
-<h1>运行</h1>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure></p>
+            <p>ArchLinux 安装 Docker</p>
+<a id="more"></a>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure>
+
+<p>start server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure>
+
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>-it, -i：交互式操作， -t 终端</li>
 </ul>

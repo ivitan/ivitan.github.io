@@ -34,18 +34,18 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Win,Termux,Hexo">
-    <meta name="description" content="Hexo 多设备源码同步 &amp;lt;!--more--&amp;gt; 主设备操作 部署 Hexo 12345678# 在本地博客根目录下安装 hexonpm install -g  hexo-cli# 初始化hexonpm init# 安装依赖npm install# 安装部署相关的配置npm install hexo-deployer-git Push 源码  新建分支后,在本地博客根目录下使用 git">
+    <meta name="description" content="Hexo 多设备源码同步">
 <meta name="keywords" content="Linux,Win,Termux,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 多设备源码同步">
 <meta property="og:url" content="https://vitan.me/posts/HexoDevices.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Hexo 多设备源码同步 &amp;lt;!--more--&amp;gt; 主设备操作 部署 Hexo 12345678# 在本地博客根目录下安装 hexonpm install -g  hexo-cli# 初始化hexonpm init# 安装依赖npm install# 安装部署相关的配置npm install hexo-deployer-git Push 源码  新建分支后,在本地博客根目录下使用 git">
+<meta property="og:description" content="Hexo 多设备源码同步">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-10T02:19:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 多设备源码同步">
-<meta name="twitter:description" content="Hexo 多设备源码同步 &amp;lt;!--more--&amp;gt; 主设备操作 部署 Hexo 12345678# 在本地博客根目录下安装 hexonpm install -g  hexo-cli# 初始化hexonpm init# 安装依赖npm install# 安装部署相关的配置npm install hexo-deployer-git Push 源码  新建分支后,在本地博客根目录下使用 git">
+<meta name="twitter:description" content="Hexo 多设备源码同步">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">主设备操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">部署 Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Push 源码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">其他设备操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">后续 Push</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#主设备操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">主设备操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署-Hexo"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">部署 Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Push-源码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Push 源码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他设备操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">其他设备操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后续-Push"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">后续 Push</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,48 +207,49 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Hexo 多设备源码同步
-&lt;!--more--&gt;</p>
-<h1>主设备操作</h1>
-<h2>部署 Hexo</h2>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在本地博客根目录下安装 hexo</span></span><br><span class="line">npm install -g  hexo-cli</span><br><span class="line"><span class="comment"># 初始化hexo</span></span><br><span class="line">npm init</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装部署相关的配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
-<h2>Push 源码</h2>
-<ul>
+            <p>Hexo 多设备源码同步</p>
+<a id="more"></a>
+<h1 id="主设备操作"><a href="#主设备操作" class="headerlink" title="主设备操作"></a>主设备操作</h1><h2 id="部署-Hexo"><a href="#部署-Hexo" class="headerlink" title="部署 Hexo"></a>部署 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在本地博客根目录下安装 hexo</span></span><br><span class="line">npm install -g  hexo-cli</span><br><span class="line"><span class="comment"># 初始化hexo</span></span><br><span class="line">npm init</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装部署相关的配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h2 id="Push-源码"><a href="#Push-源码" class="headerlink" title="Push 源码"></a>Push 源码</h2><ul>
 <li>新建分支后,在本地博客根目录下使用 git 指令上传项目到 Github</li>
 </ul>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git初始化</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加仓库地址</span></span><br><span class="line">git remote add origin https://github.com/iVitan/ivitan.github.io.git</span><br><span class="line"><span class="comment"># 新建分支并切换到新建的分支</span></span><br><span class="line">git checkout -b hexo</span><br><span class="line"><span class="comment"># 添加所有本地文件到git</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># git提交</span></span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"><span class="comment"># 文件推送到hexo分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
-<h1>其他设备操作</h1>
-<p>克隆Github分支上的文件:</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b hexo  https://github.com/iVitan/ivitan.github.io.git</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git初始化</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加仓库地址</span></span><br><span class="line">git remote add origin https://github.com/iVitan/ivitan.github.io.git</span><br><span class="line"><span class="comment"># 新建分支并切换到新建的分支</span></span><br><span class="line">git checkout -b hexo</span><br><span class="line"><span class="comment"># 添加所有本地文件到git</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># git提交</span></span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"><span class="comment"># 文件推送到hexo分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他设备操作"><a href="#其他设备操作" class="headerlink" title="其他设备操作"></a>其他设备操作</h1><p>克隆Github分支上的文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b hexo  https://github.com/iVitan/ivitan.github.io.git</span><br></pre></td></tr></table></figure>
+
 <p>安装 Hexo</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装hexo</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 注意这里不需要hexo初始化：hexo init；否则之前的hexo配置参数会重置</span></span><br><span class="line"><span class="comment"># 安装依赖库</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装部署相关配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装hexo</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 注意这里不需要hexo初始化：hexo init；否则之前的hexo配置参数会重置</span></span><br><span class="line"><span class="comment"># 安装依赖库</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装部署相关配置</span></span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
 <p>主题 cutie</p>
 <ul>
-<li>
-<p><a href="https://github.com/qutang/hexo-theme-cutie/releases/latest" target="_blank" rel="noopener">下载</a></p>
+<li><p><a href="https://github.com/qutang/hexo-theme-cutie/releases/latest" target="_blank" rel="noopener">下载</a></p>
 </li>
-<li>
-<p>相关 npm</p>
+<li><p>相关 npm</p>
 </li>
 </ul>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm i markdown-it-emoji --save</span><br><span class="line">npm i markdown-it-mark --save</span><br><span class="line">npm i markdown-it-deflist --save</span><br><span class="line">npm i markdown-it-container --save</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm i markdown-it-emoji --save</span><br><span class="line">npm i markdown-it-mark --save</span><br><span class="line">npm i markdown-it-deflist --save</span><br><span class="line">npm i markdown-it-container --save</span><br></pre></td></tr></table></figure>
+
 <p>更新文章</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"tittle"</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"tittle"</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>分别同步到master,hexo分支</li>
 </ul>
-<h2>后续 Push</h2>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加源文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># Git 提交</span></span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"><span class="comment"># 先拉原来Github分支上的源文件到本地，进行合并</span></span><br><span class="line"><span class="comment"># 分支名后面的“--allow-unrelated-histories”是为了弹出“fatal: refusing to merge unrelated histories.”的错误</span></span><br><span class="line">git pull origin hexo --allow-unrelated-histories</span><br><span class="line"><span class="comment"># 比较解决前后版本冲突后，push源文件到Github的分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
-<h1>问题</h1>
-<p>无法Push</p>
+<h2 id="后续-Push"><a href="#后续-Push" class="headerlink" title="后续 Push"></a>后续 Push</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加源文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># Git 提交</span></span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"><span class="comment"># 先拉原来Github分支上的源文件到本地，进行合并</span></span><br><span class="line"><span class="comment"># 分支名后面的“--allow-unrelated-histories”是为了弹出“fatal: refusing to merge unrelated histories.”的错误</span></span><br><span class="line">git pull origin hexo --allow-unrelated-histories</span><br><span class="line"><span class="comment"># 比较解决前后版本冲突后，push源文件到Github的分支</span></span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>无法Push</p>
 <ol>
 <li>强制 Push</li>
 </ol>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin hexo</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin hexo</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>根目录的.gitconfig文件一般写上需要忽略的文件及文件夹</li>
 </ol>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store      </span><br><span class="line">Thumbs.db      </span><br><span class="line">db.json      </span><br><span class="line">*.<span class="built_in">log</span>      </span><br><span class="line">node_modules/      </span><br><span class="line">public/      </span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store      </span><br><span class="line">Thumbs.db      </span><br><span class="line">db.json      </span><br><span class="line">*.<span class="built_in">log</span>      </span><br><span class="line">node_modules/      </span><br><span class="line">public/      </span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
