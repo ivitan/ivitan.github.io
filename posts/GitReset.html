@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -34,18 +34,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Win,Git">
-    <meta name="description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
-<meta name="keywords" content="Linux,Win,Git">
+    <meta name="description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin&#x2F;mastergit pull">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 版本回退">
 <meta property="og:url" content="https://vitan.me/posts/GitReset.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-05T03:02:41.698Z">
+<meta property="og:description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin&#x2F;mastergit pull">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-05T02:45:08.000Z">
+<meta property="article:modified_time" content="2020-03-05T03:02:41.698Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Win">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 版本回退">
-<meta name="twitter:description" content="Git 版本回退  本地替换为远程123git fetch --allgit reset --hard origin/mastergit pull">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -210,11 +212,10 @@ ga('send', 'pageview');
             <blockquote>
 <p>Git 版本回退</p>
 </blockquote>
-<h1 id="本地替换为远程"><a href="#本地替换为远程" class="headerlink" title="本地替换为远程"></a>本地替换为远程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
+<h1 id="本地替换为远程"><a href="#本地替换为远程" class="headerlink" title="本地替换为远程"></a>本地替换为远程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin&#x2F;master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
-<h1 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 撤销所有的已经add的文件:</span><br><span class="line">git reset HEAD .</span><br><span class="line"></span><br><span class="line"># 撤销某个文件或文件夹</span><br><span class="line">git reset HEAD -filename</span><br><span class="line"></span><br><span class="line"># 回退到上个版本</span><br><span class="line">git reset --hard HEAD^ </span><br><span class="line"></span><br><span class="line"># 退到/进到 指定commit_id</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
+<h1 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 撤销所有的已经add的文件:</span><br><span class="line">git reset HEAD .</span><br><span class="line"></span><br><span class="line"># 撤销某个文件或文件夹</span><br><span class="line">git reset HEAD -filename</span><br><span class="line"></span><br><span class="line"># 回退到上个版本</span><br><span class="line">git reset --hard HEAD^ </span><br><span class="line"></span><br><span class="line"># 退到&#x2F;进到 指定commit_id</span><br><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>文件被修改了，但未执行git add操作（working tree内撤销）</li>
@@ -225,7 +226,6 @@ ga('send', 'pageview');
 <li>同时对多个文件执行了git add操作，但本次只想提交其中一部分文件</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br><span class="line">git status</span><br><span class="line">git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>文件执行了git add操作，但想撤销对其的修改（index内回滚）</li>
 </ul>
@@ -273,7 +273,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
 
 
             
@@ -392,7 +392,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

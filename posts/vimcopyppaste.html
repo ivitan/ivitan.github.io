@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -34,18 +34,19 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Vim">
-    <meta name="description" content="Vim 增删查改、复制捏贴、翻页和寄存器。 Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put">
-<meta name="keywords" content="Linux,Vim">
+    <meta name="description" content="Vim 增删查改、复制捏贴、翻页和寄存器。 Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete&#x2F;yank&#x2F;put">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim 增删查改、翻页和寄存器">
 <meta property="og:url" content="https://vitan.me/posts/vimcopyppaste.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Vim 增删查改、复制捏贴、翻页和寄存器。 Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:description" content="Vim 增删查改、复制捏贴、翻页和寄存器。 Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete&#x2F;yank&#x2F;put">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-28T00:52:31.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim 增删查改、翻页和寄存器">
-<meta name="twitter:description" content="Vim 增删查改、复制捏贴、翻页和寄存器。 Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -242,7 +243,6 @@ ga('send', 'pageview');
 
 <p>查</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs <span class="comment"># 查找当前行第一个出现的 s ，使用 ； 查找下一个</span></span><br><span class="line">Fs <span class="comment"># 往回查</span></span><br><span class="line">/word <span class="comment"># 查找所以单词 word</span></span><br><span class="line">?word <span class="comment">#往回查</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="移动翻页"><a href="#移动翻页" class="headerlink" title="移动翻页"></a>移动翻页</h1><p>移动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hjkl <span class="comment"># 上下左右</span></span><br><span class="line">w <span class="comment"># word 移动单词</span></span><br><span class="line">b <span class="comment">#back word 往回移动单词</span></span><br><span class="line">:18 <span class="comment"># 移动到18行</span></span><br><span class="line">18G <span class="comment"># 移动到14行</span></span><br><span class="line">0 <span class="comment"># 回到开头</span></span><br><span class="line">$ <span class="comment"># 行尾</span></span><br><span class="line">gg <span class="comment"># 文件开头</span></span><br><span class="line">G <span class="comment"># 文件结尾</span></span><br><span class="line">Ctrl o <span class="comment"># 返回刚刚的位置</span></span><br></pre></td></tr></table></figure>
 
@@ -273,7 +273,6 @@ ga('send', 'pageview');
 <h2 id="查看寄存器内容"><a href="#查看寄存器内容" class="headerlink" title="查看寄存器内容"></a>查看寄存器内容</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:reg a # 查看 a 寄存器内容</span><br><span class="line">:reg b # 查看 b 寄存器内容</span><br></pre></td></tr></table></figure>
 
 <h2 id="查看是否支持-clipboard"><a href="#查看是否支持-clipboard" class="headerlink" title="查看是否支持 clipboard"></a>查看是否支持 clipboard</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo has('clipboard')</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>1 为支持</li>
 </ul>
@@ -311,7 +310,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li></ul>
 
 
             
@@ -437,7 +436,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

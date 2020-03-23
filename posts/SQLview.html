@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="SQL">
     <meta name="description" content="SQL视图">
-<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 视图">
 <meta property="og:url" content="https://vitan.me/posts/SQLview.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="SQL视图">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-01T15:00:19.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL 视图">
-<meta name="twitter:description" content="SQL视图">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -219,7 +219,6 @@ ga('send', 'pageview');
 </ul>
 <h1 id="SQL-CREATE-VIEW"><a href="#SQL-CREATE-VIEW" class="headerlink" title="SQL CREATE VIEW"></a>SQL CREATE VIEW</h1><p>语法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>注释：视图总是显示最近的数据。每当用户查询视图时，数据库引擎通过使用 SQL 语句来重建数据。</li>
 </ul>
@@ -230,39 +229,18 @@ ga('send', 'pageview');
 </ol>
 <p>创建：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductID,ProductName</span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> Discontinued=<span class="keyword">No</span></span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><p>查询上面这个视图：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Northwind 样本数据库的另一个视图会选取 Products 表中所有单位价格高于平均单位价格的产品</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [Products Above Average Price] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductName,UnitPrice</span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> UnitPrice&gt;(<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(UnitPrice) <span class="keyword">FROM</span> Products)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询上面这个视图：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [Products Above Average Price]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>另一个来自 Northwind 数据库的视图实例会计算在 1997 年每个种类的销售总数。请注意，这个视图会从另一个名为 “Product Sales for 1997” 的视图那里选取数据：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CategoryName,<span class="keyword">Sum</span>(ProductSales) <span class="keyword">AS</span> CategorySales</span><br><span class="line"><span class="keyword">FROM</span> [Product Sales <span class="keyword">for</span> <span class="number">1997</span>]</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CategoryName</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询上面这个视图：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>也可以向查询添加条件。现在，我们仅仅需要查看 “Beverages” 类的全部销量：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>]</span><br><span class="line"><span class="keyword">WHERE</span> CategoryName=<span class="string">'Beverages'</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="SQL-更新视图"><a href="#SQL-更新视图" class="headerlink" title="SQL 更新视图"></a>SQL 更新视图</h2><p>语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL <span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> Syntax</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
-
-<ul>
+<li>查询上面这个视图：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>]</span><br></pre></td></tr></table></figure></li>
+<li>Northwind 样本数据库的另一个视图会选取 Products 表中所有单位价格高于平均单位价格的产品<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [Products Above Average Price] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductName,UnitPrice</span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> UnitPrice&gt;(<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(UnitPrice) <span class="keyword">FROM</span> Products)</span><br></pre></td></tr></table></figure></li>
+<li>查询上面这个视图：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [Products Above Average Price]</span><br></pre></td></tr></table></figure></li>
+<li>另一个来自 Northwind 数据库的视图实例会计算在 1997 年每个种类的销售总数。请注意，这个视图会从另一个名为 “Product Sales for 1997” 的视图那里选取数据：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CategoryName,<span class="keyword">Sum</span>(ProductSales) <span class="keyword">AS</span> CategorySales</span><br><span class="line"><span class="keyword">FROM</span> [Product Sales <span class="keyword">for</span> <span class="number">1997</span>]</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CategoryName</span><br></pre></td></tr></table></figure></li>
+<li>查询上面这个视图：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>]</span><br></pre></td></tr></table></figure></li>
+<li>也可以向查询添加条件。现在，我们仅仅需要查看 “Beverages” 类的全部销量：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">Category</span> Sales <span class="keyword">For</span> <span class="number">1997</span>]</span><br><span class="line"><span class="keyword">WHERE</span> CategoryName=<span class="string">'Beverages'</span></span><br></pre></td></tr></table></figure>
+<h2 id="SQL-更新视图"><a href="#SQL-更新视图" class="headerlink" title="SQL 更新视图"></a>SQL 更新视图</h2>语法<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL <span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> Syntax</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure></li>
 <li>现在，我们希望向 “Current Product List” 视图添加 “Category” 列。我们将通过下列 SQL 更新视图：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> [<span class="keyword">Current</span> Product <span class="keyword">List</span>] <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ProductID,ProductName,<span class="keyword">Category</span></span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> Discontinued=<span class="keyword">No</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="SQL-撤销视图"><a href="#SQL-撤销视图" class="headerlink" title="SQL 撤销视图"></a>SQL 撤销视图</h2>DROP VIEW<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> Syntax</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="SQL-撤销视图"><a href="#SQL-撤销视图" class="headerlink" title="SQL 撤销视图"></a>SQL 撤销视图</h2><p>DROP VIEW</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> Syntax</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>Via</strong></p>
 <ul>
@@ -302,7 +280,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
             
@@ -428,7 +406,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

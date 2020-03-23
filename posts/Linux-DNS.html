@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux">
     <meta name="description" content="CentOS DNS">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS DNS">
 <meta property="og:url" content="https://vitan.me/posts/Linux-DNS.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="CentOS DNS">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-12T01:27:22.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS DNS">
-<meta name="twitter:description" content="CentOS DNS">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -216,25 +216,21 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service named start</span><br><span class="line">systemctl name start <span class="comment"># CentOs 7</span></span><br><span class="line">systemctl <span class="built_in">enable</span> named-chroot</span><br></pre></td></tr></table></figure>
 
 <h1 id="Bind-配置"><a href="#Bind-配置" class="headerlink" title="Bind 配置"></a>Bind 配置</h1><figure class="highlight bash"><figcaption><span>named.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /var/named/chroot/etc/named.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>/var/named/chroot/etc/named.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">        listen-on port 53 &#123; any; &#125;;<span class="comment"># 监听任何ip对53端口的请求</span></span><br><span class="line">        listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">        directory       <span class="string">"/var/named"</span>;</span><br><span class="line">        dump-file       <span class="string">"/var/named/data/cache_dump.db"</span>;</span><br><span class="line">        statistics-file <span class="string">"/var/named/data/named_stats.txt"</span>;</span><br><span class="line">        memstatistics-file <span class="string">"/var/named/data/named_mem_stats.txt"</span>;</span><br><span class="line">        allow-query     &#123; any; &#125;; <span class="comment"># 接收任何来源查询dns记录</span></span><br><span class="line">        recursion yes;</span><br><span class="line"></span><br><span class="line">        dnssec-enable yes;</span><br><span class="line">        dnssec-validation yes;</span><br><span class="line"></span><br><span class="line">        /* Path to ISC DLV key */</span><br><span class="line">        bindkeys-file <span class="string">"/etc/named.iscdlv.key"</span>;</span><br><span class="line"></span><br><span class="line">         managed-keys-directory <span class="string">"/var/named/dynamic"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//以下用于限定 <span class="built_in">bind</span> 服务器的日志参数</span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file <span class="string">"data/named.run"</span>;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//用于指定根服务器的配置信息，一般不能改动</span><br><span class="line">zone <span class="string">"."</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> hint;</span><br><span class="line">        file <span class="string">"named.ca"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">include <span class="string">"/etc/named.zones"</span>; //指定住配置文件，按实际改动</span><br><span class="line">include <span class="string">"/etc/named.root.key"</span>;</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置主配置文件"><a href="#配置主配置文件" class="headerlink" title="配置主配置文件"></a>配置主配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/etc/</span><br><span class="line">cp -p named.rfc1912.zones named.zones</span><br><span class="line">vim named.zones</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>/var/named/chroot/etc/named.zones</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zone <span class="string">"vitan.me"</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> master;</span><br><span class="line">        file <span class="string">"vitan.me.zone"</span>;</span><br><span class="line">        allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zone <span class="string">"197.28.149.in-addr.arpa"</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> master;</span><br><span class="line">        file <span class="string">"149.28.197.zone"</span>;</span><br><span class="line">        allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h2 id="区域配置文件"><a href="#区域配置文件" class="headerlink" title="区域配置文件"></a>区域配置文件</h2><ul>
 <li>正向解析域</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/var/named</span><br><span class="line">cp -p named.localhost vitan.me.zone</span><br><span class="line">vim vitan.me.zone</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>/var/named/chroot/var/named/vitan.me.zone</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@       IN SOA  www.vitan.me. mail.vitan.me. (</span><br><span class="line">                2007101100      ; serial</span><br><span class="line">                1D      ; refresh <span class="comment"># 主从刷新时间</span></span><br><span class="line">                1H      ; retry <span class="comment"># 主从通讯失败后重试间隔</span></span><br><span class="line">                1W      ; expire <span class="comment"># 缓存过期时间</span></span><br><span class="line">                3H )    ; minimum <span class="comment"># 没有TTL定义时的最小生存周期</span></span><br><span class="line"></span><br><span class="line">@       IN      NS              www.vitan.me.</span><br><span class="line">@       IN      MX      10      www.vitan.me.</span><br><span class="line">www     IN      A               149.28.197.1</span><br><span class="line">mail    IN      A               149.28.197.1</span><br><span class="line">www1    IN      CNAME           www.vitan.me.</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>反向向解析域</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/var/named</span><br><span class="line">cp -p named.loopback 149.28.197.zone</span><br><span class="line">vim /var/named/chroot/var/named/149.28.197zone</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>/var/named/chroot/var/named/149.28.197.zone</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@       IN SOA  www.vitan.me. mail.vitan.me. (</span><br><span class="line">                2007101100      ; serial</span><br><span class="line">                1D      ; refresh <span class="comment"># 主从刷新时间</span></span><br><span class="line">                1H      ; retry <span class="comment"># 主从通讯失败后重试间隔</span></span><br><span class="line">                1W      ; expire <span class="comment"># 缓存过期时间</span></span><br><span class="line">                3H )    ; minimum <span class="comment"># 没有TTL定义时的最小生存周期</span></span><br><span class="line"></span><br><span class="line">@       IN      NS              www.vitan.me.</span><br><span class="line">@       IN      MX      10      www.vitan.me.</span><br><span class="line">www     IN      A               149.28.197.1</span><br><span class="line">mail    IN      A               149.28.197.1</span><br><span class="line">www1    IN      CNAME           www.vitan.me.</span><br></pre></td></tr></table></figure>
 
 <h1 id="重启-DNS-服务"><a href="#重启-DNS-服务" class="headerlink" title="重启 DNS 服务"></a>重启 DNS 服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service named restart/reload</span><br><span class="line">systemctl named restart <span class="comment"># CentOs 7</span></span><br></pre></td></tr></table></figure>
@@ -245,7 +241,6 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install <span class="built_in">bind</span>-utils -y</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><figcaption><span>/etc/resolv.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/resolv.conf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>/etc/resolv.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">search vitan.me</span><br><span class="line">nameserver 149.28.197.1</span><br></pre></td></tr></table></figure>
 
 <h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dig www.vitan.me</span><br><span class="line">nslookup www.vitan.me</span><br></pre></td></tr></table></figure>
@@ -282,7 +277,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
 
 
             
@@ -408,7 +403,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

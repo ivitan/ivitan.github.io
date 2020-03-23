@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,23 +35,25 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,Termux,Git">
     <meta name="description" content="Git闯关游戏">
-<meta name="keywords" content="Linux,Termux,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 闯关游戏">
 <meta property="og:url" content="https://vitan.me/posts/GitGame.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Git闯关游戏">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:published_time" content="2018-02-10T13:09:24.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Termux">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 闯关游戏">
-<meta name="twitter:description" content="Git闯关游戏">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -63,7 +65,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -224,12 +226,10 @@ ga('send', 'pageview');
 <p><code>githug levels</code> - 显示关卡列表</p>
 <h2 id="第一关（Init）"><a href="#第一关（Init）" class="headerlink" title="第一关（Init）"></a>第一关（Init）</h2><p>紧接着，马上进入到了第一个关卡, 按照提示初始化这个这个 githug 文件夹为仓库。完成关卡可以通过调用 <code>githug play</code> 验证操作，成功则会进入下一个关卡</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cd</span> <span class="string">git_hug</span></span><br><span class="line"><span class="attr">git</span> <span class="string">init</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>cd</code> （Change Directory），跳转目录、切换路径。</p>
 <p><code>git init</code>在当前目录新建一个Git代码库</p>
 <h2 id="第二关（Config）"><a href="#第二关（Config）" class="headerlink" title="第二关（Config）"></a>第二关（Config）</h2><p>设置 Git 用户名和邮箱，为了不影响全局的配置，我设置的是仓库级别的。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>[--global] user.name <span class="string">"[name]"</span></span><br><span class="line">git<span class="built_in"> config </span>[--global] user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p><code>git config git</code> 的设置文件为.gitconfig,他可以在全局配置（加上–global），也可以项目配置。</p>
 <p>另：</p>
@@ -237,7 +237,6 @@ ga('send', 'pageview');
 <p><code>git config -e [--global]</code> 编辑git的配置文件</p>
 <h2 id="第三关-（Add）"><a href="#第三关-（Add）" class="headerlink" title="第三关 （Add）"></a>第三关 （Add）</h2><p>使用 add 命令将 README 文件添加到 staging area.</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .README</span></span><br></pre></td></tr></table></figure>
-
 <p>相关</p>
 <p><code>git add</code>将所有修改过的工作文件提交暂存区</p>
 <p>将所有文件添加到暂存区<code>git add .</code>或者<code>git add -</code>A</p>
@@ -249,7 +248,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第四关-（Commit）"><a href="#第四关-（Commit）" class="headerlink" title="第四关 （Commit）"></a>第四关 （Commit）</h2><p>提交 README 文件，记得每次 commit 使用 -m 参数加上备注是个好习惯</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">'message'</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p><code>git commit -m [message]</code>提交暂存区到仓库区;还可以提交暂存区的指定文件到仓库区<code>git commit [file1] [file2] ... -m [message]</code>。</p>
 <p>同时，必须要写 Commit message(提交说明),否则就不允许提交。</p>
@@ -261,23 +259,20 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第五关（Clone"><a href="#第五关（Clone" class="headerlink" title="第五关（Clone)"></a>第五关（Clone)</h2><p>克隆一个仓库，默认的文件夹名是远端的仓库名</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/Gazler/cloneme</span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">http</span>[s]://example.com/path/to/repo.git/</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">ssh</span>://example.com/path/to/repo.git/</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">git</span>://example.com/path/to/repo.git/</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">/opt</span>/git/project.git</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">file</span>:///opt/git/project.git</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">ftp</span>[s]://example.com/path/to/repo.git/</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">rsync</span>://example.com/path/to/repo.git/</span><br></pre></td></tr></table></figure>
-
 <p>SSH协议的另一种写法</p>
 <p><code>git clone [user@]example.com:path/to/repo.git/</code></p>
 <h2 id="第六关（Clone-to-folder）"><a href="#第六关（Clone-to-folder）" class="headerlink" title="第六关（Clone to folder）"></a>第六关（Clone to folder）</h2><p>同样是克隆一个仓库，不同的是可以指定一个文件夹名</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/Gazler/cloneme my_cloned_repo</span><br></pre></td></tr></table></figure>
-
 <p>相关</p>
 <p><code>git clone</code>&lt;版本库的网址&gt; &lt;本地目录名&gt; 该命令会在本地主机生成一个目录。如果不指定目录名，则与远程主机的版本库同名。</p>
 <h2 id="第七关（Ignore"><a href="#第七关（Ignore" class="headerlink" title="第七关（Ignore)"></a>第七关（Ignore)</h2><p>忽略所有 .swp 后缀名的文件。这里使用 vim 编辑器打开 .gitignore，这个文件记录了 git 忽略文件的规则, 不会 vim 的同学可以用自己熟悉的编辑。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobpbvnwqlj20fr07kjt3.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -286,7 +281,6 @@ ga('send', 'pageview');
 
 <p>使用正则(glob 模式)匹配所有的 .swp 文件，然后保存并退出</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.progile</span><span class="selector-class">.yml</span></span><br><span class="line">.gitignore</span><br><span class="line">*.swp</span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p>忽略掉某个文件，需要修改.gitignore文件的方法。可以在你的用户目录下创建 <code>~/.gitignoreglobal</code> 文件中设置全局。</p>
 <ol>
@@ -311,13 +305,10 @@ ga('send', 'pageview');
 </ol>
 <h2 id="第八关（Include"><a href="#第八关（Include" class="headerlink" title="第八关（Include"></a>第八关（Include</h2><p>除了 <code>lib.a</code>文件，其他所有的 .a 后缀名的文件都忽略。和上一关的操作一样，修改 <code>.gitignore</code> 文件</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">'*.a'</span><span class="meta">&gt;&gt;</span>.gitignore</span><br><span class="line">echo <span class="string">'!lib.a'</span><span class="meta">&gt;&gt;</span>.gitignore</span><br></pre></td></tr></table></figure>
-
 <p>其中 <code>#</code> 开头的是注释，用<code>*.a</code> 匹配所有 <code>.a</code> 文件，<code>!</code> 开头代表不要忽略</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.profile.yml</span><br><span class="line">.gitignore</span><br><span class="line"></span><br><span class="line"><span class="comment"># ignore all file with ".a" extensions expect "lib.a" file</span></span><br><span class="line">*.a</span><br><span class="line">!<span class="class"><span class="keyword">lib</span>.<span class="title">a</span></span></span><br></pre></td></tr></table></figure>
-
 <h2 id="第九关（Status"><a href="#第九关（Status" class="headerlink" title="第九关（Status)"></a>第九关（Status)</h2><p>查看所有处于<code>untracked</code>状态的文件。使用<code>git status</code> 查看当前仓库的状态，可以看到红色部分就是 <code>untracked</code> 状态的文件</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git status</span></span><br></pre></td></tr></table></figure>
-
 <p>答案：<code>database.yml</code></p>
 <p>相关:<code>git status</code> 显示有变更的文件</p>
 <h2 id="第十关（Number-of-files-committed）"><a href="#第十关（Number-of-files-committed）" class="headerlink" title="第十关（Number of files committed）"></a>第十关（Number of files committed）</h2><p>其实就是查看处于 staged 状态的文件，图中黄色部分就是，所以个数就是2</p>
@@ -341,13 +332,12 @@ ga('send', 'pageview');
 <p><code>git rm --cached [file]</code> 停止追踪指定文件，但该文件会保留在工作区。</p>
 <h2 id="第十三关（stash）"><a href="#第十三关（stash）" class="headerlink" title="第十三关（stash）"></a>第十三关（stash）</h2><p>临时提交某个文件。这个操作在需要临时保存修改，而又不想提交的时候特别好用！而且 git 中维护了一个栈来保存，所以支持提交多次。如果需要恢复某次提交，使用 git stash apply 即可。</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">status</span></span><br><span class="line"><span class="attr">git</span> <span class="string">stash</span></span><br><span class="line"><span class="attr">git</span> <span class="string">status</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>git stash</code> 用于保存和恢复工作进度。</li>
 <li><code>git stash</code> 保存当前的工作进度。会分别对暂存区和工作区的状态进行保存。</li>
 <li><code>git stash list</code> 显示进度列表。</li>
-<li><code>git stash pop</code> [–index] [<stash>] 如果不使用任何参数，会恢复最新保存的工作进度，并将恢复的工作进度从存储的工作进度列表中清除。<br>如果提供<stash>参数（来自git stash list显示的列表），则从该<stash>中恢复。恢复完毕 也将从进度列表中删除<stash>。选项–index除了恢复工作区的文件外，还尝试恢复暂存区。</stash></stash></stash></stash></li>
+<li><code>git stash pop</code> [–index] [<stash>] 如果不使用任何参数，会恢复最新保存的工作进度，并将恢复的工作进度从存储的工作进度列表中清除。<br>如果提供<stash>参数（来自git stash list显示的列表），则从该<stash>中恢复。恢复完毕 也将从进度列表中删除<stash>。选项–index除了恢复工作区的文件外，还尝试恢复暂存区。</li>
 <li><code>git stash [save [--patch] [-k|--[no]keep-index] [-q|--quiet] [&lt;message&gt;]]</code> 这是第一条命令的完整版。</li>
 <li>使用参数<code>--patch</code>会显示工作区和HEAD的差异，通过对差异文件的编辑决定在进度中最终要保存的工作区的内容，通过编辑差异文件可以在进度中排除无关内容。</li>
 <li>使用<code>-k</code>或者<code>--keep-index</code>参数，在保存进度后不会将暂存区重置。默认会将暂存区和工作区强制重置。</li>
@@ -358,11 +348,9 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第十四关（Rename"><a href="#第十四关（Rename" class="headerlink" title="第十四关（Rename)"></a>第十四关（Rename)</h2><p>重命名文件。首先这个文件需要是已经是已追踪状态，才可以使用<code>git mv</code> 命令，操作完成后自动处于 <code>staging</code> 状态</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">mv</span> <span class="selector-tag">oldfile</span><span class="selector-class">.txt</span> <span class="selector-tag">newfile</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<code>git mv</code> 重命名文件</p>
 <h2 id="第十五关（Restructure）"><a href="#第十五关（Restructure）" class="headerlink" title="第十五关（Restructure）"></a>第十五关（Restructure）</h2><p>移动所有 <code>.html</code> 文件到 <code>src</code> 文件夹。<code>git mv</code> 后面的第二个参数可以接受文件或目录，如果是目录，则文件会直接放入目录内，可以使用正则（glob模式）匹配所有 <code>.html</code> 文件</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mkdir</span> src</span><br><span class="line">git mv <span class="regexp">*.html</span> src/</span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><p>mkdir(make directory) Mkdir 是一个用来在 Linux 系统下创建目录的命令。此命令属于内建命令。</p>
@@ -380,13 +368,12 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第十六关（Log）"><a href="#第十六关（Log）" class="headerlink" title="第十六关（Log）"></a>第十六关（Log）</h2><p>找到最新的 commit 的 hash 值。使用 git log 查看历史提交记录, 找到最新的 commit 的 hash 值，记录下来用户回答问题</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-
 <p>答案为：<code>34b2fd7(commit</code>后 前7位)</p>
 <p>这里是按照倒叙排列的，最新的在最前面，<code>commit</code> 关键字后面跟着的就是这个 <code>commit</code> 的<code>hash</code>值</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobq12k0igj20fs03ft9a.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -404,7 +391,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第十七关（Tag）"><a href="#第十七关（Tag）" class="headerlink" title="第十七关（Tag）"></a>第十七关（Tag）</h2><p>为最新的 commit 打 <code>tag</code>。不加额外参数就是为当前 <code>commit</code> 记录<code>tag</code>, 当然可以为特定的 <code>commit</code> 打</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span> <span class="title">new_tag</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>git tag</code> 列出所有的tag，在控制台打印出当前仓库的所有标签</li>
@@ -414,7 +400,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第十八关（Push-tags）"><a href="#第十八关（Push-tags）" class="headerlink" title="第十八关（Push tags）"></a>第十八关（Push tags）</h2><p>将所有本地 tag 都推送到远端。–tags 参数代表将所有的 tags 都推送到远端</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> --tags <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
-
 <p>相关：</p>
 <p>默认 <code>git push</code> 不会罢 tag 标签传送到远端服务器上，只有通过显示命令才能分享标签到远端仓库。</p>
 <ul>
@@ -423,14 +408,11 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第十九关（Commit-amend）"><a href="#第十九关（Commit-amend）" class="headerlink" title="第十九关（Commit amend）"></a>第十九关（Commit amend）</h2><p>某个文件在上次提交中遗漏了，在那次提交中补上这个文件。 其实，使用<code>git commit --amend</code> 会进入编辑界面修改备注信息，我这里直接 <code>:wq</code> 保存并退出</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git <span class="keyword">add</span><span class="bash"> forgotten_file.rb</span></span><br><span class="line">git commit --amend -m <span class="string">'message'</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p><code>git commit --amend</code> 合并缓存区的修改和最近的一次commit, 然后用生成的新的commit替换掉老的. 如果缓存区没有内容, 那么利用amend可以修改上一次commit的描述.</p>
-<h2 id="第二十关（Commit-in-feature）"><a href="#第二十关（Commit-in-feature）" class="headerlink" title="第二十关（Commit in feature）"></a>第二十关（Commit in feature）</h2><p> 为提交指定一个未来的时间。<br> <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit --date <span class="number">2016.10</span><span class="number">.08</span> -m <span class="string">'message'</span></span><br><span class="line">#或者</span><br><span class="line">git commit --date=<span class="number">05.01</span><span class="number">.2018</span>T14:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure></p>
-<p> 相关:<code>git commit --date &lt;date&gt;</code>修改提交时间</p>
+<h2 id="第二十关（Commit-in-feature）"><a href="#第二十关（Commit-in-feature）" class="headerlink" title="第二十关（Commit in feature）"></a>第二十关（Commit in feature）</h2><p> 为提交指定一个未来的时间。<br> <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit --date <span class="number">2016.10</span><span class="number">.08</span> -m <span class="string">'message'</span></span><br><span class="line">#或者</span><br><span class="line">git commit --date=<span class="number">05.01</span><span class="number">.2018</span>T14:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure><br> 相关:<code>git commit --date &lt;date&gt;</code>修改提交时间</p>
 <h2 id="第二十一关（Reset）"><a href="#第二十一关（Reset）" class="headerlink" title="第二十一关（Reset）"></a>第二十一关（Reset）</h2><p>两个文件都被添加到了 staging area, 但是只想提交其中一个。使用 git reset 可以用仓库中的版本覆盖 <code>staging area</code> 的版本。</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">status</span></span><br><span class="line">git <span class="built_in">reset</span> HEAD to_commit_second.rb</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>git reset</code>使用仓库中的版本覆盖 <code>staging area</code> 中的，如果 <code>working directory</code> 该文件没有其他修改，则 <code>staging area</code> 中的修改将应用到 <code>working directory</code> 中。反之<code>working directory</code> 中的版本将被保留，丢弃 <code>staging area</code>中的修改。</li>
 <li><code>git checkout</code> 则是使用 <code>staging area</code> 的中的版本覆盖 <code>working directory</code>。</li>
@@ -445,10 +427,8 @@ ga('send', 'pageview');
 </ul>
 <p>例子：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#回退所有内容到上一版本 HEAD^的意思是最近一次的提交</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="keyword">HEAD</span>^</span><br><span class="line"><span class="comment">#回退a.py这个文件的版本到上一个版本</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="keyword">HEAD</span>^ a.py</span><br><span class="line"><span class="comment">#向前回退到第3个版本</span></span><br><span class="line">git <span class="keyword">reset</span> –soft <span class="keyword">HEAD</span>~<span class="number">3</span></span><br><span class="line"><span class="comment">#将本地的状态回退到和远程的一样</span></span><br><span class="line">git <span class="keyword">reset</span> –hard origin/<span class="keyword">master</span></span><br><span class="line"><span class="comment">#回退到某个版本</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="number">38679</span>ed</span><br><span class="line"><span class="comment">#回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit</span></span><br><span class="line">git revert <span class="keyword">HEAD</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="第二十二关（Reset-soft）"><a href="#第二十二关（Reset-soft）" class="headerlink" title="第二十二关（Reset soft）"></a>第二十二关（Reset soft）</h2><p>撤销上一次提交。</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--soft HEAD^1</span></span><br></pre></td></tr></table></figure>
-
 <p>相关：</p>
 <ul>
 <li><code>--soft</code> 参数将上一次的修改放入 staging area</li>
@@ -457,7 +437,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第二十三关（Checkout-file）"><a href="#第二十三关（Checkout-file）" class="headerlink" title="第二十三关（Checkout file）"></a>第二十三关（Checkout file）</h2><p>抛弃某一次的修改，使用上次提交的版本。checkout 和 reset 的区别参照第二十一关</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="built_in">config</span>.rb</span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git checkou</code>t 检出。</p>
 <ul>
 <li>创建分支<code>git branch branchName</code></li>
@@ -466,7 +445,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第二十四关（Remote）"><a href="#第二十四关（Remote）" class="headerlink" title="第二十四关（Remote）"></a>第二十四关（Remote）</h2><p>查看远端仓库。其实可以不加<code>-v</code>参数，加这个参数只是可以将地址也一起输出(没想到下一关就是考察这个参数，平常习惯加这个参数了。)</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote -v</span></span><br></pre></td></tr></table></figure>
-
 <p>答案：my_remote_repo</p>
 <p>相关:</p>
 <ul>
@@ -479,11 +457,9 @@ ga('send', 'pageview');
 <li><code>git remore rename &lt;原主机名&gt; &lt;新主机名&gt;</code> 远程主机的改名</li>
 <li><code>tail .git/config</code> 查看remote信息。</li>
 </ul>
-<h2 id="第二十五关（remote-url）"><a href="#第二十五关（remote-url）" class="headerlink" title="第二十五关（remote url）"></a>第二十五关（remote url）</h2><p>查看远端仓库的 URL<br> <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote -v</span></span><br></pre></td></tr></table></figure></p>
-<p>答案：<code>https://github.com/githug/not_a_repo</code></p>
+<h2 id="第二十五关（remote-url）"><a href="#第二十五关（remote-url）" class="headerlink" title="第二十五关（remote url）"></a>第二十五关（remote url）</h2><p>查看远端仓库的 URL<br> <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote -v</span></span><br></pre></td></tr></table></figure><br>答案：<code>https://github.com/githug/not_a_repo</code></p>
 <h2 id="第二十六关（pull）"><a href="#第二十六关（pull）" class="headerlink" title="第二十六关（pull）"></a>第二十六关（pull）</h2><p>拉取远端仓库。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li>git push origin master 的意思就是上传本地当前分支代码到master分支<br>其实可以指定分支，格式如下</li>
@@ -495,10 +471,8 @@ ga('send', 'pageview');
 
 <h2 id="第二十八关（Push）"><a href="#第二十八关（Push）" class="headerlink" title="第二十八关（Push）"></a>第二十八关（Push）</h2><p>推送本地修改到远端</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase origin <span class="literal">master</span></span><br><span class="line">git push origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git rebase</code>用于把一个分支的修改合并到当前分支。</p>
 <h2 id="第二十九关（Diff）"><a href="#第二十九关（Diff）" class="headerlink" title="第二十九关（Diff）"></a>第二十九关（Diff）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">diff</span> <span class="selector-tag">app</span><span class="selector-class">.rb</span></span><br></pre></td></tr></table></figure>
-
 <p>答案：26</p>
 <p>相关：</p>
 <ul>
@@ -509,7 +483,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第三十关（Blame）"><a href="#第三十关（Blame）" class="headerlink" title="第三十关（Blame）"></a>第三十关（Blame）</h2><p>查看某个文件的修改人。这个命令简直邪恶，锅终于有人背了！！！</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">blame </span><span class="built_in">config</span>.rb</span><br></pre></td></tr></table></figure>
-
 <p>答案：Spider Man</p>
 <p>相关:<br>git blame得到整个文件的每一行的详细修改信息:包括SHA串,日期和作者。</p>
 <h2 id="第三十一关（Branch）"><a href="#第三十一关（Branch）" class="headerlink" title="第三十一关（Branch）"></a>第三十一关（Branch）</h2><p>创建一个分支</p>
@@ -520,7 +493,6 @@ ga('send', 'pageview');
 
 <h2 id="第三十三关（Checkout-tag）"><a href="#第三十三关（Checkout-tag）" class="headerlink" title="第三十三关（Checkout tag）"></a>第三十三关（Checkout tag）</h2><p>切换到某个特定的 tag</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span></span><br><span class="line">git checkout v1.<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br>标签可以针对某一时间点的版本做标记，常用于版本发布。</p>
 <p>列出标签</p>
 <ul>
@@ -537,22 +509,18 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第三十四关（Checkout-tag-over-branch）"><a href="#第三十四关（Checkout-tag-over-branch）" class="headerlink" title="第三十四关（Checkout tag over branch）"></a>第三十四关（Checkout tag over branch）</h2><p>切换到某个特定的分支，但是分支名和标签名重叠了</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout tags/v1<span class="number">.2</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git checkout tags/v1.2</code> 当标签和分支名相同时，需要指定标签检出</p>
 <h2 id="第三十五关（branch-at）"><a href="#第三十五关（branch-at）" class="headerlink" title="第三十五关（branch at）"></a>第三十五关（branch at）</h2><p>根据一个特定的提交创建新分支</p>
 <p>一种方法：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test_branch HEAD^<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>第二种方法：</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git branch test_branch -v <span class="number">00740b4</span></span><br></pre></td></tr></table></figure>
-
 <p>找到第二条的id，输入前7位</p>
 <h2 id="第三十六关（delete-branch）"><a href="#第三十六关（delete-branch）" class="headerlink" title="第三十六关（delete branch）"></a>第三十六关（delete branch）</h2><p>删除一个分支</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d delete_me</span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十七关（Push-branch）"><a href="#第三十七关（Push-branch）" class="headerlink" title="第三十七关（Push branch）"></a>第三十七关（Push branch）</h2><p>将分支推送到远端仓库</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch</span></span><br><span class="line"><span class="keyword">git </span><span class="keyword">push </span>origin test_branch</span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>git push origin master</code> 上面命令表示，将本地的master分支推送到origin主机的master分支。如果后者不存在，则会被新建。</li>
@@ -565,14 +533,11 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第三十八关（merge）"><a href="#第三十八关（merge）" class="headerlink" title="第三十八关（merge）"></a>第三十八关（merge）</h2><p>合并分支。为了简化分支模型，可以使用 <code>rebase</code> 代替，后续关卡会遇到。</p>
 <figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">merge</span> feature</span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git merge</code>合并分支</p>
 <h2 id="第三十九关（fetch）"><a href="#第三十九关（fetch）" class="headerlink" title="第三十九关（fetch）"></a>第三十九关（fetch）</h2><p>获取远端的修改，但是并不合并到当前分支。其实，<code>git pull</code> 就是 <code>git fetch</code> 和 <code>git merge</code> 组成的。</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git fetch origin</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git fetch origin master</code>取回origin主机的master分支</p>
 <h2 id="第四十关（rebase）"><a href="#第四十关（rebase）" class="headerlink" title="第四十关（rebase）"></a>第四十关（rebase）</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">checkout feature</span></span><br><span class="line"><span class="attr">git</span> <span class="string">rebase master</span></span><br></pre></td></tr></table></figure>
-
 <p>相关：</p>
 <ul>
 <li>其实不知道怎么翻译 git rebase 这个命令。大概意思是从某个提交分化出两个分支，然后其中一个分支需要将另一个分支的修改合并过来，但是又不想在提交记录上留下两个分支合并的痕迹，只留下一个分支以前后顺序记录两边的修改。</li>
@@ -585,20 +550,16 @@ ga('send', 'pageview');
 <p><code>git rebase –continue | –skip | –abort</code></p>
 <h2 id="第四十一关（rebase-onto）"><a href="#第四十一关（rebase-onto）" class="headerlink" title="第四十一关（rebase_onto）"></a>第四十一关（rebase_onto）</h2><p>将版本库未打包的松散对象打包</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --onto <span class="keyword">master</span> <span class="title">wrong_branch</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>git rebase --onto A B C A</code>代表的是你实际想要将切片放到哪个分支，B代表切片开始分支（一定要注意的问题是 B 的开闭问题，这里 rebase –onto 的机制是左开右闭）。</p>
 <p><code>git rebase --onto A B~1 temp</code> 如果想要保留A和C的历史，就需要先在切片的末尾建立一个分支temp。这就代表把B到c之间的历史移到了A上，并且当前temp分支的历史状态就是窝想要的。</p>
 <h2 id="第四十二关（repack）"><a href="#第四十二关（repack）" class="headerlink" title="第四十二关（repack）"></a>第四十二关（repack）</h2><p>应用某一个提交的修改。</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git repack -d</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:<br>g<code>it repack [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [--window=&lt;n&gt;] [--depth=&lt;n&gt;]</code></p>
 <p><code>git repack -d</code>包装后，如果新创建的包使一些现有的包冗余，删除多余的包。同时运行 <code>git prune-packed</code> 去除多余的松散对象文件。</p>
 <h2 id="第四十三关-（cherry-pick"><a href="#第四十三关-（cherry-pick" class="headerlink" title="第四十三关 （cherry-pick"></a>第四十三关 （cherry-pick</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git log new-feature</span><br><span class="line">$git cherry-pick ca32a6da</span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>Git cherry-pick</code> 可以选择某一个分支中的一个或几个commit来进行操作</p>
 <p><code>git grep</code>支持各种条件搜索及正则表达式，平时用的不多，但感觉功能强大。</p>
 <h2 id="第四十四关（grep）"><a href="#第四十四关（grep）" class="headerlink" title="第四十四关（grep）"></a>第四十四关（grep）</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git grep TODO</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>git grep</code> 查找git库里面的某段文字</li>
@@ -612,37 +573,32 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第四十五关（rename-commit）"><a href="#第四十五关（rename-commit）" class="headerlink" title="第四十五关（rename commit）"></a>第四十五关（rename commit）</h2><p>重命名提交。当涉及提交修改时，应该想到 <code>git rebase -i</code> 命令，它接受可以一个参数（提交的哈希值），它将罗列出此提交之后的所有提交，然后可以对个个提交做对应的操作。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log <span class="literal">master</span></span><br><span class="line">git rebase -i HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>查看历史提交记录，看到需要修改的为倒数第二个，进入编辑页面，将需要改动的行的·改为·。保存退出后在弹出的第二个窗口里修改拼写错误 <code>commmit</code> 改为 <code>commit</code></p>
 <h2 id="第四十六关（squash）"><a href="#第四十六关（squash）" class="headerlink" title="第四十六关（squash）"></a>第四十六关（squash）</h2><p>合并多个提交。</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -<span class="selector-tag">i</span> HEAD~<span class="number">4</span></span><br></pre></td></tr></table></figure>
-
 <p>将后三个改为s</p>
 <p>为新的提交修改备注</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqvy1midj20fu07b0tz.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h2 id="第四十七关（merge-squash）"><a href="#第四十七关（merge-squash）" class="headerlink" title="第四十七关（merge squash）"></a>第四十七关（merge squash）</h2><p>将某个分支上的所有修改都应用成一个提交。默认修改都将进入暂存区</p>
 <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git merge --squash long-feature-branch</span><br><span class="line">git commit -m 'message</span><br></pre></td></tr></table></figure>
-
 <p>相关:<br><code>--squash</code> 选项的含义是：本地文件内容与不使用该选项的合并结果相同，但是不提交、不移动 HEAD ,因此需要一条额外的commit命令。其效果相当于将 another 分支上的多个 commit 合并成一个，放在当前分支上，原来的 commit 历史则没有拿过来。</p>
 <h2 id="第四十八关-reorder"><a href="#第四十八关-reorder" class="headerlink" title="第四十八关(reorder()"></a>第四十八关(reorder()</h2><p>重新排列提交顺序。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git rebase -<span class="built_in">i</span> HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>查看历史记录发现提交顺序错误，将前两行顺序调换。</p>
 <h2 id="第四十九关-bisect"><a href="#第四十九关-bisect" class="headerlink" title="第四十九关(bisect)"></a>第四十九关(bisect)</h2><p>使用 <code>git log</code> 查看所有的提交记录，太长我就不全贴出来了，找到最开始的提交<code>git bisect start master f608824888b83</code></p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log --reverse -p prog.rb</span><br><span class="line">git bisect <span class="literal">start</span> <span class="keyword">master</span> <span class="title">f6088248</span></span><br><span class="line">git bisect run make test</span><br></pre></td></tr></table></figure>
-
 <p>查看最初一次为正确提交，得到版本号。执行完毕后日志里找到 “is the first bad commit” ,得到 18ed2ac。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobqyexrrfj20g90a60uy.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -651,7 +607,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr0w8f7yj20g90m8q62.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -666,11 +622,9 @@ ga('send', 'pageview');
 </ul>
 <h1 id="第五十关（Stage-lines）"><a href="#第五十关（Stage-lines）" class="headerlink" title="第五十关（Stage lines）"></a>第五十关（Stage lines）</h1><p>其实，提交文件的部分修改这种需求平时还是比较常见的，不过平时都是用 Source Tree 来操作的，但是看到这题之后，好像又开启了一扇大门。</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">status</span></span><br><span class="line">git add -p <span class="built_in">feature</span>.rb</span><br><span class="line">git <span class="built_in">diff</span></span><br><span class="line">git <span class="built_in">status</span></span><br></pre></td></tr></table></figure>
-
 <p>输入i编辑提交内容，删除第二个。</p>
 <h2 id="第五十一关（Find-old-branch）"><a href="#第五十一关（Find-old-branch）" class="headerlink" title="第五十一关（Find old branch）"></a>第五十一关（Find old branch）</h2><p>git reflog 可以列出所有的操作记录，所以找到之前忘记的信息并不是什么难事</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">reflog</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout solve_world_hunger</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>reflog</code> 是 git 用来记录引用变化的一种机制。</li>
@@ -678,7 +632,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第五十二关（Revert）"><a href="#第五十二关（Revert）" class="headerlink" title="第五十二关（Revert）"></a>第五十二关（Revert）</h2><p>与 <code>reset</code> 不同的是，<code>revert</code> 只会撤销当前的 <code>commit</code>，而之后的 <code>commit</code> 操作的修改还会保留，但是<code>reset</code> 还会将之后的所有<code>commit</code> 操作的修改全部退回 <code>staging area</code>或丢弃。</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git <span class="built_in">revert</span> HEAD^<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p>修复提交文件中的错误：</p>
 <ul>
@@ -688,26 +641,23 @@ ga('send', 'pageview');
 </ul>
 <h2 id="第五十三关（Restore）"><a href="#第五十三关（Restore）" class="headerlink" title="第五十三关（Restore）"></a>第五十三关（Restore）</h2><p>根据之前的经验，<code>git reflog</code> 可以查看所有的操作记录，所以只要能找到误操作之前的 <code>commit id</code>，一样能够恢复现场。</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">reflog</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout bdbe33d</span></span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <p>恢复已修改的文件：</p>
 <h2 id="第五十四关（Conflict）"><a href="#第五十四关（Conflict）" class="headerlink" title="第五十四关（Conflict）"></a>第五十四关（Conflict）</h2><p>冲突处理在平常的协同工作中真是再常见不过了，需要注意的是存在冲突的文件是在 <code>working directory</code> 中的，在解决完冲突之后需要添加到 <code>staging area</code> 并提交。</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">branch</span></span><br><span class="line"><span class="attr">git</span> <span class="string">merge mybranch</span></span><br><span class="line"><span class="attr">vim</span> <span class="string">poem.txt</span></span><br><span class="line"><span class="attr">git</span> <span class="string">add poem.txt</span></span><br><span class="line"><span class="attr">git</span> <span class="string">commit -m 'message</span></span><br></pre></td></tr></table></figure>
-
 <p>相关：</p>
 <p>其实冲突解决完成的图片丢失了，只能口述了。</p>
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> 到 <code>=======</code> 之间的内容代表 <code>master</code> 分支的修改，<code>=======</code> 到 <code>&gt;&gt;&gt;&gt;&gt;&gt; mybranch</code> 之间的内容代表 <code>mybranch</code> 分支的修改，保留 <code>mybranch</code> 分支的修改，删除<code>master</code> 分支的修改即可，当然这些特殊符号所在行也要一并删除。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fobr4vbhrwj20fu04ut90.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h2 id="第五十五关（Submodule）"><a href="#第五十五关（Submodule）" class="headerlink" title="第五十五关（Submodule）"></a>第五十五关（Submodule）</h2><p><code>submodule</code>是一个很方便的将一个仓库分解成多个子模块的命令，特别是项目比较大且依赖其他 Git 项目的时候，比如 <code>Cocos2d-x</code>。虽然好用，但是门槛也相对高点，如果维护好 <code>submodule</code>还是需要好好研究一下。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">submodule </span><span class="keyword">add </span>http://github.com/jackmaney/githug-<span class="meta">include</span>-me</span><br></pre></td></tr></table></figure>
-
 <p>相关:</p>
 <ul>
 <li><code>git submodule add</code> 子模块仓库地址 路径</li>
@@ -748,7 +698,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/">Termux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
 
 
             
@@ -874,7 +824,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

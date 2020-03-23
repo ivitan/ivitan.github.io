@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="Python DateTime 时间日期处理.">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 时间日期处理">
 <meta property="og:url" content="https://vitan.me/posts/PythonDateTime.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Python DateTime 时间日期处理.">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-10-22T06:40:50.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 时间日期处理">
-<meta name="twitter:description" content="Python DateTime 时间日期处理.">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -181,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#DateTime"><span class="post-toc-number">1.</span> <span class="post-toc-text">DateTime</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当前-DateTime"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">获取当前 DateTime</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当天-date"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">获取当天 date</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取明天-前N天"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">获取明天/前N天</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当天开始和结束时间"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">获取当天开始和结束时间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取两个-datetime-的时间差"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">获取两个 datetime 的时间差</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取本周-本月-上月最后一天"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">获取本周/本月/上月最后一天</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#转换"><span class="post-toc-number">2.</span> <span class="post-toc-text">转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-string"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">datetime &lt;=&gt; string</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-timetuple"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">datetime &lt;=&gt; timetuple</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-date"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">datetime &lt;=&gt; date</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-timestamp"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">datetime &lt;=&gt; timestamp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#timestamp-gt-datetime"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">timestamp -&gt; datetime</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#DateTime"><span class="post-toc-number">1.</span> <span class="post-toc-text">DateTime</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当前-DateTime"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">获取当前 DateTime</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当天-date"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">获取当天 date</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取明天-前N天"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">获取明天&#x2F;前N天</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当天开始和结束时间"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">获取当天开始和结束时间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取两个-datetime-的时间差"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">获取两个 datetime 的时间差</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取本周-本月-上月最后一天"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">获取本周&#x2F;本月&#x2F;上月最后一天</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#转换"><span class="post-toc-number">2.</span> <span class="post-toc-text">转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-string"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">datetime &lt;&#x3D;&gt; string</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-timetuple"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">datetime &lt;&#x3D;&gt; timetuple</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-date"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">datetime &lt;&#x3D;&gt; date</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#datetime-lt-gt-timestamp"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">datetime &lt;&#x3D;&gt; timestamp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#timestamp-gt-datetime"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">timestamp -&gt; datetime</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -218,7 +220,6 @@ ga('send', 'pageview');
 <h2 id="获取当天开始和结束时间"><a href="#获取当天开始和结束时间" class="headerlink" title="获取当天开始和结束时间"></a>获取当天开始和结束时间</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.min)</span><br><span class="line">datetime.datetime.combine(datetime.date.today(), datetime.time.max)</span><br></pre></td></tr></table></figure>
 
 <h2 id="获取两个-datetime-的时间差"><a href="#获取两个-datetime-的时间差" class="headerlink" title="获取两个 datetime 的时间差"></a>获取两个 datetime 的时间差</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">now = datetime.now()</span><br><span class="line">end = datetime.strptime(<span class="string">'2018-10-25 22:00'</span>,<span class="string">'%Y-%m-%d %H:%M'</span>)</span><br><span class="line">time = end - now</span><br><span class="line">print(time.days,<span class="string">'天'</span>)</span><br></pre></td></tr></table></figure>
-
 <h2 id="获取本周-本月-上月最后一天"><a href="#获取本周-本月-上月最后一天" class="headerlink" title="获取本周/本月/上月最后一天"></a>获取本周/本月/上月最后一天</h2><ul>
 <li>本周最后一天</li>
 </ul>
@@ -233,7 +234,6 @@ ga('send', 'pageview');
 <li>上月最后一天</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">first = datetime.date(day=<span class="number">1</span>, month=today.month, year=today.year)</span><br><span class="line">lastMonth = first - datetime.timedelta(days=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <h1 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h1><h2 id="datetime-lt-gt-string"><a href="#datetime-lt-gt-string" class="headerlink" title="datetime &lt;=&gt; string"></a>datetime &lt;=&gt; string</h2><ul>
 <li>datetime -&gt; string</li>
 </ul>
@@ -263,12 +263,10 @@ ga('send', 'pageview');
 <li>date -&gt; datetime</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">datetime.date.today()</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">datetime.datetime.combine(today, datetime.time())</span><br><span class="line">datetime.datetime.combine(today, datetime.time.min)</span><br></pre></td></tr></table></figure>
-
 <h2 id="datetime-lt-gt-timestamp"><a href="#datetime-lt-gt-timestamp" class="headerlink" title="datetime &lt;=&gt; timestamp"></a>datetime &lt;=&gt; timestamp</h2><ul>
 <li>datetime -&gt; timestamp</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">now = datetime.datetime.now()</span><br><span class="line">timestamp = time.mktime(now.timetuple())</span><br><span class="line">timestamp</span><br></pre></td></tr></table></figure>
-
 <h2 id="timestamp-gt-datetime"><a href="#timestamp-gt-datetime" class="headerlink" title="timestamp -&gt; datetime"></a>timestamp -&gt; datetime</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.datetime.fromtimestamp(1421077403.0)</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -310,7 +308,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -436,7 +434,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

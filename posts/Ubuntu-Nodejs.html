@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,Ubuntu,Node.Js">
     <meta name="description" content="Ubuntu 下 nodejs 安装与版本升级">
-<meta name="keywords" content="Linux,Ubuntu,Node.Js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 下 Node.Js 安装与版本升级">
 <meta property="og:url" content="https://vitan.me/posts/Ubuntu-Nodejs.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Ubuntu 下 nodejs 安装与版本升级">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-04T13:23:10.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Node.Js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 下 Node.Js 安装与版本升级">
-<meta name="twitter:description" content="Ubuntu 下 nodejs 安装与版本升级">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -210,7 +212,6 @@ ga('send', 'pageview');
             <p>Ubuntu 下 nodejs 安装与版本升级</p>
 <a id="more"></a>
 <h2 id="在Github上获取-Node-Js-源码"><a href="#在Github上获取-Node-Js-源码" class="headerlink" title="在Github上获取 Node.Js 源码"></a>在Github上获取 Node.Js 源码</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="built_in">clone</span> https://github.com/nodejs/node.git　nodejs</span><br></pre></td></tr></table></figure>
-
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R <span class="number">755</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//修改目录权限</span></span><br><span class="line"><span class="title">cd</span> <span class="keyword">node</span><span class="title"></span></span><br><span class="line"><span class="title">//进入node</span>目录</span><br><span class="line">sudo ./configure</span><br><span class="line">使用 ./configure 创建编译文件</span><br><span class="line">sudo make</span><br><span class="line">//下一步，可能时间有点长，耐心等待</span><br><span class="line">sudo make install</span><br><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -309,7 +310,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-Js/">Node.Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-Js/" rel="tag">Node.Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
 
 
             
@@ -435,7 +436,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

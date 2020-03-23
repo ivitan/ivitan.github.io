@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="Python 数据可视化">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Visualization">
 <meta property="og:url" content="https://vitan.me/posts/Visualization.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Python 数据可视化">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-12-18T06:55:28.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Visualization">
-<meta name="twitter:description" content="Python 数据可视化">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -227,7 +229,6 @@ ga('send', 'pageview');
 
 <p>合并</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将用户购买与浏览产品的数据合并在一起，生成表格merge_df,以views_cnt作为右连接表，连接结果为右连接</span></span><br><span class="line">merge_df = pd.merge(orders_cnt,views_cnt,on=[<span class="string">'User'</span>,<span class="string">'Product'</span>],how=<span class="string">'right'</span>)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><a href="http://www.cnblogs.com/zxlovenet/p/4005256.html" target="_blank" rel="noopener">数据表的连接问题</a></li>
 <li><a href="https://blog.csdn.net/ZK_J1994/article/details/77717700" target="_blank" rel="noopener">merge与concat的区别</a></li>
@@ -236,9 +237,7 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">views.head()<span class="comment">#查看views</span></span><br><span class="line">views.info()<span class="comment">#查看views的相关信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># year, month, day, date, hour </span></span><br><span class="line"><span class="comment">#查看views的Dates列数据的年、月、日期等信息</span></span><br><span class="line">views[<span class="string">'Dates'</span>].dt.hour</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># select date, count(action) from views</span></span><br><span class="line"><span class="comment"># group by date</span></span><br><span class="line"><span class="comment">#在views表中，统计每一天网站的用户浏览总次数</span></span><br><span class="line">views_cnt_by_date  = views.groupby(views[<span class="string">'Dates'</span>].dt.date)[<span class="string">'Action'</span>].count()</span><br><span class="line">views_cnt_by_date.head()<span class="comment">#查看以上统计结果</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="绘制图表"><a href="#绘制图表" class="headerlink" title="绘制图表"></a>绘制图表</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%pylab inline</span><br><span class="line"></span><br><span class="line"><span class="comment">#对每天用户浏览网站情况绘制折线图，图大小为10*5</span></span><br><span class="line"> views_cnt_by_date.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select hour(Dates), count(action) from views</span></span><br><span class="line"><span class="comment"># group by  hour(Dates)</span></span><br><span class="line"><span class="comment">#在views表中，统计一天24内每个小时网站的用户浏览总次数</span></span><br><span class="line">views_cnt_by_hour  = views.groupby(views[<span class="string">'Dates'</span>].dt.hour)[<span class="string">'Action'</span>].count()</span><br><span class="line"></span><br><span class="line">%pylab inline</span><br><span class="line"><span class="comment">#各个小时用户浏览网站情况绘制折线图，图大小为10*5，标题为view count by hour</span></span><br><span class="line">views_cnt_by_hour.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],title=<span class="string">'view count by hour'</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加新列Total_price,并利用orders相关数据计算</span></span><br><span class="line">orders[<span class="string">'Total_price'</span>] = orders[<span class="string">'Quantity'</span>] * orders[<span class="string">'Price'</span>]</span><br><span class="line"><span class="comment">#按客户统计他们的消费总金额，并按降序排列,最终取前10个用户的统计数据</span></span><br><span class="line">g = orders.groupby(<span class="string">'User'</span>)[<span class="string">'Total_price'</span>].sum().sort_values(ascending=<span class="literal">False</span>)[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line"><span class="comment">#绘制前10个用户的消费金额柱形图，图片大小10*5</span></span><br><span class="line">g.plot(kind=<span class="string">'bar'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],color=<span class="string">'y'</span>)</span><br></pre></td></tr></table></figure>
 
 <p>统计</p>
@@ -246,9 +245,7 @@ ga('send', 'pageview');
 
 <p>合并</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将view_daily_cnt与orders_daily_cnt表按列方向拼接,不需要按主键合并</span></span><br><span class="line">df =pd.concat([view_daily_cnt,orders_daily_cnt],axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment">##关于merge与concat的区别：https://blog.csdn.net/ZK_J1994/article/details/77717700</span></span><br><span class="line">df=df.dropna()<span class="comment">#删除具有空值的行,并将删除结果覆盖原数据框</span></span><br><span class="line">df.head()</span><br><span class="line">df.columns=[<span class="string">'Views'</span>,<span class="string">'Orders'</span>]<span class="comment">#将df的字段名命名为'Views', 'Orders'</span></span><br><span class="line">    df.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对df数据绘制折线图，图的大小为10*5，设置X轴刻度的显示旋转度为30</span></span><br><span class="line">df.plot(kind=<span class="string">'line'</span>,figsize=[<span class="number">10</span>,<span class="number">5</span>],rot=<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><a href="https://www.cnblogs.com/xitingxie/p/8359392.html" target="_blank" rel="noopener">plot里面各参数的使用说明</a></li>
 </ul>
@@ -286,7 +283,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -412,7 +409,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

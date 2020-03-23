@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,WebCrawler,Python">
     <meta name="description" content="xpath 升格用法">
-<meta name="keywords" content="Linux,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xpath 升格用法">
 <meta property="og:url" content="https://vitan.me/posts/Xpath.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="xpath 升格用法">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-12T11:05:17.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xpath 升格用法">
-<meta name="twitter:description" content="xpath 升格用法">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -181,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配当前节点下所有子节点"><span class="post-toc-number">1.</span> <span class="post-toc-text">匹配当前节点下所有子节点 .//</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配某标签的属性值-属性名称"><span class="post-toc-number">2.</span> <span class="post-toc-text">匹配某标签的属性值 /@属性名称</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配多个路径"><span class="post-toc-number">3.</span> <span class="post-toc-text">匹配多个路径 |</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#按属性匹配"><span class="post-toc-number">4.</span> <span class="post-toc-text">按属性匹配 @</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配不包含某个属性的标签-not"><span class="post-toc-number">5.</span> <span class="post-toc-text">匹配不包含某个属性的标签 not</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配包含多个属性的标签-and"><span class="post-toc-number">6.</span> <span class="post-toc-text">匹配包含多个属性的标签 and</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配包含不同属性的名称相同的标签-or"><span class="post-toc-number">7.</span> <span class="post-toc-text">匹配包含不同属性的名称相同的标签 or</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将对象还原为字符串-etree-tostring（）"><span class="post-toc-number">8.</span> <span class="post-toc-text">将对象还原为字符串 etree.tostring（）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#按轴-Axes-匹配"><span class="post-toc-number">9.</span> <span class="post-toc-text">按轴(Axes)匹配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有子元素-child"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">选取当前节点的所有子元素 child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有属性-attribute"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">选取当前节点的所有属性 attribute</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">ancestor：父辈元素 / ancestor-or-self：父辈元素及当前元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#descendant：后代-descendant-or-self：后代及当前节点本身"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">descendant：后代 / descendant-or-self：后代及当前节点本身</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有命名空间节点-namespace"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">选取当前节点的所有命名空间节点 namespace</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定位-position"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">定位 position</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Xpath-函数"><span class="post-toc-number">10.</span> <span class="post-toc-text">Xpath 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统计数量-count"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">统计数量 count</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串拼接-concat"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">字符串拼接 concat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析当前节点下的字符-string"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">解析当前节点下的字符 string</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当前节点的节点名称-local-name"><span class="post-toc-number">10.4.</span> <span class="post-toc-text">获取当前节点的节点名称 local-name</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以指定的字符开头-starts-with"><span class="post-toc-number">10.5.</span> <span class="post-toc-text">以指定的字符开头 starts-with</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小于-lt"><span class="post-toc-number">10.6.</span> <span class="post-toc-text">小于 &lt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#根据指定的文本内容选择"><span class="post-toc-number">10.7.</span> <span class="post-toc-text">根据指定的文本内容选择</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配当前节点下所有子节点"><span class="post-toc-number">1.</span> <span class="post-toc-text">匹配当前节点下所有子节点 .&#x2F;&#x2F;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配某标签的属性值-属性名称"><span class="post-toc-number">2.</span> <span class="post-toc-text">匹配某标签的属性值 &#x2F;@属性名称</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配多个路径"><span class="post-toc-number">3.</span> <span class="post-toc-text">匹配多个路径 |</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#按属性匹配"><span class="post-toc-number">4.</span> <span class="post-toc-text">按属性匹配 @</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配不包含某个属性的标签-not"><span class="post-toc-number">5.</span> <span class="post-toc-text">匹配不包含某个属性的标签 not</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配包含多个属性的标签-and"><span class="post-toc-number">6.</span> <span class="post-toc-text">匹配包含多个属性的标签 and</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#匹配包含不同属性的名称相同的标签-or"><span class="post-toc-number">7.</span> <span class="post-toc-text">匹配包含不同属性的名称相同的标签 or</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将对象还原为字符串-etree-tostring（）"><span class="post-toc-number">8.</span> <span class="post-toc-text">将对象还原为字符串 etree.tostring（）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#按轴-Axes-匹配"><span class="post-toc-number">9.</span> <span class="post-toc-text">按轴(Axes)匹配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有子元素-child"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">选取当前节点的所有子元素 child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有属性-attribute"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">选取当前节点的所有属性 attribute</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ancestor：父辈元素-ancestor-or-self：父辈元素及当前元素"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">ancestor：父辈元素 &#x2F; ancestor-or-self：父辈元素及当前元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#descendant：后代-descendant-or-self：后代及当前节点本身"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">descendant：后代 &#x2F; descendant-or-self：后代及当前节点本身</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选取当前节点的所有命名空间节点-namespace"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">选取当前节点的所有命名空间节点 namespace</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定位-position"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">定位 position</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Xpath-函数"><span class="post-toc-number">10.</span> <span class="post-toc-text">Xpath 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统计数量-count"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">统计数量 count</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串拼接-concat"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">字符串拼接 concat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析当前节点下的字符-string"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">解析当前节点下的字符 string</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取当前节点的节点名称-local-name"><span class="post-toc-number">10.4.</span> <span class="post-toc-text">获取当前节点的节点名称 local-name</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以指定的字符开头-starts-with"><span class="post-toc-number">10.5.</span> <span class="post-toc-text">以指定的字符开头 starts-with</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小于-lt"><span class="post-toc-number">10.6.</span> <span class="post-toc-text">小于 &lt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#根据指定的文本内容选择"><span class="post-toc-number">10.7.</span> <span class="post-toc-text">根据指定的文本内容选择</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -211,7 +213,6 @@ ga('send', 'pageview');
 <a id="more"></a>
 
 <h1 id="匹配当前节点下所有子节点"><a href="#匹配当前节点下所有子节点" class="headerlink" title="匹配当前节点下所有子节点 .//"></a>匹配当前节点下所有子节点 <code>.//</code></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xpath(<span class="string">'//div//'</span>) <span class="comment"># div 当前节点</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>//</code> 标签下的所有标签</li>
 </ul>
@@ -294,7 +295,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -420,7 +421,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

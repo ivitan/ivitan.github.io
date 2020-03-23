@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,18 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,Win">
     <meta name="description" content="添加 Win10 菜单到 Grub">
-<meta name="keywords" content="Linux,Win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grub 双系统选项、美化">
 <meta property="og:url" content="https://vitan.me/posts/Grub.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="添加 Win10 菜单到 Grub">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png">
-<meta property="og:updated_time" content="2020-01-08T06:30:00.000Z">
+<meta property="article:published_time" content="2019-06-27T06:26:38.000Z">
+<meta property="article:modified_time" content="2020-01-08T06:30:00.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Win">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grub 双系统选项、美化">
-<meta name="twitter:description" content="添加 Win10 菜单到 Grub">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -58,7 +59,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -214,11 +215,9 @@ ga('send', 'pageview');
 <h1 id="安装-os-prober"><a href="#安装-os-prober" class="headerlink" title="安装 os-prober"></a>安装 os-prober</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure>
 
 <h1 id="扫面并添加到菜单"><a href="#扫面并添加到菜单" class="headerlink" title="扫面并添加到菜单"></a>扫面并添加到菜单</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-
 <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>有的主题有安装脚本，运行即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r 主题包名 /boot/grub/themes/  </span><br><span class="line">sudo vim /etc/grub.d/00_header</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>上一步添加如下内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=<span class="string">"/boot/grub/themes/主题包名/theme.txt"</span></span><br><span class="line">GRUB_GFXMODE=<span class="string">"1920x1080x32"</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="更新配置"><a href="#更新配置" class="headerlink" title="更新配置"></a>更新配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
@@ -226,7 +225,7 @@ ga('send', 'pageview');
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -264,7 +263,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
 
 
             
@@ -390,7 +389,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

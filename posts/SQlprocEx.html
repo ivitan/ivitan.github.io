@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="SQL">
     <meta name="description" content="SQL储存过程练习题">
-<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 存储过程练习">
 <meta property="og:url" content="https://vitan.me/posts/SQlprocEx.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="SQL储存过程练习题">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-01T03:38:04.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL 存储过程练习">
-<meta name="twitter:description" content="SQL储存过程练习题">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -403,55 +403,29 @@ ga('send', 'pageview');
 <p>|:—|:—|:—|<br>|S3|振华电子厂|    西安|<br>|S4|华通电子公司|    北京|<br>|S6|607|厂郑州|<br>|S7|爱华电子厂|    北京|</p>
 <ol>
 <li>基于以上的数据库，创建一个名为myproc的存储过程。该存储过程的功能是从职工表中查询哪些仓库的职工人数在3人以上，列出这些仓库的基本信息。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc myproc</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck <span class="keyword">where</span> 仓库号 <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> 仓库号 <span class="keyword">from</span> zg</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 仓库号</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">count</span>(职工号)&gt;<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec myproc</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec myproc</span><br></pre></td></tr></table></figure></li>
 <li>定义具有参数的存储过程。在以上数据库中，创建一个名为Myproc2的存储过程，该存储过程的功能是向仓库表中插入一条记录，新记录的值由参数提供。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc Myproc2</span><br><span class="line">@ckh <span class="built_in">char</span>(<span class="number">20</span>),@city <span class="built_in">char</span>(<span class="number">20</span>),@mji <span class="built_in">int</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> ck <span class="keyword">values</span>(@ckh,@city,@mji)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec Myproc2 'WH33','新会','3000'</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec Myproc2 'WH33','新会','3000'</span><br></pre></td></tr></table></figure></li>
 <li>定义带返回值的存储过程。在以上数据库中，创建一个名为Myproc3的存储过程，该存储过程的功能是从表中根据供应商号查询对应的供应商名和地址。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> proc Myproc3</span><br><span class="line">@gysh <span class="built_in">char</span>(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> 供应商名,地址 <span class="keyword">from</span> gys <span class="keyword">where</span> 供应商号=@gysh</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec Myproc3 'S3'</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec Myproc3 'S3'</span><br></pre></td></tr></table></figure>
-
 <hr>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span>  雇员表(</span><br><span class="line">雇员编号 <span class="built_in">char</span>(<span class="number">10</span>),</span><br><span class="line">雇员姓名 <span class="built_in">char</span>(<span class="number">20</span>),</span><br><span class="line">年龄 <span class="built_in">int</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  PK_EMP</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> （雇员编号）</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 工作表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  PK_JOB</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> （工作编号）</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span>  雇员表(</span><br><span class="line">雇员编号 <span class="built_in">char</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">雇员姓名 <span class="built_in">char</span>(<span class="number">20</span>),</span><br><span class="line">年龄 <span class="built_in">int</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  PK_EMP</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (雇员编号)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 雇员表</span><br><span class="line"><span class="keyword">ADD</span>  <span class="keyword">CONSTRAINT</span>  check_age</span><br><span class="line"><span class="keyword">check</span> (年龄&gt;=<span class="number">18</span> <span class="keyword">and</span> 年龄&lt;=<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc p6</span><br><span class="line">@bianhao <span class="built_in">char</span>(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 雇员表</span><br><span class="line"><span class="keyword">where</span> 雇员编号=@bianhao</span><br><span class="line">exec  p6 <span class="string">'q1'</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 雇员表</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc p7</span><br><span class="line">@chengshi <span class="built_in">char</span>(<span class="number">20</span>),@geshu <span class="built_in">int</span> <span class="keyword">output</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> @geshu=<span class="keyword">COUNT</span>(仓库号)</span><br><span class="line"><span class="keyword">from</span> ck</span><br><span class="line"><span class="keyword">where</span> 城市=@chengshi</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> @jieshou <span class="built_in">int</span></span><br><span class="line">exec p7 <span class="string">'珠海'</span>,@jieshou <span class="keyword">output</span></span><br><span class="line">print @jieshou</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> proc p8</span><br><span class="line">@ckhao <span class="built_in">char</span>(<span class="number">10</span>),@city <span class="built_in">char</span>(<span class="number">10</span>),@mianji <span class="built_in">float</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> ck</span><br><span class="line"><span class="keyword">values</span> (@ckhao,@city,@mianji)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec p8 'WH10','增城',1000</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> ck</span><br></pre></td></tr></table></figure>
-
 <h1 id="存储过程使用事务"><a href="#存储过程使用事务" class="headerlink" title="存储过程使用事务"></a>存储过程使用事务</h1><p>实例</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">Procedure</span>  MyProcedure</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line"><span class="keyword">Set</span>    NOCOUNT    <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">Set</span> XACT_ABORT <span class="keyword">ON</span>;</span><br><span class="line"><span class="keyword">begin</span>   tran  ok  <span class="comment">--开始一个事务OK</span></span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span>  rxqz  <span class="keyword">where</span> qz=   <span class="string">'rx015 '</span> <span class="comment">--删除数据</span></span><br><span class="line"><span class="keyword">save</span>   tran  bcd   <span class="comment">--保存一个事务点命名为bcd</span></span><br><span class="line"><span class="keyword">update</span>  sz  <span class="keyword">set</span>   <span class="keyword">name</span>=<span class="string">'李丽s'</span> <span class="keyword">where</span> <span class="keyword">name</span>= <span class="string">'李丽'</span><span class="comment">--修改数据</span></span><br><span class="line"><span class="keyword">if</span>  @@<span class="keyword">error</span>&lt;&gt;<span class="number">0</span>  <span class="comment">--判断修改数据有没有出错</span></span><br><span class="line"><span class="keyword">begin</span> <span class="comment">--如果出错</span></span><br><span class="line"><span class="keyword">rollback</span>   tran  bcd  <span class="comment">-- 回滚事务到BCD 的还原点</span></span><br><span class="line"><span class="keyword">commit</span>   tran  ok  <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">else</span>  <span class="comment">--没有出错</span></span><br><span class="line"><span class="keyword">commit</span>  tran ok <span class="comment">--提交事务</span></span><br><span class="line"><span class="keyword">End</span></span><br></pre></td></tr></table></figure>
-
 
         </div>
 
@@ -486,7 +460,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
             
@@ -612,7 +586,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

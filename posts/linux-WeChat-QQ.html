@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
     <meta name="description" content="Linux 安装 QQ WeChat Tim.">
-<meta name="keywords" content="Linux,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 安装微信 QQ">
 <meta property="og:url" content="https://vitan.me/posts/linux-WeChat-QQ.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Linux 安装 QQ WeChat Tim.">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-07-28T03:05:15.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 安装微信 QQ">
-<meta name="twitter:description" content="Linux 安装 QQ WeChat Tim.">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -210,16 +212,12 @@ ga('send', 'pageview');
             <p>Linux 安装 QQ WeChat Tim.</p>
 <a id="more"></a>
 <h1 id="ArchLinux"><a href="#ArchLinux" class="headerlink" title="ArchLinux"></a>ArchLinux</h1><h2 id="添加-archlinuxcn-源"><a href="#添加-archlinuxcn-源" class="headerlink" title="添加 archlinuxcn 源"></a>添加 archlinuxcn 源</h2><ul>
-<li><p>编辑 pacman.conf</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+<li>编辑 pacman.conf<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></figure></li>
+<li>添加<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine</span><br><span class="line">sudo pacman -S deepin.com.qq.im</span><br><span class="line">sudo pacman -S deepin.com.qq.office</span><br><span class="line">sudo pacman -S deepin.com.wechat</span><br><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>ArchLinux 系发行版包括 ArchLinux、Manjaro、Antergos 等.</li>
 </ul>
@@ -227,7 +225,6 @@ ga('send', 'pageview');
 
 <h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Deepin-wine-环境"><a href="#Deepin-wine-环境" class="headerlink" title="Deepin-wine 环境"></a>Deepin-wine 环境</h2><p>方法一</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> <span class="string">'https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git</span></span><br><span class="line"><span class="string"># 克隆到本地，用图形界面的软件包管理器安装所有 deb 文件</span></span><br></pre></td></tr></table></figure>
-
 <p>方法二</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git</span><br><span class="line">sudo sh ./install.sh</span><br><span class="line"><span class="comment"># 克隆到本地,(授予可执行权限后)在终端中运行 install.sh .</span></span><br></pre></td></tr></table></figure>
 
@@ -284,7 +281,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
 
 
             
@@ -410,7 +407,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,Python">
     <meta name="description" content="Python Numpy">
-<meta name="keywords" content="Note,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Numpy">
 <meta property="og:url" content="https://vitan.me/posts/PythonNumpy.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Python Numpy">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-10-03T10:08:56.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Numpy">
-<meta name="twitter:description" content="Python Numpy">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -224,7 +225,9 @@ ga('send', 'pageview');
 </ul>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="列表-循环实现，并包装成函数"><a href="#列表-循环实现，并包装成函数" class="headerlink" title="列表+循环实现，并包装成函数"></a>列表+循环实现，并包装成函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pySum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = list(range(n))</span><br><span class="line">    b = list(range(<span class="number">0</span>,<span class="number">5</span>*n,<span class="number">5</span>))</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a)):</span><br><span class="line">        c.append(a[i] ** <span class="number">2</span> + b[i] ** <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(pySum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
 
+
 <h2 id="数组numpy实现，并包装成函数"><a href="#数组numpy实现，并包装成函数" class="headerlink" title="数组numpy实现，并包装成函数"></a>数组numpy实现，并包装成函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">npSum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="number">0</span>, <span class="number">5</span> * n, <span class="number">5</span>)</span><br><span class="line">    c = a**<span class="number">2</span>+b**<span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span>(c)</span><br><span class="line">print(npSum(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
 
 <ul>
 <li>对比两种方法实现的效率，给定一个较大的参数n，用运行函数前后的timedelta表示</li>
@@ -235,7 +238,6 @@ ga('send', 'pageview');
 <li>尝试把 a,b 定义为三层嵌套列表和三维数组</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">liSum</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = numpy.arange(n)</span><br><span class="line">    b = numpy.arange(<span class="number">0</span>,<span class="number">5</span>*n,<span class="number">5</span>)</span><br><span class="line">    c = numpy.array([[a,b],[a**<span class="number">2</span>,b**<span class="number">3</span>]])</span><br><span class="line">    <span class="keyword">return</span> (c)</span><br><span class="line">print(npSum(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">start = datetime.now()</span><br><span class="line">liSum(<span class="number">100000</span>)</span><br><span class="line">time = datetime.now()-start</span><br><span class="line">print(time)</span><br></pre></td></tr></table></figure>
-
 
         </div>
 
@@ -270,7 +272,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
 
             
@@ -396,7 +398,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="Python  Data.Frame">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pandas">
 <meta property="og:url" content="https://vitan.me/posts/PythonPandas.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Python  Data.Frame">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-19T06:06:20.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pandas">
-<meta name="twitter:description" content="Python  Data.Frame">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -181,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#panadas"><span class="post-toc-number">1.</span> <span class="post-toc-text">panadas</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">导入数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建数据帧"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建数据帧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表创建数据框"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列表创建数据框</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从ndarrays-列表的字典来创建数据帧"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">从ndarrays /列表的字典来创建数据帧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组创建一个索引的数据帧（DataFrame）"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">数组创建一个索引的数据帧（DataFrame）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字典列表来创建数据帧"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">字典列表来创建数据帧</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#从系列的字典来创建"><span class="post-toc-number">3.</span> <span class="post-toc-text">从系列的字典来创建</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#列操作"><span class="post-toc-number">4.</span> <span class="post-toc-text">列操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列选择"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">列选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列添加"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">列添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列删除"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">列删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#行操作"><span class="post-toc-number">5.</span> <span class="post-toc-text">行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行选择"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">行选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#按整数位置选择"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">按整数位置选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行切片"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">行切片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#附加行"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">附加行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除行"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">删除行</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#panadas"><span class="post-toc-number">1.</span> <span class="post-toc-text">panadas</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">导入数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建数据帧"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建数据帧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表创建数据框"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列表创建数据框</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从ndarrays-列表的字典来创建数据帧"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">从ndarrays &#x2F;列表的字典来创建数据帧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组创建一个索引的数据帧（DataFrame）"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">数组创建一个索引的数据帧（DataFrame）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字典列表来创建数据帧"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">字典列表来创建数据帧</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#从系列的字典来创建"><span class="post-toc-number">3.</span> <span class="post-toc-text">从系列的字典来创建</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#列操作"><span class="post-toc-number">4.</span> <span class="post-toc-text">列操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列选择"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">列选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列添加"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">列添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列删除"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">列删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#行操作"><span class="post-toc-number">5.</span> <span class="post-toc-text">行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行选择"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">行选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#按整数位置选择"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">按整数位置选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行切片"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">行切片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#附加行"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">附加行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除行"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">删除行</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -230,7 +232,6 @@ ga('send', 'pageview');
 <li>数据集的索引</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(data.index)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>panadas.DataFrame 构造函数</li>
 </ul>
@@ -278,12 +279,10 @@ ga('send', 'pageview');
 <li>有表头</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = [[<span class="string">'Alex'</span>,<span class="number">10</span>],[<span class="string">'Bob'</span>,<span class="number">12</span>],[<span class="string">'Clarke'</span>,<span class="number">13</span>]]</span><br><span class="line">df = pd.DataFrame(data,columns=[<span class="string">'Name'</span>,<span class="string">'Age'</span>])</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>df = pd.DataFrame(data,columns=[‘Name’,’Age’],dtype=float)(设置数据类型)</li>
 </ul>
 <h2 id="从ndarrays-列表的字典来创建数据帧"><a href="#从ndarrays-列表的字典来创建数据帧" class="headerlink" title="从ndarrays /列表的字典来创建数据帧"></a>从ndarrays /列表的字典来创建数据帧</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = &#123;<span class="string">'Name'</span>:[<span class="string">'Tom'</span>, <span class="string">'Jack'</span>, <span class="string">'Steve'</span>, <span class="string">'Ricky'</span>],<span class="string">'Age'</span>:[<span class="number">28</span>,<span class="number">34</span>,<span class="number">29</span>,<span class="number">42</span>]&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>所有的ndarrays必须具有相同的长度。如果传递了索引（index），则索引的长度应等于数组的长度。如果没有传递索引，则默认情况下，索引将为range(n)，其中n为数组长度。</li>
 </ul>
@@ -308,7 +307,6 @@ ga('send', 'pageview');
 <h2 id="列删除"><a href="#列删除" class="headerlink" title="列删除"></a>列删除</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using the previous DataFrame, we will delete a column</span></span><br><span class="line"><span class="comment"># using del function</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">'one'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]), </span><br><span class="line">  <span class="string">'two'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]), </span><br><span class="line">  <span class="string">'three'</span> : pd.Series([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>], index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(d)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Our dataframe is:"</span>)</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># using del function</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Deleting the first column using DEL function:"</span>)</span><br><span class="line"><span class="keyword">del</span> df[<span class="string">'one'</span>]</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># using pop function</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Deleting another column using POP function:"</span>)</span><br><span class="line">df.pop(<span class="string">'two'</span>)</span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
 
 <h1 id="行操作"><a href="#行操作" class="headerlink" title="行操作"></a>行操作</h1><h2 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">'one'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]), </span><br><span class="line">    <span class="string">'two'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(d)</span><br><span class="line">print(df.loc[<span class="string">'b'</span>])</span><br></pre></td></tr></table></figure>
-
 <h2 id="按整数位置选择"><a href="#按整数位置选择" class="headerlink" title="按整数位置选择"></a>按整数位置选择</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">'one'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]),</span><br><span class="line">    <span class="string">'two'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(d)</span><br><span class="line">print(df.iloc[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 
 <h2 id="行切片"><a href="#行切片" class="headerlink" title="行切片"></a>行切片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mport pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">'one'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]), </span><br><span class="line">    <span class="string">'two'</span> : pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(d)</span><br><span class="line">print(df[<span class="number">2</span>:<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
@@ -356,7 +354,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -482,7 +480,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

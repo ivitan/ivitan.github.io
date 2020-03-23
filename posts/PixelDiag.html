@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -33,19 +33,20 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Win,Android">
+    <meta name="keywords" content="Android,Win">
     <meta name="description" content="Pixel 2 XL 开启 Diag 破解电信 VoLTE  开启端口 安装 Diag Magisk 并输入模块 刷入 Pixel_2_Diag_Port.zip 刷入 VoEnabler-v1.4.zip 连接电脑，输入以下命令开启 Diag 端口">
-<meta name="keywords" content="Win,Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pixel 2 XL 开启 Diag">
 <meta property="og:url" content="https://vitan.me/posts/PixelDiag.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Pixel 2 XL 开启 Diag 破解电信 VoLTE  开启端口 安装 Diag Magisk 并输入模块 刷入 Pixel_2_Diag_Port.zip 刷入 VoEnabler-v1.4.zip 连接电脑，输入以下命令开启 Diag 端口">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-05T03:01:26.633Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-04T00:29:15.000Z">
+<meta property="article:modified_time" content="2020-03-05T03:01:26.633Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Win">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pixel 2 XL 开启 Diag">
-<meta name="twitter:description" content="Pixel 2 XL 开启 Diag 破解电信 VoLTE  开启端口 安装 Diag Magisk 并输入模块 刷入 Pixel_2_Diag_Port.zip 刷入 VoEnabler-v1.4.zip 连接电脑，输入以下命令开启 Diag 端口">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -219,7 +220,6 @@ ga('send', 'pageview');
 <a id="more"></a>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd D:\adb</span><br><span class="line">adb devices</span><br><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">setenforce 0</span><br><span class="line">setprop sys.usb.configfs 1 &amp;&amp; setprop sys.usb.config diag,serial_cdev,rmnet_gsi,adb</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>su命令需要在手机端 Magisk 确认 root 授权，成功会在设备管理器的端口中看到高通 9091</li>
 </ul>
@@ -267,7 +267,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
 
 
             
@@ -393,7 +393,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -33,20 +33,22 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,Termux,Android">
-    <meta name="description" content="Termux 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。  部署脚本1bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/T">
-<meta name="keywords" content="Linux,Termux,Android">
+    <meta name="keywords" content="Android,Linux,Termux">
+    <meta name="description" content="Termux 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。  部署脚本1bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ivitan&#x2F;Shell&#x2F;master&#x2F;Termux&#x2F;T">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Termux">
 <meta property="og:url" content="https://vitan.me/posts/Termux.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Termux 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。  部署脚本1bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/T">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="Termux 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。  部署脚本1bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ivitan&#x2F;Shell&#x2F;master&#x2F;Termux&#x2F;T">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg">
-<meta property="og:updated_time" content="2020-03-09T00:13:49.615Z">
+<meta property="article:published_time" content="2018-06-24T23:52:16.000Z">
+<meta property="article:modified_time" content="2020-03-09T00:13:49.615Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Termux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Termux">
-<meta name="twitter:description" content="Termux 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。  部署脚本1bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/T">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -58,7 +60,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -217,7 +219,6 @@ ga('send', 'pageview');
 <h1 id="部署脚本"><a href="#部署脚本" class="headerlink" title="部署脚本"></a>部署脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)</span>"</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg search &lt;query&gt;  <span class="comment">#搜索包</span></span><br><span class="line">pkg install &lt;package&gt; <span class="comment">#安装包</span></span><br><span class="line">pkg uninstall &lt;package&gt; <span class="comment">#卸载包</span></span><br><span class="line">pkg reinstall &lt;package&gt; <span class="comment">#重新安装包</span></span><br><span class="line">pkg update  <span class="comment">#更新源</span></span><br><span class="line">pkg upgrade <span class="comment">#升级软件包</span></span><br><span class="line">pkg list-all <span class="comment">#列出可供安装的所有包</span></span><br><span class="line">pkg list-installed  <span class="comment">#列出已经安装的包</span></span><br><span class="line">pkg shoe &lt;package&gt;  <span class="comment">#显示某个包的详细信息</span></span><br><span class="line">pkg files &lt;package&gt;  <span class="comment">#显示某个包的</span></span><br></pre></td></tr></table></figure>
-
 <a id="more"></a>
 
 <h2 id="安装-deb-文件"><a href="#安装-deb-文件" class="headerlink" title="安装 *.deb 文件"></a>安装 *.deb 文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i ./package.deb <span class="comment">#安装</span></span><br><span class="line">dpkg --remove [package name] <span class="comment">#卸载</span></span><br><span class="line">dpkg --remove [package name] <span class="comment">#列出所有已安装的包</span></span><br></pre></td></tr></table></figure>
@@ -227,28 +228,22 @@ ga('send', 'pageview');
 <p><a href="https://mirrors.tuna.tsinghua.edu.cn/termux" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/termux</a> 代替原文中的 <a href="https://termux.net" target="_blank" rel="noopener">https://termux.net</a> 保存退出</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> EDITOR=vim <span class="comment"># 设置默认编辑器</span></span><br><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure>
 
-
 <h2 id="官方其他源"><a href="#官方其他源" class="headerlink" title="官方其他源"></a>官方其他源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install root-repo</span><br><span class="line">pkg install x11-repo</span><br><span class="line">pkg install unstable-repo</span><br></pre></td></tr></table></figure>
 
 <h2 id="its-pointless"><a href="#its-pointless" class="headerlink" title="its-pointless"></a><a href="https://github.com/its-pointless/its-pointless.github.io" target="_blank" rel="noopener">its-pointless</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget</span><br><span class="line"><span class="variable">$PREFIX</span>/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh</span><br><span class="line">bash setup-pointless-repo.sh</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>库包括 gcc-7,gfortran，octave，r-cran（R语言），rustc，scipy 和许多游戏.</li>
 </ul>
 <h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a><a href="https://github.com/thioshp/termux-extra-packages" target="_blank" rel="noopener">Extra</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将PGP密钥添加到APT的密钥环中</span></span><br><span class="line">pkg install dirmngr</span><br><span class="line">apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0</span><br></pre></td></tr></table></figure>
-
 <h3 id="手动下载公钥并添加它"><a href="#手动下载公钥并添加它" class="headerlink" title="手动下载公钥并添加它"></a>手动下载公钥并添加它</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc</span><br><span class="line">apt-key add pubkey.asc</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>apt edit-sources</code> 加入下方内容</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Xeffyr's Extra packages</span></span><br><span class="line">deb https://termux.xeffyr.ml/ extra main x11</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>库有　OpenJDK</li>
 </ul>
 <h1 id="修改启动问候语"><a href="#修改启动问候语" class="headerlink" title="修改启动问候语"></a>修改启动问候语</h1><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="variable">$PREFIX</span>/etc/motd</span><br></pre></td></tr></table></figure>
-
 
 <h2 id="不显示"><a href="#不显示" class="headerlink" title="不显示"></a>不显示</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.hushlogin</span><br></pre></td></tr></table></figure>
 
@@ -256,14 +251,12 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$HOME</span>/.termux</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]"</span> &gt;&gt; <span class="variable">$HOME</span>/.termux/termux.properties</span><br></pre></td></tr></table></figure>
 
 <h1 id="管理员权限-root-问题"><a href="#管理员权限-root-问题" class="headerlink" title="管理员权限 root 问题"></a>管理员权限 root 问题</h1><h2 id="虚拟管理员-未root"><a href="#虚拟管理员-未root" class="headerlink" title="虚拟管理员(未root)"></a>虚拟管理员(未root)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br><span class="line">termux-chroot <span class="comment"># 启动命令</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>模拟root环境的同时，还会模拟linux的文件路径。</li>
 <li>普通文件路径是【/data/data/com.termux/file/home】</li>
 <li>开启后的文件路径是【/home】</li>
 </ul>
 <h2 id="真实管理员-已root"><a href="#真实管理员-已root" class="headerlink" title="真实管理员(已root)"></a>真实管理员(已root)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install tsu</span><br><span class="line">tsu <span class="comment"># 启动命令</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>执行后文件路径不变，因此可以进入手机的任何一个目录</li>
 </ul>
@@ -318,7 +311,6 @@ ga('send', 'pageview');
 <li>复制下面内容</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(require(<span class="string">'os'</span>).cpus() || &#123; length: 1 &#125;).length</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -327,7 +319,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -345,7 +337,6 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h2 id="启动-Mariadb-服务"><a href="#启动-Mariadb-服务" class="headerlink" title="启动 Mariadb 服务"></a>启动 Mariadb 服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>启动mysql后，该回话便无法进行任何操作，需要左滑唤醒会话菜单，开启新的回话。而倘若不在一个会话里启动mysqld，而是直接运行mysql，则会2002错误。</li>
 </ul>
@@ -366,7 +357,6 @@ ga('send', 'pageview');
 
 <p>pip 版本查看</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip -v</span><br><span class="line">pip3.6 -v</span><br></pre></td></tr></table></figure>
-
 <h2 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h2><p>ipython 是一个 python 的交互式 shell，支持变量自动补全，自动缩进，支持 bash shell 命令，内置了许多很有用的功能和函数。学习 ipython 将会让我们以一种更高的效率来使用 python。<br>先安装clang, 否则直接使用pip安装ipython会失败报错.</p>
 <ul>
 <li>安装</li>
@@ -415,7 +405,6 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip2 install requests</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/reverse-shell/routersploit</span><br><span class="line"><span class="built_in">cd</span> routersploit</span><br><span class="line">python2 rsf.py</span><br></pre></td></tr></table></figure>
 
 <h1 id="Slowloris-低带宽的-DoS-工具"><a href="#Slowloris-低带宽的-DoS-工具" class="headerlink" title="Slowloris 低带宽的 DoS 工具"></a>Slowloris 低带宽的 DoS 工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gkbrk/slowloris.git</span><br><span class="line"><span class="built_in">cd</span> slowloris</span><br><span class="line">chmod +x slowloris.py</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>参考</strong></p>
 <ul>
@@ -457,7 +446,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/">Termux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
 
 
             
@@ -583,7 +572,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

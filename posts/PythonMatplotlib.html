@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,13 +35,12 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="Matplotlib 各种图">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Matplotlib 各种图">
 <meta property="og:url" content="https://vitan.me/posts/PythonMatplotlib.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Matplotlib 各种图">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j4ktleuj20c00800ss.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jcakoz3j20c0080mxb.jpg">
@@ -59,10 +58,13 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m6gdokgj20c0080aai.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m7o9accj20c0080mxt.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0miksd7jj20c0080jro.jpg">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:published_time" content="2018-11-08T02:11:00.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Matplotlib 各种图">
-<meta name="twitter:description" content="Matplotlib 各种图">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -74,7 +76,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -233,7 +235,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j1550lxj20c0080jre.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -248,21 +250,19 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h1 id="水平条形图"><a href="#水平条形图" class="headerlink" title="水平条形图"></a>水平条形图</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入绘图模块</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 构建数据</span></span><br><span class="line">price = [<span class="number">39.5</span>,<span class="number">39.9</span>,<span class="number">45.4</span>,<span class="number">38.9</span>,<span class="number">33.34</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文乱码的处理</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] =[<span class="string">'SimHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.barh(range(<span class="number">5</span>), price, align = <span class="string">'center'</span>,color=<span class="string">'steelblue'</span>, alpha = <span class="number">0.8</span>)</span><br><span class="line"><span class="comment"># 添加轴标签</span></span><br><span class="line">plt.xlabel(<span class="string">'价格'</span>)</span><br><span class="line"><span class="comment"># 添加标题</span></span><br><span class="line">plt.title(<span class="string">'不同平台书的最低价比较'</span>)</span><br><span class="line"><span class="comment"># 添加刻度标签</span></span><br><span class="line">plt.yticks(range(<span class="number">5</span>),[<span class="string">'亚马逊'</span>,<span class="string">'当当网'</span>,<span class="string">'中国图书网'</span>,<span class="string">'京东'</span>,<span class="string">'天猫'</span>])</span><br><span class="line"><span class="comment"># 设置Y轴的刻度范围</span></span><br><span class="line">plt.xlim([<span class="number">32</span>,<span class="number">47</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为每个条形图添加数值标签</span></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> enumerate(price):</span><br><span class="line">    plt.text(y+<span class="number">0.1</span>,x,<span class="string">'%s'</span> %y,va=<span class="string">'center'</span>)</span><br><span class="line">plt.savefig(<span class="string">'水平条形图.png'</span>)</span><br><span class="line"><span class="comment"># 显示图形    </span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j4ktleuj20c00800ss.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0j4ktleuj20c00800ss.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="水平交错条形图"><a href="#水平交错条形图" class="headerlink" title="水平交错条形图"></a>水平交错条形图</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入绘图模块</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 构建数据</span></span><br><span class="line">Y2016 = [<span class="number">15600</span>,<span class="number">12700</span>,<span class="number">11300</span>,<span class="number">4270</span>,<span class="number">3620</span>]</span><br><span class="line">Y2017 = [<span class="number">17400</span>,<span class="number">14800</span>,<span class="number">12000</span>,<span class="number">5200</span>,<span class="number">4020</span>]</span><br><span class="line">labels = [<span class="string">'北京'</span>,<span class="string">'上海'</span>,<span class="string">'香港'</span>,<span class="string">'深圳'</span>,<span class="string">'广州'</span>]</span><br><span class="line">bar_width = <span class="number">0.45</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文乱码的处理</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] =[<span class="string">'SimHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.bar(np.arange(<span class="number">5</span>), Y2016, label = <span class="string">'2016'</span>, color = <span class="string">'steelblue'</span>, alpha = <span class="number">0.8</span>, width = bar_width)</span><br><span class="line">plt.bar(np.arange(<span class="number">5</span>)+bar_width, Y2017, label = <span class="string">'2017'</span>, color = <span class="string">'indianred'</span>, alpha = <span class="number">0.8</span>, width = bar_width)</span><br><span class="line"><span class="comment"># 添加轴标签</span></span><br><span class="line">plt.xlabel(<span class="string">'Top5城市'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'家庭数量'</span>)</span><br><span class="line"><span class="comment"># 添加标题</span></span><br><span class="line">plt.title(<span class="string">'亿万财富家庭数Top5城市分布'</span>)</span><br><span class="line"><span class="comment"># 添加刻度标签</span></span><br><span class="line">plt.xticks(np.arange(<span class="number">5</span>)+bar_width,labels)</span><br><span class="line"><span class="comment"># 设置Y轴的刻度范围</span></span><br><span class="line">plt.ylim([<span class="number">2500</span>, <span class="number">19000</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为每个条形图添加数值标签</span></span><br><span class="line"><span class="keyword">for</span> x2016,y2016 <span class="keyword">in</span> enumerate(Y2016):</span><br><span class="line">    plt.text(x2016, y2016+<span class="number">100</span>, <span class="string">'%s'</span> %y2016)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x2017,y2017 <span class="keyword">in</span> enumerate(Y2017):</span><br><span class="line">    plt.text(x2017+bar_width, y2017+<span class="number">100</span>, <span class="string">'%s'</span> %y2017)</span><br><span class="line"><span class="comment"># 显示图例</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.savefig(<span class="string">'水平交错条形图.png'</span>)</span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jcakoz3j20c0080mxb.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jcakoz3j20c0080mxb.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -272,14 +272,13 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0k3zz5g9j20b907utae.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0k3zz5g9j20b907utae.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="matplotlib-饼图"><a href="#matplotlib-饼图" class="headerlink" title="matplotlib(饼图)"></a>matplotlib(饼图)</h1><h2 id="pie-函数参数解读"><a href="#pie-函数参数解读" class="headerlink" title="pie 函数参数解读"></a>pie 函数参数解读</h2><p>饼图的绘制可以使用matplotlib库中的pie函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.pie(x, explode=<span class="literal">None</span>, labels=<span class="literal">None</span>, colors=<span class="literal">None</span>,</span><br><span class="line">        autopct=<span class="literal">None</span>, pctdistance=<span class="number">0.6</span>, shadow=<span class="literal">False</span>,</span><br><span class="line">        labeldistance=<span class="number">1.1</span>, startangle=<span class="literal">None</span>,</span><br><span class="line">        radius=<span class="literal">None</span>, counterclock=<span class="literal">True</span>, wedgeprops=<span class="literal">None</span>,</span><br><span class="line">        textprops=<span class="literal">None</span>, center=(<span class="number">0</span>, <span class="number">0</span>), frame=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
 <hr>
 <table>
 <thead>
@@ -354,7 +353,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jh2r431j20c00800t2.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0jh2r431j20c00800t2.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -454,18 +453,17 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0khch6l1j20c00800sl.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0khch6l1j20c00800sl.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按舱级排序，为了后面正常显示分组盒形图的顺序</span></span><br><span class="line">titanic.sort_values(by = <span class="string">'Pclass'</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过for循环将不同仓位的年龄人群分别存储到列表Age变量中</span></span><br><span class="line">Age = []</span><br><span class="line">Levels = titanic.Pclass.unique()</span><br><span class="line"><span class="keyword">for</span> Pclass <span class="keyword">in</span> Levels:</span><br><span class="line">    Age.append(titanic.loc[titanic.Pclass==Pclass,<span class="string">'Age'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.boxplot(x = Age,</span><br><span class="line">            patch_artist=<span class="literal">True</span>,</span><br><span class="line">            labels = [<span class="string">'一等舱'</span>,<span class="string">'二等舱'</span>,<span class="string">'三等舱'</span>], <span class="comment"># 添加具体的标签名称</span></span><br><span class="line">            showmeans=<span class="literal">True</span>,</span><br><span class="line">            boxprops = &#123;<span class="string">'color'</span>:<span class="string">'black'</span>,<span class="string">'facecolor'</span>:<span class="string">'#9999ff'</span>&#125;,</span><br><span class="line">            flierprops = &#123;<span class="string">'marker'</span>:<span class="string">'o'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'red'</span>,<span class="string">'color'</span>:<span class="string">'black'</span>&#125;,</span><br><span class="line">            meanprops = &#123;<span class="string">'marker'</span>:<span class="string">'D'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'indianred'</span>&#125;,</span><br><span class="line">            medianprops = &#123;<span class="string">'linestyle'</span>:<span class="string">'--'</span>,<span class="string">'color'</span>:<span class="string">'orange'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kkhvvshj20c0080747.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kkhvvshj20c0080747.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -545,7 +543,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mm4l1gvj20c00803ye.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mm4l1gvj20c00803ye.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -558,7 +556,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0knyeutbj20c0080mx8.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0knyeutbj20c0080mx8.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -571,7 +569,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kp9cxanj20c0080jrt.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0kp9cxanj20c0080jrt.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -584,7 +582,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0krsx0j5j20c0080t8q.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0krsx0j5j20c0080t8q.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -636,7 +634,6 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <h1 id="一元折线图的绘制"><a href="#一元折线图的绘制" class="headerlink" title="一元折线图的绘制"></a>一元折线图的绘制</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置绘图风格</span></span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line"><span class="comment"># 设置中文编码和负号的正常显示</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取需要绘图的数据</span></span><br><span class="line">article_reading = pd.read_excel(<span class="string">'wechart.xlsx'</span>)</span><br><span class="line"><span class="comment"># 取出8月份至9月28日的数据</span></span><br><span class="line">sub_data = article_reading.loc[article_reading.date &gt;= <span class="string">'2017-08-01'</span> ,:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图框的大小</span></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.plot(sub_data.date, <span class="comment"># x轴数据</span></span><br><span class="line">         sub_data.article_reading_cnts, <span class="comment"># y轴数据</span></span><br><span class="line">         linestyle = <span class="string">'-'</span>, <span class="comment"># 折线类型</span></span><br><span class="line">         linewidth = <span class="number">2</span>, <span class="comment"># 折线宽度</span></span><br><span class="line">         color = <span class="string">'steelblue'</span>, <span class="comment"># 折线颜色</span></span><br><span class="line">         marker = <span class="string">'o'</span>, <span class="comment"># 点的形状</span></span><br><span class="line">         markersize = <span class="number">6</span>, <span class="comment"># 点的大小</span></span><br><span class="line">         markeredgecolor=<span class="string">'black'</span>, <span class="comment"># 点的边框色</span></span><br><span class="line">         markerfacecolor=<span class="string">'brown'</span>) <span class="comment"># 点的填充色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加标题和坐标轴标签</span></span><br><span class="line">plt.title(<span class="string">'公众号每天阅读人数趋势图'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'日期'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'人数'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 剔除图框上边界和右边界的刻度</span></span><br><span class="line">plt.tick_params(top = <span class="string">'off'</span>, right = <span class="string">'off'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了避免x轴日期刻度标签的重叠，设置x轴刻度自动展现，并且45度倾斜</span></span><br><span class="line">fig.autofmt_xdate(rotation = <span class="number">45</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>由于x轴是日期型数据，当数据量一多的时候，就会导致刻度标签的重叠或拥挤，为了防止重叠的产生，我们需要让日期型的x轴刻度标签自动展现，从而避免重叠的现象</li>
 </ul>
@@ -646,7 +643,6 @@ ga('send', 'pageview');
 <li>如果你需要在一张图形中画上两条折线图，也很简单，只需要在代码中写入两次plot函数即可，其他都不需要改动了。具体可以参考下面的代码逻辑：</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置图框的大小</span></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图--阅读人数趋势</span></span><br><span class="line">plt.plot(sub_data.date, <span class="comment"># x轴数据</span></span><br><span class="line">         sub_data.article_reading_cnts, <span class="comment"># y轴数据</span></span><br><span class="line">         linestyle = <span class="string">'-'</span>, <span class="comment"># 折线类型</span></span><br><span class="line">         linewidth = <span class="number">2</span>, <span class="comment"># 折线宽度</span></span><br><span class="line">         color = <span class="string">'steelblue'</span>, <span class="comment"># 折线颜色</span></span><br><span class="line">         marker = <span class="string">'o'</span>, <span class="comment"># 点的形状</span></span><br><span class="line">         markersize = <span class="number">6</span>, <span class="comment"># 点的大小</span></span><br><span class="line">         markeredgecolor=<span class="string">'black'</span>, <span class="comment"># 点的边框色</span></span><br><span class="line">         markerfacecolor=<span class="string">'steelblue'</span>, <span class="comment"># 点的填充色</span></span><br><span class="line">         label = <span class="string">'阅读人数'</span>) <span class="comment"># 添加标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图--阅读人次趋势</span></span><br><span class="line">plt.plot(sub_data.date, <span class="comment"># x轴数据</span></span><br><span class="line">         sub_data.article_reading_times, <span class="comment"># y轴数据</span></span><br><span class="line">         linestyle = <span class="string">'-'</span>, <span class="comment"># 折线类型</span></span><br><span class="line">         linewidth = <span class="number">2</span>, <span class="comment"># 折线宽度</span></span><br><span class="line">         color = <span class="string">'#ff9999'</span>, <span class="comment"># 折线颜色</span></span><br><span class="line">         marker = <span class="string">'o'</span>, <span class="comment"># 点的形状</span></span><br><span class="line">         markersize = <span class="number">6</span>, <span class="comment"># 点的大小</span></span><br><span class="line">         markeredgecolor=<span class="string">'black'</span>, <span class="comment"># 点的边框色</span></span><br><span class="line">         markerfacecolor=<span class="string">'#ff9999'</span>, <span class="comment"># 点的填充色</span></span><br><span class="line">         label = <span class="string">'阅读人次'</span>) <span class="comment"># 添加标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加标题和坐标轴标签</span></span><br><span class="line">plt.title(<span class="string">'公众号每天阅读人数和人次趋势图'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'日期'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'人数'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 剔除图框上边界和右边界的刻度</span></span><br><span class="line">plt.tick_params(top = <span class="string">'off'</span>, right = <span class="string">'off'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取图的坐标信息</span></span><br><span class="line">ax = plt.gca()</span><br><span class="line"><span class="comment"># 设置日期的显示格式  </span></span><br><span class="line">date_format = mpl.dates.DateFormatter(<span class="string">'%m-%d'</span>)  </span><br><span class="line">ax.xaxis.set_major_formatter(date_format)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴显示多少个日期刻度</span></span><br><span class="line"><span class="comment">#xlocator = mpl.ticker.LinearLocator(10)</span></span><br><span class="line"><span class="comment"># 设置x轴每个刻度的间隔天数</span></span><br><span class="line">xlocator = mpl.ticker.MultipleLocator(<span class="number">3</span>)</span><br><span class="line">ax.xaxis.set_major_locator(xlocator)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了避免x轴日期刻度标签的重叠，设置x轴刻度自动展现，并且45度倾斜</span></span><br><span class="line">fig.autofmt_xdate(rotation = <span class="number">45</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图例</span></span><br><span class="line">plt.legend()</span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <h1 id="matplotlib-散点图"><a href="#matplotlib-散点图" class="headerlink" title="matplotlib(散点图)"></a>matplotlib(散点图)</h1><h2 id="scatter函数的参数解读"><a href="#scatter函数的参数解读" class="headerlink" title="scatter函数的参数解读"></a>scatter函数的参数解读</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lt.scatter(x, y, s=<span class="number">20</span>,</span><br><span class="line">            c=<span class="literal">None</span>, marker=<span class="string">'o'</span>,</span><br><span class="line">            cmap=<span class="literal">None</span>, norm=<span class="literal">None</span>,</span><br><span class="line">            vmin=<span class="literal">None</span>, vmax=<span class="literal">None</span>,</span><br><span class="line">            alpha=<span class="literal">None</span>, linewidths=<span class="literal">None</span>,</span><br><span class="line">            edgecolors=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 
 <table>
@@ -706,17 +702,16 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mqe23jgj20c0080q2w.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mqe23jgj20c0080q2w.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="分组散点图的绘制"><a href="#分组散点图的绘制" class="headerlink" title="分组散点图的绘制"></a>分组散点图的绘制</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">iris = pd.read_csv(<span class="string">'iris.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置中文编码和负号的正常显示</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义颜色</span></span><br><span class="line">colors = [<span class="string">'steelblue'</span>, <span class="string">'#9999ff'</span>, <span class="string">'#ff9999'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 三种不同的花品种</span></span><br><span class="line">Species = iris.Species.unique()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过循环的方式，完成分组散点图的绘制</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(Species)):</span><br><span class="line">    plt.scatter(iris.loc[iris.Species == Species[i], <span class="string">'Petal.Length'</span>],</span><br><span class="line">                iris.loc[iris.Species == Species[i], <span class="string">'Petal.Width'</span>],</span><br><span class="line">                s = <span class="number">35</span>, c = colors[i], label = Species[i])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加轴标签和标题</span></span><br><span class="line">plt.title(<span class="string">'花瓣长度与宽度的关系'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'花瓣长度'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'花瓣宽度'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除图边框的顶部刻度和右边刻度</span></span><br><span class="line">plt.tick_params(top = <span class="string">'off'</span>, right = <span class="string">'off'</span>)</span><br><span class="line"><span class="comment"># 添加图例</span></span><br><span class="line">plt.legend(loc = <span class="string">'upper left'</span>)</span><br><span class="line">plt.savefig(<span class="string">'分组散点图.png'</span>)</span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mt6kcxgj20c0080q35.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mt6kcxgj20c0080q35.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -726,19 +721,18 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mvachvuj20c0080dg0.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0mvachvuj20c0080dg0.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="散点图-线性回归线"><a href="#散点图-线性回归线" class="headerlink" title="散点图+线性回归线"></a>散点图+线性回归线</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入第三方模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line"><span class="comment"># 散点图</span></span><br><span class="line">plt.scatter(cars.speed, <span class="comment"># x轴数据为汽车速度</span></span><br><span class="line">            cars.dist, <span class="comment"># y轴数据为汽车的刹车距离</span></span><br><span class="line">            s = <span class="number">30</span>, <span class="comment"># 设置点的大小</span></span><br><span class="line">            c = <span class="string">'black'</span>, <span class="comment"># 设置点的颜色</span></span><br><span class="line">            marker = <span class="string">'o'</span>, <span class="comment"># 设置点的形状</span></span><br><span class="line">            alpha = <span class="number">0.9</span>, <span class="comment"># 设置点的透明度</span></span><br><span class="line">            linewidths = <span class="number">0.3</span>, <span class="comment"># 设置散点边界的粗细</span></span><br><span class="line">            label = <span class="string">'观测点'</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建模</span></span><br><span class="line">reg = LinearRegression().fit(cars.speed.reshape(<span class="number">-1</span>,<span class="number">1</span>), cars.dist)</span><br><span class="line"><span class="comment"># 回归预测值</span></span><br><span class="line">pred = reg.predict(cars.speed.reshape(<span class="number">-1</span>,<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制回归线</span></span><br><span class="line">plt.plot(cars.speed, pred, linewidth = <span class="number">2</span>, label = <span class="string">'回归线'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加轴标签和标题</span></span><br><span class="line">plt.title(<span class="string">'汽车速度与刹车距离的关系'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'汽车速度'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'刹车距离'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除图边框的顶部刻度和右边刻度</span></span><br><span class="line">plt.tick_params(top = <span class="string">'off'</span>, right = <span class="string">'off'</span>)</span><br><span class="line"><span class="comment"># 显示图例</span></span><br><span class="line">plt.legend(loc = <span class="string">'upper left'</span>)</span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <h1 id="matplotlib-雷达图"><a href="#matplotlib-雷达图" class="headerlink" title="matplotlib(雷达图)"></a>matplotlib(雷达图)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入第三方模块</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文和负号的正常显示</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用ggplot的绘图风格</span></span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造数据</span></span><br><span class="line">values = [<span class="number">3.2</span>,<span class="number">2.1</span>,<span class="number">3.5</span>,<span class="number">2.8</span>,<span class="number">3</span>]</span><br><span class="line">feature = [<span class="string">'个人能力'</span>,<span class="string">'QC知识'</span>,<span class="string">'解决问题能力'</span>,<span class="string">'服务质量意识'</span>,<span class="string">'团队精神'</span>]</span><br><span class="line"></span><br><span class="line">N = len(values)</span><br><span class="line"><span class="comment"># 设置雷达图的角度，用于平分切开一个圆面</span></span><br><span class="line">angles=np.linspace(<span class="number">0</span>, <span class="number">2</span>*np.pi, N, endpoint=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了使雷达图一圈封闭起来，需要下面的步骤</span></span><br><span class="line">values=np.concatenate((values,[values[<span class="number">0</span>]]))</span><br><span class="line">angles=np.concatenate((angles,[angles[<span class="number">0</span>]]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">fig=plt.figure()</span><br><span class="line"><span class="comment"># 这里一定要设置为极坐标格式</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">111</span>, polar=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 绘制折线图</span></span><br><span class="line">ax.plot(angles, values, <span class="string">'o-'</span>, linewidth=<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 填充颜色</span></span><br><span class="line">ax.fill(angles, values, alpha=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment"># 添加每个特征的标签</span></span><br><span class="line">ax.set_thetagrids(angles * <span class="number">180</span>/np.pi, feature)</span><br><span class="line"><span class="comment"># 设置雷达图的范围</span></span><br><span class="line">ax.set_ylim(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 添加标题</span></span><br><span class="line">plt.title(<span class="string">'活动前后员工状态表现'</span>)</span><br><span class="line"><span class="comment"># 添加网格线</span></span><br><span class="line">ax.grid(<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m6gdokgj20c0080aai.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m6gdokgj20c0080aai.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -748,13 +742,12 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m7o9accj20c0080mxt.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0m7o9accj20c0080mxt.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="pygal模块则提供了更加简单的雷达图函数"><a href="#pygal模块则提供了更加简单的雷达图函数" class="headerlink" title="pygal模块则提供了更加简单的雷达图函数"></a>pygal模块则提供了更加简单的雷达图函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入第三方模块</span></span><br><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用Radar这个类，并设置雷达图的填充，及数据范围</span></span><br><span class="line">radar_chart = pygal.Radar(fill = <span class="literal">True</span>, range=(<span class="number">0</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment"># 添加雷达图的标题</span></span><br><span class="line">radar_chart.title = <span class="string">'活动前后员工状态表现'</span></span><br><span class="line"><span class="comment"># 添加雷达图各顶点的含义</span></span><br><span class="line">radar_chart.x_labels = [<span class="string">'个人能力'</span>,<span class="string">'QC知识'</span>,<span class="string">'解决问题能力'</span>,<span class="string">'服务质量意识'</span>,<span class="string">'团队精神'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制两条雷达图区域</span></span><br><span class="line">radar_chart.add(<span class="string">'活动前'</span>, [<span class="number">3.2</span>,<span class="number">2.1</span>,<span class="number">3.5</span>,<span class="number">2.8</span>,<span class="number">3</span>])</span><br><span class="line">radar_chart.add(<span class="string">'活动后'</span>, [<span class="number">4</span>,<span class="number">4.1</span>,<span class="number">4.5</span>,<span class="number">4</span>,<span class="number">4.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存图像</span></span><br><span class="line">radar_chart.render_to_file(<span class="string">'radar_chart.svg'</span>)</span><br></pre></td></tr></table></figure>
-
 <h1 id="matplotlib-面积图"><a href="#matplotlib-面积图" class="headerlink" title="matplotlib(面积图)"></a>matplotlib(面积图)</h1><h2 id="stackplot函数语法及参数含义"><a href="#stackplot函数语法及参数含义" class="headerlink" title="stackplot函数语法及参数含义"></a>stackplot函数语法及参数含义</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stackplot(x,*args,**kargs)</span><br></pre></td></tr></table></figure>
 
 <table>
@@ -851,7 +844,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0miksd7jj20c0080jro.jpg" alt title>
+                    <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fx0miksd7jj20c0080jro.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -896,7 +889,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -1022,7 +1015,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

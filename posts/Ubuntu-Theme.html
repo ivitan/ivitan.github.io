@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux">
     <meta name="description" content="Ubuntu美化">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 美化">
 <meta property="og:url" content="https://vitan.me/posts/Ubuntu-Theme.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Ubuntu美化">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-05T03:21:24.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 美化">
-<meta name="twitter:description" content="Ubuntu美化">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -214,12 +214,9 @@ ga('send', 'pageview');
 
 <p>Flatabulous 主题</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br></pre></td></tr></table></figure>
-
 <p>配套的图标</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/icons</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ultra-flat-icons</span><br></pre></td></tr></table></figure>
-
 <h1 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br><span class="line">chsh -s zsh</span><br></pre></td></tr></table></figure>
-
 <h2 id="问题错误"><a href="#问题错误" class="headerlink" title="问题错误"></a>问题错误</h2><p>agnoster 主题不正常</p>
 <ul>
 <li><p>修改字体即可</p>
@@ -233,7 +230,6 @@ ga('send', 'pageview');
 <li>解决方法</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">compaudit</span><br><span class="line"><span class="comment">//会显示如下内容</span></span><br><span class="line">There are insecure <span class="string">directories:</span></span><br><span class="line">  usr<span class="regexp">/local/</span>share<span class="regexp">/zsh/</span>site-functions</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">cd cd <span class="regexp">/usr/</span>local<span class="regexp">/share/</span>zsh</span><br><span class="line">sudo chown -R <span class="string">root:</span>root ./site-functions</span><br><span class="line">cd <span class="regexp">/usr/</span>local<span class="regexp">/share/</span></span><br><span class="line">sudo chmod -R <span class="number">755</span> zsh</span><br><span class="line">sudo chown -R <span class="string">root:</span>staff zsh</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>参考</strong></p>
 <ul>
@@ -273,7 +269,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
 
 
             
@@ -399,7 +395,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

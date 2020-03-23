@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="读写 Excel">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读写 Excel 文件">
 <meta property="og:url" content="https://vitan.me/posts/PythonExcel.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="读写 Excel">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-19T07:08:39.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读写 Excel 文件">
-<meta name="twitter:description" content="读写 Excel">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -211,9 +213,7 @@ ga('send', 'pageview');
 <a id="more"></a>
 
 <h1 id="读-Excel"><a href="#读-Excel" class="headerlink" title="读 Excel"></a>读 Excel</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(<span class="string">'file.xlsx'</span>)</span>:</span></span><br><span class="line">data = xlrd.open_workbook(url)</span><br><span class="line">table = data.sheets()[<span class="number">0</span>] <span class="comment"># 打开第一张表</span></span><br><span class="line">nrows = table.nrows <span class="comment"># 获取表的行数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(nrows): <span class="comment"># 循环逐行打印</span></span><br><span class="line">   print(table.row_values(i)[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
-
 <h1 id="写-Excel"><a href="#写-Excel" class="headerlink" title="写 Excel"></a>写 Excel</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line">data = xlrd.open_workbook(<span class="string">'excelFile.xls'</span>)</span><br><span class="line">excel = copy(data)                                       </span><br><span class="line"></span><br><span class="line"><span class="comment">#使用wlrd的方法获取已有的的行数</span></span><br><span class="line">rows = data.sheet()[num].nrows                  </span><br><span class="line"><span class="comment">#获得要操作的sheet</span></span><br><span class="line">table = excel.get_sheet(num)                      </span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> n:</span><br><span class="line">  <span class="comment">#xlwt的写方法，参数为行，列，值，行</span></span><br><span class="line">  table.write(rows,num1,value)  </span><br><span class="line">  num1 = num1+<span class="number">1</span> </span><br><span class="line"></span><br><span class="line">excel.save(name)</span><br></pre></td></tr></table></figure>
-
 
         </div>
 
@@ -248,7 +248,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -374,7 +374,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

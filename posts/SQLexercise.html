@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="SQL">
     <meta name="description" content="数据库单表查询">
-<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 补充练习题">
 <meta property="og:url" content="https://vitan.me/posts/SQLexercise.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="数据库单表查询">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-06-29T03:13:57.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL 补充练习题">
-<meta name="twitter:description" content="数据库单表查询">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -236,11 +236,9 @@ ga('send', 'pageview');
 <h1 id="五、实验内容及步骤"><a href="#五、实验内容及步骤" class="headerlink" title="五、实验内容及步骤"></a>五、实验内容及步骤</h1><p>以数据库原理实验6数据库中数据为基础，请使用T-SQL 语句实现以下操作：</p>
 <ol>
 <li><p>列出所有不姓刘的所有学生；（not like）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'刘%'</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'刘%'</span></span><br></pre></td></tr></table></figure></li>
 <li><p>列出姓“张”且全名为3个汉字的学生；(张__下滑线表示任意一个字符)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">like</span> <span class="string">'张__'</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 姓名 <span class="keyword">like</span> <span class="string">'张__'</span></span><br></pre></td></tr></table></figure></li>
 <li><p>显示在2000年以后出生的学生的基本信息；</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">where</span> 年龄&lt;=(<span class="number">2018</span><span class="number">-2000</span>)</span><br></pre></td></tr></table></figure>
 </li>
@@ -248,17 +246,13 @@ ga('send', 'pageview');
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> c</span><br><span class="line"><span class="keyword">where</span> 课程名 <span class="keyword">like</span> <span class="string">'数据%'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>列出选修了‘101’课程的学生，按成绩的降序排列；</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> sc</span><br><span class="line"><span class="keyword">where</span> 课程号=<span class="string">'101'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> sc</span><br><span class="line"><span class="keyword">where</span> 课程号=<span class="string">'101'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></li>
 <li><p>列出课程表中全部信息，按先修课的升序排列；</p>
 </li>
 </ol>
 <ol start="7">
-<li><p>按照出生年份升序显示所有学生的学号、姓名、性别、出生年份及所在系，在结果集中列标题分别指定为“学号，姓名，性别，出生年份，所在系”；</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号,姓名,性别,(<span class="number">2018</span>-年龄) <span class="keyword">as</span> 出生年份,所在系</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 出生年份 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按照院系降序显示所有学生的 “所在系，学号、姓名、性别、年龄”等信息，其中所在系按照以下规定显示：院系为CS显示为计算机系，院系为IS显示为信息系，院系为MA显示为数学系，院系为JZ显示为建筑系，其他显示为院系不明；参考例句</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  姓名,所在系,学号,院系英文书写=<span class="keyword">case</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'计算机系'</span> <span class="keyword">then</span> <span class="string">'CS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'信息系'</span> <span class="keyword">then</span> <span class="string">'IS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'艺术系'</span> <span class="keyword">then</span> <span class="string">'AS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'会计系'</span> <span class="keyword">then</span> <span class="string">'KS'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 院系英文书写 <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<li>按照出生年份升序显示所有学生的学号、姓名、性别、出生年份及所在系，在结果集中列标题分别指定为“学号，姓名，性别，出生年份，所在系”；<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号,姓名,性别,(<span class="number">2018</span>-年龄) <span class="keyword">as</span> 出生年份,所在系</span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 出生年份 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure></li>
+<li>按照院系降序显示所有学生的 “所在系，学号、姓名、性别、年龄”等信息，其中所在系按照以下规定显示：院系为CS显示为计算机系，院系为IS显示为信息系，院系为MA显示为数学系，院系为JZ显示为建筑系，其他显示为院系不明；参考例句<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  姓名,所在系,学号,院系英文书写=<span class="keyword">case</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'计算机系'</span> <span class="keyword">then</span> <span class="string">'CS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'信息系'</span> <span class="keyword">then</span> <span class="string">'IS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'艺术系'</span> <span class="keyword">then</span> <span class="string">'AS'</span></span><br><span class="line"><span class="keyword">when</span> 所在系=<span class="string">'会计系'</span> <span class="keyword">then</span> <span class="string">'KS'</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> s</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 院系英文书写 <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -314,7 +308,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
             
@@ -440,7 +434,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

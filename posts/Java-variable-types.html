@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Java">
     <meta name="description" content="Java 变量类型">
-<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 变量类型">
 <meta property="og:url" content="https://vitan.me/posts/Java-variable-types.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Java 变量类型">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-22T07:16:22.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 变量类型">
-<meta name="twitter:description" content="Java 变量类型">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -215,16 +215,12 @@ ga('send', 'pageview');
 </blockquote>
 <p>以下列出了一些变量的声明实例。注意有些包含了初始化过程。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b, c;         <span class="comment">// 声明三个int型整数：a、 b、c</span></span><br><span class="line"><span class="keyword">int</span> d = <span class="number">3</span>, e = <span class="number">4</span>, f = <span class="number">5</span>; <span class="comment">// 声明三个整数并赋予初值</span></span><br><span class="line"><span class="keyword">byte</span> z = <span class="number">22</span>;         <span class="comment">// 声明并初始化 z</span></span><br><span class="line">String s = <span class="string">"runoob"</span>;  <span class="comment">// 声明并初始化字符串 s</span></span><br><span class="line"><span class="keyword">double</span> pi = <span class="number">3.14159</span>; <span class="comment">// 声明了双精度浮点型变量 pi</span></span><br><span class="line"><span class="keyword">char</span> x = <span class="string">'x'</span>;        <span class="comment">// 声明变量 x 的值是字符 'x'。</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="Java语言支持的变量类型有"><a href="#Java语言支持的变量类型有" class="headerlink" title="Java语言支持的变量类型有"></a>Java语言支持的变量类型有</h1><ul>
 <li>类变量：独立于方法之外的变量，用 static 修饰。</li>
 <li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
 <li>局部变量：类的方法中的变量。</li>
 <li>实例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Variable</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> allClicks=<span class="number">0</span>;    <span class="comment">// 类变量</span></span><br><span class="line"></span><br><span class="line">    String str=<span class="string">"hello world"</span>;  <span class="comment">// 实例变量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i =<span class="number">0</span>;  <span class="comment">// 局部变量</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="Java-局部变量"><a href="#Java-局部变量" class="headerlink" title="Java 局部变量"></a>Java 局部变量</h1><ul>
+<h1 id="Java-局部变量"><a href="#Java-局部变量" class="headerlink" title="Java 局部变量"></a>Java 局部变量</h1></li>
 <li>局部变量声明在方法、构造方法或者语句块中；</li>
 <li>局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</li>
 <li>访问修饰符不能用于局部变量；</li>
@@ -235,7 +231,6 @@ ga('send', 'pageview');
 </ul>
 <p>在以下实例中age是一个局部变量。定义在pupAge()方法中，它的作用域就限制在这个方法中。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.runoob.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pupAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">      age = age + <span class="number">7</span>;</span><br><span class="line">      System.out.println(<span class="string">"小狗的年龄是: "</span> + age);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Test test = <span class="keyword">new</span> Test();</span><br><span class="line">      test.pupAge();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>小狗的年龄是: 7</p>
@@ -243,7 +238,6 @@ ga('send', 'pageview');
 <p>实例 2</p>
 <p>在下面的例子中 age 变量没有初始化，所以在编译时会出错：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.runoob.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pupAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> age;</span><br><span class="line">      age = age + <span class="number">7</span>;</span><br><span class="line">      System.out.println(<span class="string">"小狗的年龄是 : "</span> + age);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Test test = <span class="keyword">new</span> Test();</span><br><span class="line">      test.pupAge();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>Test.java:4:variable number might not have been initialized<br>age = age + 7;<br>        ^<br>1 error</p>
@@ -261,7 +255,6 @@ ga('send', 'pageview');
 </ul>
 <p>实例</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Employee.java 文件代码：</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span></span>&#123;</span><br><span class="line">   <span class="comment">// 这个实例变量对子类可见</span></span><br><span class="line">   <span class="keyword">public</span> String name;</span><br><span class="line">   <span class="comment">// 私有变量，仅在该类可见</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">double</span> salary;</span><br><span class="line">   <span class="comment">//在构造器中对name赋值</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Employee</span> <span class="params">(String empName)</span></span>&#123;</span><br><span class="line">      name = empName;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//设定salary的值</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSalary</span><span class="params">(<span class="keyword">double</span> empSal)</span></span>&#123;</span><br><span class="line">      salary = empSal;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 打印信息</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printEmp</span><span class="params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"名字 : "</span> + name );</span><br><span class="line">      System.out.println(<span class="string">"薪水 : "</span> + salary);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Employee empOne = <span class="keyword">new</span> Employee(<span class="string">"RUNOOB"</span>);</span><br><span class="line">      empOne.setSalary(<span class="number">1000</span>);</span><br><span class="line">      empOne.printEmp();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>$ javac Employee.java<br>$ java Employee<br>名字 : RUNOOB<br>薪水 : 1000.0</p>
@@ -279,7 +272,6 @@ ga('send', 'pageview');
 </ul>
 <p>实例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Employee.java 文件代码：</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="comment">//salary是静态的私有变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span> salary;</span><br><span class="line">    <span class="comment">// DEPARTMENT是一个常量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEPARTMENT = <span class="string">"开发人员"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">    salary = <span class="number">10000</span>;</span><br><span class="line">        System.out.println(DEPARTMENT+<span class="string">"平均工资:"</span>+salary);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>以上实例编译运行结果如下:</p>
 <blockquote>
 <p>开发人员平均工资:10000.0</p>
@@ -319,7 +311,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
 
 
             
@@ -445,7 +437,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

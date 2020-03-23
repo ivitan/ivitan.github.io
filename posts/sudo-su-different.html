@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,ArchLinux,Ubuntu">
     <meta name="description" content="sudo su 区别">
-<meta name="keywords" content="Linux,ArchLinux,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sudo 与 Su 的区别">
 <meta property="og:url" content="https://vitan.me/posts/sudo-su-different.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="sudo su 区别">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-08T05:01:18.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sudo 与 Su 的区别">
-<meta name="twitter:description" content="sudo su 区别">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -216,14 +218,9 @@ ga('send', 'pageview');
 </ol>
 <p>语法</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [选项] [-] [&lt;用户&gt; [&lt;参数&gt;...]]</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>选项<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f  或 --fast</span><br><span class="line"><span class="comment"># 不必读启动档（如 csh.cshrc 等），仅用于 csh 或 tcsh</span></span><br><span class="line">-m -p 或 --preserve-environment</span><br><span class="line"><span class="comment"># 执行 su 时不改变环境变数</span></span><br><span class="line">-c <span class="built_in">command</span> 或 --<span class="built_in">command</span>=<span class="built_in">command</span></span><br><span class="line"><span class="comment"># 变更为帐号为 USER 的使用者并执行指令（command）后再变回原来使用者</span></span><br><span class="line">-s shell 或 --shell=shell</span><br><span class="line"><span class="comment"># 指定要执行的 shell(bash,csh,tcsh等），预设值为 /etc/passwd 内的该使用者(USER) shell</span></span><br><span class="line">--<span class="built_in">help</span> <span class="comment"># 显示说明文件</span></span><br><span class="line">--version <span class="comment"># 显示版本资讯</span></span><br><span class="line">- -l 或 --login</span><br><span class="line"><span class="comment"># 类似重新 login 为该使用者一样，大部份环境变数（HOME SHELL USER等等）</span></span><br><span class="line">都是以该使用者（USER）为主，并且工作目录也会改变，如果没有指定 USER ，内定是 root</span><br><span class="line">USER <span class="comment"># 欲变更的使用者帐号</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>su – root 和 su root（su）的区别</p>
-<ul>
+su – root 和 su root（su）的区别</li>
 <li><code>su – root</code> 表示人 以root 身份登录</li>
 <li><code>su root</code> 表示与 root 建立一个链接，通过 root 执行命令</li>
 </ul>
@@ -239,7 +236,6 @@ ga('send', 'pageview');
 </ol>
 <p>语法</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo 参数</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>参数<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-V <span class="comment"># 显示版本编号</span></span><br><span class="line">-h <span class="comment"># 会显示版本编号及指令的使用方式说明</span></span><br><span class="line">-l <span class="comment"># 显示出自己（执行 sudo 的使用者）的权限</span></span><br><span class="line">-v <span class="comment"># sudo 在第一次执行时或是在 N 分钟内没有执行（N 预设为五）会问密码，</span></span><br><span class="line">这个参数是重新做一次确认，如果超过 N 分钟，也会问密码</span><br><span class="line">-k <span class="comment"># 将会强迫使用者在下一次执行 sudo 时问密码（不论有没有超过 N 分钟）</span></span><br><span class="line">-b <span class="comment"># 将要执行的指令放在背景执行</span></span><br><span class="line">-p <span class="comment"># prompt 可以更改问密码的提示语，其中 %u 会代换为使用者的帐号名称， %h 会显示主机名称</span></span><br><span class="line">-u <span class="comment"># username/#uid 不加此参数，代表要以 root 的身份执行指令</span></span><br><span class="line">而加了此参数，可以以 username 的身份执行指令（<span class="comment">#uid 为该 username 的使用者号码）</span></span><br><span class="line">-s <span class="comment"># 执行环境变数中的 SHELL 所指定的 shell ，或是 /etc/passwd 里所指定的 shell</span></span><br><span class="line">-H <span class="comment"># 将环境变数中的 HOME （家目录）指定为要变更身份的使用者家目录</span></span><br><span class="line">（如不加 -u 参数就是系统管理者 root ）</span><br><span class="line"><span class="built_in">command</span> <span class="comment"># 要以系统管理者身份（或以 -u 更改为其他人）执行的指令</span></span><br></pre></td></tr></table></figure>
 
@@ -293,7 +289,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
 
 
             
@@ -419,7 +415,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

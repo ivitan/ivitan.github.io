@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,Termux,Hexo">
     <meta name="description" content="Hexo 从零开始到搭建完整">
-<meta name="keywords" content="Linux,Termux,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 安装笔记">
 <meta property="og:url" content="https://vitan.me/posts/HexoInstall.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Hexo 从零开始到搭建完整">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-11-27T11:35:17.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Termux">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 安装笔记">
-<meta name="twitter:description" content="Hexo 从零开始到搭建完整">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -223,7 +225,6 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: https://github.com/用户名/用户名.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建-SSH-Key"><a href="#创建-SSH-Key" class="headerlink" title="创建 SSH Key"></a>创建 SSH Key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Vitan"</span></span><br><span class="line">git config --global user.email <span class="string">"ivitan95@gmail.com"</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"ivtan95@gmail.com"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>复制 <code>id_rsa.pub</code> 内的密匙添加到 GitHub<ul>
 <li>验证是否添加成功：<code>ssh -T git@github.com</code></li>
@@ -233,7 +234,6 @@ ga('send', 'pageview');
 <h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改_config.yml</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 
 <h1 id="GitBash进入blog-目录"><a href="#GitBash进入blog-目录" class="headerlink" title="GitBash进入blog 目录"></a>GitBash进入blog 目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>浏览器：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></li>
 </ul>
@@ -271,7 +271,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/">Termux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li></ul>
 
 
             
@@ -397,7 +397,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

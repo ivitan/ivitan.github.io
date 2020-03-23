@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,20 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,ArchLinux,Ubuntu,Termux">
     <meta name="description" content="Oh-my-zsh插件">
-<meta name="keywords" content="Linux,ArchLinux,Ubuntu,Termux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oh-My-Zsh 插件">
 <meta property="og:url" content="https://vitan.me/posts/Oh-My-ZSH-complete.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Oh-my-zsh插件">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-16T16:08:26.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Termux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oh-My-Zsh 插件">
-<meta name="twitter:description" content="Oh-my-zsh插件">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +59,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -212,11 +215,8 @@ ga('send', 'pageview');
 <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~<span class="string">/.zshrc</span></span><br><span class="line"><span class="string">//</span>找到下面这句，添加相应的插件 插件之间用空格分隔</span><br><span class="line">plugins=<span class="params">(git z zsh-syntax-highlighting zsh-autosuggestions)</span></span><br><span class="line"><span class="string">//</span>使配置文件生效</span><br><span class="line">source ~<span class="string">/.zshrc</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="Git-默认已开启"><a href="#Git-默认已开启" class="headerlink" title="Git 默认已开启"></a>Git 默认已开启</h1><ul>
-<li><p>可以使用各种 git 命令缩写。比如</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> <span class="comment">--all ===&gt; gaa</span></span><br><span class="line">git <span class="keyword">commit</span> -m ===&gt; gcmsg</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>看所有 git 命令缩写</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh</span><br></pre></td></tr></table></figure>
+<li>可以使用各种 git 命令缩写。比如<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> <span class="comment">--all ===&gt; gaa</span></span><br><span class="line">git <span class="keyword">commit</span> -m ===&gt; gcmsg</span><br></pre></td></tr></table></figure></li>
+<li>看所有 git 命令缩写<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -240,42 +240,28 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><p>克隆项目</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"source <span class="variable">$&#123;(q-)PWD&#125;</span>/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"</span> &gt;&gt; <span class="variable">$&#123;ZDOTDIR:-$HOME&#125;</span>/.zshrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在 <code>~/.zshrc</code> 中配置</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure>
+<li>克隆项目<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"source <span class="variable">$&#123;(q-)PWD&#125;</span>/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"</span> &gt;&gt; <span class="variable">$&#123;ZDOTDIR:-$HOME&#125;</span>/.zshrc</span><br></pre></td></tr></table></figure></li>
+<li>在 <code>~/.zshrc</code> 中配置<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-syntax-highlighting)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h1 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a>zsh-autosuggestions</h1><p>输入命令时，会给出建议的命令</p>
 <h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><p>克隆项目</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$ZSH_CUSTOM</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在 <code>~/.zshrc</code> 中配置</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
+<li>克隆项目<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$ZSH_CUSTOM</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure></li>
+<li>在 <code>~/.zshrc</code> 中配置<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins=(zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h1 id="incr"><a href="#incr" class="headerlink" title="incr"></a>incr</h1><ul>
-<li><p>Ubuntu sudo</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install zsh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>ArchLinux</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yacman -S <span class="comment">#!/usr/bin/env zsh</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装完成后执行：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+<li>Ubuntu sudo<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install zsh</span><br></pre></td></tr></table></figure></li>
+<li>ArchLinux<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yacman -S <span class="comment">#!/usr/bin/env zsh</span></span><br></pre></td></tr></table></figure></li>
+<li>安装完成后执行：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h1 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh my zsh"></a>安装 oh my zsh</h1><ul>
-<li><p>自动安装：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/robbyrussell/</span>oh-my-zsh<span class="regexp">/raw/m</span>aster<span class="regexp">/tools/i</span>nstall.sh -O - | sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>手动安装：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span></span><br><span class="line">cp ~/<span class="selector-class">.zshrc</span> ~/<span class="selector-class">.zshrc</span><span class="selector-class">.orig</span></span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc<span class="selector-class">.zsh-template</span> ~/.zshrc</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+<li>自动安装：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/robbyrussell/</span>oh-my-zsh<span class="regexp">/raw/m</span>aster<span class="regexp">/tools/i</span>nstall.sh -O - | sh</span><br></pre></td></tr></table></figure></li>
+<li>手动安装：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span></span><br><span class="line">cp ~/<span class="selector-class">.zshrc</span> ~/<span class="selector-class">.zshrc</span><span class="selector-class">.orig</span></span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc<span class="selector-class">.zsh-template</span> ~/.zshrc</span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -328,7 +314,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/">Termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Termux/" rel="tag">Termux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
 
 
             
@@ -454,7 +440,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

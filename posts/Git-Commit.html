@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Github,Git">
     <meta name="description" content="Git Commit 规范">
-<meta name="keywords" content="Github,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Commit 规范">
 <meta property="og:url" content="https://vitan.me/posts/Git-Commit.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Git Commit 规范">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-10T05:43:03.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git Commit 规范">
-<meta name="twitter:description" content="Git Commit 规范">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -210,8 +211,7 @@ ga('send', 'pageview');
             <p>Git Commit 规范</p>
 <a id="more"></a>
 <h1 id="Commit-message-格式"><a href="#Commit-message-格式" class="headerlink" title="Commit message 格式"></a>Commit message 格式</h1><p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">// 空一行</span><br><span class="line">&lt;body&gt;</span><br><span class="line">// 空一行s</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&#x2F;&#x2F; 空一行</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&#x2F;&#x2F; 空一行s</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>其中，Header 是必需的，Body 和 Footer 可以省略。<ul>
 <li>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。</li>
@@ -223,7 +223,6 @@ ga('send', 'pageview');
 <li>type用于说明 commit 的类别，只允许使用下面7个标识。</li>
 </ul>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">feat：新功能（<span class="built_in">feature</span>）</span><br><span class="line"><span class="built_in">fix</span>：修补bug</span><br><span class="line">docs：文档（documentation）</span><br><span class="line"><span class="built_in">style</span>： 格式（不影响代码运行的变动）</span><br><span class="line">refactor：重构（即不是新增功能，也不是修改bug的代码变动）</span><br><span class="line">test：增加测试</span><br><span class="line">chore：构建过程或辅助工具的变动</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>如果 type 为 feat 和 fix，则该 commit 将肯定出现在 Change log 之中。其他情况（docs、chore、style、refactor、test）由你决定，要不要放入 Change log，建议是不要。</li>
 </ul>
@@ -240,7 +239,6 @@ ga('send', 'pageview');
 <li>Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例。</li>
 </ul>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">More <span class="keyword">detailed</span> explanatory <span class="keyword">text</span>, <span class="keyword">if</span> necessary.  Wrap <span class="keyword">it</span> <span class="built_in">to</span></span><br><span class="line">about <span class="number">72</span> <span class="keyword">characters</span> <span class="keyword">or</span> so.</span><br><span class="line"></span><br><span class="line">Further paragraphs come <span class="keyword">after</span> blank <span class="keyword">lines</span>.</span><br><span class="line"></span><br><span class="line">- Bullet points are okay, too</span><br><span class="line">- Use <span class="keyword">a</span> hanging indent</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>有两个注意点。<ol>
 <li>使用第一人称现在时，比如使用 change 而不是 changed 或 changes。</li>
@@ -273,7 +271,6 @@ ga('send', 'pageview');
 <li>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以 <code>revert:</code> 开头，后面跟着被撤销 Commit 的 Header。</li>
 </ul>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">revert: feat(pencil): <span class="keyword">add</span> <span class="string">'graphiteWidth'</span> <span class="keyword">option</span></span><br><span class="line"></span><br><span class="line">This reverts <span class="keyword">commit</span> <span class="number">667</span>ecc1654a317a13331b17617d973392f415f02.</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>Body 部分的格式是固定的，必须写成 <code>This reverts commit &amp;lt;hash&gt;.</code>，其中的hash是被撤销 commit 的 SHA 标识符。</li>
 <li>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的 Reverts小标题下面。</li>
@@ -345,7 +342,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li></ul>
 
 
             
@@ -471,7 +468,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

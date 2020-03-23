@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,ArchLinux">
     <meta name="description" content="ArchLinux 安装记录">
-<meta name="keywords" content="Linux,ArchLinux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux 安装记录">
 <meta property="og:url" content="https://vitan.me/posts/ArchLinux.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="ArchLinux 安装记录">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-07-27T01:08:49.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ArchLinux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArchLinux 安装记录">
-<meta name="twitter:description" content="ArchLinux 安装记录">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -234,7 +235,6 @@ ga('send', 'pageview');
 
 <h2 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h2><p>将 China 开头一下两行剪切到 ustc 最上面</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>技巧(光标在 China 下，按2后 dd 最后 p 粘贴)</li>
 </ul>
@@ -284,29 +284,24 @@ ga('send', 'pageview');
 </li>
 <li><p>检查</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<h2 id="切换到新系统"><a href="#切换到新系统" class="headerlink" title="切换到新系统"></a>切换到新系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="切换到新系统"><a href="#切换到新系统" class="headerlink" title="切换到新系统"></a>切换到新系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
-
 <h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><h3 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
 
 <h3 id="硬件时间"><a href="#硬件时间" class="headerlink" title="硬件时间"></a>硬件时间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc --utc</span><br></pre></td></tr></table></figure>
 
 <h2 id="语言设置"><a href="#语言设置" class="headerlink" title="语言设置"></a>语言设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S vim</span><br><span class="line">vim  /etc/locale.gen</span><br><span class="line"><span class="comment"># 反注释（删掉前面的#） en_US.UTF-8 UTF-8 zh_CN.UTF-8 UTF-8</span></span><br></pre></td></tr></table></figure>
-
 <p>生成 locale</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure>
-
 <p>设置 locale.conf</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'LANG=zh_CN.UTF-8'</span>  &gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
 
 <h2 id="无线网络链接"><a href="#无线网络链接" class="headerlink" title="无线网络链接"></a>无线网络链接</h2><p>安装相关包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S iw wpa_supplicant dialog</span><br></pre></td></tr></table></figure>
 
-
 <h2 id="root-用户设置密码"><a href="#root-用户设置密码" class="headerlink" title="root 用户设置密码"></a>root 用户设置密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
-
 <p>添加用户</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -g users -s /bin/bash 用户名</span><br><span class="line">passwd 用户名 <span class="comment"># 修改密码</span></span><br></pre></td></tr></table></figure>
 
@@ -336,30 +331,24 @@ ga('send', 'pageview');
 
 <h2 id="重启不能联网"><a href="#重启不能联网" class="headerlink" title="重启不能联网"></a>重启不能联网</h2><p>重启 dhcpcd</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> dhcpcd</span><br></pre></td></tr></table></figure>
-
 <p>继续输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link</span><br></pre></td></tr></table></figure>
-
 <p>发现名称是ens33的网卡state 是down状态</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link <span class="built_in">set</span> ens33 up(ifconfig ens33 up 也可以)</span><br></pre></td></tr></table></figure>
 
 <h1 id="安装桌面环境"><a href="#安装桌面环境" class="headerlink" title="安装桌面环境"></a>安装桌面环境</h1><h2 id="Gnome-桌面"><a href="#Gnome-桌面" class="headerlink" title="Gnome 桌面"></a>Gnome 桌面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gnome <span class="comment">#gnome桌面：</span></span><br><span class="line">sudo pacman -S gnome-tweak-tool <span class="comment">#安装gnome桌面优化工具</span></span><br><span class="line">sudo pacman -S alacarte <span class="comment"># 安装gnome桌面菜单编辑器</span></span><br><span class="line">systemctl <span class="built_in">enable</span> gdm <span class="comment">#启用gnome窗口管理器服务</span></span><br><span class="line">systemctl <span class="built_in">enable</span> NetworkManager <span class="comment"># 启用网络管理器服务</span></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <h2 id="Deepin-桌面"><a href="#Deepin-桌面" class="headerlink" title="Deepin 桌面"></a>Deepin 桌面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S deepin</span><br><span class="line">sudo pacman -S deepin-extra</span><br><span class="line">sudo pacman S bash-completion</span><br><span class="line">sudo pacman -S networkmanager</span><br><span class="line">systemctl <span class="built_in">enable</span> NetworkManager <span class="comment"># 注意大小写</span></span><br><span class="line">systemctl start NetworkManager</span><br></pre></td></tr></table></figure>
-
 <p>编辑</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
-
 <p>修改如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greeter-session=lightdm-deepin-greeter</span><br></pre></td></tr></table></figure>
-
 <p>执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> lightdm.service</span><br></pre></td></tr></table></figure>
 
 <h2 id="KDE-Plasma-桌面"><a href="#KDE-Plasma-桌面" class="headerlink" title="KDE Plasma 桌面"></a>KDE Plasma 桌面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg</span><br><span class="line">sudo pacman -S xf86-input-synaptics</span><br><span class="line">sudo pacman -S ttf-dejavu wqy-microhei <span class="comment"># 字体</span></span><br><span class="line">sudo pacman -S plasma kde-applications</span><br><span class="line">systemctl <span class="built_in">enable</span> sddm <span class="comment"># 启用 sddm 显示管理器</span></span><br><span class="line">sudo pacman -S NetworkManager net-tools</span><br><span class="line">systemctl <span class="built_in">enable</span> NetworkManager <span class="comment"># 启用网络管理</span></span><br><span class="line">systemctl <span class="built_in">enable</span> dhcpcd</span><br><span class="line">sudo pacman -S kde-l10n-zh_cn <span class="comment"># KDE 中文包</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="后续优化"><a href="#后续优化" class="headerlink" title="后续优化"></a>后续优化</h1><h2 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li>首先去掉 multilib 中两行的注释</li>
 <li>在文档结尾处加入</li>
@@ -394,11 +383,9 @@ ga('send', 'pageview');
 
 <p>添加</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Section <span class="string">"Module"</span></span><br><span class="line">	Load <span class="string">"modesetting"</span></span><br><span class="line">EndSection</span><br><span class="line"></span><br><span class="line">Section <span class="string">"Device"</span></span><br><span class="line">	Identifier <span class="string">"nvidia'"</span></span><br><span class="line">	Driver <span class="string">"nvidia"</span></span><br><span class="line">	BusID <span class="string">"1:0:0"</span></span><br><span class="line">	Option <span class="string">"AllowEmptyInitialConfiguration"</span></span><br><span class="line">EndSection</span><br></pre></td></tr></table></figure>
-
 <h1 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h1><h2 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx fcitx-configtool</span><br><span class="line">sudo pacman -S fcitx-gtk2 fcitx-gtk3 fcitx-qt4 fcitx-qt5</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure>
 
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.xprofile</span><br></pre></td></tr></table></figure>
-
 <p>添加</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure>
 
@@ -407,7 +394,6 @@ ga('send', 'pageview');
 
 <p>安装输入法</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>可选</li>
 </ul>
@@ -419,9 +405,7 @@ ga('send', 'pageview');
 <li>fcitx-sogoupinyin</li>
 </ol>
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wqy-bitmapfont wqy-microhei \</span><br><span class="line">wqy-zenhei adobe-source-code-pro-fonts \</span><br><span class="line">adobe-source-han-sans-cn-fonts ttf-monaco</span><br></pre></td></tr></table></figure>
-
 <h2 id="安装-yay-使用-aur"><a href="#安装-yay-使用-aur" class="headerlink" title="安装 yay 使用 aur"></a>安装 yay 使用 aur</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yay</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>以后可以使用 yay 安装aur中的软件了, yay 跟 pacman 使用方法一样.</li>
 </ul>
@@ -431,7 +415,6 @@ ga('send', 'pageview');
 <p><a href="https://vitan.me/2018/07/28/linux-WeChat-QQ/">微信QQ</a></p>
 <p>科学上网</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S shadowsocks-qt5 proxychains-ng</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>Proxychains 实现终端下任意应用代理</li>
 </ul>
@@ -440,10 +423,8 @@ ga('send', 'pageview');
 
 <p>Telegram</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S telegram-desktop</span><br></pre></td></tr></table></figure>
-
 <p>Google Chrome</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S google-chrome</span><br></pre></td></tr></table></figure>
-
 <p>网易云音乐</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
 
@@ -502,7 +483,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
 
 
             
@@ -628,7 +609,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

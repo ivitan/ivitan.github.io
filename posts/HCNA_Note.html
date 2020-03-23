@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,13 +35,12 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux">
     <meta name="description" content="HCNA 学习笔记 网络整体架构企业网络企业网络：包括小型办公室、教育、政府、银行等行业或机构  企业网络远程互联：                                                                                                              总公司与分公司使用广域网链路(WAN)互联">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HCNA NOTE">
 <meta property="og:url" content="https://vitan.me/posts/HCNA_Note.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="HCNA 学习笔记 网络整体架构企业网络企业网络：包括小型办公室、教育、政府、银行等行业或机构  企业网络远程互联：                                                                                                              总公司与分公司使用广域网链路(WAN)互联">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/10/19/ci9HUqC17B53GvV.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/19/b9xZIt12lcgOifu.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/19/ik3RlpEa1FXoTDH.jpg">
@@ -63,10 +62,11 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://i.loli.net/2019/10/20/6y7Jc51WoUZINP8.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/20/RLPUMe4njqVylga.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/20/B7dYZRDnW2tQmc6.png">
-<meta property="og:updated_time" content="2019-12-23T07:46:12.000Z">
+<meta property="article:published_time" content="2019-10-20T02:12:16.000Z">
+<meta property="article:modified_time" content="2019-12-23T07:46:12.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HCNA NOTE">
-<meta name="twitter:description" content="HCNA 学习笔记 网络整体架构企业网络企业网络：包括小型办公室、教育、政府、银行等行业或机构  企业网络远程互联：                                                                                                              总公司与分公司使用广域网链路(WAN)互联">
 <meta name="twitter:image" content="https://i.loli.net/2019/10/19/ci9HUqC17B53GvV.png">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -78,7 +78,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -203,7 +203,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络整体架构"><span class="post-toc-number">1.</span> <span class="post-toc-text">网络整体架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#企业网络"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">企业网络</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#企业网络基本架构"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">企业网络基本架构</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络基本管理及模拟器使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">网络基本管理及模拟器使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用的传输介质"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">常用的传输介质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双绞线-8芯"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">双绞线(8芯)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#光纤"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">光纤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#串口电缆"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">串口电缆</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ENSP-模拟器"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">ENSP 模拟器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#冲突域"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">冲突域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#熟悉以及远程管理设备的实验"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">熟悉以及远程管理设备的实验</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络各种分层结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">网络各种分层结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络分层基础"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">网络分层基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OSI-开放式系统互联模型-七层模型："><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">OSI(开放式系统互联模型) 七层模型：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP-工业标准"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">TCP/IP(工业标准)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据封装"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据封装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TCP与UDP的概念相互的区别及优劣"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">TCP与UDP的概念相互的区别及优劣</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VRP-的操作"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">VRP 的操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ehternet基础"><span class="post-toc-number">4.</span> <span class="post-toc-text">Ehternet基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网帧"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">以太网帧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网MAC地址"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">以太网MAC地址</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MAC分类"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">MAC分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网封装格式"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">以太网封装格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以太网IP地址网络基础和FTP"><span class="post-toc-number">5.</span> <span class="post-toc-text">以太网IP地址网络基础和FTP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IP编制"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">IP编制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IP编制组成"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">IP编制组成</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网IPv4基础和分类"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">以太网IPv4基础和分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络的进制"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">网络的进制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IPv4地址分类"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">IPv4地址分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址范围"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">地址范围</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IP地址类型"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">IP地址类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#子网掩码-subset-mask"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">子网掩码(subset mask)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#地址规划"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">地址规划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有类IP编址的缺陷"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">有类IP编址的缺陷</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#划分子网方法"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">划分子网方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#科学但麻烦的方法"><span class="post-toc-number">5.9.1.</span> <span class="post-toc-text">科学但麻烦的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速但需要检验的方法"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">快速但需要检验的方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CIDR-无类域间路由"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">CIDR 无类域间路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网关-Gateway"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">网关(Gateway)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实施FTP"><span class="post-toc-number">5.13.</span> <span class="post-toc-text">实施FTP</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以太网IP头部概述和VRP相关讲解"><span class="post-toc-number">6.</span> <span class="post-toc-text">以太网IP头部概述和VRP相关讲解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IP包头的重要字段"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">IP包头的重要字段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VRP基础-应用"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">VRP基础(应用)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#VRP-通用路由平台-的FTP应用"><span class="post-toc-number">7.</span> <span class="post-toc-text">VRP(通用路由平台)的FTP应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设备初始化启动"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">设备初始化启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行视图"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">命令行视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行功能"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">命令行功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行在线帮助"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">命令行在线帮助</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令等级"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">命令等级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户界面"><span class="post-toc-number">7.6.</span> <span class="post-toc-text">用户界面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CTR-快捷键"><span class="post-toc-number">7.7.</span> <span class="post-toc-text">CTR 快捷键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置标题消息"><span class="post-toc-number">7.8.</span> <span class="post-toc-text">配置标题消息</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件系统管理"><span class="post-toc-number">8.</span> <span class="post-toc-text">文件系统管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件管理"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">配置文件管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储设备"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">存储设备</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络整体架构"><span class="post-toc-number">1.</span> <span class="post-toc-text">网络整体架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#企业网络"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">企业网络</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#企业网络基本架构"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">企业网络基本架构</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络基本管理及模拟器使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">网络基本管理及模拟器使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用的传输介质"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">常用的传输介质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双绞线-8芯"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">双绞线(8芯)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#光纤"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">光纤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#串口电缆"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">串口电缆</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ENSP-模拟器"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">ENSP 模拟器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#冲突域"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">冲突域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#熟悉以及远程管理设备的实验"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">熟悉以及远程管理设备的实验</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络各种分层结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">网络各种分层结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络分层基础"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">网络分层基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OSI-开放式系统互联模型-七层模型："><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">OSI(开放式系统互联模型) 七层模型：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP-工业标准"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">TCP&#x2F;IP(工业标准)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据封装"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据封装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TCP与UDP的概念相互的区别及优劣"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">TCP与UDP的概念相互的区别及优劣</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VRP-的操作"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">VRP 的操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ehternet基础"><span class="post-toc-number">4.</span> <span class="post-toc-text">Ehternet基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网帧"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">以太网帧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网MAC地址"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">以太网MAC地址</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MAC分类"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">MAC分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网封装格式"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">以太网封装格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以太网IP地址网络基础和FTP"><span class="post-toc-number">5.</span> <span class="post-toc-text">以太网IP地址网络基础和FTP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IP编制"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">IP编制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IP编制组成"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">IP编制组成</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太网IPv4基础和分类"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">以太网IPv4基础和分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络的进制"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">网络的进制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IPv4地址分类"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">IPv4地址分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址范围"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">地址范围</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IP地址类型"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">IP地址类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#子网掩码-subset-mask"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">子网掩码(subset mask)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#地址规划"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">地址规划</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有类IP编址的缺陷"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">有类IP编址的缺陷</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#划分子网方法"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">划分子网方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#科学但麻烦的方法"><span class="post-toc-number">5.9.1.</span> <span class="post-toc-text">科学但麻烦的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速但需要检验的方法"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">快速但需要检验的方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CIDR-无类域间路由"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">CIDR 无类域间路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网关-Gateway"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">网关(Gateway)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实施FTP"><span class="post-toc-number">5.13.</span> <span class="post-toc-text">实施FTP</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以太网IP头部概述和VRP相关讲解"><span class="post-toc-number">6.</span> <span class="post-toc-text">以太网IP头部概述和VRP相关讲解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IP包头的重要字段"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">IP包头的重要字段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VRP基础-应用"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">VRP基础(应用)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#VRP-通用路由平台-的FTP应用"><span class="post-toc-number">7.</span> <span class="post-toc-text">VRP(通用路由平台)的FTP应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设备初始化启动"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">设备初始化启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行视图"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">命令行视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行功能"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">命令行功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行在线帮助"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">命令行在线帮助</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令等级"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">命令等级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户界面"><span class="post-toc-number">7.6.</span> <span class="post-toc-text">用户界面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CTR-快捷键"><span class="post-toc-number">7.7.</span> <span class="post-toc-text">CTR 快捷键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置标题消息"><span class="post-toc-number">7.8.</span> <span class="post-toc-text">配置标题消息</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件系统管理"><span class="post-toc-number">8.</span> <span class="post-toc-text">文件系统管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件管理"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">配置文件管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储设备"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">存储设备</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -237,7 +237,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/ci9HUqC17B53GvV.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/ci9HUqC17B53GvV.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -252,7 +252,7 @@ ga('send', 'pageview');
 <li>结构图(左小右大)<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/b9xZIt12lcgOifu.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/b9xZIt12lcgOifu.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -273,7 +273,7 @@ ga('send', 'pageview');
 <h2 id="冲突域"><a href="#冲突域" class="headerlink" title="冲突域"></a>冲突域</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/ik3RlpEa1FXoTDH.jpg" alt title>
+                    <img src="https://i.loli.net/2019/10/19/ik3RlpEa1FXoTDH.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -283,7 +283,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/n2aqxv1Vpy8bukJ.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/n2aqxv1Vpy8bukJ.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -327,7 +327,7 @@ ga('send', 'pageview');
 <h2 id="数据封装"><a href="#数据封装" class="headerlink" title="数据封装"></a>数据封装</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/wHVmxltdUp7POZY.png" alt="批注 2019-10-19 142448.png" title>
+                    <img src="https://i.loli.net/2019/10/19/wHVmxltdUp7POZY.png" alt="批注 2019-10-19 142448.png" title="">
                 </div>
                 <div class="image-caption">批注 2019-10-19 142448.png</div>
             </figure>
@@ -342,9 +342,7 @@ ga('send', 'pageview');
 </ol>
 <h2 id="VRP-的操作"><a href="#VRP-的操作" class="headerlink" title="VRP 的操作"></a>VRP 的操作</h2><p>管理vlan(虚拟局域网)</p>
 <figure class="highlight bash"><figcaption><span>SW1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">system-view</span><br><span class="line">sysname SW1</span><br><span class="line">interface vlanif 1</span><br><span class="line">ip address 10.1.1.1 24</span><br><span class="line">display this</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>SW2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">system-view</span><br><span class="line">sysname SW2</span><br><span class="line">interface vlan 1</span><br><span class="line">ip address 10.1.1.2 24</span><br></pre></td></tr></table></figure>
-
 <p>ENSP自带了网络报文解析器。右键设备-数据抓包</p>
 <h1 id="Ehternet基础"><a href="#Ehternet基础" class="headerlink" title="Ehternet基础"></a>Ehternet基础</h1><blockquote>
 <p>网络中传输数据时需要定义并遵循一些标准，以太网是根据IEEE802.3 标准来管理和控制数据帧的。了解IEEE802.3标准是充分理解以太网中链路层通讯的标准。</p>
@@ -357,7 +355,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/jVUx84uDd6HQGRB.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/jVUx84uDd6HQGRB.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -377,7 +375,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/To9jSpQuv6ANefi.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/To9jSpQuv6ANefi.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -386,7 +384,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/V1tadSRlEiCQgFM.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/V1tadSRlEiCQgFM.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -395,7 +393,7 @@ ga('send', 'pageview');
 <h1 id="以太网IP地址网络基础和FTP"><a href="#以太网IP地址网络基础和FTP" class="headerlink" title="以太网IP地址网络基础和FTP"></a>以太网IP地址网络基础和FTP</h1><h2 id="IP编制"><a href="#IP编制" class="headerlink" title="IP编制"></a>IP编制</h2><h3 id="IP编制组成"><a href="#IP编制组成" class="headerlink" title="IP编制组成"></a>IP编制组成</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/ndLwcGxUgrkJhCq.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/ndLwcGxUgrkJhCq.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -410,7 +408,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/R1GazuNob9qBnwY.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/R1GazuNob9qBnwY.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -428,7 +426,7 @@ ga('send', 'pageview');
 <h2 id="IPv4地址分类"><a href="#IPv4地址分类" class="headerlink" title="IPv4地址分类"></a>IPv4地址分类</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/JEgjcsGPN43vtYD.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/JEgjcsGPN43vtYD.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -459,7 +457,7 @@ ga('send', 'pageview');
 <h2 id="子网掩码-subset-mask"><a href="#子网掩码-subset-mask" class="headerlink" title="子网掩码(subset mask)"></a>子网掩码(subset mask)</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/YGBtav3hmNwMCDi.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/YGBtav3hmNwMCDi.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -470,7 +468,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/s25D4BLpFRfkITJ.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/s25D4BLpFRfkITJ.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -479,7 +477,7 @@ ga('send', 'pageview');
 <h2 id="地址规划"><a href="#地址规划" class="headerlink" title="地址规划"></a>地址规划</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/xzUOeirdFZqsyjh.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/xzUOeirdFZqsyjh.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -490,7 +488,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/iNvgm3yKU5ehRZn.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/iNvgm3yKU5ehRZn.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -503,7 +501,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/20/ScY1AUKshDLRvx4.png" alt title>
+                    <img src="https://i.loli.net/2019/10/20/ScY1AUKshDLRvx4.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -513,7 +511,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/19/Sv8LD5ZQUioz7lw.png" alt title>
+                    <img src="https://i.loli.net/2019/10/19/Sv8LD5ZQUioz7lw.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -577,7 +575,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/20/xD3bcuXPFsLTiSZ.png" alt title>
+                    <img src="https://i.loli.net/2019/10/20/xD3bcuXPFsLTiSZ.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -588,7 +586,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/20/6y7Jc51WoUZINP8.png" alt title>
+                    <img src="https://i.loli.net/2019/10/20/6y7Jc51WoUZINP8.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -598,14 +596,11 @@ ga('send', 'pageview');
 </ul>
 <p>FTP：文件传输协议 (华为居多)，基于TCP，两个端口号,控制端口一般为21，而数据端口不一定是20，和FTP的应用模式有关，如果是主动模式，应该为20，如果为被动模式，由服务器端和客户端协商而定。<br>TFTP：简单文件传输协议 (思科居多)，基于UDP</p>
 <ol>
-<li>网络连通性<br>···bash SW1<br>interface vlanf1<br>ip address 10.1.1.1 255.255.255.0<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```bash SW2</span><br><span class="line">interface vlanf1</span><br><span class="line">ip<span class="built_in"> address </span>10.1.1.2 255.255.255.0</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
+<li><p>网络连通性<br>···bash SW1<br>interface vlanf1<br>ip address 10.1.1.1 255.255.255.0</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```bash SW2</span><br><span class="line">interface vlanf1</span><br><span class="line">ip<span class="built_in"> address </span>10.1.1.2 255.255.255.0</span><br></pre></td></tr></table></figure>
 <p>测试连通性</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping 10.1.1.1.2</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+</li>
 <li><p>开启FTP服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ftp server <span class="built_in">enable</span></span><br><span class="line">diaplay ftp-servver <span class="comment"># 查看状态</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -623,7 +618,7 @@ ga('send', 'pageview');
 <h2 id="命令行视图"><a href="#命令行视图" class="headerlink" title="命令行视图"></a>命令行视图</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/20/RLPUMe4njqVylga.png" alt title>
+                    <img src="https://i.loli.net/2019/10/20/RLPUMe4njqVylga.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -748,9 +743,7 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <figure class="highlight bash"><figcaption><span>R1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">system-view</span><br><span class="line">user-intetface vty 0 4</span><br><span class="line"><span class="built_in">set</span> authentication password clipher pass</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>R2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">talnet 12.1.1.1</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>R1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diaplay users <span class="comment"># 查看用户</span></span><br><span class="line">user privilege level 2 <span class="comment"># 设置用户登陆权限</span></span><br></pre></td></tr></table></figure>
 
 <p><code>user-interface maximum-vty number</code> 可以配置同时登陆到设备的VTY类型用户界面的最大个数，如最大登录用户数设为0，则任何用户都不能通过Telnet或者SSH登陆到路由器。</p>
@@ -778,7 +771,6 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">system-view</span><br><span class="line">user-interface console 0</span><br><span class="line">histoty-command max-size 20</span><br><span class="line">indle-timeout 1 30 <span class="comment"># 1分20秒(最好不要改))</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">system-view</span><br><span class="line">user-interface console 0</span><br><span class="line">screen-length 512 <span class="comment"># 最大行数512</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="CTR-快捷键"><a href="#CTR-快捷键" class="headerlink" title="CTR 快捷键"></a>CTR 快捷键</h2><table>
@@ -802,7 +794,6 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <h2 id="配置标题消息"><a href="#配置标题消息" class="headerlink" title="配置标题消息"></a>配置标题消息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置在用户登录前显示的标题信息</span></span><br><span class="line">header login information <span class="string">"Welcome to huawei certification"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置在用户登陆后显示的标题信息</span></span><br><span class="line">header shell information <span class="string">"Please dont't reboot this devices"</span></span><br></pre></td></tr></table></figure>
-
 <p><code>dis current-configuration | ?</code><br><code>dis current-configuration | include header</code> 显示包含 header 的命令有哪些 </p>
 <h1 id="文件系统管理"><a href="#文件系统管理" class="headerlink" title="文件系统管理"></a>文件系统管理</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><table>
 <thead>
@@ -867,7 +858,7 @@ ga('send', 'pageview');
 <h2 id="配置文件管理"><a href="#配置文件管理" class="headerlink" title="配置文件管理"></a>配置文件管理</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/10/20/B7dYZRDnW2tQmc6.png" alt title>
+                    <img src="https://i.loli.net/2019/10/20/B7dYZRDnW2tQmc6.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -974,7 +965,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
 
 
             
@@ -1100,7 +1091,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

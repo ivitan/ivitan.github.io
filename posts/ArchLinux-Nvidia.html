@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,18 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,ArchLinux">
     <meta name="description" content="ArchLinux 双显卡驱动。">
-<meta name="keywords" content="Linux,ArchLinux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux 显卡驱动">
 <meta property="og:url" content="https://vitan.me/posts/ArchLinux-Nvidia.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="ArchLinux 双显卡驱动。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-01T01:14:56.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ArchLinux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArchLinux 显卡驱动">
-<meta name="twitter:description" content="ArchLinux 双显卡驱动。">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +57,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -210,13 +211,10 @@ ga('send', 'pageview');
             <p>ArchLinux 双显卡驱动。</p>
 <a id="more"></a>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Nvidia-和-xorg-xrandr"><a href="#Nvidia-和-xorg-xrandr" class="headerlink" title="Nvidia 和 xorg-xrandr"></a>Nvidia 和 xorg-xrandr</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvidia nvidia-settings xorg-xrandr</span><br></pre></td></tr></table></figure>
-
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>获取显卡 PCI 地址</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci | grep -E <span class="string">"VGA|3D"</span></span><br></pre></td></tr></table></figure>
-
 <p>地址转换</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01:00.0 --&gt; 1:0:0 <span class="comment"># 转换示例</span></span><br></pre></td></tr></table></figure>
-
 <p>配置 xorg.conf</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/X11/xorg.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 
@@ -227,7 +225,6 @@ ga('send', 'pageview');
 </ul>
 <h1 id="各桌面配置-Display-Managers"><a href="#各桌面配置-Display-Managers" class="headerlink" title="各桌面配置 (Display Managers)"></a>各桌面配置 (Display Managers)</h1><h2 id="SDDM-Plasma"><a href="#SDDM-Plasma" class="headerlink" title="SDDM (Plasma)"></a>SDDM (Plasma)</h2><p>启动管理器编辑脚本</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/sddm/scripts/Xsetup</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>添加<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xrandr --setprovideroutputsource modesetting NVIDIA-0</span><br><span class="line">xrandr --auto</span><br></pre></td></tr></table></figure>
 
@@ -259,7 +256,6 @@ ga('send', 'pageview');
 <li>/usr/share/gdm/greeter/autostart/optimus.desktop 下创建</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/gdm/greeter/autostart/optimus.desktop</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>添加</li>
 </ul>
@@ -303,7 +299,6 @@ ga('send', 'pageview');
 <li>或者简单地禁用自动挂起(在电池上运行时，也可以用 ac 替换电池来禁用它)：</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u gdm dbus-launch gsettings <span class="built_in">set</span> org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type <span class="string">'nothing'</span></span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>参考</strong></p>
 <ul>
@@ -344,7 +339,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
 
 
             
@@ -470,7 +465,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,13 +35,12 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="数据处理">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Data Transformation">
 <meta property="og:url" content="https://vitan.me/posts/DataTransformation.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="数据处理">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2qy19bzvj203k08pa9y.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r0yfipgj208p077dg7.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r25wh3fj20hq067wen.jpg">
@@ -51,10 +50,13 @@ ga('send', 'pageview');
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r6ol8gaj20fs08f3yv.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rgd6jh1j20a303vgmb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rguhdh6j20ko05mq3z.jpg">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:published_time" content="2018-12-11T05:14:47.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Data Transformation">
-<meta name="twitter:description" content="数据处理">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2qy19bzvj203k08pa9y.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -66,7 +68,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -224,7 +226,6 @@ ga('send', 'pageview');
 <h2 id="数据运算"><a href="#数据运算" class="headerlink" title="数据运算"></a>数据运算</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将总价*10000</span></span><br><span class="line">df[<span class="string">'总价'</span>]*<span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#求总价列数据的平方根</span></span><br><span class="line">np.sqrt(df[<span class="string">'总价'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将‘朝向’与‘户型’两列数据拼接在一起</span></span><br><span class="line">df[<span class="string">'朝向'</span>]+df[<span class="string">'户型'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#求每套房的房价均值（记得要先将总价*10000）</span></span><br><span class="line">df[<span class="string">'总价'</span>]*<span class="number">10000</span>/df[<span class="string">'建筑面积'</span>]</span><br><span class="line"><span class="comment">#df.head()</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="切分"><a href="#切分" class="headerlink" title="切分"></a>切分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#以“元”为分界对s进行切分，并获取切分后的第一个字符</span></span><br><span class="line">s = <span class="string">'1.5元/平米・月'</span></span><br><span class="line">s.split(<span class="string">'元'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义removeDollar函数实现对字符e按‘元’进行切分并获取切分后的第一个字符</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeDollar</span><span class="params">(e)</span>:</span> </span><br><span class="line">    <span class="keyword">return</span> e.split(<span class="string">'元'</span>)[<span class="number">0</span>]</span><br><span class="line">removeDollar(s)<span class="comment">#调用以上函数对s进行应用</span></span><br><span class="line"><span class="comment">#将函数removeDollar套用到df的物业费列</span></span><br><span class="line">df[<span class="string">'物 业 费'</span>].map(removeDollar)</span><br></pre></td></tr></table></figure>
-
 <h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeDollar</span><span class="params">(e)</span>:</span></span><br><span class="line"><span class="keyword">return</span> e.split(<span class="string">'元'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#将上面函数以匿名函数形式套用到df的物业费列</span></span><br><span class="line">df[<span class="string">'物 业 费'</span>].map(<span class="keyword">lambda</span> e:e.split(<span class="string">'元'</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
 
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">square</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> e * e </span><br><span class="line">square(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">square2 = <span class="keyword">lambda</span> e: e * e</span><br><span class="line">square2(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
@@ -233,9 +234,7 @@ ga('send', 'pageview');
 <li>行列最值</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df = pandas.DataFrame([</span><br><span class="line">                [<span class="number">60</span>,<span class="number">70</span>,<span class="number">50</span>],\</span><br><span class="line">                [<span class="number">80</span>,<span class="number">79</span>,<span class="number">68</span>],\</span><br><span class="line">                [<span class="number">63</span>,<span class="number">66</span>,<span class="number">82</span>]], columns = [<span class="string">'First'</span>, <span class="string">'Second'</span>, <span class="string">'Third'</span>])</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对df的每一行数据应用匿名函数进行计算，匿名函数实现对每一行数据的最大值与最小值计算</span></span><br><span class="line">df.apply(<span class="keyword">lambda</span> e:e.max()-e.min(),axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#对df的每一列数据应用匿名函数进行计算，匿名函数实现对每一列数据的最大值与最小值计算</span></span><br><span class="line">df.apply(<span class="keyword">lambda</span> e:e.max()-e.min())</span><br></pre></td></tr></table></figure>
-
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>导入数据</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.read_excel(<span class="string">'house_sample.xlsx'</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 
@@ -247,7 +246,6 @@ ga('send', 'pageview');
 <h2 id="时间-lt-—-gt-String"><a href="#时间-lt-—-gt-String" class="headerlink" title="时间&lt;—-&gt;String"></a>时间&lt;—-&gt;String</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将时间转换成字符串</span></span><br><span class="line">current_time.strftime(<span class="string">'%Y/%m%d'</span>)</span><br><span class="line"></span><br><span class="line">s = <span class="string">'2017/04-22'</span></span><br><span class="line"><span class="comment">#将字符串转换成时间</span></span><br><span class="line">print(datetime.strptime(s,<span class="string">'%Y/%m-%d'</span>))</span><br></pre></td></tr></table></figure>
 
 <h2 id="时间回溯"><a href="#时间回溯" class="headerlink" title="时间回溯"></a>时间回溯</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</span><br><span class="line"><span class="comment">#newday为当前时间往前回溯10天</span></span><br><span class="line">newday = current_time - timedelta(<span class="number">10</span>)</span><br><span class="line">print(newday)</span><br><span class="line"></span><br><span class="line">current_time - newday</span><br><span class="line"><span class="comment">#将current_time往后推迟10天</span></span><br><span class="line">current_time + timedelta(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="comment">#dt代表往前推移的每一个日期</span></span><br><span class="line">    dt = current_time - timedelta(i)</span><br><span class="line">    <span class="comment">#将dt转换成字符串类似格式为“2017/04/21”，并打印输出</span></span><br><span class="line">    print(dt.strftime(<span class="string">'%Y/%m/%d'</span>))</span><br></pre></td></tr></table></figure>
-
 <h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> mktime</span><br><span class="line"><span class="comment">#利用mktime将current_time转换成unix时间戳</span></span><br><span class="line">mktime(current_time.timetuple())</span><br><span class="line"></span><br><span class="line"><span class="comment">#将上面的unix时间戳转换成datetime，调用datetime的fromtimestamp</span></span><br><span class="line">print(datetime.fromtimestamp(<span class="number">1544492604.0</span>))</span><br></pre></td></tr></table></figure>
 
 <h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h2><p>数据导入</p>
@@ -261,11 +259,10 @@ ga('send', 'pageview');
 <li>one-hot</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将df的"朝向"列数据进行one-hot处理，即转换成虚拟变量</span></span><br><span class="line">pd.get_dummies(df[<span class="string">'朝向'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用pandas的concat函数将“朝向”列数据进行one-hot处理后，与原来的df数据框合并</span></span><br><span class="line">df = jion(pd.compat([df,pd.get_dummies([<span class="string">'朝向'</span>])],axis=<span class="number">1</span>))</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2qy19bzvj203k08pa9y.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2qy19bzvj203k08pa9y.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -274,13 +271,11 @@ ga('send', 'pageview');
 <li>删除数据</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除df的'朝向'数据</span></span><br><span class="line">df = df.drop(<span class="string">'朝向'</span>,axis=<span class="number">1</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
-
 <h2 id="数据透视表"><a href="#数据透视表" class="headerlink" title="数据透视表"></a>数据透视表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用数据透视表绘制以下表格</span></span><br><span class="line">df2 = df.pivot_table(index=<span class="string">'张贴日期'</span>,columns=<span class="string">'产权性质'</span>,values=<span class="string">'总价'</span>,aggfunc=sum,fill_value=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#表中数据为对应交叉对象的总价之和</span></span><br><span class="line">df2.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r0yfipgj208p077dg7.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r0yfipgj208p077dg7.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -289,21 +284,19 @@ ga('send', 'pageview');
 <li>转换</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将上面表格的行索引与列索引进行对换</span></span><br><span class="line">df3 = df.pivot_table(index=<span class="string">'产权性质'</span>,columns=<span class="string">'张贴日期'</span>,values=<span class="string">'总价'</span>,aggfunc=sum,fill_value=<span class="number">0</span>)</span><br><span class="line">df3.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r25wh3fj20hq067wen.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r25wh3fj20hq067wen.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h1 id="利用转置函数实现上面的行索引与列索引对换"><a href="#利用转置函数实现上面的行索引与列索引对换" class="headerlink" title="利用转置函数实现上面的行索引与列索引对换"></a>利用转置函数实现上面的行索引与列索引对换</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df2.T</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r3aj8ejj20ho065wen.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r3aj8ejj20ho065wen.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -312,11 +305,10 @@ ga('send', 'pageview');
 <li>表</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#调整上面的参数，绘制以下表格</span></span><br><span class="line">df_multi_idx = df.pivot_table(index=[<span class="string">'装修'</span>,<span class="string">'楼层'</span>],columns=<span class="string">'张贴日期'</span>,values=<span class="string">'总价'</span>,aggfunc=sum,fill_value=<span class="number">0</span>)</span><br><span class="line">df_multi_idx.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r4alq9qj20fm08lwet.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r4alq9qj20fm08lwet.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -325,11 +317,10 @@ ga('send', 'pageview');
 <li>unstack函数</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用unstack函数转换成宽表格</span></span><br><span class="line">df_wide = df_multi_idx.unstack()</span><br><span class="line">df_wide.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r5crzljj20hc08mt95.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r5crzljj20hc08mt95.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -338,11 +329,10 @@ ga('send', 'pageview');
 <li>stack函数</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用stack转换成长表格</span></span><br><span class="line">df_long = df_wide.stack()</span><br><span class="line">df_long.head()</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r6ol8gaj20fs08f3yv.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2r6ol8gaj20fs08f3yv.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -351,21 +341,19 @@ ga('send', 'pageview');
 
 <h2 id="整理文章关键词"><a href="#整理文章关键词" class="headerlink" title="整理文章关键词"></a>整理文章关键词</h2><p>空单元格处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#判断df中每一列是否有空的单元格</span></span><br><span class="line">df.isnull().any()</span><br><span class="line"></span><br><span class="line"><span class="comment">#将具有空单元格的行数据删除</span></span><br><span class="line">df = df.dropna()</span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
-
 <p>关键字处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'keyword'</span>].head(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#对df的keyword列提取关键词并将提取结果覆盖原keyword列 提示：先根据空格切割split再索引</span></span><br><span class="line">s = <span class="string">'    \n关键字 : \n联合报农发农业部门'</span></span><br><span class="line">df[<span class="string">'keyword'</span>] = df[<span class="string">'keyword'</span>].map(<span class="keyword">lambda</span> e:e.split(<span class="string">':'</span>)[<span class="number">1</span>].strip())</span><br><span class="line">df.head(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rgd6jh1j20a303vgmb.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rgd6jh1j20a303vgmb.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rguhdh6j20ko05mq3z.jpg" alt title>
+                    <img src="http://ww1.sinaimg.cn/large/d71f8b2fgy1fy2rguhdh6j20ko05mq3z.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -378,7 +366,6 @@ ga('send', 'pageview');
 
 <p>刪除Source</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除source列数据</span></span><br><span class="line"><span class="keyword">del</span> df[<span class="string">'source'</span>]</span><br><span class="line"></span><br><span class="line">df.head(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><strong>数据</strong></p>
 <ul>
@@ -418,7 +405,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -544,7 +531,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

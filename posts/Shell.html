@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,13 +35,12 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Linux,Shell">
     <meta name="description" content="Shell 总结">
-<meta name="keywords" content="Linux,Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell">
 <meta property="og:url" content="https://vitan.me/posts/Shell.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Shell 总结">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191523.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191707.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720192503.png">
@@ -71,10 +70,12 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721185930.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191406.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191743.png">
-<meta property="og:updated_time" content="2020-01-08T06:27:54.000Z">
+<meta property="article:published_time" content="2019-07-20T10:59:04.000Z">
+<meta property="article:modified_time" content="2020-01-08T06:27:54.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell">
-<meta name="twitter:description" content="Shell 总结">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191523.png">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -86,7 +87,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -242,7 +243,7 @@ ga('send', 'pageview');
 <h1 id="变量替换和测试"><a href="#变量替换和测试" class="headerlink" title="变量替换和测试"></a>变量替换和测试</h1><h2 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191523.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191523.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -250,7 +251,7 @@ ga('send', 'pageview');
 <h2 id="变量测试"><a href="#变量测试" class="headerlink" title="变量测试"></a>变量测试</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191707.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191707.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -260,7 +261,6 @@ ga('send', 'pageview');
 
 <p>方法二</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr length <span class="string">"<span class="variable">$string</span>"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>string 有空格，则必须加双引号</li>
 </ul>
@@ -271,7 +271,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720192503.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720192503.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -287,7 +287,6 @@ ga('send', 'pageview');
 
 <p>抽取字符串中的子串</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var1=<span class="string">"quicstart is a app"</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:10&#125;</span></span><br><span class="line">substr2=<span class="variable">$&#123;var1:10:6&#125;</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:-5&#125;</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:-10:4&#125;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>expr 索引1开始,${string:position}从0开始</li>
 </ul>
@@ -298,7 +297,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720194539.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720194539.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -318,13 +317,12 @@ ga('send', 'pageview');
 <h2 id="declare参数表"><a href="#declare参数表" class="headerlink" title="declare参数表"></a>declare参数表</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720195605.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720195605.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明整数型变量</span></span><br><span class="line"><span class="built_in">declare</span> -i ab <span class="comment">#声明整数型变量</span></span><br><span class="line">ab=56 <span class="comment">#改变变量内容</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ab</span> <span class="comment">#显示变量内容</span></span><br><span class="line">56</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改变变量属性</span></span><br><span class="line"><span class="built_in">declare</span> -i ef <span class="comment">#声明整数型变量</span></span><br><span class="line">ef=1  <span class="comment">#变量赋值（整数值）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span> <span class="comment">#显示变量内容</span></span><br><span class="line">1</span><br><span class="line">ef=<span class="string">"wer"</span> <span class="comment">#变量赋值（文本值）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span> </span><br><span class="line">0</span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> +i ef <span class="comment">#取消变量属性</span></span><br><span class="line">ef=<span class="string">"wer"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span></span><br><span class="line">wer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置变量只读</span></span><br><span class="line"><span class="built_in">declare</span> -r ab <span class="comment">#设置变量为只读</span></span><br><span class="line">ab=88 <span class="comment">#改变变量内容</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ab</span> <span class="comment">#显示变量内容</span></span><br><span class="line">56</span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明数组变量</span></span><br><span class="line"><span class="built_in">declare</span> -a <span class="built_in">cd</span>=<span class="string">'([0]="a" [1]="b" [2]="c")'</span> <span class="comment">#声明数组变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;cd[1]&#125;</span></span><br><span class="line">b <span class="comment">#显示变量内容</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;cd[@]&#125;</span> <span class="comment">#显示整个数组变量内容</span></span><br><span class="line">a b c</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>declare -x</code> 声明为环境变量，可在脚本中直接使用</li>
 </ul>
@@ -334,7 +332,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200443.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200443.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -343,7 +341,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200649.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200649.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -351,7 +349,7 @@ ga('send', 'pageview');
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201000.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201000.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -359,7 +357,7 @@ ga('send', 'pageview');
 <h1 id="Bash运算之bc"><a href="#Bash运算之bc" class="headerlink" title="Bash运算之bc"></a>Bash运算之bc</h1><h2 id="bc-操作"><a href="#bc-操作" class="headerlink" title="bc 操作"></a>bc 操作</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201134.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201134.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -413,7 +411,6 @@ ga('send', 'pageview');
 </ol>
 <p>实例</p>
 <figure class="highlight bash"><figcaption><span>库文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> add</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> + <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> reduce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> - <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> multiple</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> \* <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> diveid</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> / <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> sys_load</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Memory Info"</span></span><br><span class="line">    free -m</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Disk Usage"</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    df -h </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">. /home/vitan/workplace/Shell/learn/<span class="keyword">function</span>/base_function</span><br><span class="line">add 122 3</span><br><span class="line">reduce 9 3</span><br><span class="line">multiple 22 11</span><br><span class="line">diveid 12 3</span><br><span class="line">sys_load</span><br></pre></td></tr></table></figure>
 
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
@@ -426,24 +423,16 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720205155.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720205155.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ol>
-<li><p>查找 /etc 目录下 conf 结尾的文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fing /etc -name <span class="string">'.conf'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找当前目录下文件名为 aa 的文件，不区分大小写</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name aa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找文件属主为 hdfs 的所有文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -user hdfs</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查找文件属组为 yarn 的所有文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -group yarm</span><br></pre></td></tr></table></figure>
-
+<li>查找 /etc 目录下 conf 结尾的文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fing /etc -name <span class="string">'.conf'</span></span><br></pre></td></tr></table></figure></li>
+<li>查找当前目录下文件名为 aa 的文件，不区分大小写<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name aa</span><br></pre></td></tr></table></figure></li>
+<li>查找文件属主为 hdfs 的所有文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -user hdfs</span><br></pre></td></tr></table></figure></li>
+<li>查找文件属组为 yarn 的所有文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -group yarm</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -505,13 +494,11 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找当前目录下所有普通文件，排除test目录</span></span><br><span class="line">find . -path ./etc -prune -o -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 查找当前目录下所有普通文件，但排除etc和opt目录</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> -f -a -user hdfs</span><br><span class="line"><span class="comment"># 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> -f -a -user hdfs -a -size +2M</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>-newer file1</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -newer a</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -newer a</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
 <li><p>操作</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索/etc下的文件非目录，以conf结尾，大于19k，然后删除</span></span><br><span class="line">find ./etc -<span class="built_in">type</span> -f -name <span class="string">'*.conf'</span> -size +10k -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br><span class="line"></span><br><span class="line">find /var/<span class="built_in">log</span>/ -name <span class="string">'*.log'</span> -mtime +7 -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br><span class="line">find /etc -size +10k -<span class="built_in">type</span> -f -name <span class="string">'*.conf'</span> -<span class="built_in">exec</span> cp &#123;&#125; /root/conf/ \;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>-print 打印输出</li>
 <li>-exec 对搜索的文件执行特定的操作</li>
@@ -554,7 +541,7 @@ ga('send', 'pageview');
 <h2 id="各命令使用场景推荐"><a href="#各命令使用场景推荐" class="headerlink" title="各命令使用场景推荐"></a>各命令使用场景推荐</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094218.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094218.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -569,14 +556,14 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094721.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094721.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094812.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094812.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -585,7 +572,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="egrep"><a href="#egrep" class="headerlink" title="egrep"></a>egrep</h2><p>egrep语法</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep(选项)(查找模式)(文件名1，文件名2，……)</span><br></pre></td></tr></table></figure>
-
 <h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><p>sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理</p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>
 <li>stdot | sed [option] “pattern command”</li>
@@ -594,7 +580,7 @@ ga('send', 'pageview');
 <h2 id="选项-1"><a href="#选项-1" class="headerlink" title="选项"></a>选项</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721095810.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721095810.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -604,7 +590,7 @@ ga('send', 'pageview');
 <h2 id="sed-的pattern详解"><a href="#sed-的pattern详解" class="headerlink" title="sed 的pattern详解"></a>sed 的pattern详解</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100028.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100028.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -614,14 +600,14 @@ ga('send', 'pageview');
 <h2 id="sed-中的编辑命令"><a href="#sed-中的编辑命令" class="headerlink" title="sed 中的编辑命令"></a>sed 中的编辑命令</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100852.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100852.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100931.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100931.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -635,7 +621,6 @@ ga('send', 'pageview');
 <li>&amp;和\1 引用模式匹配到的整个串</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file中寻找1开头的后跟两任意字符以e结尾的字符</span></span><br><span class="line">sed <span class="string">"s/1..e/&amp;r/g"</span> file</span><br><span class="line">sed <span class="string">"s/\(1...e\)/\1r/g"</span> file <span class="comment"># 使用\1代表搜寻到的字符串</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>上面两种方法实现一样的功能，分别使用&amp;和\1代表搜寻到的整个字符串</li>
 <li>区别在于&amp;只能表示匹配到的完整字符串，只能引用整个字符串，而\1可以使用()对匹配到的</li>
@@ -652,7 +637,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721102519.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721102519.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -663,7 +648,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103230.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103230.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -673,7 +658,7 @@ ga('send', 'pageview');
 <h2 id="sed-删除特定内容"><a href="#sed-删除特定内容" class="headerlink" title="sed 删除特定内容"></a>sed 删除特定内容</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103352.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103352.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -695,7 +680,7 @@ ga('send', 'pageview');
 <h2 id="sed-修改文件内容"><a href="#sed-修改文件内容" class="headerlink" title="sed 修改文件内容"></a>sed 修改文件内容</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721104309.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721104309.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -707,17 +692,10 @@ ga('send', 'pageview');
 <li>语法</li>
 </ul>
 <ol>
-<li><p>a</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第十行后追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'10a Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 第10到20行，每一行后面都追加"Test line behind"</span></span><br><span class="line">sed -i <span class="string">'10,20a Test line behind'</span> passws</span><br><span class="line"><span class="comment"># 匹配到/bin/bash的行后面追加"insert line for /bin/bash behind"</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/a insert line for /bin/bash behind'</span> passws</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>i</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配yarn开头的行，在匹配航后面追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'yarn/i Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 每一行前面都追加“insert line before every line"</span></span><br><span class="line">sed -i <span class="string">'i insert line before every line'</span> passwd</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>r</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将/etc/fstab文件的内容追加到passwd的第20行后面</span></span><br><span class="line">sed -i <span class="string">'20r /etc/fstab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/inittab文件内容追加到passwd文件匹配/bin/bash行后面</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/r /etc/inittab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/vconsol.conf文件内容追加到passwd文件中特定行的后面，匹配以ftp开头的行后面</span></span><br><span class="line">sed -i /^ftp/,18r /etc.vconsole.conf’ pssswd</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>w</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将passwd文件匹配到/bin/bash的行追加到/tmp/sed.txt文件中</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/w /tmp/sed.txt'</span> passwd</span><br><span class="line"><span class="comment"># 将passwd文件从10行还是到匹配到hsfs开头的所有行内容追加到/tmp/sed-1.txt</span></span><br><span class="line">sed -i <span class="string">'10,/^hsfs/w /tmp/sed-1.txt'</span> passwd</span><br></pre></td></tr></table></figure>
+<li>a<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第十行后追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'10a Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 第10到20行，每一行后面都追加"Test line behind"</span></span><br><span class="line">sed -i <span class="string">'10,20a Test line behind'</span> passws</span><br><span class="line"><span class="comment"># 匹配到/bin/bash的行后面追加"insert line for /bin/bash behind"</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/a insert line for /bin/bash behind'</span> passws</span><br></pre></td></tr></table></figure></li>
+<li>i<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配yarn开头的行，在匹配航后面追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'yarn/i Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 每一行前面都追加“insert line before every line"</span></span><br><span class="line">sed -i <span class="string">'i insert line before every line'</span> passwd</span><br></pre></td></tr></table></figure></li>
+<li>r<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将/etc/fstab文件的内容追加到passwd的第20行后面</span></span><br><span class="line">sed -i <span class="string">'20r /etc/fstab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/inittab文件内容追加到passwd文件匹配/bin/bash行后面</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/r /etc/inittab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/vconsol.conf文件内容追加到passwd文件中特定行的后面，匹配以ftp开头的行后面</span></span><br><span class="line">sed -i /^ftp/,18r /etc.vconsole.conf’ pssswd</span><br></pre></td></tr></table></figure></li>
+<li>w<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将passwd文件匹配到/bin/bash的行追加到/tmp/sed.txt文件中</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/w /tmp/sed.txt'</span> passwd</span><br><span class="line"><span class="comment"># 将passwd文件从10行还是到匹配到hsfs开头的所有行内容追加到/tmp/sed-1.txt</span></span><br><span class="line">sed -i <span class="string">'10,/^hsfs/w /tmp/sed-1.txt'</span> passwd</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -735,7 +713,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721124926.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721124926.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -744,14 +722,14 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721125045.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721125045.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721130039.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721130039.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -762,7 +740,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134349.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134349.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -771,14 +749,13 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134554.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134554.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 
 <p>实例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不加任何修饰输出 </span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf $1&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 换行输出</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s\n",$1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出两个变量</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s%s\n",$1,$7&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个第二个变量长度20(默认右对齐)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%20s %20s\n",$1,$7&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个第二个变量长度20(左对齐)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%-20s %-20s\n",$1,$7&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以字符串格式打印/etc/passwd中的第七个字段，以":"为分隔符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s\n",$7&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 以10进制格式打印/etc/passwd中的第3个字段，以":"为分隔符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%d\n",$3&#125;'</span> /etc/passwd <span class="comment">#不指定位数默认左对齐（指定位数右对齐 %-d)</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 浮点数</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%o.3f\n",$3&#125;'</span> /etc/passwd </span><br><span class="line"></span><br><span class="line"><span class="comment"># 16进制</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%x\n",$3&#125;'</span> /etc/passwd </span><br><span class="line"></span><br><span class="line"><span class="comment"># 8进制</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%o\n",$3&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 科学计数法</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%e\n",$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
 
 <h2 id="awk模式匹配的两种用法"><a href="#awk模式匹配的两种用法" class="headerlink" title="awk模式匹配的两种用法"></a>awk模式匹配的两种用法</h2><ul>
@@ -805,10 +782,9 @@ ga('send', 'pageview');
 <li>布尔运算:||(或),&amp;&amp;(与),!(非)</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以：为分隔符，匹配文件中包含hdfs或者yarn的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$1=="hdfs" || $1=="yarn" &#123;print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三字段小于50且第四字段大于50的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3&lt;50 &amp;&amp; $4&gt;50 &#123;print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3&lt;50 &amp;&amp; $7~/\bin\/bash/ &#123;print $0&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-
+<h2 id="awk-动作中的表达式用法"><a href="#awk-动作中的表达式用法" class="headerlink" title="awk 动作中的表达式用法"></a>awk 动作中的表达式用法</h2><p>算术运算符</p>
 </li>
 </ul>
-<h2 id="awk-动作中的表达式用法"><a href="#awk-动作中的表达式用法" class="headerlink" title="awk 动作中的表达式用法"></a>awk 动作中的表达式用法</h2><p>算术运算符</p>
 <table>
 <thead>
 <tr>
@@ -853,7 +829,6 @@ ga('send', 'pageview');
 <li>实例</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;var=20;var1="hello";print var,var1&#125;'</span></span><br><span class="line">  </span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2+=num1;print num2,num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2+=num1;print num2+num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2=30;printf "%0.2f\n",num1/num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;x=2;y=x++;print x,y&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;x=2;y=x--;print x,y&#125;'</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算文件中空白行数量</span></span><br><span class="line">awk <span class="string">'/^$/&#123;sumx=0;sum++&#125;END&#123;print sum&#125;'</span> /etc/services</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 计算课程的平均分</span></span><br><span class="line">awk <span class="string">'&#123;total=S2+$3+$5+$5;AVG=total/4;printf "%-8s,%-5d%-5d%-5d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG&#125;'</span> stu.txt</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;printf "%-8s%-8s%-8s%-8s%-8s%s\n","姓名","语文","数学","英语","物理","平均分"&#125;&#123;total=$2+$3+$4+$5;AVG=total/4;printf "%-8s%-8d%-8d%-8d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG&#125;'</span> stu.txt</span><br></pre></td></tr></table></figure>
 
 <h2 id="awk-动作中的条件及循环语句"><a href="#awk-动作中的条件及循环语句" class="headerlink" title="awk 动作中的条件及循环语句"></a>awk 动作中的条件及循环语句</h2><ul>
@@ -865,7 +840,6 @@ ga('send', 'pageview');
 <li>实例</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以：为分隔符只打印第3个字段的数值在50-100范围内的行信息</span></span><br><span class="line">awk <span class="string">'BEFIN&#123;FS=":"&#125;&#123;if($3&gt;50 &amp;&amp; $3&lt;100&gt;) print $0&#125;'</span> /etc/passwd</span><br><span class="line">awk <span class="string">'BEFIN&#123;FS=":"&#125;&#123;if($3&gt;50 || $3&lt;100&gt;) print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 小于50的UID</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-5d\n","小于50的UID:",$3&#125;'</span> /etc/passwd</span><br><span class="line">  </span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><p>vim scripts.awk</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    FS=<span class="string">":"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    f(<span class="variable">$3</span>&lt;50)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"小于50的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable">$3</span>&gt;50 &amp;&amp; <span class="variable">$3</span>&lt;100)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"大于50且小于100的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"大于100的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -892,27 +866,21 @@ ga('send', 'pageview');
 <li>1+2+…100的和</li>
 </ul>
 <ol>
-<li><p>while</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">    &#123;</span><br><span class="line">      sum+=1</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<li>while<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">    &#123;</span><br><span class="line">      sum+=1</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>awk -f while.wak</li>
 </ul>
 </li>
 </ol>
 <ul>
-<li><p>for</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">for</span>(i0;i&lt;=100;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<li>for<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">for</span>(i0;i&lt;=100;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>awk -f for.awk</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li><p>do while</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">    i++</span><br><span class="line">  &#125;<span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<li>do while<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">    i++</span><br><span class="line">  &#125;<span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>awk -f do_while.awk</li>
 </ul>
@@ -924,7 +892,7 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721185930.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721185930.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -935,19 +903,18 @@ ga('send', 'pageview');
 <li>计算平均分大于90的各科总分</li>
 </ul>
 <figure class="highlight bash"><figcaption><span>student.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-10s%-10s%-10s%-10s%-10s%-10s\n"</span>,<span class="string">"Name"</span>,<span class="string">"Chinese"</span>,<span class="string">"English"</span>,<span class="string">"Math"</span>,<span class="string">"Physical"</span>,<span class="string">"Average"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  total=<span class="variable">$2</span>+<span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">  avg=total/4</span><br><span class="line">  <span class="keyword">if</span>(avg&gt;90)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d%-0.2f\n"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>,avg</span><br><span class="line">    score_chinese+=<span class="variable">$2</span></span><br><span class="line">    score_english+=<span class="variable">$3</span></span><br><span class="line">    score_math+=<span class="variable">$4</span></span><br><span class="line">    score_physical+=<span class="variable">$5</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d\n"</span>,<span class="string">""</span>,score_chinese,score_english,score_math,score_physical</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="awk-中的字符串函数"><a href="#awk-中的字符串函数" class="headerlink" title="awk 中的字符串函数"></a>awk 中的字符串函数</h2><p>字符串函数对照表</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191406.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191406.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191743.png" alt title>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191743.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -982,7 +949,6 @@ ga('send', 'pageview');
 <li>搜索字符串”Tranction 2345 start:select * from master”第一个数字出现的位置</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Tranction 2345 start:select * from master";location=match(str,/[0-9]/);print location&#125;'</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>正则表达式要用 <code>//</code> 引起来</li>
 </ul>
@@ -1030,7 +996,6 @@ ga('send', 'pageview');
 <li>-f 引入文件</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f student.awk /etc/passws</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>-F</li>
 </ul>
@@ -1095,7 +1060,6 @@ ga('send', 'pageview');
 <li>计算横向数总和，计算纵向数据总和</li>
 </ol>
 <figure class="highlight bash"><figcaption><span>数据</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Allen 80 90 96 98</span><br><span class="line">Mike  93 98 92 91</span><br><span class="line">Zhang 78 76 87 92</span><br><span class="line">Jerry 86 89 68 92</span><br><span class="line">Han   85 95 75 90</span><br><span class="line">Li    78 88 98 100</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><figcaption><span>stu.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10s%-10s%-10s%-10s%-10s\n"</span>,<span class="string">"Name"</span>,<span class="string">"Chinese"</span>,<span class="string">"Math"</span>,<span class="string">"English"</span>,<span class="string">"Physical"</span>,<span class="string">"Total"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  total=<span class="variable">$2</span>+<span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">  yuwen_sum+=<span class="variable">$2</span></span><br><span class="line">  math_sum+=<span class="variable">$3</span></span><br><span class="line">  english_sum+=<span class="variable">$4</span></span><br><span class="line">  physical_sum+=<span class="variable">$5</span></span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d%-10d\n"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>,total</span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d\n"</span>,<span class="string">""</span>,yuwen_sum,math_sum,english_sum,physical_sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="awk-处理数据例子"><a href="#awk-处理数据例子" class="headerlink" title="awk 处理数据例子"></a>awk 处理数据例子</h2><p>生成随机数据</p>
@@ -1166,7 +1130,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
 
 
             
@@ -1292,7 +1256,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

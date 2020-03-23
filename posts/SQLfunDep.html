@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="SQL">
     <meta name="description" content="函数依赖 Functional Dependency数据依赖的一种，它反映属性或属性组之间相依存，互相制约的关系，即反映现实世界的约束关系。">
-<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 函数赖与模式分解">
 <meta property="og:url" content="https://vitan.me/posts/SQLfunDep.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="函数依赖 Functional Dependency数据依赖的一种，它反映属性或属性组之间相依存，互相制约的关系，即反映现实世界的约束关系。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-21T10:58:02.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL 函数赖与模式分解">
-<meta name="twitter:description" content="函数依赖 Functional Dependency数据依赖的一种，它反映属性或属性组之间相依存，互相制约的关系，即反映现实世界的约束关系。">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -213,7 +213,6 @@ ga('send', 'pageview');
 <p>定义<br>设R(U)是属性U上的一个关系模式，X和Y均为U={A1，A2，…，An}的子集，r为R的任一关系，如果对于r中的任意两个元组u，v，只要有u[X]=v[X]，就有u[Y]=v[Y]，则称X函数决定Y，或称Y函数依赖于X，记为X→Y。</p>
 <p>例：</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">sno</span>-学生ID，tno-教师ID，<span class="keyword">cno</span>-课程ID，</span><br><span class="line">sname-学生姓名，tname-教师姓名，cname-课程名称，grade-成绩）</span><br><span class="line"><span class="keyword">sno</span>→sname, <span class="keyword">cno</span>→cname,(<span class="keyword">sno</span>,<span class="keyword">cno</span>)→grade √</span><br><span class="line">sname→<span class="keyword">sno</span>, tno→<span class="keyword">cno</span>, <span class="keyword">sno</span>→tname ×</span><br></pre></td></tr></table></figure>
-
 <p>函数依赖是语义范畴</p>
 <ol>
 <li>语义：数据所反映的现实世界事物本质联系</li>
@@ -231,7 +230,6 @@ ga('send', 'pageview');
 <p>在R(U)中，如果X→Y，并且对于X的任何真子集X’都有X’Y’，则称 Y 完全依赖于 X ，记作X→Y；否则，如果X→Y，且X中存在一个真子集X’，使得X’→Y成立，则称 Y 部分依赖 于 X。</p>
 <p>例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">学生ID，学生姓名，所修课程ID，课程名称，成绩</span><br><span class="line">（学生ID，所修课程ID）→成绩</span><br><span class="line">成绩既不能单独依赖于学生ID，也不能单独依赖于所修课程ID，因此成绩完全函数依赖于关键字。</span><br><span class="line">（学生ID，所修课程ID）→学生姓名</span><br><span class="line">学生ID→学生姓名</span><br><span class="line">学生姓名可以依赖于关键字的一个主属性——学生ID，因此学生姓名部分函数依赖于（学生ID，所修课程ID）。</span><br></pre></td></tr></table></figure>
-
 <h1 id="平凡函数依赖和非平凡函数依赖"><a href="#平凡函数依赖和非平凡函数依赖" class="headerlink" title="平凡函数依赖和非平凡函数依赖"></a>平凡函数依赖和非平凡函数依赖</h1><p>平凡函数依赖</p>
 <p>当关系中属性集合Y是属性集合X的子集时(Y?X)，存在函数依赖X→Y，即一组属性函数决定它的所有子集，这种函数依赖称为 <code>平凡函数依赖</code></p>
 <p>非平凡函数依赖</p>
@@ -255,15 +253,10 @@ ga('send', 'pageview');
 </ul>
 <p>例2<br>Student(Sno, Sname, Ssex, Sage, Sdept)</p>
 <ul>
-<li><p>假设不允许重名，则有:</p>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sno → Ssex， Sno → Sage , Sno → Sdept，</span><br><span class="line">Sno ←→ Sname, Sname → Ssex， Sname → Sage</span><br><span class="line">Sname → Sdept</span><br><span class="line">但Ssex －\→Sage</span><br><span class="line">若<span class="keyword">X</span>→<span class="keyword">Y</span>，并且<span class="keyword">Y</span>→<span class="keyword">X</span>, 则记为<span class="keyword">X</span>←→<span class="keyword">Y</span>。</span><br><span class="line">若<span class="keyword">Y</span>不函数依赖于<span class="keyword">X</span>, 则记为<span class="keyword">X</span>－\→<span class="keyword">Y</span>。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在关系模式R(U)中，对于U的子集X和Y，</p>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果<span class="keyword">X</span>→<span class="keyword">Y</span>，但<span class="keyword">Y</span> 不为 <span class="keyword">X</span>的子集，则称<span class="keyword">X</span>→<span class="keyword">Y</span>是非平凡的函数依赖</span><br><span class="line">若<span class="keyword">X</span>→<span class="keyword">Y</span>，但<span class="keyword">Y</span> 为 <span class="keyword">X</span>的子集, 则称<span class="keyword">X</span>→<span class="keyword">Y</span>是平凡的函数依赖</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>假设不允许重名，则有:<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sno → Ssex， Sno → Sage , Sno → Sdept，</span><br><span class="line">Sno ←→ Sname, Sname → Ssex， Sname → Sage</span><br><span class="line">Sname → Sdept</span><br><span class="line">但Ssex －\→Sage</span><br><span class="line">若<span class="keyword">X</span>→<span class="keyword">Y</span>，并且<span class="keyword">Y</span>→<span class="keyword">X</span>, 则记为<span class="keyword">X</span>←→<span class="keyword">Y</span>。</span><br><span class="line">若<span class="keyword">Y</span>不函数依赖于<span class="keyword">X</span>, 则记为<span class="keyword">X</span>－\→<span class="keyword">Y</span>。</span><br></pre></td></tr></table></figure></li>
+<li>在关系模式R(U)中，对于U的子集X和Y，<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果<span class="keyword">X</span>→<span class="keyword">Y</span>，但<span class="keyword">Y</span> 不为 <span class="keyword">X</span>的子集，则称<span class="keyword">X</span>→<span class="keyword">Y</span>是非平凡的函数依赖</span><br><span class="line">若<span class="keyword">X</span>→<span class="keyword">Y</span>，但<span class="keyword">Y</span> 为 <span class="keyword">X</span>的子集, 则称<span class="keyword">X</span>→<span class="keyword">Y</span>是平凡的函数依赖</span><br></pre></td></tr></table></figure>
+例3<br>在关系SC(Sno, Cno, Grade)中</li>
 </ul>
-<p>例3<br>在关系SC(Sno, Cno, Grade)中</p>
 <ol>
 <li>凡函数依赖:(Sno, Cno) → Grade</li>
 <li>平凡函数依赖：(Sno, Cno) → Sno(Sno, Cno) → Cno</li>
@@ -355,7 +348,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
             
@@ -481,7 +474,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

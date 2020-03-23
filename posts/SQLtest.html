@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,17 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="SQL">
     <meta name="description" content="SQL数据库原理练习题">
-<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 各章练习题">
 <meta property="og:url" content="https://vitan.me/posts/SQLtest.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="SQL数据库原理练习题">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-23T12:24:38.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL 各章练习题">
-<meta name="twitter:description" content="SQL数据库原理练习题">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +56,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -431,45 +431,34 @@ ga('send', 'pageview');
 <p>对于S表:S( SNO,SNAME,STATUS,CITY);</p>
 <p>建S表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE S</span><br><span class="line">(SNO CHAR(3),</span><br><span class="line">SNAME CHAR(10)</span><br><span class="line">STATUS CHAR(2)</span><br><span class="line">CITY CHAR(10))</span><br></pre></td></tr></table></figure>
-
 <p>P(PNO,PNAME,COLOR,WEIGHT);</p>
 <p>建P表</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> P</span><br><span class="line">(PNO <span class="built_in">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">PNAME <span class="built_in">CHAR</span>(<span class="number">10</span>),</span><br><span class="line">COLOR <span class="built_in">CHAR</span>(<span class="number">4</span>),</span><br><span class="line">WEIGHT <span class="built_in">INT</span>);</span><br><span class="line">J(JNO,JNAME,CITY);</span><br></pre></td></tr></table></figure>
-
 <p>建J表</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> J</span><br><span class="line">(JNO <span class="built_in">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">JNAME <span class="built_in">CHAR</span>(<span class="number">10</span>)</span><br><span class="line">CITY <span class="built_in">CHAR</span>(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
-
 <p>SPJ(SNO,PNO,JNO,QTY)</p>
 <p>建SPJ表</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> SPJ</span><br><span class="line">(SNO <span class="built_in">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">PNO <span class="built_in">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">JNO <span class="built_in">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">QTY <span class="built_in">INT</span>);</span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>针对上题中建立的四个表试用SQL语言完成第3章习题3中的查询.</li>
 </ol>
 <p>答:</p>
 <p>(1) 求供应工程J1零件的供应商号码SNO;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> JNO=<span class="string">'J1'</span>;</span><br></pre></td></tr></table></figure>
-
 <p>(2) 求供应工程J1零件P1的供应商号码SNO;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> JNO=<span class="string">'J1'</span></span><br><span class="line"><span class="keyword">AND</span> PNO=<span class="string">'P1'</span>;</span><br></pre></td></tr></table></figure>
-
 <p>(3) 求供应工程J1零件为红色的供应商号码SNO;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> JNO=<span class="string">'J1'</span></span><br><span class="line"><span class="keyword">AND</span> PNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> PNO</span><br><span class="line"><span class="keyword">FROM</span> P</span><br><span class="line"><span class="keyword">WHERE</span> COLOR=<span class="string">'红'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ,P</span><br><span class="line"><span class="keyword">WHERE</span> JNO=<span class="string">'J1'</span></span><br><span class="line"><span class="keyword">AND</span> SPJ.PNO=P.PNO</span><br><span class="line"><span class="keyword">AND</span> COLOR=<span class="string">'红'</span>;</span><br></pre></td></tr></table></figure>
-
 <p>(4) 求没有使用天津供应商生产的红色零件的工程号JNO;<br>解析:<br>用SQL语言表示如下:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SPJ.JNO=J.JNO</span><br><span class="line"><span class="keyword">AND</span> SNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> CITY=<span class="string">'天津'</span>)</span><br><span class="line"><span class="keyword">AND</span> PNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> PNO</span><br><span class="line"><span class="keyword">FROM</span> P</span><br><span class="line"><span class="keyword">WHERE</span> COLOR=<span class="string">'红'</span>));</span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *<span class="number">1</span></span><br><span class="line"><span class="keyword">FROM</span> SPJ, S, P</span><br><span class="line"><span class="keyword">WHERE</span> SPJ.JNO=J.JNO</span><br><span class="line"><span class="keyword">AND</span> SPJ.SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> SPJ.PNO=P.PNO</span><br><span class="line"><span class="keyword">AND</span> S.CITY=<span class="string">'天津'</span></span><br><span class="line"><span class="keyword">AND</span> P. COLOR=<span class="string">'红'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>注意:从 J 表入手,以包含那些尚未使用任何零件的工程号.</p>
 <p>(5) 求至少用了供应商S1所供应的全部零件的工程号JNO .</p>
 <p>解析:<br>用SQL语言表示如下:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ SPJZ</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> SPJ SPJX</span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S1'</span></span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> SPJ SPJY</span><br><span class="line"><span class="keyword">WHERE</span> SPJY.PNO=SPJX.PNO</span><br><span class="line"><span class="keyword">AND</span> SPJY.JNON=SPJZ.JNO</span><br><span class="line"><span class="keyword">AND</span> SPJY.SNO=<span class="string">'S1'</span>));</span><br><span class="line">AND SPJY.SNO='S1' ));</span><br></pre></td></tr></table></figure>
-
 <ol start="5">
 <li>针对习题3中的四个表试用SQL语言完成以下各项操作:</li>
 </ol>
@@ -487,50 +476,35 @@ ga('send', 'pageview');
 <p>答:</p>
 <p>(1) 找出所有供应商的姓名和所在城市.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNAME, CITY</span><br><span class="line"><span class="keyword">FROM</span> S;</span><br></pre></td></tr></table></figure>
-
 <p>(2) 找出所有零件的名称,颜色,重量.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PNAME, COLOR, WEIGHT</span><br><span class="line"><span class="keyword">FROM</span> P</span><br></pre></td></tr></table></figure>
-
 <p>(3) 找出使用供应商S1所供应零件的工程号码.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S1'</span></span><br></pre></td></tr></table></figure>
-
 <p>(4) 找出工程项目J2使用的各种零件的名称及其数量.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> P.PNAME, SPJ.QTY</span><br><span class="line"><span class="keyword">FROM</span> P, SPJ</span><br><span class="line"><span class="keyword">WHERE</span> P.PNO=SPJ.PNO</span><br><span class="line"><span class="keyword">AND</span> SPJ.JNO=<span class="string">'J2'</span>;</span><br></pre></td></tr></table></figure>
-
 <p>(5) 找出上海厂商供应的所有零件号码.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> PNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> CITY=<span class="string">'上海'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>(6) 找出使用上海产的零件的工程名称.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNAME</span><br><span class="line"><span class="keyword">FROM</span> J, SPJ, S</span><br><span class="line"><span class="keyword">WHERE</span> J. JNO=SPJ. JNO</span><br><span class="line"><span class="keyword">AND</span> SPJ. SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> S.CITY=<span class="string">'上海'</span>;</span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNAME</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> JNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> SPJ, S</span><br><span class="line"><span class="keyword">WHERE</span> SPJ. SNO=S.SNO</span><br><span class="line"><span class="keyword">AND</span> S.CITY=<span class="string">'上海'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>(7) 找出没有使用天津产的零件的工程号码.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SPJ.JNO=J.JNO <span class="keyword">AND</span> SNO <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> SNO</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> CITY=<span class="string">'天津'</span>))</span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(<span class="keyword">SELECT</span> *<span class="number">1</span></span><br><span class="line"><span class="keyword">FROM</span> SPJ, S</span><br><span class="line"><span class="keyword">WHERE</span> SPJ.JNO=J.JNO <span class="keyword">AND</span> SPJ.SNO=S.SNO <span class="keyword">AND</span> S.CITY=<span class="string">'天津'</span>)</span><br></pre></td></tr></table></figure>
-
 <p>(8) 把全部红色零件的颜色改成蓝色.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> P</span><br><span class="line"><span class="keyword">SET</span> COLOR=<span class="string">'蓝'</span></span><br><span class="line"><span class="keyword">WHERE</span> COLOR=<span class="string">'红'</span></span><br></pre></td></tr></table></figure>
-
 <p>(9) 由S5供给J4的零件P6改为由S3供应,请作必要的修改.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> SPJ</span><br><span class="line"><span class="keyword">SET</span> SNO=<span class="string">'S3'</span></span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S5'</span> <span class="keyword">AND</span> JNO=<span class="string">'J4'</span> <span class="keyword">AND</span> PNO=<span class="string">'P6'</span></span><br></pre></td></tr></table></figure>
-
 <p>(10) 从供应商关系中删除S2的记录,并从供应情况关系中删除相应的记录.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S2'</span></span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S2'</span></span><br></pre></td></tr></table></figure>
-
 <p>解析:注意删除顺序,应该先从SPJ表中删除供应商S2所供应零件的记录,然后从从S表中删除S2.</p>
 <p>(11) 请将 (S2,J6,P4,200) 插入供应情况关系.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> SPJ(SNO, JNO, PNO, QTY)</span><br><span class="line"><span class="keyword">VALUES</span> (S2,J6,P4,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
-
 <p>或</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> SPJ</span><br><span class="line"><span class="keyword">VALUES</span> (S2,P4,J6,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
-
 <ol start="6">
 <li>什么是基本表 什么是视图 两者的区别和联系是什么</li>
 </ol>
@@ -551,7 +525,6 @@ ga('send', 'pageview');
 <p>答:</p>
 <p>不是.视图是不实际存储数据的虚表,因此对视图的更新,最终要转换为对基本表的更新.因为有些视图的更新不能唯一地有意义地转换成对相应基本表的更新,所以,并不是所有的视图都是可更新的.如《概论》3.5.1中的视图S_G(学生的学号及他的平均成绩)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREAT VIEW S_G(Sno,Gavg)</span><br><span class="line">AS <span class="keyword">SELECT</span> Sno,<span class="keyword">AVG</span>(Grade)</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Sno;</span><br></pre></td></tr></table></figure>
-
 <p>要修改平均成绩,必须修改各科成绩,而我们无法知道哪些课程成绩的变化导致了平均成绩的变化.<br>9. 哪类视图是可以更新的,哪类视图是不可更新的 各举一例说明.<br>答:</p>
 <p>基本表的行列子集视图一般是可更新的.如《概论》3.5.3中的例1.<br>若视图的属性来自集函数,表达式,则该视图肯定是不可以更新的.</p>
 <p>如《概论》3.5.3中的S_G视图.<br>10. 试述某个你熟悉的实际系统中对视图更新的规定.</p>
@@ -560,14 +533,11 @@ ga('send', 'pageview');
 <p>(1) 找出三建工程项目使用的各种零件代码及其数量.<br>(2) 找出供应商S1的供应情况.</p>
 <p>答:建视图:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> V_SPJ <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> SNO, PNO, QTY</span><br><span class="line"><span class="keyword">FROM</span> SPJ</span><br><span class="line"><span class="keyword">WHERE</span> JNO=</span><br><span class="line">(<span class="keyword">SELECT</span> JNO</span><br><span class="line"><span class="keyword">FROM</span> J</span><br><span class="line"><span class="keyword">WHERE</span> JNAME=<span class="string">'三建'</span>);</span><br></pre></td></tr></table></figure>
-
 <p>对该视图查询:</p>
 <p>(1) 找出三建工程项目使用的各种零件代码及其数量.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PNO, QTY</span><br><span class="line"><span class="keyword">FROM</span> V_SPJ;</span><br></pre></td></tr></table></figure>
-
 <p>(2) 找出供应商S1的供应情况.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PNO, QTY <span class="comment">/* S1供应三建工程的零件号和对应的数量*/</span></span><br><span class="line"><span class="keyword">FROM</span> V_SPJ</span><br><span class="line"><span class="keyword">WHERE</span> SNO=<span class="string">'S1'</span>;</span><br></pre></td></tr></table></figure>
-
 <h1 id="第四章-关系系统及其优化"><a href="#第四章-关系系统及其优化" class="headerlink" title="第四章 关系系统及其优化"></a>第四章 关系系统及其优化</h1><h2 id="一-选择题-3"><a href="#一-选择题-3" class="headerlink" title="一,选择题"></a>一,选择题</h2><ol>
 <li>概念模型是现实世界的第一层抽象,这一类最著名的模型是(D) .</li>
 </ol>
@@ -751,10 +721,7 @@ ga('send', 'pageview');
 <p>(3) 关系模式RDP(R,D,P)中,R表示医院的病房,D表示责任医务人员,P表示病人.假设每个病房住有多个病人,有多个责任医务人员负责医治和护理该病房的所有病人.按照语义有R→→D,R→→P成立.</p>
 <ol start="5">
 <li>下面的结论哪些是正确的,哪些是错误的 对于错误的结论请给出理由或给出一个反例说明之.<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) 任何一个二目关系都是属于<span class="number">3</span>NF的.√</span><br><span class="line">(<span class="number">2</span>) 任何一个二目关系都是属于BCNF的.√</span><br><span class="line">(<span class="number">3</span>) 任何一个二目关系都是属于<span class="number">4</span>NF的.√</span><br><span class="line">(<span class="number">5</span>) 若R.A→R.B,R.B→R.C,则R.A→R.C √</span><br><span class="line">(<span class="number">6</span>) 若R.A→R.B,R.A→R.C,则R.A→<span class="module-access"><span class="module"><span class="identifier">R</span>.</span>(B, C) √</span></span><br><span class="line"><span class="module-access">(7) 若<span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">B</span>→</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span>,</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">C</span>→</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span>,</span>则<span class="module"><span class="identifier">R</span>.</span>(B, C)→<span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span> </span>√</span></span><br><span class="line"><span class="module-access">(8) 若<span class="module"><span class="identifier">R</span>.</span>(B, C)→<span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span>,</span>则<span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">B</span>→</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span>,</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">C</span>→</span><span class="module"><span class="identifier">R</span>.</span><span class="module"><span class="identifier">A</span> </span>×</span></span><br><span class="line"><span class="module-access">反例:关系模式 <span class="module"><span class="identifier">SC</span>(</span><span class="module"><span class="identifier">S</span>#</span>,<span class="module"><span class="identifier">C</span>#</span>,<span class="module"><span class="identifier">G</span>)</span> (S#,C#)→<span class="module"><span class="identifier">G</span>,</span>但是<span class="module"><span class="identifier">S</span>#</span> → <span class="module"><span class="identifier">G</span>,</span><span class="module"><span class="identifier">C</span>#</span>→<span class="module"><span class="identifier">G</span></span></span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="第六章-数据库设计"><a href="#第六章-数据库设计" class="headerlink" title="第六章 数据库设计"></a>第六章 数据库设计</h1><h2 id="一-选择题-5"><a href="#一-选择题-5" class="headerlink" title="一,选择题"></a>一,选择题</h2><ol>
+<h1 id="第六章-数据库设计"><a href="#第六章-数据库设计" class="headerlink" title="第六章 数据库设计"></a>第六章 数据库设计</h1><h2 id="一-选择题-5"><a href="#一-选择题-5" class="headerlink" title="一,选择题"></a>一,选择题</h2></li>
 <li>数据流程图是用于描述结构化方法中(D )阶段的工具.</li>
 </ol>
 <p>A. 概要设计 B. 可行性分析<br>C. 程序编码 D. 需求分析<br>2. 数据库设计中,用E-R图赖描述信息结构但不涉及信息在计算机中的表示,这是数据库设计的( C).</p>
@@ -1210,51 +1177,37 @@ ga('send', 'pageview');
 <p>解析:</p>
 <p>自主存取控制中自主的含义是:用户可以将自己拥有的存取权限”自主”地授予别人.即用户具有一定的”自主”权.<br>5. SQL语言中提供了哪些数据控制(自主存取控制)的语句 请试举几例说明它们的使用方法.<br>答:<br>SQL中 的自主存取控制是通过GRANT 语句和 REVOKE 语句来实现的.如:<br>GRANT SELECT, INSERT ON Student TO 王平 WITH GRANT OPTION;<br>就将Student表的SELECT和INSERT权限授予了用户王平,后面的”WITH GRANT OPTION”子句表示用户王平同时也获得了”授权”的权限,即可以把得到的权限继续授予其他用户.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> Student <span class="keyword">FROM</span> 王平 <span class="keyword">CASCADE</span>;</span><br><span class="line">```sql</span><br><span class="line">就将Student表 的<span class="keyword">INSERT</span>权限从用户王平处收回,选项 <span class="keyword">CASCADE</span> 表示,如果用户王平将 Student 的 <span class="keyword">INSERT</span> 权限又转授给了其他用户,那么这些权限也将从其他用户处收回.</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 今有两个关系模式:</span><br><span class="line"></span><br><span class="line">职工(职工号,姓名,年龄,职务,工资,部门号)</span><br><span class="line"></span><br><span class="line">部门(部门号,名称,经理名,地址,电话号)</span><br><span class="line"></span><br><span class="line">请用<span class="keyword">SQL</span>的<span class="keyword">GRANT</span>和<span class="keyword">REVOKE</span>语句(加上视图机制)完成以下授权定义或存取控制功能:</span><br><span class="line"></span><br><span class="line">(a) 用户王明对两个表有<span class="keyword">SELECT</span>权力;</span><br><span class="line">```sql</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">TO</span> 王明;</span><br></pre></td></tr></table></figure>
-
 <p>(b) 用户李勇对两个表有INSERT和DELETE权力;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">INSERT</span>,<span class="keyword">DELETE</span> <span class="keyword">ON</span> 职工,部门 <span class="keyword">TO</span> 李勇</span><br></pre></td></tr></table></figure>
-
 <p>(c) 每个职工只对自己的记录有SELECT权力;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> 职工 <span class="keyword">WHEN</span> <span class="keyword">USER</span>()= <span class="keyword">NAME</span> <span class="keyword">TO</span> <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
-
 <p>这里假定系统的GRANT语句支持WHEN子句和USER()的使用.用户将自己的名字作为ID.注意,不同的系统这些扩展语句可能是不同的.读者应该了解你使用的DBMS产品的扩展语句.</p>
 <p>(d) 用户刘星对职工表有SELECT权力,对工资字段具有更新权力;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">UPDATE</span>(工资) <span class="keyword">ON</span> 职工</span><br><span class="line"><span class="keyword">TO</span> 刘星;</span><br></pre></td></tr></table></figure>
-
 <p>(e) 用户张新具有修改这两个表的结构的权力;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">TO</span> 张新;</span><br></pre></td></tr></table></figure>
-
 <p>(f) 用户周平具有对两个表所有权力(读,插,改,删数据),并具有给其他用户授权的权力;</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILIGES <span class="keyword">ON</span> 职工,部门 <span class="keyword">TO</span> 周平 <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure>
-
 <p>(g) 用户杨兰具有从每个部门职工中SELECT最高工资,最低工资,平均工资的权力,他不能查看每个人的工资.<br>答:<br>首先建立一个视图.然后对这个视图定义杨兰的存取权限.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> 部门工资 <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> 部门.名称,<span class="keyword">MAX</span>(工资),<span class="keyword">MIN</span>(工资),<span class="keyword">AVG</span>(工资)</span><br><span class="line"><span class="keyword">FROM</span> 职工,部门</span><br><span class="line"><span class="keyword">WHERE</span> 职工.部门号 = 部门. 部门号</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 职工.部门号;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> 部门工资 <span class="keyword">TO</span> 杨兰;</span><br></pre></td></tr></table></figure>
-
 <ol start="7">
 <li>把习题8中(a)~(g) 的每一种情况,撤销各用户所授予的权力.<br>答:</li>
 </ol>
 <p>(a)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">FROM</span> 王明</span><br></pre></td></tr></table></figure>
-
 <p>(b)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">INSERT</span>,<span class="keyword">DELETE</span> <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">FROM</span> 李勇;</span><br></pre></td></tr></table></figure>
-
 <p>(c)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">REOVKE <span class="keyword">SELECT</span> <span class="keyword">ON</span> 职工</span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">USER</span>()= <span class="keyword">NAME</span></span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">ALL</span>;</span><br></pre></td></tr></table></figure>
-
 <p>这里假定用户将自己的名字作为ID,且系统的REOVKE语句支持WHEN子句,系统也支持USER()的使用.</p>
 <p>(d)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">SELECT</span>,<span class="keyword">UPDATE</span> <span class="keyword">ON</span> 职工</span><br><span class="line"><span class="keyword">FROM</span> 刘星;</span><br></pre></td></tr></table></figure>
-
 <p>(e)</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">FROM</span> 张新</span><br></pre></td></tr></table></figure>
-
 <p>(f)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">ALL</span> PRIVILIGES <span class="keyword">ON</span> 职工,部门</span><br><span class="line"><span class="keyword">FROM</span> 周平;</span><br></pre></td></tr></table></figure>
-
 <p>(g)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> 部门工资</span><br><span class="line"><span class="keyword">FROM</span> 杨兰;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> 部门工资;</span><br></pre></td></tr></table></figure>
-
 <ol start="8">
 <li>为什么强制存取控制提供了更高级别的数据库安全性</li>
 </ol>
@@ -1348,7 +1301,6 @@ ga('send', 'pageview');
 <p>用SQL语言定义这两个关系模式,要求在模式中完成以下完整性约束条件的定义:<br>定义每个模式的主码;定义参照完整性;定义职工年龄不得超过60岁.</p>
 <p>答</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> DEPT</span><br><span class="line">(Deptno <span class="built_in">NUMBER</span>(<span class="number">2</span>),</span><br><span class="line">Deptname <span class="built_in">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">Manager <span class="built_in">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">PhoneNumber <span class="built_in">Char</span>(<span class="number">12</span>)</span><br><span class="line"><span class="keyword">CONSTRAINT</span> PK_SC PRIMARY <span class="keyword">KEY</span> (Deptno));</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> EMP(Empno <span class="built_in">NUMBER</span>(<span class="number">4</span>),</span><br><span class="line">Ename <span class="built_in">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">Age <span class="built_in">NUMBER</span>(<span class="number">2</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span> C1 <span class="keyword">CHECK</span> (Age《=<span class="number">60</span>),</span><br><span class="line">Job <span class="built_in">VARCHAR</span>(<span class="number">9</span>),</span><br><span class="line">Sal <span class="built_in">NUMBER</span>(<span class="number">7</span>,<span class="number">2</span>),</span><br><span class="line">Deptno <span class="built_in">NUMBER</span>(<span class="number">2</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span> FK_DEPTNO</span><br><span class="line"><span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (Deptno)</span><br><span class="line"><span class="keyword">REFERENCES</span> DEPT(Deptno));</span><br></pre></td></tr></table></figure>
-
 <ol start="7">
 <li>关系系统中,当操作违反实体完整性,参照完整性和用户定义的完整性约束条件时,一般是如何分别进行处理的</li>
 </ol>
@@ -1596,13 +1548,10 @@ ga('send', 'pageview');
 </ol>
 <p>情况1 若系统具有分片透明性,则</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Scanf(〃% s〃,SCnumber); <span class="comment">/*从终端读入课程号到变量SCnumber中 */</span></span><br><span class="line">EXEC SQL <span class="keyword">SELECT</span> Sno,Sname <span class="keyword">INTO</span> :SNO, :<span class="keyword">NAME</span></span><br><span class="line">/ * SNO,<span class="keyword">NAME</span>为程序变量*/</span><br><span class="line"><span class="keyword">FROM</span> SC,Student <span class="comment">/*在全局关系SC,Student中查找*/</span></span><br><span class="line"><span class="keyword">WHERE</span> SC.Cno =:SCnumber <span class="keyword">AND</span> SC.Sno=Student.Sno;</span><br><span class="line">Printf(〃% s,% s〃,SNO,NAME); <span class="comment">/*把SNO,NAME输出在屏幕上*/</span></span><br></pre></td></tr></table></figure>
-
 <p>情况2 若系统具有位置透明性,但不具有分片透明性,则</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Scanf(〃% s〃,SCnumber);</span><br><span class="line">EXEC SQL <span class="keyword">SELECT</span> Sno,Sname <span class="keyword">INTO</span> :SNO, :<span class="keyword">NAME</span></span><br><span class="line"><span class="keyword">FROM</span> SC_A,S_A</span><br><span class="line"><span class="keyword">WHERE</span> SC_A.Cno =:SCnumber <span class="keyword">AND</span> SC_A.Sno=S_A.Sno;</span><br><span class="line">If(! FOUND)&#123;</span><br><span class="line">EXEC SQL <span class="keyword">SELECT</span> Sno,Sname <span class="keyword">INTO</span> :SNO, :<span class="keyword">NAME</span></span><br><span class="line"><span class="keyword">FROM</span> SC_B,S_B</span><br><span class="line"><span class="keyword">WHERE</span> SC_B.Cno =:SCnumber <span class="keyword">AND</span> SC_B.Sno=S_B.Sno;</span><br><span class="line">&#125;</span><br><span class="line">Printf(〃% s,% s〃,SNO,NAME);</span><br></pre></td></tr></table></figure>
-
 <p>情况3 若系统只具有局部数据模型透明性,不具有位置透明性(当然也就不具有分片透明性),则</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Scanf(〃% s〃,SCnumber);</span><br><span class="line">EXEC SQL <span class="keyword">SELECT</span> Sno,Sname <span class="keyword">INTO</span> :SNO,:<span class="keyword">NAME</span></span><br><span class="line"><span class="keyword">FROM</span> SC_A <span class="keyword">AT</span> Site4, S_A <span class="keyword">AT</span> Site1</span><br><span class="line"><span class="comment">/*先在场地4的片段SC_A和场地1的片段S_A中查找*/</span></span><br><span class="line"><span class="keyword">WHERE</span> SC_A.Cno =:SCnumber <span class="keyword">AND</span> SC_A.Sno=S_A.Sno;</span><br><span class="line">If(! FOUND)&#123;</span><br><span class="line">EXEC SQL <span class="keyword">SELECT</span> Sno,Sname <span class="keyword">INTO</span> :SNO,:<span class="keyword">NAME</span></span><br><span class="line"><span class="keyword">FROM</span> SC_B <span class="keyword">AT</span> Site5,S_B <span class="keyword">AT</span> Site2</span><br><span class="line"><span class="comment">/*再在场地5的片段SC_B和场地2的片段S_B中查找*/</span></span><br><span class="line"><span class="comment">/*也可以在场地5的片段SC_B和场地3的片段S_B中查找*/</span></span><br><span class="line"><span class="keyword">WHERE</span> SC_B.Cno =:SCnumber <span class="keyword">AND</span> SC_B.Sno=S_B.Sno;</span><br><span class="line">&#125;</span><br><span class="line">Printf(〃% s,% s〃,SNO,NAME);</span><br></pre></td></tr></table></figure>
-
 <ol start="9">
 <li>试述下列概念:两段提交协议(2PC);分布事务的原子性;全局死锁.</li>
 </ol>
@@ -1705,7 +1654,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li></ul>
 
 
             
@@ -1831,7 +1780,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -33,19 +33,22 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
+    <meta name="keywords" content="Linux,Win,ArchLinux,Ubuntu">
     <meta name="description" content="Curl 使用技巧">
-<meta name="keywords" content="Linux,ArchLinux,Ubuntu,Win">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Curl 技巧">
 <meta property="og:url" content="https://vitan.me/posts/CurlTips.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Curl 使用技巧">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-27T04:27:18.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Win">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Curl 技巧">
-<meta name="twitter:description" content="Curl 使用技巧">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +59,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -239,16 +242,13 @@ ga('send', 'pageview');
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -x proxy.yourdomain.com:8080 -U user:password -O https://Vitan.me/file.tar.gz</span><br></pre></td></tr></table></figure>
 
 <h2 id="查询-HTTP-标头"><a href="#查询-HTTP-标头" class="headerlink" title="查询 HTTP 标头"></a>查询 HTTP 标头</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I www.vitan.me</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>HTTP 标头允许远程Web服务器发送有关自身的其他信息以及实际请求。这为客户提供了有关如何处理请求的详细信息。</li>
 </ul>
 <h2 id="从-FTP-服务器下载文件"><a href="#从-FTP-服务器下载文件" class="headerlink" title="从 FTP 服务器下载文件"></a>从 FTP 服务器下载文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -O ftp://yourftpserver/yourfile.tar.gz</span><br></pre></td></tr></table></figure>
-
 <h2 id="上传文件到-FTP-服务器"><a href="#上传文件到-FTP-服务器" class="headerlink" title="上传文件到 FTP 服务器"></a>上传文件到 FTP 服务器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -u username:password -T file.tar.gz ftp://ftpserver</span><br></pre></td></tr></table></figure>
 
 <h2 id="限制下载速率"><a href="#限制下载速率" class="headerlink" title="限制下载速率"></a>限制下载速率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --<span class="built_in">limit</span>-rate 100K https://Vitan.me/file.tar.gz -O</span><br></pre></td></tr></table></figure>
-
 
         </div>
 
@@ -283,7 +283,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/">Win</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArchLinux/" rel="tag">ArchLinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
 
 
             
@@ -409,7 +409,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

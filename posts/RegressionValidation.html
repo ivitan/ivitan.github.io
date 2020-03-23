@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 <!-- Google Analytics -->
 <script>
@@ -8,7 +8,7 @@ window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-144334903-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
 
 
@@ -35,17 +35,19 @@ ga('send', 'pageview');
     
     <meta name="keywords" content="Note,WebCrawler,Python">
     <meta name="description" content="回归分析">
-<meta name="keywords" content="Note,WebCrawler,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Regression Validation">
 <meta property="og:url" content="https://vitan.me/posts/RegressionValidation.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="回归分析">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T01:38:56.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-04T08:02:16.000Z">
+<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:author" content="Vitan">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="WebCrawler">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Regression Validation">
-<meta name="twitter:description" content="回归分析">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -56,7 +58,7 @@ ga('send', 'pageview');
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -212,15 +214,12 @@ ga('send', 'pageview');
 <h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas </span><br><span class="line">df = pandas.read_csv(<span class="string">'house-prices.csv'</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 
 <h1 id="one-hot-处理"><a href="#one-hot-处理" class="headerlink" title="one-hot 处理"></a>one-hot 处理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对Brick与Neighborhood两列数据进行one-hot处理</span></span><br><span class="line">house =  pandas.concat([df,pandas.get_dummies(df[<span class="string">'Brick'</span>]),pandas.get_dummies(df[<span class="string">'Neighborhood'</span>])] ,axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#删除No列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'No'</span>]</span><br><span class="line"><span class="comment">#删除West列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'West'</span>]</span><br><span class="line"><span class="comment">#删除Brick列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Brick'</span>]</span><br><span class="line"><span class="comment">#删除Neighborhood列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Neighborhood'</span>]</span><br><span class="line"><span class="comment">#删除Home列</span></span><br><span class="line"><span class="keyword">del</span> house[<span class="string">'Home'</span>]</span><br><span class="line">house.head()</span><br></pre></td></tr></table></figure>
-
 <h1 id="statsmodels-api"><a href="#statsmodels-api" class="headerlink" title="statsmodels.api"></a>statsmodels.api</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#X为house的'SqFt', 'Bedrooms', 'Bathrooms', 'Offers', 'Yes', 'East', 'North'列</span></span><br><span class="line">X = house[[<span class="string">'SqFt'</span>, <span class="string">'Bedrooms'</span>, <span class="string">'Bathrooms'</span>, <span class="string">'Offers'</span>, <span class="string">'Yes'</span>, <span class="string">'East'</span>, <span class="string">'North'</span>]]</span><br><span class="line"><span class="comment">#Y为house的Price列的values</span></span><br><span class="line">Y = house[<span class="string">'Price'</span>]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy.core.multiarray</span><br><span class="line"><span class="keyword">from</span> pandas.core <span class="keyword">import</span> datetools</span><br><span class="line"><span class="comment">#导入statsmodels.api里面的sm，用于评估模型</span></span><br><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"><span class="comment">#利用sm.add_constant为X增加一列名为const,值为1的数据</span></span><br><span class="line">X2 = sm.add_constant(X)</span><br><span class="line"><span class="comment">#调用sm的OLS函数对Y,X2进行模型创建</span></span><br><span class="line">est = sm.OLS(Y,X2)</span><br><span class="line"><span class="comment">#调用est的fit函数创建回归结果</span></span><br><span class="line">est2 = est.fit()</span><br><span class="line"><span class="comment">#输出打印est2的概要信息</span></span><br><span class="line">print(est2.summary())</span><br><span class="line">est2.aic</span><br></pre></td></tr></table></figure>
 
 <h2 id="最优组合"><a href="#最优组合" class="headerlink" title="最优组合"></a>最优组合</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">predictorcols = [<span class="string">'SqFt'</span>, <span class="string">'Bedrooms'</span>, <span class="string">'Bathrooms'</span>, <span class="string">'Offers'</span>, <span class="string">'Yes'</span>, <span class="string">'East'</span>, <span class="string">'North'</span>]</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(predictorcols)+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> variables <span class="keyword">in</span> itertools.combinations(predictorcols,i):</span><br><span class="line">        print(variables)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools<span class="comment">#导入itertools库</span></span><br><span class="line"><span class="comment">#创建字典AICs ，用于保存每个列名组合的aic结果</span></span><br><span class="line">AICs = &#123;&#125;</span><br><span class="line"><span class="comment">#for循环，循环变量i从1到predictorcols列表的长度加1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(predictorcols)+<span class="number">1</span>):</span><br><span class="line">    <span class="comment">#再次for循环，循环变量var的范围为predictorcols的各种i个元素组合集合itertools.combinations(predictorcols,i)</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> itertools.combinations(predictorcols,i):   </span><br><span class="line">        <span class="comment">#predictors为数据框X里的var列的数据，记得要先将var转换成list</span></span><br><span class="line">        predictors  = X[list(var)]</span><br><span class="line">        <span class="comment">#利用sm.add_constant为predictors增加一列名为const,值为1的数据</span></span><br><span class="line">        predictors2 =  sm.add_constant(predictors)</span><br><span class="line">        <span class="comment">#调用sm的OLS函数对y,predictors2进行模型创建</span></span><br><span class="line">        est = sm.OLS(Y,predictors2)</span><br><span class="line">        <span class="comment">#调用est的fit函数创建回归结果</span></span><br><span class="line">        res = est.fit()</span><br><span class="line">        print(res.aic) <span class="comment"># 每种组合的aic值</span></span><br><span class="line">    <span class="comment">#将res.aic的结果赋值给 AICs的每一个var   </span></span><br><span class="line">        AICs[var] =  res.aic</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入collections的Counter</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="comment">#调用Counter，对AICs进行降序排序</span></span><br><span class="line">c = Counter(AICs)</span><br><span class="line"><span class="comment">#调用排序后的c倒数10个数据对象</span></span><br><span class="line">c.most_common()[::<span class="number">-10</span>]</span><br></pre></td></tr></table></figure>
         </div>
 
@@ -255,7 +254,7 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/">WebCrawler</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebCrawler/" rel="tag">WebCrawler</a></li></ul>
 
 
             
@@ -381,7 +380,7 @@ ga('send', 'pageview');
             
                 <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
