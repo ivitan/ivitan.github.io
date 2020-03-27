@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Ubuntu,Termux">
-    <meta name="description" content="Lineu中 .deb 包的使用，修改。 &lt;!--more--&gt; 为何物 .deb 是 Unix系统(其实主要是Linux)下的安装包，基于 tar 包，因此本身会记录文件的权限(读&#x2F;写&#x2F;可执行)以及所有者&#x2F;用户组。 怎么用 制作.deb包  原理   deb包通常包含两部分：控制信息(DEBIAN目录)、安装内容(模拟&quot;&#x2F;&quot;目录) 通过解开已有的 deb 包看其中">
+    <meta name="description" content="Lineu中 .deb 包的使用，修改。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 中 .Deb 相关">
 <meta property="og:url" content="https://vitan.me/posts/Linux-Deb.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Lineu中 .deb 包的使用，修改。 &lt;!--more--&gt; 为何物 .deb 是 Unix系统(其实主要是Linux)下的安装包，基于 tar 包，因此本身会记录文件的权限(读&#x2F;写&#x2F;可执行)以及所有者&#x2F;用户组。 怎么用 制作.deb包  原理   deb包通常包含两部分：控制信息(DEBIAN目录)、安装内容(模拟&quot;&#x2F;&quot;目录) 通过解开已有的 deb 包看其中">
+<meta property="og:description" content="Lineu中 .deb 包的使用，修改。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-01T06:18:47.000Z">
 <meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">为何物</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">怎么用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">制作.deb包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">下载软件源码包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">修改已有deb包</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">3.</span> <span class="post-toc-text">deb包常用命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">卸载</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为何物"><span class="post-toc-number">1.</span> <span class="post-toc-text">为何物</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#怎么用"><span class="post-toc-number">2.</span> <span class="post-toc-text">怎么用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#制作-deb包"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">制作.deb包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载软件源码包"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">下载软件源码包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改已有deb包"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">修改已有deb包</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#deb包常用命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">deb包常用命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">卸载</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -208,88 +208,62 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Lineu中 <code>.deb</code> 包的使用，修改。
-&lt;!--more--&gt;</p>
-<h1>为何物</h1>
-<p>.deb 是 Unix系统(其实主要是Linux)下的安装包，基于 <code>tar</code> 包，因此本身会记录文件的权限(读/写/可执行)以及所有者/用户组。</p>
-<h1>怎么用</h1>
-<h2>制作.deb包</h2>
-<ul>
-<li>原理</li>
-</ul>
-<ol>
-<li>deb包通常包含两部分：控制信息(DEBIAN目录)、安装内容(模拟&quot;/&quot;目录)</li>
-<li>通过解开已有的 deb 包看其中内容
-<ul>
-<li>释放安装内容到dirname目录中
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -X xxx.deb dirname</span><br></pre></td></tr></table></figure></li>
-<li>释放控制信息到当前目录下的DEBIAN子目录中
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -e xxx.deb</span><br></pre></td></tr></table></figure></li>
+            <p>Lineu中 <code>.deb</code> 包的使用，修改。</p>
+<a id="more"></a>
+<h1 id="为何物"><a href="#为何物" class="headerlink" title="为何物"></a>为何物</h1><p>.deb 是 Unix系统(其实主要是Linux)下的安装包，基于 <code>tar</code> 包，因此本身会记录文件的权限(读/写/可执行)以及所有者/用户组。</p>
+<h1 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h1><h2 id="制作-deb包"><a href="#制作-deb包" class="headerlink" title="制作.deb包"></a>制作.deb包</h2><ul>
+<li>原理<br>1) deb包通常包含两部分：控制信息(DEBIAN目录)、安装内容(模拟”/“目录)<br>2) 通过解开已有的 deb 包看其中内容<ul>
+<li>释放安装内容到dirname目录中<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -X xxx.deb dirname</span><br></pre></td></tr></table></figure></li>
+<li>释放控制信息到当前目录下的DEBIAN子目录中<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -e xxx.deb</span><br></pre></td></tr></table></figure>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install dh-make checkinstall</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 </li>
-</ol>
-<h2>准备</h2>
-<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install dh-make checkinstall</span><br></pre></td></tr></table></figure></p>
-<h2>下载软件源码包</h2>
-<ul>
-<li>使用checkinstall方法创建deb包
-<ul>
-<li>checkinstall 不仅可以生成 deb 包，还可以生成 rpm 包，使用简单。
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar xvjf fceu-0.98.12.src.tar.bz2 <span class="comment"># 解包</span></span><br><span class="line"><span class="built_in">cd</span> fceu;./configure;make <span class="comment"># 编译</span></span><br><span class="line">checkinstall -D -install=no --pkgversion=0.98 --pkgname=fceuxy make install</span><br><span class="line"><span class="comment"># 制作deb包 此时当前目录下生成了deb包。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="下载软件源码包"><a href="#下载软件源码包" class="headerlink" title="下载软件源码包"></a>下载软件源码包</h2><ul>
+<li>使用checkinstall方法创建deb包<ul>
+<li>checkinstall 不仅可以生成 deb 包，还可以生成 rpm 包，使用简单。<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar xvjf fceu-0.98.12.src.tar.bz2 <span class="comment"># 解包</span></span><br><span class="line"><span class="built_in">cd</span> fceu;./configure;make <span class="comment"># 编译</span></span><br><span class="line">checkinstall -D -install=no --pkgversion=0.98 --pkgname=fceuxy make install</span><br><span class="line"><span class="comment"># 制作deb包 此时当前目录下生成了deb包。</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li>使用dpkg方法创建deb包
-<ul>
-<li>dpkg是最基本的制作deb包的方法，推荐使用
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar xvjf fceu-0.98.12.src.tar.bz2 <span class="comment"># 解包</span></span><br><span class="line">mv fceu fceu-0.98 <span class="comment"># 改目录名为 包名-版本号</span></span><br><span class="line"><span class="built_in">cd</span> fceu-0.98</span><br><span class="line">dh_make -f ../fceu-0.98.12.src.tar.bz2</span><br><span class="line"><span class="comment"># 生成制作deb包所需的默认信息</span></span><br></pre></td></tr></table></figure>
-此时当前目录下生成了debian目录，此时通常修改两个文件： 1. 修改debian/control文件，配置你的信息，具体字段见参考资料部分 2. 修改debian/rules脚本，它决定编译参数(也可以不改)
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:::bash</span><br><span class="line">dpkg-buildpackage -rfakeroot</span><br></pre></td></tr></table></figure>
+<li>使用dpkg方法创建deb包<ul>
+<li>dpkg是最基本的制作deb包的方法，推荐使用<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar xvjf fceu-0.98.12.src.tar.bz2 <span class="comment"># 解包</span></span><br><span class="line">mv fceu fceu-0.98 <span class="comment"># 改目录名为 包名-版本号</span></span><br><span class="line"><span class="built_in">cd</span> fceu-0.98</span><br><span class="line">dh_make -f ../fceu-0.98.12.src.tar.bz2</span><br><span class="line"><span class="comment"># 生成制作deb包所需的默认信息</span></span><br></pre></td></tr></table></figure>
+此时当前目录下生成了debian目录，此时通常修改两个文件： 1. 修改debian/control文件，配置你的信息，具体字段见参考资料部分 2. 修改debian/rules脚本，它决定编译参数(也可以不改)<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:::bash</span><br><span class="line">dpkg-buildpackage -rfakeroot</span><br></pre></td></tr></table></figure>
 此时可以看到，上层目录中已建立了deb包。</li>
 </ul>
 </li>
 </ul>
-<h2>修改已有deb包</h2>
-<ul>
-<li>自己创建deb所需目录结构(控制信息和安装内容)，然后打包，一般使用这种方法来修改已有的deb包，而不是新建deb包，命令如下：
+<h2 id="修改已有deb包"><a href="#修改已有deb包" class="headerlink" title="修改已有deb包"></a>修改已有deb包</h2><ul>
+<li><p>自己创建deb所需目录结构(控制信息和安装内容)，然后打包，一般使用这种方法来修改已有的deb包，而不是新建deb包，命令如下：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="built_in">test</span></span><br><span class="line">dpkg -X xxx.deb <span class="built_in">test</span> <span class="comment"># 解包安装内容</span></span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">dpkg -e ../xxx.deb <span class="comment"># 解包控制信息</span></span><br></pre></td></tr></table></figure></li>
-<li>修改DEBIAN目录下的内容，然后重新打包：
+<li><p>修改DEBIAN目录下的内容，然后重新打包：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../</span><br><span class="line">dpkg -b <span class="built_in">test</span> xxx_new.deb <span class="comment"># 重新打包</span></span><br></pre></td></tr></table></figure></li>
-<li>修改DEBIAN目录下的内容，然后重新打包：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;</span><br><span class="line">dpkg -b test xxx_new.deb # 重新打包</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1>deb包常用命令</h1>
-<ul>
-<li>
-<p>查看deb包含有哪些文件
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -c xxx.deb <span class="comment"># 安装前根据deb文件查看</span></span><br><span class="line">dpkg -L debname <span class="comment"># 安装后根据包名查看</span></span><br></pre></td></tr></table></figure></p>
+<li><p>修改DEBIAN目录下的内容，然后重新打包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;</span><br><span class="line">dpkg -b test xxx_new.deb # 重新打包</span><br></pre></td></tr></table></figure>
+<h1 id="deb包常用命令"><a href="#deb包常用命令" class="headerlink" title="deb包常用命令"></a>deb包常用命令</h1></li>
+<li><p>查看deb包含有哪些文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -c xxx.deb <span class="comment"># 安装前根据deb文件查看</span></span><br><span class="line">dpkg -L debname <span class="comment"># 安装后根据包名查看</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>查看某个文件属于哪个deb包
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -S filefullpath</span><br></pre></td></tr></table></figure></p>
+<li><p>查看某个文件属于哪个deb包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -S filefullpath</span><br></pre></td></tr></table></figure></li>
+<li><p>根据软件包名模糊检索</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l|grep xxx</span><br><span class="line"><span class="comment"># 在已安装的软件包列表中搜索</span></span><br><span class="line">apt-cache search xxx</span><br><span class="line"><span class="comment"># 在源中的所有软件包列表中搜索</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>根据软件包名模糊检索
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l|grep xxx</span><br><span class="line"><span class="comment"># 在已安装的软件包列表中搜索</span></span><br><span class="line">apt-cache search xxx</span><br><span class="line"><span class="comment"># 在源中的所有软件包列表中搜索</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>下载源码包
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get <span class="built_in">source</span> packagename</span><br></pre></td></tr></table></figure></p>
+<li><p>下载源码包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get <span class="built_in">source</span> packagename</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h1>安装</h1>
-<ul>
-<li>安装deb包
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i xxx.deb</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2>卸载</h2>
-<ul>
-<li>
-<p>卸载deb包
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -r debname</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
+<li><p>安装deb包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i xxx.deb</span><br></pre></td></tr></table></figure>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2></li>
+<li><p>卸载deb包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -r debname</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>完全卸载deb包（包含配置文件)
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -P debname</span><br></pre></td></tr></table></figure></p>
+<li><p>完全卸载deb包（包含配置文件)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -P debname</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <hr>

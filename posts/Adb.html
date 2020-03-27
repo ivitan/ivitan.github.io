@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Android,ADB,Linux,Win">
-    <meta name="description" content="Adb 与 Fastboot 常用命令 &lt;!--more--&gt; ADB 刷机命令    解释 命令     启动 adb server,adb start-server   停止 adb server,adb kill-server   查看连接状态 adb devices   重启命令 adb reboot   重启到Rec adb reboot recovery   重启到Fast">
+    <meta name="description" content="Adb 与 Fastboot 常用命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ADB 与 Fastboot 常用命令">
 <meta property="og:url" content="https://vitan.me/posts/Adb.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Adb 与 Fastboot 常用命令 &lt;!--more--&gt; ADB 刷机命令    解释 命令     启动 adb server,adb start-server   停止 adb server,adb kill-server   查看连接状态 adb devices   重启命令 adb reboot   重启到Rec adb reboot recovery   重启到Fast">
+<meta property="og:description" content="Adb 与 Fastboot 常用命令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-19T07:41:31.000Z">
 <meta property="article:modified_time" content="2020-03-05T08:05:34.251Z">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">ADB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">刷机命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">错误提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安装卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">复制文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">查看手机信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">Fastboot</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">系统分区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">常用 Fastboot 命令</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ADB"><span class="post-toc-number">1.</span> <span class="post-toc-text">ADB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷机命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">刷机命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误提示"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">错误提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装卸载"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安装卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制文件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">复制文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看手机信息"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">查看手机信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Fastboot"><span class="post-toc-number">2.</span> <span class="post-toc-text">Fastboot</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统分区"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">系统分区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用-Fastboot-命令"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">常用 Fastboot 命令</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,316 +209,293 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Adb 与 Fastboot 常用命令
-&lt;!--more--&gt;</p>
-<h1>ADB</h1>
-<h2>刷机命令</h2>
-<table>
+            <p>Adb 与 Fastboot 常用命令</p>
+<a id="more"></a>
+<h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><h2 id="刷机命令"><a href="#刷机命令" class="headerlink" title="刷机命令"></a>刷机命令</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">解释</th>
+<th align="left">命令</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">启动</td>
-<td style="text-align:left">adb server,adb start-server</td>
+<tbody><tr>
+<td align="left">启动</td>
+<td align="left">adb server,adb start-server</td>
 </tr>
 <tr>
-<td style="text-align:left">停止</td>
-<td style="text-align:left">adb server,adb kill-server</td>
+<td align="left">停止</td>
+<td align="left">adb server,adb kill-server</td>
 </tr>
 <tr>
-<td style="text-align:left">查看连接状态</td>
-<td style="text-align:left">adb devices</td>
+<td align="left">查看连接状态</td>
+<td align="left">adb devices</td>
 </tr>
 <tr>
-<td style="text-align:left">重启命令</td>
-<td style="text-align:left">adb reboot</td>
+<td align="left">重启命令</td>
+<td align="left">adb reboot</td>
 </tr>
 <tr>
-<td style="text-align:left">重启到Rec</td>
-<td style="text-align:left">adb reboot recovery</td>
+<td align="left">重启到Rec</td>
+<td align="left">adb reboot recovery</td>
 </tr>
 <tr>
-<td style="text-align:left">重启到Fastboot</td>
-<td style="text-align:left">adb reboot bootloader</td>
+<td align="left">重启到Fastboot</td>
+<td align="left">adb reboot bootloader</td>
 </tr>
 <tr>
-<td style="text-align:left">推送ROM包</td>
-<td style="text-align:left">adb sideload &lt;Rom包&gt;</td>
+<td align="left">推送ROM包</td>
+<td align="left">adb sideload &lt;Rom包&gt;</td>
 </tr>
-</tbody>
-</table>
-<h2>错误提示</h2>
-<ol>
+</tbody></table>
+<h2 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h2><ol>
 <li><code>offline</code> 设备未连接成功或无响应；</li>
 <li><code>device</code> 设备已连接；</li>
 <li><code>no device</code> 没有设备/模拟器连接；</li>
 <li><code>List of devices attached</code> 设备/模拟器未连接到 adb 或无响应</li>
 </ol>
-<h2>安装卸载</h2>
-<table>
+<h2 id="安装卸载"><a href="#安装卸载" class="headerlink" title="安装卸载"></a>安装卸载</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">解释</th>
+<th align="left">命令</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">安装</td>
-<td style="text-align:left">adb install &lt;package&gt;</td>
+<tbody><tr>
+<td align="left">安装</td>
+<td align="left">adb install <package></td>
 </tr>
 <tr>
-<td style="text-align:left">卸载</td>
-<td style="text-align:left">adb uninstall &lt;package&gt;</td>
+<td align="left">卸载</td>
+<td align="left">adb uninstall <package></td>
 </tr>
 <tr>
-<td style="text-align:left">保留数据卸载</td>
-<td style="text-align:left">adb uninstall -k &lt;package&gt;</td>
+<td align="left">保留数据卸载</td>
+<td align="left">adb uninstall -k <package></td>
 </tr>
-</tbody>
-</table>
-<h2>复制文件</h2>
-<table>
+</tbody></table>
+<h2 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">解释</th>
+<th align="left">命令</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">复制设备到电脑</td>
-<td style="text-align:left">adb pull &lt;设备文件路径&gt; &lt;电脑目录&gt; 例如：adb pull /sdcard/1.txt E:\</td>
+<tbody><tr>
+<td align="left">复制设备到电脑</td>
+<td align="left">adb pull &lt;设备文件路径&gt; &lt;电脑目录&gt; 例如：adb pull /sdcard/1.txt E:\</td>
 </tr>
 <tr>
-<td style="text-align:left">复制电脑到设备</td>
-<td style="text-align:left">abd pull &lt;电脑文件路径&gt; &lt;设备目录&gt; 例如：adb pull E:\1.txt /sdcard/</td>
+<td align="left">复制电脑到设备</td>
+<td align="left">abd pull &lt;电脑文件路径&gt; &lt;设备目录&gt; 例如：adb pull E:\1.txt /sdcard/</td>
 </tr>
-</tbody>
-</table>
-<h2>查看手机信息</h2>
-<table>
+</tbody></table>
+<h2 id="查看手机信息"><a href="#查看手机信息" class="headerlink" title="查看手机信息"></a>查看手机信息</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">解释</th>
+<th align="left">命令</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">查看设备型号</td>
-<td style="text-align:left">adb shell getprop ro.product.model</td>
+<tbody><tr>
+<td align="left">查看设备型号</td>
+<td align="left">adb shell getprop ro.product.model</td>
 </tr>
 <tr>
-<td style="text-align:left">获取IMEI</td>
-<td style="text-align:left">adb shell [回车] su [回车] service call iphonesubinfo 1</td>
+<td align="left">获取IMEI</td>
+<td align="left">adb shell [回车] su [回车] service call iphonesubinfo 1</td>
 </tr>
 <tr>
-<td style="text-align:left">获取手机程序包名</td>
-<td style="text-align:left">adb shell pm list packages</td>
+<td align="left">获取手机程序包名</td>
+<td align="left">adb shell pm list packages</td>
 </tr>
 <tr>
-<td style="text-align:left">获取序列号</td>
-<td style="text-align:left">adb get-serialno</td>
+<td align="left">获取序列号</td>
+<td align="left">adb get-serialno</td>
 </tr>
 <tr>
-<td style="text-align:left">查看所有应用列表</td>
-<td style="text-align:left">adb shell pm list packages</td>
+<td align="left">查看所有应用列表</td>
+<td align="left">adb shell pm list packages</td>
 </tr>
 <tr>
-<td style="text-align:left">查看系统应用列表</td>
-<td style="text-align:left">db shell pm list packages -s</td>
+<td align="left">查看系统应用列表</td>
+<td align="left">db shell pm list packages -s</td>
 </tr>
 <tr>
-<td style="text-align:left">查看第三方应用列表</td>
-<td style="text-align:left">adb shell pm list packages -3</td>
+<td align="left">查看第三方应用列表</td>
+<td align="left">adb shell pm list packages -3</td>
 </tr>
-</tbody>
-</table>
-<h2>其他</h2>
-<table>
+</tbody></table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">解释</th>
+<th align="left">命令</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">查看log</td>
-<td style="text-align:left">adb logcat</td>
+<tbody><tr>
+<td align="left">查看log</td>
+<td align="left">adb logcat</td>
 </tr>
 <tr>
-<td style="text-align:left">终止adb服务进程</td>
-<td style="text-align:left">adb kill-server</td>
+<td align="left">终止adb服务进程</td>
+<td align="left">adb kill-server</td>
 </tr>
 <tr>
-<td style="text-align:left">重启adb服务进程</td>
-<td style="text-align:left">adb start-server</td>
+<td align="left">重启adb服务进程</td>
+<td align="left">adb start-server</td>
 </tr>
 <tr>
-<td style="text-align:left">获取机器MAC地址</td>
-<td style="text-align:left">adb shell  cat /sys/class/net/wlan0/address</td>
+<td align="left">获取机器MAC地址</td>
+<td align="left">adb shell  cat /sys/class/net/wlan0/address</td>
 </tr>
 <tr>
-<td style="text-align:left">获取CPU序列号</td>
-<td style="text-align:left">adb shell cat /proc/cpuinfo</td>
+<td align="left">获取CPU序列号</td>
+<td align="left">adb shell cat /proc/cpuinfo</td>
 </tr>
 <tr>
-<td style="text-align:left">安装APK</td>
-<td style="text-align:left">adb install &lt;apkfile&gt;</td>
+<td align="left">安装APK</td>
+<td align="left">adb install <apkfile></td>
 </tr>
 <tr>
-<td style="text-align:left">卸载APK</td>
-<td style="text-align:left">adb uninstall &lt;package&gt;</td>
+<td align="left">卸载APK</td>
+<td align="left">adb uninstall <package></td>
 </tr>
 <tr>
-<td style="text-align:left">查看设备cpu和内存占用情况</td>
-<td style="text-align:left">adb shell top</td>
+<td align="left">查看设备cpu和内存占用情况</td>
+<td align="left">adb shell top</td>
 </tr>
 <tr>
-<td style="text-align:left">查询各进程内存使用情况</td>
-<td style="text-align:left">adb shell procrank</td>
+<td align="left">查询各进程内存使用情况</td>
+<td align="left">adb shell procrank</td>
 </tr>
 <tr>
-<td style="text-align:left">查看wifi密码</td>
-<td style="text-align:left">adb shell cat /data/misc/wifi/*.conf</td>
+<td align="left">查看wifi密码</td>
+<td align="left">adb shell cat /data/misc/wifi/*.conf</td>
 </tr>
-</tbody>
-</table>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install &lt;参数&gt; &lt;apk_path&gt;</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install &lt;参数&gt; &lt;apk_path&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>-l</code> 将应用安装到保护目录 /mnt/asec</li>
 <li><code>-r</code> 允许覆盖安装；</li>
-<li><code>-t</code> 允许安装 AndroidManifest.xml 里 application 指定 android:testOnly=&quot;true&quot; 的应用</li>
+<li><code>-t</code> 允许安装 AndroidManifest.xml 里 application 指定 android:testOnly=”true” 的应用</li>
 <li><code>-s</code> 将应用安装到 sdcard</li>
 <li><code>-d</code> 允许降级覆盖安装</li>
 <li><code>-g</code> 授予所有运行时权限</li>
 </ul>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall -k &lt;PackageName&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall -k &lt;PackageName&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>-k</code> 卸载应用但保留数据和缓存目录,可选，</li>
 </ul>
-<h1>Fastboot</h1>
+<h1 id="Fastboot"><a href="#Fastboot" class="headerlink" title="Fastboot"></a>Fastboot</h1><table>
+<thead>
+<tr>
+<th align="left">解释</th>
+<th align="left">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">查看连接状态</td>
+<td align="left">fastboot devices</td>
+</tr>
+<tr>
+<td align="left">解锁</td>
+<td align="left">fastboot flashing unlock OR fastboot oem unlock</td>
+</tr>
+<tr>
+<td align="left">上锁</td>
+<td align="left">fastboot flashing lock OR fastboot oem lock</td>
+</tr>
+<tr>
+<td align="left">重启</td>
+<td align="left">fastboot reboot</td>
+</tr>
+<tr>
+<td align="left">重启到Fastboot</td>
+<td align="left">fastboot reboot-bootloader</td>
+</tr>
+<tr>
+<td align="left">清除分区数据</td>
+<td align="left">fastboot erase &lt;boot/system/data/cache/userdata/recovery&gt;</td>
+</tr>
+<tr>
+<td align="left">清除分区(四清)</td>
+<td align="left">fastboot erase system -w</td>
+</tr>
+<tr>
+<td align="left">格式化分区数据</td>
+<td align="left">fastboot format &lt;boot/system/data/cache/userdata/recovery&gt;</td>
+</tr>
+<tr>
+<td align="left">烧写分区</td>
+<td align="left">fastboot flash &lt; boot/system /recovery/radio/bootloader/ splash1/&gt; &lt;*.img&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="系统分区"><a href="#系统分区" class="headerlink" title="系统分区"></a>系统分区</h2><p>Via: <a href="https://segmentfault.com/a/1190000021601415" target="_blank" rel="noopener">Android 分区</a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">解释</th>
-<th style="text-align:left">命令</th>
+<th align="left">分区</th>
+<th align="left">介绍</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">查看连接状态</td>
-<td style="text-align:left">fastboot devices</td>
+<tbody><tr>
+<td align="left">boot</td>
+<td align="left">包含通过 mkbootimg 组合在一起的kernel镜像和 ramdisk。使能system-as-root后，该分区仅存放kernel镜像</td>
 </tr>
 <tr>
-<td style="text-align:left">解锁</td>
-<td style="text-align:left">fastboot flashing unlock OR fastboot oem unlock</td>
+<td align="left">system</td>
+<td align="left">主要包含 Android 框架。使能system-as-root后，该分区会包含原始 system.img 和 ramdisk.img 的合并内容</td>
 </tr>
 <tr>
-<td style="text-align:left">上锁</td>
-<td style="text-align:left">fastboot flashing lock OR fastboot oem lock</td>
+<td align="left">recovery</td>
+<td align="left">用于存储在 OTA 升级时使用的recovery系统。如果设备支持A/B更新，OTA升级可以通过ramdisk执行，该分区可以不需要</td>
 </tr>
 <tr>
-<td style="text-align:left">重启</td>
-<td style="text-align:left">fastboot reboot</td>
+<td align="left">cache</td>
+<td align="left">用于存储临时数据，OTA升级包也会下载到这个分区。如果设备使用 A/B 更新，则可以不要此分区</td>
 </tr>
 <tr>
-<td style="text-align:left">重启到Fastboot</td>
-<td style="text-align:left">fastboot reboot-bootloader</td>
+<td align="left">misc</td>
+<td align="left">分区供recovery使用，存储空间不能小于 4KB</td>
 </tr>
 <tr>
-<td style="text-align:left">清除分区数据</td>
-<td style="text-align:left">fastboot erase &lt;boot/system/data/cache/userdata/recovery&gt;</td>
+<td align="left">userdata</td>
+<td align="left">存储用户安装的应用和数据</td>
 </tr>
 <tr>
-<td style="text-align:left">清除分区(四清)</td>
-<td style="text-align:left">fastboot erase system -w</td>
+<td align="left">metadata</td>
+<td align="left">如果设备被加密，则需要使用该分区，分区的存储空间不能小于 16MB</td>
 </tr>
 <tr>
-<td style="text-align:left">格式化分区数据</td>
-<td style="text-align:left">fastboot format &lt;boot/system/data/cache/userdata/recovery&gt;</td>
+<td align="left">vendor</td>
+<td align="left">包含所有不可分发给 Android 开源项目 (AOSP) 的二进制文件。如果没有专有信息，可以不要该分区</td>
 </tr>
 <tr>
-<td style="text-align:left">烧写分区</td>
-<td style="text-align:left">fastboot flash &lt; boot/system /recovery/radio/bootloader/ splash1/&gt; &lt;*.img&gt;</td>
-</tr>
-</tbody>
-</table>
-<h2>系统分区</h2>
-<p>Via: <a href="https://segmentfault.com/a/1190000021601415" target="_blank" rel="noopener">Android 分区</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">分区</th>
-<th style="text-align:left">介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">boot</td>
-<td style="text-align:left">包含通过 mkbootimg 组合在一起的kernel镜像和 ramdisk。使能system-as-root后，该分区仅存放kernel镜像</td>
+<td align="left">radio</td>
+<td align="left">包含无线装置映像。只有包含无线装置的设备才需要此分区</td>
 </tr>
 <tr>
-<td style="text-align:left">system</td>
-<td style="text-align:left">主要包含 Android 框架。使能system-as-root后，该分区会包含原始 system.img 和 ramdisk.img 的合并内容</td>
+<td align="left">tos</td>
+<td align="left">用于存储 Trusty 操作系统的二进制映像文件，仅在设备包含 Trusty 时使用</td>
 </tr>
 <tr>
-<td style="text-align:left">recovery</td>
-<td style="text-align:left">用于存储在 OTA 升级时使用的recovery系统。如果设备支持A/B更新，OTA升级可以通过ramdisk执行，该分区可以不需要</td>
+<td align="left">product</td>
+<td align="left">用于存放产品专用的配置和应用，以便OEM定制自己的系统。Android 9 及更高版本支持该分区。product分区是对system分区的扩展，必须同时升级这两个分区</td>
 </tr>
 <tr>
-<td style="text-align:left">cache</td>
-<td style="text-align:left">用于存储临时数据，OTA升级包也会下载到这个分区。如果设备使用 A/B 更新，则可以不要此分区</td>
+<td align="left">odm</td>
+<td align="left">用于ODM自定义自己的板级支持包。Android 10 开始支持该分区。odm分区是对vendor分区的扩展，必须同时升级这两个分区</td>
 </tr>
-<tr>
-<td style="text-align:left">misc</td>
-<td style="text-align:left">分区供recovery使用，存储空间不能小于 4KB</td>
-</tr>
-<tr>
-<td style="text-align:left">userdata</td>
-<td style="text-align:left">存储用户安装的应用和数据</td>
-</tr>
-<tr>
-<td style="text-align:left">metadata</td>
-<td style="text-align:left">如果设备被加密，则需要使用该分区，分区的存储空间不能小于 16MB</td>
-</tr>
-<tr>
-<td style="text-align:left">vendor</td>
-<td style="text-align:left">包含所有不可分发给 Android 开源项目 (AOSP) 的二进制文件。如果没有专有信息，可以不要该分区</td>
-</tr>
-<tr>
-<td style="text-align:left">radio</td>
-<td style="text-align:left">包含无线装置映像。只有包含无线装置的设备才需要此分区</td>
-</tr>
-<tr>
-<td style="text-align:left">tos</td>
-<td style="text-align:left">用于存储 Trusty 操作系统的二进制映像文件，仅在设备包含 Trusty 时使用</td>
-</tr>
-<tr>
-<td style="text-align:left">product</td>
-<td style="text-align:left">用于存放产品专用的配置和应用，以便OEM定制自己的系统。Android 9 及更高版本支持该分区。product分区是对system分区的扩展，必须同时升级这两个分区</td>
-</tr>
-<tr>
-<td style="text-align:left">odm</td>
-<td style="text-align:left">用于ODM自定义自己的板级支持包。Android 10 开始支持该分区。odm分区是对vendor分区的扩展，必须同时升级这两个分区</td>
-</tr>
-</tbody>
-</table>
-<h2>常用 Fastboot 命令</h2>
-<ul>
+</tbody></table>
+<h2 id="常用-Fastboot-命令"><a href="#常用-Fastboot-命令" class="headerlink" title="常用 Fastboot 命令"></a>常用 Fastboot 命令</h2><ul>
 <li>刷入临时 TWRP</li>
 </ul>
-<p><figure class="highlight shell"><figcaption><span>bootloader 下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot boot twrp.img</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><figcaption><span>bootloader 下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot boot twrp.img</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>输入镜像</li>
 </ul>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash system system.img</span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash system system.img</span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
 
         </div>
 

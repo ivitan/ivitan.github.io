@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Ubuntu,Termux">
-    <meta name="description" content="自定义主题shell提示符. &lt;!--more--&gt; 修改oh-my-zsh主题 主题目录 12cd ~&#x2F;.oh-my-zsh&#x2F;themesvim theme-name 主题提示符    代码 解释     %T 系统时间(时：分)   %* 系统时间(时：分：秒)   %D 系统日期(年-月-日)   %n 你的用户名   %B - %b 开始到结束使用粗体打印   %U - %u">
+    <meta name="description" content="自定义主题shell提示符.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oh-My-Zsh 主题">
 <meta property="og:url" content="https://vitan.me/posts/Oh-My-ZSH-Theme.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="自定义主题shell提示符. &lt;!--more--&gt; 修改oh-my-zsh主题 主题目录 12cd ~&#x2F;.oh-my-zsh&#x2F;themesvim theme-name 主题提示符    代码 解释     %T 系统时间(时：分)   %* 系统时间(时：分：秒)   %D 系统日期(年-月-日)   %n 你的用户名   %B - %b 开始到结束使用粗体打印   %U - %u">
+<meta property="og:description" content="自定义主题shell提示符.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-31T01:13:37.000Z">
 <meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改oh-my-zsh主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主题目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主题提示符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">顏色語法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">事例</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改oh-my-zsh主题"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改oh-my-zsh主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主题目录"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主题目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主题提示符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">主题提示符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#顏色語法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">顏色語法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事例"><span class="post-toc-number">2.</span> <span class="post-toc-text">事例</span></a></li></ol>
         </nav>
     </aside>
 
@@ -208,82 +208,75 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>自定义主题shell提示符.
-&lt;!--more--&gt;</p>
-<h1>修改oh-my-zsh主题</h1>
-<h2>主题目录</h2>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure></p>
-<h2>主题提示符</h2>
-<table>
+            <p>自定义主题shell提示符.</p>
+<a id="more"></a>
+<h1 id="修改oh-my-zsh主题"><a href="#修改oh-my-zsh主题" class="headerlink" title="修改oh-my-zsh主题"></a>修改oh-my-zsh主题</h1><h2 id="主题目录"><a href="#主题目录" class="headerlink" title="主题目录"></a>主题目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/themes</span><br><span class="line">vim theme-name</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题提示符"><a href="#主题提示符" class="headerlink" title="主题提示符"></a>主题提示符</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">代码</th>
-<th style="text-align:center">解释</th>
+<th align="center">代码</th>
+<th align="center">解释</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">%T</td>
-<td style="text-align:center">系统时间(时：分)</td>
+<tbody><tr>
+<td align="center">%T</td>
+<td align="center">系统时间(时：分)</td>
 </tr>
 <tr>
-<td style="text-align:center">%*</td>
-<td style="text-align:center">系统时间(时：分：秒)</td>
+<td align="center">%*</td>
+<td align="center">系统时间(时：分：秒)</td>
 </tr>
 <tr>
-<td style="text-align:center">%D</td>
-<td style="text-align:center">系统日期(年-月-日)</td>
+<td align="center">%D</td>
+<td align="center">系统日期(年-月-日)</td>
 </tr>
 <tr>
-<td style="text-align:center">%n</td>
-<td style="text-align:center">你的用户名</td>
+<td align="center">%n</td>
+<td align="center">你的用户名</td>
 </tr>
 <tr>
-<td style="text-align:center">%B - %b</td>
-<td style="text-align:center">开始到结束使用粗体打印</td>
+<td align="center">%B - %b</td>
+<td align="center">开始到结束使用粗体打印</td>
 </tr>
 <tr>
-<td style="text-align:center">%U - %u</td>
-<td style="text-align:center">开始到结束使用下划线打印</td>
+<td align="center">%U - %u</td>
+<td align="center">开始到结束使用下划线打印</td>
 </tr>
 <tr>
-<td style="text-align:center">%d</td>
-<td style="text-align:center">你目前的工作目录</td>
+<td align="center">%d</td>
+<td align="center">你目前的工作目录</td>
 </tr>
 <tr>
-<td style="text-align:center">%~</td>
-<td style="text-align:center">你目前的工作目录相对于～的相对路径</td>
+<td align="center">%~</td>
+<td align="center">你目前的工作目录相对于～的相对路径</td>
 </tr>
 <tr>
-<td style="text-align:center">%M</td>
-<td style="text-align:center">计算机的主机名</td>
+<td align="center">%M</td>
+<td align="center">计算机的主机名</td>
 </tr>
 <tr>
-<td style="text-align:center">%m</td>
-<td style="text-align:center">计算机的主机名(在第一个句号之前截断)</td>
+<td align="center">%m</td>
+<td align="center">计算机的主机名(在第一个句号之前截断)</td>
 </tr>
 <tr>
-<td style="text-align:center">%l</td>
-<td style="text-align:center">你当前的tty</td>
+<td align="center">%l</td>
+<td align="center">你当前的tty</td>
 </tr>
 <tr>
-<td style="text-align:center">%n</td>
-<td style="text-align:center">登录名</td>
+<td align="center">%n</td>
+<td align="center">登录名</td>
 </tr>
-</tbody>
-</table>
-<h2>顏色語法</h2>
-<ol>
-<li>&quot;%{$fg[cyan]%}XXX&quot;</li>
-<li>&quot;%{$fg[yellow]%}和%{$reset_color%}&quot;</li>
+</tbody></table>
+<h2 id="顏色語法"><a href="#顏色語法" class="headerlink" title="顏色語法"></a>顏色語法</h2><ol>
+<li>“%{$fg[cyan]%}XXX”</li>
+<li>“%{$fg[yellow]%}和%{$reset_color%}”</li>
 <li>上面是一对的中间夹的文字会用 yellow 颜色显示，颜色要用小写。</li>
 </ol>
-<h1>事例</h1>
-<ul>
-<li>Before
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT="</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[blue]%&#125;<span class="comment">#%&#123;$reset_color%&#125; \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">(<span class="comment">#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;@ \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[green]%&#125;%m \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;<span class="keyword">in</span> \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[yellow]%&#125;%~%&#123;<span class="variable">$reset_color</span>%&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;hg_info&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;git_info&#125;\</span></span><br><span class="line"> \</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;[%*] <span class="variable">$exit_code</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[red]%&#125;$ %&#123;<span class="variable">$reset_color</span>%&#125;<span class="string">"</span></span></span><br></pre></td></tr></table></figure></li>
-<li>Affter
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=<span class="string">"%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span></span><br><span class="line"><span class="string">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;@ \</span></span><br><span class="line"><span class="string">%&#123;$fg[green]%&#125;% OnePlus \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;in \</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;hg_info&#125;</span>\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;git_info&#125;</span>\</span></span><br><span class="line"><span class="string">\</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125; [%*] $exit_code</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;"</span></span><br></pre></td></tr></table></figure></li>
+<h1 id="事例"><a href="#事例" class="headerlink" title="事例"></a>事例</h1><ul>
+<li>Before<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROMPT="</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[blue]%&#125;<span class="comment">#%&#123;$reset_color%&#125; \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">(<span class="comment">#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;%n) \</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;@ \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[green]%&#125;%m \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;<span class="keyword">in</span> \</span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[yellow]%&#125;%~%&#123;<span class="variable">$reset_color</span>%&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;hg_info&#125;\</span></span><br><span class="line"><span class="meta">$</span><span class="bash">&#123;git_info&#125;\</span></span><br><span class="line"> \</span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[white]%&#125;[%*] <span class="variable">$exit_code</span></span></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$terminfo</span>[bold]<span class="variable">$fg</span>[red]%&#125;$ %&#123;<span class="variable">$reset_color</span>%&#125;<span class="string">"</span></span></span><br></pre></td></tr></table></figure></li>
+<li>Affter<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PROMPT=<span class="string">"%&#123;$terminfo[bold]$fg[blue]%&#125;#%&#123;$reset_color%&#125; \</span></span><br><span class="line"><span class="string">%(#,%&#123;$bg[yellow]%&#125;%&#123;$fg[black]%&#125;%n%&#123;$reset_color%&#125;,%&#123;$fg[cyan]%&#125;% Vitan) \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;@ \</span></span><br><span class="line"><span class="string">%&#123;$fg[green]%&#125;% OnePlus \</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125;in \</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[yellow]%&#125;%~%&#123;$reset_color%&#125;\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;hg_info&#125;</span>\</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;git_info&#125;</span>\</span></span><br><span class="line"><span class="string">\</span></span><br><span class="line"><span class="string">%&#123;$fg[white]%&#125; [%*] $exit_code</span></span><br><span class="line"><span class="string">%&#123;$terminfo[bold]$fg[red]%&#125;➜ %&#123;$reset_color%&#125;"</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
         </div>
