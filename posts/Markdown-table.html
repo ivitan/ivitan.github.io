@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Ubuntu,Termux,Markdown">
-    <meta name="description" content="Markdown 建表格。">
+    <meta name="description" content="Markdown 建表格。 &lt;!--more--&gt; 单元格和表头 表头和其他行   使用|来分隔不同的单元格，使用 -来分隔表头和其他行： 1234name| ge----|---LearnShare|12Mike|32 name|age ----|--- LearnShare|12 Mike| 32   为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown 表格">
 <meta property="og:url" content="https://vitan.me/posts/Markdown-table.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Markdown 建表格。">
+<meta property="og:description" content="Markdown 建表格。 &lt;!--more--&gt; 单元格和表头 表头和其他行   使用|来分隔不同的单元格，使用 -来分隔表头和其他行： 1234name| ge----|---LearnShare|12Mike|32 name|age ----|--- LearnShare|12 Mike| 32   为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-27T08:41:06.000Z">
 <meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单元格和表头"><span class="post-toc-number">1.</span> <span class="post-toc-text">单元格和表头</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表头和其他行"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">表头和其他行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对齐"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对齐</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入其他内容"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">插入其他内容</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">单元格和表头</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">表头和其他行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对齐</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">插入其他内容</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,18 +209,22 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Markdown 建表格。</p>
-<a id="more"></a>
-<h1 id="单元格和表头"><a href="#单元格和表头" class="headerlink" title="单元格和表头"></a>单元格和表头</h1><h2 id="表头和其他行"><a href="#表头和其他行" class="headerlink" title="表头和其他行"></a>表头和其他行</h2><ul>
-<li><p>使用<code>|</code>来分隔不同的单元格，使用 <code>-</code>来分隔表头和其他行：</p>
+            <p>Markdown 建表格。
+&lt;!--more--&gt;</p>
+<h1>单元格和表头</h1>
+<h2>表头和其他行</h2>
+<ul>
+<li>
+<p>使用<code>|</code>来分隔不同的单元格，使用 <code>-</code>来分隔表头和其他行：
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name<span class="string">| ge</span></span><br><span class="line">----<span class="string">|---</span></span><br><span class="line">LearnShare<span class="string">|12</span></span><br><span class="line">Mike<span class="string">|32</span></span><br></pre></td></tr></table></figure>
-<p>name|age</p>
+name|age
+----|---
+LearnShare|12
+Mike| 32</p>
 </li>
-<li><p>—|—<br>LearnShare|12<br>Mike| 32</p>
-</li>
-<li><p>为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">name</span>|<span class="string">age</span>|</span><br><span class="line">|<span class="string">----------</span>|<span class="string">---</span>|</span><br><span class="line">|<span class="string">LearnShare</span>|<span class="string">12</span>|</span><br><span class="line">|<span class="string">Mike</span>|<span class="string">32</span>|</span><br></pre></td></tr></table></figure>
-
+<li>
+<p>为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">name</span>|<span class="string">age</span>|</span><br><span class="line">|<span class="string">----------</span>|<span class="string">---</span>|</span><br><span class="line">|<span class="string">LearnShare</span>|<span class="string">12</span>|</span><br><span class="line">|<span class="string">Mike</span>|<span class="string">32</span>|</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
 <table>
@@ -230,7 +234,8 @@ ga('send', 'pageview');
 <th>age</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>LearnShare</td>
 <td>12</td>
 </tr>
@@ -238,40 +243,44 @@ ga('send', 'pageview');
 <td>Mike</td>
 <td>32</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>为了使 Markdown 更清晰，<code>|</code> 和<code>-</code>两侧需要至少有一个空格（最左侧和最右侧的 | 外就不需要了）。</li>
 </ul>
-<h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>在表头下方的分隔线标记中加入<code>:</code>，即可标记下方单元格内容的对齐方式：</p>
+<h2>对齐</h2>
+<p>在表头下方的分隔线标记中加入<code>:</code>，即可标记下方单元格内容的对齐方式：</p>
 <ul>
 <li><code>:---</code>代表左对齐</li>
 <li><code>:--:</code>代表居中对齐</li>
 <li><code>---:</code>代表右对齐</li>
 </ul>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> left </span>|<span class="string"> center </span>|<span class="string"> right </span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :----: </span>|<span class="string"> ----: </span>|</span><br><span class="line">|<span class="string"> aaaa </span>|<span class="string"> bbbbbb </span>|<span class="string"> ccccc </span>|</span><br><span class="line">|<span class="string"> a    </span>|<span class="string"> b      </span>|<span class="string"> c     </span>|</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> left </span>|<span class="string"> center </span>|<span class="string"> right </span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :----: </span>|<span class="string"> ----: </span>|</span><br><span class="line">|<span class="string"> aaaa </span>|<span class="string"> bbbbbb </span>|<span class="string"> ccccc </span>|</span><br><span class="line">|<span class="string"> a    </span>|<span class="string"> b      </span>|<span class="string"> c     </span>|</span><br></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr>
-<th align="left">left</th>
-<th align="center">center</th>
-<th align="right">right</th>
+<th style="text-align:left">left</th>
+<th style="text-align:center">center</th>
+<th style="text-align:right">right</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">aaaa</td>
-<td align="center">bbbbbb</td>
-<td align="right">ccccc</td>
+<tbody>
+<tr>
+<td style="text-align:left">aaaa</td>
+<td style="text-align:center">bbbbbb</td>
+<td style="text-align:right">ccccc</td>
 </tr>
 <tr>
-<td align="left">a</td>
-<td align="center">b</td>
-<td align="right">c</td>
+<td style="text-align:left">a</td>
+<td style="text-align:center">b</td>
+<td style="text-align:right">c</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
 <p>如果不使用对齐标记，单元格中的内容默认左对齐；表头单元格中的内容会一直居中对齐（不同的实现可能会有不同表现）。</p>
-<h2 id="插入其他内容"><a href="#插入其他内容" class="headerlink" title="插入其他内容"></a>插入其他内容</h2><p>表格中可以插入其他 Markdown 中的行内标记：</p>
+<h2>插入其他内容</h2>
+<p>表格中可以插入其他 Markdown 中的行内标记：</p>
 
         </div>
 

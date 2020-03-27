@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Termux">
-    <meta name="description" content="分屏与游戏。">
+    <meta name="description" content="分屏与游戏。 &lt;!--more--&gt; 游戏 月球车 1pkg install moon-buggy  Start:moon-buggy  fortz 1pkg install fortz  start: zgames  tmux 分屏  在ubuntu系统中使用 sudo apt-get install tmux ArchLinux yacman -S tmux Termux安装： 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分屏&amp;游戏">
 <meta property="og:url" content="https://vitan.me/posts/Termux-game-tools.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="分屏与游戏。">
+<meta property="og:description" content="分屏与游戏。 &lt;!--more--&gt; 游戏 月球车 1pkg install moon-buggy  Start:moon-buggy  fortz 1pkg install fortz  start: zgames  tmux 分屏  在ubuntu系统中使用 sudo apt-get install tmux ArchLinux yacman -S tmux Termux安装： 1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-28T11:07:03.000Z">
 <meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
@@ -181,7 +181,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#游戏"><span class="post-toc-number">1.</span> <span class="post-toc-text">游戏</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tmux-分屏"><span class="post-toc-number">2.</span> <span class="post-toc-text">tmux 分屏</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">游戏</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">tmux 分屏</span></a></li></ol>
         </nav>
     </aside>
 
@@ -207,153 +207,158 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>分屏与游戏。</p>
-<a id="more"></a>
-<h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><p>月球车</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install moon-buggy</span><br></pre></td></tr></table></figure>
+            <p>分屏与游戏。
+&lt;!--more--&gt;</p>
+<h1>游戏</h1>
+<p>月球车
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install moon-buggy</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Start:<code>moon-buggy</code></li>
 </ul>
-<p>fortz</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install fortz</span><br></pre></td></tr></table></figure>
+<p>fortz
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install fortz</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>start: <code>zgames</code></li>
 </ul>
-<h1 id="tmux-分屏"><a href="#tmux-分屏" class="headerlink" title="tmux 分屏"></a>tmux 分屏</h1><ul>
-<li>在ubuntu系统中使用 <code>sudo apt-get install tmux</code> </li>
+<h1>tmux 分屏</h1>
+<ul>
+<li>在ubuntu系统中使用 <code>sudo apt-get install tmux</code></li>
 <li>ArchLinux <code>yacman -S tmux</code></li>
-<li>Termux安装：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install tumx</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Termux安装：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install tumx</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>tmux主要包括以下几个模块</p>
 <table>
 <thead>
 <tr>
-<th align="center">名词</th>
-<th align="center">含义</th>
-<th align="left">解析</th>
+<th style="text-align:center">名词</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:left">解析</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">session</td>
-<td align="center">会话</td>
-<td align="left">一个服务器可以包含多个会话</td>
+<tbody>
+<tr>
+<td style="text-align:center">session</td>
+<td style="text-align:center">会话</td>
+<td style="text-align:left">一个服务器可以包含多个会话</td>
 </tr>
 <tr>
-<td align="center">window</td>
-<td align="center">窗口</td>
-<td align="left">一个会话可以包含多个窗口</td>
+<td style="text-align:center">window</td>
+<td style="text-align:center">窗口</td>
+<td style="text-align:left">一个会话可以包含多个窗口</td>
 </tr>
 <tr>
-<td align="center">pane</td>
-<td align="center">面板</td>
-<td align="left">一个窗口可以包含多个面板[强悍的分屏]</td>
+<td style="text-align:center">pane</td>
+<td style="text-align:center">面板</td>
+<td style="text-align:left">一个窗口可以包含多个面板[强悍的分屏]</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>输入命令 tmux 使用工具</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th align="left">命令</th>
-<th align="left">分屏状态</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">分屏状态</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">Ctrl+b ?</td>
-<td align="left">显示快捷键帮助</td>
+<tbody>
+<tr>
+<td style="text-align:left">Ctrl+b ?</td>
+<td style="text-align:left">显示快捷键帮助</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b C-o</td>
-<td align="left">调换窗口位置，类似与vim 里的C-w</td>
+<td style="text-align:left">Ctrl+b C-o</td>
+<td style="text-align:left">调换窗口位置，类似与vim 里的C-w</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b 空格键</td>
-<td align="left">采用下一个内置布局</td>
+<td style="text-align:left">Ctrl+b 空格键</td>
+<td style="text-align:left">采用下一个内置布局</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b !</td>
-<td align="left">把当前窗口变为新窗口</td>
+<td style="text-align:left">Ctrl+b !</td>
+<td style="text-align:left">把当前窗口变为新窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b “</td>
-<td align="left">横向分隔窗口</td>
+<td style="text-align:left">Ctrl+b “</td>
+<td style="text-align:left">横向分隔窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b %</td>
-<td align="left">纵向分隔窗口</td>
+<td style="text-align:left">Ctrl+b %</td>
+<td style="text-align:left">纵向分隔窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b q</td>
-<td align="left">显示分隔窗口的编号</td>
+<td style="text-align:left">Ctrl+b q</td>
+<td style="text-align:left">显示分隔窗口的编号</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b o</td>
-<td align="left">跳到下一个分隔窗口</td>
+<td style="text-align:left">Ctrl+b o</td>
+<td style="text-align:left">跳到下一个分隔窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b 上下键</td>
-<td align="left">上一个及下一个分隔窗口</td>
+<td style="text-align:left">Ctrl+b 上下键</td>
+<td style="text-align:left">上一个及下一个分隔窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b C-方向键</td>
-<td align="left">调整分隔窗口大小</td>
+<td style="text-align:left">Ctrl+b C-方向键</td>
+<td style="text-align:left">调整分隔窗口大小</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b c</td>
-<td align="left">创建新窗口</td>
+<td style="text-align:left">Ctrl+b c</td>
+<td style="text-align:left">创建新窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b 0~9</td>
-<td align="left">选择几号窗口</td>
+<td style="text-align:left">Ctrl+b 0~9</td>
+<td style="text-align:left">选择几号窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b c</td>
-<td align="left">创建新窗口</td>
+<td style="text-align:left">Ctrl+b c</td>
+<td style="text-align:left">创建新窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b n</td>
-<td align="left">选择下一个窗口</td>
+<td style="text-align:left">Ctrl+b n</td>
+<td style="text-align:left">选择下一个窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b l</td>
-<td align="left">切换到最后使用的窗口</td>
+<td style="text-align:left">Ctrl+b l</td>
+<td style="text-align:left">切换到最后使用的窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b p</td>
-<td align="left">选择前一个窗口</td>
+<td style="text-align:left">Ctrl+b p</td>
+<td style="text-align:left">选择前一个窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b w</td>
-<td align="left">以菜单方式显示及选择窗口</td>
+<td style="text-align:left">Ctrl+b w</td>
+<td style="text-align:left">以菜单方式显示及选择窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b t</td>
-<td align="left">显示时钟</td>
+<td style="text-align:left">Ctrl+b t</td>
+<td style="text-align:left">显示时钟</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b ;</td>
-<td align="left">切换到最后一个使用的面板</td>
+<td style="text-align:left">Ctrl+b ;</td>
+<td style="text-align:left">切换到最后一个使用的面板</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b x</td>
-<td align="left">关闭面板</td>
+<td style="text-align:left">Ctrl+b x</td>
+<td style="text-align:left">关闭面板</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b &amp;</td>
-<td align="left">关闭窗口</td>
+<td style="text-align:left">Ctrl+b &amp;</td>
+<td style="text-align:left">关闭窗口</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b s</td>
-<td align="left">以菜单方式显示和选择会话</td>
+<td style="text-align:left">Ctrl+b s</td>
+<td style="text-align:left">以菜单方式显示和选择会话</td>
 </tr>
 <tr>
-<td align="left">Ctrl+b d</td>
-<td align="left">退出tumx，并保存当前会话，这时，tmux仍在后台运行，可以通过tmux attach进入 到指定的会话</td>
+<td style="text-align:left">Ctrl+b d</td>
+<td style="text-align:left">退出tumx，并保存当前会话，这时，tmux仍在后台运行，可以通过tmux attach进入 到指定的会话</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
         </div>
 

@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Note,WebCrawler,Python">
-    <meta name="description" content="Python 小技巧">
+    <meta name="description" content="Python 小技巧 &lt;!---more--&gt; 打印 index 对列表，数列打印他们的 index  一般方法  12345cities &#x3D; [&#39;Shanghai&#39;,&#39;beijing&#39;,&#39;Chengdu&#39;]i &#x3D; 0for c in cities:    print(i +1,&#39;--&gt;&#39;,c)    i +&#x3D; 1  更好的方法(使用 enumerate)  123cities">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Tips">
 <meta property="og:url" content="https://vitan.me/posts/PythonTips.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Python 小技巧">
+<meta property="og:description" content="Python 小技巧 &lt;!---more--&gt; 打印 index 对列表，数列打印他们的 index  一般方法  12345cities &#x3D; [&#39;Shanghai&#39;,&#39;beijing&#39;,&#39;Chengdu&#39;]i &#x3D; 0for c in cities:    print(i +1,&#39;--&gt;&#39;,c)    i +&#x3D; 1  更好的方法(使用 enumerate)  123cities">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fwscu1oiy9j204d0303yd.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/d71f8b2fgy1fwscu1m48wj204l02r3yd.jpg">
@@ -186,7 +186,15 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#打印-index"><span class="post-toc-number">1.</span> <span class="post-toc-text">打印 index</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#两个系列循环"><span class="post-toc-number">2.</span> <span class="post-toc-text">两个系列循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#交换变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">交换变量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字典的读取"><span class="post-toc-number">4.</span> <span class="post-toc-text">字典的读取</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#循环查找"><span class="post-toc-number">5.</span> <span class="post-toc-text">循环查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件读取查找"><span class="post-toc-number">6.</span> <span class="post-toc-text">文件读取查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于锁的写法"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于锁的写法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">打印 index</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">两个系列循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">3.</span> <span class="post-toc-text">交换变量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">4.</span> <span class="post-toc-text">字典的读取</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">5.</span> <span class="post-toc-text">循环查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">6.</span> <span class="post-toc-text">文件读取查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于锁的写法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">1
+2
+3
+4
+import threading
+lock &#x3D; threading.Lock()
+with lock:
+    print(&#39;Citical par,do somethins...&#39;)
+</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -212,111 +220,102 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Python 小技巧</p>
-<a id="more"></a>
-<h1 id="打印-index"><a href="#打印-index" class="headerlink" title="打印 index"></a>打印 index</h1><p>对列表，数列打印他们的 index</p>
+            <p>Python 小技巧
+&lt;!---more--&gt;</p>
+<h1>打印 index</h1>
+<p>对列表，数列打印他们的 index</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cities = [<span class="string">'Shanghai'</span>,<span class="string">'beijing'</span>,<span class="string">'Chengdu'</span>]</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cities:</span><br><span class="line">    print(i +<span class="number">1</span>,<span class="string">'--&gt;'</span>,c)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cities = [<span class="string">'Shanghai'</span>,<span class="string">'beijing'</span>,<span class="string">'Chengdu'</span>]</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cities:</span><br><span class="line">    print(i +<span class="number">1</span>,<span class="string">'--&gt;'</span>,c)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法(使用 enumerate)</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cities = [<span class="string">'Shanghai'</span>,<span class="string">'beijing'</span>,<span class="string">'Chengdu'</span>]</span><br><span class="line"><span class="keyword">for</span> i,city <span class="keyword">in</span> enumerate(cities):</span><br><span class="line">    print(i+<span class="number">1</span>,<span class="string">'--&gt;'</span>,city)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cities = [<span class="string">'Shanghai'</span>,<span class="string">'beijing'</span>,<span class="string">'Chengdu'</span>]</span><br><span class="line"><span class="keyword">for</span> i,city <span class="keyword">in</span> enumerate(cities):</span><br><span class="line">    print(i+<span class="number">1</span>,<span class="string">'--&gt;'</span>,city)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fwscu1oiy9j204d0303yd.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
-<h1 id="两个系列循环"><a href="#两个系列循环" class="headerlink" title="两个系列循环"></a>两个系列循环</h1><p>对两个序列进行计算或处理</p>
+            </figure></p>
+<h1>两个系列循环</h1>
+<p>对两个序列进行计算或处理</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">'leo'</span>,<span class="string">'jack'</span>,<span class="string">'james'</span>]</span><br><span class="line">colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>]</span><br><span class="line">n = min(len(names),len(colors))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    print(names[i],<span class="string">'--&gt;'</span>,colors[i])</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">'leo'</span>,<span class="string">'jack'</span>,<span class="string">'james'</span>]</span><br><span class="line">colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>]</span><br><span class="line">n = min(len(names),len(colors))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    print(names[i],<span class="string">'--&gt;'</span>,colors[i])</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法(使用 zip)</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">'leo'</span>,<span class="string">'jack'</span>,<span class="string">'james'</span>]</span><br><span class="line">colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>]</span><br><span class="line"><span class="keyword">for</span> name,color <span class="keyword">in</span> zip(names,colors):</span><br><span class="line">    print(name,<span class="string">'--&gt;'</span>,color)</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">'leo'</span>,<span class="string">'jack'</span>,<span class="string">'james'</span>]</span><br><span class="line">colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>]</span><br><span class="line"><span class="keyword">for</span> name,color <span class="keyword">in</span> zip(names,colors):</span><br><span class="line">    print(name,<span class="string">'--&gt;'</span>,color)</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fwscu1m48wj204l02r3yd.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
-<h1 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h1><p>多个变量之间的交换，如冒泡排序法</p>
+            </figure></p>
+<h1>交换变量</h1>
+<p>多个变量之间的交换，如冒泡排序法</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line">y = <span class="number">2</span></span><br><span class="line">print(<span class="string">'&gt;&gt;Before:x=&#123;&#125;,y=&#123;&#125;'</span>.format(x,y))</span><br><span class="line">tmp = y</span><br><span class="line">y = x</span><br><span class="line">x = tmp</span><br><span class="line">print(<span class="string">'&gt;&gt;After:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line">y = <span class="number">2</span></span><br><span class="line">print(<span class="string">'&gt;&gt;Before:x=&#123;&#125;,y=&#123;&#125;'</span>.format(x,y))</span><br><span class="line">tmp = y</span><br><span class="line">y = x</span><br><span class="line">x = tmp</span><br><span class="line">print(<span class="string">'&gt;&gt;After:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line">y= <span class="number">2</span></span><br><span class="line">print(<span class="string">'Before:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br><span class="line">x,y = y,x</span><br><span class="line">print(<span class="string">'After:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br></pre></td></tr></table></figure>
-
-<figure class="image-bubble">
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line">y= <span class="number">2</span></span><br><span class="line">print(<span class="string">'Before:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br><span class="line">x,y = y,x</span><br><span class="line">print(<span class="string">'After:x = &#123;&#125;,y = &#123;&#125;'</span>.format(x,y))</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://ws1.sinaimg.cn/large/d71f8b2fgy1fwscu1nt3kj205a01pt8j.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>
-
-<h1 id="字典的读取"><a href="#字典的读取" class="headerlink" title="字典的读取"></a>字典的读取</h1><p>对字典的访问和读取，读取的字典 key 为空，需要一个缺省值</p>
+            </figure></p>
+<h1>字典的读取</h1>
+<p>对字典的访问和读取，读取的字典 key 为空，需要一个缺省值</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">students = &#123;<span class="string">'Lili'</span>:<span class="number">18</span>,<span class="string">'Sam'</span>:<span class="number">25</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="string">'Susan'</span> <span class="keyword">in</span> students:</span><br><span class="line">    student = students[<span class="string">'Susan'</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    student = <span class="string">'unknow'</span></span><br><span class="line">print(<span class="string">'Susan is &#123;&#125; yesrs old'</span>.format(student))</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">students = &#123;<span class="string">'Lili'</span>:<span class="number">18</span>,<span class="string">'Sam'</span>:<span class="number">25</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="string">'Susan'</span> <span class="keyword">in</span> students:</span><br><span class="line">    student = students[<span class="string">'Susan'</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    student = <span class="string">'unknow'</span></span><br><span class="line">print(<span class="string">'Susan is &#123;&#125; yesrs old'</span>.format(student))</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">students = &#123;<span class="string">'Lili'</span>:<span class="number">18</span>,<span class="string">'San'</span>:<span class="number">25</span>&#125;</span><br><span class="line">student = students.get(<span class="string">'Susan'</span>,<span class="string">'unknow'</span>)</span><br><span class="line">print(<span class="string">'Susan is &#123;&#125; yesrs'</span>.format(student))</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">students = &#123;<span class="string">'Lili'</span>:<span class="number">18</span>,<span class="string">'San'</span>:<span class="number">25</span>&#125;</span><br><span class="line">student = students.get(<span class="string">'Susan'</span>,<span class="string">'unknow'</span>)</span><br><span class="line">print(<span class="string">'Susan is &#123;&#125; yesrs'</span>.format(student))</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>巧妙地利用字典的 get 的方法。若字典没有 Susan 的 key，则用 unknow 来表示缺省值。</li>
 </ul>
-<h1 id="循环查找"><a href="#循环查找" class="headerlink" title="循环查找"></a>循环查找</h1><p>在一个大的循环中作搜索，如在文件中搜索关键字，从文件名列表中查找特殊的文件名</p>
+<h1>循环查找</h1>
+<p>在一个大的循环中作搜索，如在文件中搜索关键字，从文件名列表中查找特殊的文件名</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">target_letter = <span class="string">'d'</span></span><br><span class="line">letters = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">found = <span class="literal">False</span></span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> letters:</span><br><span class="line">    <span class="keyword">if</span> letter == target_letter:</span><br><span class="line">        print(<span class="string">'Found'</span>)</span><br><span class="line">        found = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> found:</span><br><span class="line">    print(<span class="string">'Not Found'</span>)</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">target_letter = <span class="string">'d'</span></span><br><span class="line">letters = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">found = <span class="literal">False</span></span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> letters:</span><br><span class="line">    <span class="keyword">if</span> letter == target_letter:</span><br><span class="line">        print(<span class="string">'Found'</span>)</span><br><span class="line">        found = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> found:</span><br><span class="line">    print(<span class="string">'Not Found'</span>)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">target_letter = <span class="string">'d'</span></span><br><span class="line">letters = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> letters:</span><br><span class="line">    <span class="keyword">if</span> letter == target_letter:</span><br><span class="line">        print(<span class="string">'found'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Not Found'</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="文件读取查找"><a href="#文件读取查找" class="headerlink" title="文件读取查找"></a>文件读取查找</h1><p>打开以文件，对内容进行循环读取处理</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">target_letter = <span class="string">'d'</span></span><br><span class="line">letters = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> letters:</span><br><span class="line">    <span class="keyword">if</span> letter == target_letter:</span><br><span class="line">        print(<span class="string">'found'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Not Found'</span>)</span><br></pre></td></tr></table></figure></p>
+<h1>文件读取查找</h1>
+<p>打开以文件，对内容进行循环读取处理</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'data.txt'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    text = f.read()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> text.split(<span class="string">'\n'</span>):</span><br><span class="line">        print(line)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'data.txt'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    text = f.read()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> text.split(<span class="string">'\n'</span>):</span><br><span class="line">        print(line)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'data.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line.strip(<span class="string">'\n'</span>))</span><br></pre></td></tr></table></figure>
-
-<h1 id="关于锁的写法"><a href="#关于锁的写法" class="headerlink" title="关于锁的写法"></a>关于锁的写法</h1><p>对于并发操作尤其是多线程的操作，对同一内存进行读写操作时，加锁保护</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'data.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line.strip(<span class="string">'\n'</span>))</span><br></pre></td></tr></table></figure></p>
+<h1>关于锁的写法</h1>
+<p>对于并发操作尤其是多线程的操作，对同一内存进行读写操作时，加锁保护</p>
 <ul>
 <li>一般方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">lock = threading.Lock()</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="string">'Citical par,do somethins...'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    lock.release()</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">lock = threading.Lock()</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="string">'Citical par,do somethins...'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    lock.release()</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>更好的方法</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">lock = threading.Lock()</span><br><span class="line"><span class="keyword">with</span> lock:</span><br><span class="line">    print(<span class="string">'Citical par,do somethins...'</span>)</span><br></pre></td></tr></table></figure>
-<hr>
+<h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">lock = threading.Lock()</span><br><span class="line"><span class="keyword">with</span> lock:</span><br><span class="line">    print(<span class="string">'Citical par,do somethins...'</span>)</span><br></pre></td></tr></table></figure></h2>
 <p><strong>Via</strong></p>
 <ul>
 <li><a href="https://www.bilibili.com/read/cv1417439" target="_blank" rel="noopener">七种不一样的Python代码写法，让你写出一手漂亮的代码</a></li>

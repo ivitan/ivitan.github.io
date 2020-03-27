@@ -32,20 +32,20 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,MySQL,ArchLinux">
-    <meta name="description" content="ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。">
+    <meta name="keywords" content="Linux,ArchLinux,MySQL">
+    <meta name="description" content="ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。 &lt;!--more--&gt; 安装 MariaDB 安装 MariaDb 和其客户端工具 1sudo pacman -S mariadb mariadb-clients  初始化  1sudo mysql_install_db --user&#x3D;mysql --basedir&#x3D;&#x2F;usr --datadir&#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux 安装 MySQL">
 <meta property="og:url" content="https://vitan.me/posts/ArchLinux-MySQL.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。">
+<meta property="og:description" content="ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。 &lt;!--more--&gt; 安装 MariaDB 安装 MariaDb 和其客户端工具 1sudo pacman -S mariadb mariadb-clients  初始化  1sudo mysql_install_db --user&#x3D;mysql --basedir&#x3D;&#x2F;usr --datadir&#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-08-15T04:33:52.000Z">
 <meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-MariaDB"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 MariaDB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">配置</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 MariaDB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">配置</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -208,32 +208,34 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。</p>
-<a id="more"></a>
-<h1 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h1><p>安装 MariaDb 和其客户端工具</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients</span><br></pre></td></tr></table></figure>
-
+            <p>ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。
+&lt;!--more--&gt;</p>
+<h1>安装 MariaDB</h1>
+<p>安装 MariaDb 和其客户端工具
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mariadb mariadb-clients</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>初始化</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br></pre></td></tr></table></figure></p>
+<h2>配置</h2>
+<ul>
 <li>启动 MariaDB</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysqld</span><br></pre></td></tr></table></figure>
-
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><p>为 root 用户设置一新密码</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root password '71017'</span><br></pre></td></tr></table></figure>
+<li>
+<p>为 root 用户设置一新密码
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root password '71017'</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>登录 MariaDb</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p71017</span><br></pre></td></tr></table></figure>
+<li>
+<p>登录 MariaDb
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p71017</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>开机自动启动 MariaDb</p>
+<li>
+<p>开机自动启动 MariaDb</p>
 </li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure></p>
 
         </div>
 

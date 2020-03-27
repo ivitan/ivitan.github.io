@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="SQL">
-    <meta name="description" content="关系模式关系模式R(U)的一个分解p&#x3D;{Ri(Ui)}满足U&#x3D;∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖">
+    <meta name="description" content="关系模式 关系模式R(U)的一个分解p&#x3D;{Ri(Ui)}满足U&#x3D;∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖 &lt;!--more--&gt; 无损连接 无损连接是指某关系模式的事例r按照关系模式分解成多个关系r1,…,rk，若r1,…,rk的自然连接（Join操作）等于r，则称该模式分解是无损的. 测试无损连接 Chase方法能够检测完全的无损连接，设有n个属性的模式R分解为k个模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 模式分解">
 <meta property="og:url" content="https://vitan.me/posts/SQLmode.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="关系模式关系模式R(U)的一个分解p&#x3D;{Ri(Ui)}满足U&#x3D;∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖">
+<meta property="og:description" content="关系模式 关系模式R(U)的一个分解p&#x3D;{Ri(Ui)}满足U&#x3D;∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖 &lt;!--more--&gt; 无损连接 无损连接是指某关系模式的事例r按照关系模式分解成多个关系r1,…,rk，若r1,…,rk的自然连接（Join操作）等于r，则称该模式分解是无损的. 测试无损连接 Chase方法能够检测完全的无损连接，设有n个属性的模式R分解为k个模式">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2018/07/03/5b3b7eba9112d.jpg">
 <meta property="article:published_time" content="2018-07-03T12:58:18.000Z">
@@ -182,7 +182,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关系模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">关系模式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关系模式的范式"><span class="post-toc-number">2.</span> <span class="post-toc-text">关系模式的范式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关系模式分解为范式的分解算法"><span class="post-toc-number">3.</span> <span class="post-toc-text">关系模式分解为范式的分解算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#保持函数依赖地分解R到3NF"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">保持函数依赖地分解R到3NF</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无损连接且保持函数依赖地分解R到3NF"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">无损连接且保持函数依赖地分解R到3NF</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无损联接地分解R到BCNF"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">无损联接地分解R到BCNF</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">关系模式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">关系模式的范式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">3.</span> <span class="post-toc-text">关系模式分解为范式的分解算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">保持函数依赖地分解R到3NF</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">无损连接且保持函数依赖地分解R到3NF</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">无损联接地分解R到BCNF</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -208,9 +208,10 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h1><p>关系模式R(U)的一个分解p={Ri(Ui)}满足U=∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖</p>
-<a id="more"></a>
-<p>无损连接</p>
+            <h1>关系模式</h1>
+<p>关系模式R(U)的一个分解p={Ri(Ui)}满足U=∪{Ui}，模式分解必须是无损连接并且需要保持函数依赖</p>
+<p>&lt;!--more--&gt;
+无损连接</p>
 <p><code>无损连接是指</code>某关系模式的事例r按照关系模式分解成多个关系r1,…,rk，若r1,…,rk的自然连接（Join操作）等于r，则称该模式分解是无损的.</p>
 <p>测试无损连接</p>
 <p>Chase方法能够检测完全的无损连接，设有n个属性的模式R分解为k个模式Ri，有如下Chase过程：</p>
@@ -219,22 +220,27 @@ ga('send', 'pageview');
 3. 若表格中有两行在X分量上相等，在Y分量上不相等则修改Y：若Y的分量中是个是aj，则另一个也修改为aj
 4. 如果没有aj，则用其中一个bij替换另一个符号（i是所有b中最小的行数）
 5. 重复2、3、4一直到表格不能修改为止
-6. 若此时表格中有一行全是a，则该分解是无损连接的分解</code></pre><p>当模式分解是简单的二元分解时（即p={R1,R2}），p是无损连接的分解当且仅当下面FD之一成立：</p>
+6. 若此时表格中有一行全是a，则该分解是无损连接的分解
+</code></pre>
+<p>当模式分解是简单的二元分解时（即p={R1,R2}），p是无损连接的分解当且仅当下面FD之一成立：</p>
 <pre><code>1. R1和R2两模式属性的交集 → R1与R2两模式属性的差集
-2. R1和R2两模式属性的交集 → R2与R1两模式属性的差集</code></pre><p>保持函数依赖</p>
+2. R1和R2两模式属性的交集 → R2与R1两模式属性的差集
+</code></pre>
+<p>保持函数依赖</p>
 <p>保持函数依赖是指关系模式R的FD集F在分解后仍在数据库模式中保持不变，这是模式分解的第二个条件</p>
 <p>形式化的定义分解后F在模式Ri上的投影为：</p>
 <p>πRi(F)={X→Y|X→Y∈F+⋂X、Y⊂Ri}</p>
-<p>若分解p满足如下条件则称p<strong>\保持函数依赖</strong>\：</p>
-<figure class="image-bubble">
+<p>若分解p满足如下条件则称p**\保持函数依赖**\：</p>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.loli.net/2018/07/03/5b3b7eba9112d.jpg" alt="Screenshot_20180703-214805__01.jpg" title="">
                 </div>
                 <div class="image-caption">Screenshot_20180703-214805__01.jpg</div>
-            </figure>
-
-<h1 id="关系模式的范式"><a href="#关系模式的范式" class="headerlink" title="关系模式的范式"></a>关系模式的范式</h1><p>含义<br>范式xNF即是满足特定要求的模式，将低一级范式的关系模式通过模式分解转换为高一级范式的关系模式集合的过程叫做规范化</p>
+            </figure></p>
+<h1>关系模式的范式</h1>
+<p>含义
+范式xNF即是满足特定要求的模式，将低一级范式的关系模式通过模式分解转换为高一级范式的关系模式集合的过程叫做规范化</p>
 <p>范式从低级到高级依次为：1NF、2NF、3NF、BCNF、4NF、5NF，高一级的范式总是低一级范式的真子集</p>
 <p>根据关系模式R的不可约FD集F，可以画出节点是属性或属性集，边是由被依赖节点指向依赖节点的有向图来辅助分析关系模式，叫做函数依赖图</p>
 <p>1NF</p>
@@ -247,24 +253,31 @@ ga('send', 'pageview');
 <p>不满足2NF的关系模式可能存在［插入异常、删除异常、更新异常和数据冗余］，通过画出函数依赖图无损分解非2NF得到2NF，但2NF也不能完全消除上述问题</p>
 <p>3NF</p>
 <p>假定：R只有一个候选码，且该候选码为主码</p>
-<p>R∈2NF且R的每一个非主属性都不传递依赖于主码时，R∈3NF<br>称A传递依赖于Y则有：Y→X，X→A，并且Y不依赖于X（即Y不等于X）、A不是X的子集</p>
+<p>R∈2NF且R的每一个非主属性都不传递依赖于主码时，R∈3NF
+称A传递依赖于Y则有：Y→X，X→A，并且Y不依赖于X（即Y不等于X）、A不是X的子集</p>
 <p>不满足3NF的关系模式也可能存在［插入异常、删除异常、更新异常和数据冗余］，通过打破传递依赖链条，把关系模式分解成多个子关系模式</p>
 <p>BCNF</p>
 <p>BCNF是3NF处理R有多个候选码的扩展，当R有多个候选码时即使R∈3NF，也可能出现［插入异常、删除异常、更新异常和数据冗余］，这时需要分解为BCNF范式</p>
-<p>如果关系模式R的所有不平凡的、完全的函数依赖的决定因素（左边的属性集）都是候选码，则R∈BCNF<br>若要求保持函数依赖和无损联接，则总可以达到3NF，但不一定满足BCNF；因为BCNF可以达到无损连接，但不一定保持函数依赖</p>
-<h1 id="关系模式分解为范式的分解算法"><a href="#关系模式分解为范式的分解算法" class="headerlink" title="关系模式分解为范式的分解算法"></a>关系模式分解为范式的分解算法</h1><h2 id="保持函数依赖地分解R到3NF"><a href="#保持函数依赖地分解R到3NF" class="headerlink" title="保持函数依赖地分解R到3NF"></a>保持函数依赖地分解R到3NF</h2><p>算法步骤：<br>求出R的最小函数依赖集F</p>
+<p>如果关系模式R的所有不平凡的、完全的函数依赖的决定因素（左边的属性集）都是候选码，则R∈BCNF
+若要求保持函数依赖和无损联接，则总可以达到3NF，但不一定满足BCNF；因为BCNF可以达到无损连接，但不一定保持函数依赖</p>
+<h1>关系模式分解为范式的分解算法</h1>
+<h2>保持函数依赖地分解R到3NF</h2>
+<p>算法步骤：
+求出R的最小函数依赖集F</p>
 <p>把所有不在F中出现的属性组成一个关系模式R’，并在U中去掉这些属性</p>
 <p>若F中存在X→A且XA=U，则算法结束输出{R’,R(U)}，否则继续下一步</p>
 <p>对F中的FD按相同的左部分组构成一个关系模式Ri(Ui)，Ui包括了该组FD涉及的所有属性</p>
 <p>去掉{Ri(Ui)}中属性集Ui是其他某个关系模式属性集Uj子集的关系模式Ri，得到最终的分解p={R1,R2,…,Rk,R’}，p能够保持函数依赖地把R分解到3NF</p>
-<h2 id="无损连接且保持函数依赖地分解R到3NF"><a href="#无损连接且保持函数依赖地分解R到3NF" class="headerlink" title="无损连接且保持函数依赖地分解R到3NF"></a>无损连接且保持函数依赖地分解R到3NF</h2><p>算法步骤：</p>
+<h2>无损连接且保持函数依赖地分解R到3NF</h2>
+<p>算法步骤：</p>
 <ol>
 <li>按算法(1)中步骤求出保持函数依赖的3NF分解，设q={R1,R2,…,Rk}</li>
 <li>设X是R的主码，p={R1,R2,…,Rk,R(X)}</li>
 <li>若X是q中某个Ri(Ui)属性集Ui的子集，则删除p中的R(X)</li>
 <li>输出p，p能够无损连接且保持函数依赖地把R分解到3NF</li>
 </ol>
-<h2 id="无损联接地分解R到BCNF"><a href="#无损联接地分解R到BCNF" class="headerlink" title="无损联接地分解R到BCNF"></a>无损联接地分解R到BCNF</h2><p>算法步骤：</p>
+<h2>无损联接地分解R到BCNF</h2>
+<p>算法步骤：</p>
 <ol>
 <li>p={R}</li>
 <li>检查p中各关系模式是否满足BCNF，是则终止输出p</li>

@@ -159,7 +159,7 @@ ga('send', 'pageview');
         <h1 class="title">Vitan&#39;s Blog</h1>
         <h5 class="subtitle">
             
-            ⁣⁣⁣Stay Hungry, Stay Foolish.
+            ⁣⁣⁣求知若饥，虚心若愚。
             
         </h5>
     </div>
@@ -202,7 +202,16 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Android 跨设备局域网共享文件</p>
+        <p>Android 跨设备局域网共享文件
+&lt;!--more--&gt;</p>
+<h1>http-server</h1>
+<p>安装
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nodejs-lts</span><br><span class="line">npm install http-server -g</span><br></pre></td></tr></table></figure></p>
+<p>启动服务
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http-server</span><br></pre></td></tr></table></figure></p>
+<h2>同一局域网</h2>
+<p>同一局域网下浏览器登录启动服务后的提示的 ip 即可访问手机的文件，相反电脑同理。</p>
+
     
 
         <a href="/posts/Termux-Httpd.html" class="post-more waves-effect waves-button">
@@ -249,7 +258,899 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Shell 总结</p>
+        <p>Shell 总结
+&lt;!--more--&gt;</p>
+<h1>变量替换和测试</h1>
+<h2>变量替换</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191523.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>变量测试</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720191707.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1>字符串处理</h1>
+<h2>计算字符串长度</h2>
+<p>方法一
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;#string&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>方法二
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr length <span class="string">"<span class="variable">$string</span>"</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>string 有空格，则必须加双引号</li>
+</ul>
+<h2>子串</h2>
+<p>获取子串在字符串中的索引位置</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr index <span class="variable">$string</span> <span class="variable">$substring</span></span><br></pre></td></tr></table></figure></p>
+<p>抽取子串</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720192503.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>总结</h2>
+<p>计算字符串长度
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var1=<span class="string">"This is a app"</span></span><br><span class="line">len=<span class="variable">$&#123;#$var1&#125;</span></span><br><span class="line">len=`expr length <span class="string">"<span class="variable">$var1</span>"</span>`</span><br></pre></td></tr></table></figure></p>
+<p>子串索引
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var1=<span class="string">"quicstart is a app"</span></span><br><span class="line">ind=`expr index <span class="string">"<span class="variable">$var1</span>"</span> start`</span><br></pre></td></tr></table></figure></p>
+<p>子串长度
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var1=<span class="string">"quicstart is a app"</span></span><br><span class="line">ind=`expr match <span class="string">"$<span class="variable">$var1</span>"</span> app`</span><br></pre></td></tr></table></figure></p>
+<p>抽取字符串中的子串
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var1=<span class="string">"quicstart is a app"</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:10&#125;</span></span><br><span class="line">substr2=<span class="variable">$&#123;var1:10:6&#125;</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:-5&#125;</span></span><br><span class="line">substr1=<span class="variable">$&#123;var1:-10:4&#125;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>expr 索引1开始,${string:position}从0开始</li>
+</ul>
+<p>实例
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line">string=<span class="string">"Bigdata process framework is Hadoop,Hadoop is an open source project"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> print_tips</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"***********************"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"(1) 打印string长度"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"(2) 删除字符串中所有Hadoop"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"(3) 替换第一个Hadoop为Mapreduce"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"(4) 替换全部Hadoop为Mapreduce"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"**********************"</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> len_of_string</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;#string&#125;</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> del_hadoop</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;string/Hadoop/&#125;</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> rep_hadoop_mapreduce_first</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;string/Hadoop/Mapreduce&#125;</span>"</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> rep_hadoop_mapreduce_all</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;string//Hadoop/Mapreduce&#125;</span>"</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"【string=<span class="variable">$string</span>】"</span></span><br><span class="line">  <span class="built_in">echo</span></span><br><span class="line">  print_tips</span><br><span class="line">  <span class="built_in">read</span> -p <span class="string">"Pls input your choice(1|2|3|4|q|Q):"</span> choice</span><br><span class="line">  <span class="keyword">case</span> <span class="variable">$choice</span> <span class="keyword">in</span></span><br><span class="line">        1)  len_of_string</span><br><span class="line">            ;;</span><br><span class="line">        2)  del_hadoop</span><br><span class="line">            ;;</span><br><span class="line">        3)  rep_hadoop_mapreduce_first</span><br><span class="line">            ;;</span><br><span class="line">        4)  rep_hadoop_mapreduce_all</span><br><span class="line">            ;;</span><br><span class="line">        q|Q)  <span class="built_in">exit</span></span><br><span class="line">              ;;</span><br><span class="line">        *)</span><br><span class="line">            <span class="built_in">echo</span> <span class="string">"Error,input only in &#123;1|2|3|4|q|Q&#125;"</span></span><br><span class="line">            ;;</span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<h1>命令替换</h1>
+<p>语法格式</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720194539.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>例题</h2>
+<p>获取系统所有用户并输出
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | cut -d “:” -^C <span class="comment">#分割的第一个</span></span><br><span class="line">cat /etc/passwd | cut -d “:” -f 1 <span class="comment">#分段</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 判断进程是否存在，否则启动</span></span><br><span class="line">nginx_process_num=$(ps -ef | grep nginx | grep -v grep | wc -l)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$nginx_process_num</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    systemctl start nginx</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+<h2>总结</h2>
+<p><code>\</code>`<code>和</code>$()`</p>
+<ol>
+<li>``和$()是等价的，但初学推荐$()</li>
+<li>$(())用于进行整数运算，包括加减乘除</li>
+<li>$(((100 + 30) / 12))</li>
+</ol>
+<h1>有类型变量</h1>
+<h2>declare 和 typeset 命令</h2>
+<p>两者关系:两者等价，都是用来定义变量类型</p>
+<h2>declare参数表</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720195605.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明整数型变量</span></span><br><span class="line"><span class="built_in">declare</span> -i ab <span class="comment">#声明整数型变量</span></span><br><span class="line">ab=56 <span class="comment">#改变变量内容</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ab</span> <span class="comment">#显示变量内容</span></span><br><span class="line">56</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改变变量属性</span></span><br><span class="line"><span class="built_in">declare</span> -i ef <span class="comment">#声明整数型变量</span></span><br><span class="line">ef=1  <span class="comment">#变量赋值（整数值）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span> <span class="comment">#显示变量内容</span></span><br><span class="line">1</span><br><span class="line">ef=<span class="string">"wer"</span> <span class="comment">#变量赋值（文本值）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span> </span><br><span class="line">0</span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> +i ef <span class="comment">#取消变量属性</span></span><br><span class="line">ef=<span class="string">"wer"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ef</span></span><br><span class="line">wer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置变量只读</span></span><br><span class="line"><span class="built_in">declare</span> -r ab <span class="comment">#设置变量为只读</span></span><br><span class="line">ab=88 <span class="comment">#改变变量内容</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ab</span> <span class="comment">#显示变量内容</span></span><br><span class="line">56</span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明数组变量</span></span><br><span class="line"><span class="built_in">declare</span> -a <span class="built_in">cd</span>=<span class="string">'([0]="a" [1]="b" [2]="c")'</span> <span class="comment">#声明数组变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;cd[1]&#125;</span></span><br><span class="line">b <span class="comment">#显示变量内容</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;cd[@]&#125;</span> <span class="comment">#显示整个数组变量内容</span></span><br><span class="line">a b c</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>declare -x</code> 声明为环境变量，可在脚本中直接使用</li>
+</ul>
+<h2>取消声明的变量</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> +r</span><br><span class="line"><span class="built_in">declare</span> +i</span><br><span class="line"><span class="built_in">declare</span> +a</span><br><span class="line"><span class="built_in">declare</span> +X</span><br></pre></td></tr></table></figure></p>
+<h1>数学运算</h1>
+<p>语法格式
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200443.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>expr操作符对照表
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720200649.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>例子</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201000.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1>Bash运算之bc</h1>
+<h2>bc 操作</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720201134.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scale=2 <span class="comment">#精确到小数点后两位</span></span><br><span class="line"><span class="built_in">echo</span> “20+22” | bc</span><br><span class="line"><span class="built_in">echo</span> “scale=3;23+33” | bc</span><br></pre></td></tr></table></figure></p>
+<h1>函数</h1>
+<h2>函数定义和使用</h2>
+<p>Linux Shell中的函数和大多数编程语言中的函数一样，将相似的任务或代码封装到函数中，供其他地方调用</p>
+<p>语法一
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name()</span><br><span class="line">&#123;</span><br><span class="line">  command1</span><br><span class="line">  command2</span><br><span class="line">  ....</span><br><span class="line">  commandn</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>语法二
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> name</span><br><span class="line">&#123;</span><br><span class="line">  command1</span><br><span class="line">  command2</span><br><span class="line">  ....</span><br><span class="line">  commandn</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>如何调用</h2>
+<ol>
+<li>直接使用函数名调用，可以将其想象成 Shell 中的一条命令</li>
+<li>函数内部可以直接使用函数 $1,$2...$n</li>
+<li>调用函数：function_name $1 $2</li>
+</ol>
+<h2>例题</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 判断进程是否存在，否则启动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#脚本名含有nginx会返回0</span></span><br><span class="line"><span class="comment"># echo $$ 运行脚本产生的进程id</span></span><br><span class="line">this_pid=$$</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">ps -eff | grep nginx | grep -v grep | grep -v <span class="variable">$this_pid</span> &amp;&gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ $? -eq 0];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Nignx is running well"</span></span><br><span class="line">    sleepp 3</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    systemctl start nginx</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Nginx is down,start it.."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>判断进程
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnlp | grep :80</span><br><span class="line">curl localhost/index.html</span><br></pre></td></tr></table></figure></p>
+<h1>向函数传递参数</h1>
+<h2>shell传参</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> name</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Hello <span class="variable">$1</span>"</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Hello <span class="variable">$2</span>"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>函数返回值</h2>
+<ol>
+<li>return</li>
+<li>echo</li>
+</ol>
+<h3>reutrn 返回值</h3>
+<ol>
+<li>只能返回1-255的整数</li>
+<li>通常智能用来供其他地方调用获取状态，因此仅返回0（成功)，1(失败)</li>
+</ol>
+<h3>echo 返回值</h3>
+<ol>
+<li>可以返回任何字符串结果</li>
+<li>通常用于返回数据，如一个字符串值或列表值</li>
+</ol>
+<h1>局部变量全局变量</h1>
+<h2>全局变量</h2>
+<ol>
+<li>不做特殊处理，shell 中变量为全局变量</li>
+<li>大型脚本程序慎用</li>
+</ol>
+<h2>局部变量</h2>
+<ol>
+<li>定义时，使用local关键字</li>
+<li>函数内外如果存在同名变量，册函数内部变量覆盖外部变量</li>
+</ol>
+<h2>函数库</h2>
+<ul>
+<li>为什么要定义函数库</li>
+</ul>
+<ol>
+<li>经常使用的重复代码封装成函数文件</li>
+<li>一般不直接执行，而是由其他脚本调用</li>
+</ol>
+<p>实例
+<figure class="highlight bash"><figcaption><span>库文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> add</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> + <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> reduce</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> - <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> multiple</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> \* <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> diveid</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`expr <span class="variable">$1</span> / <span class="variable">$2</span>`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> sys_load</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Memory Info"</span></span><br><span class="line">    free -m</span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Disk Usage"</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    df -h </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">. /home/vitan/workplace/Shell/learn/<span class="keyword">function</span>/base_function</span><br><span class="line">add 122 3</span><br><span class="line">reduce 9 3</span><br><span class="line">multiple 22 11</span><br><span class="line">diveid 12 3</span><br><span class="line">sys_load</span><br></pre></td></tr></table></figure></p>
+<h3>注意事项</h3>
+<ol>
+<li>库文件名的后缀是任意的，但一般用 <code>.lib</code></li>
+<li>库文件通常没有可执行权限</li>
+<li>库文件无需和脚本在同级目录，只需在脚本中引时指定</li>
+<li>第一行一般使用 <code>#!/bin/bash/echo</code> ，输出警告信息，避免用户执行</li>
+</ol>
+<h1>文件查找之find命令</h1>
+<p>find [路径][选项][操作]</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190720205155.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>实例</h2>
+<ol>
+<li>查找 /etc 目录下 conf 结尾的文件
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fing /etc -name <span class="string">'.conf'</span></span><br></pre></td></tr></table></figure></li>
+<li>查找当前目录下文件名为 aa 的文件，不区分大小写
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name aa</span><br></pre></td></tr></table></figure></li>
+<li>查找文件属主为 hdfs 的所有文件
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -user hdfs</span><br></pre></td></tr></table></figure></li>
+<li>查找文件属组为 yarn 的所有文件
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -group yarm</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2>选项</h2>
+<ol>
+<li>-type</li>
+</ol>
+<ul>
+<li>f 文件 find . -type f</li>
+<li>d 目录 dind . -type d</li>
+<li>c 字符设备文件 dind . -type c</li>
+<li>b 块设备文件 dind . -type b</li>
+<li>l 链接文件 dind . -type l</li>
+<li>p 管道文件 dind . -type p</li>
+</ul>
+<ol start="2">
+<li>-size</li>
+</ol>
+<ul>
+<li>-n 大小小于n的文件</li>
+<li>+n 大小大于n的文件</li>
+<li>n 大小等于n的文件</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 小于10000字节的文件</span></span><br><span class="line">find /etc -size -10000c</span><br><span class="line"><span class="comment"># 大于1M的文件</span></span><br><span class="line">find /etc -size +1M</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>-mtime
+<ul>
+<li>-n n天以内修改的文件</li>
+<li>+n n天以外修改的文件</li>
+<li>n 正好n天修改的文件</li>
+</ul>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查找/etc下5天内修改的conf结尾的文件</span></span><br><span class="line">find /etc -mtime -5 -name <span class="string">'*.conf'</span>       </span><br><span class="line"><span class="comment"># 查找10天之前修改且属主为root的文件</span></span><br><span class="line">find /etc -mtime +10 -user root</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>-mmin
+<ul>
+<li>-n n分种内修改的文件</li>
+<li>+n n分钟外修改的文件</li>
+</ul>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 30分钟前修改的文件</span></span><br><span class="line">find /etc -mmin +30</span><br><span class="line"><span class="comment"># 30分钟内修改的目录</span></span><br><span class="line">find /etc -mmin -3o -<span class="built_in">type</span> d</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>-mindepth n
+<ul>
+<li>表示从n级子目录开始搜索</li>
+</ul>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -mindepth 3</span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>-maxdepth n
+<ul>
+<li>表示最多搜索n-1级子目录</li>
+</ul>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find /etc -maxdepth 3 -name <span class="string">'*.conf'</span></span><br><span class="line">find ./etc -<span class="built_in">type</span> f -name <span class="string">'.*conf'</span> -size +10k -maxdepth 2</span><br><span class="line">find . -<span class="built_in">type</span> f -nogroup</span><br></pre></td></tr></table></figure></p>
+<ol start="7">
+<li>
+<p>-perm</p>
+<ul>
+<li>find .perm 644</li>
+</ul>
+</li>
+<li>
+<p>-prune</p>
+<ul>
+<li>通常和-path一起用，用于将特定目录排除在搜索条件之外</li>
+</ul>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找当前目录下所有普通文件，排除test目录</span></span><br><span class="line">find . -path ./etc -prune -o -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 查找当前目录下所有普通文件，但排除etc和opt目录</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> -f -a -user hdfs</span><br><span class="line"><span class="comment"># 当前目录所有普通文件，排除etc和opt目录，但属主为hdfs,文件大小大于</span></span><br><span class="line">find . -path ./etc -prune -o -path ./opt -prune -o -<span class="built_in">type</span> -f -a -user hdfs -a -size +2M</span><br></pre></td></tr></table></figure></p>
+<ol start="9">
+<li>-newer file1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -newer a</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>
+<p>操作
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索/etc下的文件非目录，以conf结尾，大于19k，然后删除</span></span><br><span class="line">find ./etc -<span class="built_in">type</span> -f -name <span class="string">'*.conf'</span> -size +10k -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br><span class="line"></span><br><span class="line">find /var/<span class="built_in">log</span>/ -name <span class="string">'*.log'</span> -mtime +7 -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br><span class="line">find /etc -size +10k -<span class="built_in">type</span> -f -name <span class="string">'*.conf'</span> -<span class="built_in">exec</span> cp &#123;&#125; /root/conf/ \;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>-print 打印输出</li>
+<li>-exec 对搜索的文件执行特定的操作</li>
+<li>-ok 和exec功能一样，但每次操作都会给用户提示</li>
+</ul>
+</li>
+<li>
+<p>逻辑运算符</p>
+<ul>
+<li>-a 与</li>
+<li>-o 或</li>
+<li>-not|! 非</li>
+</ul>
+</li>
+</ul>
+<h1>find locate whereis和 which 总结及使用场景分析</h1>
+<h2>locate</h2>
+<ol>
+<li>文件查找命令，所属软件包mlocate</li>
+<li>不同于find命令是在整块磁盘中搜索，locate在数据库文件中查找</li>
+<li>find默认全部匹配，locate默认部分匹配</li>
+</ol>
+<ul>
+<li>updatedb命令
+<ol>
+<li>用于更新/var/lib/mlocate/mlocate.db</li>
+<li>所使用配置文件/etc/update.conf</li>
+<li>该命令在后台cron计划任务定期执行</li>
+</ol>
+</li>
+</ul>
+<h2>whereis选项和含义</h2>
+<ul>
+<li>-b 只返回二进制文件</li>
+<li>-m 只返回帮助文档文件</li>
+<li>-s 只返回源码文件</li>
+</ul>
+<h2>which</h2>
+<ul>
+<li>仅查找二进制程序文件</li>
+<li>选项
+<ul>
+<li>-b 只返回二进制文件</li>
+</ul>
+</li>
+</ul>
+<h2>各命令使用场景推荐</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094218.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1>grep和egrep</h1>
+<h2>grep</h2>
+<p>语法</p>
+<ol>
+<li>grep [option] [pattern] [file1,file2...]</li>
+<li>command | grep [option] [pattern]</li>
+</ol>
+<p>grep参数</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094721.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721094812.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<ul>
+<li>grep -E “python | PYTHON” file</li>
+</ul>
+<h2>egrep</h2>
+<p>egrep语法
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep(选项)(查找模式)(文件名1，文件名2，……)</span><br></pre></td></tr></table></figure></p>
+<h1>sed</h1>
+<p>sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理</p>
+<h2>语法</h2>
+<ol>
+<li>stdot | sed [option] &quot;pattern command&quot;</li>
+<li>sed [option] &quot;pattern command&quot; file</li>
+</ol>
+<h2>选项</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721095810.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">sed ‘p’ sed.tet <span class="comment"># p打印出来</span></span><br><span class="line">sed -n‘p’ sed.tet</span><br><span class="line"><span class="comment"># 不加参数，原行也会再打印一次</span></span><br><span class="line">sed ‘/python/p’sed.txt  <span class="comment">#查找行</span></span><br><span class="line">sed -n‘/python/p’sed.txt  <span class="comment">#查找行</span></span><br><span class="line"><span class="comment"># 多个匹配条件</span></span><br><span class="line">sed -n -e ‘/python/p’ -e ‘/PYTHON/p’ sed.txt</span><br><span class="line"><span class="comment">#文件中的</span></span><br><span class="line">Vim edit.sed</span><br><span class="line">/python/p</span><br><span class="line">Sed -n -f edit.sed sed.txt</span><br><span class="line">Sed -n -r‘/python|PYTHON/p’ sed.txt <span class="comment">#使用扩展正则表达式</span></span><br><span class="line"><span class="comment"># 修改</span></span><br><span class="line">sed -n ‘s/love/like/g’ sed.txt <span class="comment"># love替换为like</span></span><br><span class="line">sed -i‘s/love/like/g’ sed.txt <span class="comment">#修改源文件</span></span><br></pre></td></tr></table></figure></p>
+<h2>sed 的pattern详解</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100028.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印file的17行</span></span><br><span class="line">sed -n <span class="string">"17p"</span> file</span><br><span class="line"><span class="comment"># 打印10到20行</span></span><br><span class="line">sed -n <span class="string">"10,20p"</span> file</span><br><span class="line"><span class="comment"># 打印第10行开始，往后加5行的内容</span></span><br><span class="line">sed -n <span class="string">"10,+5p"</span> file</span><br><span class="line"><span class="comment"># 以root开头的行</span></span><br><span class="line">sed -n <span class="string">"/^root/p"</span> file</span><br><span class="line"><span class="comment"># 打印第一个匹配到ftp开头的行</span></span><br><span class="line">sed -n <span class="string">"/^root/,/^ftp/p"</span> file</span><br><span class="line"><span class="comment"># 打印第四行开始，到以hdgs开头的</span></span><br><span class="line">sed -n <span class="string">"4,/^hdfs/p"</span> file</span><br><span class="line"><span class="comment"># 匹配root的行，直到第10行结束</span></span><br><span class="line">sed -n <span class="string">"/root/,10p"</span> file</span><br></pre></td></tr></table></figure></p>
+<h2>sed 中的编辑命令</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100852.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721100931.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sed -i‘1d/ sed.txt <span class="comment"># 删除第一行</span></span><br><span class="line">sed -i ‘1,3d’sed.txt <span class="comment"># 删除1-3行</span></span><br><span class="line">sed -i ‘/\/sbin\/nologin/d’passwd <span class="comment"># 把不可登录的账号删除</span></span><br><span class="line">sed -i ‘/^mail,/^ftp/d’pssswd <span class="comment">#mail到ftp</span></span><br><span class="line">文本追加</span><br><span class="line">sed -i ‘/\/bin\/bash/a This is user <span class="built_in">which</span> can login to system’pssswd <span class="comment"># 行后追加</span></span><br><span class="line">sed -i ‘/^hdfs/,/&amp;yarn/i AAAAAA’ pssswd <span class="comment"># 行间追加</span></span><br><span class="line">sed -i ‘/root/r list’ passwd <span class="comment">#把list内容追加root行后面</span></span><br><span class="line">sed -n‘/\/bin\/bash/w /tmp/user_login.txt’passwd <span class="comment">#保存</span></span><br><span class="line"></span><br><span class="line">sed -i ‘s/\/bin\/bash/\/BIN\/BASH/g’passwd <span class="comment"># 小写的替换为大写</span></span><br><span class="line">sed -i ‘a/root/ROOT/’passwd <span class="comment"># 替换第一个root为大写</span></span><br><span class="line">sed -i ‘a/root/ROOT/2’passwd <span class="comment"># 替换前两个个root为大写</span></span><br><span class="line">sed -i ‘s/hadoop/HADOOP/ig’str.txt <span class="comment">#不区分大小写</span></span><br><span class="line">sed -n ‘/\/sbin\/nologin/=’passwd <span class="comment"># 查看行号,不显示内容</span></span><br><span class="line"></span><br><span class="line">sed -i ‘s/had..p/hadoops/g’ sed.txt <span class="comment">#.任意一个字符</span></span><br><span class="line">sed -i ‘s/had..p/&amp;s/g’ sed.txt <span class="comment">#hadXXp后面加s，反向引用</span></span><br><span class="line">sed -i ‘s\/(had..ps\)\/1O/g’ sed.txt <span class="comment">#后加O</span></span><br><span class="line">sed -i ‘s/\(had\)...../\1doop/g’sed.txt <span class="comment"># had后面替换</span></span><br></pre></td></tr></table></figure></p>
+<h2>反向引用</h2>
+<ul>
+<li>是什么</li>
+</ul>
+<ol>
+<li>&amp;和\1 引用模式匹配到的整个串</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file中寻找1开头的后跟两任意字符以e结尾的字符</span></span><br><span class="line">sed <span class="string">"s/1..e/&amp;r/g"</span> file</span><br><span class="line">sed <span class="string">"s/\(1...e\)/\1r/g"</span> file <span class="comment"># 使用\1代表搜寻到的字符串</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>上面两种方法实现一样的功能，分别使用&amp;和\1代表搜寻到的整个字符串</li>
+<li>区别在于&amp;只能表示匹配到的完整字符串，只能引用整个字符串，而\1可以使用()对匹配到的</li>
+<li>要替换匹配的字符串的一部分，name必须使用\1，不能使用&amp;</li>
+</ul>
+<h2>sed 引用变量</h2>
+<ul>
+<li>注意</li>
+</ul>
+<ol>
+<li>匹配模式中存在变量，则建议使用双引号</li>
+<li>sed中需要引入自定义变量时，如外面使用单引号，则自定义变量必须使用单引号</li>
+</ol>
+<h2>用 sed 查询特定内容</h2>
+<p>查询命令</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721102519.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>实例
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印/etc/passwd中的第20行内容</span></span><br><span class="line">sed -n <span class="string">"20p"</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">sed -n <span class="string">"8,15p"</span> /etc/passwd</span><br><span class="line">sed -n <span class="string">"8,+5p"</span> /etc/passwd</span><br><span class="line">sed -n <span class="string">'/^hdfs/p'</span> /etc/passwd</span><br><span class="line">sed -n <span class="string">'^root/,/^hdfs/p'</span> /etc/passwd</span><br><span class="line">sed -n <span class="string">'8,/\sbin\/nologin/p'</span> /etc/passwd</span><br><span class="line">sed -n <span class="string">'\bin\/bash/,5p'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103230.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">FILE_NAME=/root/my.cnf</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> get_all_segments</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`sed -n '/\[.*\]/p' <span class="variable">$FILE_NAME</span> | sed -e 's/\[//g' -e 's/\]//g'`"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> count_items_in_segment</span><br><span class="line">&#123;</span><br><span class="line">    items=`sed -n <span class="string">'/\['</span><span class="variable">$1</span><span class="string">'\]/,/\[.*\]/p'</span> <span class="variable">$FILE_NAME</span> | grep -v <span class="string">"^#"</span> | grep -v ^$ | grep -v <span class="string">"\[.*\]"</span>`</span><br><span class="line">    index=0</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> <span class="variable">$items</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        index=`expr <span class="variable">$index</span> +1`</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$index</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">number=0</span><br><span class="line"><span class="keyword">for</span> segment <span class="keyword">in</span> `get_all_segments`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    num=`expr <span class="variable">$number</span> + 1`</span><br><span class="line">    items_count=`coubt_items_in_segment <span class="variable">$segment</span>`</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$number</span>: <span class="variable">$segment</span> <span class="variable">$items_count</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<h2>sed 删除特定内容</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721103352.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">'15d'</span> passwd</span><br><span class="line">sed -i <span class="string">'8,14d'</span> passwd</span><br><span class="line">sed -i <span class="string">'/\sbin\/nologin/d'</span> passwd</span><br><span class="line">sed -i <span class="string">'/^mail/,/^yarn/d'</span> passwd</span><br><span class="line">sed -i <span class="string">'/\sbin\/nologin/,13d'</span> passwd</span><br><span class="line">sed -i <span class="string">'5,/^ftp/d'</span> passwd</span><br><span class="line"><span class="comment"># yarn开头到最后</span></span><br><span class="line">sed -i <span class="string">'/^yarn/,$'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<ol>
+<li>删除配置文件中所有的注释行和空行</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>在配置文件中所有不以#开头的行前面加×符合，主要以#开头的行不添加</li>
+</ol>
+</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sed -i ‘/^<span class="comment">#/d;/^$/d’ nginx.conf #删除注释</span></span><br><span class="line">sed -i ‘/[:blank:]*<span class="comment">#/d’ nginx.conf #删除空行</span></span><br><span class="line">sed -i ‘/^[^<span class="comment">#]/\*&amp;/g’nginx.conf  #非井号开头</span></span><br></pre></td></tr></table></figure></p>
+<h2>sed 修改文件内容</h2>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721104309.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>实例
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改第一行的root为ROOT</span></span><br><span class="line">sed -i <span class="string">'1s/root/ROOT/'</span> passwd</span><br><span class="line"><span class="comment">#修改5到10行中所有的/sbin/nologin为/bin/bash</span></span><br><span class="line">sed -i <span class="string">'5,10s/\/sbin\/nologin/\bin\/bash/g'</span> passed</span><br><span class="line"><span class="comment">#修改匹配到/sbin/nologin的行，将匹配到行中的login改为LOGIN</span></span><br><span class="line">sed -i <span class="string">'/\sbin\/nologin/s/login/LOGIN/g'</span> passwd</span><br><span class="line"><span class="comment">#修改以root开头的行，到15行中的所有行，修改行中的nologin为SPARK</span></span><br><span class="line">sed -i <span class="string">'/^root/,15s/nologin/SPARK/g'</span> passwd</span><br><span class="line"><span class="comment">#从15行开始到匹配以yarn开头的所有行，修改行中的bin为BIN</span></span><br><span class="line">sed -i <span class="string">'15,/^yarn/s/bin/BIN/g'</span> passwd</span><br><span class="line"></span><br><span class="line">sed -i <span class="string">'s/[0-9]*//g'</span> file.txt</span><br></pre></td></tr></table></figure></p>
+<h2>sed 追加文本内容</h2>
+<ul>
+<li>语法</li>
+</ul>
+<ol>
+<li>a
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第十行后追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'10a Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 第10到20行，每一行后面都追加"Test line behind"</span></span><br><span class="line">sed -i <span class="string">'10,20a Test line behind'</span> passws</span><br><span class="line"><span class="comment"># 匹配到/bin/bash的行后面追加"insert line for /bin/bash behind"</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/a insert line for /bin/bash behind'</span> passws</span><br></pre></td></tr></table></figure></li>
+<li>i
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配yarn开头的行，在匹配航后面追加"Add lind behind"</span></span><br><span class="line">sed -i <span class="string">'yarn/i Add lind behind'</span> passwd</span><br><span class="line"><span class="comment"># 每一行前面都追加“insert line before every line"</span></span><br><span class="line">sed -i <span class="string">'i insert line before every line'</span> passwd</span><br></pre></td></tr></table></figure></li>
+<li>r
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将/etc/fstab文件的内容追加到passwd的第20行后面</span></span><br><span class="line">sed -i <span class="string">'20r /etc/fstab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/inittab文件内容追加到passwd文件匹配/bin/bash行后面</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/r /etc/inittab'</span> passwd</span><br><span class="line"><span class="comment">#将/etc/vconsol.conf文件内容追加到passwd文件中特定行的后面，匹配以ftp开头的行后面</span></span><br><span class="line">sed -i /^ftp/,18r /etc.vconsole.conf’ pssswd</span><br></pre></td></tr></table></figure></li>
+<li>w
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将passwd文件匹配到/bin/bash的行追加到/tmp/sed.txt文件中</span></span><br><span class="line">sed -i <span class="string">'/\bin\/bash/w /tmp/sed.txt'</span> passwd</span><br><span class="line"><span class="comment"># 将passwd文件从10行还是到匹配到hsfs开头的所有行内容追加到/tmp/sed-1.txt</span></span><br><span class="line">sed -i <span class="string">'10,/^hsfs/w /tmp/sed-1.txt'</span> passwd</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1>awk</h1>
+<h2>awk 的工作模式</h2>
+<ol>
+<li>awk 为一个文本处理工具，通常用于处理数据并产生结果报告。</li>
+<li>命名是由三个创始人姓氏首字母组成</li>
+</ol>
+<h2>语法</h2>
+<ol>
+<li>awk 'BEGIN{}pattern{commands}END{}' file_name</li>
+<li>standard outpu | awk 'BEGIN{}pattern{commands}END{}' file_name</li>
+</ol>
+<ul>
+<li>语法格式说明</li>
+</ul>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721124926.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2>awk 内置变量</h2>
+<p>内置变量对照表</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721125045.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721130039.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $0&#125;END&#123;&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 指定分隔符，输出第一个(既所有用户名)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $1&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 默认空格为分割符</span></span><br><span class="line">awk <span class="string">'&#123;print $1'</span> list.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># NF每一个行字段个数（number Filed）</span></span><br><span class="line">awk <span class="string">'&#123;print NF&#125;'</span> list.txt <span class="comment"># 返回字段个数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># NR(Number Row)</span></span><br><span class="line">awk <span class="string">'&#123;print NR&#125;'</span> list.txt /etc/passwd <span class="comment"># 返回行号</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># FNR(File Number Row)对每一个文件单独计数</span></span><br><span class="line">awk <span class="string">'&#123;print FNR&#125;'</span> list.txt /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># FS(File Separator)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="|"&#125;&#123;print $2&#125;'</span> list.txt <span class="comment">#指定分割符|</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># RS(Row Separator) 行分隔符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="|";RS="--"&#125;&#123;print $2&#125;'</span> list.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># ORS(Output Row Separatot) 输出行分割符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="|";RS="--"；ORS="&amp;"&#125;&#123;print $2&#125;'</span> list.txt</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="|";RS="--"；ORS="&amp;";OFS=":"&#125;&#123;print $2，$3&#125;'</span> list.txt</span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;print FILENAME&#125;'</span> list.txt <span class="comment">#对每一行输出文件名</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;print ARGC&#125;'</span> list.txt <span class="comment"># 输出行参数个数</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $NF&#125;'</span> /etc/passwd <span class="comment"># 输出行最大自的断</span></span><br></pre></td></tr></table></figure></p>
+<h2>awk 格式化输出</h2>
+<p>printf(默认不带分隔符) 语法</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134349.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>修饰符</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721134554.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>实例
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不加任何修饰输出 </span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf $1&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 换行输出</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s\n",$1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出两个变量</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s%s\n",$1,$7&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个第二个变量长度20(默认右对齐)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%20s %20s\n",$1,$7&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个第二个变量长度20(左对齐)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%-20s %-20s\n",$1,$7&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以字符串格式打印/etc/passwd中的第七个字段，以":"为分隔符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;printf "%s\n",$7&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 以10进制格式打印/etc/passwd中的第3个字段，以":"为分隔符</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%d\n",$3&#125;'</span> /etc/passwd <span class="comment">#不指定位数默认左对齐（指定位数右对齐 %-d)</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 浮点数</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%o.3f\n",$3&#125;'</span> /etc/passwd </span><br><span class="line"></span><br><span class="line"><span class="comment"># 16进制</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%x\n",$3&#125;'</span> /etc/passwd </span><br><span class="line"></span><br><span class="line"><span class="comment"># 8进制</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%o\n",$3&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 科学计数法</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125; &#123;printf "%e\n",$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<h2>awk模式匹配的两种用法</h2>
+<ul>
+<li>语法</li>
+</ul>
+<ol>
+<li>RegExp 含义：按正则表达式匹配</li>
+<li>关系运算 含义：按关系运算匹配</li>
+</ol>
+<p>实例</p>
+<ul>
+<li>RegExp</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配/etc/passwd文件中含有root字符串的所有行</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;/root/&#123;print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment">#匹配/etc/passwd中yarn开头的所有行</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;/^yarn/&#123;print $0&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<p>(运算符)关系运算</p>
+<ul>
+<li>关系运算符：&lt;,&gt;&lt;=,&gt;=,==,!=,~(匹配正则表达式),!~</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以：为分隔符，匹配第3个字段小于50的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3&lt;50&#123;print $0&#125;'</span> /etc/pssswd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$7=="/bin/bash"&#123;print $0&#125;'</span> /etc/pssswd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$7!="/bin/bash"&#123;print $0&#125;'</span> /etc/pssswd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三个字符包含3个以上数字的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3~/[0-9]&#123;3,&#125;/&#123;print $0&#125;'</span> /etc/passwd <span class="comment"># &#123;3,&#125;重复3次</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$0~/\sbin\/nologin/&#123;print $0&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>布尔运算:||(或),&amp;&amp;(与),!(非)</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以：为分隔符，匹配文件中包含hdfs或者yarn的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$1=="hdfs" || $1=="yarn" &#123;print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三字段小于50且第四字段大于50的所有行信息</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3&lt;50 &amp;&amp; $4&gt;50 &#123;print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;$3&lt;50 &amp;&amp; $7~/\bin\/bash/ &#123;print $0&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h2>awk 动作中的表达式用法</h2>
+<p>算术运算符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">加</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">减</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">乘</td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left">除</td>
+</tr>
+<tr>
+<td style="text-align:left">%</td>
+<td style="text-align:left">模</td>
+</tr>
+<tr>
+<td style="text-align:left">^或**</td>
+<td style="text-align:left">乘方</td>
+</tr>
+<tr>
+<td style="text-align:left">++X</td>
+<td style="text-align:left">再返回X变量之前，X变量加1</td>
+</tr>
+<tr>
+<td style="text-align:left">X++</td>
+<td style="text-align:left">再返回X变量之后，X变量加1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>实例</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;var=20;var1="hello";print var,var1&#125;'</span></span><br><span class="line">  </span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2+=num1;print num2,num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2+=num1;print num2+num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;num1=20;num2=30;printf "%0.2f\n",num1/num2&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;x=2;y=x++;print x,y&#125;'</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;x=2;y=x--;print x,y&#125;'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算文件中空白行数量</span></span><br><span class="line">awk <span class="string">'/^$/&#123;sumx=0;sum++&#125;END&#123;print sum&#125;'</span> /etc/services</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 计算课程的平均分</span></span><br><span class="line">awk <span class="string">'&#123;total=S2+$3+$5+$5;AVG=total/4;printf "%-8s,%-5d%-5d%-5d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG&#125;'</span> stu.txt</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;printf "%-8s%-8s%-8s%-8s%-8s%s\n","姓名","语文","数学","英语","物理","平均分"&#125;&#123;total=$2+$3+$4+$5;AVG=total/4;printf "%-8s%-8d%-8d%-8d%-8d%0.2f\n",$1,$2,$3,$4.$5,AVG&#125;'</span> stu.txt</span><br></pre></td></tr></table></figure></p>
+<h2>awk 动作中的条件及循环语句</h2>
+<ul>
+<li>条件语句</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)</span><br><span class="line">  动作1</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)</span><br><span class="line">  动作2</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  动作3</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>实例</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以：为分隔符只打印第3个字段的数值在50-100范围内的行信息</span></span><br><span class="line">awk <span class="string">'BEFIN&#123;FS=":"&#125;&#123;if($3&gt;50 &amp;&amp; $3&lt;100&gt;) print $0&#125;'</span> /etc/passwd</span><br><span class="line">awk <span class="string">'BEFIN&#123;FS=":"&#125;&#123;if($3&gt;50 || $3&lt;100&gt;) print $0&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 小于50的UID</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-5d\n","小于50的UID:",$3&#125;'</span> /etc/passwd</span><br><span class="line">  </span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;if($3&lt;50) printf "%-10s%-10s%-5d\n","小于50的UID:",$1,$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<p>vim scripts.awk
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    FS=<span class="string">":"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    f(<span class="variable">$3</span>&lt;50)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"小于50的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable">$3</span>&gt;50 &amp;&amp; <span class="variable">$3</span>&lt;100)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"大于50且小于100的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-20s%-5d\n"</span>,<span class="string">"大于100的UID"</span>,<span class="variable">$1</span>,<span class="variable">$3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>使用</p>
+</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f scripts.awk /etc/passed</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>循环语句</li>
+</ul>
+<ol>
+<li>
+<p>do while 循环
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> <span class="keyword">while</span></span><br><span class="line">  <span class="keyword">do</span> </span><br><span class="line">      动作</span><br><span class="line">  <span class="keyword">while</span>(条件表达式)</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>for 循环</p>
+</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始化计数器;测试计数器;计数器变更)</span><br><span class="line">  动作</span><br></pre></td></tr></table></figure></p>
+<p>实例</p>
+<ul>
+<li>1+2+...100的和</li>
+</ul>
+<ol>
+<li>while
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">    &#123;</span><br><span class="line">      sum+=1</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>
+<p>awk -f while.wak</p>
+</li>
+<li>
+<p>for
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">for</span>(i0;i&lt;=100;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>awk -f for.awk</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>do while
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    sum+=1</span><br><span class="line">    i++</span><br><span class="line">  &#125;<span class="keyword">while</span>(i&lt;=100)</span><br><span class="line">  <span class="built_in">print</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>
+<p>awk -f do_while.awk</p>
+</li>
+<li>
+<p>计算每个同学平均分，仅显示大于90</p>
+</li>
+</ul>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721185930.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><figure class="highlight bash"><figcaption><span>student.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10s%-10s%-10s%-10s%-10s\n"</span>,<span class="string">"Name"</span>,<span class="string">"Chinese"</span>,<span class="string">"English"</span>,<span class="string">"Math"</span>,<span class="string">"Physical"</span>,<span class="string">"Average"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  total=<span class="variable">$2</span>+<span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">  avg=total/4</span><br><span class="line">  <span class="keyword">if</span>(avg&gt;90)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d%-0.2f\n"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>,avg</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>计算平均分大于90的各科总分</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>student.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-10s%-10s%-10s%-10s%-10s%-10s\n"</span>,<span class="string">"Name"</span>,<span class="string">"Chinese"</span>,<span class="string">"English"</span>,<span class="string">"Math"</span>,<span class="string">"Physical"</span>,<span class="string">"Average"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  total=<span class="variable">$2</span>+<span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">  avg=total/4</span><br><span class="line">  <span class="keyword">if</span>(avg&gt;90)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d%-0.2f\n"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>,avg</span><br><span class="line">    score_chinese+=<span class="variable">$2</span></span><br><span class="line">    score_english+=<span class="variable">$3</span></span><br><span class="line">    score_math+=<span class="variable">$4</span></span><br><span class="line">    score_physical+=<span class="variable">$5</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d\n"</span>,<span class="string">""</span>,score_chinese,score_english,score_math,score_physical</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>awk 中的字符串函数</h2>
+<p>字符串函数对照表</p>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191406.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/20190721191743.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>例子</p>
+<ol>
+<li>以:为分隔符，返回文件中每行中的字段长度</li>
+</ol>
+<p><figure class="highlight bash"><figcaption><span>1.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NF 字段个数</span></span><br><span class="line">BEGIN&#123;</span><br><span class="line">  FS=<span class="string">":"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  i=1</span><br><span class="line">  <span class="keyword">while</span>(i&lt;=NF)</span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">if</span>(i==NF)</span><br><span class="line">      <span class="built_in">printf</span> <span class="string">"%d"</span>,length(<span class="variable">$i</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">printf</span> <span class="string">"%d:"</span>,length(<span class="variable">$i</span>)</span><br><span class="line">    i++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span> <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>搜索字符串&quot;I have a dream&quot;中出现&quot;ea&quot;子串的位置</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法1</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;str="I have a dream";location=index(str,"ea");print location&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#方法2</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;str="I have a dream";location=match(str,"ea");print location&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>将字符串&quot;Hadoop is a bigdata Framework&quot;全部转为小写</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Hadoop is a bigdata Framework";print tolower(str)&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>上一题转为大写</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Hadoop is a bigdata Framework";print toupper(str)&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>将字符串&quot;Hadoop Kafka Spark Storm”按空格为分隔符，分割每一部分保存到数组arr中</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Hadoop Kafka Spark Storm";split(str,arr," ");print arr[0]&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历(awk 下标从1开始)</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;str="Hadoop Kafka Spark Storm";split(str,arr," ");for(a in arr) print arr[a]&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="6">
+<li>搜索字符串&quot;Tranction 2345 start:select * from master&quot;第一个数字出现的位置</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Tranction 2345 start:select * from master";location=match(str,/[0-9]/);print location&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>正则表达式要用 <code>//</code> 引起来</li>
+</ul>
+<ol start="7">
+<li>截图字符串”transaction start”的子串，条件从第4个字符开始，截取5为</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="transaction start";print substr(str,4,5)&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="8">
+<li>替换&quot;Tranction 243 start，Event ID：9002&quot;中第一个匹配到的数字为$符号</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'BEGIN&#123;str="Tranction 243 start，Event ID：9002";count=sub(/[0-9]+/,"$",str);print count,str&#125;'</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># gsu所有</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;str="Tranction 243 start，Event ID：9002";count=gsub(/[0-9]+/,"$",str);print count,str&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<h2>awk中的常用选项</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">参数传递</td>
+</tr>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">指定脚本文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-F</td>
+<td style="text-align:left">指定分隔符</td>
+</tr>
+<tr>
+<td style="text-align:left">-V</td>
+<td style="text-align:left">查看awk的版本号</td>
+</tr>
+</tbody>
+</table>
+<p>实例</p>
+<ul>
+<li>-v 把外部变量引入</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>终端中</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num1=20</span><br><span class="line">var=<span class="string">"Hello World"</span></span><br><span class="line">awk -v num2=<span class="string">"<span class="variable">$num1</span>"</span> -v var1=<span class="string">"<span class="variable">$var</span>"</span> <span class="string">'BEGIN&#123;print num2,var1&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>-f 引入文件</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f student.awk /etc/passws</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>-F</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">":"</span> <span class="string">'&#123;print $7&#125;'</span> /etc/passwd</span><br><span class="line">awk -F : <span class="string">'&#123;print $7&#125;'</span> /etc/passwd</span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $7&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure></p>
+<h2>Shell 数组的用法</h2>
+<ul>
+<li>array=(&quot;Mike&quot;,&quot;Bell&quot;,&quot;Hellen&quot;)
+<ul>
+<li>下面的 <code>井</code> 为 <code>#</code></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">解释</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">打印元素</td>
+<td style="text-align:left">echo ${井array[2]}</td>
+</tr>
+<tr>
+<td style="text-align:left">打印元素个数</td>
+<td style="text-align:left">echo ${井array[@]} / echo ${井array[*]}</td>
+</tr>
+<tr>
+<td style="text-align:left">打印元素长度</td>
+<td style="text-align:left">echo ${井array[3]}</td>
+</tr>
+<tr>
+<td style="text-align:left">给元素赋值</td>
+<td style="text-align:left">array[3]=&quot;LI&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">删除元素</td>
+<td style="text-align:left">unset array[2];unset array</td>
+</tr>
+<tr>
+<td style="text-align:left">分片访问</td>
+<td style="text-align:left">echo ${井array[@]:1:3}</td>
+</tr>
+<tr>
+<td style="text-align:left">元素内容替换</td>
+<td style="text-align:left">${array[@]/e/E} #只替换第一个e;${array[@]//e/E}替换全部e</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>数组遍历</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> array</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">   <span class="built_in">echo</span> <span class="variable">$a</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<h2>awk 数组用法</h2>
+<ul>
+<li>awk中使用数组时，不仅可以使用数字作为数组下标，也可以使用字符串作为数组下标</li>
+</ul>
+<ol>
+<li>统计主机上所有TCP连接状态，按照每个TCP状态分类</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -an | grep tcp | awk <span class="string">'&#123;arrary[$6]++&#125;END&#123;for(a in arrary) print a,arrary[a]&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>计算横向数总和，计算纵向数据总和</li>
+</ol>
+<p><figure class="highlight bash"><figcaption><span>数据</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Allen 80 90 96 98</span><br><span class="line">Mike  93 98 92 91</span><br><span class="line">Zhang 78 76 87 92</span><br><span class="line">Jerry 86 89 68 92</span><br><span class="line">Han   85 95 75 90</span><br><span class="line">Li    78 88 98 100</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>stu.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10s%-10s%-10s%-10s%-10s\n"</span>,<span class="string">"Name"</span>,<span class="string">"Chinese"</span>,<span class="string">"Math"</span>,<span class="string">"English"</span>,<span class="string">"Physical"</span>,<span class="string">"Total"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  total=<span class="variable">$2</span>+<span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">  yuwen_sum+=<span class="variable">$2</span></span><br><span class="line">  math_sum+=<span class="variable">$3</span></span><br><span class="line">  english_sum+=<span class="variable">$4</span></span><br><span class="line">  physical_sum+=<span class="variable">$5</span></span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d%-10d\n"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>,total</span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10d%-10d%-10d%-10d\n"</span>,<span class="string">""</span>,yuwen_sum,math_sum,english_sum,physical_sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>awk 处理数据例子</h2>
+<p>生成随机数据
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">function</span> create_random()</span><br><span class="line">&#123;</span><br><span class="line">  min=<span class="variable">$1</span></span><br><span class="line">  max=$((<span class="variable">$2</span>-<span class="variable">$min</span>+1))</span><br><span class="line">  num=$(date +%s%N)</span><br><span class="line">  <span class="built_in">echo</span> $((<span class="variable">$num</span>%<span class="variable">$max</span>+<span class="variable">$min</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">INDEX=1</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">for</span> user <span class="keyword">in</span> Allen Mike Jerry Tracy Hanmeimei Lilei</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    COUNT=<span class="variable">$RANDOM</span></span><br><span class="line">    NUM1=`create_random 1 <span class="variable">$COUNT</span>`</span><br><span class="line">    NUM2=`expr <span class="variable">$COUNT</span> - <span class="variable">$NUM1</span>`</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"`date '+%y-%m-%d %H:%M:%S'` <span class="variable">$INDEX</span> Batches: user <span class="variable">$user</span> insert <span class="variable">$COUNT</span> records into databases:product table:datail,insert <span class="variable">$NUM1</span> records successfully,failed <span class="variable">$NUM2</span> records"</span> &gt;&gt; ./db.log.`date +%Y%m%d`</span><br><span class="line">    INDEX=`expr <span class="variable">$INSEX</span> + 1`</span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>统计每个用户分别插入多少record</li>
+</ol>
+<p><figure class="highlight bash"><figcaption><span>tesst.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-10s\n"</span>,<span class="string">"User"</span>,<span class="string">"Total Records"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  USER[<span class="variable">$6</span>]+=<span class="variable">$8</span></span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">  <span class="keyword">for</span>(u <span class="keyword">in</span> USER)</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-20s%-20d\n"</span>,u,USER[u]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>统计每个用户分别插入成功和失败各多少record</li>
+</ol>
+<p><figure class="highlight bash"><figcaption><span>2.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">"%-10s%-20s%-20s\n"</span>,<span class="string">"User,"</span>Success_Records<span class="string">","</span>Filed_records<span class="string">"</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  SUCCESS[<span class="variable">$6</span>]+=<span class="variable">$14</span></span></span><br><span class="line"><span class="string">  FAILED[<span class="variable">$6</span>]+=<span class="variable">$17</span></span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">END&#123;</span></span><br><span class="line"><span class="string">  for(u in SUCCESS)</span></span><br><span class="line"><span class="string">    printf "</span>%-10s%-20d%-20d\n<span class="string">",u,SUCCESS[u],FAILED[u]</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>将例子1,2结合，一起输出每个用户分别插入多少条数据，成功失败各多少条</li>
+</ol>
+<p><figure class="highlight bash"><figcaption><span>3.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  BEGIN&#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-30s%-30s%-30s\n"</span>,<span class="string">"Name"</span>,<span class="string">"total records"</span>,<span class="string">"success records"</span>,<span class="string">"failed records"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    TOTAL_RECORDS[<span class="variable">$6</span>]+=<span class="variable">$8</span></span><br><span class="line">    SUCCESS[<span class="variable">$6</span>]+=<span class="variable">$14</span></span><br><span class="line">    FAILED[<span class="variable">$6</span>]+=<span class="variable">$17</span></span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">    <span class="keyword">for</span>(u <span class="keyword">in</span> TOTAL_RECORDS)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">"%-30s%-30d%-30d%-30d\n"</span>,u,TOTAL_RECORDS[u],SUCCESS[u],FAILED[u]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>在例子3的基础上，加上结尾，统计全部插入记录数，成功记录数，失败记录数</li>
+</ol>
+<ul>
+<li>方法一</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>3.awk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-30s%-30s%-30s\n"</span>,<span class="string">"Name"</span>,<span class="string">"total records"</span>,<span class="string">"success records"</span>,<span class="string">"failed records"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    TOTAL_RECORDS[<span class="variable">$6</span>]+=<span class="variable">$8</span></span><br><span class="line">    SUCCESS[<span class="variable">$6</span>]+=<span class="variable">$14</span></span><br><span class="line">    FAILED[<span class="variable">$6</span>]+=<span class="variable">$17</span></span><br><span class="line">&#125;</span><br><span class="line">END&#123;</span><br><span class="line">    <span class="keyword">for</span>(u <span class="keyword">in</span> TOTAL_RECORDS)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"># 在统计出的结果数组中进行累加</span></span><br><span class="line">        records_sum+=TOTAL_RECORDS[u]</span><br><span class="line">        success_sum+=SUCCESS[u]</span><br><span class="line">        failed_sum+=FAILED[u]</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">"%-30s%-30d%-30d%-30d\n"</span>,u,TOTAL_RECORDS[u],SUCCESS[u],FAILED[u]</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-30d%-30d%-30d\n"</span>,<span class="string">""</span>,records_sum,success_sum,failed_sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>方法二</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-30s%-30s%-30s\n"</span>,<span class="string">"Name"</span>,<span class="string">"total records"</span>,<span class="string">"success records"</span>,<span class="string">"failed records"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    RECORDS[<span class="variable">$6</span>]+=<span class="variable">$8</span></span><br><span class="line">    SUCCESS[<span class="variable">$6</span>]+=<span class="variable">$14</span></span><br><span class="line">    FAILED[<span class="variable">$6</span>]+=<span class="variable">$17</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在原始数据中进行汇总计算</span></span><br><span class="line">    records_sum+=<span class="variable">$8</span></span><br><span class="line">    success_sum+=<span class="variable">$14</span></span><br><span class="line">    failed_sum+=<span class="variable">$17</span>   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">END&#123;</span><br><span class="line">    <span class="keyword">for</span>(u <span class="keyword">in</span> RECORDS)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">"%-30s%-30d%-30d%-30d\n"</span>,u,RECORDS[u],SUCCESS[u],FAILED[u]</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">"%-30s%-30d%-30d%-30d\n"</span>,<span class="string">"total"</span>,records_sum,success_sum,failed_sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>查找丢失数据的现象，也就是成功+失败的记录数不等于一共插入的记录数，找出这些数据并显示行号和对应行的日志信息</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;if($8!=$14+$17) print NR,$0&#125;'</span> db.log.20190722</span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/Shell.html" class="post-more waves-effect waves-button">
@@ -296,7 +1197,31 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>斐讯 N1 盒子降级刷机</p>
+        <p>斐讯 N1 盒子降级刷机
+&lt;!--more--&gt;</p>
+<h1>降级</h1>
+<ul>
+<li>打开 ADB,点击官方固件的 <code>版本号</code> 4 次</li>
+</ul>
+<h2>重启至 Bootloader</h2>
+<ul>
+<li>先下载 <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">ADB</a></li>
+<li>连接设备并进入 fastboot
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> adb</span><br><span class="line">adb connect ip:5555</span><br><span class="line">adb shell reboot fastboot</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2>刷入降级</h2>
+<ul>
+<li>双公头 USB 数据线与电脑连接，务必连接至靠近 HDMI 接口的那个 USB 接口
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices <span class="comment">#查看是否识别到设备</span></span><br><span class="line">fastboot flash boot boot.img</span><br><span class="line">fastboot flash bootloader bootloader.img</span><br><span class="line">fastboot flash recovery recovery.img</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1>刷入 <a href="https://www.right.com.cn/forum/thread-338759-1-1.html" target="_blank" rel="noopener">w大固件</a></h1>
+<ul>
+<li>先安装 <a href="https://androidmtk.com/download-amlogic-usb-burning-tool" target="_blank" rel="noopener">Usb Burning Tool</a></li>
+<li>打开设备管理器 ==&gt; <code>操作</code> ==&gt;<code>添加过时硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>安装我手动从列表选择的硬件</code> ==&gt; 下一步 ==&gt; 选择 <code>libusb-win32 Usb Devices</code> ==&gt; 下一步 ==&gt; 选择 <code>WorldCup Device</code> ==&gt; 下一步 ==&gt; 下一步</li>
+<li>打开 Usb Burining Tool,去除勾选右边烧录配置的 <code>擦除flash</code> 和 <code>擦除bootloader</code></li>
+<li><a href="https://www.right.com.cn/forum/thread-338759-1-1.html" target="_blank" rel="noopener">w大固件</a></li>
+</ul>
+
     
 
         <a href="/posts/N1Box.html" class="post-more waves-effect waves-button">
@@ -343,7 +1268,29 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>添加 Win10 菜单到 Grub</p>
+        <p>添加 Win10 菜单到 Grub
+&lt;!--more--&gt;</p>
+<h1>安装 os-prober</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure></p>
+<h1>扫面并添加到菜单</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></p>
+<h1>美化</h1>
+<p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
+<h2>配置</h2>
+<p>有的主题有安装脚本，运行即可</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r 主题包名 /boot/grub/themes/  </span><br><span class="line">sudo vim /etc/grub.d/00_header</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>上一步添加如下内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=<span class="string">"/boot/grub/themes/主题包名/theme.txt"</span></span><br><span class="line">GRUB_GFXMODE=<span class="string">"1920x1080x32"</span></span><br></pre></td></tr></table></figure></p>
+<h2>更新配置</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></p>
+<h1>效果</h1>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+
     
 
         <a href="/posts/Grub.html" class="post-more waves-effect waves-button">
@@ -390,7 +1337,22 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Git 更换设备后怎么做</p>
+        <p>Git 更换设备后怎么做
+&lt;!--more--&gt;</p>
+<h1>旧仓库</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git init 仓库名字</span><br><span class="line"><span class="comment"># 建立远程连接</span></span><br><span class="line">git remote add origin https://github.com/user/repo.git    </span><br><span class="line"><span class="comment">#获取远程更新</span></span><br><span class="line">git fetch origin  </span><br><span class="line"><span class="comment"># 把更新的内容合并到本地分支</span></span><br><span class="line">git merge origin/master </span><br><span class="line"><span class="comment"># 加入差异的文件,就是本地修改的文件</span></span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">"Commit message"</span> </span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h1>新仓库</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init()</span><br><span class="line">git remote add origin https://github.com/user/repo.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Commit message"</span></span><br><span class="line">push origin master</span><br></pre></td></tr></table></figure></p>
+<h1>建议</h1>
+<ul>
+<li>拉取时推荐</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master</span><br><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>不推荐</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/Git-Change.html" class="post-more waves-effect waves-button">
@@ -437,7 +1399,20 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>ArchLinux 安装 Docker</p>
+        <p>ArchLinux 安装 Docker
+&lt;!--more--&gt;</p>
+<h1>安装</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S docker</span><br></pre></td></tr></table></figure></p>
+<p>start server
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></p>
+<h1>镜像</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:18.04</span><br><span class="line">docker pull centos <span class="comment"># latest</span></span><br><span class="line">dicker pull centos:6</span><br></pre></td></tr></table></figure></p>
+<h1>运行</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t centos /bin/bash</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>-it, -i：交互式操作， -t 终端</li>
+</ul>
+
     
 
         <a href="/posts/Docker.html" class="post-more waves-effect waves-button">
@@ -484,7 +1459,314 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Vim 重新学习笔记</p>
+        <p>Vim 重新学习笔记
+&lt;!--more--&gt;</p>
+<h1>三个模式</h1>
+<h2>Insert 编辑模式</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>i (insert)</li>
+<li>a (append)</li>
+<li>o (oppen a line below)</li>
+</ul>
+<h2>Command 模式</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq <span class="comment"># 保存退出</span></span><br><span class="line">:vs <span class="comment"># vertical split 横向分频</span></span><br><span class="line">:sp <span class="comment"># 纵向分频</span></span><br><span class="line">:% s/foo/bar/g <span class="comment"># 全局替换</span></span><br><span class="line">:h option-list <span class="comment"># 查找所有设置选项</span></span><br></pre></td></tr></table></figure></p>
+<h2>Visual (可视)模式</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v <span class="comment"># 进入 visual 模式</span></span><br><span class="line">V <span class="comment"># 选择行</span></span><br><span class="line">ctrl v <span class="comment"># 进行快选择</span></span><br></pre></td></tr></table></figure></p>
+<h1>如何快速纠错</h1>
+<p>a/i/o 进入插入模式
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctrl h <span class="comment"># 删除上一个字符</span></span><br><span class="line">ctrl w <span class="comment"># 删除上一个单词</span></span><br><span class="line">ctrl u <span class="comment"># 删除当前行</span></span><br></pre></td></tr></table></figure></p>
+<p>快速切换 Insert 和 Normal
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl c / ctrl [ <span class="comment"># 代替 Esc</span></span><br><span class="line">gi <span class="comment"># 快速跳转到你最后一次编辑的地方并进入插入模式</span></span><br></pre></td></tr></table></figure></p>
+<p>使用 hjkl 移动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h <span class="comment"># 左</span></span><br><span class="line">j <span class="comment"># 下</span></span><br><span class="line">k <span class="comment"># 上</span></span><br><span class="line">l <span class="comment"># 右</span></span><br></pre></td></tr></table></figure></p>
+<h1>在单词之间飞舞</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w/W <span class="comment"># 移到下一 word/WORD 开头</span></span><br><span class="line">e/E <span class="comment"># 下一个 word/WORD 尾</span></span><br><span class="line">b/B <span class="comment"># 回到上一个word/WORD 开头</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>word 指以非空白符分割的单词</li>
+<li>WORD 以空白符分割的单词</li>
+</ul>
+<p>行间搜索移动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f&#123;char&#125; <span class="comment"># 移到 char 字符上</span></span><br><span class="line">t <span class="comment"># 移到 char 前一个字符</span></span><br><span class="line">F <span class="comment"># 反过来搜索前面的字符</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>; 该行下一个</li>
+<li>, 该行上一个</li>
+</ul>
+<p>水平移动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 <span class="comment"># 移到行首第一个字符</span></span><br><span class="line">^ <span class="comment"># 第一个非空白字符</span></span><br><span class="line">$ <span class="comment"># 移到行尾</span></span><br><span class="line">g_ <span class="comment"># 移到行尾非空白字符</span></span><br></pre></td></tr></table></figure></p>
+<p>垂直移到
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">() <span class="comment"># 在句子间移动</span></span><br><span class="line">&#123;&#125; <span class="comment"># 在段落间移到</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>插件 easy-motion</li>
+</ul>
+<p>页面移动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gg、G <span class="comment"># 文件开头/结尾</span></span><br><span class="line">ctrl o <span class="comment"># 快速返回</span></span><br><span class="line"></span><br><span class="line">H/M/L <span class="comment"># 跳到屏幕开头(Head)中间(Middle)结尾(Lower)</span></span><br><span class="line">ctrl u <span class="comment"># 上翻页</span></span><br><span class="line">ctrl f <span class="comment"># 下翻页</span></span><br><span class="line">zz <span class="comment"># 把屏幕置为中间</span></span><br></pre></td></tr></table></figure></p>
+<h1>增删查改</h1>
+<p>增
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a/i/o</span><br><span class="line">A/I/O</span><br></pre></td></tr></table></figure></p>
+<p>快速删除
+<figure class="highlight bash"><figcaption><span>normal 模式下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x <span class="comment"># 快速删一个字符</span></span><br><span class="line">d <span class="comment"># 删除</span></span><br><span class="line">daw <span class="comment"># 删除一个单词</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>d x 可以搭配数字执行多次</li>
+</ul>
+<p>快速修改
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r(replace) c(change) s(substitute) <span class="comment"># 常用</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>normal 下 r 可以替换一个字符，s 替换并进入插入模式</li>
+<li>使用 c 配合文本对象可以快速进行修改</li>
+</ul>
+<p>查询
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ <span class="comment"># 前向搜索</span></span><br><span class="line">? <span class="comment"># 反向搜索</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>n/N 跳转上一个或者上一个匹配</li>
+<li>
+<ul>
+<li>或者 # 进行当前单词的前向和后向匹配</li>
+</ul>
+</li>
+</ul>
+<h1>替换命令</h1>
+<p>substitute
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:[range]s[ubsitite]/&#123;pattern&#125;/&#123;string&#125;/[flags]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>range 范围(:10,20),10-20行,% 全部</li>
+<li>pattern 要替换的模式</li>
+<li>string 是替换后的文本</li>
+</ul>
+<h2>替换标志位</h2>
+<p>Flags 常用标志
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g(global) <span class="comment"># 全局</span></span><br><span class="line">c(confirm) <span class="comment"># 表示确认，可以确认或拒绝修改</span></span><br><span class="line">n(number) <span class="comment"># 报告匹配到的次数而不替换，可以用来匹配次数</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>:1,6 s/self// 查询1-6行有几个 self</li>
+<li>:% s/&lt;quack&gt;/jiao/g 替换所有 quack 为 jiao</li>
+</ul>
+<h1>Buffer Windows Tab</h1>
+<p>文件操作相关</p>
+<ol>
+<li>Buffer 是打开的一个文件的内存缓冲区</li>
+<li>窗口是 Buffer 可视化的分割区域</li>
+<li>Tab 可以组织窗口为一个工作区</li>
+</ol>
+<h2>在 Buffer 之间切换</h2>
+<ol>
+<li>使用 :ls 列举当前缓冲区，后 :b n跳转到第 n 个</li>
+<li>:bpre :bnext :bfirst :blast</li>
+<li>或者 :b buffer_name 加上 tab 补全来跳转</li>
+</ol>
+<h2>Windows 窗口</h2>
+<ol>
+<li>&lt;ctrl w&gt;s 水平分割</li>
+<li>&lt;ctrl w&gt;v 垂直分割</li>
+<li>或者 :sp :vs</li>
+</ol>
+<p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1>宏(macro)</h1>
+<p>可以看做一系列命令合集</p>
+<h2>How</h2>
+<ol>
+<li>q 录制、技术录制</li>
+<li>q{register} 选择要保存的寄存器，把录制的命令保存其中</li>
+<li>@{register} 回放寄存器中的一系列命令
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="comment"># 全选</span></span><br><span class="line">: I<span class="string">"</span></span><br><span class="line"><span class="string">:t # 重复上一命令</span></span><br><span class="line"><span class="string">:A"</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1>常见的补全</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">补全类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ctrl n</td>
+<td style="text-align:left">普通关键字</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/n</td>
+<td style="text-align:left">当前缓冲区关键字</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/i</td>
+<td style="text-align:left">包含文件关键字</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/J</td>
+<td style="text-align:left">标签文件关键字</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/k</td>
+<td style="text-align:left">字典查找</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/l</td>
+<td style="text-align:left">整行补全</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/f</td>
+<td style="text-align:left">文件名补全</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl x/o</td>
+<td style="text-align:left">全能(Omni)补全</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>最常用</h2>
+<ol>
+<li>ctrl n 和 ctrl p 补全单词</li>
+<li>ctrl x 和 ctrl f 补全文件名</li>
+<li>ctrl x 和 ctrl o 补全代码</li>
+</ol>
+<h1>更换配色</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:colorscheme <span class="comment"># 显示当前主题配色</span></span><br><span class="line">:colorscheme &lt;ctrl+d&gt; <span class="comment"># 显示所有配色</span></span><br><span class="line">:colorscheme 配色名 <span class="comment"># 修改配色</span></span><br></pre></td></tr></table></figure></p>
+<h1>映射</h1>
+<h2>基本映射</h2>
+<ul>
+<li>normal 模式下(leadser键即 <code>,</code> )</li>
+</ul>
+<ol>
+<li>map 可以实现映射，<code>:map -x</code> 然后按下 - 就会删除一个字符</li>
+<li><code>:map &lt;space&gt; viw</code> 按下空格键时选中整个单词</li>
+<li>`:map &lt;c-d&gt; dd 删除</li>
+</ol>
+<ul>
+<li>
+<p>消除映射 <code>unmap -</code></p>
+</li>
+<li>
+<p><code>imap &lt;c-d&gt; &lt;Esc&gt;ddi</code> insert 模式映射 ctrl+d 删除一行</p>
+</li>
+<li>
+<p>模式映射映射</p>
+</li>
+</ul>
+<ol>
+<li>用 namap/vmap/imap 定义映射只在normal/visual/insert分别有效</li>
+</ol>
+<ul>
+<li><code>:vmap \U</code> 把 visusal 模式下选中的文本大小(u/U转换大小写)</li>
+</ul>
+<h2>递归与非递归映射</h2>
+<p>*map 系列有递归风险,如果安装了一个插件，插件映射了同一个按键的不同行为，有冲突就会有一个失效。</p>
+<p>非递归映射</p>
+<ol>
+<li>*map 对应的 nnoremap/vnoremao/inoremap</li>
+<li>任何时候都建议使用非递归映射</li>
+</ol>
+<p>示例
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader = <span class="string">","</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt; <span class="comment"># 插入模式保存</span></span><br><span class="line">inoremap jj &lt;Esc&gt; <span class="comment"># 使用jj直接进入 normal</span></span><br><span class="line"><span class="comment"># 使用 leader+w 直接保存</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;</span><br><span class="line">noremap &lt;leader&gt;w :w&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换 Buffer</span></span><br><span class="line">nnoremap &lt;slient&gt; [b :bprevious&lt;CR&gt;</span><br><span class="line">nnoremap &lt;slient&gt; [n :bnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分屏</span></span><br><span class="line">noremap &lt;C-h&gt; &lt;C-w&gt;h</span><br><span class="line">noremap &lt;C-j&gt; &lt;C-w&gt;j</span><br><span class="line">noremap &lt;C-k&gt; &lt;C-w&gt;k</span><br><span class="line">noremap &lt;C<span class="_">-l</span>&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line"><span class="comment"># json 格式化</span></span><br><span class="line">comr FormatJSON %!python3 -m json.tool</span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo to write</span></span><br><span class="line">cnoremap w!! w !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure></p>
+<h1>插件</h1>
+<h2>常见的插件管理器</h2>
+<p>vim-plug,Vundle,Pathogen,Deim</p>
+<h2><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a></h2>
+<ul>
+<li>安装 vim-plug</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure></p>
+<h2>安装插件</h2>
+<p><figure class="highlight bash"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="comment">#begin('~/.vim/plugged')</span></span><br><span class="line">Plug <span class="string">'mhinz/vim-startify'</span> <span class="comment"># 插件</span></span><br><span class="line"><span class="string">" Initialize plugin system</span></span><br><span class="line"><span class="string">call plug#end()</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>source ~/.vimrc</code> 并 <code>:PlugInstall</code></li>
+</ul>
+<h2>vim 美观插件</h2>
+<ul>
+<li>外观</li>
+</ul>
+<ol>
+<li>修改启动界面: <a href="https://github.com/mhinz/vim-startify" target="_blank" rel="noopener">vim-startify</a></li>
+<li>状态栏美化：<a href="https://github.com/vim-airline" target="_blank" rel="noopener">vim-airline</a></li>
+<li>增加但代码缩进线条：<a href="https://github.com/yggdroot/indentline" target="_blank" rel="noopener">indentline</a></li>
+</ol>
+<ul>
+<li>配色方案</li>
+</ul>
+<ol>
+<li><a href="https://github.com/w0ng/vim-hybird" target="_blank" rel="noopener">vim-hybird</a></li>
+<li><a href="https://github.com/altercation/vim-colors-solarized" target="_blank" rel="noopener">solarized</a></li>
+<li><a href="https://github.com/morhetz/gruvbox" target="_blank" rel="noopener">grubbox</a></li>
+</ol>
+<h2>插件推荐网站</h2>
+<p><a href="https://vimawesome.com" target="_blank" rel="noopener">vimawesome</a></p>
+<h2>文件目录和搜索插件</h2>
+<ul>
+<li>文件目录 <a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">nerdtree</a></li>
+</ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot; 查找文件所在位置</span><br><span class="line">nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;</span><br><span class="line">&quot; 切换设置</span><br><span class="line">nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>
+<p>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map &#x3D; &#39;&lt;c-p&gt;&#39;</span><br><span class="line">let g:ctrlp_cmd &#x3D; &#39;CtrlP&#39;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Crtl + P 后输入要搜索的内容</li>
+</ul>
+</li>
+<li>
+<p>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Files . <span class="comment"># 搜索当前目录</span></span><br><span class="line">:Ag content <span class="comment"># 搜索字符串</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></p>
+</li>
+</ul>
+<p>映射
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unmap ss &lt;Plus&gt;(easymotion-s2)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>修改成对内容 <a href="https://github.com/tpope/vim-surround" target="_blank" rel="noopener">vim-surround</a></li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ds <span class="comment"># delete a surrounding</span></span><br><span class="line">cs <span class="comment"># change a surrounding</span></span><br><span class="line">ys <span class="comment"># you add a surrounding</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2>代码</h2>
+<h3>浏览代码</h3>
+<p><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">targbar</a>
+<figure class="highlight bash"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonormal &lt;leader&gt;t :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<a href="https://github.com/lfv89/vim-interestingwords" target="_blank" rel="noopener">vim-interestingwords</a> 可以高亮单词</p>
+<h3>补全</h3>
+<p>补全插件</p>
+<ol>
+<li><a href="https//github.com/shougo/deoplete.nvim">deoplete.nvim</a> 多语言，模糊搜索</li>
+<li><a href="https://github.com/neoclide/coc.nvim" target="_blank" rel="noopener">coc.vim</a> 多语言插件支持</li>
+</ol>
+<p>快速注释
+<a href="https://github.com/tpope/vim-commentary" target="_blank" rel="noopener">vim-commentary</a> <code>gc</code> 注释或取消注释</p>
+<h2>格式化与静态检查</h2>
+<p>格式化</p>
+<p><a href="https://github.com/sbdchd/neoformat" target="_blank" rel="noopener">Neoformat</a> 需要安装对应语言的格式化库，python的autopep8,js的prettier等</p>
+<p>静态检查Lint</p>
+<p>neomake、<a href="https://github.com/w0rp/ale" target="_blank" rel="noopener">ale</a> 需要安装对应语言的 lint 库如 eslint/pylint/golint</p>
+<h2>Python 相关</h2>
+<p><a href="https://github.com/python-mode/python-mode" target="_blank" rel="noopener">Python-mode</a> 具有基本的补全，跳转，重构，格式化功能
+<figure class="highlight bash"><figcaption><span>.vimer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" Python-mode</span></span><br><span class="line"><span class="string">let g:pymode_python =  'python3'</span></span><br><span class="line"><span class="string">let g:pymode_trim_whitespaces = 1</span></span><br><span class="line"><span class="string">let g:pymode_doc = 1</span></span><br><span class="line"><span class="string">let g:pymode_doc_bind = 'k'</span></span><br><span class="line"><span class="string">let g:pymode_rope_goto_definition_bind = "</span>&lt;C-J&gt;<span class="string">"</span></span><br><span class="line"><span class="string">let g:pymode_lint = `</span></span><br><span class="line"><span class="string">let g:pymode_lint_checkers = ['pyflakers','pep8','mccabe','plylint']</span></span><br><span class="line"><span class="string">let g:pymode_options_max_line_length = 120</span></span><br></pre></td></tr></table></figure></p>
+<h2>Git</h2>
+<p><a href="https://github.com/tppope/vim-fugitive" target="_blank" rel="noopener">Fugitive</a></p>
+<ul>
+<li>命令 <code>:Gedit</code>,<code>:Gdiff</code>,<code>:Gblame</code>,<code>:Gcommit</code> 等</li>
+</ul>
+<p><a href="https://github.com/airblade/vim-gitgutter" target="_blank" rel="noopener">vim-gitgutter</a> 显示文件变动</p>
+<p><a href="https://github.com/junegunn/gv.vim" target="_blank" rel="noopener">gv.vim</a> <code>:GV</code> 查看提交记录</p>
+<hr>
+<p><strong>学习视频</strong></p>
+<ul>
+<li><a href="https://www.imooc.com/learn/1129" target="_blank" rel="noopener">玩转Vim 从放弃到爱不释手</a></li>
+</ul>
+
     
 
         <a href="/posts/Vim-Mooc.html" class="post-more waves-effect waves-button">
@@ -531,7 +1813,32 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Cat  追加与覆盖</p>
+        <p>Cat  追加与覆盖
+&lt;!--more--&gt;</p>
+<h1>追加</h1>
+<ul>
+<li>cat &lt;&lt;EOF&gt;&gt;</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt;&gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>cat &gt;&gt;</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &gt;&gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<h1>覆盖</h1>
+<ul>
+<li>cat &lt;&lt;EOF&gt;&gt;</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &lt;&lt; EOF &gt; cat.txt</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>cat &gt;&gt;</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat &gt; cat.txt &lt;&lt; EOF</span><br><span class="line">vitan.me</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<h1>使用变量</h1>
+<ul>
+<li>Warnning
+追加和覆盖若要使用变量必须加 <code>\</code> 如 <strong><code>\$var</code></strong></li>
+</ul>
+
     
 
         <a href="/posts/CatEOF.html" class="post-more waves-effect waves-button">
@@ -578,7 +1885,38 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>Some Socks5 Proxy setting</p>
+        <p>Some Socks5 Proxy setting
+&lt;!--more--&gt;</p>
+<h1>Git</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy socks5://127.0.0.1:1080</span><br><span class="line">git config --global https.proxy socks5://127.0.0.1:1080</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure></p>
+<h1>Curl</h1>
+<p><figure class="highlight bash"><figcaption><span>.curlrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'socks5 = "127.0.0.1:1080"'</span> &gt;&gt; ~/.curlrc</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>ALL_PROXY</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:1080</span><br></pre></td></tr></table></figure></p>
+<h1>Wget</h1>
+<p><figure class="highlight bash"><figcaption><span>EVN Config</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xport http_proxy=http://127.0.0.1:1080</span><br><span class="line">xport http_proxy=httpS://127.0.0.1:1080</span><br></pre></td></tr></table></figure></p>
+<h2>.wgetrc</h2>
+<p><figure class="highlight bash"><figcaption><span>~/.wgetrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https_proxy = http://127.0.0.1:8087/</span><br><span class="line">http_proxy = http://127.0.0.1:8087/</span><br><span class="line">ftp_proxy = http://127.0.0.1:8087/</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you do not want to use proxy at all, set this to off.</span></span><br><span class="line">use_proxy = on</span><br></pre></td></tr></table></figure>
+-e</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -r -np -k -L -p -e <span class="string">"http_proxy=http://127.0.0.1:1080"</span> url</span><br></pre></td></tr></table></figure></p>
+<h1>Pip</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S proxychains</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>vim /etc/proxychains.conf</li>
+</ul>
+<p><figure class="highlight bash"><figcaption><span>/etc/proxychains.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ProxyList]</span><br><span class="line">socks5  127.0.0.1 1080</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>usage</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains pip install &lt;package_name&gt;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>参考</strong></p>
+<ul>
+<li><a href="https://my.oschina.net/u/2306127/blog/791258" target="_blank" rel="noopener">为wget使用代理</a></li>
+</ul>
+
     
 
         <a href="/posts/CurlSocks5.html" class="post-more waves-effect waves-button">
@@ -625,7 +1963,42 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p>CentOS DNS </p>
+        <p>CentOS DNS
+&lt;!--more--&gt;</p>
+<h1>Bind</h1>
+<p>Install</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install <span class="built_in">bind</span> <span class="built_in">bind</span> <span class="built_in">bind</span>-chroot -y</span><br></pre></td></tr></table></figure></p>
+<p>Start Service</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service named start</span><br><span class="line">systemctl name start <span class="comment"># CentOs 7</span></span><br><span class="line">systemctl <span class="built_in">enable</span> named-chroot</span><br></pre></td></tr></table></figure></p>
+<h1>Bind 配置</h1>
+<p><figure class="highlight bash"><figcaption><span>named.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /var/named/chroot/etc/named.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/var/named/chroot/etc/named.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">options &#123;</span><br><span class="line">        listen-on port 53 &#123; any; &#125;;<span class="comment"># 监听任何ip对53端口的请求</span></span><br><span class="line">        listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">        directory       <span class="string">"/var/named"</span>;</span><br><span class="line">        dump-file       <span class="string">"/var/named/data/cache_dump.db"</span>;</span><br><span class="line">        statistics-file <span class="string">"/var/named/data/named_stats.txt"</span>;</span><br><span class="line">        memstatistics-file <span class="string">"/var/named/data/named_mem_stats.txt"</span>;</span><br><span class="line">        allow-query     &#123; any; &#125;; <span class="comment"># 接收任何来源查询dns记录</span></span><br><span class="line">        recursion yes;</span><br><span class="line"></span><br><span class="line">        dnssec-enable yes;</span><br><span class="line">        dnssec-validation yes;</span><br><span class="line"></span><br><span class="line">        /* Path to ISC DLV key */</span><br><span class="line">        bindkeys-file <span class="string">"/etc/named.iscdlv.key"</span>;</span><br><span class="line"></span><br><span class="line">         managed-keys-directory <span class="string">"/var/named/dynamic"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//以下用于限定 <span class="built_in">bind</span> 服务器的日志参数</span><br><span class="line">logging &#123;</span><br><span class="line">        channel default_debug &#123;</span><br><span class="line">                file <span class="string">"data/named.run"</span>;</span><br><span class="line">                severity dynamic;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//用于指定根服务器的配置信息，一般不能改动</span><br><span class="line">zone <span class="string">"."</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> hint;</span><br><span class="line">        file <span class="string">"named.ca"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">include <span class="string">"/etc/named.zones"</span>; //指定住配置文件，按实际改动</span><br><span class="line">include <span class="string">"/etc/named.root.key"</span>;</span><br></pre></td></tr></table></figure></p>
+<h2>配置主配置文件</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/etc/</span><br><span class="line">cp -p named.rfc1912.zones named.zones</span><br><span class="line">vim named.zones</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/var/named/chroot/etc/named.zones</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zone <span class="string">"vitan.me"</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> master;</span><br><span class="line">        file <span class="string">"vitan.me.zone"</span>;</span><br><span class="line">        allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zone <span class="string">"197.28.149.in-addr.arpa"</span> IN &#123;</span><br><span class="line">        <span class="built_in">type</span> master;</span><br><span class="line">        file <span class="string">"149.28.197.zone"</span>;</span><br><span class="line">        allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2>区域配置文件</h2>
+<ul>
+<li>正向解析域</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/var/named</span><br><span class="line">cp -p named.localhost vitan.me.zone</span><br><span class="line">vim vitan.me.zone</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/var/named/chroot/var/named/vitan.me.zone</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@       IN SOA  www.vitan.me. mail.vitan.me. (</span><br><span class="line">                2007101100      ; serial</span><br><span class="line">                1D      ; refresh <span class="comment"># 主从刷新时间</span></span><br><span class="line">                1H      ; retry <span class="comment"># 主从通讯失败后重试间隔</span></span><br><span class="line">                1W      ; expire <span class="comment"># 缓存过期时间</span></span><br><span class="line">                3H )    ; minimum <span class="comment"># 没有TTL定义时的最小生存周期</span></span><br><span class="line"></span><br><span class="line">@       IN      NS              www.vitan.me.</span><br><span class="line">@       IN      MX      10      www.vitan.me.</span><br><span class="line">www     IN      A               149.28.197.1</span><br><span class="line">mail    IN      A               149.28.197.1</span><br><span class="line">www1    IN      CNAME           www.vitan.me.</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>反向向解析域</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/named/chroot/var/named</span><br><span class="line">cp -p named.loopback 149.28.197.zone</span><br><span class="line">vim /var/named/chroot/var/named/149.28.197zone</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/var/named/chroot/var/named/149.28.197.zone</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@       IN SOA  www.vitan.me. mail.vitan.me. (</span><br><span class="line">                2007101100      ; serial</span><br><span class="line">                1D      ; refresh <span class="comment"># 主从刷新时间</span></span><br><span class="line">                1H      ; retry <span class="comment"># 主从通讯失败后重试间隔</span></span><br><span class="line">                1W      ; expire <span class="comment"># 缓存过期时间</span></span><br><span class="line">                3H )    ; minimum <span class="comment"># 没有TTL定义时的最小生存周期</span></span><br><span class="line"></span><br><span class="line">@       IN      NS              www.vitan.me.</span><br><span class="line">@       IN      MX      10      www.vitan.me.</span><br><span class="line">www     IN      A               149.28.197.1</span><br><span class="line">mail    IN      A               149.28.197.1</span><br><span class="line">www1    IN      CNAME           www.vitan.me.</span><br></pre></td></tr></table></figure></p>
+<h1>重启 DNS 服务</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service named restart/reload</span><br><span class="line">systemctl named restart <span class="comment"># CentOs 7</span></span><br></pre></td></tr></table></figure></p>
+<h1>客户端配置与测试</h1>
+<ul>
+<li>以便能使用 nslookup dig 和 host</li>
+</ul>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install <span class="built_in">bind</span>-utils -y</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight bash"><figcaption><span>/etc/resolv.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/etc/resolv.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">search vitan.me</span><br><span class="line">nameserver 149.28.197.1</span><br></pre></td></tr></table></figure></p>
+<h1>Test</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dig www.vitan.me</span><br><span class="line">nslookup www.vitan.me</span><br></pre></td></tr></table></figure></p>
+
     
 
         <a href="/posts/Linux-DNS.html" class="post-more waves-effect waves-button">

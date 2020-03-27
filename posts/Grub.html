@@ -33,12 +33,12 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Linux,Win">
-    <meta name="description" content="添加 Win10 菜单到 Grub">
+    <meta name="description" content="添加 Win10 菜单到 Grub &lt;!--more--&gt; 安装 os-prober 1sudo pacman -S os-prober 扫面并添加到菜单 1sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg 美化 下载主题 Gnome-Look 配置 有的主题有安装脚本，运行即可 12sudo cp -r 主题包名 &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grub 双系统选项、美化">
 <meta property="og:url" content="https://vitan.me/posts/Grub.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="添加 Win10 菜单到 Grub">
+<meta property="og:description" content="添加 Win10 菜单到 Grub &lt;!--more--&gt; 安装 os-prober 1sudo pacman -S os-prober 扫面并添加到菜单 1sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg 美化 下载主题 Gnome-Look 配置 有的主题有安装脚本，运行即可 12sudo cp -r 主题包名 &#x2F;boot&#x2F;grub&#x2F;themes&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png">
 <meta property="article:published_time" content="2019-06-27T06:26:38.000Z">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-os-prober"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 os-prober</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扫面并添加到菜单"><span class="post-toc-number">2.</span> <span class="post-toc-text">扫面并添加到菜单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#美化"><span class="post-toc-number">3.</span> <span class="post-toc-text">美化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新配置"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">更新配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#效果"><span class="post-toc-number">4.</span> <span class="post-toc-text">效果</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 os-prober</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">2.</span> <span class="post-toc-text">扫面并添加到菜单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">3.</span> <span class="post-toc-text">美化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">更新配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">4.</span> <span class="post-toc-text">效果</span></a></li></ol>
         </nav>
     </aside>
 
@@ -209,25 +209,28 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>添加 Win10 菜单到 Grub</p>
-<a id="more"></a>
-<h1 id="安装-os-prober"><a href="#安装-os-prober" class="headerlink" title="安装 os-prober"></a>安装 os-prober</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure>
-
-<h1 id="扫面并添加到菜单"><a href="#扫面并添加到菜单" class="headerlink" title="扫面并添加到菜单"></a>扫面并添加到菜单</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-<h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>有的主题有安装脚本，运行即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r 主题包名 /boot/grub/themes/  </span><br><span class="line">sudo vim /etc/grub.d/00_header</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><figcaption><span>上一步添加如下内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=<span class="string">"/boot/grub/themes/主题包名/theme.txt"</span></span><br><span class="line">GRUB_GFXMODE=<span class="string">"1920x1080x32"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="更新配置"><a href="#更新配置" class="headerlink" title="更新配置"></a>更新配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><figure class="image-bubble">
+            <p>添加 Win10 菜单到 Grub
+&lt;!--more--&gt;</p>
+<h1>安装 os-prober</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S os-prober</span><br></pre></td></tr></table></figure></p>
+<h1>扫面并添加到菜单</h1>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></p>
+<h1>美化</h1>
+<p>下载主题 <a href="https://www.gnome-look.org/browse/cat/109/ord/latest/" target="_blank" rel="noopener">Gnome-Look</a></p>
+<h2>配置</h2>
+<p>有的主题有安装脚本，运行即可</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -r 主题包名 /boot/grub/themes/  </span><br><span class="line">sudo vim /etc/grub.d/00_header</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>上一步添加如下内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRUB_THEME=<span class="string">"/boot/grub/themes/主题包名/theme.txt"</span></span><br><span class="line">GRUB_GFXMODE=<span class="string">"1920x1080x32"</span></span><br></pre></td></tr></table></figure></p>
+<h2>更新配置</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></p>
+<h1>效果</h1>
+<p><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/Grub.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>
+            </figure></p>
 
         </div>
 
