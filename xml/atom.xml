@@ -71,9 +71,9 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
   </entry>
   
@@ -580,11 +580,11 @@
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Termux" scheme="https://vitan.me/tags/Termux/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
   </entry>
   
