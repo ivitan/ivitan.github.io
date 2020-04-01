@@ -33,15 +33,15 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Win,Batch">
-    <meta name="description" content="Batch 计划任务 语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST st">
+    <meta name="description" content="Batch 计划任务  语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Batch 计划任务">
 <meta property="og:url" content="https://vitan.me/posts/WinTask.html">
 <meta property="og:site_name" content="Vitan&#39;s Blog">
-<meta property="og:description" content="Batch 计划任务 语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST st">
+<meta property="og:description" content="Batch 计划任务  语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-13T02:24:56.000Z">
-<meta property="article:modified_time" content="2020-03-05T03:04:26.000Z">
+<meta property="article:modified_time" content="2020-04-01T10:44:28.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Win">
 <meta property="article:tag" content="Batch">
@@ -88,6 +88,13 @@ ga('send', 'pageview');
             </li>
         
             <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
               <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 分类
@@ -98,13 +105,6 @@ ga('send', 'pageview');
               <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 归档
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
               </a>
             </li>
         
@@ -207,12 +207,14 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Batch 计划任务</p>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create [/S system [/U username [/P [password]]]]</span><br><span class="line">[/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]</span><br><span class="line">[/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]</span><br><span class="line">[/RI interval] [ &#123;/ET endtime | /DU duration&#125; [/K] [/XML xmlfile] [/V1]]</span><br><span class="line">[/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]</span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p>Batch 计划任务</p>
+</blockquote>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create [/S system [/U username [/P [password]]]]</span><br><span class="line">[/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]</span><br><span class="line">[/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]</span><br><span class="line">[/RI interval] [ &#123;/ET endtime | /DU duration&#125; [/K] [/XML xmlfile] [/V1]]</span><br><span class="line">[/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
 <p>描述:允许管理员在本地或远程系统上创建计划任务。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc minute [/mo &#123;<span class="number">1</span> - <span class="number">1439</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc minute [/mo &#123;<span class="number">1</span> - <span class="number">1439</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <h1 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h1><table>
 <thead>
@@ -394,135 +396,135 @@ ga('send', 'pageview');
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol>
 <li>在远程机器 “ABC” 上创建计划任务 “doc”， “runasuser” 用户下运行 notepad.exe。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U user /P password </span><br><span class="line">/RU runasuser /RP runaspassword /SC HOURLY /TN doc /TR notepad</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U user /P password </span><br><span class="line">/RU runasuser /RP runaspassword /SC HOURLY /TN doc /TR notepad</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>远程机器 “ABC” 上创建计划任务 “accountant”， 在指定的开始日期和结束日期之间的开始时间和结束时间内，每隔五分钟运行 calc.exe。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U domain\user /P password </span><br><span class="line">/SC MINUTE /MO <span class="number">5</span> /TN accountant /TR calc.exe /ST <span class="number">12</span>:<span class="number">00</span> </span><br><span class="line">/ET <span class="number">14</span>:<span class="number">00</span> /SD <span class="number">06</span>/<span class="number">06</span>/<span class="number">2006</span> /ED <span class="number">06</span>/<span class="number">06</span>/<span class="number">2006</span> /RU runasuser /RP userpassword</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U domain\user /P password </span><br><span class="line">/SC MINUTE /MO <span class="number">5</span> /TN accountant /TR calc.exe /ST <span class="number">12</span>:<span class="number">00</span> </span><br><span class="line">/ET <span class="number">14</span>:<span class="number">00</span> /SD <span class="number">06</span>/<span class="number">06</span>/<span class="number">2006</span> /ED <span class="number">06</span>/<span class="number">06</span>/<span class="number">2006</span> /RU runasuser /RP userpassword</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>创建计划任务 “gametime”，在每月的第一个星期天运行“空当接龙”。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /SC MONTHLY /MO first /D SUN </span><br><span class="line">/TN gametime /TR c:\windows\system32\freecell</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /SC MONTHLY /MO first /D SUN </span><br><span class="line">/TN gametime /TR c:\windows\system32\freecell</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>在远程机器 “ABC” 创建计划任务 “report”，每个星期运行 notepad.exe。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U user /P password /RU runasuser</span><br><span class="line">/RP runaspassword /SC WEEKLY /TN report /TR notepad.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U user /P password /RU runasuser</span><br><span class="line">/RP runaspassword /SC WEEKLY /TN report /TR notepad.exe</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
 <li>在远程机器 “ABC” 创建计划任务 “logtracker”，每隔五分钟从指定的开始时间到无结束时间，运行 notepad.exe。将提示输入 /RP 密码。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U domain\user /P password /SC MINUTE</span><br><span class="line">/MO <span class="number">5</span> /TN logtracker</span><br><span class="line">/TR c:\windows\system32\notepad.exe /ST <span class="number">18</span>:<span class="number">30</span></span><br><span class="line">/RU runasuser /RP</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /S ABC /U domain\user /P password /SC MINUTE</span><br><span class="line">/MO <span class="number">5</span> /TN logtracker</span><br><span class="line">/TR c:\windows\system32\notepad.exe /ST <span class="number">18</span>:<span class="number">30</span></span><br><span class="line">/RU runasuser /RP</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
 <li>创建计划任务 “gaming”，每天从 12:00 点开始到14:00 点自动结束，运行 freecell.exe。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /SC DAILY /TN gaming /TR c:\freecell /ST <span class="number">12</span>:<span class="number">00</span></span><br><span class="line">/ET <span class="number">14</span>:<span class="number">00</span> /K</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /SC DAILY /TN gaming /TR c:\freecell /ST <span class="number">12</span>:<span class="number">00</span></span><br><span class="line">/ET <span class="number">14</span>:<span class="number">00</span> /K</span><br></pre></td></tr></table></figure>
 
 <ol start="7">
 <li>创建计划任务“EventLog”以开始运行 wevtvwr.msc只要在“系统”通道中发布事件 101</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /TN EventLog /TR wevtvwr.msc /SC ONEVENT</span><br><span class="line">/EC System /MO *[System/EventID=<span class="number">101</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create /TN EventLog /TR wevtvwr.msc /SC ONEVENT</span><br><span class="line">/EC System /MO *[System/EventID=<span class="number">101</span>]</span><br></pre></td></tr></table></figure>
 
 <ol start="8">
 <li>文件路径中可以加入空格，但需要加上两组引号，一组引号用于 CMD.EXE，另一组用于 SchTasks.exe。用于 CMD的外部引号必须是一对双引号；内部引号可以是一对单引号或一对转义双引号:</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create</span><br><span class="line">/tr "'c:\program files\internet explorer\iexplorer.exe'</span><br><span class="line">\"c:\log data\today.xml\"" ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Create</span><br><span class="line">/tr "'c:\program files\internet explorer\iexplorer.exe'</span><br><span class="line">\"c:\log data\today.xml\"" ...</span><br></pre></td></tr></table></figure>
 
 <ol start="9">
 <li>令计划安全脚本 Sec.vbs 每 20 分钟运行一次。由于命令没有包含起始日期或时间，任务在命令完成 20 分钟后启动，此后每当系统运行它就每 20 分钟运行一次。请注意，安全脚本源文件位于远程计算机上，但任务在本地计算机上计划并执行。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc minute /mo <span class="number">20</span> /tn "Security Script" /tr \\central\data\scripts\sec.vbs</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc minute /mo <span class="number">20</span> /tn "Security Script" /tr \\central\data\scripts\sec.vbs</span><br></pre></td></tr></table></figure>
 
 <h1 id="其他实例"><a href="#其他实例" class="headerlink" title="其他实例"></a>其他实例</h1><p>转载自:<a href="https://blog.csdn.net/lionzl/article/details/40896893" target="_blank" rel="noopener">https://blog.csdn.net/lionzl/article/details/40896893</a></p>
-<h2 id="schtasks-create-hourly"><a href="#schtasks-create-hourly" class="headerlink" title="schtasks create hourly"></a>schtasks create hourly</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc hourly [/mo &#123;<span class="number">1</span> - <span class="number">365</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-hourly"><a href="#schtasks-create-hourly" class="headerlink" title="schtasks create hourly"></a>schtasks create hourly</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc hourly [/mo &#123;<span class="number">1</span> - <span class="number">365</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 <p>计划命令在每小时过五分的时候运行。</p>
 <ol>
 <li>下面的命令将计划 MyApp 程序从午夜过后五分钟起每小时运行一次。因为忽略了 /mo 参数，命令使用了小时计划的默认值，即每 (1) 小时。如果该命令在 12:05 A.M 之后生成，程序将在第二天才会运行。</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc hourly /st <span class="number">00</span>:<span class="number">05</span>:<span class="number">00</span> /tn "My App" /tr c:\apps\myapp.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc hourly /st <span class="number">00</span>:<span class="number">05</span>:<span class="number">00</span> /tn "My App" /tr c:\apps\myapp.exe</span><br></pre></td></tr></table></figure>
 
 <p>计划命令每五小时运行一次</p>
 <p>下面的命令计划 MyApp 程序从 2001 年 3 月的第一天起每五小时运行一次。它使用 /mo 参数来指定间隔时间，使用 /sd 参数来指定起始日期。由于命令没有指定起始时间，当前时间被用作起始时间。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc hourly /mo <span class="number">5</span> /sd <span class="number">03</span>/<span class="number">01</span>/<span class="number">2001</span> /tn "My App" /tr c:\apps\myapp.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /sc hourly /mo <span class="number">5</span> /sd <span class="number">03</span>/<span class="number">01</span>/<span class="number">2001</span> /tn "My App" /tr c:\apps\myapp.exe</span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-daily"><a href="#schtasks-create-daily" class="headerlink" title="schtasks create daily"></a>schtasks create daily</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc daily [/mo &#123;<span class="number">1</span> - <span class="number">365</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-daily"><a href="#schtasks-create-daily" class="headerlink" title="schtasks create daily"></a>schtasks create daily</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc daily [/mo &#123;<span class="number">1</span> - <span class="number">365</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <p>计划任务每天运行一次</p>
 <p>下面的范例计划 MyApp 程序在每天的 8:00 A.M. 运行一次，直到 2001 年 12 月 31 日结束。由于它忽略了 /mo 参数，所以使用默认间隔 1 来每天运行命令。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st <span class="number">08</span>:<span class="number">00</span>:<span class="number">00</span> /ed <span class="number">12</span>/<span class="number">31</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st <span class="number">08</span>:<span class="number">00</span>:<span class="number">00</span> /ed <span class="number">12</span>/<span class="number">31</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
 
 <p>计划任务每隔一天运行一次</p>
 <p>下面的范例计划 MyApp 程序从 2001 年 12 月 31 日起每隔一天在 1:00 P.M. (13:00) 运行。命令使用 /mo 参数来指定两 (2) 天的间隔。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /mo <span class="number">2</span> /st <span class="number">13</span>:<span class="number">00</span>:<span class="number">00</span> /sd <span class="number">12</span>/<span class="number">31</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /mo <span class="number">2</span> /st <span class="number">13</span>:<span class="number">00</span>:<span class="number">00</span> /sd <span class="number">12</span>/<span class="number">31</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-weekly"><a href="#schtasks-create-weekly" class="headerlink" title="schtasks create weekly"></a>schtasks create weekly</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc weekly [/d &#123;MON - SUN | *&#125;] [/mo &#123;<span class="number">1</span> - <span class="number">52</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-weekly"><a href="#schtasks-create-weekly" class="headerlink" title="schtasks create weekly"></a>schtasks create weekly</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc weekly [/d &#123;MON - SUN | *&#125;] [/mo &#123;<span class="number">1</span> - <span class="number">52</span>&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <p>计划任务每六周运行一次</p>
 <p>下面的命令计划 MyApp 程序在远程计算机上每六周运行一次。该命令使用 /mo 参数来指定间隔。它也使用 /s 参数来指定远程计算机，使用 /ru 参数来计划任务以用户的 Administrator 帐户权限运行。因为忽略了 /rp 参数，SchTasks.exe 会提示用户输入 Administrator 帐户密码。</p>
 <p>另外，因为命令是远程运行的，所以命令中所有的路径，包括到 MyApp.exe 的路径，都是指向远程计算机上的路径。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo <span class="number">6</span> /s Server16 /ru Admin01</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo <span class="number">6</span> /s Server16 /ru Admin01</span><br></pre></td></tr></table></figure>
 
 
 <p>计划任务每隔一周在周五运行</p>
 <p>下面的命令计划任务每隔一周在周五运行。它使用 /mo 参数来指定两周的间隔，使用 /d 参数来指定是一周内的哪一天。如计划任务在每个周五运行，要忽略 /mo 参数或将其设置为 1。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo <span class="number">2</span> /d FRI</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo <span class="number">2</span> /d FRI</span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-monthly"><a href="#schtasks-create-monthly" class="headerlink" title="schtasks create monthly"></a>schtasks create monthly</h2><h3 id="常规月计划语法"><a href="#常规月计划语法" class="headerlink" title="常规月计划语法"></a>常规月计划语法</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly [/mo &#123;FIRST | SECOND | THIRD | FOURTH | LAST | LASTDAY] [/d &#123;MON - SUN | <span class="number">1</span> - <span class="number">31</span>&#125;] [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-monthly"><a href="#schtasks-create-monthly" class="headerlink" title="schtasks create monthly"></a>schtasks create monthly</h2><h3 id="常规月计划语法"><a href="#常规月计划语法" class="headerlink" title="常规月计划语法"></a>常规月计划语法</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly [/mo &#123;FIRST | SECOND | THIRD | FOURTH | LAST | LASTDAY] [/d &#123;MON - SUN | <span class="number">1</span> - <span class="number">31</span>&#125;] [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>指定周的语法</li>
 </ul>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo &#123;FIRST | SECOND | THIRD | FOURTH | LAST&#125; /d &#123;MON - SUN&#125; [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo &#123;FIRST | SECOND | THIRD | FOURTH | LAST&#125; /d &#123;MON - SUN&#125; [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Lastday 语法</li>
 </ul>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo LASTDAY /m &#123;JAN - DEC[,JAN - DEC...] | *&#125; [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo LASTDAY /m &#123;JAN - DEC[,JAN - DEC...] | *&#125; [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>指定日期的语法</li>
 </ul>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /d &#123;<span class="number">1</span> - <span class="number">31</span>&#125; [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc monthly /d &#123;<span class="number">1</span> - <span class="number">31</span>&#125; [/m &#123;JAN - DEC[,JAN - DEC...] | *&#125;] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <h4 id="计划任务在每月的第一天运行"><a href="#计划任务在每月的第一天运行" class="headerlink" title="计划任务在每月的第一天运行"></a>计划任务在每月的第一天运行</h4><p>下面的命令计划 MyApp 程序在每月的第一天运行。因为默认修饰符是 none（即：没有修饰符），默认天是第一天，默认的月份是每个月，所以该命令不需要任何其它的参数。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly</span><br></pre></td></tr></table></figure>
 
 <h4 id="计划任务在每月的最后一天运行"><a href="#计划任务在每月的最后一天运行" class="headerlink" title="计划任务在每月的最后一天运行"></a>计划任务在每月的最后一天运行</h4><p>下面的命令计划 MyApp 程序在每月的最后一天运行。它使用 /mo 参数指定在每月的最后一天运行程序，使用通配符 (*) 与 /m 参数表明在每月的最后一天运行程序。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *</span><br></pre></td></tr></table></figure>
 
 <h4 id="计划任务每三个月运行一次"><a href="#计划任务每三个月运行一次" class="headerlink" title="计划任务每三个月运行一次"></a>计划任务每三个月运行一次</h4><p>下面的命令计划 MyApp 程序每三个月运行一次。.它使用 /mo 参数来指定间隔。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo <span class="number">3</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="计划任务在每月的第二个周日运行"><a href="#计划任务在每月的第二个周日运行" class="headerlink" title="计划任务在每月的第二个周日运行"></a>计划任务在每月的第二个周日运行</h4><p>下面的命令计划 MyApp 程序在每月的第二个周日运行。它使用 /mo 参数指定是每月的第二周，使用 /d 参数指定天。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN</span><br></pre></td></tr></table></figure>
 
 <h4 id="计划任务在五月和六月的第-15-天运行。"><a href="#计划任务在五月和六月的第-15-天运行。" class="headerlink" title="计划任务在五月和六月的第 15 天运行。"></a>计划任务在五月和六月的第 15 天运行。</h4><p>下面的命令计划 MyApp 程序在五月 15 日和六月 15 日的 3:00 PM (15:00) 运行。它使用 /d 参数来指定日期，使用 /m 参数指定月份。它也使用 /st 参数来指定开始时间。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d <span class="number">15</span> /m MAY,JUN /st <span class="number">15</span>:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d <span class="number">15</span> /m MAY,JUN /st <span class="number">15</span>:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-once"><a href="#schtasks-create-once" class="headerlink" title="schtasks create once"></a>schtasks create once</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc once /st StartTime /sd StartDate [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-once"><a href="#schtasks-create-once" class="headerlink" title="schtasks create once"></a>schtasks create once</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc once /st StartTime /sd StartDate [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <h3 id="计划任务运行一次"><a href="#计划任务运行一次" class="headerlink" title="计划任务运行一次"></a>计划任务运行一次</h3><p>下面的命令计划 MyApp 程序在 2002 年 1 月 1 日午夜运行一次。它使用 /ru 参数指定以用户的 Administrator 帐户权限运行任务，使用 /rp 参数为 Administrator 帐户提供密码。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> /sd <span class="number">01</span>/<span class="number">01</span>/<span class="number">2002</span> /ru Admin23 /rp p@ssworD1</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> /sd <span class="number">01</span>/<span class="number">01</span>/<span class="number">2002</span> /ru Admin23 /rp p@ssworD1</span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-onstart"><a href="#schtasks-create-onstart" class="headerlink" title="schtasks create onstart"></a>schtasks create onstart</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onstart [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-onstart"><a href="#schtasks-create-onstart" class="headerlink" title="schtasks create onstart"></a>schtasks create onstart</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onstart [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 <h3 id="计划任务在每次系统启动的时候运行"><a href="#计划任务在每次系统启动的时候运行" class="headerlink" title="计划任务在每次系统启动的时候运行"></a>计划任务在每次系统启动的时候运行</h3><p>下面的命令计划 MyApp 程序在每次系统启动的时候运行，起始日期是 2001 年 3 月 15 日。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd <span class="number">03</span>/<span class="number">15</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd <span class="number">03</span>/<span class="number">15</span>/<span class="number">2001</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-onlogon"><a href="#schtasks-create-onlogon" class="headerlink" title="schtasks create onlogon"></a>schtasks create onlogon</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onlogon [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-onlogon"><a href="#schtasks-create-onlogon" class="headerlink" title="schtasks create onlogon"></a>schtasks create onlogon</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onlogon [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 
 <h3 id="计划任务在用户登录到远程计算机的时候运行"><a href="#计划任务在用户登录到远程计算机的时候运行" class="headerlink" title="计划任务在用户登录到远程计算机的时候运行"></a>计划任务在用户登录到远程计算机的时候运行</h3><p>下面的命令计划批处理文件在用户（任何用户）每次登录到远程计算机上的时候运行。它使用 /s 参数指定远程计算机。因为命令是远程的，所以命令中所有的路径，包括批处理文件的路径，都指定为远程计算机上的路径。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "<span class="built_in">Start</span> Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s Server23</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "<span class="built_in">Start</span> Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s Server23</span><br></pre></td></tr></table></figure>
 
-<h2 id="schtasks-create-onidle"><a href="#schtasks-create-onidle" class="headerlink" title="schtasks create onidle"></a>schtasks create onidle</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onidle /iIdleTime [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
+<h2 id="schtasks-create-onidle"><a href="#schtasks-create-onidle" class="headerlink" title="schtasks create onidle"></a>schtasks create onidle</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn TaskName /tr TaskRun /sc onidle /iIdleTime [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru &#123;[Domain\]User | "System"&#125; [/rp Password]]</span><br></pre></td></tr></table></figure>
 <h3 id="计划某项任务在计算机空闲的时候运行"><a href="#计划某项任务在计算机空闲的时候运行" class="headerlink" title="计划某项任务在计算机空闲的时候运行"></a>计划某项任务在计算机空闲的时候运行</h3><p>下面的命令计划 MyApp 程序在计算机空闲的时候运行。它使用必需的 /i 参数指定在启动任务之前计算机必需持续空闲十分钟。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i <span class="number">10</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="创建以-System-权限运行的任务"><a href="#创建以-System-权限运行的任务" class="headerlink" title="创建以 System 权限运行的任务"></a>创建以 System 权限运行的任务</h3><p>下面的命令计划 MyApp 程序以 NT Authority\System 帐户权限运行。在这个范例中，任务计划在每月的第一天运行，但对于以系统权限运行的任务可以使用所有的计划类型。</p>
 <p>该命令使用 /ru “System” 参数指定系统安全上下文。因为系统任务不需要密码，所以忽略了 /rp 参数。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d <span class="number">1</span> /ru "System"</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d <span class="number">1</span> /ru "System"</span><br></pre></td></tr></table></figure>
 
 <p>作为响应，SchTasks.exe 显示一个信息性消息和一个成功消息。它不提示输入密码。信息：此任务将被创建于用户名下 (“NT AUTHORITY\SYSTEM”)。 成功：计划任务 “My App” 已成功创建。 </p>
 <h3 id="创建运行多个程序的任务"><a href="#创建运行多个程序的任务" class="headerlink" title="创建运行多个程序的任务"></a>创建运行多个程序的任务</h3><p>每个任务只能运行一个程序。但是可以创建一个运行多个程序的批处理文件，然后计划一个任务来运行该批处理文件。下面的过程说明了这个方法：</p>
@@ -534,12 +536,12 @@ ga('send', 'pageview');
 <li>启动文本编辑器，例如“记事本”。</li>
 <li>键入每个程序的名称和指向可执行文件的完全合格的路径。在这种情况下，文件包含有下列语句。</li>
 </ul>
-<figure class="highlight bat"><figcaption><span>MyApp.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Windows</span>\<span class="title">System32</span>\<span class="title">Eventvwr.exe</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Windows</span>\<span class="title">System32</span>\<span class="title">Perfmon.exe</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><figcaption><span>MyApp.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Windows</span>\<span class="title">System32</span>\<span class="title">Eventvwr.exe</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Windows</span>\<span class="title">System32</span>\<span class="title">Perfmon.exe</span></span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>使用 SchTasks.exe 创建一个运行 MyApps.bat 的任务。</li>
 </ol>
 <p>下面的命令创建了 Monitor 任务，每当有人登录它就运行。它使用 /tn 参数命名任务，使用 /tr 参数运行 MyApps.bat。它使用 /sc 参数来指明 OnLogon 计划类型，使用 /ru 参数指定 Administrator 帐户。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator</span><br></pre></td></tr></table></figure>
 <p>该命令的结果是，每当用户登录到计算机，任务就启动“事件查看器”和“系统监视器”。</p>
 <h3 id="更改计划任务"><a href="#更改计划任务" class="headerlink" title="更改计划任务"></a>更改计划任务</h3><p>更改一个或多个下列任务属性。</p>
 <ul>
@@ -548,7 +550,7 @@ ga('send', 'pageview');
 <li>用户帐户的密码 (/rp)。</li>
 </ul>
 <p>语法</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /change /tn TaskName [/s computer [/u [domain\]user /p password]] [/tr TaskRun] [/ru [Domain\]User | "System"] [/rp Password]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /change /tn TaskName [/s computer [/u [domain\]user /p password]] [/tr TaskRun] [/ru [Domain\]User | "System"] [/rp Password]</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -597,7 +599,7 @@ ga('send', 'pageview');
 <li>NT Authority\System 帐户没有交互式登录权限。用户看不到以系统权限运行的程序，不能与其交互。</li>
 </ul>
 <h3 id="更改任务运行的程序"><a href="#更改任务运行的程序" class="headerlink" title="更改任务运行的程序"></a>更改任务运行的程序</h3><p>下面的命令将 Virus Check 任务运行的程序由 VirusCheck.exe 更改为 VirusCheck2.exe。此命令使用 /tn 参数标识任务，使用 /tr 参数指定任务的新程序。（不能更改任务名称。）</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /change /tn "Virus Check" /tr C:\VirusCheck2.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /change /tn "Virus Check" /tr C:\VirusCheck2.exe</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -606,7 +608,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-03-05T03:04:26.000Z" itemprop="dateUpdated">2020-03-05 11:04:26</time>
+    最后更新时间：<time datetime="2020-04-01T10:44:28.000Z" itemprop="dateUpdated">2020-04-01 18:44:28</time>
 </span><br>
 
 

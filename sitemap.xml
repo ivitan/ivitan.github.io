@@ -2,30 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://vitan.me/posts/CMD.html</loc>
-    
-    <lastmod>2020-04-01T06:30:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Batch.html</loc>
-    
-    <lastmod>2020-04-01T06:29:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/NerdTree.html</loc>
     
-    <lastmod>2020-04-01T06:27:44.000Z</lastmod>
+    <lastmod>2020-04-01T12:18:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/404.html</loc>
+    
+    <lastmod>2020-04-01T12:15:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/WNMP.html</loc>
+    
+    <lastmod>2020-04-01T12:11:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/HighlightJs.html</loc>
+    
+    <lastmod>2020-04-01T12:09:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
+    
+    <lastmod>2020-04-01T11:45:06.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/Termux.html</loc>
     
-    <lastmod>2020-03-09T00:13:50.000Z</lastmod>
+    <lastmod>2020-04-01T11:31:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/ArchLinux.html</loc>
+    
+    <lastmod>2020-04-01T11:25:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Shell.html</loc>
+    
+    <lastmod>2020-04-01T11:23:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Vim-Vundle-Markdown.html</loc>
+    
+    <lastmod>2020-04-01T11:01:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Vim-utf-8.html</loc>
+    
+    <lastmod>2020-04-01T10:58:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/LAMP.html</loc>
+    
+    <lastmod>2020-04-01T10:46:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/CMD.html</loc>
+    
+    <lastmod>2020-04-01T10:45:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/WinTask.html</loc>
+    
+    <lastmod>2020-04-01T10:44:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Batch.html</loc>
+    
+    <lastmod>2020-04-01T10:41:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Cmder.html</loc>
+    
+    <lastmod>2020-04-01T10:39:24.000Z</lastmod>
     
   </url>
   
@@ -47,13 +124,6 @@
     <loc>https://vitan.me/posts/Adb.html</loc>
     
     <lastmod>2020-03-05T08:05:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/WinTask.html</loc>
-    
-    <lastmod>2020-03-05T03:04:26.000Z</lastmod>
     
   </url>
   
@@ -82,27 +152,6 @@
     <loc>https://vitan.me/posts/TermuxConfig.html</loc>
     
     <lastmod>2020-03-04T01:12:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/404.html</loc>
-    
-    <lastmod>2020-02-22T12:53:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/WNMP.html</loc>
-    
-    <lastmod>2020-02-19T01:33:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Cmder.html</loc>
-    
-    <lastmod>2020-02-19T01:11:18.000Z</lastmod>
     
   </url>
   
@@ -142,23 +191,9 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Shell.html</loc>
-    
-    <lastmod>2020-01-08T06:27:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/PipInstall.html</loc>
     
     <lastmod>2019-12-23T07:47:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/LAMP.html</loc>
-    
-    <lastmod>2019-12-23T07:46:44.000Z</lastmod>
     
   </url>
   
@@ -325,13 +360,6 @@
   
   <url>
     <loc>https://vitan.me/posts/GitPull.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -842,13 +870,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/ArchLinux.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/delLinuxEFI.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -920,13 +941,6 @@
   
   <url>
     <loc>https://vitan.me/posts/SQLselect.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Vim-Vundle-Markdown.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -1186,13 +1200,6 @@
   
   <url>
     <loc>https://vitan.me/posts/JavaControl.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Vim-utf-8.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
