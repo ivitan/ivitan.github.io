@@ -2,65 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/posts/CMD.html</loc>
+    
+    <lastmod>2020-04-01T06:30:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Batch.html</loc>
+    
+    <lastmod>2020-04-01T06:29:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/NerdTree.html</loc>
+    
+    <lastmod>2020-04-01T06:27:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/Termux.html</loc>
     
-    <lastmod>2020-03-09T00:13:49.615Z</lastmod>
+    <lastmod>2020-03-09T00:13:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/Win10-Share-WiFI.html</loc>
     
-    <lastmod>2020-03-09T00:13:49.615Z</lastmod>
+    <lastmod>2020-03-09T00:13:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/about/index.html</loc>
     
-    <lastmod>2020-03-06T07:23:37.732Z</lastmod>
+    <lastmod>2020-03-06T07:23:38.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/Adb.html</loc>
     
-    <lastmod>2020-03-05T08:05:34.251Z</lastmod>
+    <lastmod>2020-03-05T08:05:36.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/WinTask.html</loc>
     
-    <lastmod>2020-03-05T03:04:24.519Z</lastmod>
+    <lastmod>2020-03-05T03:04:26.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/GitReset.html</loc>
     
-    <lastmod>2020-03-05T03:02:41.698Z</lastmod>
+    <lastmod>2020-03-05T03:02:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/UsbDriver.html</loc>
     
-    <lastmod>2020-03-05T03:02:01.803Z</lastmod>
+    <lastmod>2020-03-05T03:02:02.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/PixelDiag.html</loc>
     
-    <lastmod>2020-03-05T03:01:26.633Z</lastmod>
+    <lastmod>2020-03-05T03:01:28.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://vitan.me/posts/TermuxConfig.html</loc>
     
-    <lastmod>2020-03-04T01:12:23.829Z</lastmod>
+    <lastmod>2020-03-04T01:12:24.000Z</lastmod>
     
   </url>
   
@@ -152,20 +173,6 @@
     <loc>https://vitan.me/posts/OpenSourceSearch.html</loc>
     
     <lastmod>2019-12-23T07:45:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/CMD.html</loc>
-    
-    <lastmod>2019-12-23T07:44:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Batch.html</loc>
-    
-    <lastmod>2019-12-23T07:44:22.000Z</lastmod>
     
   </url>
   
