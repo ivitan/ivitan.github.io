@@ -2,6 +2,7 @@
 title: CMD
 tags:
   - Win
+  - Batch
 categories:
   - Coding
 author:

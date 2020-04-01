@@ -2,6 +2,7 @@
 title: Batch
 tags:
   - Win
+  - Batch
 categories:
   - Coding
 author:
