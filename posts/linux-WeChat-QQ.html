@@ -41,7 +41,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="Linux 安装 QQ WeChat Tim.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-28T03:05:15.000Z">
-<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:modified_time" content="2020-04-02T06:48:52.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="ArchLinux">
@@ -211,11 +211,14 @@ ga('send', 'pageview');
             <p>Linux 安装 QQ WeChat Tim.</p>
 <a id="more"></a>
 <h1 id="ArchLinux"><a href="#ArchLinux" class="headerlink" title="ArchLinux"></a>ArchLinux</h1><h2 id="添加-archlinuxcn-源"><a href="#添加-archlinuxcn-源" class="headerlink" title="添加 archlinuxcn 源"></a>添加 archlinuxcn 源</h2><ul>
-<li>编辑 pacman.conf<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></figure></li>
-<li>添加<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>编辑 pacman.conf</li>
 </ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine</span><br><span class="line">sudo pacman -S deepin.com.qq.im</span><br><span class="line">sudo pacman -S deepin.com.qq.office</span><br><span class="line">sudo pacman -S deepin.com.wechat</span><br><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
 <ul>
 <li>ArchLinux 系发行版包括 ArchLinux、Manjaro、Antergos 等.</li>
@@ -254,7 +257,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-12-10T01:38:56.000Z" itemprop="dateUpdated">2019-12-10 09:38:56</time>
+    最后更新时间：<time datetime="2020-04-02T06:48:52.000Z" itemprop="dateUpdated">2020-04-02 14:48:52</time>
 </span><br>
 
 

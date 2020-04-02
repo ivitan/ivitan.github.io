@@ -2,6 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/posts/Git-common-command.html</loc>
+    
+    <lastmod>2020-04-02T06:55:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/GithubTips.html</loc>
+    
+    <lastmod>2020-04-02T06:53:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/ArchLinux.html</loc>
+    
+    <lastmod>2020-04-02T06:51:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/linux-WeChat-QQ.html</loc>
+    
+    <lastmod>2020-04-02T06:48:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Raspberry-LCD.html</loc>
+    
+    <lastmod>2020-04-02T06:00:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Git-Tips.html</loc>
+    
+    <lastmod>2020-04-02T05:03:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/ArchLinux-MySQL.html</loc>
+    
+    <lastmod>2020-04-02T04:59:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/GitTips.html</loc>
+    
+    <lastmod>2020-04-02T04:58:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/CSSselector.html</loc>
+    
+    <lastmod>2020-04-02T04:50:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/PythonDateTypes.html</loc>
+    
+    <lastmod>2020-04-02T04:43:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/HexoGithubCoding.html</loc>
+    
+    <lastmod>2020-04-02T04:42:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
+    
+    <lastmod>2020-04-02T04:39:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Hexo-Post.html</loc>
+    
+    <lastmod>2020-04-02T04:34:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/vimcopyppaste.html</loc>
+    
+    <lastmod>2020-04-02T04:31:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Vim-Mooc.html</loc>
+    
+    <lastmod>2020-04-02T04:29:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Wine-dpi.html</loc>
+    
+    <lastmod>2020-04-02T04:19:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/Batch.html</loc>
+    
+    <lastmod>2020-04-02T02:07:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vitan.me/posts/WinTask.html</loc>
+    
+    <lastmod>2020-04-02T01:51:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/NerdTree.html</loc>
     
     <lastmod>2020-04-01T12:18:04.000Z</lastmod>
@@ -30,23 +156,9 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
-    
-    <lastmod>2020-04-01T11:45:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/Termux.html</loc>
     
     <lastmod>2020-04-01T11:31:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/ArchLinux.html</loc>
-    
-    <lastmod>2020-04-01T11:25:12.000Z</lastmod>
     
   </url>
   
@@ -82,20 +194,6 @@
     <loc>https://vitan.me/posts/CMD.html</loc>
     
     <lastmod>2020-04-01T10:45:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/WinTask.html</loc>
-    
-    <lastmod>2020-04-01T10:44:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Batch.html</loc>
-    
-    <lastmod>2020-04-01T10:41:50.000Z</lastmod>
     
   </url>
   
@@ -226,13 +324,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Wine-dpi.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/Xpath.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -289,13 +380,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Vim-Mooc.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/CatEOF.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -324,21 +408,7 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/vimcopyppaste.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/GitSOCKS4.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Hexo-Post.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -394,13 +464,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/HexoGithubCoding.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/Spyder-1.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -409,13 +472,6 @@
   
   <url>
     <loc>https://vitan.me/posts/PythonCommonlyUse.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/PythonDateTypes.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -500,13 +556,6 @@
   
   <url>
     <loc>https://vitan.me/posts/PythonPandas.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/CSSselector.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -758,20 +807,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/GitTips.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/ArchLinux-MySQL.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/Colorful-Man-Page.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -780,13 +815,6 @@
   
   <url>
     <loc>https://vitan.me/posts/Atom-Plugin.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Git-Tips.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -835,13 +863,6 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/Raspberry-LCD.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/ArchLinux-Nvidia.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
@@ -857,13 +878,6 @@
   
   <url>
     <loc>https://vitan.me/posts/ArchLinux-command.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/linux-WeChat-QQ.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     
@@ -891,21 +905,7 @@
   </url>
   
   <url>
-    <loc>https://vitan.me/posts/GithubTips.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://vitan.me/posts/MySQLbasic.html</loc>
-    
-    <lastmod>2019-12-10T01:38:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/posts/Git-common-command.html</loc>
     
     <lastmod>2019-12-10T01:38:56.000Z</lastmod>
     

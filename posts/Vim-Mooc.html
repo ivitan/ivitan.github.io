@@ -40,15 +40,15 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="Vitan&#39;s Blog">
 <meta property="og:description" content="Vim 重新学习笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/window.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/window.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/tab.png">
 <meta property="article:published_time" content="2019-05-19T01:30:42.000Z">
-<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:modified_time" content="2020-04-02T04:29:26.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/window.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ivitan/Picture/master/images/window.png">
     
         <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
     
@@ -213,6 +213,7 @@ ga('send', 'pageview');
             <p>Vim 重新学习笔记</p>
 <a id="more"></a>
 <h1 id="三个模式"><a href="#三个模式" class="headerlink" title="三个模式"></a>三个模式</h1><h2 id="Insert-编辑模式"><a href="#Insert-编辑模式" class="headerlink" title="Insert 编辑模式"></a>Insert 编辑模式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a i o <span class="comment"># 进入编辑模式</span></span><br><span class="line">ESc <span class="comment"># 进入 normal 模式</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>i (insert)</li>
 <li>a (append)</li>
@@ -307,14 +308,14 @@ ga('send', 'pageview');
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/window.png" alt="" title="">
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/window.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/tab.png" alt="" title="">
+                    <img src="https://raw.githubusercontent.com/ivitan/Picture/master/images/tab.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -323,10 +324,10 @@ ga('send', 'pageview');
 <h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><ol>
 <li>q 录制、技术录制</li>
 <li>q{register} 选择要保存的寄存器，把录制的命令保存其中</li>
-<li>@{register} 回放寄存器中的一系列命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="comment"># 全选</span></span><br><span class="line">: I<span class="string">"</span></span><br><span class="line"><span class="string">:t # 重复上一命令</span></span><br><span class="line"><span class="string">:A"</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>@{register} 回放寄存器中的一系列命令</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">q I<span class="string">" A"</span></span><br><span class="line"></span><br><span class="line">VG <span class="comment"># 全选</span></span><br><span class="line">: I<span class="string">"</span></span><br><span class="line"><span class="string">:t # 重复上一命令</span></span><br><span class="line"><span class="string">:A"</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="常见的补全"><a href="#常见的补全" class="headerlink" title="常见的补全"></a>常见的补全</h1><table>
 <thead>
 <tr>
@@ -381,7 +382,7 @@ ga('send', 'pageview');
 <ol>
 <li>map 可以实现映射，<code>:map -x</code> 然后按下 - 就会删除一个字符</li>
 <li><code>:map &lt;space&gt; viw</code> 按下空格键时选中整个单词</li>
-<li>`:map <c-d> dd 删除<ul>
+<li><code>:map &lt;c-d&gt; dd</code> 删除<ul>
 <li>消除映射 <code>unmap -</code></li>
 <li><code>imap &lt;c-d&gt; &lt;Esc&gt;ddi</code> insert 模式映射 ctrl+d 删除一行</li>
 </ul>
@@ -403,7 +404,7 @@ ga('send', 'pageview');
 <li>任何时候都建议使用非递归映射</li>
 </ol>
 <p>示例</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader = <span class="string">","</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt; <span class="comment"># 插入模式保存</span></span><br><span class="line">inoremap jj &lt;Esc&gt; <span class="comment"># 使用jj直接进入 normal</span></span><br><span class="line"><span class="comment"># 使用 leader+w 直接保存</span></span><br><span class="line">inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;</span><br><span class="line">noremap &lt;leader&gt;w :w&lt;cr&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换 Buffer</span></span><br><span class="line">nnoremap &lt;slient&gt; [b :bprevious&lt;CR&gt;</span><br><span class="line">nnoremap &lt;slient&gt; [n :bnext&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分屏</span></span><br><span class="line">noremap &lt;C-h&gt; &lt;C-w&gt;h</span><br><span class="line">noremap &lt;C-j&gt; &lt;C-w&gt;j</span><br><span class="line">noremap &lt;C-k&gt; &lt;C-w&gt;k</span><br><span class="line">noremap &lt;C<span class="_">-l</span>&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line"><span class="comment"># json 格式化</span></span><br><span class="line">comr FormatJSON %!python3 -m json.tool</span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo to write</span></span><br><span class="line">cnoremap w!! w !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mapleader = <span class="string">","</span></span><br><span class="line"><span class="keyword">inoremap</span> <span class="symbol">&lt;leader&gt;</span><span class="keyword">w</span> <span class="symbol">&lt;Esc&gt;</span>:<span class="keyword">w</span><span class="symbol">&lt;cr&gt;</span> # 插入模式保存</span><br><span class="line"><span class="keyword">inoremap</span> jj <span class="symbol">&lt;Esc&gt;</span> # 使用jj直接进入 <span class="keyword">normal</span></span><br><span class="line"># 使用 leader+<span class="keyword">w</span> 直接保存</span><br><span class="line"><span class="keyword">inoremap</span> <span class="symbol">&lt;leader&gt;</span><span class="keyword">w</span> <span class="symbol">&lt;Esc&gt;</span>:<span class="keyword">w</span><span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="keyword">noremap</span> <span class="symbol">&lt;leader&gt;</span><span class="keyword">w</span> :<span class="keyword">w</span><span class="symbol">&lt;cr&gt;</span></span><br><span class="line"></span><br><span class="line"># 切换 Buffer</span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;slient&gt;</span> [<span class="keyword">b</span> :<span class="keyword">bprevious</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;slient&gt;</span> [n :<span class="keyword">bnext</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"></span><br><span class="line"># 分屏</span><br><span class="line"><span class="keyword">noremap</span> <span class="symbol">&lt;C-h&gt;</span> <span class="symbol">&lt;C-w&gt;</span>h</span><br><span class="line"><span class="keyword">noremap</span> <span class="symbol">&lt;C-j&gt;</span> <span class="symbol">&lt;C-w&gt;</span><span class="keyword">j</span></span><br><span class="line"><span class="keyword">noremap</span> <span class="symbol">&lt;C-k&gt;</span> <span class="symbol">&lt;C-w&gt;</span><span class="keyword">k</span></span><br><span class="line"><span class="keyword">noremap</span> <span class="symbol">&lt;C-l&gt;</span> <span class="symbol">&lt;C-w&gt;</span><span class="keyword">l</span></span><br><span class="line"></span><br><span class="line"># json 格式化</span><br><span class="line">comr FormatJSON %!python3 -<span class="keyword">m</span> json.tool</span><br><span class="line"></span><br><span class="line"># sudo <span class="keyword">to</span> <span class="keyword">write</span></span><br><span class="line"><span class="keyword">cnoremap</span> w!! <span class="keyword">w</span> !sudo tee % &gt;/dev/null</span><br></pre></td></tr></table></figure>
 
 <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="常见的插件管理器"><a href="#常见的插件管理器" class="headerlink" title="常见的插件管理器"></a>常见的插件管理器</h2><p>vim-plug,Vundle,Pathogen,Deim </p>
 <h2 id="vim-plug"><a href="#vim-plug" class="headerlink" title="vim-plug"></a><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a></h2><ul>
@@ -435,20 +436,22 @@ ga('send', 'pageview');
 <h2 id="文件目录和搜索插件"><a href="#文件目录和搜索插件" class="headerlink" title="文件目录和搜索插件"></a>文件目录和搜索插件</h2><ul>
 <li>文件目录 <a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">nerdtree</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot; 查找文件所在位置</span><br><span class="line">nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;</span><br><span class="line">&quot; 切换设置</span><br><span class="line">nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" 查找文件所在位置</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;leader&gt;</span>v :NERDTreeFind<span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="comment">" 切换设置</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;leader&gt;</span>g :NERDTreeToggle<span class="symbol">&lt;cr&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a></p>
+<li>模糊搜索器 <a href="https://github.com/ctrlpvim/ctrlp.vim" target="_blank" rel="noopener">ctrip.vim</a></li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map &#x3D; &#39;&lt;c-p&gt;&#39;</span><br><span class="line">let g:ctrlp_cmd &#x3D; &#39;CtrlP&#39;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Crtl + P 后输入要搜索的内容</li>
 </ul>
-</li>
-<li><p>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a></p>
+<ul>
+<li>模糊搜索<a href="https://github.com/junegunn/fzf.vim" target="_blank" rel="noopener">fzf.vim</a></li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Files . <span class="comment"># 搜索当前目录</span></span><br><span class="line">:Ag content <span class="comment"># 搜索字符串</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></p>
-</li>
+
+<ul>
+<li>快速跳转位置插件 <a href="https://github.com/easymotion/vim-easymotion" target="_blank" rel="noopener">vim-easymotion</a></li>
 </ul>
 <p>映射</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unmap ss &lt;Plus&gt;(easymotion-s2)</span><br></pre></td></tr></table></figure>
@@ -459,10 +462,10 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ds <span class="comment"># delete a surrounding</span></span><br><span class="line">cs <span class="comment"># change a surrounding</span></span><br><span class="line">ys <span class="comment"># you add a surrounding</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>替换　<a href="https://github.com/brooth/far.vim" target="_blank" rel="noopener">far.vim</a></li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim duck.go gua.py</span><br><span class="line">:Far [替换] [替换成的] **/*.py</span><br></pre></td></tr></table></figure>
+
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="浏览代码"><a href="#浏览代码" class="headerlink" title="浏览代码"></a>浏览代码</h3><p><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">targbar</a></p>
 <figure class="highlight bash"><figcaption><span>vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonormal &lt;leader&gt;t :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/lfv89/vim-interestingwords" target="_blank" rel="noopener">vim-interestingwords</a> 可以高亮单词</p>
@@ -471,7 +474,8 @@ ga('send', 'pageview');
 <li><a href="https//github.com/shougo/deoplete.nvim">deoplete.nvim</a> 多语言，模糊搜索</li>
 <li><a href="https://github.com/neoclide/coc.nvim" target="_blank" rel="noopener">coc.vim</a> 多语言插件支持</li>
 </ol>
-<p>快速注释<br><a href="https://github.com/tpope/vim-commentary" target="_blank" rel="noopener">vim-commentary</a> <code>gc</code> 注释或取消注释</p>
+<p>快速注释</p>
+<p><a href="https://github.com/tpope/vim-commentary" target="_blank" rel="noopener">vim-commentary</a> <code>gc</code> 注释或取消注释</p>
 <h2 id="格式化与静态检查"><a href="#格式化与静态检查" class="headerlink" title="格式化与静态检查"></a>格式化与静态检查</h2><p>格式化</p>
 <p><a href="https://github.com/sbdchd/neoformat" target="_blank" rel="noopener">Neoformat</a> 需要安装对应语言的格式化库，python的autopep8,js的prettier等</p>
 <p>静态检查Lint</p>
@@ -498,7 +502,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-12-10T01:38:56.000Z" itemprop="dateUpdated">2019-12-10 09:38:56</time>
+    最后更新时间：<time datetime="2020-04-02T04:29:26.000Z" itemprop="dateUpdated">2020-04-02 12:29:26</time>
 </span><br>
 
 

@@ -41,7 +41,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="Hexo 同时部署到 Github Coding">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-03-10T04:01:39.000Z">
-<meta property="article:modified_time" content="2019-12-10T01:38:56.000Z">
+<meta property="article:modified_time" content="2020-04-02T04:42:00.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Termux">
@@ -214,15 +214,7 @@ ga('send', 'pageview');
 <li>Github Coding添加同一个 SSH 公钥</li>
 <li>Github Coding 都部署好相关的仓库</li>
 </ol>
-<h2 id="设置-config-yml"><a href="#设置-config-yml" class="headerlink" title="设置 _config.yml"></a>设置 _config.yml</h2> <figure class="highlight bash"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repository: </span><br><span class="line">    github: ssh://git@github.com/ivitan/ivitan.github.io,master</span><br><span class="line">    coding: git@git.coding.net:Vitan/vitan.coding.me.git,master</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-<ul>
-<li>效果<ul>
-<li><a href="https://ivitan.github.io" target="_blank" rel="noopener">Github Page</a></li>
-<li><a href="https://vitan.coding.me" target="_blank" rel="noopener">Coding Page</a></li>
-</ul>
-</li>
-</ul>
-
+<h2 id="设置-config-yml"><a href="#设置-config-yml" class="headerlink" title="设置 _config.yml"></a>设置 _config.yml</h2> <figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repository:</span> </span><br><span class="line"><span class="attr">    github:</span> <span class="attr">ssh://git@github.com/ivitan/ivitan.github.io,master</span></span><br><span class="line"><span class="attr">    coding:</span> <span class="string">git@git.coding.net:Vitan/vitan.coding.me.git,master</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -230,7 +222,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-12-10T01:38:56.000Z" itemprop="dateUpdated">2019-12-10 09:38:56</time>
+    最后更新时间：<time datetime="2020-04-02T04:42:00.000Z" itemprop="dateUpdated">2020-04-02 12:42:00</time>
 </span><br>
 
 

@@ -41,7 +41,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="Batch 计划任务  语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-13T02:24:56.000Z">
-<meta property="article:modified_time" content="2020-04-01T10:44:28.000Z">
+<meta property="article:modified_time" content="2020-04-02T01:51:26.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Win">
 <meta property="article:tag" content="Batch">
@@ -219,129 +219,129 @@ ga('send', 'pageview');
 <h1 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h1><table>
 <thead>
 <tr>
-<th align="center">参数</th>
-<th align="center">含义</th>
+<th align="left">参数</th>
+<th align="left">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><code>/S  system</code></td>
-<td align="center">指定要连接到的远程系统。如果省略这个系统参数，默认是本地系统。</td>
+<td align="left"><code>/S  system</code></td>
+<td align="left">指定要连接到的远程系统。如果省略这个系统参数，默认是本地系统。</td>
 </tr>
 <tr>
-<td align="center"><code>/U  username</code></td>
-<td align="center">指定应在其中执行 SchTasks.exe 的用户上下文。</td>
+<td align="left"><code>/U  username</code></td>
+<td align="left">指定应在其中执行 SchTasks.exe 的用户上下文。</td>
 </tr>
 <tr>
-<td align="center"><code>/P  [password]</code></td>
-<td align="center">指定给定用户上下文的密码。如果省略则提示输入。</td>
+<td align="left"><code>/P  [password]</code></td>
+<td align="left">指定给定用户上下文的密码。如果省略则提示输入。</td>
 </tr>
 <tr>
-<td align="center"><code>/RU  username</code></td>
-<td align="center">指定任务在其下运行的“运行方式”用户,帐户(用户上下文)。对于系统帐户，有效值是 “”、”NT AUTHORITY\SYSTEM” 或”SYSTEM”。对于 v2 任务，”NT AUTHORITY\LOCALSERVICE”和 “NT AUTHORITY\NETWORKSERVICE”以及常见的 SID 对这三个也都可用。</td>
+<td align="left"><code>/RU  username</code></td>
+<td align="left">指定任务在其下运行的“运行方式”用户,帐户(用户上下文)。对于系统帐户，有效值是 “”、”NT AUTHORITY\SYSTEM” 或”SYSTEM”。对于 v2 任务，”NT AUTHORITY\LOCALSERVICE”和 “NT AUTHORITY\NETWORKSERVICE”以及常见的 SID 对这三个也都可用。</td>
 </tr>
 <tr>
-<td align="center"><code>/RP  [password]</code></td>
-<td align="center">指定“运行方式”用户的密码。要提示输入密码，值必须是 “*” 或无。系统帐户会忽略该密码。必须和 /RU 或 /XML 开关一起使用。</td>
+<td align="left"><code>/RP  [password]</code></td>
+<td align="left">指定“运行方式”用户的密码。要提示输入密码，值必须是 “*” 或无。系统帐户会忽略该密码。必须和 /RU 或 /XML 开关一起使用。</td>
 </tr>
 <tr>
-<td align="center"><code>/RU/XML /SC schedule</code></td>
-<td align="center">指定计划频率。有效计划任务:  MINUTE、 HOURLY、DAILY、WEEKLY、 MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, ONEVENT.</td>
+<td align="left"><code>/RU/XML /SC schedule</code></td>
+<td align="left">指定计划频率。有效计划任务:  MINUTE、 HOURLY、DAILY、WEEKLY、 MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, ONEVENT.</td>
 </tr>
 <tr>
-<td align="center"><code>/MO  modifier</code></td>
-<td align="center">改进计划类型以允许更好地控制计划重复周期。有效值列于下面“修改者”部分中。</td>
+<td align="left"><code>/MO  modifier</code></td>
+<td align="left">改进计划类型以允许更好地控制计划重复周期。有效值列于下面“修改者”部分中。</td>
 </tr>
 <tr>
-<td align="center"><code>/D    days</code></td>
-<td align="center">指定该周内运行任务的日期。有效值:MON、TUE、WED、THU、FRI、SAT、SUN和对 MONTHLY 计划的 1 - 31(某月中的日期)。通配符“*”指定所有日期。</td>
+<td align="left"><code>/D    days</code></td>
+<td align="left">指定该周内运行任务的日期。有效值:MON、TUE、WED、THU、FRI、SAT、SUN和对 MONTHLY 计划的 1 - 31(某月中的日期)。通配符“*”指定所有日期。</td>
 </tr>
 <tr>
-<td align="center"><code>/M    months</code></td>
-<td align="center">指定一年内的某月。默认是该月的第一天。有效值: JAN、FEB、MAR、APR、MAY、JUN、JUL、 AUG、SEP、OCT、NOV  和 DEC。通配符 “*” 指定所有的月。</td>
+<td align="left"><code>/M    months</code></td>
+<td align="left">指定一年内的某月。默认是该月的第一天。有效值: JAN、FEB、MAR、APR、MAY、JUN、JUL、 AUG、SEP、OCT、NOV  和 DEC。通配符 “*” 指定所有的月。</td>
 </tr>
 <tr>
-<td align="center"><code>/I    idletime</code></td>
-<td align="center">指定运行一个已计划的 ONIDLE 任务之前要等待的空闲时间。有效值范围: 1 到 999 分钟。</td>
+<td align="left"><code>/I    idletime</code></td>
+<td align="left">指定运行一个已计划的 ONIDLE 任务之前要等待的空闲时间。有效值范围: 1 到 999 分钟。</td>
 </tr>
 <tr>
-<td align="center"><code>/TN   taskname</code></td>
-<td align="center">以路径\名称形式指定对此计划任务进行唯一标识的字符串。</td>
+<td align="left"><code>/TN   taskname</code></td>
+<td align="left">以路径\名称形式指定对此计划任务进行唯一标识的字符串。</td>
 </tr>
 <tr>
-<td align="center"><code>/TR   taskrun</code></td>
-<td align="center">指定在这个计划时间运行的程序的路径和文件名。例如: C:\windows\system32\calc.exe</td>
+<td align="left"><code>/TR   taskrun</code></td>
+<td align="left">指定在这个计划时间运行的程序的路径和文件名。例如: C:\windows\system32\calc.exe</td>
 </tr>
 <tr>
-<td align="center"><code>/ST   starttime</code></td>
-<td align="center">指定运行任务的开始时间。时间格式为 HH:mm (24 小时时间)，例如 14:30 表示 2:30 PM。如果未指定 /ST，则默认值为当前时间。/SC ONCE 必需有此选项。</td>
+<td align="left"><code>/ST   starttime</code></td>
+<td align="left">指定运行任务的开始时间。时间格式为 HH:mm (24 小时时间)，例如 14:30 表示 2:30 PM。如果未指定 /ST，则默认值为当前时间。/SC ONCE 必需有此选项。</td>
 </tr>
 <tr>
-<td align="center"><code>/RI   interval</code></td>
-<td align="center">用分钟指定重复间隔。这不适用于计划类型: MINUTE、HOURLY、ONSTART, ONLOGON, ONIDLE, ONEVENT.有效范围: 1 - 599940 分钟。如果已指定 /ET 或 /DU，则其默认值为10 分钟。</td>
+<td align="left"><code>/RI   interval</code></td>
+<td align="left">用分钟指定重复间隔。这不适用于计划类型: MINUTE、HOURLY、ONSTART, ONLOGON, ONIDLE, ONEVENT.有效范围: 1 - 599940 分钟。如果已指定 /ET 或 /DU，则其默认值为10 分钟。</td>
 </tr>
 <tr>
-<td align="center"><code>/ET   endtime</code></td>
-<td align="center">指定运行任务的结束时间。时间格式为 HH:mm (24 小时时间)，例如，14:50 表示 2:50 PM。这不适用于计划类型: ONSTART、ONLOGON, ONIDLE, ONEVENT.</td>
+<td align="left"><code>/ET   endtime</code></td>
+<td align="left">指定运行任务的结束时间。时间格式为 HH:mm (24 小时时间)，例如，14:50 表示 2:50 PM。这不适用于计划类型: ONSTART、ONLOGON, ONIDLE, ONEVENT.</td>
 </tr>
 <tr>
-<td align="center"><code>/DU   duration</code></td>
-<td align="center">指定运行任务的持续时间。 时间格式为 HH:mm。这不适用于 /ET 和 计划类型: ONSTART, ONLOGON, ONIDLE, ONEVENT.对于 /V1 任务，如果已指定 /RI，则持续时间默认值为1 小时。</td>
+<td align="left"><code>/DU   duration</code></td>
+<td align="left">指定运行任务的持续时间。 时间格式为 HH:mm。这不适用于 /ET 和 计划类型: ONSTART, ONLOGON, ONIDLE, ONEVENT.对于 /V1 任务，如果已指定 /RI，则持续时间默认值为1 小时。</td>
 </tr>
 <tr>
-<td align="center"><code>/K</code></td>
-<td align="center">在结束时间或持续时间终止任务。这不适用于计划类型: ONSTART、ONLOGON, ONIDLE, ONEVENT.必须指定 /ET 或 /DU。</td>
+<td align="left"><code>/K</code></td>
+<td align="left">在结束时间或持续时间终止任务。这不适用于计划类型: ONSTART、ONLOGON, ONIDLE, ONEVENT.必须指定 /ET 或 /DU。</td>
 </tr>
 <tr>
-<td align="center"><code>/SD   startdate</code></td>
-<td align="center">指定运行任务的第一个日期。格式为 yyyy/mm/dd。默认值为当前日期。这不适用于计划类型: ONCE、ONSTART, ONLOGON, ONIDLE, ONEVENT.</td>
+<td align="left"><code>/SD   startdate</code></td>
+<td align="left">指定运行任务的第一个日期。格式为 yyyy/mm/dd。默认值为当前日期。这不适用于计划类型: ONCE、ONSTART, ONLOGON, ONIDLE, ONEVENT.</td>
 </tr>
 <tr>
-<td align="center"><code>/ED   enddate</code></td>
-<td align="center">指定此任务运行的最后一天的日期。格式是 yyyy/mm/dd。这不适用于计划类型:ONCE、ONSTART、ONLOGON、ONIDLE。</td>
+<td align="left"><code>/ED   enddate</code></td>
+<td align="left">指定此任务运行的最后一天的日期。格式是 yyyy/mm/dd。这不适用于计划类型:ONCE、ONSTART、ONLOGON、ONIDLE。</td>
 </tr>
 <tr>
-<td align="center"><code>/EC   ChannelName</code></td>
-<td align="center">为 OnEvent 触发器指定事件通道。</td>
+<td align="left"><code>/EC   ChannelName</code></td>
+<td align="left">为 OnEvent 触发器指定事件通道。</td>
 </tr>
 <tr>
-<td align="center"><code>/IT</code></td>
-<td align="center">仅有在 /RU 用户当前已登录且作业正在运行时才可以交互式运行任务。此任务只有在用户已登录的情况下才运行。</td>
+<td align="left"><code>/IT</code></td>
+<td align="left">仅有在 /RU 用户当前已登录且作业正在运行时才可以交互式运行任务。此任务只有在用户已登录的情况下才运行。</td>
 </tr>
 <tr>
-<td align="center"><code>/NP</code></td>
-<td align="center">不储存任何密码。任务以给定用户的身份非交互的方式运行。只有本地资源可用。</td>
+<td align="left"><code>/NP</code></td>
+<td align="left">不储存任何密码。任务以给定用户的身份非交互的方式运行。只有本地资源可用。</td>
 </tr>
 <tr>
-<td align="center"><code>/Z</code></td>
-<td align="center">标记在最终运行完任务后删除任务。</td>
+<td align="left"><code>/Z</code></td>
+<td align="left">标记在最终运行完任务后删除任务。</td>
 </tr>
 <tr>
-<td align="center"><code>/XML  xmlfile</code></td>
-<td align="center">从文件的指定任务 XML 中创建任务。可以组合使用 /RU 和 /RP 开关，或者在任务 XML 已包含主体时单独使用 /RP。</td>
+<td align="left"><code>/XML  xmlfile</code></td>
+<td align="left">从文件的指定任务 XML 中创建任务。可以组合使用 /RU 和 /RP 开关，或者在任务 XML 已包含主体时单独使用 /RP。</td>
 </tr>
 <tr>
-<td align="center"><code>/V1</code></td>
-<td align="center">创建 Vista 以前的平台可以看见的任务。不兼容 /XML。</td>
+<td align="left"><code>/V1</code></td>
+<td align="left">创建 Vista 以前的平台可以看见的任务。不兼容 /XML。</td>
 </tr>
 <tr>
-<td align="center"><code>/F</code></td>
-<td align="center">如果指定的任务已经存在，则强制创建任务并抑制警告。</td>
+<td align="left"><code>/F</code></td>
+<td align="left">如果指定的任务已经存在，则强制创建任务并抑制警告。</td>
 </tr>
 <tr>
-<td align="center"><code>/RL   level</code></td>
-<td align="center">为作业设置运行级别。有效值为 LIMITED 和 HIGHEST。默认值为 LIMITED。</td>
+<td align="left"><code>/RL   level</code></td>
+<td align="left">为作业设置运行级别。有效值为 LIMITED 和 HIGHEST。默认值为 LIMITED。</td>
 </tr>
 <tr>
-<td align="center"><code>/DELAY delaytime</code></td>
-<td align="center">指定触发触发器后延迟任务运行的等待时间。时间格式为mmmm:ss。此选项仅对计划类型ONSTART, ONLOGON, ONEVENT.</td>
+<td align="left"><code>/DELAY delaytime</code></td>
+<td align="left">指定触发触发器后延迟任务运行的等待时间。时间格式为mmmm:ss。此选项仅对计划类型ONSTART, ONLOGON, ONEVENT.</td>
 </tr>
 <tr>
-<td align="center"><code>/HRESULT</code></td>
-<td align="center">为获得更出色的故障诊断能力，处理退出代码将采用 HRESULT 格式。</td>
+<td align="left"><code>/HRESULT</code></td>
+<td align="left">为获得更出色的故障诊断能力，处理退出代码将采用 HRESULT 格式。</td>
 </tr>
 <tr>
-<td align="center"><code>/?</code></td>
-<td align="center">显示此帮助消息。</td>
+<td align="left"><code>/?</code></td>
+<td align="left">显示此帮助消息。</td>
 </tr>
 </tbody></table>
 <p>修改者: 按计划类型的 /MO 开关的有效值:</p>
@@ -608,7 +608,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-01T10:44:28.000Z" itemprop="dateUpdated">2020-04-01 18:44:28</time>
+    最后更新时间：<time datetime="2020-04-02T01:51:26.000Z" itemprop="dateUpdated">2020-04-02 09:51:26</time>
 </span><br>
 
 
