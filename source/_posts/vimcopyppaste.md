@@ -12,8 +12,8 @@ toc: true
 enable_unread_badge: true
 thumbnail: /images/Vim.png
 ---
-- Vim 增删查改、复制捏贴、翻页和寄存器。
-- Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put
+> Vim 增删查改、复制捏贴、翻页和寄存器。
+> Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put
 <!--more-->
 
 # 复制粘贴
@@ -21,7 +21,7 @@ thumbnail: /images/Vim.png
 
 - yp dp vp
 
-```shell
+```sh
 y # 复制(yank)
 p # 粘贴(put)
 d # 剪贴
@@ -30,7 +30,7 @@ vp # v(visual) 命令选中要复制的地方，后 p
 
 - 配合文本对象
 
-```shell
+```sh
 yyiw # 复制一个单词
 yy   # 复制一行
 dd   # 删除一行
@@ -45,7 +45,7 @@ v    #　选择文本
 
 1. vimrc 设置了自动缩进 `:set autoindent` 会使复制的代码缩进错乱
 
-```shell
+```vim
 :set paste 
 :set nopaste # 取消
 ```
@@ -110,7 +110,7 @@ ctrl + u # upward
 
 - 调换两字符
 
-```shell
+```vim
 x  # 删除一个字符放到无名寄存器
 p  # 粘贴
 ```
@@ -119,7 +119,7 @@ p  # 粘贴
 `"{register}` 可以指定寄存器，不指定默认使用无名寄存器，`""` 表示
 
 ## 无名寄存器
-```shell
+```vim
 "ayiw # 复制一个单词到寄存器 a 
 "bdd  # 删除当前行到寄存器 b
 
@@ -137,13 +137,13 @@ p  # 粘贴
 
 
 ## 查看寄存器内容
-```shell
+```vim
 :reg a # 查看 a 寄存器内容
 :reg b # 查看 b 寄存器内容
 ```
 
 ## 查看是否支持 clipboard
-```shell
+```vim
 :echo has('clipboard')
 ```
 - 1 为支持

@@ -13,14 +13,14 @@ thumbnail: /images/Termux.png
 > [Termux](https://wiki.termux.com/wiki/Main_Page) 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。
 
 # 部署脚本
-```bash
+```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)"
 ```
 
 # 命令
 ## 基本命令
 
-``` bash
+```sh
 pkg search <query>  #搜索包
 pkg install <package> #安装包
 pkg uninstall <package> #卸载包
@@ -36,7 +36,7 @@ pkg files <package>  #显示某个包的
 
 ## 安装 *.deb 文件
 
-```bash
+```sh
 dpkg -i ./package.deb #安装
 dpkg --remove [package name] #卸载
 dpkg --remove [package name] #列出所有已安装的包
@@ -45,26 +45,26 @@ dpkg --remove [package name] #列出所有已安装的包
 # 换源
 ## 清华源
 
-```bash
+```sh
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 apt update && apt upgrade -y
 ```
 
 https://mirrors.tuna.tsinghua.edu.cn/termux 代替原文中的 https://termux.net 保存退出
-```bash
+```sh
 export EDITOR=vim # 设置默认编辑器
 apt edit-sources
 ```
  
 ## 官方其他源
-```bash
+```sh
 pkg install root-repo
 pkg install x11-repo
 pkg install unstable-repo
 ```
 
 ## [its-pointless](https://github.com/its-pointless/its-pointless.github.io)
-```bash
+```sh
 pkg install wget
 $PREFIX/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh
 bash setup-pointless-repo.sh
@@ -72,19 +72,19 @@ bash setup-pointless-repo.sh
 - 库包括 gcc-7,gfortran，octave，r-cran（R语言），rustc，scipy 和许多游戏.
 
 ## [Extra](https://github.com/thioshp/termux-extra-packages)
-```bash
+```sh
 # 将PGP密钥添加到APT的密钥环中
 pkg install dirmngr
 apt-key adv --keyserver pool.sks-keyservers.net --recv 9D6D488416B493F0
 ```
 ### 手动下载公钥并添加它
-```bash
+```sh
 curl -LO https://raw.githubusercontent.com/xeffyr/termux-extra-packages/master/pubkey.asc
 apt-key add pubkey.asc
 ```
 - `apt edit-sources` 加入下方内容
 
-```bash
+```sh
 # Xeffyr's Extra packages
 deb https://termux.xeffyr.ml/ extra main x11
 ```
@@ -92,19 +92,19 @@ deb https://termux.xeffyr.ml/ extra main x11
 
 # 修改启动问候语
 ## 修改
-```bash
+```sh
 vim $PREFIX/etc/motd
 ```
 	
 ## 不显示
-```bash
+```sh
 touch ~/.hushlogin
 ```
 
 # 恢复双层键盘
 Termux在 0.66 取消了双层键盘
 
-```bash
+```sh
 mkdir $HOME/.termux
 echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties
 ```
@@ -112,7 +112,7 @@ echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT'
 # 管理员权限 root 问题
 ## 虚拟管理员(未root)
 
-```bash
+```sh
 pkg install proot
 termux-chroot # 启动命令
 ```
@@ -122,7 +122,7 @@ termux-chroot # 启动命令
 
 ## 真实管理员(已root)
 
-```bash
+```sh
 pkg install tsu
 tsu # 启动命令
 ```
@@ -131,40 +131,40 @@ tsu # 启动命令
 # 安装 SSH
 
 安装
-```bash
+```sh
 apt install openssh
 ```
 
 ## 设置 SSH Key
 配置账户信息
 
-```bash
+```sh
 git config --global user.name "UserName"
 git config --global user.email "email@example.com"
 ```
 
 ## 创建 SSH Key
 
-```bash
+```sh
 ssh-keygen -t rsa -C "email@example.com"
 ```
 
 ## 复制 Key
 
-```bash
+```sh
 cat ~/.ssh/id_rsa.pub
 ```
 
 ## 验证 SSH
 
-```bash
+```sh
 ssh -T git@github.com
 ```
 
 ## SSH 基础使用
 ### 远程主机登录
 
-```bash
+```sh
 ssh root@host
 ssh host
 #本地用户名与远程用户名一致，登录时可以省略用户名
@@ -174,14 +174,14 @@ ssh -p 2222 root@host
 
 ### 公钥登录
 
-```bash
+```sh
 ssh-copy-id user@host
 #将公钥传送到远程主机 host 上面
 ```
 
 - 如果还是不行，就打开远程主机的 `/etc/ssh/sshd_config` 这个文件，检查下面几行前面"#"注释是否取掉。
 
-```bash
+```sh
 RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile
@@ -193,7 +193,7 @@ AuthorizedKeysFile
     + Debian系统 /etc/init.d/ssh restart
 
 # Oh My ZSH
-```bash
+```sh
 apt install git zsh curl -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s zsh
@@ -207,20 +207,20 @@ chsh -s zsh
     - ~~[aarch64下载](https://drive.google.com/file/d/1U3o34Z3aI_g8mvkJ2gP3YfBB6aaQS1xK/view?usp=drivesdk)~~
 
 ## 安装
-```bash
+```sh
 cd storage/下载目录
 dpkg -i openjdk9_9.2017.8.20_aarch64.deb
 ```
 
 ## Java 8
-```bash
+```sh
 wget https://github.com/ivitan/Shell/releases/download/Java/java8.deb -O ~/Java.deb
 dpkg -i ~/Java.deb
 rm -rf ~/Java.deb
 ```
 
 # 安装 Nodejs
-```bash
+```sh
 pkg install nodejs
 pkg install nodejs-lts
 ```
@@ -229,10 +229,10 @@ pkg install nodejs-lts
 
 - 复制下面内容
 
-```bash
+```sh
 (require('os').cpus() || { length: 1 }).length
 ```
-```bash
+```sh
 vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 ```
 
@@ -241,7 +241,7 @@ vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/images/5b3044e8a329d.jpg)
 
 # 安装 Hexo
-```bash
+```sh
 mkdir blog
 cd blog
 npm install hexo-cli -g
@@ -258,12 +258,12 @@ npm update -g #版本更新
 ```
 
 # Mariadb(MySQL)
-```bash
+```sh
 pkg install mariadb
 ```
 
 ## 安装基本数据
-```bash
+```sh
 mysql_install_db
 ```
 
@@ -272,14 +272,14 @@ mysql_install_db
 
 ## 启动 Mariadb 服务
 
-```bash
+```sh
 mysqld
 ```
 - 启动mysql后，该回话便无法进行任何操作，需要左滑唤醒会话菜单，开启新的回话。而倘若不在一个会话里启动mysqld，而是直接运行mysql，则会2002错误。
 
 ## 修改密码
 
-```bash
+```sh
 mysql_secure_installation
 # 输入旧密码，空则直接回车
 Set root password? [Y/n] y
@@ -293,36 +293,36 @@ Reload privilege tables now? [Y/n] y #是否重新加载表的权限
 ```
 
 ## 登录 MySQL
-```bash
+```sh
 mysql -uroot -p
 Enter password: ***apache2
 ```
 
 - 或者使用
 
-```bash
+```sh
 mysql -uroot -p******
 ```
 
 # Python 环境部署
 ## Python 2
-```bash
+```sh
 pkg install python2
 ```
 
 ## Python 3
-```bash
+```sh
 pkg install python
 ```
 
 ## 升级 pip 版本
-```bash
+```sh
 python2 -m pip install --upgrade pip
 python -m pip install --upgrade pip
 ```
 
 pip 版本查看
-```bash
+```sh
 pip -v
 pip3.6 -v
 ```
@@ -332,7 +332,7 @@ ipython 是一个 python 的交互式 shell，支持变量自动补全，自动�
 
 - 安装
 
-```bash
+```sh
 pkg install clang
 pip install ipython
 pip3.6 install ipython
@@ -344,7 +344,7 @@ pip3.6 install ipython
 
 # PHP部署
 ## 安装
-```bash
+```sh
 pkg install php # 可采用phpinfo进行测试
 php -S 127.0.0.1:8080 -t www/
 ```
@@ -359,7 +359,7 @@ php -S 127.0.0.1:8080 -t www/
 ```
 
 # Nmap(口扫描必备工具)
-```bash
+```sh
 pkg install nmap
 ```
 
@@ -368,7 +368,7 @@ Hydra 是著名的黑客组织 THC 的一款开源暴力破解工具这是一个
 
 - 安装
 
-```bash
+```sh
 pkg install hydra
 ```
 
@@ -377,7 +377,7 @@ SSLscan 主要探测基于 ssl 的服务，如 https。SSLscan 是一款探测�
 
 - 安装
 
-```bash
+```sh
 pkg install sslscan
 ```
 
@@ -386,7 +386,7 @@ whatportis 是一款可以通过服务查询默认端口，或者是通过端口
 
 - 安装
 
-```bash
+```sh
 pip2 install whatportis
 ```
 
@@ -395,7 +395,7 @@ RouteSploit 框架是一款开源的路由器等嵌入式设备漏洞检测及�
 
 - 安装
 
-```bash
+```sh
 pip2 install requests
 git clone https://github.com/reverse-shell/routersploit
 cd routersploit
@@ -403,7 +403,7 @@ python2 rsf.py
 ```
 
 # Slowloris 低带宽的 DoS 工具
-```bash
+```sh
 git clone https://github.com/gkbrk/slowloris.git
 cd slowloris
 chmod +x slowloris.py

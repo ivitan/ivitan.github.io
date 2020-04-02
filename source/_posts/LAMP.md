@@ -12,12 +12,12 @@ toc: true
 thumbnail: /images/Linux.png
 date: 2019-10-15 12:32:16
 ---
-Linux 编译安装 LAMP 
+> Linux 编译安装 LAMP 
 
 # Apache
 # 准备
 编译工具&开发包
-```bash
+```shell
 yum -y install make gcc openssl
 ```
 依赖包
@@ -34,7 +34,7 @@ yum -y install make gcc openssl
 
 - apr
 
-```bash
+```shell
 tar zxvf apr-1.5.2.tar.gz
 cd apr-1.5.2
 ./configure --prefix=/usr/local/apr
@@ -43,7 +43,7 @@ make && make install
 
 - apr-util
 
-```bash
+```shell
 tar zxvf apr-util-1.5.4.tar.gz
 cd apr-tuil-1.5.4
 ./configure --prefix=/usr/local/apr-util/\
@@ -53,7 +53,7 @@ make && make install
 
 - pcre
 
-```bash
+```shell
 unzip -o pcre-8.38.zip
 cd pcre-8.38
 ./cofigure --prefix=/usr/local/pcre
@@ -62,7 +62,7 @@ make && make install
 
 - Apache
 
-```bash
+```shell
 tar zxvf httpd-2.4.18.tar.gz -C /usr/local/src/
 cd /usr/local/src/httpd-2.4.18/
 ./configure --prefix=/usr/local/apache2 \
@@ -78,28 +78,28 @@ cd /usr/local/src/httpd-2.4.18/
 --with-apr=/usr/local/apr # 关联 apr
 
 ### 配置文件
-```bash
+```shell
 ls /usr/local/apache2/conf/httpd.conf
 ```
 ### 网站根目录
-```bash
+```shell
 ls /usr/local/apache2/htdocs/
 ```
 ### 生成启动脚本
-```bash
+```shell
 cp /usr/local/apache2/bin/apachectl  /etc/init.d/
 chmod +x /etc/init.d/apachectl
 ```
 
 vim /etc/init.d/apachectl
 
-```bash  apachectl
+```shell  apachectl
 # chkconfig: 2345 64 36
 # descroption:  apache service
 ```
 
 ## 将服务添加到系统启动列表
-```bash
+```shell
 chkconfig --add apachectl
 chkconfig apachectl on
 chkconfig --list apachectl 
@@ -111,18 +111,18 @@ service apachectl start
 [boost](https://sourceforge.net/projects/boost/files/latest/download)
 [MySQL](https://dev.mysql.com/downloads/mysql/)
 
-```bash
+```shell
 yum -y remove boost
 yum -y remove mysql
 ```
 ## Install
 ### 添加用户和组
-```bash
+```shell
 groupadd mysql
 useradd -M -s /sbin/nologin -r -g mysql mysql
 ```
 ### 创建安装目录和数据存放目录
-```bash
+```shell
 mkdir /server
 mount /dev/sdb2 /server/
 
@@ -131,7 +131,7 @@ echo "/dev/sdb2 /server ext4 defaults 0 0" >> /etc/fstab
 ```
 
 ### 安装
-```bash
+```shell
 mkdir -p /server/mysql/data
 tar -zxvf boost_1_59_0.tar.gz
 mv booboost_1_59_0 boost
@@ -159,7 +159,7 @@ DWITH_BOOST=/server/boost
 
 安装
 
-```bash
+```shell
 make -j 4 # 多核心安装
 # 查看核心数
 grep processor /proc.cpuinfo | wc -l
@@ -168,20 +168,20 @@ make install
 ```
 
 修改目录权限
-```bash
+```shell
 chown -R mysql:mysql /server/mysql/
 ```
 
 生成配置文件
 
-```bash
+```shell
 mv /etc/my.cnf{,.bak}
 cp /server/mysql/support-files/my-default.cnf /etc/my.cnf
 ```
 
 生成服务启动脚本
 
-```bash
+```shell
 cp /server/mysql/support-files/mysql.server /etc/init.d/mysqld
 chkcongig mysqld on
 chkconfig --list mysqld
@@ -189,57 +189,57 @@ chkconfig --list mysqld
 
 初始化数据库
 
-```bash
+```shell
 /server/mysqk/bin/mysqld --initialize-insecure --user=mysql --basedir=/server/mysql --datadir=/server/mydql/data
 ```
 
 启动服务
 
-```bash
+```shell
 server mysqld start
 ```
 
 添加 path 路径
 1. 方法一
 
-```bash vim /etc/profile
+```shell vim /etc/profile
 export MYSQL_HOME=/server/mysql
 export PATH=$PATH:$MYSQL_HOMW/bin
 ```
 使修改生效
-```bash
+```shell
 source /etc/profile
 ```
 2. 方法二
-```bash
+```shell
 ln -s /server/mysql/bin/* /user/local/bin
 ```
 
 修改密码
 1. 方法一
 
-```bash
+```shell
 mysqladmin -u roor password "123456"
 ```
 
 2. 方法二
 
-```bash
+```shell
 mysql
 set password=password('123456');
 ```
 
 # PHP
 ## 安装依赖包
-```bash
+```shell
 yum -y install php-mcrypt libmcrypt libmcrypt-devel autoconf freetype gd libmcrypt libpng libpng-devel libjpeg libxml2 libxml2-devel zlib curl curl-devel
 ```
 ## Install
-```bash
+```shell
 tar  zxvf php-7.05.tar.gz
 ```
 ### 编译
-```bash
+```shell
 cd php-7.05
 ./configure --prefix=/server/php7/ \
 --with-apx2=/use/local/apache2/bin/apxs \
@@ -255,24 +255,24 @@ cd php-7.05
 ```
 
 ### 安装
-```bash 
+```shell 
 make -j 4
 make install
 ```
 
 生成配置文件
-```bash
+```shell
 cp php.ini-production /server/php7/etc/php.int
 ```
 添加 Apache 支持
-```bash
+```shell
 vim /usr/local/apache2/cong/httpd.conf
 
 Addtype application/x-httpd=php .php .phtml
 ```
 
 创建测试页面
-```bash
+```shell
 cd /usr/local/apache2/htdocs/
 echo "
 <?php phpinfo();

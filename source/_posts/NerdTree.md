@@ -1,5 +1,5 @@
 ---
-title: NerdTree
+title: VIm NerdTree 插件
 tags:
   - Linux
   - Android
@@ -17,7 +17,7 @@ date: 2020-04-01 14:15:39
 <!--more--->
 
 # Plug 安装
-```shell
+```vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'          " File tree manager
 Plug 'jistr/vim-nerdtree-tabs'      " enhance nerdtree's tabs
@@ -28,7 +28,7 @@ call plug#end()
 ```
 
 # 配置
-```shell ~/.vimrc
+```vim ~/.vimrc
 " <Nerdtree>-------------------{
     ">> Basic settings
         let g:NERDTreeChDirMode = 2  "Change current folder as root
@@ -89,13 +89,13 @@ call plug#end()
 
 # 快捷键
 输入 `:NERDTreeToggle` 打开文件树。快捷键来映射,在vimrc中加入：
-```shell
+```vim
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 ```
 
 ## 切换工作台和目录
-```shell
+```vim
 ctrl + w + h    光标 focus 左侧树形目录
 ctrl + w + l    光标 focus 右侧文件显示窗口
 ctrl + w + w    光标自动在左右侧窗口切换
@@ -114,7 +114,7 @@ O       递归打开选中 结点下的所有目录
 m    文件操作：复制、删除、移动等
 ```
 ## 切换标签页
-```shell
+```vim
 :tabnew [++opt选项] ［＋cmd］ 文件      建立对指定文件新的tab
 :tabc   关闭当前的 tab
 :tabo   关闭所有其他的 tab

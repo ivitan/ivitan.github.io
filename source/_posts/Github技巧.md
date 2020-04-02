@@ -83,12 +83,16 @@ https://github.com/rails/rails/commits/master?author=snowtraces
 https://github.com/qutang/hexo-theme-cutie/compare/master...v2.1
 ```
 ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcu7572zej20um05aq3i.jpg)
+
 - 也可以使用一下格式
+
 ```bash
 https://github.com/rails/rails/compare/master@{1.day.ago}...master
 https://github.com/rails/rails/compare/master@{2014-10-04}...master
 ```
+
 - 和派生仓库比较，加上派生仓库名作前缀即可
+
 ```bash
 https://github.com/iVitan/hexo-theme-cutie/compare/master...qutang:master
 ```
@@ -98,7 +102,9 @@ https://github.com/iVitan/hexo-theme-cutie/compare/master...qutang:master
 ```sh
 https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml#L10
 ```
+
 - 多行高亮同样支持。你可以使用类似`#L10-L20`格式，或者在按住 shift 的同时点击
+
 ```bash
 https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml#L10-L20
 ```
@@ -110,6 +116,7 @@ https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml#L10-L20
 # 快速引用
 ## 引用评论
 - 可以选中别人的评论文字，然后按 `r`，这些内容会以引用的形式被复制在文本框中
+
 ![](https://ws1.sinaimg.cn/large/d71f8b2fgy1ftcukae70tg20m80a7nfn.jpg)
 
 # 任务列表
@@ -120,7 +127,9 @@ https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml#L10-L20
 - [ ] Do stuff
 - [ ] Sleep
 ```
+
 - 勾选之后，会更新 Markdown
+
 ```bash
 - [x] Be awesome
 - [x] Do stuff
@@ -128,6 +137,7 @@ https://github.com/iVitan/hexo-theme-cutie/blob/master/_config.yml#L10-L20
 ```
 # 嵌入 GitHub
 - 网页上面嵌入你自己的GitHub仓库页面
+
 ```
 <iframe src="https://ghbtns.com/github-btn.html?user=ivitan&amp;repo=ivitan.github.io&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe>
 <iframe src="https://ghbtns.com/github-btn.html?user=ivitan&amp;repo=ivitan.github&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe>

@@ -1,4 +1,4 @@
----
+﻿---
 title: CSS 选择器
 date: 2018-11-18 08:52:54
 tags:
@@ -25,6 +25,7 @@ Css 选择器与权重
  ```
 ## 页面级引入(内嵌式)
 - `<head>` 和 `</head>` 之间
+
 ```css
     <style type="css/text">
     .text{

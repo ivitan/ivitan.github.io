@@ -3,6 +3,7 @@ title: WNMP 环境配置
 tags:
   - Win
   - PHP
+  - Web
 categories:
   - Coding
 author:
@@ -12,10 +13,12 @@ toc: true
 thumbnail: /images/PHP.png
 date: 2019-12-23 13:42:58
 ---
-# Github 仓库
+> WNMP 一键安装
+
+# 仓库
 https://github.com/ivitan/wnmp
 
-# 下载
+# WNMP 下载
 1. [Nginx](http://nginx.org/en/download.html)
 2. [PHP](http://windows.php.net/download/ )
 3. [MySQL](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip)

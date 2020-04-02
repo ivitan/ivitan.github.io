@@ -16,7 +16,7 @@ Hexo 同时部署到 Github Coding
 2. Github Coding 都部署好相关的仓库
 
 ## 设置 _config.yml
- ```bash _config.yml
+ ```yaml _config.yml
 deploy:
 type: git
 repository: 
@@ -24,6 +24,3 @@ repository:
     coding: git@git.coding.net:Vitan/vitan.coding.me.git,master
 branch: master
 ```
-- 效果
-    - [Github Page](https://ivitan.github.io)
-    - [Coding Page](https://vitan.coding.me)

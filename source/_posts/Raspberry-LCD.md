@@ -22,6 +22,7 @@ Raspberry Pi 屏幕触控驱动安装及分辨率设置。
 ## 修改 config 配置文件
 1. 烧写系统完成后,将 `LCD-show.tar.gz` 拷贝到 TF 卡根目录,
 2. 打开 TF 卡根目录的 `config.txt` 文件并在文件末端加入以下代码,保存并安全弹出 TF 卡:
+
 ```bash
 hdmi_drive=2
 hdmi_force_hotplug=1

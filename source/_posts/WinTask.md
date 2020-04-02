@@ -12,10 +12,10 @@ toc: true
 thumbnail: /images/Batch.png
 date: 2019-12-13 10:24:56
 ---
-Batch 计划任务
+> Batch 计划任务
 
 # 语法
-```bat
+```cmd
 SCHTASKS /Create [/S system [/U username [/P [password]]]]
 [/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]
 [/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]
@@ -26,13 +26,13 @@ SCHTASKS /Create [/S system [/U username [/P [password]]]]
 
 描述:允许管理员在本地或远程系统上创建计划任务。
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc minute [/mo {1 - 1439}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 
 # 参数列表
 |参数|含义|
-|:---:|:---:|
+|:---|:---|
 |`/S  system `|指定要连接到的远程系统。如果省略这个系统参数，默认是本地系统。
 |`/U  username ` | 指定应在其中执行 SchTasks.exe 的用户上下文。
 | `/P  [password]` |指定给定用户上下文的密码。如果省略则提示输入。
@@ -82,14 +82,14 @@ schtasks /create /tn TaskName /tr TaskRun /sc minute [/mo {1 - 1439}] [/st Start
 ## 示例
 1. 在远程机器 "ABC" 上创建计划任务 "doc"， "runasuser" 用户下运行 notepad.exe。
 
-```bat
+```cmd
 SCHTASKS /Create /S ABC /U user /P password 
 /RU runasuser /RP runaspassword /SC HOURLY /TN doc /TR notepad
 ```
 
 2. 远程机器 "ABC" 上创建计划任务 "accountant"， 在指定的开始日期和结束日期之间的开始时间和结束时间内，每隔五分钟运行 calc.exe。
 
-```bat
+```cmd
 SCHTASKS /Create /S ABC /U domain\user /P password 
 /SC MINUTE /MO 5 /TN accountant /TR calc.exe /ST 12:00 
 /ET 14:00 /SD 06/06/2006 /ED 06/06/2006 /RU runasuser /RP userpassword
@@ -97,21 +97,21 @@ SCHTASKS /Create /S ABC /U domain\user /P password
 
 3. 创建计划任务 "gametime"，在每月的第一个星期天运行“空当接龙”。
 
-```bat
+```cmd
 SCHTASKS /Create /SC MONTHLY /MO first /D SUN 
 /TN gametime /TR c:\windows\system32\freecell
 ```
 
 4. 在远程机器 "ABC" 创建计划任务 "report"，每个星期运行 notepad.exe。
 
-```bat
+```cmd
 SCHTASKS /Create /S ABC /U user /P password /RU runasuser
 /RP runaspassword /SC WEEKLY /TN report /TR notepad.exe
 ```
 
 5. 在远程机器 "ABC" 创建计划任务 "logtracker"，每隔五分钟从指定的开始时间到无结束时间，运行 notepad.exe。将提示输入 /RP 密码。
 
-```bat
+```cmd
 SCHTASKS /Create /S ABC /U domain\user /P password /SC MINUTE
 /MO 5 /TN logtracker
 /TR c:\windows\system32\notepad.exe /ST 18:30
@@ -120,21 +120,21 @@ SCHTASKS /Create /S ABC /U domain\user /P password /SC MINUTE
 
 6. 创建计划任务 "gaming"，每天从 12:00 点开始到14:00 点自动结束，运行 freecell.exe。
 
-```bat
+```cmd
 SCHTASKS /Create /SC DAILY /TN gaming /TR c:\freecell /ST 12:00
 /ET 14:00 /K
 ```
 
 7. 创建计划任务“EventLog”以开始运行 wevtvwr.msc只要在“系统”通道中发布事件 101
 
-```bat
+```cmd
 SCHTASKS /Create /TN EventLog /TR wevtvwr.msc /SC ONEVENT
 /EC System /MO *[System/EventID=101]
 ```
 
 8. 文件路径中可以加入空格，但需要加上两组引号，一组引号用于 CMD.EXE，另一组用于 SchTasks.exe。用于 CMD的外部引号必须是一对双引号；内部引号可以是一对单引号或一对转义双引号:
 
-```bat
+```cmd
 SCHTASKS /Create
 /tr "'c:\program files\internet explorer\iexplorer.exe'
 \"c:\log data\today.xml\"" ...
@@ -142,21 +142,21 @@ SCHTASKS /Create
 
 9. 令计划安全脚本 Sec.vbs 每 20 分钟运行一次。由于命令没有包含起始日期或时间，任务在命令完成 20 分钟后启动，此后每当系统运行它就每 20 分钟运行一次。请注意，安全脚本源文件位于远程计算机上，但任务在本地计算机上计划并执行。
 
-```bat
+```cmd
 schtasks /create /sc minute /mo 20 /tn "Security Script" /tr \\central\data\scripts\sec.vbs
 ```
 
 # 其他实例     
 转载自:https://blog.csdn.net/lionzl/article/details/40896893
 ## schtasks create hourly
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc hourly [/mo {1 - 365}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 计划命令在每小时过五分的时候运行。
 
 1. 下面的命令将计划 MyApp 程序从午夜过后五分钟起每小时运行一次。因为忽略了 /mo 参数，命令使用了小时计划的默认值，即每 (1) 小时。如果该命令在 12:05 A.M 之后生成，程序将在第二天才会运行。
 
-```bat
+```cmd
 schtasks /create /sc hourly /st 00:05:00 /tn "My App" /tr c:\apps\myapp.exe
 ```
 
@@ -164,13 +164,13 @@ schtasks /create /sc hourly /st 00:05:00 /tn "My App" /tr c:\apps\myapp.exe
 
 下面的命令计划 MyApp 程序从 2001 年 3 月的第一天起每五小时运行一次。它使用 /mo 参数来指定间隔时间，使用 /sd 参数来指定起始日期。由于命令没有指定起始时间，当前时间被用作起始时间。
 
-```bat
+```cmd
 schtasks /create /sc hourly /mo 5 /sd 03/01/2001 /tn "My App" /tr c:\apps\myapp.exe
 ```
 
 ## schtasks create daily
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc daily [/mo {1 - 365}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 
@@ -178,7 +178,7 @@ schtasks /create /tn TaskName /tr TaskRun /sc daily [/mo {1 - 365}] [/st StartTi
 
 下面的范例计划 MyApp 程序在每天的 8:00 A.M. 运行一次，直到 2001 年 12 月 31 日结束。由于它忽略了 /mo 参数，所以使用默认间隔 1 来每天运行命令。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st 08:00:00 /ed 12/31/2001
 ```
 
@@ -186,13 +186,13 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st 08:00:00 /ed 1
 
 下面的范例计划 MyApp 程序从 2001 年 12 月 31 日起每隔一天在 1:00 P.M. (13:00) 运行。命令使用 /mo 参数来指定两 (2) 天的间隔。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /mo 2 /st 13:00:00 /sd 12/31/2001
 ```
 
 ## schtasks create weekly
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc weekly [/d {MON - SUN | *}] [/mo {1 - 52}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 
@@ -202,7 +202,7 @@ schtasks /create /tn TaskName /tr TaskRun /sc weekly [/d {MON - SUN | *}] [/mo {
 
 另外，因为命令是远程运行的，所以命令中所有的路径，包括到 MyApp.exe 的路径，都是指向远程计算机上的路径。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /ru Admin01
 ```
 
@@ -211,32 +211,32 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16
 
 下面的命令计划任务每隔一周在周五运行。它使用 /mo 参数来指定两周的间隔，使用 /d 参数来指定是一周内的哪一天。如计划任务在每个周五运行，要忽略 /mo 参数或将其设置为 1。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
 ```
 
 ## schtasks create monthly
 ### 常规月计划语法
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc monthly [/mo {FIRST | SECOND | THIRD | FOURTH | LAST | LASTDAY] [/d {MON - SUN | 1 - 31}] [/m {JAN - DEC[,JAN - DEC...] | *}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]] 
 ```
 
 - 指定周的语法
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo {FIRST | SECOND | THIRD | FOURTH | LAST} /d {MON - SUN} [/m {JAN - DEC[,JAN - DEC...] | *}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]] 
 ```
 
 - Lastday 语法
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc monthly /mo LASTDAY /m {JAN - DEC[,JAN - DEC...] | *} [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]] 
 ```
 
 - 指定日期的语法
 
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc monthly /d {1 - 31} [/m {JAN - DEC[,JAN - DEC...] | *}] [/st StartTime] [/sd StartDate] [/ed EndDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]] 
 ```
 
@@ -244,7 +244,7 @@ schtasks /create /tn TaskName /tr TaskRun /sc monthly /d {1 - 31} [/m {JAN - DEC
 
 下面的命令计划 MyApp 程序在每月的第一天运行。因为默认修饰符是 none（即：没有修饰符），默认天是第一天，默认的月份是每个月，所以该命令不需要任何其它的参数。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly
 ```
 
@@ -252,7 +252,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly
 
 下面的命令计划 MyApp 程序在每月的最后一天运行。它使用 /mo 参数指定在每月的最后一天运行程序，使用通配符 (*) 与 /m 参数表明在每月的最后一天运行程序。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
 ```
 
@@ -260,7 +260,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
 
 下面的命令计划 MyApp 程序每三个月运行一次。.它使用 /mo 参数来指定间隔。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 3
 ```
 
@@ -268,7 +268,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 3
 
 下面的命令计划 MyApp 程序在每月的第二个周日运行。它使用 /mo 参数指定是每月的第二周，使用 /d 参数指定天。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN
 ```
 
@@ -276,12 +276,12 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SU
 
 下面的命令计划 MyApp 程序在五月 15 日和六月 15 日的 3:00 PM (15:00) 运行。它使用 /d 参数来指定日期，使用 /m 参数指定月份。它也使用 /st 参数来指定开始时间。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /st 15:00:00
 ```
 
 ## schtasks create once
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc once /st StartTime /sd StartDate [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 
@@ -289,23 +289,23 @@ schtasks /create /tn TaskName /tr TaskRun /sc once /st StartTime /sd StartDate [
 
 下面的命令计划 MyApp 程序在 2002 年 1 月 1 日午夜运行一次。它使用 /ru 参数指定以用户的 Administrator 帐户权限运行任务，使用 /rp 参数为 Administrator 帐户提供密码。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st 00:00:00 /sd 01/01/2002 /ru Admin23 /rp p@ssworD1
 ```
 
 ## schtasks create onstart
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc onstart [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 ### 计划任务在每次系统启动的时候运行
 
 下面的命令计划 MyApp 程序在每次系统启动的时候运行，起始日期是 2001 年 3 月 15 日。
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
 ```
 
 ## schtasks create onlogon
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc onlogon [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 
@@ -313,19 +313,19 @@ schtasks /create /tn TaskName /tr TaskRun /sc onlogon [/sd StartDate] [/s comput
 
 下面的命令计划批处理文件在用户（任何用户）每次登录到远程计算机上的时候运行。它使用 /s 参数指定远程计算机。因为命令是远程的，所以命令中所有的路径，包括批处理文件的路径，都指定为远程计算机上的路径。
 
-```bat
+```cmd
 schtasks /create /tn "Start Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s Server23
 ```
 
 ## schtasks create onidle
-```bat
+```cmd
 schtasks /create /tn TaskName /tr TaskRun /sc onidle /iIdleTime [/sd StartDate] [/s computer [/u [domain\]user /p password]] [/ru {[Domain\]User | "System"} [/rp Password]]
 ```
 ### 计划某项任务在计算机空闲的时候运行
 
 下面的命令计划 MyApp 程序在计算机空闲的时候运行。它使用必需的 /i 参数指定在启动任务之前计算机必需持续空闲十分钟。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i 10
 ```
 
@@ -335,7 +335,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i 10
 
 该命令使用 /ru "System" 参数指定系统安全上下文。因为系统任务不需要密码，所以忽略了 /rp 参数。
 
-```bat
+```cmd
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 1 /ru "System"
 ```
 
@@ -351,14 +351,14 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 1 /ru "System
 * 启动文本编辑器，例如“记事本”。
 * 键入每个程序的名称和指向可执行文件的完全合格的路径。在这种情况下，文件包含有下列语句。
 
-```bat MyApp.bat
+```cmd MyApp.bat
 C:\Windows\System32\Eventvwr.exe
 C:\Windows\System32\Perfmon.exe
 ```
 2. 使用 SchTasks.exe 创建一个运行 MyApps.bat 的任务。
 
 下面的命令创建了 Monitor 任务，每当有人登录它就运行。它使用 /tn 参数命名任务，使用 /tr 参数运行 MyApps.bat。它使用 /sc 参数来指明 OnLogon 计划类型，使用 /ru 参数指定 Administrator 帐户。
-```bat
+```cmd
 chtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator
 ```
 该命令的结果是，每当用户登录到计算机，任务就启动“事件查看器”和“系统监视器”。
@@ -372,7 +372,7 @@ chtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrat
 * 用户帐户的密码 (/rp)。
 
 语法
-```bat
+```cmd
 schtasks /change /tn TaskName [/s computer [/u [domain\]user /p password]] [/tr TaskRun] [/ru [Domain\]User | "System"] [/rp Password]
 ```
 
@@ -397,6 +397,6 @@ schtasks /change /tn TaskName [/s computer [/u [domain\]user /p password]] [/tr 
 
 下面的命令将 Virus Check 任务运行的程序由 VirusCheck.exe 更改为 VirusCheck2.exe。此命令使用 /tn 参数标识任务，使用 /tr 参数指定任务的新程序。（不能更改任务名称。）
 
-```bat
+```cmd
 schtasks /change /tn "Virus Check" /tr C:\VirusCheck2.exe
 ```

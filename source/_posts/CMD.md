@@ -12,8 +12,7 @@ toc: true
 thumbnail: /images/Batch.png
 date: 2019-11-03 09:53:23
 ---
-CMD 基础
-转载自:[可可西](https://www.cnblogs.com/kekec/p/3662125.html)
+> CMD 基础,转载自:[可可西](https://www.cnblogs.com/kekec/p/3662125.html)
 
 # 基础命令
 ```cmd

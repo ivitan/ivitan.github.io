@@ -15,19 +15,20 @@ thumbnail: /images/Termux.png
 Termux ADB
 <!--more-->
 ## 下载 arm 版 ADB
-- Download [提取码: 9ej2](https://pan.baidu.com/s/1wv_i6qUTLRL94pp-bnkyWw)
+[Download](https://github.com/ivitan/Shell/releases/download/Adb/adb.zip)
 
-- Installation
+## Installation
+
 1. 解压后 `mv arm/adb $PREFIX/bin`
 2. 添加权限 `chmod +x $PREFIX/bin/adb`
 
 
-- Usage
+## Usage
 
 1. 远程连接设备（已开启USB网络调试）
 
-```bash
+```sh
 adb connect ip
 ```
 ## ADB
-[Command](https://vitan.me/2018/04/19/Adb/)
+[ADB 与 Fastboot 常用命令](/posts/Adb.html)

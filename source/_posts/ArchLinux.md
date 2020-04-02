@@ -15,40 +15,44 @@ ArchLinux 安装记录
 - [下载 ISO](https://www.archlinux.org/download/)
 - 使用 [Rufus](https://rufus.ie/) 烧录镜像
 - Linux 下推荐用 DD模式,开机选择烧录好的U盘进行引导
-```bash
+
+```sh
 dd bs=4M if=/path/to/archlinux.iso of=/dev/sdX  status=progress && sync
 ```
 
 # 安装步骤
 ## 进行联网
 1. 连接 WiFi
-```bash
+
+```sh
 wifi-menu
 ```
 
 2. PPOE 连接
-```bash
+
+```sh
 pppoe-setup
 ```
 
 3. ADSL 连接
-```bash
+
+```sh
 systemctl start adsl
 ```
 
 ### 测试网络
-```bash
+```sh
 ping www.vitan.me
 ```
 
 ## 同步时间
-```bash
+```sh
 timedatectl set-ntp true
 ```
 
 ## 更换国内源
 将 China 开头一下两行剪切到 ustc 最上面
-```bash
+```sh
 vim /etc/pacman.d/mirrorlist
 ```
 - 技巧(光标在 China 下，按2后 dd 最后 p 粘贴)
@@ -64,7 +68,7 @@ vim /etc/pacman.d/mirrorlist
 |boot  | 512M | EFI系统         |
 
 ## 建立 GPT 分区表
-```bash
+```sh
 fdisk /dev/sdb #不同电脑设备不同,进入fdisk交互界面：
 g # 建立gpt分区表:
 n # 添加一个分区
@@ -76,7 +80,7 @@ lsblk # 查看分区列表
 ```
 
 ## MBR 分区
-```bash
+```sh
 cfdisk /dev/sdb # 进入分区
 new # 新建分区，输入大小
 type # 选择分区属性
@@ -84,7 +88,7 @@ write # 执行分区
 ```
 
 ## 格式化
-```bash
+```sh
 mkfs.vfat  /dev/sdax # efi分区  挂载在/mnt/boot/EFI
 mkfs.ext4  /dev/sdax # /,/home 两个分区
 mkswap -f /dev/sdax # 格式化swap
@@ -92,7 +96,7 @@ swapon /dev/sdax  # swap分区
 ```
 
 ## 挂载分区
-```bash
+```sh
 mount /dev/sdb3 /mnt # /分区
 mkdir /mnt/home
 mount /dev/sdb4 /mnt/home # home 分区
@@ -103,97 +107,100 @@ mount /dev/sdb5 /mnt/boot/EFI # EFI 分区
 
 # 安装基本操作系统
 ## 基础包
-```bash
+```sh
 pacstrap /mnt base # 基础包
 pacstrap /mnt base-devel # 开发基础包
 ```
 
 ## 配置基础系统
 - 生产 fstab
-```bash
+
+```sh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 - 检查
-```bash
+
+```sh
 cat /mnt/etc/fstab
 ```
+
 ## 切换到新系统
-```bash
+```sh
 arch-chroot /mnt
 ```
 
 ## 时区
 ### 设置时区
-```bash
+```sh
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 ### 硬件时间
-```bash
+```sh
 hwclock --systohc --utc
 ```
 
 ## 语言设置
-```bash
+```sh
 pacman -S vim
 vim  /etc/locale.gen
 # 反注释（删掉前面的#） en_US.UTF-8 UTF-8 zh_CN.UTF-8 UTF-8
 ```
 生成 locale
-```bash
+```sh
 	locale-gen
 ```
 设置 locale.conf
-```bash
+```sh
 echo 'LANG=zh_CN.UTF-8'  > /etc/locale.conf
 ```
 
 ## 无线网络链接
 安装相关包
-```bash
+```sh
 pacman -S iw wpa_supplicant dialog
 ```
 	
 ## root 用户设置密码
-```bash
+```sh
 passwd
 ```
 添加用户
-```bash
+```sh
 useradd -m -g users -s /bin/bash 用户名
 passwd 用户名 # 修改密码
 ```
 
 sudo 权限
-```bash
+```sh
 vim /etc/sudoers
 ```
 
 取消注释
-```bash
+```sh
 %wheel ALL=(ALL) ALL
 ```
 
 在 root ALL=(ALL) ALL 下面添加
-```bash
+```sh
 用户名 ALL=(ALL) ALL
 ```
 
 ## 安装微码
-```bash
+```sh
 pacman -S intel-ucode
 ```
 
 ## 安装引导程序（不能漏）
-```bash
+```sh
 pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=ArchLinux
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## 退出 chroot 重启 (笔记本跳过)
-```bash
+```sh
 exit # 退回安装环境#
 umount -R  /mnt # 卸载新分区
 reboot # 重启
@@ -201,37 +208,37 @@ reboot # 重启
 
 ## 网络配置(重启后)
 有线连接
-```bash
+```sh
 systemctl enable dhcpcd
 ```
 
 无线连接
-```bash
+```sh
 pacman -S iw wpa_supplicant dialog
 ```
 
 ADSL 宽带连接
-```bash
+```sh
 pacman -S rp-pppoe# pppoe-setup
 ```
 
 ## 重启不能联网
 重启 dhcpcd
-```bash
+```sh
 systemctl enable dhcpcd
 ```
 继续输入
-```bash
+```sh
 ip link
 ```
 发现名称是ens33的网卡state 是down状态
-```bash
+```sh
 ip link set ens33 up(ifconfig ens33 up 也可以)
 ```
 
 # 安装桌面环境
 ## Gnome 桌面
-```bash
+```sh
 sudo pacman -S gnome #gnome桌面：
 sudo pacman -S gnome-tweak-tool #安装gnome桌面优化工具
 sudo pacman -S alacarte # 安装gnome桌面菜单编辑器
@@ -241,7 +248,7 @@ reboot
 ```
 
 ## Deepin 桌面
-```bash
+```sh
 sudo pacman -S deepin
 sudo pacman -S deepin-extra
 sudo pacman S bash-completion
@@ -250,20 +257,20 @@ systemctl enable NetworkManager # 注意大小写
 systemctl start NetworkManager
 ```
 编辑
-```bash
+```sh
 vim /etc/lightdm/lightdm.conf
 ```
 修改如下
-```bash
+```sh
 greeter-session=lightdm-deepin-greeter
 ```
 执行
-```bash
+```sh
 systemctl enable lightdm.service
 ```
 
 ## KDE Plasma 桌面
-```bash
+```sh
 sudo pacman -S xorg
 sudo pacman -S xf86-input-synaptics
 sudo pacman -S ttf-dejavu wqy-microhei # 字体
@@ -277,70 +284,70 @@ sudo pacman -S kde-l10n-zh_cn # KDE 中文包
 
 # 后续优化
 ## 配置源
-```bash
+```sh
 sudo vim /etc/pacman.conf
 ```
 1. 首先去掉 multilib 中两行的注释
 2. 在文档结尾处加入
 
-```bash
+```sh
 [archlinuxcn]
 SigLevel = Optional TrustAll
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
 刷新pacman数据库
-```bash
+```sh
 sudo pacman -Syy
 ```
 
 ## 驱动
 ### 声卡
-```bash
+```sh
 sudo pacman -S alsautils pulseaudio pulseaudio-alsa
 ```
 
 ### 显卡
 安装驱动
-```bash
+```sh
 sudo pacman -S nvidia
 sudo pacman -S nvidia-settings
 ```
 
 启动管理器编辑脚本(Plasma 桌面有效)
-```bash
+```sh
 sudo vim /usr/share/sddm/scripts/Xsetup
 ```
 
 添加
-```bash
+```sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 ```
 
 重启
-```bash
+```sh
 reboot
 ```
 
 获取显卡 PCI 地址
-```bash
+```sh
 ispci | grep -E "VGA|3D"
 ```
 
 地址转换
-```bash
+```sh
 01:00.0 --> 1:0:0 # 转换示例
 ```
 
 配置 xorg.conf
-```bash
+```sh
 sudo vim /etc/X11/xorg.conf
 # 确保 xorg 已安装
 ```
 
 添加
-```bash
+```sh
 Section "Module"
 	Load "modesetting"
 EndSection
@@ -354,32 +361,32 @@ EndSection
 ```
 # 必备软件
 ## 输入法
-```bash
+```sh
 sudo pacman -S fcitx fcitx-configtool
 sudo pacman -S fcitx-gtk2 fcitx-gtk3 fcitx-qt4 fcitx-qt5
 sudo pacman -S fcitx-sogoupinyin
 ```
 
 ### 配置
-```bash
+```sh
 vim ~/.xprofile
 ```
 添加
-```bash
+```sh
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 ```
 
 桌面环境比较特殊，可能需要在 /etc/environmenet 后方也加入
-```bash
+```sh
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 ```
 
 安装输入法
-```bash
+```sh
 sudo pacman -S fcitx-sogoupinyin
 ```
 - 可选
@@ -390,7 +397,7 @@ sudo pacman -S fcitx-sogoupinyin
 5. fcitx-sogoupinyin
 
 ## 字体
-```bash
+```sh
 sudo pacman -S wqy-bitmapfont wqy-microhei \
 wqy-zenhei adobe-source-code-pro-fonts \
 adobe-source-han-sans-cn-fonts ttf-monaco
@@ -403,61 +410,61 @@ sudo pacman -S yay
 
 ## 工具和常用软件
 工具
-```bash
+```sh
 sudo pacman -S git net-tools tree vim
 ```
 
 [微信QQ](https://vitan.me/2018/07/28/linux-WeChat-QQ/)
 
 科学上网
-```bash
+```sh
 sudo pacman -S shadowsocks-qt5 proxychains-ng
 ```
 - Proxychains 实现终端下任意应用代理
 
 WPS
-```bash
+```sh
 sudo pacman -S ttf-wps-fonts
 sudo pacman -S wps-office
 ```
 
 Telegram
-```bash
+```sh
 sudo pacman -S telegram-desktop
 ```
 Google Chrome
-```bash
+```sh
 sudo pacman -S google-chrome
 ```
 网易云音乐
-```bash
+```sh
 sudo pacman -S netease-cloud-music
 ```
 
 MailSpring
-```bash
+```sh
 yay -S mailspring
 sudo pacman -S libsecret
 ```
 
 迅雷
-```bash
+```sh
 yay -S deepin-wine-thunderspeed
 ```
 
 截图(Deppin)
-```bash
+```sh
 yay -S deepin-screenshot
 ```
 
 Docker
-```bash
+```sh
 sudo pacman -S docker
 sudo pacman -S docker-compose
 ```
 
 Visual Studio Code
-```bash
+```sh
 sudo pacman -S visual-studio-code-bin
 ```
 

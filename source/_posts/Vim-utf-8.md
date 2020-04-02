@@ -14,7 +14,8 @@ Vim 设置默认中文并加行数
 <!--more-->
 # .vimrc
 配置文件
- ```
+
+ ```vim
     " 设置行号显示
     set number
 
@@ -75,14 +76,15 @@ Vim 设置默认中文并加行数
 
 # Vim 设置默认中文编码
 .vimrc 添加下面内容即可
-```
+
+```vim
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936
 set fileencoding=gb2312
 set termencoding=utf-8
 ```
 # 设置行数
-```
+```vim
 set nu
 set nobackup
 set noswapfile

@@ -3,6 +3,7 @@ title: Cmder 配置
 tags:
   - Linux
   - Win
+  - Batch
 categories:
   - Coding
 author:
@@ -12,6 +13,10 @@ toc: true
 thumbnail: /images/Win.png
 date: 2020-01-08 13:40:15
 ---
+> Cmder 是 Windows出色的终端。它不仅支持 Linux 命令，并且因为并采用了 Monokai 配色方案，最重要的是能自定义布局。
+
+<!--more-->
+
 # 使用 Bash
 
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png)

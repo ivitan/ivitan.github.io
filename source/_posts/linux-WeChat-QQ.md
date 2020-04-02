@@ -16,10 +16,12 @@ Linux 安装 QQ WeChat Tim.
 # ArchLinux
 ## 添加 archlinuxcn 源
 - 编辑 pacman.conf
+
 ```sh
 vim /etc/pacman.conf
 ```
 - 添加
+
 ```sh
 [archlinuxcn]
 SigLevel = Optional TrustAll

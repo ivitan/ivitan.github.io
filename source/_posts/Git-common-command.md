@@ -12,11 +12,11 @@ enable_unread_badge: true
 ---
 Git 常用命令
 <!--more-->
-![](https://raw.githubusercontent.com/ivitan/Picture/master/GitCmd.jpg
-)
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/GitCmd.jpg)
 
 # 配置
 - 基础配置
+
 ```sh
 git config --global user.name "Vitan"
 git config --global user.email "ivitan95@gmail.com"
@@ -222,11 +222,13 @@ git push -u origin develop
 git remote set-head origin master
 # 设置远程仓库的HEAD指向master分支
 ```
-  - 也可以命令设置跟踪远程库和本地库
-  ```sh
-  git branch --set-upstream master origin/master
-  git branch --set-upstream develop origin/develop
-  ```
+
+- 也可以命令设置跟踪远程库和本地库
+
+```sh
+git branch --set-upstream master origin/master
+git branch --set-upstream develop origin/develop
+```
 ---
 **Via**
 - [stormzhang](http://stormzhang.com/git/2014/01/27/git-common-command/)

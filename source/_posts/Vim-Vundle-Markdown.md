@@ -41,7 +41,7 @@ vim .vimrc
 
 2. 添加下列内容
 
-```
+```vim
 set nocompatible   " be iMproved, required
 filetype off   " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -55,13 +55,13 @@ filetype plugin indent on  " required
 
 - bash 下：
 
-```
+```vim
 vim +PluginInstall +qall
 ```
 
 - vim 下
 
-```
+```vim
 :PluginInstall
 ```
 
@@ -73,13 +73,15 @@ Plugin 'plasticboy/vim-markdown'
 ```
 
 下一步
+
 ```bash
 vim
 :PluginInstall
 ```
 # 安装 gruvbox 主题
 在 .vimrc 添加
-```
+
+```vim
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 ```
@@ -93,13 +95,15 @@ set guifont=Monaco:h17 "设置字体和字的大小
 ```
 # Vim-airline
 .vimrc 添加插件
-```
+
+```vim
 Plugin 'vim-airline/vim-airline
 Plugin 'vim-airline/vim-airline-themes'
 ```
 
 配置
-```
+
+```vim
     "" airline settings.
     let g:airline_theme = 'simple'
     let g:airline_powerline_fonts = 1
@@ -160,17 +164,20 @@ Plugin 'vim-airline/vim-airline-themes'
 
 # NERD Tree 文件浏览插件
 .vimrc 添加插件
-```
+
+```vim
 Plugin 'scrooloose/nerdtree'
 ```
 
 打开/关闭 NERD Tree
-```
+
+```vim
 :NERDTreeToggle
 ```
 
 NERD Tree 配置
-```
+
+```vim
 "当 vim 启动没指定文件时，自动打开 NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -184,7 +191,8 @@ nmap ,d :NERDTreeToggle<CR>
 4. `<c-w>j` ，`<c-w>k`, `<c-w>h`, `<c-w>l`按键分别向上、下、左、右分屏移动。 `<c-w>=`均分屏幕
 
 改默的切换分屏按键方式
-```
+
+```vim
 "--------- Split Mapping --------------------"
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
@@ -197,7 +205,8 @@ nmap <c-l> <c-w>l
 
 # .vimrc 配置文件
 vimrc
-```
+
+```vim
     "设置行号显示
     set number
 
