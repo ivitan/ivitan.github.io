@@ -17,15 +17,24 @@ date: 2020-01-08 13:40:15
 
 <!--more-->
 
-# 使用 Bash
+# 配置
+## 基本配置
+- 系统环境变量
+
+![](https://raw.githubusercontent.com/ivitan/Picture/master/images/20200405132003.png)
+
+- 在 PATH 添加 %CMDER_HOME%
+
+## 添加右键菜单
+```
+Cmder.exe /REGISTER ALL
+```
+## 使用 Bash
 
 ![](https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png)
 
-<!--more-->
-
-# 配置
-
-```bash D:\cmder\config\user_profile.sh
+## 配置文件
+```bash D:\Program Files\cmder\config\user_profile.sh
 # 别名
 #打开当前文件夹
 alias e.='explorer .'
@@ -37,7 +46,6 @@ alias gp='git push origin $1'
 alias gpm='git push origin master'
 alias cpd='cap production deploy'
 alias cpt='cap staging deploy'
-
 
 # Git Commit, Add all and Push — in one step.
 function gcap() {
@@ -73,4 +81,18 @@ function gdoc() {
 function gtst() {
     gcap "✅ TEST: $@"
 }
+```
+
+# 设置 VS Code
+## 添加环境变量
+变量名 `CMDER_ROOT` 变量值 `D:\Program Files\cmder`
+
+## VS Code 配置
+
+```sh setting.json
+"terminal.integrated.shell.windows": "cmd.exe",
+"terminal.integrated.shellArgs.windows": [
+    "/k",
+    "D:\\Program Files\\cmder\\vendor\\init.bat"
+]
 ```
