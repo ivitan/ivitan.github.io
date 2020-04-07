@@ -277,7 +277,7 @@ ga('send', 'pageview');
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch <span class="string">.gitignore</span>  </span><br><span class="line"><span class="keyword">echo</span> '*<span class="string">.swp</span>'&gt;&gt;<span class="string">.gitignore</span></span><br></pre></td></tr></table></figure>
 
 <p>使用正则(glob 模式)匹配所有的 .swp 文件，然后保存并退出</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.progile</span><span class="selector-class">.yml</span></span><br><span class="line">.gitignore</span><br><span class="line">*.swp</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.progile</span><span class="selector-class">.yml</span></span><br><span class="line"><span class="selector-class">.gitignore</span></span><br><span class="line">*<span class="selector-class">.swp</span></span><br></pre></td></tr></table></figure>
 <p>相关:</p>
 <p>忽略掉某个文件，需要修改.gitignore文件的方法。可以在你的用户目录下创建 <code>~/.gitignoreglobal</code> 文件中设置全局。</p>
 <ol>
@@ -301,7 +301,7 @@ ga('send', 'pageview');
 <li>另外 git 还提供了另一种<code>exclude</code>的方式来做同样的事情，不同的是 .gitignore 这个文件本身会提交到版本库中去，用来保存的是公共的需要排除的文件。<br>而<code>.git/info/exclude</code> 这里设置的则是你自己本地需要排除的文件。他不会影响到其他人。也不会提交到版本库中去。</li>
 </ol>
 <h2 id="第八关（Include"><a href="#第八关（Include" class="headerlink" title="第八关（Include"></a>第八关（Include</h2><p>除了 <code>lib.a</code>文件，其他所有的 .a 后缀名的文件都忽略。和上一关的操作一样，修改 <code>.gitignore</code> 文件</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">'*.a'</span><span class="meta">&gt;&gt;</span>.gitignore</span><br><span class="line">echo <span class="string">'!lib.a'</span><span class="meta">&gt;&gt;</span>.gitignore</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> '*<span class="string">.a</span>'&gt;&gt;<span class="string">.gitignore</span></span><br><span class="line"><span class="keyword">echo</span> '!lib.a'&gt;&gt;<span class="string">.gitignore</span></span><br></pre></td></tr></table></figure>
 <p>其中 <code>#</code> 开头的是注释，用<code>*.a</code> 匹配所有 <code>.a</code> 文件，<code>!</code> 开头代表不要忽略</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.profile.yml</span><br><span class="line">.gitignore</span><br><span class="line"></span><br><span class="line"><span class="comment"># ignore all file with ".a" extensions expect "lib.a" file</span></span><br><span class="line">*.a</span><br><span class="line">!<span class="class"><span class="keyword">lib</span>.<span class="title">a</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="第九关（Status"><a href="#第九关（Status" class="headerlink" title="第九关（Status)"></a>第九关（Status)</h2><p>查看所有处于<code>untracked</code>状态的文件。使用<code>git status</code> 查看当前仓库的状态，可以看到红色部分就是 <code>untracked</code> 状态的文件</p>
@@ -486,7 +486,7 @@ ga('send', 'pageview');
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">branch test_code</span></span><br><span class="line"><span class="attr">git</span> <span class="string">branch</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十二关（Checkout）"><a href="#第三十二关（Checkout）" class="headerlink" title="第三十二关（Checkout）"></a>第三十二关（Checkout）</h2><p>创建一个分支，并切换过去。其实，<code>git checkout -b my_branch</code> 就是创建一个分支，并切换过去，而且这种方法更方便，平常用的更多</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> my_branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>my_branch</span><br></pre></td></tr></table></figure>
 
 <h2 id="第三十三关（Checkout-tag）"><a href="#第三十三关（Checkout-tag）" class="headerlink" title="第三十三关（Checkout tag）"></a>第三十三关（Checkout tag）</h2><p>切换到某个特定的 tag</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span></span><br><span class="line">git checkout v1.<span class="number">2</span></span><br></pre></td></tr></table></figure>
@@ -572,7 +572,7 @@ ga('send', 'pageview');
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log <span class="literal">master</span></span><br><span class="line">git rebase -i HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>查看历史提交记录，看到需要修改的为倒数第二个，进入编辑页面，将需要改动的行的·改为·。保存退出后在弹出的第二个窗口里修改拼写错误 <code>commmit</code> 改为 <code>commit</code></p>
 <h2 id="第四十六关（squash）"><a href="#第四十六关（squash）" class="headerlink" title="第四十六关（squash）"></a>第四十六关（squash）</h2><p>合并多个提交。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -<span class="selector-tag">i</span> HEAD~<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~<span class="number">4</span></span><br></pre></td></tr></table></figure>
 <p>将后三个改为s</p>
 <p>为新的提交修改备注</p>
 <figure class="image-bubble">

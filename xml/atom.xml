@@ -14,7 +14,7 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Highlight.js Markdown 对照表</title>
@@ -32,6 +32,7 @@
 &lt;/blockquote&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -59,12 +60,13 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
-    
       <category term="Android" scheme="https://vitan.me/tags/Android/"/>
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Win" scheme="https://vitan.me/tags/Win/"/>
     
@@ -89,6 +91,7 @@
 &lt;h1 id=&quot;本地替换为远程&quot;&gt;&lt;a href=&quot;#本地替换为远程&quot; class=&quot;headerlink&quot; title=&quot;本地替换为远程&quot;&gt;&lt;/a&gt;本地替换为远程&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git fetch --all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git reset --hard origin&amp;#x2F;master&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git pull&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -124,6 +127,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -154,6 +158,7 @@
     
     </summary>
     
+    
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
     
@@ -179,6 +184,7 @@
 &lt;/blockquote&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -212,6 +218,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -244,6 +251,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -272,6 +280,7 @@
 &lt;h1 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h1&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SCHTASKS /Create [/S system [/U username [/P [password]]]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/RI interval] [ &amp;#123;/ET endtime | /DU duration&amp;#125; [/K] [/XML xmlfile] [/V1]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -304,6 +313,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -335,6 +345,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -361,6 +372,7 @@
 &lt;h1 id=&quot;基础命令&quot;&gt;&lt;a href=&quot;#基础命令&quot; class=&quot;headerlink&quot; title=&quot;基础命令&quot;&gt;&lt;/a&gt;基础命令&lt;/h1&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 中断命令&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Crtl + z&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -398,6 +410,7 @@
 &lt;p&gt;总公司与分公司使用广域网链路(WAN)互联&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -450,6 +463,7 @@
     
     </summary>
     
+    
       <category term="Linux" scheme="https://vitan.me/categories/Linux/"/>
     
     
@@ -477,6 +491,7 @@
     
     </summary>
     
+    
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
@@ -500,6 +515,7 @@
       &lt;p&gt;Linux 解决 matplotlib 中文乱码问题&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
@@ -527,6 +543,7 @@
     
     </summary>
     
+    
       <category term="Linux" scheme="https://vitan.me/categories/Linux/"/>
     
     
@@ -550,6 +567,7 @@
       &lt;p&gt;xpath 升格用法&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
@@ -577,6 +595,7 @@
     
     </summary>
     
+    
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
     
@@ -598,6 +617,7 @@
       &lt;h1 id=&quot;AdSense-账户&quot;&gt;&lt;a href=&quot;#AdSense-账户&quot; class=&quot;headerlink&quot; title=&quot;AdSense 账户&quot;&gt;&lt;/a&gt;AdSense 账户&lt;/h1&gt;&lt;h2 id=&quot;撤销原因&quot;&gt;&lt;a href=&quot;#撤销原因&quot; class=&quot;headerlink&quot; title=&quot;撤销原因&quot;&gt;&lt;/a&gt;撤销原因&lt;/h2&gt;&lt;p&gt;更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
     
