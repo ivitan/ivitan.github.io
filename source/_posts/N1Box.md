@@ -10,8 +10,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Box.png
 ---
 斐讯 N1 盒子降级刷机
 <!--more-->

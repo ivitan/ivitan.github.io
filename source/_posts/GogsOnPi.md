@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/RaspberryPi.png
 date: 2019-07-31 14:14:52
 ---
 树莓派搭建 Gogs Git 服务

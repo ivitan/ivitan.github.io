@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Note.png
 mermaid: true
 ---
 Markdown 流程图，干特图。

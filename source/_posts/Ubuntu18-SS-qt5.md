@@ -6,8 +6,6 @@ tags:
 - Ubuntu
 categories: Linux
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Ubuntu.png
 ---
  Ubuntu 安装 shadowsocks-qt5
 <!--more-->

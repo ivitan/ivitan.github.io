@@ -8,9 +8,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Python.png
 date: 2019-09-12 19:05:17
 ---
 xpath 升格用法

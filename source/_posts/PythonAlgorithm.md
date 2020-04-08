@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 Python 排序
 <!--more-->

@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 Python 小技巧
 <!---more-->

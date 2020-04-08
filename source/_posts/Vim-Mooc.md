@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Vim.png
 ---
 Vim 重新学习笔记
 <!--more-->

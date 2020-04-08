@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Docker.png
 ---
 ArchLinux 安装 Docker
 <!--more-->

@@ -11,8 +11,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
  Python ChromeDriver GeckoDriver Configer
 <!--more-->

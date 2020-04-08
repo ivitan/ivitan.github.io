@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLfull
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL实现数据完整性约束
 1. 数据完整性基本概念

@@ -6,7 +6,6 @@ tags:
 categories: Database
 toc: true
 permalink: SQLexercise
-thumbnail: /images/SQL.png
 ---
 数据库单表查询
 

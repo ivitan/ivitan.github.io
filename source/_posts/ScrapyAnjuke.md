@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 Scrapy anjuke.com 广州二手房数据(保存为 csv)
 <!--more-->

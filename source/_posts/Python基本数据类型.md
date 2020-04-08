@@ -12,8 +12,6 @@ author:
   name: Vitan
 toc: true
 permalink: PythonType
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 Python 基本数据类型
 <!--more-->

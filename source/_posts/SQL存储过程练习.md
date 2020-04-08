@@ -6,7 +6,6 @@ tags:
 toc: true
 categories: Database
 permalink: SQlprocEx
-thumbnail: /images/SQL.png
 ---
 SQL储存过程练习题
 <!--more-->

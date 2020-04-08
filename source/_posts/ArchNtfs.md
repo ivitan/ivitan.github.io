@@ -11,8 +11,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
 解决 ArchLInux 无法挂载 NTFS 的U盘和硬盘
 <!--more-->

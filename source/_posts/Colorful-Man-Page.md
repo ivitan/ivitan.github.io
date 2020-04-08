@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Linux.png
 ---
 Linux下 Man Page 的显示默认是通过 less 来完成的， `.bashrc` 文件中添加 less 的相关设置参数可使其变成彩色。
 <!--more-->

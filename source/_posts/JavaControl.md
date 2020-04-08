@@ -7,7 +7,6 @@ toc: true
 categories:
  - Coding
  - Java
-thumbnail: /images/Java.png
 ---
 Java控制语句
 <!--more-->

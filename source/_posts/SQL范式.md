@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLnfs
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL范式
 <!--more-->

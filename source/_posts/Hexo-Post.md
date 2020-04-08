@@ -8,8 +8,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Hexo.png
 ---
 > 在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.
 <!--more-->
@@ -38,7 +36,5 @@ categories:
 - notes
 author:
 - Vitan
-enable_unread_badge: true
-thumbnail:
 - /images/Hexo.svg
 ```

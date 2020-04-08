@@ -7,9 +7,7 @@ categories:
   - Linux
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Linux.png
 date: 2019-10-15 12:32:16
 ---
 > Linux 编译安装 LAMP 

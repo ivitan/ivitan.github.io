@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Note.png
 ---
 > 几种常用的开源协议,更多的协议可以去[
 Open Source Initiative](https://opensource.org/licenses/alphabetical)了解。

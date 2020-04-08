@@ -7,8 +7,6 @@ tags:
 categories: Database
 toc: true
 permalink: MySQLbasic
-thumbnail: /images/MySQL.png
-enable_unread_badge: true
 ---
 MySQL 基础语句
 <!--more-->

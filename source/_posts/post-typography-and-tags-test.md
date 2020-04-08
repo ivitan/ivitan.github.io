@@ -10,8 +10,6 @@ categories:
 author:
   name: Qu Tang
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Typography.png
 ---
 Hexo Cutie 主题 Markdown 语法
 <!--more-->

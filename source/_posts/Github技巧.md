@@ -7,8 +7,6 @@ tags:
 categories: Diary
 toc: true
 permalink: GithubTips
-enable_unread_badge: true
-thumbnail: /images/Github.png
 ---
 Github 中隐藏了很多可以提高效率的小技巧。
 <!--more-->

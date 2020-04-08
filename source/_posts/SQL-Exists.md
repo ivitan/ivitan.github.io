@@ -5,7 +5,6 @@ tags:
 - SQL
 toc: true
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL 中 EXISTS
 <!--more-->

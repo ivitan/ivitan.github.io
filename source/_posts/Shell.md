@@ -10,8 +10,6 @@ author:
   - Vitan
 toc: true
 mathjax: false
-enable_unread_badge: true
-thumbnail: /images/Shell.png
 ---
 Shell 总结
 <!--more-->

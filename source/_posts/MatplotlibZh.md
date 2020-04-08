@@ -8,9 +8,7 @@ categories:
   - Diary
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Python.png
 date: 2019-09-18 22:42:36
 ---
 Linux 解决 matplotlib 中文乱码问题

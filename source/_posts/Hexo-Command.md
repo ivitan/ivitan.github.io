@@ -7,7 +7,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Hexo.png
 ---
 Hexo 常用命令
 <!--more-->

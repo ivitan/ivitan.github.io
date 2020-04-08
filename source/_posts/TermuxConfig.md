@@ -7,9 +7,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Termux.png
 date: 2020-01-08 12:11:49
 ---
 > 写的一个 Termux 配置脚本，配置开发环境、美化等...

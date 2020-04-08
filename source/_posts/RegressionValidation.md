@@ -9,9 +9,7 @@ categories:
   - Coding
 author:
   name: Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Python.png
 ---
 回归分析
 <!--more-->

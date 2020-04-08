@@ -5,7 +5,6 @@ tags:
 - Linux
 toc: true
 categories: Linux
-thumbnail: /images/Ubuntu.png
 ---
 Ubuntu美化
 <!--more-->

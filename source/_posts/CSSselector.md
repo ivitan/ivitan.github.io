@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/CSS.png
 ---
 Css 选择器与权重
 <!--more-->

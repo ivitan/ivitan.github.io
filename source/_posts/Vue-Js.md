@@ -12,8 +12,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Vue.png
 ---
 Vue 安装与新建项目
 <!--more-->

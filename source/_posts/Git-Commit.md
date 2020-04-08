@@ -9,8 +9,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Git.png
 ---
 Git Commit 规范
 <!--more-->

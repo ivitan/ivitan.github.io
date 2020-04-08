@@ -7,7 +7,6 @@ toc: true
 categories: 
  - Coding
  - Java
-thumbnail: /images/Java.png
 ---
 Java 中 Srting 常用方法。
 <!--more-->

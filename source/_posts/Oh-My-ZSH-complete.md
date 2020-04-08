@@ -8,7 +8,6 @@ tags:
 - Termux
 toc: true
 categories: Linux
-thumbnail: /images/Bash.png
 ---
 Oh-my-zsh插件
 <!--more-->

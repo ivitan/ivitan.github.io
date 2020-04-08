@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 房天下爬虫
 <!--more-->

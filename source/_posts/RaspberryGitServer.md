@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/RaspberryPi.png
 ---
 树莓派 Git 服务器
 <!--more-->

@@ -7,7 +7,6 @@ toc: true
 categories: 
  - Coding
  - Java
-thumbnail: /images/Java.png
 ---
 Java 变量类型
 <!--more-->

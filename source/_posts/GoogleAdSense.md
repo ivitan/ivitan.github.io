@@ -8,8 +8,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Hexo.png
 date: 2019-08-11 20:04:29
 ---
 # AdSense 账户

@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Linux.png
 ---
 sudo su 区别
 <!--more-->

@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLconstraint
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL级联
 <!--more-->

@@ -6,7 +6,6 @@ tags:
 categories: Database
 toc: true
 permalink: SQLmode
-thumbnail: /images/SQL.png
 mathjax: true
 ---
 # 关系模式

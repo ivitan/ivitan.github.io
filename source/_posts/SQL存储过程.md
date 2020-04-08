@@ -6,7 +6,6 @@ tags:
 toc: true
 categories: Database
 permalink: SQLprocedure
-thumbnail: /images/SQL.png
 ---
 SQL存储过程
 <!--more-->

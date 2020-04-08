@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Note.png
 ---
 解决 Win10 与 Linux 时间不一致
 <!--more-->

@@ -11,8 +11,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 PySpider 爬猫途鹰网排名景点并保存至 MongoDB
 <!--more-->

@@ -7,8 +7,6 @@ tags:
 - Note
 categories: Diary
 toc: true
-thumbnail: /images/Git.png
-enable_unread_badge: true
 ---
 Git 常用命令
 <!--more-->

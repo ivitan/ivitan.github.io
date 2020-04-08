@@ -9,8 +9,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
 pacman 软件包管理器
 <!--more-->

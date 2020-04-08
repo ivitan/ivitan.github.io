@@ -9,8 +9,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/RaspberryPi.png
 ---
 RaspberryPi 搭建云
 <!--more-->

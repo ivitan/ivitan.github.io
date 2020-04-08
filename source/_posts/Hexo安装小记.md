@@ -8,7 +8,6 @@ tags:
 toc: true
 permalink: HexoInstall
 categories: Diary
-thumbnail: /images/Hexo.png
 ---
 Hexo 从零开始到搭建完整
 <!--more-->

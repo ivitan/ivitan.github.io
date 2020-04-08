@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLstyle
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL规范，注意事项。
 <!--more-->

@@ -8,7 +8,6 @@ tags:
 - SSH
 toc: true
 categories: Coding
-thumbnail: /images/SSH.png
 ---
 SSH的简单运用
 <!--more-->

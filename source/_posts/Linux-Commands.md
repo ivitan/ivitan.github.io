@@ -7,7 +7,6 @@ tags:
 - Termux
 toc: true
 categories: Linux
-thumbnail: /images/Linux.png
 ---
 Linux 基础命令
 <!--more-->

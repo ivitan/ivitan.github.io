@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Hexo.png
 date: 2018-07-08 22:04:52
 ---
 Hexo 独立域名

@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLfunDep
 categories: Database
-thumbnail: /images/SQL.png
 ---
 # 函数依赖 Functional Dependency
 数据依赖的一种，它反映属性或属性组之间相依存，互相制约的关系，即反映现实世界的约束关系。

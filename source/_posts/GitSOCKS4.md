@@ -10,8 +10,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Git.png
 ---
 > Failed to receive SOCKS4 connect request ack.
 <!--more-->

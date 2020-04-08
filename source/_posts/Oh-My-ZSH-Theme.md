@@ -7,7 +7,6 @@ tags:
 - Termux
 toc: true
 categories: Linux
-thumbnail: /images/Bash.png
 ---
 自定义主题shell提示符.
 <!--more-->

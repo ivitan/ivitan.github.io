@@ -6,7 +6,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Bash.png
 ---
 Tmux 可以复用终端、分屏、托管进程等
 <!--more-->

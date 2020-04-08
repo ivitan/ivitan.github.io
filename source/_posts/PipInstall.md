@@ -7,9 +7,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Python.png
 date: 2019-09-19 22:32:19
 ---
 解决 Python 安装库时速度慢或者超时问题

@@ -11,8 +11,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Git.png
 ---
 放弃对于本地的项目中修改，Git pull强制覆盖
 <!--more-->

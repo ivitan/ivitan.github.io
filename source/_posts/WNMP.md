@@ -8,9 +8,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/PHP.png
 date: 2019-12-23 13:42:58
 ---
 > WNMP 一键安装

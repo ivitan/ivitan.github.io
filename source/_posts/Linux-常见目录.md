@@ -8,8 +8,6 @@ tags:
 categories: Linux
 toc: true
 permalink: LinuxDir
-thumbnail: /images/Linux.png
-enable_unread_badge: true
 ---
 Linux 常见目录
 <!--more-->

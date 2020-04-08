@@ -6,9 +6,7 @@ categories:
   - Diary
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Hexo.png
 date: 2019-09-06 09:13:41
 ---
 Hexo SEO 优化

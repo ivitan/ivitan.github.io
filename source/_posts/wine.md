@@ -8,8 +8,6 @@ tags:
 categories:
   - Linux
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
 Linux Wine
 <!--more-->

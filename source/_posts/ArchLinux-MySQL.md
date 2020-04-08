@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
 ArchLinux 库里有 MariaDb，所以用 MariaDB 来代替 MySql。
 <!--more-->

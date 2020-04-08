@@ -12,8 +12,6 @@ author:
   name: Vitan
 toc: true
 permalink: PythonWorldFrequency
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 Python 中英文词频统计，并制作词云。
 <!-- more -->

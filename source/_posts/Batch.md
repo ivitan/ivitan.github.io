@@ -7,9 +7,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Batch.png
 date: 2019-12-11 09:23:23
 ---
 > Batch 批量处理相关。

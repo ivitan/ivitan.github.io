@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLexam
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL 上机习题与练习
 <!--more-->

@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLview
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL视图
 <!--more-->

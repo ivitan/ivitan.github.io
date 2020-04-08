@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLtest
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL数据库原理练习题
 <!--more-->

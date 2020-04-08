@@ -7,7 +7,6 @@ tags:
 toc: true
 categories: Linux
 permalink: UbuntuJava
-thumbnail: /images/Ubuntu.png
 ---
 Ubuntu 安装并配置 java 环境
 <!--more-->

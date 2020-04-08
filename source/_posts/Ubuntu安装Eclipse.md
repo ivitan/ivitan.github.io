@@ -8,7 +8,6 @@ tags:
 toc: true
 categories: Linux
 permalink: UbuntuEclipse
-thumbnail: /images/Ubuntu.png
 ---
  Ubuntu 安装 Eclipse
 <!--more-->

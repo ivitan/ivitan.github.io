@@ -7,7 +7,6 @@ tags:
 - Termux
 categories: Diary
 toc: true
-thumbnail: /images/Note.png
 ---
 
 > BaiduPCS-Go 为仿 Linux shell文件处理命令的百度网盘命令行客户端

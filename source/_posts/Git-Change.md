@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Git.png
 ---
 Git 更换设备后怎么做
 <!--more-->

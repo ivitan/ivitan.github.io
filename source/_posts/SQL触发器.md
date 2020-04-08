@@ -6,7 +6,6 @@ tags:
 toc: true
 categories: Database
 permalink: SQLtrigger
-thumbnail: /images/SQL.png
 ---
 SQL触发器
 <!--more-->

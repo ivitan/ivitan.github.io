@@ -7,9 +7,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Batch.png
 date: 2019-12-13 10:24:56
 ---
 > Batch 计划任务

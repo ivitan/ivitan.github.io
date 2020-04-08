@@ -9,7 +9,6 @@ tags:
 toc: true
 permalink: HexoDevices
 categories: Diary
-thumbnail: /images/Hexo.png
 ---
 Hexo 多设备源码同步
 <!--more-->

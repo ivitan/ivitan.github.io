@@ -5,7 +5,6 @@ tags:
 - SQL
 toc: true
 categories: Database
-thumbnail: /images/SQL.png
 ---
 经典SQL语句大全
 <!--more-->

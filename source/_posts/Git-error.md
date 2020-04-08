@@ -7,7 +7,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Git.png
 ---
 git push用法和常见问题分析
 <!--more-->

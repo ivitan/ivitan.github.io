@@ -8,7 +8,6 @@ tags:
 toc: true
 permalink: GitGame
 categories: Diary
-thumbnail: /images/Git.png
 ---
 Git闯关游戏
 <!--more-->

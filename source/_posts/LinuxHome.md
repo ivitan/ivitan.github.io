@@ -8,8 +8,6 @@ tags:
 - Note
 categories: Linux
 toc: true
-thumbnail: /images/Linux.png
-enable_unread_badge: true
 ---
 Linux `Home` 硬盘空间缩减并添加到 `/`.
 <!--more-->

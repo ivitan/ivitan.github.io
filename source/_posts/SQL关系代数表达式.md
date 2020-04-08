@@ -6,7 +6,6 @@ tags:
 categories: Database
 permalink: SQLrelAlg
 toc: true
-thumbnail: /images/SQL.png
 ---
 关系代数是关系数据库系统查询语言的理论基础。很有必要学习一下，有些是用代数表达式很方便的东西，用SQL写出来还是挺麻烦的，并不是想象当中那么直接。
 <!--more-->

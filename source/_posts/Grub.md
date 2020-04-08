@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/ArchLinux.png
 ---
 添加 Win10 菜单到 Grub
 <!--more-->

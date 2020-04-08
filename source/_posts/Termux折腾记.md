@@ -7,7 +7,6 @@ tags:
 toc: true
 categories: Diary
 permalink: TermuxNote
-thumbnail: /images/Termux.png
 ---
 Termux oh-my-zsh 主题设置，去欢迎字等。
 <!--more-->

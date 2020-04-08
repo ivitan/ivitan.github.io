@@ -12,8 +12,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Python.png
 ---
 spyder3 No module named 'PyQt5.QtWebKitWidgets'
 <!--more-->

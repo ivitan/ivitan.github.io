@@ -6,8 +6,6 @@ tags:
 - ArchLinux
 categories: Linux
 toc: true
-thumbnail: /images/ArchLinux.png
-enable_unread_badge: true
 ---
 ArchLinux 安装记录
 <!--more-->

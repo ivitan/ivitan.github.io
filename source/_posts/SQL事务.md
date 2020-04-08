@@ -6,7 +6,6 @@ tags:
 toc: true
 permalink: SQLtransaction
 categories: Database
-thumbnail: /images/SQL.png
 ---
 SQL事务
 <!--more-->

@@ -9,8 +9,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/RaspberryPi.png
 ---
 Raspberry Pi 屏幕触控驱动安装及分辨率设置。
 <!--more-->

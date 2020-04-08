@@ -9,8 +9,6 @@ tags:
 - Win
 categories: Diary
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Eclipse.png
 ---
 Eclipse 常用快捷键
 <!--more-->

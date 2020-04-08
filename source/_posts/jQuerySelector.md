@@ -11,8 +11,6 @@ categories:
 author:
 name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/jQuery.png
 ---
 jQuery 选择器
 <!--more-->

@@ -11,8 +11,6 @@ author:
   name: Vitan
 toc: true
 permalink: LinuxAnds
-enable_unread_badge: true
-thumbnail: /images/Linux.png
 ---
 Linux 命令连接符
 <!--more-->

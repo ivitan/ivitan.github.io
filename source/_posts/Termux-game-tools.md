@@ -6,7 +6,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Termux.png
 mathjax: true
 ---
 分屏与游戏。

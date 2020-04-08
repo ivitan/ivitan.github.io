@@ -7,7 +7,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Hexo.png
 ---
 Hexo 同时部署到 Github Coding
 <!--more-->

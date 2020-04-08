@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Termux.png
 date: 2019-07-29 19:25:00
 ---
 Android 跨设备局域网共享文件

@@ -8,7 +8,6 @@ tags:
 - Win
 toc: true
 categories: Diary
-thumbnail: /images/Android.png
 ---
 Adb 与 Fastboot 常用命令
 <!--more-->

@@ -7,7 +7,6 @@ tags:
 - R
 toc: true
 categories: Diary
-thumbnail: /images/Termux.png
 ---
 Termux 安装 R
 <!--more-->

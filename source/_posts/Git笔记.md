@@ -8,7 +8,6 @@ tags:
 toc: true
 permalink: GitNote
 categories: Diary
-thumbnail: /images/Git.png
 ---
 Git 配置笔记。
 <!--more-->

@@ -8,7 +8,6 @@ tags:
 - Ubuntu
 toc: true
 categories: Coding
-thumbnail: /images/Vim.png
 ---
 Vim 设置默认中文并加行数
 <!--more-->

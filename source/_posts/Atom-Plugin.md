@@ -13,8 +13,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Atom.png
 ---
 Atom 插件
 <!--more-->

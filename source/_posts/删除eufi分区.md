@@ -9,8 +9,6 @@ tags:
 toc: true
 permalink: delLinuxEFI
 categories: Linux
-thumbnail: /images/Linux.png
-enable_unread_badge: true
 ---
 在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。
 <!--more-->

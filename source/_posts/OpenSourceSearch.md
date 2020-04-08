@@ -7,9 +7,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Github.png
 date: 2019-11-14 18:23:35
 ---
 Github 中高效寻找搜索开源项目

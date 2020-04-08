@@ -6,7 +6,6 @@ tags:
 - Ubuntu
 toc: true
 categories: Linux
-thumbnail: /images/Ubuntu.png
 ---
 Ununtu常用命令。
 <!--more-->

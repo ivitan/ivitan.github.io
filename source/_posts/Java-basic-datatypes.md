@@ -7,7 +7,6 @@ toc: true
 categories: 
  - Coding
  - Java
-thumbnail: /images/Java.png
 ---
 Java基本数据类型。
 <!--more-->

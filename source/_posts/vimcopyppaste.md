@@ -9,8 +9,6 @@ categories:
 author:
   - Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Vim.png
 ---
 > Vim 增删查改、复制捏贴、翻页和寄存器。
 > Vim 里剪切 (cut) 复制(copy) 粘贴(psate) 分别对应 delete/yank/put

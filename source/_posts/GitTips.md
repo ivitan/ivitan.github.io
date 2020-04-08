@@ -10,8 +10,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Git.png
 ---
 本文来源 [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
 <!--more-->

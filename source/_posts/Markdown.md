@@ -8,7 +8,6 @@ tags:
 - Termux
 toc: true
 categories: Diary
-thumbnail: /images/Markdown.png
 ---
  Markdown 语法.
  <!--more-->

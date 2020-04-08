@@ -8,7 +8,6 @@ tags:
 toc: true
 categories: Linux
 permalink: UbuntuAndroidStudio
-thumbnail: /images/Ubuntu.png
 ---
 
 Ubuntu安装Android Studio

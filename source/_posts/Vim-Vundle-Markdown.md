@@ -7,7 +7,6 @@ tags:
 - Win
 categories: Coding
 toc: true
-thumbnail: /images/Vim.png
 ---
 Vim 插件 主题
 <!--more-->

@@ -6,9 +6,7 @@ categories:
   - Coding
 author:
   - Vitan
-enable_unread_badge: true
 toc: true
-thumbnail: /images/Linux.png
 date: 2019-10-20 10:12:16
 ---
 HCNA 学习笔记

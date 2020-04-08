@@ -12,8 +12,6 @@ categories:
 author:
   name: Vitan
 toc: true
-enable_unread_badge: true
-thumbnail: /images/Termux.png
 ---
 Termux Puthon
 <!--more-->
