@@ -1,5 +1,5 @@
 ---
-title: WNMP 环境配置
+title: 配置 WNMP 环境
 tags:
   - Win
   - PHP
@@ -17,22 +17,22 @@ date: 2019-12-23 13:42:58
 https://github.com/ivitan/wnmp
 
 # WNMP 下载
-1. [Nginx](http://nginx.org/en/download.html)
-2. [PHP](http://windows.php.net/download/ )
-3. [MySQL](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip)
+- [Nginx](http://nginx.org/en/download.html)
+- [PHP](http://windows.php.net/download/ )
+- [MySQL](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-winx64.zip)
 
 <!--more-->
 
 # Nignx
-1. 解压 Nignx 到 D:\DevEnv\Nignx
-2. 运行 D:\DevEnv\Nignx 下的 nginx.exe
+1. 解压 Nignx 到 D:\WNMP\Nignx
+2. 运行 D:\WNMP\Nignx 下的 nginx.exe
 3. 打开浏览器访问 http://localhost 或 http://127.0.0.1
 
 ![nginx.png](https://i.loli.net/2019/12/23/TuIFyje98l4qXvi.png)
 
 4. 配置
 
-```bat D:\WNMP\Nignx\nginx.cof
+```nginxconf D:\WNMP\Nignx\nginx.cof
 #user  nobody;
 worker_processes  auto;
 
@@ -68,7 +68,7 @@ http {
 }
 ```
 
-```bash D:\WNMP\Nignx\conf\vhost\default.cof
+```nginxconf D:\WNMP\Nignx\conf\vhost\default.cof
 server {
     listen 80;
     server_name localhost;
@@ -88,23 +88,23 @@ server {
 ```
 
 ## 常用命令
-```bat
-nginx -s stop	快速关闭Nginx
-nginx -s quit	优雅的关闭Nginx
+```nginx
+nginx -s stop	快速关闭 Nginx
+nginx -s quit	优雅的关闭 Nginx
 nginx -s reload 更改配置，使用新配置启动新工作进程，正常关闭旧工作进程
 nginx -s reopen 重新打开日志文件
 ```
 # MySQL
 ## 配置
-```bash %mysql%\my.ini
+```ini %mysql%\my.ini
 [mysqld]
 character-set-server=utf8
 #绑定IPv4和3306端口
 port = 3306
 # 设置mysql的安装目录
-basedir=D:/WorkPlace/WNMP/mysql
+basedir=D:/WNMP/mysql
 # 设置mysql数据库的数据的存放目录
-datadir=D:/WorkPlace/WNMP/mysql/data
+datadir=D:/WNMP/mysql/data
 # 允许最大连接数
 max_connections=2000
 # skip_grant_tables
@@ -133,7 +133,7 @@ mysqld --initialize-insecure --user=mysql
 - 执行命令后系统会自动生成相应的 data 目录，并自动创建好空密码的 root 用户。
 
 ## 启动mysql服务
-```cmd
+```bat
 net start mysql
 ```
 ## 进行密码设定
@@ -147,10 +147,10 @@ password: # OldPassword
 - 系统很久没响应，然后报错（10060）。 原因：mysql没有通过windows防火墙 解决方法：将 D:\mysql\bin\mysqld.exe 添加到windows防火墙允许通过的应用中。
 
 # PHP
-1. 解压 PHP 到 D:\DevEnv\PHP
-2. 修改配置，将 D:\PHP\php.ini-development 改为 php.ini,取消下面注释
+1. 解压 PHP 到 D:\WNMP\PHP
+2. 修改配置，将 D:\WNMP\PHP\php.ini-development 改为 php.ini,取消下面注释
 
-```bat D:\PHP\php.ini
+```yml D:\WNMP\PHP\php.ini
 ;extension=mysql
 ;extension=mysqli
 ;enable_dl = Off，改为 enable_dl = On
@@ -164,18 +164,20 @@ password: # OldPassword
 
 去 `;` 再修改
 
-```bat
+```yml
 ;extension_dir = "ext" 改为 extension_dir = "D:\wnmp\php\ext"
 ;date.timezone = 改为date.timezone = Asia/Shanghai
 ;cgi.force_redirect = 1 改为cgi.force_redirect = 0
 ;cgi.rfc2616_headers = 0 改为 cgi.rfc2616_headers = 1
 ```
 3. 配置 PHP，使其能与 Nginx 配合，取消下面的注释
-```bat
+
+```yml
 ;cgi.fix_pathinfo=1
 ```
 
 4. 启动PHP
+
 ```bat
 D:\WNMP\php\php-cli.exe -b 127.0.1.1:9000 -c D:\WNMP\php\php.ini
 ```
@@ -186,11 +188,11 @@ https://github.com/ivitan/wnmp/blob/master/php/php-7.2.25/php.ini
 # 脚本
 ## 环境变量
 环境变量Path里面增加 MySQL、Nginx、PHP 执行文件的路径
-```cmd
+```bat
 ;D:\wnmp\mysql\bin;D:\wnmp\nginx;D:\wnmp\php;
 ```
 ## 启动 WNMP
-```cmd stat.bat
+```bat stat.bat
 @echo off
 set base_path=%cd%
 set nginx_path=%base_path%\nginx
@@ -208,12 +210,12 @@ RunHiddenConsole %mysql_path%\bin\mysqld --defaults-file=%mysql_path%\my.ini --p
 
 echo please open http://127.0.0.1 ...
 ping -n 3 127.0.0.1 > nul
-start chrome  "design.vitan.me"
+start chrome  "dev.vitan.me"
 exit
 ```
 
 ## 重启 WNMP
-```cmd
+```bat
 @echo off
 echo Stopping Nginx...
 taskkill /F /IM nginx.exe > nul
@@ -237,12 +239,12 @@ echo Starting MySql...
 RunHiddenConsole %mysql_path%\bin\mysqld --defaults-file=%mysql_path%\my.ini --port=3306
 echo please open http://127.0.0.1 ...
 ping -n 3 127.0.0.1 > nul
-start chrome  "design.vitan.me"
+start chrome  "dev.vitan.me"
 exit
 ```
 
 ## 关闭 WNMP
-```cmd
+```bat
 @echo off
 set base_path=%cd%
 set nginx_path=%base_path%\nginx
@@ -269,7 +271,7 @@ exit
 
 ```php D:\WNMP\www
 <?php
-	phpinfo();	
+phpinfo();
 ?>
 ```
 浏览器访问 http://localhost/phpinfo.php
@@ -277,11 +279,11 @@ exit
 - 测试 Mysql
 
 ```php D:\WNMP\www
-<?php 
-	if (mysqli_connect("localhost","root","root")) {
-		echo "Mysql connect successful！";
-	}else{
-		echo "Mysql connect error...";
-	}
- ?>
+<?php
+if (mysqli_connect("localhost", "root", "root")) {
+    echo "Mysql connect successful！";
+} else {
+    echo "Mysql connect error...";
+}
+?>
 ```

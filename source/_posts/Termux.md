@@ -1,6 +1,6 @@
 ---
 title: Termux
-top: 102
+top: 101
 date: 2018-06-25 07:52:16
 tags:
   - Termux
@@ -11,10 +11,11 @@ categories: Diary
 ---
 > [Termux](https://wiki.termux.com/wiki/Main_Page) 是一个 Android 下一个高级的终端模拟器, 开源且不需要 root, 支持 apt 管理软件包，十分方便安装软件包, 完美支持 Python PHP Ruby Go Nodejs MySQL 等。
 
-# 部署脚本
+# 一键部署脚本
 ```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)"
 ```
+<!--more-->
 
 # 命令
 ## 基本命令
@@ -31,7 +32,6 @@ pkg list-installed  #列出已经安装的包
 pkg shoe <package>  #显示某个包的详细信息
 pkg files <package>  #显示某个包的
 ```
-<!--more-->
 
 ## 安装 *.deb 文件
 

@@ -1,5 +1,5 @@
 ---
-title: Highlight.js Markdown 对照表
+title: Highlight.Js Markdown 对照表
 tags:
   - Linux
   - Win
