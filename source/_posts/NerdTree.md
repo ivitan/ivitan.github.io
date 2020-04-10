@@ -1,5 +1,5 @@
 ---
-title: VIm NerdTree 插件
+title: Vim NerdTree 插件
 tags:
   - Linux
   - Android

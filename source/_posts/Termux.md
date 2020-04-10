@@ -1,5 +1,5 @@
 ---
-title: Termux
+title: Termux 高级终端使用配置
 top: 101
 date: 2018-06-25 07:52:16
 tags:
