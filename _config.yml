@@ -9,13 +9,13 @@ description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
 author: Vitan
 author_link: https://vitan.me
-language: 
+language:
   - zh-CN
   - zh-TW
   - en
   - ja
   - nl-NL
-  
+
 timezone: Asia/Shanghai
 
 # URL
@@ -50,12 +50,12 @@ highlight:
   enable: true
   line_number: true
   auto_detect: true
-  tab_replace: ''
+  tab_replace: ""
 
 # Category & Tag
 default_category: uncategorized
 category_map:
-tag_map:  
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
