@@ -18,6 +18,12 @@ language:
 
 timezone: Asia/Shanghai
 
+# Sitemap
+sitemap:
+  path: /xml/sitemap.xml
+baidusitemap:
+  path: /xml/bdmap.xml
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://vitan.me
