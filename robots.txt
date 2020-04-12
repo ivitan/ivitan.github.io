@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /categories/
+Allow: /archives/
+Allow: /about/
+Allow: /tags/
+
+Disallow: /fancybox/
+Disallow: /vendors/
+Disallow: /fonts/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://vitan.me/xml/sitemap.xml
+Sitemap: https://vitan.me/xml/bdmap.xml
