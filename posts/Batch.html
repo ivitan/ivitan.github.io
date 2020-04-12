@@ -3,12 +3,15 @@
 <head>
     
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-144334903-1', 'auto');
-ga('send', 'pageview');
+    window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-144334903-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
     
     
@@ -45,11 +48,15 @@ ga('send', 'pageview');
 <meta property="article:tag" content="Batch">
 <meta name="twitter:card" content="summary">
     
-        <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog" href="/xml/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="Vitan&#39;s Blog"
+        href="/xml/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
-    <script>window.lazyScripts=[]</script>
+    <script>
+        window.lazyScripts = []
+
+    </script>
 
     <!-- custom head -->
     
@@ -60,76 +67,76 @@ ga('send', 'pageview');
     <div id="loading" class="active"></div>
 
     <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.png)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/ivitan.png">
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
         </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Vitan</h5>
-          <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
-        </hgroup>
-      </div>
+        <div class="brand-wrap" style="background-image:url(/img/brand.png)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/ivitan.png">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">Vitan</h5>
+                    <a href="mailto:admin@vitan.me" title="admin@vitan.me" class="mail">admin@vitan.me</a>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+                
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        主页
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/tags" >
+                        <i class="icon icon-lg icon-tags"></i>
+                        标签
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/categories" >
+                        <i class="icon icon-lg icon-th-list"></i>
+                        分类
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/archives" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        归档
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="/about" >
+                        <i class="icon icon-lg icon-info-circle"></i>
+                        关于
+                    </a>
+                </li>
+                
+                <li class="waves-block waves-effect">
+                    <a href="https://github.com/ivitan" target="_blank" >
+                        <i class="icon icon-lg icon-github"></i>
+                        Github
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                分类
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                归档
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/about"  >
-                <i class="icon icon-lg icon-info-circle"></i>
-                关于
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/ivitan" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-      </ul>
-    </div>
-  </div>
 </aside>
 
     <main id="main">
         <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
+            <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">Batch</div>
         
@@ -137,7 +144,8 @@ ga('send', 'pageview');
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off"
+                placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -145,9 +153,10 @@ ga('send', 'pageview');
         
         
         
-            <a href="https://github.com/ivitan" class="header-icon waves-effect waves-circle waves-light" target="_blank" title="Github">
-                <i class="icon icon-lg icon-github"></i>
-            </a>
+        <a href="https://github.com/ivitan" class="header-icon waves-effect waves-circle waves-light" target="_blank"
+            title="Github">
+            <i class="icon icon-lg icon-github"></i>
+        </a>
         
     </div>
 </header>
@@ -158,11 +167,12 @@ ga('send', 'pageview');
         <h5 class="subtitle">
             
             <time datetime="2019-12-11T01:23:23.000Z" itemprop="datePublished" class="page-time">
-  2019-12-11
+    2019-12-11
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+
 
             
         </h5>
@@ -173,28 +183,28 @@ ga('send', 'pageview');
 
 </header>
 
-
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dp0-获取当前路径"><span class="post-toc-number">1.</span> <span class="post-toc-text">%~dp0[获取当前路径]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cd-执行的路径"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">%cd%[执行的路径]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#taskill"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">taskill</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取命令帮助-xxx"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">获取命令帮助 xxx &#x2F;?</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看内置命令帮助信息"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">查看内置命令帮助信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他常用的命令"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">其他常用的命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础语法"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础语法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参数"><span class="post-toc-number">4.</span> <span class="post-toc-text">参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统参数"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">系统参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传递参数给批处理文件"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">传递参数给批处理文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#批处理基本命令"><span class="post-toc-number">5.</span> <span class="post-toc-text">批处理基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#help-命令"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">help 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Echo-命令"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Echo 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">@ 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Goto-命令"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Goto 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Rem-命令"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Rem 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pause-命令"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">Pause 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Call-命令"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">Call 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Start-命令"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">Start 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#If-命令"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">If 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#If-exist"><span class="post-toc-number">5.9.1.</span> <span class="post-toc-text">If exist</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#If-errorlevel-number"><span class="post-toc-number">5.9.2.</span> <span class="post-toc-text">If errorlevel number</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Else"><span class="post-toc-number">5.9.3.</span> <span class="post-toc-text">Else</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较运算符"><span class="post-toc-number">5.9.4.</span> <span class="post-toc-text">比较运算符:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Choice-命令"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">Choice 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#For-命令"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">For 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果命令扩展名被启用，额外的-FOR-命令格式会受到支持"><span class="post-toc-number">5.11.1.</span> <span class="post-toc-text">如果命令扩展名被启用，额外的 FOR 命令格式会受到支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#continue-和-break"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">continue 和 break</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其它命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">其它命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ping-命令"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">ping 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#telnet-命令"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">telnet 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#color-命令"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">color 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#random-命令"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">random 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#exit-命令"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">exit 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shutdown命令"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">shutdown命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串处理"><span class="post-toc-number">7.</span> <span class="post-toc-text">字符串处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分割字符串，以查看时间为例"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">分割字符串，以查看时间为例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换字符串"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">替换字符串</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串合并"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">字符串合并</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算字符串长度"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">计算字符串长度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截取字符串时，需要传递参数"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">截取字符串时，需要传递参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注册表操作"><span class="post-toc-number">8.</span> <span class="post-toc-text">注册表操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#备份注册表"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">备份注册表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改-添加注册表内容"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">修改&#x2F;添加注册表内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用变量"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">使用变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注册表的名称有空格，或者数据用特殊符号时"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">注册表的名称有空格，或者数据用特殊符号时</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加空的内容"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">增加空的内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加或修改默认值"><span class="post-toc-number">8.6.</span> <span class="post-toc-text">添加或修改默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除注册表的内容"><span class="post-toc-number">8.7.</span> <span class="post-toc-text">删除注册表的内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注册表的常用位置"><span class="post-toc-number">8.8.</span> <span class="post-toc-text">注册表的常用位置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统环境变量："><span class="post-toc-number">8.9.</span> <span class="post-toc-text">系统环境变量：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#当前用户的环境变量："><span class="post-toc-number">8.10.</span> <span class="post-toc-text">当前用户的环境变量：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷新注册表"><span class="post-toc-number">8.11.</span> <span class="post-toc-text">刷新注册表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统服务"><span class="post-toc-number">9.</span> <span class="post-toc-text">系统服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止-启动"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">停止&#x2F;启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置启动类型"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">设置启动类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看系统服务："><span class="post-toc-number">9.3.</span> <span class="post-toc-text">查看系统服务：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#setlocal与变量延迟"><span class="post-toc-number">10.</span> <span class="post-toc-text">setlocal与变量延迟</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件处理"><span class="post-toc-number">11.</span> <span class="post-toc-text">文件处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建目录"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">创建目录</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实践部分"><span class="post-toc-number">12.</span> <span class="post-toc-text">实践部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实例"><span class="post-toc-number">13.</span> <span class="post-toc-text">实例</span></a></li></ol>
-        </nav>
-    </aside>
+<aside class="post-widget">
+    <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dp0-获取当前路径"><span class="post-toc-number">1.</span> <span class="post-toc-text">%~dp0[获取当前路径]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cd-执行的路径"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">%cd%[执行的路径]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#taskill"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">taskill</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取命令帮助-xxx"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">获取命令帮助 xxx &#x2F;?</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看内置命令帮助信息"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">查看内置命令帮助信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他常用的命令"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">其他常用的命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础语法"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础语法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参数"><span class="post-toc-number">4.</span> <span class="post-toc-text">参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统参数"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">系统参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传递参数给批处理文件"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">传递参数给批处理文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#批处理基本命令"><span class="post-toc-number">5.</span> <span class="post-toc-text">批处理基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#help-命令"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">help 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Echo-命令"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Echo 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">@ 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Goto-命令"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Goto 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Rem-命令"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Rem 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pause-命令"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">Pause 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Call-命令"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">Call 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Start-命令"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">Start 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#If-命令"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">If 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#If-exist"><span class="post-toc-number">5.9.1.</span> <span class="post-toc-text">If exist</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#If-errorlevel-number"><span class="post-toc-number">5.9.2.</span> <span class="post-toc-text">If errorlevel number</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Else"><span class="post-toc-number">5.9.3.</span> <span class="post-toc-text">Else</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较运算符"><span class="post-toc-number">5.9.4.</span> <span class="post-toc-text">比较运算符:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Choice-命令"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">Choice 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#For-命令"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">For 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果命令扩展名被启用，额外的-FOR-命令格式会受到支持"><span class="post-toc-number">5.11.1.</span> <span class="post-toc-text">如果命令扩展名被启用，额外的 FOR 命令格式会受到支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#continue-和-break"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">continue 和 break</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其它命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">其它命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ping-命令"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">ping 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#telnet-命令"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">telnet 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#color-命令"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">color 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#random-命令"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">random 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#exit-命令"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">exit 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shutdown命令"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">shutdown命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串处理"><span class="post-toc-number">7.</span> <span class="post-toc-text">字符串处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分割字符串，以查看时间为例"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">分割字符串，以查看时间为例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#替换字符串"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">替换字符串</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串合并"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">字符串合并</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算字符串长度"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">计算字符串长度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截取字符串时，需要传递参数"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">截取字符串时，需要传递参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注册表操作"><span class="post-toc-number">8.</span> <span class="post-toc-text">注册表操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#备份注册表"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">备份注册表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改-添加注册表内容"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">修改&#x2F;添加注册表内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用变量"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">使用变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注册表的名称有空格，或者数据用特殊符号时"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">注册表的名称有空格，或者数据用特殊符号时</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加空的内容"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">增加空的内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加或修改默认值"><span class="post-toc-number">8.6.</span> <span class="post-toc-text">添加或修改默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除注册表的内容"><span class="post-toc-number">8.7.</span> <span class="post-toc-text">删除注册表的内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注册表的常用位置"><span class="post-toc-number">8.8.</span> <span class="post-toc-text">注册表的常用位置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统环境变量："><span class="post-toc-number">8.9.</span> <span class="post-toc-text">系统环境变量：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#当前用户的环境变量："><span class="post-toc-number">8.10.</span> <span class="post-toc-text">当前用户的环境变量：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷新注册表"><span class="post-toc-number">8.11.</span> <span class="post-toc-text">刷新注册表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统服务"><span class="post-toc-number">9.</span> <span class="post-toc-text">系统服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止-启动"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">停止&#x2F;启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置启动类型"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">设置启动类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看系统服务："><span class="post-toc-number">9.3.</span> <span class="post-toc-text">查看系统服务：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#setlocal与变量延迟"><span class="post-toc-number">10.</span> <span class="post-toc-text">setlocal与变量延迟</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件处理"><span class="post-toc-number">11.</span> <span class="post-toc-text">文件处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建目录"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">创建目录</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实践部分"><span class="post-toc-number">12.</span> <span class="post-toc-text">实践部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实例"><span class="post-toc-number">13.</span> <span class="post-toc-text">实例</span></a></li></ol>
+    </nav>
+</aside>
 
 
-<article id="post-Batch"
-  class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Batch" class="post-article article-type-post fade"
+    itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Batch</h1>
         <div class="post-meta">
+            
             <time class="post-time" title="2019-12-11 09:23:23" datetime="2019-12-11T01:23:23.000Z"  itemprop="datePublished"><i class="icon icon-calendar"></i> 2019-12-11</time>
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
+<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
 
-               
+
             
 <span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
@@ -671,7 +681,8 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-08T12:38:30.000Z" itemprop="dateUpdated">2020-04-08 20:38:30</time>
+    最后更新时间：<time datetime="2020-04-08T12:38:30.000Z"
+        itemprop="dateUpdated">2020-04-08 20:38:30</time>
 </span><br>
 
 
@@ -687,7 +698,6 @@ ga('send', 'pageview');
         </a>
     </footer>
 </blockquote>
-
         
 <div class="page-reward">
     <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
@@ -697,36 +707,34 @@ ga('send', 'pageview');
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Batch/" rel="tag">Batch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Batch/" rel="tag">Batch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win/" rel="tag">Win</a></li></ul>
 
 
             
-
 
         </div>
     </div>
 
     
 <nav class="post-nav flex-row flex-justify-between">
-  
+    
     <div class="waves-block waves-effect prev">
-      <a href="/posts/WinTask.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Batch 计划任务</h4>
-      </a>
+        <a href="/posts/WinTask.html" id="post-prev" class="post-nav-link">
+            <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+            <h4 class="title">Batch 计划任务</h4>
+        </a>
     </div>
-  
+    
 
-  
+    
     <div class="waves-block waves-effect next">
-      <a href="/posts/OpenSourceSearch.html" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">如何高效寻找开源项目</h4>
-      </a>
+        <a href="/posts/OpenSourceSearch.html" id="post-next" class="post-nav-link">
+            <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+            <h4 class="title">如何高效寻找开源项目</h4>
+        </a>
     </div>
-  
+    
 </nav>
-
 
 
     
@@ -741,29 +749,31 @@ ga('send', 'pageview');
 
 
 
-    <!-- Valine Comments -->
-    <div class="comments vcomment" id="comments"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-    <!-- Valine Comments script -->
-    <script>
-        var GUEST_INFO = ['nick','mail','link'];
-        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-          return GUEST_INFO.indexOf(item) > -1
-        });
-        new Valine({
-            el: '#comments',
-            notify: 'ture' == 'true',
-            verify: 'false' == 'true',
-            appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
-            appKey: "rG3tgBLm6WGpoU2895oVKXVU",
-            avatar: "wavatar",
-            placeholder: "Write a comment here.",
-            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
-            pageSize: "10"
-        })
-    </script>
-    <!-- Valine Comments end -->
+<!-- Valine Comments -->
+<div class="comments vcomment" id="comments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<!-- Valine Comments script -->
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    new Valine({
+        el: '#comments',
+        notify: 'ture' == 'true',
+        verify: 'false' == 'true',
+        appId: "XCjYQPc9kGEIiyvI3z87u597-gzGzoHsz",
+        appKey: "rG3tgBLm6WGpoU2895oVKXVU",
+        avatar: "wavatar",
+        placeholder: "Write a comment here.",
+        guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+        pageSize: "10"
+    })
+
+</script>
+<!-- Valine Comments end -->
+
 
 
 
@@ -790,8 +800,8 @@ ga('send', 'pageview');
         </div>
         
         <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png"
+                data-alipay="/img/alipay.png">
             <div class="reward-toggle-ctrol">
                 <span class="reward-toggle-item wechat">微信</span>
                 <span class="reward-toggle-label"></span>
@@ -824,24 +834,28 @@ ga('send', 'pageview');
 
         <p>
             
-                <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span><a href="/xml/atom.xml" target="_blank" class="rss" title="rss"><i
+                        class="icon icon-lg icon-rss"></i></a></span>
             
             <span>内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议</a></span>
         </p>
     </div>
     <div class="bottom">
-        <p><span>Vitan &copy; 2017 - 2020</span>
+        <p><span>Vitan &copy;
+                2017 -
+                2020</span>
             <span>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a
+                    href="https://github.com/ivitan/indigo" target="_blank">indigo</a>
             </span>
         </p>
     </div>
 </footer>
-
     </main>
     <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span
+        class="icon icon-lg icon-chevron-up"></span></a>
 
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
@@ -853,22 +867,21 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
 
 <script src="/js/main.min.js?v=1.7.2"></script>
 
-
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
 <template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
+    <li class="item">
+        <a href="{path}" class="waves-block waves-effect">
+            <div class="title ellipsis" title="{title}">{title}</div>
+            <div class="flex-row flex-middle">
+                <div class="tags ellipsis">
+                    {tags}
+                </div>
+                <time class="flex-col time">{date}</time>
             </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
+        </a>
+    </li>
 </template>
 
 <script src="/js/search.min.js?v=1.7.2" async></script>

@@ -16,7 +16,7 @@
         forEach = Array.prototype.forEach,
         even = ('ontouchstart' in w && /Mobile|Android|iOS|iPhone|iPad|iPod|Windows Phone|KFAPWI/i.test(navigator.userAgent)) ? 'touchstart' : 'click',
         isWX = /micromessenger/i.test(navigator.userAgent),
-        noop = function () { },
+        noop = function () {},
         offset = function (el) {
             var x = el.offsetLeft,
                 y = el.offsetTop;
@@ -32,7 +32,7 @@
                 y: y
             };
         },
-        rootScollTop = function() {
+        rootScollTop = function () {
             return d.documentElement.scrollTop || d.body.scrollTop;
         };
 
@@ -119,7 +119,7 @@
             }
             var firstChild =
                 toc.querySelector('a[href="#' + titles[0].id + '"]')
-                    .nextElementSibling;
+                .nextElementSibling;
             if (firstChild) {
                 firstChild.classList.add('post-toc-expand');
                 firstChild.classList.remove('post-toc-shrink');
@@ -461,7 +461,7 @@
 
     var ignoreUnload = false;
     var $mailTarget = $('a[href^="mailto"]');
-    if($mailTarget) {
+    if ($mailTarget) {
         $mailTarget.addEventListener(even, function () {
             ignoreUnload = true;
         });
