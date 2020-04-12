@@ -3,7 +3,7 @@ Allow: /
 Allow: /categories/
 Allow: /archives/
 Allow: /about/
-Allow：/posts/
+Allow: /posts/
 Allow: /tags/
 
 Disallow: /fancybox/
