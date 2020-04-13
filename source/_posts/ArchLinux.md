@@ -60,10 +60,10 @@ vim /etc/pacman.d/mirrorlist
 
 |分区|大小|类型|
 |:---|:---|:---|
-|boot  | 512M | EFI 系统         |
+|boot  | 512M | EFI System        |
 |swap  | 8G   | Linux Swap      |
-| /    | 75G  | linuxfilesystem |
-| home | 65G  | linuxfilesystem |
+| /    | 75G  | Linux filesystem |
+| home | 65G  | Linux Homme |
 
 ### 查看启动模式
 ```sh
@@ -115,8 +115,8 @@ mount /dev/sdb1 /mnt/boot #将boot分区挂载在刚创建的/mnt/boot目录
 mount /dev/sdb3 /mnt # /分区
 mkdir /mnt/home
 mount /dev/sdb4 /mnt/home # home 分区
-mkdir -p /mnt/boot/efi
-mount /dev/sdb1 /mnt/boot/efi # EFI 分区
+mkdir -p /mnt/boot
+mount /dev/sdb1 /mnt/boot # EFI 分区
 ```
 
 ## 安装基本操作系统
@@ -170,7 +170,7 @@ hwclock --systohc
 ```
 
 ## 语言设置
-`vim/etc/locale.gen` 反注释 `en_US.UTF-8` 和 `zh_CN.UTF-8`
+`vim /etc/locale.gen` 反注释 `en_US.UTF-8` 和 `zh_CN.UTF-8`
 ```sh
 #生成 locale
 locale-gen 
@@ -248,7 +248,7 @@ pacman -S amd-ucode
 ### UEFI 引导
 ```sh
 pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 ### BIOS 引导
@@ -274,7 +274,7 @@ systemctl enable dhcpcd
 
 无线连接
 ```sh
-pacman -S iw wpa_supplicant dialog
+pacman -S iw wpa_supplicant dialog netctl
 ```
 
 ADSL 宽带连接
@@ -293,7 +293,7 @@ ip link
 ```
 发现名称是ens33的网卡state 是down状态
 ```sh
-ip link set ens33 up(ifconfig ens33 up 也可以)
+ip link set ens33 up # ifconfig ens33 up
 ```
 
 # 安装桌面环境
