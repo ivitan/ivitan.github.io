@@ -42,7 +42,7 @@
 <meta property="og:description" content="ArchLinux 安装及优化配置。  准备镜像下载 ISO 并使用 Rufus 或其他工具烧录镜像制作启动盘。Linux 下推荐用 DD 模式,开机选择烧录好的U盘进行引导进入安装。 1dd bs&#x3D;4M if&#x3D;&#x2F;home&#x2F;download&#x2F;archlinux.iso of&#x3D;&#x2F;dev&#x2F;sdX  status&#x3D;progress &amp;&amp; sync">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-27T01:08:49.000Z">
-<meta property="article:modified_time" content="2020-04-09T14:20:52.000Z">
+<meta property="article:modified_time" content="2020-04-13T05:31:54.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="ArchLinux">
@@ -261,7 +261,7 @@
 <tbody><tr>
 <td align="left">boot</td>
 <td align="left">512M</td>
-<td align="left">EFI 系统</td>
+<td align="left">EFI System</td>
 </tr>
 <tr>
 <td align="left">swap</td>
@@ -271,12 +271,12 @@
 <tr>
 <td align="left">/</td>
 <td align="left">75G</td>
-<td align="left">linuxfilesystem</td>
+<td align="left">Linux filesystem</td>
 </tr>
 <tr>
 <td align="left">home</td>
 <td align="left">65G</td>
-<td align="left">linuxfilesystem</td>
+<td align="left">Linux Homme</td>
 </tr>
 </tbody></table>
 <h3 id="查看启动模式"><a href="#查看启动模式" class="headerlink" title="查看启动模式"></a>查看启动模式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
@@ -289,7 +289,7 @@
 
 <h2 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h2><h3 id="BIOS-引导"><a href="#BIOS-引导" class="headerlink" title="BIOS 引导"></a>BIOS 引导</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb3 /mnt <span class="comment"># 根分区挂载到 /mnt 目录</span></span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/sdb4 /mnt/home <span class="comment"># home 分区</span></span><br><span class="line">mkdir /mnt/boot <span class="comment"># 在 /mnt 目录下新建 boot目录</span></span><br><span class="line">mount /dev/sdb1 /mnt/boot <span class="comment">#将boot分区挂载在刚创建的/mnt/boot目录</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="UEFI-引导"><a href="#UEFI-引导" class="headerlink" title="UEFI 引导"></a>UEFI 引导</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb3 /mnt <span class="comment"># /分区</span></span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/sdb4 /mnt/home <span class="comment"># home 分区</span></span><br><span class="line">mkdir -p /mnt/boot/efi</span><br><span class="line">mount /dev/sdb1 /mnt/boot/efi <span class="comment"># EFI 分区</span></span><br></pre></td></tr></table></figure>
+<h3 id="UEFI-引导"><a href="#UEFI-引导" class="headerlink" title="UEFI 引导"></a>UEFI 引导</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb3 /mnt <span class="comment"># /分区</span></span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/sdb4 /mnt/home <span class="comment"># home 分区</span></span><br><span class="line">mkdir -p /mnt/boot</span><br><span class="line">mount /dev/sdb1 /mnt/boot <span class="comment"># EFI 分区</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="安装基本操作系统"><a href="#安装基本操作系统" class="headerlink" title="安装基本操作系统"></a>安装基本操作系统</h2><h3 id="配置软件源"><a href="#配置软件源" class="headerlink" title="配置软件源"></a>配置软件源</h3><p>将清华源移到第一行</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
@@ -315,7 +315,7 @@
 
 <h3 id="硬件时间"><a href="#硬件时间" class="headerlink" title="硬件时间"></a>硬件时间</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
 
-<h2 id="语言设置"><a href="#语言设置" class="headerlink" title="语言设置"></a>语言设置</h2><p><code>vim/etc/locale.gen</code> 反注释 <code>en_US.UTF-8</code> 和 <code>zh_CN.UTF-8</code></p>
+<h2 id="语言设置"><a href="#语言设置" class="headerlink" title="语言设置"></a>语言设置</h2><p><code>vim /etc/locale.gen</code> 反注释 <code>en_US.UTF-8</code> 和 <code>zh_CN.UTF-8</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成 locale</span></span><br><span class="line">locale-gen </span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 locale.conf</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'LANG=zh_CN.UTF-8'</span>  &gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
 
 <h2 id="无线网络"><a href="#无线网络" class="headerlink" title="无线网络"></a>无线网络</h2><p>安装相关包</p>
@@ -357,7 +357,7 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S amd-ucode</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装引导程序（不能漏）"><a href="#安装引导程序（不能漏）" class="headerlink" title="安装引导程序（不能漏）"></a>安装引导程序（不能漏）</h2><h3 id="UEFI-引导-1"><a href="#UEFI-引导-1" class="headerlink" title="UEFI 引导"></a>UEFI 引导</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<h2 id="安装引导程序（不能漏）"><a href="#安装引导程序（不能漏）" class="headerlink" title="安装引导程序（不能漏）"></a>安装引导程序（不能漏）</h2><h3 id="UEFI-引导-1"><a href="#UEFI-引导-1" class="headerlink" title="UEFI 引导"></a>UEFI 引导</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 <h3 id="BIOS-引导-1"><a href="#BIOS-引导-1" class="headerlink" title="BIOS 引导"></a>BIOS 引导</h3><p>注意第二条命令是安装系统的盘符，若安装在 /dev/sdb 就填 /dev/sdb，后不跟数数字</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub</span><br><span class="line">grub-install /dev/sdb</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
 
@@ -367,7 +367,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> dhcpcd</span><br></pre></td></tr></table></figure>
 
 <p>无线连接</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S iw wpa_supplicant dialog</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S iw wpa_supplicant dialog netctl</span><br></pre></td></tr></table></figure>
 
 <p>ADSL 宽带连接</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S rp-pppoe<span class="comment"># pppoe-setup</span></span><br></pre></td></tr></table></figure>
@@ -377,7 +377,7 @@
 <p>继续输入</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link</span><br></pre></td></tr></table></figure>
 <p>发现名称是ens33的网卡state 是down状态</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link <span class="built_in">set</span> ens33 up(ifconfig ens33 up 也可以)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link <span class="built_in">set</span> ens33 up <span class="comment"># ifconfig ens33 up</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="安装桌面环境"><a href="#安装桌面环境" class="headerlink" title="安装桌面环境"></a>安装桌面环境</h1><h2 id="Gnome-桌面"><a href="#Gnome-桌面" class="headerlink" title="Gnome 桌面"></a>Gnome 桌面</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gnome <span class="comment">#gnome桌面：</span></span><br><span class="line">sudo pacman -S gnome-tweak-tool <span class="comment">#安装gnome桌面优化工具</span></span><br><span class="line">sudo pacman -S alacarte <span class="comment"># 安装gnome桌面菜单编辑器</span></span><br><span class="line">systemctl <span class="built_in">enable</span> gdm <span class="comment">#启用gnome窗口管理器服务</span></span><br><span class="line">systemctl <span class="built_in">enable</span> NetworkManager <span class="comment"># 启用网络管理器服务</span></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
@@ -500,8 +500,8 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-09T14:20:52.000Z"
-        itemprop="dateUpdated">2020-04-09 22:20:52</time>
+    最后更新时间：<time datetime="2020-04-13T05:31:54.000Z"
+        itemprop="dateUpdated">2020-04-13 13:31:54</time>
 </span><br>
 
 
