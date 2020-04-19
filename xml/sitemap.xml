@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/about/index.html</loc>
+    
+    <lastmod>2020-04-19T10:02:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/ArchLinux.html</loc>
     
     <lastmod>2020-04-13T05:31:54.000Z</lastmod>
@@ -1279,13 +1286,6 @@
     <loc>https://vitan.me/404.html</loc>
     
     <lastmod>2020-04-01T12:15:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/about/index.html</loc>
-    
-    <lastmod>2020-03-06T07:23:38.000Z</lastmod>
     
   </url>
   
