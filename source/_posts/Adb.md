@@ -114,17 +114,21 @@ Via: [Android 分区](https://segmentfault.com/a/1190000021601415)
 |odm|用于ODM自定义自己的板级支持包。Android 10 开始支持该分区。odm分区是对vendor分区的扩展，必须同时升级这两个分区|
 
 ## 常用 Fastboot 命令
-- 刷入临时 TWRP
+### 注意
 
-```shell bootloader 下
+A/B 分区设备无 Recovery 分区,不能使用 `fastboot flash recovery`
+
+### 刷入临时 TWRP
+
+```sh bootloader 下
 fastboot boot twrp.img
 ```
 
-- 输入镜像
+### 输入镜像
 
-```shell
+```sh
+fastboot flash recovery recovery.img
 fastboot flash system system.img
 fastboot flash boot boot.img
-fastboot flash recovery recovery.img
 fastboot reboot
 ```

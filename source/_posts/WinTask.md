@@ -375,7 +375,7 @@ schtasks /change /tn TaskName [/s computer [/u [domain\]user /p password]] [/tr 
 ```
 
 |参数|含义|
-|:---:|:---:|
+|:---|:---|
 |`/tn TaskName`| 标识要更改的任务。输入任务名|
 |`/s Computer`| 指定远程计算机的名称或 IP 地址（带有或者没有反斜杠）。默认值是本地计算机|
 |`/u [domain\]user`| 使用特定用户帐户的权限运行命令。默认情况下，使用已登录到运行 SchTasks 的计算机上的用户的权限运行命令|
