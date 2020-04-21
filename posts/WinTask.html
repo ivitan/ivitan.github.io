@@ -44,7 +44,7 @@
 <meta property="og:description" content="Batch 计划任务  语法12345SCHTASKS &#x2F;Create [&#x2F;S system [&#x2F;U username [&#x2F;P [password]]]][&#x2F;RU username [&#x2F;RP password]] &#x2F;SC schedule [&#x2F;MO modifier] [&#x2F;D day][&#x2F;M months] [&#x2F;I idletime] &#x2F;TN taskname &#x2F;TR taskrun [&#x2F;ST">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-13T02:24:56.000Z">
-<meta property="article:modified_time" content="2020-04-08T12:38:30.000Z">
+<meta property="article:modified_time" content="2020-04-21T04:51:52.000Z">
 <meta property="article:author" content="Vitan">
 <meta property="article:tag" content="Win">
 <meta property="article:tag" content="Batch">
@@ -563,41 +563,41 @@
 <table>
 <thead>
 <tr>
-<th align="center">参数</th>
-<th align="center">含义</th>
+<th align="left">参数</th>
+<th align="left">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><code>/tn TaskName</code></td>
-<td align="center">标识要更改的任务。输入任务名</td>
+<td align="left"><code>/tn TaskName</code></td>
+<td align="left">标识要更改的任务。输入任务名</td>
 </tr>
 <tr>
-<td align="center"><code>/s Computer</code></td>
-<td align="center">指定远程计算机的名称或 IP 地址（带有或者没有反斜杠）。默认值是本地计算机</td>
+<td align="left"><code>/s Computer</code></td>
+<td align="left">指定远程计算机的名称或 IP 地址（带有或者没有反斜杠）。默认值是本地计算机</td>
 </tr>
 <tr>
-<td align="center"><code>/u [domain\]user</code></td>
-<td align="center">使用特定用户帐户的权限运行命令。默认情况下，使用已登录到运行 SchTasks 的计算机上的用户的权限运行命令</td>
+<td align="left"><code>/u [domain\]user</code></td>
+<td align="left">使用特定用户帐户的权限运行命令。默认情况下，使用已登录到运行 SchTasks 的计算机上的用户的权限运行命令</td>
 </tr>
 <tr>
-<td align="center"><code>/p password</code></td>
-<td align="center">指定在 /u 参数中指定的用户帐户的密码。如果使用 /u 参数，则需要该参数</td>
+<td align="left"><code>/p password</code></td>
+<td align="left">指定在 /u 参数中指定的用户帐户的密码。如果使用 /u 参数，则需要该参数</td>
 </tr>
 <tr>
-<td align="center"><code>/tr TaskRun</code></td>
-<td align="center">更改任务运行的程序。输入可执行文件、脚本文件或批处理文件的完全合格的路径和文件名。如果忽略了路径，SchTasks.exe 假定文件在 Systemroot\System32 目录下指定的程序替换任务最初运行的程序</td>
+<td align="left"><code>/tr TaskRun</code></td>
+<td align="left">更改任务运行的程序。输入可执行文件、脚本文件或批处理文件的完全合格的路径和文件名。如果忽略了路径，SchTasks.exe 假定文件在 Systemroot\System32 目录下指定的程序替换任务最初运行的程序</td>
 </tr>
 <tr>
-<td align="center"><code>/ru [Domain\]User &quot;System&quot;</code></td>
-<td align="center">更改用于任务的用户帐户。 [domain]User  指定用户帐户”System” or “ 指定为操作系统所使用的 NT Authority\System 帐户。在更改用户帐户的时候，必须也要更改用户密码。如果命令带有 /ru 参数，但没有 /rp 参数，SchTasks.exe 提示要求输入新的密码而且不显示键入的文本。任务以不需要密码的 NT Authority\System 帐户权限运行，SchTasks.exe 不会提示输入密码</td>
+<td align="left"><code>/ru [Domain\]User &quot;System&quot;</code></td>
+<td align="left">更改用于任务的用户帐户。 [domain]User  指定用户帐户”System” or “ 指定为操作系统所使用的 NT Authority\System 帐户。在更改用户帐户的时候，必须也要更改用户密码。如果命令带有 /ru 参数，但没有 /rp 参数，SchTasks.exe 提示要求输入新的密码而且不显示键入的文本。任务以不需要密码的 NT Authority\System 帐户权限运行，SchTasks.exe 不会提示输入密码</td>
 </tr>
 <tr>
-<td align="center"><code>/p Password</code></td>
-<td align="center">更改用于任务的帐户密码。输入新的密码</td>
+<td align="left"><code>/p Password</code></td>
+<td align="left">更改用于任务的帐户密码。输入新的密码</td>
 </tr>
 <tr>
-<td align="center"><code>/?</code></td>
-<td align="center">在命令提示符显示帮助</td>
+<td align="left"><code>/?</code></td>
+<td align="left">在命令提示符显示帮助</td>
 </tr>
 </tbody></table>
 <p>注释</p>
@@ -616,8 +616,8 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-08T12:38:30.000Z"
-        itemprop="dateUpdated">2020-04-08 20:38:30</time>
+    最后更新时间：<time datetime="2020-04-21T04:51:52.000Z"
+        itemprop="dateUpdated">2020-04-21 12:51:52</time>
 </span><br>
 
 
