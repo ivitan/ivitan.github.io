@@ -2,11 +2,11 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-  - Linux
-  - Win
+- Linux
+- Windows
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
