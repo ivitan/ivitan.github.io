@@ -6,7 +6,7 @@
   <link href="//xml/atom.xml" rel="self"/>
   
   <link href="https://vitan.me/"/>
-  <updated>2020-04-09T10:31:02.000Z</updated>
+  <updated>2020-04-28T00:11:46.000Z</updated>
   <id>https://vitan.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更换 Npm 源</title>
+    <link href="https://vitan.me/posts/NpmMirror.html"/>
+    <id>https://vitan.me/posts/NpmMirror.html</id>
+    <published>2020-04-28T00:02:08.000Z</published>
+    <updated>2020-04-28T00:11:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Npm 换源</p></blockquote><a id="more"></a><h1 id="临时源"><a href="#临时源" class="headerlink" title="临时源"></a>临时源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express</span><br></pre></td></tr></table></figure><h1 id="永久源"><a href="#永久源" class="headerlink" title="永久源"></a>永久源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><h1 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><h1 id="官方镜像"><a href="#官方镜像" class="headerlink" title="官方镜像"></a>官方镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br></pre></td></tr></table></figure><h1 id="查看源地址"><a href="#查看源地址" class="headerlink" title="查看源地址"></a>查看源地址</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;&lt;p&gt;Npm 换源&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
+    
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+      <category term="Node.Js" scheme="https://vitan.me/tags/Node-Js/"/>
+    
+  </entry>
   
   <entry>
     <title>Highlight.Js Markdown 对照表</title>
@@ -60,11 +87,11 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
       <category term="Vim" scheme="https://vitan.me/tags/Vim/"/>
     
@@ -116,9 +143,9 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Win" scheme="https://vitan.me/tags/Win/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
   </entry>
   
@@ -504,31 +531,6 @@
     
     
       <category term="Hexo" scheme="https://vitan.me/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>撤销 Google AdSense</title>
-    <link href="https://vitan.me/posts/GoogleAdSense.html"/>
-    <id>https://vitan.me/posts/GoogleAdSense.html</id>
-    <published>2019-08-11T12:04:29.000Z</published>
-    <updated>2020-04-08T12:38:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="AdSense-账户"><a href="#AdSense-账户" class="headerlink" title="AdSense 账户"></a>AdSense 账户</h1><h2 id="撤销原因"><a href="#撤销原因" class="headerlink" title="撤销原因"></a>撤销原因</h2><p>更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户</p><a id="more"></a><h2 id="常规撤销"><a href="#常规撤销" class="headerlink" title="常规撤销"></a>常规撤销</h2><p>登录 <a href="https://www.google.com/adsense/" target="_blank" rel="noopener">Google AdSense</a> 点击菜单-&gt;账号-&gt;撤销账号</p><ul><li>个人情况<br>我遇到的情况比较特俗，AdSense 页面的 <code>账号</code> 按钮不可点击，为灰色。</li></ul><h2 id="摸索的方法"><a href="#摸索的方法" class="headerlink" title="摸索的方法"></a>摸索的方法</h2><ol><li>在 <a href="https://myaccount.google.com" target="_blank" rel="noopener">Google 账号</a> 的 <code>数据和个性化</code> -&gt; <code>下载数据、删除数据或为数据制定方案</code> -&gt; <code>删除某项服务或您的帐号</code> 关闭自己的 Google 付款资料</li><li>可以发现 AdSense 页面中的 <code>账号</code> 按钮变为可点击了，撤销成功！</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;AdSense-账户&quot;&gt;&lt;a href=&quot;#AdSense-账户&quot; class=&quot;headerlink&quot; title=&quot;AdSense 账户&quot;&gt;&lt;/a&gt;AdSense 账户&lt;/h1&gt;&lt;h2 id=&quot;撤销原因&quot;&gt;&lt;a href=&quot;#撤销原因&quot; class=&quot;headerlink&quot; title=&quot;撤销原因&quot;&gt;&lt;/a&gt;撤销原因&lt;/h2&gt;&lt;p&gt;更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
-    
-    
-      <category term="Hexo" scheme="https://vitan.me/tags/Hexo/"/>
-    
-      <category term="Google" scheme="https://vitan.me/tags/Google/"/>
     
   </entry>
   
