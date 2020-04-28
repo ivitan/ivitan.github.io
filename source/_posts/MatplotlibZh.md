@@ -1,13 +1,13 @@
 ---
 title: Matplotlib 中文乱码
 tags:
-  - Python
-  - Linux
-  - ArchLinux
+- Python
+- Linux
+- ArchLinux
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-09-18 22:42:36
 ---

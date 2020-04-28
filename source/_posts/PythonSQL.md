@@ -2,12 +2,11 @@
 title: Python SQL
 date: 2018-11-22 11:33:20
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

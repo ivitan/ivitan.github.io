@@ -1,13 +1,13 @@
 ---
 title: 配置 WNMP 环境
 tags:
-  - Win
-  - PHP
-  - Web
+- Windows
+- PHP
+- Web
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-12-23 13:42:58
 ---

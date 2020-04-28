@@ -5,7 +5,7 @@ tags:
 - Hexo
 - Linux
 - Termux
-- Win
+- Windows
 toc: true
 permalink: HexoDevices
 categories: Diary

@@ -5,7 +5,6 @@ tags:
 - Git
 - Linux
 - Termux
-- Notes
 categories:
 - Diary
 author:

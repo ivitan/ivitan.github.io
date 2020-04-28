@@ -2,12 +2,11 @@
 title: Python BeautifulSoup 库基础使用
 date: 2018-09-22 10:28:50
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

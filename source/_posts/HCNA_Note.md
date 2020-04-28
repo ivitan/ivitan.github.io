@@ -1,11 +1,11 @@
 ---
 title: HCNA NOTE
 tags:
-  - Linux
+- Linux
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-10-20 10:12:16
 ---

@@ -2,11 +2,10 @@
 title: Visualization
 date: 2018-12-18 14:55:28
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

@@ -2,11 +2,11 @@
 title: 彩色 Man Page
 date: 2018-08-14 10:53:28
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

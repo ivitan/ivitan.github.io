@@ -2,11 +2,11 @@
 title: ArchLinux 安装 MySQL
 date: 2018-08-15 12:33:52
 tags:
-  - Linux
-  - MySQL
-  - ArchLinux
+- Linux
+- MySQL
+- ArchLinux
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

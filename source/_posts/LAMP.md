@@ -1,12 +1,12 @@
 ---
 title: LAMP
 tags:
-  - Linux
-  - Web
+- Linux
+- Web
 categories:
-  - Linux
+- Linux
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-10-15 12:32:16
 ---

@@ -2,10 +2,10 @@
 title: ArchLinux 安装 MongoDB RoboMongo
 date: 2018-09-04 12:22:12
 tags:
-  - Linux
-  - SQL
-  - MongoDB
-  - ArchLinux
+- Linux
+- SQL
+- MongoDB
+- ArchLinux
 categories:
   - Linux
 author:

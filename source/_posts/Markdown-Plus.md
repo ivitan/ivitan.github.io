@@ -2,11 +2,11 @@
 title: Markdown 各种图
 date: 2018-08-06 12:32:58
 tags:
-  - Typography
-  - Markdown
-  - Hexo
+- Typography
+- Markdown
+- Hexo
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

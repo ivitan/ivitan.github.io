@@ -2,11 +2,11 @@
 title: CentOS DNS
 date: 2019-05-12 09:27:22
 tags:
-  - Linux
+- Linux
 categories:
-  - Linux
+- Linux
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 CentOS DNS 

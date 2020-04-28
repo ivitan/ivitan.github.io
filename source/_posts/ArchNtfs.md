@@ -5,7 +5,6 @@ tags:
 - Linux
 - ArchLinux
 - Ubuntu
-- Notes
 categories: 
 - Linux
 author:

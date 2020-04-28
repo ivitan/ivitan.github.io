@@ -2,12 +2,11 @@
 title: Date Types
 date: 2019-01-10 19:57:13
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

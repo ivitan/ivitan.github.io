@@ -2,11 +2,11 @@
 title: sudo 与 su 的区别
 date: 2018-08-08 13:01:18
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

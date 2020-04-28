@@ -2,13 +2,13 @@
 title: spyder
 date: 2019-04-13 12:54:24
 tags:
-  - Python
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Python
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
 name: Vitan
 toc: true

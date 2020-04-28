@@ -2,11 +2,11 @@
 title: Linus Wine
 date: 2019-04-11 16:47:28
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 toc: true
 ---
 Linux Wine

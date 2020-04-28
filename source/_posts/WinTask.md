@@ -1,12 +1,12 @@
 ---
 title: Batch 计划任务
 tags:
-  - Win
-  - Batch
+- Windows
+- Batch
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-12-13 10:24:56
 ---

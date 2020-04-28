@@ -1,12 +1,12 @@
 ---
 title: Batch
 tags:
-  - Win
-  - Batch
+- Windows
+- Batch
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-12-11 09:23:23
 ---

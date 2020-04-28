@@ -2,12 +2,11 @@
 title: K-means 图片压缩
 date: 2018-11-12 11:50:19
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

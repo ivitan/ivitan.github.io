@@ -2,12 +2,11 @@
 title: Scrapy
 date: 2018-11-27 11:57:17
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

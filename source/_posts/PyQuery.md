@@ -2,12 +2,11 @@
 title: Python PyQuery 库基础
 date: 2018-09-25 12:38:00
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

@@ -4,7 +4,6 @@ date: 2018-07-12 12:29:52
 tags:
 - Git
 - Github
-- Note
 categories: Diary
 toc: true
 ---

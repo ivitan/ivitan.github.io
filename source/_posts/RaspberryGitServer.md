@@ -2,11 +2,11 @@
 title: RaspberryPi 搭建 Git 服务器
 date: 2018-08-30 15:48:56
 tags:
-  - RaspberryPi
-  - Linux
-  - Git
+- RaspberryPi
+- Linux
+- Git
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

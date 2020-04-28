@@ -5,8 +5,8 @@ tags:
 - Java
 toc: true
 categories: 
- - Coding
- - Java
+- Coding
+- Java
 ---
 Java 变量类型
 <!--more-->

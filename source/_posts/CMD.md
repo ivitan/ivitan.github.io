@@ -1,12 +1,12 @@
 ---
 title: CMD
 tags:
-  - Win
-  - Batch
+- Windows
+- Batch
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-11-03 09:53:23
 ---

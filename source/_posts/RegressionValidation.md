@@ -2,11 +2,10 @@
 title: Regression Validation
 date: 2019-01-04 16:02:16
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

@@ -4,7 +4,7 @@ date: 2018-06-19 21:17:04
 tags:
 - Vim
 - Linux
-- Win
+- Windows
 categories: Coding
 toc: true
 ---

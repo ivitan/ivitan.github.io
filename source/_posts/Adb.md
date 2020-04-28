@@ -5,7 +5,7 @@ tags:
 - Android
 - ADB
 - Linux
-- Win
+- Windows
 toc: true
 categories: Diary
 ---

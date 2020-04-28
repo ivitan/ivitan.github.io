@@ -2,11 +2,10 @@
 title: 房天下二手房
 date: 2018-10-11 09:25:45
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

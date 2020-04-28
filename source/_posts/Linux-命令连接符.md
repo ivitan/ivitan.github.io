@@ -2,11 +2,11 @@
 title: Linux 命令连接符
 date: 2018-08-07 11:39:20
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

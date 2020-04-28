@@ -2,13 +2,12 @@
 title: Pycharm Shortcut
 date: 2018-11-30 19:17:57
 tags:
-  - Python
-  - ArchLinux
-  - Ubuntu
-  - Win
-  - Note
+- Python
+- ArchLinux
+- Ubuntu
+- Windows
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

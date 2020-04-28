@@ -2,12 +2,12 @@
 title: Grub 双系统选项、美化
 date: 2019-06-27 14:26:38
 tags:
-  - Linux
-  - Win
+- Linux
+- Windows
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 添加 Win10 菜单到 Grub

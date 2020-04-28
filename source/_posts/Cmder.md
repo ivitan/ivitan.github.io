@@ -1,13 +1,13 @@
 ---
 title: Cmder 配置
 tags:
-  - Linux
-  - Win
-  - Batch
+- Linux
+- Windows
+- Batch
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2020-01-08 13:40:15
 ---

@@ -5,7 +5,6 @@ tags:
 - Linux
 - ArchLinux
 - Ubuntu
-- Note
 categories: Linux
 toc: true
 ---

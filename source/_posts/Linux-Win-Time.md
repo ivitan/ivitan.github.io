@@ -2,10 +2,10 @@
 title: 解决 Win10 与 Linux 时间不一致
 date: 2018-08-03 10:03:49
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
-  - Win
+- Linux
+- ArchLinux
+- Ubuntu
+- Windows
 categories:
   - Linux
 author:

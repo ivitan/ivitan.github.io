@@ -2,12 +2,11 @@
 title: 开源协议
 date: 2018-08-04 11:24:46
 tags:
-  - Note
-  - Linux
-  - Android
-  - Win
+- Linux
+- Android
+- Windows
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

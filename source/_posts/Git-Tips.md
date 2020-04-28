@@ -2,10 +2,10 @@
 title: Git 使用 Tips
 date: 2018-08-11 11:29:28
 tags:
-  - Git
-  - Github
+- Git
+- Github
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

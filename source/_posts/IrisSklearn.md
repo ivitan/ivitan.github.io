@@ -2,11 +2,10 @@
 title: 鸢尾花 Sklearn
 date: 2018-10-29 23:02:34
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

@@ -1,13 +1,13 @@
 ---
 title: RaspberryPi 搭建 Gogs Git 服务
 tags:
-  - RaspberryPi
-  - Linux
-  - Git
+- RaspberryPi
+- Linux
+- Git
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-07-31 14:14:52
 ---

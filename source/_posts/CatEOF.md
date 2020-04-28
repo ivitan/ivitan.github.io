@@ -2,12 +2,12 @@
 title: Cat 追加与覆盖
 date: 2019-05-16 10:16:23
 tags:
-  - Linux
-  - Shell
+- Linux
+- Shell
 categories:
-  - Linux
+- Linux
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 Cat  追加与覆盖

@@ -2,11 +2,10 @@
 title: 猫眼电影 Top100
 date: 2018-10-23 13:09:38
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

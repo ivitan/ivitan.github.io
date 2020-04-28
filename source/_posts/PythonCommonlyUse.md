@@ -2,12 +2,11 @@
 title: 常用实现
 date: 2019-01-23 20:45:35
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

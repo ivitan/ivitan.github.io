@@ -3,7 +3,7 @@ title: BaiduPCS-Go
 date: 2018-05-10 19:01:01
 tags:
 - Linux
-- Win
+- Windows
 - Termux
 categories: Diary
 toc: true

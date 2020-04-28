@@ -4,7 +4,7 @@ date: 2018-04-02 15:10:25
 tags:
 - Linux
 - ArchLinux
-- Win
+- Windows
 - Vim
 - Ubuntu
 toc: true

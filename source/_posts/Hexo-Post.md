@@ -2,11 +2,11 @@
 title: Hexo Post 模板
 date: 2019-04-18 20:14:32
 tags:
-  - Hexo
+- Hexo
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 > 在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件.

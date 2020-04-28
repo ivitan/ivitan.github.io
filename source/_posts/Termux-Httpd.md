@@ -1,13 +1,13 @@
 ---
 title: Termux 局域网共享文件
 tags:
-  - Termux
-  - Linux
-  - Android
+- Termux
+- Linux
+- Android
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-07-29 19:25:00
 ---

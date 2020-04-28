@@ -3,9 +3,8 @@ title: Atom 快捷键
 date: 2018-08-17 08:09:42
 tags:
 - Atom
-- Note
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

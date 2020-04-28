@@ -1,12 +1,12 @@
 ---
 title: 撤销 Google AdSense
 tags:
-  - Hexo
-  - Google
+- Hexo
+- Google
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-08-11 20:04:29
 ---

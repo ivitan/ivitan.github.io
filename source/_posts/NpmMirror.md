@@ -1,13 +1,13 @@
 ---
 title: 更换 Npm 源
 tags:
-  - Node.Js
-  - Linux
-  - Win
+- Node.Js
+- Linux
+- Windows
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2020-04-28 08:02:08
 ---

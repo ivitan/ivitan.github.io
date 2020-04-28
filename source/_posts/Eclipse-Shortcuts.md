@@ -6,7 +6,7 @@ tags:
 - Linux
 - Ubuntu
 - ArchLinux
-- Win
+- Windows
 categories: Diary
 toc: true
 ---

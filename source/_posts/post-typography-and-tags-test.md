@@ -2,11 +2,11 @@
 title: Hexo Cutie 主题 Markdown 语法
 date: 2018-07-11 13:51:07
 tags:
-  - Typography
-  - Markdown
-  - Hexo
+- Typography
+- Markdown
+- Hexo
 categories:
-  - Diary
+- Diary
 author:
   name: Qu Tang
 toc: true

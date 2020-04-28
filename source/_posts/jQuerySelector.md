@@ -6,8 +6,8 @@ tags:
 - HTML
 - CSS
 categories:
- - Coding
- - Web
+- Coding
+- Web
 author:
 name: Vitan
 toc: true

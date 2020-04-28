@@ -1,12 +1,12 @@
 ---
 title: Linux Wine 调整分辨率
 tags:
-  - Linux
-  - Wine
+- Linux
+- Wine
 categories:
-  - Linux
+- Linux
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-09-17 14:43:23
 ---

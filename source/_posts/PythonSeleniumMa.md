@@ -2,12 +2,11 @@
 title:  Selenium 马蜂窝评论
 date: 2018-11-13 15:36:42
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

@@ -2,11 +2,10 @@
 title: 数据分析(是否出险)
 date: 2019-03-01 11:17:29
 tags:
-  - Note
-  - Python
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

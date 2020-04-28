@@ -2,11 +2,10 @@
 title: Data Transformation
 date: 2018-12-11 13:14:47
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
+- Coding
 author:
   name: Vitan
 toc: true

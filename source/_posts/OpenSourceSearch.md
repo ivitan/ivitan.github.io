@@ -1,12 +1,12 @@
 ---
 title: 如何高效寻找开源项目
 tags:
-  - Github
-  - Git
+- Github
+- Git
 categories: 
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-11-14 18:23:35
 ---

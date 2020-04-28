@@ -2,12 +2,11 @@
 title: Python IO 与档案处理
 date: 2018-09-24 11:56:03
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

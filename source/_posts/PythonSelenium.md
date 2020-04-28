@@ -2,12 +2,11 @@
 title: Python Selenium
 date: 2018-10-17 15:24:49
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

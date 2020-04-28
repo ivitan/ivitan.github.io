@@ -2,10 +2,9 @@
 title: Excel 函数
 date: 2018-11-15 10:37:33
 tags:
-  - Excel
-  - Note
+- Excel
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

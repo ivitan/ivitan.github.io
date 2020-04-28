@@ -2,7 +2,7 @@
 title: 删除 Linux EFI 分区
 date: 2018-07-26 18:34:11
 tags:
-- Win
+- Windows
 - Linux
 - Ubuntu
 - ArchLinux

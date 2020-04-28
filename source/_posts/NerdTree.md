@@ -1,10 +1,10 @@
 ---
 title: Vim NerdTree 插件
 tags:
-  - Linux
-  - Android
-  - Win
-  - Vim
+- Linux
+- Android
+- Windows
+- Vim
 categories:
   - Coding
 author:

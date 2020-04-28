@@ -2,12 +2,11 @@
 title: Python Tips
 date: 2018-10-31 19:38:16
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

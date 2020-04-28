@@ -2,9 +2,8 @@
 title: HTML 常用标签
 date: 2018-11-17 08:30:58
 tags:
-  - HTML
-  - Note
-  - Web
+- HTML
+- Web
 categories:
   - [Coding,Web]
 author:

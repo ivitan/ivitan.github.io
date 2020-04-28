@@ -1,8 +1,8 @@
 ---
 title: Highlight.Js Markdown 对照表
 tags:
-  - Linux
-  - Win
+- Linux
+- Windows
 categories:
   - Coding
 author:

@@ -2,10 +2,10 @@
 title: RaspberryPi 安装屏幕触控驱动及设置分辨率
 date: 2018-08-02 22:04:46
 tags:
-  - RaspberryPi
-  - Linux
+- RaspberryPi
+- Linux
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

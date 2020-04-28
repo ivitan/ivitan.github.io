@@ -1,10 +1,10 @@
 ---
 title: 安装 Google USB Driver
 tags:
-  - Linux
-  - Win
+- Linux
+- Windows
 categories:
-  - Diary
+- Diary
 author:
   - Vitan
 toc: true

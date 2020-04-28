@@ -2,10 +2,10 @@
 title: RaspberryPi 搭建云
 date: 2018-08-31 12:10:23
 tags:
-  - RaspberryPi
-  - Linux
+- RaspberryPi
+- Linux
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

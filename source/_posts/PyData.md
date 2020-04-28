@@ -2,12 +2,11 @@
 title: 数据处理
 date: 2018-12-04 14:12:45
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

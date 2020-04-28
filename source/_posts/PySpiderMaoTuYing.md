@@ -2,12 +2,11 @@
 title: PySpider 猫途鹰景点
 date: 2018-10-30 19:09:22
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

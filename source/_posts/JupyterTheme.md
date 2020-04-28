@@ -2,11 +2,10 @@
 title: Jupyter 主题
 date: 2018-09-29 12:06:48
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

@@ -5,8 +5,8 @@ tags:
 - Java
 toc: true
 categories: 
- - Coding
- - Java
+- Coding
+- Java
 ---
 Java基本数据类型。
 <!--more-->

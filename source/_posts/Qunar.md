@@ -2,12 +2,11 @@
 title: Qunar
 date: 2018-11-20 23:01:37
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

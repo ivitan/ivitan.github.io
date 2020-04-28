@@ -2,12 +2,11 @@
 title: Python 中英词频统计
 date: 2018-10-15 18:24:55
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

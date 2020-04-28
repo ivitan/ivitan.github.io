@@ -1,13 +1,13 @@
 ---
 title: Xpath 升格用法
 tags:
-  - Python
-  - WebCrawler
-  - Linux
+- Python
+- WebCrawler
+- Linux
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-09-12 19:05:17
 ---

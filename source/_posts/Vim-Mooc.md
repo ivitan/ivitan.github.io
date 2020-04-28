@@ -2,12 +2,12 @@
 title: Vim Summary
 date: 2019-05-19 09:30:42
 tags:
-  - Vim
-  - Linux
+- Vim
+- Linux
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 Vim 重新学习笔记

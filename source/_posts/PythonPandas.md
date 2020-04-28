@@ -2,12 +2,11 @@
 title: Pandas
 date: 2018-11-19 14:06:20
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

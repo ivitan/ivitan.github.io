@@ -2,12 +2,11 @@
 title: Python 正则表达式
 date: 2018-10-12 15:28:26
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

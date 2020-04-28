@@ -2,11 +2,11 @@
 title: Git Clone Error
 date: 2019-04-24 19:24:18
 tags:
-  - Git
-  - Linux
-  - Termux
+- Git
+- Linux
+- Termux
 categories:
-  - Diary
+- Diary
 author:
   - Vitan
 toc: true

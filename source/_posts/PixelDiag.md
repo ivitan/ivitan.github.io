@@ -1,12 +1,12 @@
 ---
 title: Pixel 2 XL 开启 Diag
 tags:
-  - Android
-  - Win
+- Android
+- Windows
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2020-03-04 08:29:15
 ---

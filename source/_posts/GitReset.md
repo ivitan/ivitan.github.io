@@ -1,9 +1,9 @@
 ---
 title: Git 版本回退
 tags:
-  - Linux
-  - Win
-  - Git
+- Linux
+- Windows
+- Git
 categories:
   - Coding
 author:

@@ -2,8 +2,8 @@
 title: Git commit 规范
 date: 2018-08-10 13:43:03
 tags:
-  - Git
-  - Github
+- Git
+- Github
 categories:
   - Diary
 author:

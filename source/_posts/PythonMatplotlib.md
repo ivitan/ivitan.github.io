@@ -3,7 +3,6 @@ title: Python Matplotlib 各种图
 date: 2018-11-08 10:11:00
 tags:
 - Python
-- Note
 - WebCrawler
 categories:
 - Coding

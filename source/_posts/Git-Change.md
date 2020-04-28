@@ -2,10 +2,10 @@
 title: Git 更换设备后怎么做
 date: 2019-06-07 10:19:01
 tags:
-  - Linux
-  - Git
+- Linux
+- Git
 categories:
-  - Diary
+- Diary
 author:
   - Vitan
 toc: true

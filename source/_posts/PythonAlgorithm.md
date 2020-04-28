@@ -2,12 +2,11 @@
 title: 常用算法
 date: 2019-01-28 16:03:10
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

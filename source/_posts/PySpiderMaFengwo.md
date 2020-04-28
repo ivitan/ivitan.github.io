@@ -2,12 +2,11 @@
 title: PySpider 马蜂窝网景点
 date: 2018-11-06 15:27:09
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

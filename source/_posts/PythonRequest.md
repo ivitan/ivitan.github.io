@@ -2,12 +2,11 @@
 title: Python Request 库基础使用
 date: 2018-09-19 19:12:44
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

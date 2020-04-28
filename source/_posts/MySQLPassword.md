@@ -2,13 +2,13 @@
 title: MySQL 重置密码
 date: 2018-09-09 10:54:40
 tags:
-  - Linux
-  - MySQL
-  - ArchLinux
-  - Ubuntu
-  - Win
+- Linux
+- MySQL
+- ArchLinux
+- Ubuntu
+- Windows
 categories:
-  - Database
+- Database
 author:
   name: Vitan
 toc: true

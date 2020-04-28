@@ -2,12 +2,11 @@
 title: Python 时间日期处理
 date: 2018-10-22 14:40:50
 tags:
-    - Python
-    - WebCrawler
-    - Note
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

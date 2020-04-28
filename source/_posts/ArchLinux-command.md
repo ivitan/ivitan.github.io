@@ -2,10 +2,10 @@
 title: ArchLinux Pacman 命令
 date: 2018-07-30 12:23:09
 tags:
-  - Linux
-  - ArchLinux
+- Linux
+- ArchLinux
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

@@ -2,11 +2,11 @@
 title: Linux 安装微信 QQ
 date: 2018-07-28 11:05:15
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 toc: true
 ---
 Linux 安装 QQ WeChat Tim.

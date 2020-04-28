@@ -2,13 +2,13 @@
 title: Termux Python 相关库
 date: 2018-09-04 13:24:05
 tags:
-  - Linux
-  - Termux
-  - Python
-  - WebCrawler
-  - Android
+- Linux
+- Termux
+- Python
+- WebCrawler
+- Android
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

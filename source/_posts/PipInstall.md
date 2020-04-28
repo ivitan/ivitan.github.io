@@ -1,12 +1,12 @@
 ---
 title: 解决Python pip 速度慢
 tags:
-  - Python
-  - Linux
+- Python
+- Linux
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-09-19 22:32:19
 ---

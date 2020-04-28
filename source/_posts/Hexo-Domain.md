@@ -1,9 +1,9 @@
 ---
 title: Hexo 域名
 tags:
-  - Linux
-  - Win
-  - Hexo
+- Linux
+- Windows
+- Hexo
 categories:
   - Diary
 author:

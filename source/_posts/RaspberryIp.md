@@ -2,10 +2,10 @@
 title: 树莓派获取 IP 地址
 date: 2018-07-31 11:01:07
 tags:
-  - RaspberryPi
-  - Linux
+- RaspberryPi
+- Linux
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

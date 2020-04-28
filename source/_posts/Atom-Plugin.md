@@ -2,12 +2,11 @@
 title: Atom 插件
 date: 2018-08-13 12:39:16
 tags:
-  - Atom
-  - Github
-  - Linux
-  - ArchLinux
-  - Ubuntu
-  - Win
+- Atom
+- Linux
+- ArchLinux
+- Ubuntu
+- Windows
 categories:
   - Diary
 author:

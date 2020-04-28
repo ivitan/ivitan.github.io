@@ -2,12 +2,12 @@
 title: Curl 技巧
 date: 2018-08-27 12:27:18
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
-  - Win
+- Linux
+- ArchLinux
+- Ubuntu
+- Windows
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

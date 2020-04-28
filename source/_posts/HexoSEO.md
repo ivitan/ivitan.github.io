@@ -1,11 +1,11 @@
 ---
 title: Hexo SEO 优化
 tags:
-  - Hexo 
+- Hexo 
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2019-09-06 09:13:41
 ---

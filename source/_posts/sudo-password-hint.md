@@ -2,11 +2,11 @@
 title: Linux 输入 sudo 密码时显示星号
 date: 2018-08-29 15:53:05
 tags:
-  - Linux
-  - ArchLinux
-  - Ubuntu
+- Linux
+- ArchLinux
+- Ubuntu
 categories:
-  - Linux
+- Linux
 author:
   name: Vitan
 toc: true

@@ -4,9 +4,8 @@ date: 2018-08-16 10:19:22
 tags:
 - Github
 - Git
-- Note
 categories:
-  - Diary
+- Diary
 author:
   name: Vitan
 toc: true

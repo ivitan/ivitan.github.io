@@ -2,10 +2,11 @@
 title: Shell
 date: 2019-07-20 18:59:04
 tags:
-  - Linux
-  - Shell
+- Linux
+- Shell
+- Bash
 categories:
-  - Coding
+- Coding
 author:
   - Vitan
 toc: true

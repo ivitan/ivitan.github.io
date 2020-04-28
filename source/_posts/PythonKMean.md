@@ -2,12 +2,11 @@
 title: Python Kmeans
 date: 2018-11-05 13:41:18
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

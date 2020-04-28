@@ -2,13 +2,13 @@
 title: 斐讯 N1 盒子降级刷机
 date: 2019-07-09 13:26:50
 tags:
-  - Linux
-  - Android
-  - TvBox
+- Linux
+- Android
+- TvBox
 categories:
-  - Diary
+- Diary
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 斐讯 N1 盒子降级刷机

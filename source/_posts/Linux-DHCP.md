@@ -2,11 +2,11 @@
 date: 2019-05-08 20:20:00
 title: CentOS  DHCP
 tags:
-  - Linux
+- Linux
 categories:
-  - Linux
+- Linux
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 CentOS DHCP

@@ -2,8 +2,8 @@
 title: ArchLinux Docker
 date: 2019-05-25 13:10:00
 tags:
-  - Linux
-  - Docker
+- Linux
+- Docker
 categories:
   - Coding
 author:

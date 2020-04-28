@@ -2,12 +2,11 @@
 title: 读写 Excel 文件
 date: 2018-11-19 15:08:39
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

@@ -2,12 +2,12 @@
 title: Vim 增删查改、翻页和寄存器
 date: 2019-04-28 08:52:31
 tags:
-  - Vim
-  - Linux
+- Vim
+- Linux
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 ---
 > Vim 增删查改、复制捏贴、翻页和寄存器。

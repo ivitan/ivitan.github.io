@@ -2,12 +2,11 @@
 title: 安居客二手房
 date: 2018-12-23 15:44:51
 tags:
-  - WebCrawler
-  - Python
-  - Note
+- WebCrawler
+- Python
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

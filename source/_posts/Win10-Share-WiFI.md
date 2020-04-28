@@ -2,7 +2,7 @@
 title: Win10 开热点给手机
 date: 2018-05-04 19:03:13
 tags:
-- Note
+- Windows
 - Android
 toc: true
 categories: Diary

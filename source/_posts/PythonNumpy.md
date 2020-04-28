@@ -3,7 +3,6 @@ title: Python Numpy
 date: 2018-10-03 18:08:56
 tags:
 - Python
-- Note
 categories:
 - Coding
 - Python

@@ -2,12 +2,11 @@
 title: Python 基本数据类型
 date: 2018-09-19 18:44:59
 tags:
-  - Note
-  - Python
-  - WebCrawler
+- Python
+- WebCrawler
 categories:
-  - Coding
-  - Python
+- Coding
+- Python
 author:
   name: Vitan
 toc: true

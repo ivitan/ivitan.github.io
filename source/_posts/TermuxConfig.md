@@ -1,12 +1,12 @@
 ---
 title: Termux Config Shell
 tags:
-  - Linux
-  - Win
+- Linux
+- Windows
 categories:
-  - Coding
+- Coding
 author:
-  - Vitan
+- Vitan
 toc: true
 date: 2020-01-08 12:11:49
 ---
