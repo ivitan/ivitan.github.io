@@ -183,8 +183,8 @@ n(number) # 报告匹配到的次数而不替换，可以用来匹配次数
 2. <ctrl w>v 垂直分割
 3. 或者 :sp :vs
 
-![](https://raw.githubusercontent.com/ivitan/Picture/master/images/window.png)
-![](https://raw.githubusercontent.com/ivitan/Picture/master/images/tab.png)
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/window.png)
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/tab.png)
 
 # 宏(macro)
 可以看做一系列命令合集

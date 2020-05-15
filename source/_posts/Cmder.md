@@ -19,7 +19,7 @@ date: 2020-01-08 13:40:15
 ## 基本配置
 - 系统环境变量
 
-![](https://raw.githubusercontent.com/ivitan/Picture/master/images/20200405132003.png)
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200405132003.png)
 
 - 在 PATH 添加 `%CMDER_HOME%`
 
@@ -38,7 +38,7 @@ Cmder.exe /UNREGISTER ALL
 
 ## 使用 Bash
 
-![](https://raw.githubusercontent.com/ivitan/Picture/master/images/cmder_bash.png)
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/cmder_bash.png)
 
 
 ## 别名

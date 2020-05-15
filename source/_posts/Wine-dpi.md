@@ -29,4 +29,4 @@ winecfg
 
 # 设置分辨率
 
-![](https://raw.githubusercontent.com/ivitan/Picture/master/images/wine-dpi.png)
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/wine-dpi.png)
