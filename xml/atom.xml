@@ -6,7 +6,7 @@
   <link href="//xml/atom.xml" rel="self"/>
   
   <link href="https://vitan.me/"/>
-  <updated>2020-05-14T08:19:02.000Z</updated>
+  <updated>2020-05-17T10:37:22.000Z</updated>
   <id>https://vitan.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NetWork</title>
+    <link href="https://vitan.me/posts/NetWork.html"/>
+    <id>https://vitan.me/posts/NetWork.html</id>
+    <published>2020-05-17T06:18:25.000Z</published>
+    <updated>2020-05-17T10:37:22.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
+    
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
+    
+      <category term="Network" scheme="https://vitan.me/tags/Network/"/>
+    
+  </entry>
   
   <entry>
     <title>H3C 交换机常用命令</title>
@@ -189,9 +212,9 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
       <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
     
@@ -506,31 +529,6 @@
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Web" scheme="https://vitan.me/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决Python Pip 速度慢</title>
-    <link href="https://vitan.me/posts/PipInstall.html"/>
-    <id>https://vitan.me/posts/PipInstall.html</id>
-    <published>2019-09-19T14:32:19.000Z</published>
-    <updated>2020-04-28T06:08:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>解决 Python 安装库时速度慢或者超时问题</p><h1 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --default-timeout=<span class="number">1000</span> install jieba</span><br></pre></td></tr></table></figure><h1 id="i-指定源"><a href="#i-指定源" class="headerlink" title="-i 指定源"></a>-i 指定源</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="更改默认设置"><a href="#更改默认设置" class="headerlink" title="更改默认设置"></a>更改默认设置</h1><figure class="highlight python"><figcaption><span>~/.pip/pip.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">global</span>]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;解决 Python 安装库时速度慢或者超时问题&lt;/p&gt;&lt;h1 id=&quot;设置超时时间&quot;&gt;&lt;a href=&quot;#设置超时时间&quot; class=&quot;headerlink&quot; title=&quot;设置超时时间&quot;&gt;&lt;/a&gt;设置超时时间&lt;/h1&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip --default-timeout=&lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt; install jieba&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&quot;i-指定源&quot;&gt;&lt;a href=&quot;#i-指定源&quot; class=&quot;headerlink&quot; title=&quot;-i 指定源&quot;&gt;&lt;/a&gt;-i 指定源&lt;/h1&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
-    
-    
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
-    
-      <category term="Python" scheme="https://vitan.me/tags/Python/"/>
     
   </entry>
   
