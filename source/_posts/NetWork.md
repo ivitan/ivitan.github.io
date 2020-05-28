@@ -1,9 +1,7 @@
 ---
-title: NetWork
+title: NetWork Learn
 tags:
 - Network
-- Linux
-- Windows
 categories:
 - Coding
 author:
