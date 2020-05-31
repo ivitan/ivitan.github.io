@@ -2,6 +2,7 @@
 layout: page
 title: About
 toc: false
+comments: false
 ---
 # 联系方式
 <div align="center">
