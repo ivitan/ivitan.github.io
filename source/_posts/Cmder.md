@@ -19,6 +19,11 @@ date: 2020-01-08 13:40:15
 ## 基本配置
 - 系统环境变量
 
+```
+CMDER_HOME
+D:\Program Files\cmder
+```
+
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200405132003.png)
 
 - 在 PATH 添加 `%CMDER_HOME%`
