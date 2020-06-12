@@ -68,3 +68,11 @@ net sart sshd
 ## 开启端口
 
 打开 控制面板 -> Windows 防火墙 -> 高级设置 -> 入站规则 -> 新建规则 -> 端口 -> TCP,特定端口 `22` -> 允许连接 -> 下一步
+
+## 将 PowerShell 设为默认 Shell
+```
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+```
+---
+**参考**
+[OpenSSH 服务器配置](https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration)
