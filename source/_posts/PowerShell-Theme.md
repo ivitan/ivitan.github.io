@@ -24,6 +24,8 @@ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 scoop help
 ```
 
+- [其他安装方式](/posts/Scoop.html)
+
 ## 命令
 
 |命令|	动作|
