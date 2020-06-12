@@ -61,7 +61,8 @@ cd C:\Progra~1\OpenSSH
 - 重启 SSHD 服务
 
 ```
-net restart sshd
+net stop sshd
+net sart sshd
 ```
 
 ## 开启端口
