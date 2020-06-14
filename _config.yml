@@ -24,6 +24,12 @@ sitemap:
 baidusitemap:
   path: /xml/bdmap.xml
 
+baidu_url_submit:
+  count: 1000 
+  host: vitan.me
+  token: mh3poT2oqlkASWFo 
+  path: baidu_urls.txt #
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://vitan.me

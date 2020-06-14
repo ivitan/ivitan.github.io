@@ -259,6 +259,7 @@ git add 1.txt 2.txt ...
 
 # 删除
 git add 的反向操作
+
 ```bash
 # 删除1.txt 文件
 git rm 1.txt
@@ -269,6 +270,20 @@ git rm -rf .
 # 清除当前工作区缓存，但不会删除文件，通常用于修改文件名不生效问题
 git rm -r --cached .
 ```
+
+## 删除远程内容
+-  预览将要删除的文件
+
+```git
+git rm -r -n --cached file/folder
+
+git rm -r --cached file/folder
+
+git commit -m "Comment"
+git push origin master
+```
+
+加上 `-n` 这个参数，执行命令时，不会删除任何文件，而是展示此命令要删除的文件列表预览。
 
 # 提交
 ```bash
