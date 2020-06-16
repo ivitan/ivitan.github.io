@@ -1,9 +1,10 @@
 ---
-title: Vim Summary
+title: Vim 集锦
 date: 2019-05-19 09:30:42
 tags:
 - Vim
 - Linux
+- Windows
 categories:
 - Coding
 author:
@@ -374,7 +375,8 @@ nonormal <leader>t :TagbarToggle<CR>
 
 ### 补全
 补全插件
-1. [deoplete.nvim](https//github.com/shougo/deoplete.nvim) 多语言，模糊搜索
+
+1. [deoplete.nvim](https://github.com/shougo/deoplete.nvim) 多语言，模糊搜索
 2. [coc.vim](https://github.com/neoclide/coc.nvim) 多语言插件支持
 
 快速注释
