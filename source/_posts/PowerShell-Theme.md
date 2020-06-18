@@ -165,5 +165,6 @@ colortool -d <主题名称>
 ```
 
 # 字体
+- [PowerLine Font](https://github.com/powerline/fonts)
 - [Sarasa](https://github.com/be5invis/Sarasa-Gothic/releases)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts/releases)
