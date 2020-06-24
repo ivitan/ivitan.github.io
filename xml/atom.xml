@@ -10,7 +10,7 @@
   <id>https://vitan.me/</id>
   
   <author>
-    <name>Vitan</name>
+    <name>VITAN</name>
     
   </author>
   
@@ -383,9 +383,9 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="Android" scheme="https://vitan.me/tags/Android/"/>
     
       <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
     
