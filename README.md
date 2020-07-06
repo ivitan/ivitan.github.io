@@ -3,3 +3,9 @@
 <br> Vitan's personal website.
 <br>
 <a href="https://vitan.me">Preview</a> 
+
+# Screen Shorts
+
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200706084124.png)
+
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200706083456.png)
