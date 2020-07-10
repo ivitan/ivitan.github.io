@@ -10,8 +10,14 @@ reward: false
     text-align: left;
 </style>
 
-# Contacts
-- Email: admin@vitan.me
+# 👋 Hey!
+
+My name is VITAN.
+
+# 📫 How to reach me
+- Email: [admin@vitan.me](mailto:admin@vitan.me)
+- Twitter: [@VITAN](https://twitter.com/vitanme)
+
 
 ---
 
