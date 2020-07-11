@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Vitan&#39;s Blog</title>
+  <title>VITAN</title>
   
   <subtitle>⁣⁣⁣Never Settle</subtitle>
   <link href="//xml/atom.xml" rel="self"/>
@@ -385,9 +385,9 @@
     
       <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
-      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
-    
       <category term="Android" scheme="https://vitan.me/tags/Android/"/>
+    
+      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
     
       <category term="Vim" scheme="https://vitan.me/tags/Vim/"/>
     
@@ -439,9 +439,9 @@
       <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
     
     
-      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
-    
       <category term="Android" scheme="https://vitan.me/tags/Android/"/>
+    
+      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
     
   </entry>
   
