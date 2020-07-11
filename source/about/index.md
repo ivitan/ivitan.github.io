@@ -5,10 +5,6 @@ toc: false
 comments: false
 reward: false
 ---
-<style>
-.post-content h1,h2{
-    text-align: left;
-</style>
 
 # 👋 Hey!
 
