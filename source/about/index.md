@@ -5,15 +5,20 @@ toc: false
 comments: false
 reward: false
 ---
-
+<style>
+.page-content h1,h2{
+    text-align: left;
+}
+</style>
 # 👋 Hey!
 
 My name is VITAN.
 
 # 📫 How to reach me
+
 - Email: [admin@vitan.me](mailto:admin@vitan.me)
 - Twitter: [@VITAN](https://twitter.com/vitanme)
-
+  
 
 ---
 
