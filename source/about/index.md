@@ -6,9 +6,6 @@ comments: false
 reward: false
 ---
 <style>
-.page-content h1,h2{
-    text-align: left;
-}
 
 .page-content img{
     width:25px;
@@ -18,21 +15,27 @@ reward: false
 </style>
 # 👋 Hey!
 
+<div align="center">
+
 My name is VITAN.
+
+</div>
 
 # 📫 How to reach me
 
+<div align="center">
+
 <a href="https://vitan.me">
-  <img align="left" alt="Blog" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg" />
+  <img align="center" alt="Blog" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg" />
 </a>
 <a href="mailto:admin@vitan.me">
-  <img align="left" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
+  <img align="center" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
 </a>
 <a href="https://twitter.com/vitanme">
-  <img align="left" alt="Twitter" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/twitter.svg" />
+  <img align="center" alt="Twitter" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/twitter.svg" />
 </a>
 
-  
+</div>
 
 ---
 
