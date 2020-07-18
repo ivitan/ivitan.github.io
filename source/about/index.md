@@ -9,6 +9,12 @@ reward: false
 .page-content h1,h2{
     text-align: left;
 }
+
+.page-content img{
+    width:25px;
+    margin-right:20px;
+}
+
 </style>
 # 👋 Hey!
 
@@ -16,8 +22,16 @@ My name is VITAN.
 
 # 📫 How to reach me
 
-- Email: [admin@vitan.me](mailto:admin@vitan.me)
-- Twitter: [@VITAN](https://twitter.com/vitanme)
+<a href="https://vitan.me">
+  <img align="left" alt="Blog" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg" />
+</a>
+<a href="mailto:admin@vitan.me">
+  <img align="left" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
+</a>
+<a href="https://twitter.com/vitanme">
+  <img align="left" alt="Twitter" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/twitter.svg" />
+</a>
+
   
 
 ---
