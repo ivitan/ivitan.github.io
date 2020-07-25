@@ -6,7 +6,7 @@
   <link href="//xml/atom.xml" rel="self"/>
   
   <link href="https://vitan.me/"/>
-  <updated>2020-07-19T06:29:24.000Z</updated>
+  <updated>2020-07-25T09:10:56.000Z</updated>
   <id>https://vitan.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RaspberryPi Review</title>
+    <link href="https://vitan.me/posts/RaspberryReview.html"/>
+    <id>https://vitan.me/posts/RaspberryReview.html</id>
+    <published>2020-07-25T08:35:11.000Z</published>
+    <updated>2020-07-25T09:10:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p><a id="more"></a><h1 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h1><p>官网下载镜像，并使用烧录工具烧录。</p><h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>在 <code>boot</code> 中新建文件</p><figure class="highlight plain"><figcaption><span>wps_supplicant.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">country&#x3D;CN</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">ssid&#x3D;&quot;SSID_Name&quot;</span><br><span class="line">psk&#x3D;&quot;password&quot;</span><br><span class="line">key_mgmt&#x3D;WPA-PSK</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>在 <code>boot</code> 中新建名为 <code>ssh</code> 的无后缀的空白文件。</p><h1 id="开机获取-IP"><a href="#开机获取-IP" class="headerlink" title="开机获取 IP"></a>开机获取 IP</h1><p>开机后会自动连接预埋的 WiFI。然后就可以使用 Ping Tool 、Fing.app 或者到路由器后台查看树莓派的 IP 啦。然后就可以 SSH 连接树莓派。</p><figure class="highlight julia"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">pi</span><span class="meta">@ip</span></span><br><span class="line">raspberry <span class="comment"># 初始密码</span></span><br></pre></td></tr></table></figure><h1 id="系统相关配置"><a href="#系统相关配置" class="headerlink" title="系统相关配置"></a>系统相关配置</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-<span class="built_in">config</span></span><br></pre></td></tr></table></figure><h2 id="开启-VNC"><a href="#开启-VNC" class="headerlink" title="开启 VNC"></a>开启 VNC</h2><p>选择：“5 Interfacing Options”</p><h2 id="固定-IP"><a href="#固定-IP" class="headerlink" title="固定 IP"></a>固定 IP</h2><figure class="highlight plain"><figcaption><span>/etc/dhcpcd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface wlan0</span><br><span class="line">static ip_address&#x3D;10.1.1.22&#x2F;24</span><br><span class="line">static routers&#x3D;10.1.1.1</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Coding" scheme="https://vitan.me/categories/Coding/"/>
+    
+    
+      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
+    
+      <category term="RaspberryPi" scheme="https://vitan.me/tags/RaspberryPi/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS 7 部署 Tomcat 8</title>
@@ -486,34 +511,6 @@
     
     
       <category term="Android" scheme="https://vitan.me/tags/Android/"/>
-    
-      <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装 Google USB Driver</title>
-    <link href="https://vitan.me/posts/UsbDriver.html"/>
-    <id>https://vitan.me/posts/UsbDriver.html</id>
-    <published>2020-02-25T02:59:14.000Z</published>
-    <updated>2020-04-28T06:08:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Google USB Driver 是对 Google 设备执行 adb 调试的驱动。</p></blockquote><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul><li><a href="https://dl-ssl.google.com//android/repository/latest_usb_driver_windows.zip" target="_blank" rel="noopener">Windows latest_usb_driver_windows.zip</a></li></ul><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>设备管理器 -&gt; 便携设备 -&gt; 属性 -&gt; 驱动程序 -&gt; 更新驱动程序 -&gt; 选择解压好的文件夹</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;&lt;p&gt;Google USB Driver 是对 Google 设备执行 adb 调试的驱动。&lt;/p&gt;&lt;/blockquote&gt;&lt;h1 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h
-      
-    
-    </summary>
-    
-    
-      <category term="Diary" scheme="https://vitan.me/categories/Diary/"/>
-    
-    
-      <category term="Linux" scheme="https://vitan.me/tags/Linux/"/>
     
       <category term="Windows" scheme="https://vitan.me/tags/Windows/"/>
     
