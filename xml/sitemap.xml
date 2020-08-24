@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vitan.me/about/index.html</loc>
+    
+    <lastmod>2020-08-24T05:30:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vitan.me/posts/RaspberryReview.html</loc>
     
     <lastmod>2020-08-02T01:13:42.000Z</lastmod>
@@ -17,13 +24,6 @@
   
   <url>
     <loc>https://vitan.me/posts/FirwWall.html</loc>
-    
-    <lastmod>2020-08-02T01:13:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://vitan.me/about/index.html</loc>
     
     <lastmod>2020-08-02T01:13:42.000Z</lastmod>
     
