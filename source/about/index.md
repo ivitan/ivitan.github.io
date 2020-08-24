@@ -10,6 +10,11 @@ reward: false
 .page-content img{
     width:25px;
     margin-right:20px;
+    background: none;
+    border-radius: none;
+    box-shadow: none;
+}
+
 }
 
 </style>
