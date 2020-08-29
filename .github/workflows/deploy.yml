@@ -28,8 +28,7 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v2
       with:
-        repository: ${{ env.DEPLOY_REPO }}
-        ref: source
+        path: ~/Hexo
 
     - name: Checkout theme repo
       uses: actions/checkout@v2
