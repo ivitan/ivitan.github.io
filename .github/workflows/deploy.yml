@@ -11,6 +11,8 @@ env:
   GIT_EMAIL: vitan.me@gmail.com
   DEPLOY_REPO: ivitan/ivitan.github.io
   DEPLOY_BRANCH: master
+  THEME_REPO: ivitan/indigo
+  THEME_BRANCH: master
 
 jobs:
   build:
@@ -36,8 +38,9 @@ jobs:
       
       - name: Checkout Theme Repo
         uses: actions/checkout@v2
-          repository: ivitan/indigo
-          ref: master
+        with:
+          repository: ${{ env.THEME_REPO }}
+          ref: ${{ env.THEME_BRANCH }}
           path: themes/indigo
 
       - name: Setup Node.js ${{ matrix.node_version }}
