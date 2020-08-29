@@ -65,6 +65,7 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         git config --global user.name $GIT_USER
         git config --global user.email $GIT_EMAIL
+        rm -rf .deploy_git
         git clone https://github.com/ivitan/ivitan.github.io.git .deploy_git
         npm install hexo-cli -g
         npm install
