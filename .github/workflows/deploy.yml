@@ -35,14 +35,14 @@ jobs:
       with:
         repository: ${{ env.THEME_REPO }}
         ref: ${{ env.THEME_BRANCH }}
-        path: themes/indigo
+        path: ~/Hexo/themes/indigo
 
     - name: Checkout deploy repo
       uses: actions/checkout@v2
       with:
         repository: ${{ env.DEPLOY_REPO }}
         ref: ${{ env.DEPLOY_BRANCH }}
-        path: .deploy_git
+        path: ~/Hexo/.deploy_git
 
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
@@ -62,7 +62,7 @@ jobs:
         git config --global user.email $GIT_EMAIL
         npm install hexo-cli -g
         npm install
-        wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
+        wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ~/Hexo/node_modules/hexo-generator-index/lib/generator.js
 
     - name: Deploy hexo blog
       run: |
