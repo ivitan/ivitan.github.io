@@ -1,0 +1,75 @@
+name: Hexo Deploy
+
+# 触发条件：在 push 到 source 分支后触发
+on:
+  push:
+    branches: 
+      - source
+
+env:
+  TZ: Asia/Shanghai
+  GIT_USER: Vitan
+  GIT_EMAIL: vitan.me@gmail.com
+  THEME_REPO: ivitan/indigo
+  THEME_BRANCH: master
+  DEPLOY_REPO: ivitan/ivitan.github.io
+  DEPLOY_BRANCH: master
+
+jobs:
+  build:
+    name: Hexo blog build & deploy
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为编译部署的环境
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [12.x]
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Checkout theme repo
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ env.THEME_REPO }}
+        ref: ${{ env.THEME_BRANCH }}
+        path: themes/indigo
+
+    - name: Checkout deploy repo
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ env.DEPLOY_REPO }}
+        ref: ${{ env.DEPLOY_BRANCH }}
+        path: .deploy_git
+
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+
+    - name: Cache node modules
+      # 设置包缓存目录，避免每次下载
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Configuration environment
+      env:
+        HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
+      run: |
+        sudo timedatectl set-timezone $TZ
+        mkdir -p ~/.ssh/
+        echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        git config --global user.name $GIT_USER
+        git config --global user.email $GIT_EMAIL
+        git clone https://github.com/ivitan/ivitan.github.io.git .deploy_git
+        npm install hexo-cli -g
+        npm install
+
+    - name: Deploy hexo blog
+      run: |
+        hexo clean
+        hexo deploy
