@@ -58,9 +58,9 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         git config --global user.name $GIT_USER
         git config --global user.email $GIT_EMAIL
-        wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
         npm install hexo-cli -g
         npm install
+        wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
 
     - name: Deploy hexo blog
       run: |
