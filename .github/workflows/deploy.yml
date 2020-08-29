@@ -27,12 +27,15 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v2
+      with:
+        repository: ${{ env.THEME_REPO }}
+        ref: ${{ env.THEME_BRANCH }}
 
     - name: Checkout theme repo
       uses: actions/checkout@v2
       with:
         repository: ${{ env.THEME_REPO }}
-        ref: ${{ env.THEME_BRANCH }}
+        ref: source
         path: themes/indigo
 
     - name: Checkout deploy repo
