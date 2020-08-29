@@ -1,167 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vitan.me//SQLnfs</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLexercise</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLstyle</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLview</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLtrigger</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLlock</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/SSH.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Scoop.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ScrapyAnjuke.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ScrapyCommand.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Spyder-1.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Sync.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-Httpd.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-Npm-Error.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-Openjdk.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-R.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux-game-tools.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Termux.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/TermuxConfig.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/TermuxPython.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//TermuxLinux</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//TermuxNote</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Tomcat.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Ubuntu-Nodejs.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Ubuntu-Theme.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Ubuntu18-SS-qt5.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/UbuntuCommand.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//UbuntuAndroidStudio</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//UbuntuEclipse</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//UbuntuJava</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/UsbDriver.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vim-Mooc.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vim-Vundle-Markdown.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vim-Windows.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vim-utf-8.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vim.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Visualization.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Vue-Js.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
     <loc>https://vitan.me/posts/WNMP.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
     <loc>https://vitan.me/posts/Win10-Share-WiFI.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/WinTask.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -217,19 +65,91 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//mobile</loc>
+    <loc>https://vitan.me/posts/mobile.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//delLinuxEFI</loc>
+    <loc>https://vitan.me/posts/delLinuxEFI.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//first</loc>
+    <loc>https://vitan.me/posts/first.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/WinTask.html</loc>
+    <loc>https://vitan.me/posts/SQLfunDep.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLprocedure.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQlprocEx.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLfull.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLexam.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLgrant.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLselect.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLmode.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLconstraint.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLnfs.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLexercise.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLstyle.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLview.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLtrigger.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLlock.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SSH.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Scoop.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/ScrapyAnjuke.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/ScrapyCommand.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -237,11 +157,247 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLtest</loc>
+    <loc>https://vitan.me/posts/Spyder-1.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/PyQuery.html</loc>
+    <loc>https://vitan.me/posts/Sync.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-ADB.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-Httpd.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-Npm-Error.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-Openjdk.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-R.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux-game-tools.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Termux.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/TermuxConfig.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/TermuxPython.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/TermuxLinux.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/TermuxNote.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Tomcat.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Ubuntu-Nodejs.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Ubuntu-Theme.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Ubuntu18-SS-qt5.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/UbuntuCommand.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/UbuntuAndroidStudio.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/UbuntuEclipse.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/UbuntuJava.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/UsbDriver.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vim-Mooc.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vim-Vundle-Markdown.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vim-Windows.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vim-utf-8.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vim.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Visualization.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Vue-Js.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/SQLtest.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/LAMP.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Linux-Commands.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Linux-DHCP.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Linux-DNS.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Linux-Deb.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Linux-Win-Time.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/LinuxAnds.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/LinuxDir.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/LinuxHome.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/LinuxPythonChromedriver.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Markdown-Plus.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Markdown-table.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Markdown.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/MatplotlibZh.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/MySQLPassword.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/MySQLbasic.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/N1Box.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/NerdTree.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/NetWork.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/NpmMirror.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/NpmPackage.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Oh-My-ZSH-Theme.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/Oh-My-ZSH-complete.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/OpenSourceLicense.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/OpenSourceSearch.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PermissionDenied.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PicGo.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PipInstall.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PixelDiag.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PowerShell-Theme.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PyData.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -258,6 +414,10 @@
   </url>
   <url>
     <loc>https://vitan.me/posts/PythonAlgorithm.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PythonBeautifulSoup.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -282,6 +442,14 @@
   </url>
   <url>
     <loc>https://vitan.me/posts/PythonKMean.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PyQuery.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/PythonMatplotlib.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -321,11 +489,11 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//PythonWorldFrequency</loc>
+    <loc>https://vitan.me/posts/PythonWorldFrequency.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//PythonType</loc>
+    <loc>https://vitan.me/posts/PythonType.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -357,6 +525,10 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
+    <loc>https://vitan.me/posts/SQL-Command.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
     <loc>https://vitan.me/posts/SQL-Exists.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
@@ -369,63 +541,55 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLconstraint</loc>
+    <loc>https://vitan.me/posts/SQLconstraint.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLtransaction</loc>
+    <loc>https://vitan.me/posts/SQLtransaction.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLrelAlg</loc>
+    <loc>https://vitan.me/posts/SQLrelAlg.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLfunDep</loc>
+    <loc>https://vitan.me/posts/ArchLinux-Nvidia.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLprocedure</loc>
+    <loc>https://vitan.me/posts/ArchLinux-command.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQlprocEx</loc>
+    <loc>https://vitan.me/posts/ArchLinux.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLfull</loc>
+    <loc>https://vitan.me/posts/ArchLinuxMongoDB.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLgrant</loc>
+    <loc>https://vitan.me/posts/ArchNtfs.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLselect</loc>
+    <loc>https://vitan.me/posts/Atom-Plugin.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLmode</loc>
+    <loc>https://vitan.me/posts/AtomCommands.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//SQLconstraint</loc>
+    <loc>https://vitan.me/posts/BaiduPCS-Go.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/PythonBeautifulSoup.html</loc>
+    <loc>https://vitan.me/posts/Batch.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/SQL-Command.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PythonMatplotlib.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//SQLexam</loc>
+    <loc>https://vitan.me/posts/CMD.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -529,11 +693,15 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//GithubTips</loc>
+    <loc>https://vitan.me/posts/GithubTips.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//GitNote</loc>
+    <loc>https://vitan.me/posts/GitNote.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/GitGame.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -550,6 +718,10 @@
   </url>
   <url>
     <loc>https://vitan.me/posts/H3C.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://vitan.me/posts/HCNA_Note.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -577,11 +749,11 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//HexoInstall</loc>
+    <loc>https://vitan.me/posts/HexoInstall.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me//HexoDevices</loc>
+    <loc>https://vitan.me/posts/HexoDevices.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -605,147 +777,11 @@
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/JupyterTheme.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/LAMP.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Linux-DHCP.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Linux-DNS.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Linux-Deb.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Linux-Win-Time.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//LinuxAnds</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//LinuxDir</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/LinuxHome.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/LinuxPythonChromedriver.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Markdown-Plus.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Markdown-table.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Markdown.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/MatplotlibZh.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/MySQLPassword.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//MySQLbasic</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/N1Box.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/NerdTree.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/NetWork.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/NpmMirror.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/NpmPackage.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Oh-My-ZSH-Theme.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Oh-My-ZSH-complete.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/OpenSourceLicense.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/OpenSourceSearch.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PermissionDenied.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PicGo.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PipInstall.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PixelDiag.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PowerShell-Theme.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/PyData.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me//GitGame</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/HCNA_Note.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
     <loc>https://vitan.me/posts/JavaString.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
-    <loc>https://vitan.me/posts/Linux-Commands.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/CMD.html</loc>
+    <loc>https://vitan.me/posts/JupyterTheme.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
   <url>
@@ -754,42 +790,6 @@
   </url>
   <url>
     <loc>https://vitan.me/posts/ArchLinux-MySQL.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ArchLinux-Nvidia.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ArchLinux-command.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ArchLinux.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ArchLinuxMongoDB.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/ArchNtfs.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Atom-Plugin.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/AtomCommands.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/BaiduPCS-Go.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://vitan.me/posts/Batch.html</loc>
     <lastmod>2020-08-29</lastmod>
   </url>
 </urlset> 
