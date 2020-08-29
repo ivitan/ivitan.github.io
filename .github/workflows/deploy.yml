@@ -1,6 +1,5 @@
 name: Hexo Deploy
 
-# 触发条件：在 push 到 source 分支后触发
 on:
   push:
     branches: 
@@ -15,16 +14,18 @@ env:
 
 jobs:
   build:
-    name: Hexo blog build & deploy
-    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为编译部署的环境
+    name: Setup OS
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [ubuntu-latest]
         node_version: [12.x]
 
     steps:
-      - name: Checkout source
+      - name: Checkout Repository source branch
         uses: actions/checkout@v2
+        with:
+          ref: source
 
       - name: Checkout deploy repo
         uses: actions/checkout@v2
@@ -33,28 +34,33 @@ jobs:
           ref: ${{ env.DEPLOY_BRANCH }}
           path: .deploy_git
 
-      - name: Use Node.js ${{ matrix.node_version }}
+      - name: Setup Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
-
-      - name: Configuration environment
+      
+      - name: Setup Deploy Private Key
         env:
           HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
         run: |
-          sudo timedatectl set-timezone $TZ
           mkdir -p ~/.ssh/
           echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Setup Git Infomation
+        run: | 
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
-          git clone https://github.com/ivitan/indigo themes/indigo
+
+      - name: Setup Hexo Dependencies
+        run: |
+          sudo timedatectl set-timezone $TZ
           npm install hexo-cli -g
           npm install
           wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
 
-      - name: Deploy hexo blog
+      - name: Deploy Hexo blog
         run: |
           hexo clean
           hexo deploy
