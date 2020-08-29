@@ -27,21 +27,20 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v2
-      with: ~/Hexo
 
     - name: Checkout theme repo
       uses: actions/checkout@v2
       with:
         repository: ${{ env.THEME_REPO }}
         ref: ${{ env.THEME_BRANCH }}
-        path: ~/Hexo/themes/indigo
+        path: themes/indigo
 
     - name: Checkout deploy repo
       uses: actions/checkout@v2
       with:
         repository: ${{ env.DEPLOY_REPO }}
         ref: ${{ env.DEPLOY_BRANCH }}
-        path: ~/Hexo/.deploy_git
+        path: .deploy_git
 
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
