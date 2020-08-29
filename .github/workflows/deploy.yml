@@ -27,7 +27,7 @@ jobs:
         with:
           ref: source
 
-      - name: Checkout deploy repo
+      - name: Checkout Deploy Repo
         uses: actions/checkout@v2
         with:
           repository: ${{ env.DEPLOY_REPO }}
@@ -63,4 +63,5 @@ jobs:
       - name: Deploy Hexo blog
         run: |
           hexo clean
+          hexo generate
           hexo deploy
