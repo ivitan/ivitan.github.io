@@ -47,13 +47,6 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
 
-    - name: Cache node modules
-      # 设置包缓存目录，避免每次下载
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
     - name: Configuration environment
       env:
         HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
