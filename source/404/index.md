@@ -5,4 +5,4 @@ permalink: /404.html
 reward: false
 comments: false
 ---
-<a href="/"><img src="/img/404.jpg" title="返回首页"></a>
+<a href="/"><img src="/img/404.svg" title="返回首页"></a>
