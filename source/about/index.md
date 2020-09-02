@@ -18,7 +18,7 @@ reward: false
 }
 
 </style>
-# 👋 Hey fans!
+# 👋 Hey friends!
 
 <div align="center">
 
