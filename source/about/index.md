@@ -18,7 +18,7 @@ reward: false
 }
 
 </style>
-# 👋 Hey!
+# 👋 Hey fans!
 
 <div align="center">
 
@@ -30,8 +30,8 @@ My name is VITAN.
 
 <div align="center">
 
-<a href="https://vitan.me">
-  <img align="center" alt="Blog" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg" />
+<a href="https://github.com/ivitan">
+  <img align="center" alt="Github" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Github.svg" />
 </a>
 <a href="mailto:admin@vitan.me">
   <img align="center" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
