@@ -8,7 +8,7 @@ subtitle: ⁣⁣⁣Never Settle
 description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
 author: VITAN
-author_link: https://vitan.me
+author_link: https://ivitan.com
 language:
   - zh-CN
   - zh-TW
@@ -24,7 +24,7 @@ sitemap:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://vitan.me
+url: https://ivitan.com
 root: /
 permalink: posts/:title.html
 permalink_defaults: :title/
