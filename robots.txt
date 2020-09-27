@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /css/
 Disallow: /js/
 
-Sitemap: https://vitan.me/xml/sitemap.xml
-Sitemap: https://vitan.me/xml/bdmap.xml
+Sitemap: https://ivitan.com/xml/sitemap.xml
+Sitemap: https://ivitan.com/xml/bdmap.xml
