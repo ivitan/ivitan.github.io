@@ -49,6 +49,12 @@ My name is VITAN.
 @timeline{
 ##### 2020
 @item{
+###### 10月1日
+🖖 启用 [ivitan.com](ivitan.com_) 域名 🖖
+
+}
+
+@item{
 ###### 3月1日
 👏 优化 **[indigo](https://github.com/ivitan/indigo)** 主题 👏 
 
