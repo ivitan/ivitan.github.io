@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/posts/Tomcat.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Vim-Windows.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -142,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -170,20 +156,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Vim.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -198,20 +170,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/UbuntuAndroidStudio.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/UbuntuEclipse.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -220,20 +178,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
     
     <lastmod>2020-11-29</lastmod>
     
@@ -268,6 +212,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -275,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
+    <loc>https://ivitan.com/posts/Tomcat.html</loc>
     
     <lastmod>2020-11-29</lastmod>
     
@@ -331,13 +282,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
-    
-    <lastmod>2020-11-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -353,6 +297,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/TermuxPython.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
     
     <lastmod>2020-11-29</lastmod>
     
@@ -513,6 +464,20 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
     
     <lastmod>2020-11-29</lastmod>
@@ -548,7 +513,42 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/UbuntuAndroidStudio.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
     
     <lastmod>2020-11-29</lastmod>
     
@@ -703,6 +703,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonDateTypes.html</loc>
+    
+    <lastmod>2020-11-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
     
     <lastmod>2020-11-29</lastmod>
     
