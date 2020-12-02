@@ -1,5 +1,5 @@
 ---
-title: ttyd 在 Web 上共享终端
+title: 利用 ttyd 在 Web 上共享终端
 tags:
   - Termux
   - Linux
