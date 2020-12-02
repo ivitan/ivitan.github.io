@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Tomcat.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Vim-Windows.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -24,6 +52,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/UsbDriver.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -58,6 +93,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -86,6 +128,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -101,6 +150,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/tmux.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -135,6 +191,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -156,7 +219,42 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Vim.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -171,6 +269,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -198,6 +303,20 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/about/index.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -219,28 +338,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Tomcat.html</loc>
+    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -261,20 +359,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Shell.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -282,14 +366,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -310,14 +394,84 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
+    <loc>https://ivitan.com/posts/Qunar.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonTips.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonWorldFrequency.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonType.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RaspberryPiCloud.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RaspberryGitServer.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RaspberryIp.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -457,7 +611,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -471,56 +625,21 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -548,6 +667,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/PicGo.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -556,6 +682,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/NpmMirror.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -583,6 +716,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/LAMP.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -604,7 +744,35 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/N1Box.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Grub.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -619,6 +787,20 @@
   
   <url>
     <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -646,13 +828,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PyData.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -661,20 +836,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/PycharmShortcut.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Qunar.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -695,14 +856,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
+    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -730,14 +884,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonTips.html</loc>
+    <loc>https://ivitan.com/posts/PySpiderMaoTuYing.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PySpiderMaoTuYing.html</loc>
+    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -758,21 +912,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonWorldFrequency.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -828,13 +968,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonType.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -843,20 +976,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryPiCloud.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryGitServer.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -884,20 +1003,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryIp.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/LinuxDir.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -912,14 +1017,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Commands.html</loc>
+    <loc>https://ivitan.com/posts/Hexo-Domain.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
+    <loc>https://ivitan.com/posts/Linux-Commands.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -947,14 +1052,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
+    <loc>https://ivitan.com/posts/Java-variable-types.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
+    <loc>https://ivitan.com/posts/Java-basic-datatypes.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -975,7 +1080,21 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
+    <loc>https://ivitan.com/posts/JavaControl.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoDevices.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -983,6 +1102,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/Markdown.html</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoInstall.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -1017,21 +1143,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitManual.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -1060,41 +1172,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/CMD.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Grub.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -1136,13 +1213,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitPull.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -1164,13 +1234,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/DataTransformation.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -1185,21 +1248,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ExcelFunction.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -1318,13 +1367,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Hexo-Domain.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -1346,27 +1388,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Java-variable-types.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Java-basic-datatypes.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/JavaControl.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitGame.html</loc>
     
     <lastmod>2020-12-02</lastmod>
@@ -1374,28 +1395,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HexoDevices.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitNote.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
-    
-    <lastmod>2020-12-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HexoInstall.html</loc>
     
     <lastmod>2020-12-02</lastmod>
     
