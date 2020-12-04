@@ -11,7 +11,7 @@ toc: true
 date: 2020-02-25 10:59:14
 ---
 
-> Google USB Driver 是对 Google 设备执行 adb 调试的驱动。
+> Google USB Driver 是针对 Google 设备执行 adb 调试的驱动。安装可解决 bootloader 下 waiting for any device
 
 # 下载
 - [Windows latest_usb_driver_windows.zip](https://dl-ssl.google.com//android/repository/latest_usb_driver_windows.zip)

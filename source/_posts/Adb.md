@@ -132,3 +132,6 @@ fastboot flash system system.img
 fastboot flash boot boot.img
 fastboot reboot
 ```
+
+# bootloader 识别不到设备
+需要安装 [Google USB Driver](./posts/UsbDriver.html)
