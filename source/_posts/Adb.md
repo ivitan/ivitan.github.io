@@ -134,4 +134,4 @@ fastboot reboot
 ```
 
 # bootloader 识别不到设备
-需要安装 [Google USB Driver](./posts/UsbDriver.html)
+安装 [Google USB Driver](./posts/UsbDriver.html) 即可解决。
