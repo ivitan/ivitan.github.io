@@ -1,5 +1,5 @@
 ---
-title: Win10 开热点给手机
+title: Win10 开热点给手机科学上网
 date: 2018-05-04 19:03:13
 tags:
 - Windows
@@ -7,7 +7,7 @@ tags:
 toc: true
 categories: Diary
 ---
-> 在 Windows 10 中使用 "飞机" 工具共享热点给手机,解决刷机后开机登录 Google 账号。
+> 在 Windows 10 中使用 "飞机" 工具共享热点给手机实现手机科学上网,解决刷机后开机登录 Google 账号等问题。
 
 # 方法
 ## 电脑端
