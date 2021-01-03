@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/WechatWeather.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/TTYD.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -296,6 +289,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQLnfs.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -443,34 +443,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PicGo.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PipInstall.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonAlgorithm.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -493,13 +465,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PyData.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -625,13 +590,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PyQuery.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonIO.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -730,13 +688,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -807,7 +758,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -815,13 +766,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/HexoAction.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/AAPT.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -836,6 +780,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/GitLF.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -857,6 +808,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/H3C.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PicGo.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -898,14 +856,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Batch.html</loc>
+    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -913,13 +864,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/OpenSourceSearch.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CMD.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -934,6 +878,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/LAMP.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PipInstall.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -996,20 +947,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -1052,13 +989,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -1073,7 +1003,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    <loc>https://ivitan.com/posts/PyData.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -1095,13 +1025,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -1136,6 +1059,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/PyQuery.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -1150,20 +1080,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CurlTips.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Eclipse-Shortcuts.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -1171,35 +1087,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitTips.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -1241,20 +1129,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/LinuxDir.html</loc>
     
     <lastmod>2021-01-03</lastmod>
@@ -1290,21 +1164,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Linux-Commands.html</loc>
-    
-    <lastmod>2021-01-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Adb.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
@@ -1410,6 +1270,146 @@
   
   <url>
     <loc>https://ivitan.com/posts/HexoInstall.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/AAPT.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Batch.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CMD.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CurlTips.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
+    
+    <lastmod>2021-01-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Adb.html</loc>
     
     <lastmod>2021-01-03</lastmod>
     
