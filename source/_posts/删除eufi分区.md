@@ -7,7 +7,6 @@ tags:
 - Ubuntu
 - ArchLinux
 toc: true
-permalink: delLinuxEFI
 categories: Linux
 ---
 在 Win10 彻底删除 Linux  的  EFI 分区 及启动项的方法 。
