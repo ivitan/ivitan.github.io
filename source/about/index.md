@@ -7,7 +7,7 @@ reward: false
 ---
 <style>
 
-.page-content img{
+.content img{
     width:25px;
     margin-right:20px;
     background: none;
@@ -20,7 +20,7 @@ reward: false
 </style>
 # 👋 Hey friends!
 
-<div align="center">
+<div >
 
 My name is VITAN.
 
@@ -28,7 +28,7 @@ My name is VITAN.
 
 # 📫 How to reach me
 
-<div align="center">
+<div >
 
 <a href="https://github.com/ivitan">
   <img align="center" alt="Github" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Github.svg" />
