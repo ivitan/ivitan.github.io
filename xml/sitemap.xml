@@ -2,56 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/tags/index.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Tomcat.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Vim-Windows.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Scoop.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -73,13 +24,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/UsbDriver.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -114,20 +58,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Shell.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -156,28 +86,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -192,20 +101,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/tmux.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -261,41 +156,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLview.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Win10-Share-WiFI.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -303,42 +163,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Vim.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -353,13 +178,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -387,20 +205,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/about/index.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -415,6 +219,34 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/tags/index.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -422,7 +254,77 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Tomcat.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Scoop.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Shell.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -464,13 +366,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonTips.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -499,13 +394,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonRequest.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -514,6 +402,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonType.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -597,6 +492,34 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLview.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQLtest.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -639,7 +562,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -654,6 +591,34 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLexam.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -681,6 +646,27 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/GithubSecret.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -689,6 +675,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/HexoAction.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitLF.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -730,6 +723,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GitManual.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/NpmMirror.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -745,6 +745,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/NerdTree.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -842,7 +849,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -905,6 +926,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/PySpiderMaFengwo.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -948,6 +976,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -1115,7 +1150,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/HexoDevices.html</loc>
+    
+    <lastmod>2021-01-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -1171,27 +1220,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GitLF.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitManual.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Cmder.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -1235,20 +1263,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
@@ -1409,20 +1423,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
-    
-    <lastmod>2021-01-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/404.html</loc>
     
     <lastmod>2021-01-24</lastmod>
@@ -1544,6 +1544,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/tags/Batch/</loc>
+    <lastmod>2021-01-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/tags/WebCrawler/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
@@ -1552,13 +1559,6 @@
   
   <url>
     <loc>https://ivitan.com/tags/Python/</loc>
-    <lastmod>2021-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/Batch/</loc>
     <lastmod>2021-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
