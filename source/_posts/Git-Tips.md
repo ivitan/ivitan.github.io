@@ -7,7 +7,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 一些 Git 技巧。

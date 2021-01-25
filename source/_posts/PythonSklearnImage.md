@@ -8,7 +8,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 K-means 图片压缩

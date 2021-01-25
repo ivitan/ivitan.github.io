@@ -8,7 +8,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Python BeautifulSoup 库基础使用

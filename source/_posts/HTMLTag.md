@@ -7,7 +7,7 @@ tags:
 categories:
   - [Coding,Web]
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 HTML 标签

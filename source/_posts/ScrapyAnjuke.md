@@ -8,7 +8,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Scrapy anjuke.com 广州二手房数据(保存为 csv)

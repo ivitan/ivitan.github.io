@@ -8,7 +8,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 数据处理

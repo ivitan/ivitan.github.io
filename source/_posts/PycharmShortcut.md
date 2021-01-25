@@ -9,7 +9,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 PyCharm 快捷键

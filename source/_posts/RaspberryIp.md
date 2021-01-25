@@ -7,7 +7,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 树莓派获取 IP 

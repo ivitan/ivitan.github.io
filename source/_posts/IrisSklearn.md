@@ -7,7 +7,7 @@ tags:
 categories:
 - Coding
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Sklearn 鸢尾花

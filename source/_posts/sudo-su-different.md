@@ -8,7 +8,7 @@ tags:
 categories:
 - Linux
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 sudo su 区别

@@ -6,7 +6,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Atom 快捷键

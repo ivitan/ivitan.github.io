@@ -7,7 +7,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Raspberry Pi 屏幕触控驱动安装及分辨率设置。

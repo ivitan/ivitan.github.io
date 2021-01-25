@@ -9,7 +9,7 @@ tags:
 categories:
 - Linux
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Curl 使用技巧

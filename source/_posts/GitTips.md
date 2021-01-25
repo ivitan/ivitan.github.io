@@ -7,7 +7,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 本文来源 [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)

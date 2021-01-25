@@ -10,7 +10,7 @@ tags:
 categories:
   - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Atom 插件

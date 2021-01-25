@@ -8,7 +8,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 PySpider 爬猫途鹰网排名景点并保存至 MongoDB

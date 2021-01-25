@@ -9,7 +9,7 @@ tags:
 categories:
   - Linux
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 解决 Win10 与 Linux 时间不一致

@@ -10,7 +10,7 @@ tags:
 categories:
 - Database
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 MySQL 重置密码

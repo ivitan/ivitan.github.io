@@ -7,7 +7,7 @@ categories:
 - Coding
 - Python
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 以下是相关分析步骤与过程

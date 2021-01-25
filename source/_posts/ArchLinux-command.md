@@ -7,7 +7,7 @@ tags:
 categories:
 - Linux
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 pacman 软件包管理器

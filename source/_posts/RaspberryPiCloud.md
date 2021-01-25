@@ -7,7 +7,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 RaspberryPi 搭建云

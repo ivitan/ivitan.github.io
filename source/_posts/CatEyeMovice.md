@@ -7,7 +7,7 @@ tags:
 categories:
 - Coding
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 猫眼电影 Top100

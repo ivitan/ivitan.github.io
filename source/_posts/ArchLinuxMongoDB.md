@@ -9,7 +9,7 @@ tags:
 categories:
   - Linux
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 ArchLinux 安装 MongoDB RoboMongo

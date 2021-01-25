@@ -7,7 +7,7 @@ tags:
 categories:
 - Coding
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Python 数据可视化

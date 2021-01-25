@@ -8,7 +8,7 @@ tags:
 categories:
   - Coding
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Css 选择器与权重

@@ -7,7 +7,7 @@ tags:
 categories:
   - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 ---
 Git Commit 规范

@@ -8,7 +8,7 @@ tags:
 categories:
 - Diary
 author:
-  name: Vitan
+  - Vitan
 toc: true
 mermaid: true
 ---
