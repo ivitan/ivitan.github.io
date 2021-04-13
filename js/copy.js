@@ -1,0 +1,1 @@
+window,document,$(".highlight .code pre").before('<button class="btn-copy" data-clipboard-snippet="">  <i class="icon icon-copy"></i><span>Copy</span></button>'),new ClipboardJS(".btn-copy",{target:function(n){return n.nextElementSibling}});
