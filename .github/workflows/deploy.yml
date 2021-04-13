@@ -11,7 +11,7 @@ env:
   GIT_EMAIL: vitan.me@gmail.com
   DEPLOY_REPO: ivitan/ivitan.github.io
   DEPLOY_BRANCH: master
-  THEME_REPO: ivitan/icarus
+  THEME_REPO: ivitan/indigo
   THEME_BRANCH: master
 
 jobs:

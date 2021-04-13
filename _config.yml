@@ -99,7 +99,7 @@ sitemap:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: indigo
 
 deploy:
   type: git
