@@ -36,7 +36,7 @@ My name is VITAN.
 <a href="mailto:contact@ivitan.com">
   <img align="center" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
 </a>
-<a href="https://twitter.com/vitanme">
+<a href="https://twitter.com/VitanOrz">
   <img align="center" alt="Twitter" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/twitter.svg" />
 </a>
 
