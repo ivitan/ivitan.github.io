@@ -28,6 +28,8 @@
     "hexo-renderer-marked": "^4.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "highlight.js": "^10.7.2"
+    "highlight.js": "^10.7.2",
+    "lodash": "^4.17.21",
+    "underscore": "^1.13.1"
   }
 }
