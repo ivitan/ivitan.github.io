@@ -247,7 +247,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLselect.html</loc>
+    
+    <lastmod>2021-06-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
+    
+    <lastmod>2021-06-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
     
     <lastmod>2021-06-03</lastmod>
     
@@ -464,6 +478,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/NerdTree.html</loc>
+    
+    <lastmod>2021-06-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/PixelDiag.html</loc>
     
     <lastmod>2021-06-03</lastmod>
@@ -479,6 +500,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/PipInstall.html</loc>
+    
+    <lastmod>2021-06-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/N1Box.html</loc>
     
     <lastmod>2021-06-03</lastmod>
     
@@ -730,13 +758,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLselect.html</loc>
-    
-    <lastmod>2021-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/SQLfull.html</loc>
     
     <lastmod>2021-06-03</lastmod>
@@ -745,13 +766,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLlock.html</loc>
-    
-    <lastmod>2021-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
     
     <lastmod>2021-06-03</lastmod>
     
@@ -905,13 +919,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/NerdTree.html</loc>
-    
-    <lastmod>2021-06-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/GitReset.html</loc>
     
     <lastmod>2021-06-03</lastmod>
@@ -976,13 +983,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
-    
-    <lastmod>2021-06-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/N1Box.html</loc>
     
     <lastmod>2021-06-03</lastmod>
     
