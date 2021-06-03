@@ -33,7 +33,7 @@ My name is VITAN.
 <a href="https://github.com/ivitan">
   <img align="center" alt="Github" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Github.svg" />
 </a>
-<a href="mailto:contact@ivitan.com">
+<a href="mailto:vitanyeung@gmail.com">
   <img align="center" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
 </a>
 <a href="https://twitter.com/VitanOrz">
