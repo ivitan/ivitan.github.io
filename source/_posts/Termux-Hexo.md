@@ -11,9 +11,9 @@ toc: true
 date: 2020-09-09 17:31:50
 ---
 解决 Hexo 
-> zsh:/data/data/com.ternux/files/usr/bin/hexo: bad interpreter: /usr/bin/env:no such file or directory
+> zsh:/data/data/com.termux/files/usr/bin/hexo: bad interpreter: /usr/bin/env:no such file or directory
 
 ## 方法
 ```
-termux-fix-shebang /data/data/com.ternux/files/usr/bin/hexo
+termux-fix-shebang /data/data/com.termux/files/usr/bin/hexo
 ```
