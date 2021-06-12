@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/Vim-Windows.html</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
@@ -82,14 +98,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
   <url>
@@ -281,95 +289,7 @@
     <lastmod>2021-06-12</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GithubTips.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Grub.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Hexo-Domain.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HexoAction.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HexoDevices.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HexoInstall.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
   <url>
@@ -645,6 +565,14 @@
     <lastmod>2021-06-12</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
@@ -806,6 +734,78 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GithubTips.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Grub.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Domain.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoAction.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoDevices.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoInstall.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
+    <lastmod>2021-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
 </urlset> 
