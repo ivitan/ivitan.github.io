@@ -41,5 +41,3 @@ My name is VITAN.
 </a>
 
 </div>
-
----
