@@ -21,10 +21,12 @@ Kodi 设置中文并添加 IPTV 源
 
 ## 设置字体
 
-点击齿轮进入设置
+- 点击齿轮进入设置
+
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesKodi_Setting.png)
 
-再点击进入 `Interace` --> `Skin` -> `Fonts` 设置成 `Arial baased` 以防止设置成中文后乱码
+- 再点击进入 `Interace` --> `Skin` -> `Fonts` 设置成 `Arial baased` 以防止设置成中文后乱码
+
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesKodi_Interface.png)
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imageskodi_font.png)
 
@@ -76,9 +78,8 @@ Kodi 设置中文并添加 IPTV 源
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesKodi_PVRSetting.png)
 
 - 在 `M3U playlist path` 中选择或填写下好的源文件,最后点击确认
-  
+
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imageskodi_setsource.png)
 
 # 效果展示
-
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesKidi_show.png)
