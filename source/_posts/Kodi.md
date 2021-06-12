@@ -71,8 +71,7 @@ Kodi 设置中文并添加 IPTV 源
 在 https://github.com/biancangming/wtv 下载好放入U盘
 
 ## 添加源
-- 点击设置齿轮，然后点击`插件` --> `我的插件` --> `PVR客户端` --> `PVR IPTV Simple Client`
-- 点击设置，进入源设置页面
+- 点击设置齿轮，然后点击`插件` --> `我的插件` --> `PVR客户端` --> `PVR IPTV Simple Client`，点击设置，进入源设置页面
   
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesKodi_PVRSetting.png)
 
