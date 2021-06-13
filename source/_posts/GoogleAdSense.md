@@ -1,26 +1,40 @@
 ---
-title: 撤销 Google AdSense
+title: 你网站的 Google Adsense 为什么不通过？
 tags:
-- Hexo
-- Google
+  - Hexo
+  - Google
 categories:
-- Diary
+  - Coding
 author:
-- Vitan
+  - Vitan
 toc: true
-date: 2019-08-11 20:04:29
+date: 2021-06-13 23:52:59
 ---
-# AdSense 账户
-## 撤销原因
-更换了邮箱之后重新申请了一个，但是提示有多个 AdSense 账户
+> 我们发现，您还有一个 AdSense 帐号。每位用户只能拥有一个帐号。要使用此帐号，请关闭另一个帐号。
 
 <!--more-->
-## 常规撤销
-登录 [Google AdSense](https://www.google.com/adsense/) 点击菜单->账号->撤销账号
 
-- 个人情况
-我遇到的情况比较特俗，AdSense 页面的 `账号` 按钮不可点击，为灰色。
+# 失败分析
 
-## 摸索的方法
-1. 在 [Google 账号](https://myaccount.google.com) 的 `数据和个性化` -> `下载数据、删除数据或为数据制定方案` -> `删除某项服务或您的帐号` 关闭自己的 Google 付款资料
-2. 可以发现 AdSense 页面中的 `账号` 按钮变为可点击了，撤销成功！
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesGoogleAdsenseError.png)
+
+1. 网站内容不合规
+2. 提示有另一个账号
+3. ...
+
+## 两个账号原因
+-  Google Play 商店的付款方式，若你注册 Adsense 时又填写了另一个付款方式信息，那么你实际上就有两个了。
+- Google Play 商店锁过非大陆地区，删除付款方式，再在  Adsense 里添加单一付款方式，依旧提示有另一个账号。
+# 解决方法
+
+## 重新注册谷歌账号
+> **此电话号码无法用于进行验证**
+
+大陆地区手机号码需要将浏览器语言设为英文才能接到验证码
+
+## 注册 Adsense
+注册好谷歌账户后，先别登录 Play 商店，直接 Adsense 官网登录，按提示填上大陆地址的付款方式即可.
+
+# 成果
+
+![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesAdsenseBingo.png)
