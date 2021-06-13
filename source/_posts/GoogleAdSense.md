@@ -4,7 +4,7 @@ tags:
   - Hexo
   - Google
 categories:
-  - Coding
+  - Daily
 author:
   - Vitan
 toc: true

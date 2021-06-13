@@ -4,7 +4,7 @@ tags:
   - Android
   - TvBox
 categories:
-  - Coding
+  - Daily
 author:
   - Vitan
 toc: true

@@ -1,11 +1,11 @@
 ---
-title: Adb Magisk
+title: Adb 修补 boot 刷 Magisk
 tags:
   - Android
   - Linux
   - Windows
 categories:
-  - Coding
+  - Daily
 author:
   - Vitan
 toc: true
