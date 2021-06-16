@@ -96,7 +96,7 @@ feed:
 sitemap:
   path: /xml/sitemap.xml
 baidusitemap:
-path: /xml/baidusitemap.xml
+  path: /xml/baidusitemap.xml
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
