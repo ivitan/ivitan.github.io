@@ -19,7 +19,7 @@ date: 2021-07-22 19:23:54
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesWPS_Setting.png)
 
 - 功能定制中打勾
-  
+
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesWPS_Plug.png)
 
 - 其他选项中打勾
