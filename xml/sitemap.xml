@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ivitan.com/tags/index.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Termux.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -261,6 +268,20 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQLview.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -269,6 +290,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -401,14 +429,49 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/index.html</loc>
+    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
+    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/NpmPackage.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PicGo.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/OpenSourceSearch.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PipInstall.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -604,6 +667,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/RaspberryPiCloud.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -681,27 +751,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/SQLnfs.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -758,6 +807,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Oh-My-ZSH-Theme.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQL-Select.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -766,6 +822,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQL-Command.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Oh-My-ZSH-complete.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -828,20 +891,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/NpmPackage.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/NetWork.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -850,13 +899,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/H3C.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PicGo.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -898,41 +940,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Batch.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/OpenSourceSearch.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CMD.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -941,13 +948,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/LAMP.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PipInstall.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1004,13 +1004,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Docker.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1080,13 +1073,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/HTMLTag.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -1102,13 +1088,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1150,13 +1129,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/CurlTips.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -1172,13 +1144,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/GitTips.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1276,13 +1241,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Oh-My-ZSH-Theme.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Markdown-table.html</loc>
     
     <lastmod>2021-07-22</lastmod>
@@ -1305,13 +1263,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/JavaString.html</loc>
-    
-    <lastmod>2021-07-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Oh-My-ZSH-complete.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1402,7 +1353,49 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Batch.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CMD.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1424,6 +1417,13 @@
   
   <url>
     <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
+    
+    <lastmod>2021-07-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
     
     <lastmod>2021-07-22</lastmod>
     
@@ -1628,14 +1628,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/Eclipse/</loc>
+    <loc>https://ivitan.com/tags/Excel/</loc>
     <lastmod>2021-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/Excel/</loc>
+    <loc>https://ivitan.com/tags/Eclipse/</loc>
     <lastmod>2021-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
