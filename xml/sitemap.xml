@@ -2,125 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/posts/Windows-OpenSSH.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/WindowsShortcut.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/WinTask.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Wine-dpi.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Xpath.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/vimcopyppaste.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/spyder.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/wine.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/tmux.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/sudo-password-hint.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/sudo-su-different.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/linux-WeChat-QQ.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Win10-Share-WiFI.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/about/index.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/categories/index.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -191,6 +72,20 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Windows-OpenSSH.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/WindowsShortcut.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/UsbDriver.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -206,6 +101,27 @@
   
   <url>
     <loc>https://ivitan.com/posts/WNMP.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/WinTask.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Wine-dpi.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Xpath.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -233,7 +149,35 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/vimcopyppaste.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/spyder.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/wine.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -261,6 +205,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/tmux.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -275,6 +226,34 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/sudo-password-hint.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/sudo-su-different.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/linux-WeChat-QQ.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -282,28 +261,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLmode.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLselect.html</loc>
+    <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -311,27 +269,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLfull.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLlock.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -373,41 +310,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/SSH.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -415,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
+    <loc>https://ivitan.com/posts/Win10-Share-WiFI.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -423,20 +325,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Termux-R.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLexam.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -472,27 +360,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -555,21 +422,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Kodi.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HexoAction.html</loc>
+    <loc>https://ivitan.com/about/index.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -597,20 +450,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/NetWork.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PicGo.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -619,20 +458,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/NpmMirror.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/NerdTree.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -653,84 +478,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LAMP.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PipInstall.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/N1Box.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Grub.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -807,13 +555,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -863,13 +604,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonDateTime.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -877,21 +611,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -913,13 +633,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/JupyterTheme.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -961,13 +674,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -983,6 +689,524 @@
   
   <url>
     <loc>https://ivitan.com/posts/RaspberryGitServer.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/RaspberryIp.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLmode.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLselect.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLfull.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLlock.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLexam.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Oh-My-ZSH-Theme.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Oh-My-ZSH-complete.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Kodi.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoAction.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/FireWall.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitLF.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/NetWork.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitManual.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/NerdTree.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Batch.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CMD.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LAMP.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoSEO.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/N1Box.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Grub.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Git-Change.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Docker.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Hexo-Post.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ExcelFunction.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/FTX.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/JupyterTheme.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CurlTips.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Eclipse-Shortcuts.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1010,20 +1234,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryIp.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/LinuxDir.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -1031,7 +1241,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GithubTips.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Git-common-command.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1052,14 +1276,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    <loc>https://ivitan.com/posts/Git-error.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Oh-My-ZSH-Theme.html</loc>
+    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1094,13 +1318,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Oh-My-ZSH-complete.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/JavaControl.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -1108,7 +1325,21 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/HexoDevices.html</loc>
+    
+    <lastmod>2021-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1150,13 +1381,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ADB-NetWork.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -1171,119 +1395,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/FireWall.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitLF.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitManual.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Batch.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CMD.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Change.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Docker.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1297,56 +1409,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ExcelFunction.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/FTX.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CurlTips.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Eclipse-Shortcuts.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1360,13 +1423,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -1374,28 +1430,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1416,20 +1451,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GithubTips.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-common-command.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -1438,27 +1459,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Adb.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-error.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
@@ -1784,14 +1784,14 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/categories/Diary/</loc>
+    <loc>https://ivitan.com/categories/Daily/</loc>
     <lastmod>2021-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://ivitan.com/categories/Daily/</loc>
+    <loc>https://ivitan.com/categories/Diary/</loc>
     <lastmod>2021-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
