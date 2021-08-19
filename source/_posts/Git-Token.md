@@ -61,7 +61,3 @@ git remote add origin [url]
 ```
 
 3. 编辑 .git 中 config
-  
-```
-git remote origin set-url 
-```
