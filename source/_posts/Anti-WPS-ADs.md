@@ -3,7 +3,7 @@ title: 如何关闭大部分 WPS 广告
 tags:
   - Windows
 categories:
-  - Dairy
+  - Diary
 author:
   - Vitan
 toc: true

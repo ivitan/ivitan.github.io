@@ -4,7 +4,7 @@ tags:
   - Android
   - TvBox
 categories:
-  - Daily
+  - Diary
 author:
   - Vitan
 toc: true

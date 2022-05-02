@@ -4,7 +4,7 @@ tags:
   - Linux
   - Windows
 categories:
-  - Dairy
+  - Diary
 author:
   - Vitan
 toc: true

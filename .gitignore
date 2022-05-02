@@ -4,6 +4,5 @@ db.json
 *.log
 node_modules/
 public/
-.vscode*/
 .deploy*/
-themes*/
+_multiconfig.yml

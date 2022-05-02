@@ -7,7 +7,7 @@ reward: false
 ---
 <style>
 
-.page-content img{
+.page img{
     width:25px;
     margin-right:20px;
     background: none;

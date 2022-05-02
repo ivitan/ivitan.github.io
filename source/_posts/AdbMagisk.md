@@ -5,7 +5,7 @@ tags:
   - Linux
   - Windows
 categories:
-  - Daily
+  - Diary
 author:
   - Vitan
 toc: true

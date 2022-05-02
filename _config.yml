@@ -4,6 +4,7 @@
 
 # Site
 title: 楊咩阿
+avatar: 
 subtitle: ⁣⁣⁣Never Settle
 description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
@@ -98,10 +99,17 @@ sitemap:
 baidusitemap:
   path: /xml/baidusitemap.xml
 
+inject:
+  head:
+    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
+    - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9318335501008303"
+     crossorigin="anonymous"></script>
+
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo
+theme: stellar
 
 deploy:
   type: git
