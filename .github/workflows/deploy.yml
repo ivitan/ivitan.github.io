@@ -73,6 +73,7 @@ jobs:
       - name: Install Hexo Dependencies
         run: |
           sudo timedatectl set-timezone $TZ
+          npm install hexo-cli -g
           npm install
           wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
 
