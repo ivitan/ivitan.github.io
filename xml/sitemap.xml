@@ -2,97 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/categories/index.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/index.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/Dotfiles/index.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/Shell/index.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/wnmp/index.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLselect.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -623,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
+    <loc>https://ivitan.com/categories/index.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -632,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    <loc>https://ivitan.com/tags/index.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -641,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    <loc>https://ivitan.com/wiki/Dotfiles/index.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -650,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    <loc>https://ivitan.com/wiki/Shell/index.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -659,70 +569,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxDir.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Markdown-Plus.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Markdown-table.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Markdown.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
+    <loc>https://ivitan.com/wiki/wnmp/index.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -1226,6 +1073,51 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLselect.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
     
     <lastmod>2022-05-03</lastmod>
@@ -1254,132 +1146,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLexam.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ADB-APK.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ADB-NetWork.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Adb.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -1874,6 +1640,114 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxDir.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Markdown-Plus.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Markdown-table.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Markdown.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/GitGame.html</loc>
     
     <lastmod>2022-05-03</lastmod>
@@ -1929,6 +1803,132 @@
   
   <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ADB-APK.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ADB-NetWork.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Adb.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
+    
+    <lastmod>2022-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
     
     <lastmod>2022-05-03</lastmod>
     
