@@ -31,7 +31,7 @@ jobs:
     - name: Deploy Hexo
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.HEXO_DEPLOY_PRI }}
+        deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }}
         external_repository: ivitan/ivitan.github.io
         publish_branch: master
         publish_dir: ./public
