@@ -9,9 +9,9 @@ breadcrumb: false
 header: false
 ---
 
-{% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ivitan.png height:80px %}
+{% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg height:80px %}
 
-<img height="64px" alt="weijiajin" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ivitan.svg">
+<img height="45px" alt="VITAN" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ming.svg">
 
 **Never Settle**
 
