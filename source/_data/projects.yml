@@ -1,11 +1,39 @@
-
 Dotfiles:
   title: Dotfiles
-  subtitle: 环境配置
-  tags: 
+  subtitle: '各个系统的配置文件。'
+  tags: 环境
   cover: true
   logo:
-    src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/shell.png
-    small: 120px
-    large: 240px
-  description: 实用脚本集合。
+    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/Linux.png
+    small: 84px
+    large: 120px
+  description: 各个系统的配置文件。
+  index: true
+  sections:
+    '快速开始': [0, 99]
+    '基本使用': [100, 199]
+    '文档系统': [200, 299]
+    '进阶设定': [900, 999]
+  repo: ivitan/Dotfiles
+
+Shell:
+  title: Shell
+  tags: 脚本
+  logo:
+    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/SSH.png
+    small: 84px
+    large: 120px
+  description: Shell 脚本合集
+  repo: ivitan/Shell
+  branch: master
+
+wnmp:
+  title: wnmp
+  tags: 环境
+  logo:
+    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/HTML.png
+    small: 84px
+    large: 120px
+  description: Windows + Nginx1.1 + PHP7.2 + MySql5.7
+  repo: ivitan/wnmp
+  branch: master

@@ -1,43 +1,26 @@
 ---
-title: About
-description: Never Settle
-toc: false
+robots: 'index,nofollow'
+menu_id: more
+seo_title: 关于
+sidebar: [welcome, toc]
+toc_title: 关于
 comments: false
-reward: false
+breadcrumb: false
+header: false
 ---
-<style>
 
-.page img{
-    width:25px;
-    margin-right:20px;
-    background: none;
-    border-radius: none;
-    box-shadow: none;
-}
+{% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ivitan.png height:80px %}
 
-}
+<img height="64px" alt="weijiajin" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ivitan.svg">
 
-</style>
-# 👋 Hey friends!
+**Never Settle**
 
-<div align="center">
+{% navbar
+[订阅](/xml/atom.xml) 
+[邮箱](mailto:vitanyeung@gmail.com)
+[Github](https://github.com/ivitan)
+[网盘](https://pan.ivitan.com) %}
 
-My name is VITAN.
-
-</div>
-
-# 📫 How to reach me
-
-<div align="center">
-
-<a href="https://github.com/ivitan">
-  <img align="center" alt="Github" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Github.svg" />
-</a>
-<a href="mailto:vitanyeung@gmail.com">
-  <img align="center" alt="Email" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/email.svg" />
-</a>
-<a href="https://twitter.com/VitanOrz">
-  <img align="center" alt="Twitter" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/twitter.svg" />
-</a>
-
-</div>
+{% endabout %}
+## Github
+{% ghcard ivitan %}
