@@ -101,8 +101,6 @@ baidusitemap:
 inject:
   head:
     - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
-    - <scriptcustom-element=custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></scriptcustom-element=custom-element=>
-
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
