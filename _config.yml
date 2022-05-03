@@ -101,6 +101,8 @@ baidusitemap:
 inject:
   head:
     - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
+
+  footer:  
     - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9318335501008303"
      crossorigin="anonymous"></script>
     - <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9318335501008303" data-ad-slot="8390341665" data-ad-format="auto" data-full-width-responsive="true"></ins>
