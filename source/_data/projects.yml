@@ -1,0 +1,11 @@
+
+Dotfiles:
+  title: Dotfiles
+  subtitle: 环境配置
+  tags: 
+  cover: true
+  logo:
+    src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/shell.png
+    small: 120px
+    large: 240px
+  description: 实用脚本集合。

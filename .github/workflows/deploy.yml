@@ -6,79 +6,34 @@ on:
     branches: 
       - source
 
-env:
-  TZ: Asia/Shanghai
-  GIT_USER: Vitan
-  GIT_EMAIL: vitan.me@gmail.com
-  DEPLOY_REPO: ivitan/ivitan.github.io
-  DEPLOY_BRANCH: master
-  THEME_REPO: ivitan/indigo
-  THEME_BRANCH: master
-
 jobs:
-  build:
-    name: Setup OS
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node_version: [12.x]
-
+  build: 
+    runs-on: ubuntu-latest # 运行环境为最新版 Ubuntu
+    name: auto deploy
+    
     steps:
-      - name: Checkout Repository source branch
+    - name: Setup Node.js 12.x
+      uses: actions/setup-node@master
+      with:
+        node-version: "12.x"
+        
+    - name: Checkout Repository source branch
         uses: actions/checkout@v2
         with:
           ref: source
 
-      - name: Checkout Deploy Repo
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.DEPLOY_REPO }}
-          ref: ${{ env.DEPLOY_BRANCH }}
-          path: .deploy_git
+    - name: Generate Public Files
+      run: |
+        npm i
+        npm install hexo-cli -g
+        hexo clean && hexo generate
 
-      - name: Setup Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
-      
-      - name: Setup Deploy Private Key
-        env:
-          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-      - name: Setup Git Infomation
-        run: | 
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
-      
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-
-      - name: Install Hexo Dependencies
-        run: |
-          sudo timedatectl set-timezone $TZ
-          npm install hexo-cli -g
-          npm install
-          wget https://github.com/ivitan/ivitan.github.io/releases/download/Pin/generator.js -O ./node_modules/hexo-generator-index/lib/generator.js
-
-      - name: Deploy Hexo blog
-        run: |
-          hexo clean
-          hexo generate
-          hexo deploy
+    - name: Deploy Hexo
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.HEXO_DEPLOY_PRI }}
+        external_repository: ivitan/ivitan.github.io
+        publish_branch: master
+        publish_dir: ./public
+        commit_message: ${{ github.event.head_commit.message }}
+        user_name: 'github-actions[bot]'

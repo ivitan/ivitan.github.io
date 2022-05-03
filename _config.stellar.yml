@@ -10,8 +10,7 @@ stellar:
 ######## head tags ########
 open_graph:
   enable: true
-  twitter_id: iivitan # for open_graph meta
-  github: ivitan
+  github_id: ivitan
 
 
 ######## Sidebar ########
