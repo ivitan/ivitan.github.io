@@ -8,8 +8,7 @@ tags: Github
 
 ## 生成 SSH Key
 ```ssh
-ssh-keygen -t rsa -b 4096 -C "
-
+ssh-keygen -t rsa -b 4096 -C "emal@gmail.com"
 ```
 
 <!--more-->
