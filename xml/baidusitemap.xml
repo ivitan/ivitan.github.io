@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLview.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Scoop.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
@@ -154,6 +222,26 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/WinTask.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Shell.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PySpiderMaoTuYing.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PycharmShortcut.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonAlgorithm.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
@@ -317,71 +405,7 @@
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLview.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Scoop.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
@@ -393,107 +417,7 @@
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Shell.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/SQLexam.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CurlTips.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/DeleteMutiUser.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Docker.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Eclipse-Shortcuts.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ExcelFunction.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/FTX.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/FireWall.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-Change.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-Token.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-common-command.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-error.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
@@ -741,22 +665,6 @@
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/PySpiderMaoTuYing.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PycharmShortcut.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonAlgorithm.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
@@ -766,14 +674,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/Linux-Commands.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CMD.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
@@ -837,7 +737,107 @@
     <lastmod>2022-05-14</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CurlTips.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/DeleteMutiUser.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Docker.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Eclipse-Shortcuts.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ExcelFunction.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/FTX.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/FireWall.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-Change.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-Token.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-common-command.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Git-error.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/Batch.html</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CMD.html</loc>
     <lastmod>2022-05-14</lastmod>
   </url>
 </urlset> 
