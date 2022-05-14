@@ -24,8 +24,8 @@ sidebar:
     about: '[关于](/about/)'
   # Sidebar widgets
   widget_layout:
-    index: [recent] # for home/wiki/categories/tags/archives/404 pages
-    page: [toc] # for pages using 'layout:page'
+    index: recent # for home/wiki/categories/tags/archives/404 pages
+    page: toc # for pages using 'layout:page'
     post: [toc, repo_info] # for pages using 'layout:post'
     wiki: [toc, repo_info, wiki_more] # for pages using 'layout:wiki'
   widgets:
@@ -56,7 +56,7 @@ article:
   category_color:
     '新闻稿': '#DA0F47'
   # 文章许可协议
-  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议'
   # 分享
   share: # [wechat, weibo, email, link]
   # 相关文章，需要安装插件 (for layout: post)
