@@ -98,6 +98,10 @@ sitemap:
 baidusitemap:
   path: /xml/baidusitemap.xml
 
+jsdelivr_auto_fallback:
+  enable: true
+  add_defer: true
+
 inject:
   head:
     - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
