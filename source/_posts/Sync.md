@@ -22,11 +22,11 @@ date: 2020-06-07 11:00:38
 ## 新建 Gist
 访问 [Github Tokens](https://github.com/settings/tokens) ,然后点击 Generate new token
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/CreateToken.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/CreateToken.png)
 
 勾选 Gist
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Gist.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/Gist.png)
 
 然后复制得到的 Token
 
@@ -49,21 +49,21 @@ Crtl + P 输入
 
 访问 https://gist.github.com/ 创建新的 Gist
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/CreatGist.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/CreatGist.png)
 
 - 得到 Gist ID
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/GistID.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/GistID.png)
 
 ## 设置 Setting Sync 
 
 - 打开 Setting sync 扩展设置
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/OpenSync.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/OpenSync.png)
 
 - 填入 Gist ID
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/InputGistID.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/InputGistID.png)
 
 # 快捷键
 

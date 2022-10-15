@@ -15,7 +15,7 @@ Windows 配置美化 Vim.
 
 <!--more-->
 
-![最终效果](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200615152009.png)
+![最终效果](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200615152009.png)
 
 ---
 

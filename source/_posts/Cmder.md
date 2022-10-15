@@ -24,7 +24,7 @@ CMDER_HOME
 D:\Program Files\cmder
 ```
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200405132003.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200405132003.png)
 
 - 在 PATH 添加 `%CMDER_HOME%`
 
@@ -43,7 +43,7 @@ Cmder.exe /UNREGISTER ALL
 
 ## 使用 Bash
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/cmder_bash.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/cmder_bash.png)
 
 
 ## 别名

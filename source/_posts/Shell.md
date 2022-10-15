@@ -17,11 +17,11 @@ Shell 总结
 # 变量替换和测试
 ## 变量替换
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720191523.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720191523.png)
 
 ## 变量测试
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720191707.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720191707.png)
 
 # 字符串处理
 ## 计算字符串长度
@@ -45,7 +45,7 @@ expr index $string $substring
 
 抽取子串
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720192503.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720192503.png)
 
 ## 总结
 计算字符串长度
@@ -139,7 +139,7 @@ substr1=${var1:-10:4}
 # 命令替换
 语法格式
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720194539.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720194539.png)
 
 ## 例题
 获取系统所有用户并输出
@@ -170,7 +170,7 @@ fi
 
 ## declare参数表
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720195605.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720195605.png)
 
 ```sh
 # 声明整数型变量
@@ -219,17 +219,17 @@ declare +X
 
 # 数学运算
 语法格式
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720200443.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720200443.png)
 
 expr操作符对照表
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720200649.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720200649.png)
 
 ## 例子
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720201000.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720201000.png)
 
 # Bash运算之bc
 ## bc 操作
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720201134.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720201134.png)
 ```sh
 scale=2 #精确到小数点后两位
 echo “20+22” | bc
@@ -385,7 +385,7 @@ sys_load
 # 文件查找之find命令
 find [路径][选项][操作]
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190720205155.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190720205155.png)
 
 ## 实例
 1. 查找 /etc 目录下 conf 结尾的文件
@@ -526,7 +526,7 @@ find /etc -newer a
   - -b 只返回二进制文件
 
 ## 各命令使用场景推荐
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094218.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094218.png)
 
 
 # grep和egrep
@@ -537,8 +537,8 @@ find /etc -newer a
 
 grep参数
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094721.png)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094812.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094721.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721094812.png)
   - grep -E “python | PYTHON” file
 
 ## egrep
@@ -555,7 +555,7 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 
 ## 选项
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721095810.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721095810.png)
 
 ```sh
   sed ‘p’ sed.tet # p打印出来
@@ -576,7 +576,7 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 ```
 
 ## sed 的 pattern 详解
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100028.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100028.png)
 
 ```sh
   # 打印file的17行
@@ -596,8 +596,8 @@ sed(Stream Editor)，流编辑器，对标准输出或文件逐行进行处理
 ```
 
 ## sed 中的编辑命令
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100852.png)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100931.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100852.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721100931.png)
 
 ```
   sed -i‘1d/ sed.txt # 删除第一行
@@ -643,7 +643,7 @@ sed "s/\(1...e\)/\1r/g" file # 使用\1代表搜寻到的字符串
 ## 用 sed 查询特定内容
 查询命令
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721102519.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721102519.png)
 
 实例
 ```sh
@@ -658,7 +658,7 @@ sed -n '8,/\sbin\/nologin/p' /etc/passwd
 sed -n '\bin\/bash/,5p' /etc/passwd
 ```
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721103230.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721103230.png)
 
 ```sh
   #!/bin/bash
@@ -690,7 +690,7 @@ sed -n '\bin\/bash/,5p' /etc/passwd
 ```
 
 ## sed 删除特定内容
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721103352.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721103352.png)
 
 ```sh
 sed -i '15d' passwd
@@ -713,7 +713,7 @@ sed -i ‘/^[^#]/\*&/g’nginx.conf  #非井号开头
 ```
 
 ## sed 修改文件内容
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721104309.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721104309.png)
 
 实例
 ```sh
@@ -780,13 +780,13 @@ standard outpu | awk 'BEGIN{}pattern{commands}END{}' file_name
 
 - 语法格式说明
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721124926.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721124926.png)
   
 ## awk 内置变量
 内置变量对照表
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721125045.png)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721130039.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721125045.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721130039.png)
 
 ```awk
 awk '{print $0}END{}' /etc/passwd
@@ -825,11 +825,11 @@ awk 'BEGIN{FS=":"}{print $NF}' /etc/passwd # 输出行最大自的断
 ## awk 格式化输出
 printf(默认不带分隔符) 语法
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721134349.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721134349.png)
 
 修饰符
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721134554.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721134554.png)
 
 实例
 ```awk
@@ -1069,7 +1069,7 @@ for (初始化计数器;测试计数器;计数器变更)
   
 - 计算每个同学平均分，仅显示大于90
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721185930.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721185930.png)
 
 ```awk student.awk
   BEGIN{
@@ -1110,8 +1110,8 @@ for (初始化计数器;测试计数器;计数器变更)
 ## awk 中的字符串函数
 字符串函数对照表
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721191406.png)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20190721191743.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721191406.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20190721191743.png)
 
 例子
 1. 以:为分隔符，返回文件中每行中的字段长度

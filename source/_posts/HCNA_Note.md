@@ -17,7 +17,7 @@ HCNA 学习笔记
 
 - 企业网络远程互联：
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/wangluo.jpg)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/wangluo.jpg)
 
 总公司与分公司使用广域网链路(WAN)互联
 <!--more-->
@@ -28,7 +28,7 @@ HCNA 学习笔记
 
 - 结构图(左小右大)
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/iwljgt.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/iwljgt.png)
 
 # 网络基本管理及模拟器使用
 ## 常用的传输介质
@@ -68,7 +68,7 @@ V.24为RS-232标准的欧洲版，RS-232本身没有定义接头标准，RS-232�
 重新注册要关闭ENSP，个人文件夹下的.VirtualBox彻底删除。注册完毕之后关闭ENSP然后再开启。
 
 ## 冲突域
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/cty.jpg)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/cty.jpg)
 
 - 应用场景
 
@@ -76,7 +76,7 @@ V.24为RS-232标准的欧洲版，RS-232本身没有定义接头标准，RS-232�
 
 - 冲突域与半双工搭配
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200517124923.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200517124923.png)
 
 `单工` 简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。
 `半双工` 比单工先进一点，就是双方都能发信息，但同一时间则只能一方发信息。
@@ -154,7 +154,7 @@ diaplay ip routting0table # 查看路由表
 4. 网络接口层 (PPP)，交换
 
 ## 数据封装
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/shujufengzhuang.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/shujufengzhuang.png)
 
 每一层都有一个头部
 
@@ -197,7 +197,7 @@ PPP(ppp网络)、HDLC(ppp网络)：什么都不靠
 以太网的MAC地址(Media Access Control Address)：
 由两部分组成:前24位的供应商代码、后24位的序列号。供应商代码由IEEE管理和分配。
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/MacAddress.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/MacAddress.png)
 
 OUI：厂商序号
 
@@ -226,24 +226,24 @@ EnternetII格式中包含一个Type字段，标识以太网帧处理完成值后
 不同的Type字段值可以用来区别这两种帧的类型:
 
 `EnternetII格式`: Length/Type >= 1536(0x0600)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125147.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125147.png)
 
 `IEEE802.3格式`: Length/Type <= 1500(0x05DC)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125222.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125222.png)
 
 以太网帧中还包括源和目的的MAC地址，分别代表发送者和接受者的MAC，此外还有帧校验序列字段，用于检验传输过程中的完整性。
 
 # 以太网IP地址网络基础和FTP
 ## IP编制
 ### IP编制组成
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ndLwcGxUgrkJhCq.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/ndLwcGxUgrkJhCq.png)
 
 1. IP 地址分为网络部分和主机部分
 2. IP 地址由32个二进制位组成，通常用点分十进制形式表示。
 
 - IP报文头部
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/R1GazuNob9qBnwY.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/R1GazuNob9qBnwY.png)
 
 Tyep[Data] 的 1500 包括IP报头
 
@@ -262,7 +262,7 @@ Tyep[Data] 的 1500 包括IP报头
 二进制，十进制，十六进制(MAC)
 
 ## IPv4地址分类
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125412.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200517125412.png)
 
 ### 地址范围
 A类：1.0.0.1 - 126.255.255.254
@@ -292,22 +292,22 @@ E类：240.0.0.1 - 255.255.255.254
 3. 255.255.2555.255(本地广播地址，是0.0.0.0的广播地址)
 
 ## 子网掩码(subset mask)
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/YGBtav3hmNwMCDi.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/YGBtav3hmNwMCDi.png)
 
 - 默认子网掩码
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/s25D4BLpFRfkITJ.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/s25D4BLpFRfkITJ.png)
 
 A类：8位
 B类：16位
 C类：24位
 
 ## 地址规划
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/xzUOeirdFZqsyjh.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/xzUOeirdFZqsyjh.png)
 
 - 举例
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/iNvgm3yKU5ehRZn.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/iNvgm3yKU5ehRZn.png)
 
 由子网掩码可知：172.10.1.7/16，所以网络地址为：172.16.0.0(主机位全为0)，主机数：2^16,可用主机数: 2^16-2
 
@@ -316,13 +316,13 @@ C类：24位
 
 - 变长子网掩码
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ScY1AUKshDLRvx4.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/ScY1AUKshDLRvx4.png)
 
 192.168.1.7/25
 
 ## 有类IP编址的缺陷
 在设计网络时使用有类IP地址会造成地址的浪费。
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/Sv8LD5ZQUioz7lw.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/Sv8LD5ZQUioz7lw.png)
 
 ## 划分子网方法
 1. 根据需要的子网数目来确定子网位数，但是要确保每个子网可用的IP地址数目大于等于本机数。
@@ -409,7 +409,7 @@ A类地址网络位的基础数是8，二者之间的位数差是3
 cidrreport.org
 无间路由(Classless Inter Domain Routing):由RFC1871定义。突破传统的地址分类边界，将路由表中的若干条线路汇聚成一条路由，减少了路由表的规模，提高了路由的可扩展性。
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/xD3bcuXPFsLTiSZ.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/xD3bcuXPFsLTiSZ.png)
 
 图中：转成二进制：
 10.24.0000，0000.0
@@ -422,7 +422,7 @@ cidrreport.org
 ## 网关(Gateway)
 用来转发来自不同网段之间的数据包。
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/6y7Jc51WoUZINP8.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/6y7Jc51WoUZINP8.png)
 
 ## 实施FTP
 - 文件传输
@@ -492,7 +492,7 @@ copy 数据(VRP包拷贝)
 CTRL + B 停止自动启动(后可以初始密码)
  
 ## 命令行视图
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/RLPUMe4njqVylga.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/RLPUMe4njqVylga.png)
 
 - 用户视图
 
@@ -637,7 +637,7 @@ header shell information "Please dont't reboot this devices"
 |save|保存配置，要在用户模式下|
 
 ## 配置文件管理
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/B7dYZRDnW2tQmc6.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/B7dYZRDnW2tQmc6.png)
 
 - 配置文件查询
 

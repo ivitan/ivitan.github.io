@@ -9,7 +9,7 @@ toc: true
 ---
 Git 常用命令
 <!--more-->
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/GitCmd.jpg)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/GitCmd.jpg)
 
 # 配置
 - 基础配置
