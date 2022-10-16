@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <loc>https://ivitan.com/categories/index.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <loc>https://ivitan.com/tags/index.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/wiki/Dotfiles/index.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <loc>https://ivitan.com/wiki/Shell/index.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -38,16 +38,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    <loc>https://ivitan.com/wiki/wnmp/index.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -57,15 +48,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/TermuxNote.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -137,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuEclipse.html</loc>
+    <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -146,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuCommand.html</loc>
+    <loc>https://ivitan.com/posts/UbuntuEclipse.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -173,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
+    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -182,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
+    <loc>https://ivitan.com/posts/Vim-Vundle-Markdown.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -209,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Visualization.html</loc>
+    <loc>https://ivitan.com/posts/Vim.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -218,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Vim.html</loc>
+    <loc>https://ivitan.com/posts/Visualization.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -281,6 +263,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/linux-WeChat-QQ.html</loc>
     
     <lastmod>2022-10-16</lastmod>
@@ -290,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/jQuerySelector.html</loc>
+    <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -309,15 +300,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/sudo-password-hint.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/post-typography-and-tags-test.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -381,123 +363,6 @@
   
   <url>
     <loc>https://ivitan.com/about/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/categories/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/Shell/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/wnmp/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/wiki/Dotfiles/index.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonTips.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -614,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
+    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -623,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
+    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -650,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
+    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -659,7 +524,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
+    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -677,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
+    <loc>https://ivitan.com/posts/SQLmode.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -686,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLmode.html</loc>
+    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -758,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -767,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -857,6 +722,69 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/SQL-Command.html</loc>
     
     <lastmod>2022-10-16</lastmod>
@@ -885,87 +813,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitLF.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitManual.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GithubActions.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1100,7 +947,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
+    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1109,7 +956,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HighlightJs.html</loc>
+    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1226,7 +1073,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
+    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1235,7 +1082,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
+    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1289,7 +1136,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/N1Box.html</loc>
+    <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1298,7 +1145,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
+    <loc>https://ivitan.com/posts/N1Box.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1424,7 +1271,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PySpiderMaFengwo.html</loc>
+    <loc>https://ivitan.com/posts/PyQuery.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1433,7 +1280,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PyQuery.html</loc>
+    <loc>https://ivitan.com/posts/PySpiderMaFengwo.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1487,7 +1334,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonDateTypes.html</loc>
+    <loc>https://ivitan.com/posts/PythonExcel.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1496,7 +1343,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonExcel.html</loc>
+    <loc>https://ivitan.com/posts/PythonDateTypes.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1532,7 +1379,70 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
+    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonTips.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1622,7 +1532,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Adb.html</loc>
+    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1631,7 +1541,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
+    <loc>https://ivitan.com/posts/Adb.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1721,15 +1631,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
-    
-    <lastmod>2022-10-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/CSSselector.html</loc>
     
     <lastmod>2022-10-16</lastmod>
@@ -1739,7 +1640,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1749,6 +1650,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1784,7 +1694,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
+    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1793,7 +1703,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
+    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1847,7 +1757,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
+    <loc>https://ivitan.com/posts/FireWall.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1856,7 +1766,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/FireWall.html</loc>
+    <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1874,7 +1784,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
+    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1883,7 +1793,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Git-Commit.html</loc>
+    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -1920,6 +1830,96 @@
   
   <url>
     <loc>https://ivitan.com/posts/GitEmoji.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitLF.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitManual.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubActions.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -2041,13 +2041,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/Shell/</loc>
-    <lastmod>2022-10-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/tags/HTML/</loc>
     <lastmod>2022-10-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -2069,7 +2062,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/Batch/</loc>
+    <loc>https://ivitan.com/tags/Shell/</loc>
     <lastmod>2022-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2084,6 +2077,13 @@
   
   <url>
     <loc>https://ivitan.com/tags/Python/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/tags/Batch/</loc>
     <lastmod>2022-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
