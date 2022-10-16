@@ -4,7 +4,7 @@ Dotfiles:
   tags: 环境
   cover: true
   logo:
-    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/Linux.png
+    src: https://fastly.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/Linux.png
     small: 84px
     large: 120px
   description: 各个系统的配置文件。
@@ -20,7 +20,7 @@ Shell:
   title: Shell
   tags: 脚本
   logo:
-    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/SSH.png
+    src: https://fastly.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/SSH.png
     small: 84px
     large: 120px
   description: Shell 脚本合集
@@ -31,7 +31,7 @@ wnmp:
   title: wnmp
   tags: 环境
   logo:
-    src: https://cdn.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/HTML.png
+    src: https://fastly.jsdelivr.net/gh/ivitan/hexo-theme-cutie@master/source/images/HTML.png
     small: 84px
     large: 120px
   description: Windows + Nginx1.1 + PHP7.2 + MySql5.7
