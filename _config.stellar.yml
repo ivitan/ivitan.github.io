@@ -16,7 +16,7 @@ open_graph:
 ######## Sidebar ########
 sidebar:
   logo:
-    avatar: '[/asstes/vitan/avatar/ivitan.png](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
+    avatar: '[config.avatar](/about/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
     title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
   menu:
     post: '[主页](/)'
@@ -239,7 +239,7 @@ style:
     scrollbar: 4px
 
 default:
-  avatar: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg
+  avatar: /asstes/vitan/avatar/ivitan.png
   link: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/link/8f277b4ee0ecd.svg
   cover: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/cover/76b86c0226ffd.svg
   image: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg
