@@ -24,8 +24,8 @@ sidebar:
     about: '[关于](/about/)'
   # Sidebar widgets
   widget_layout:
-    index: [recent] # for home/wiki/categories/tags/archives/404 pages
-    page: [toc] # for pages using 'layout:page'
+    index: [welcome, recent, ghuser_mini] # for home/wiki/categories/tags/archives/404 pages
+    page: [welcome, toc] # for pages using 'layout:page'
     post: [toc, repo_info] # for pages using 'layout:post'
     wiki: [toc, repo_info, wiki_more] # for pages using 'layout:wiki'
   widgets:
@@ -47,6 +47,12 @@ sidebar:
       api: https://api.github.com
       username: ivitan # your github login username
       avatar: true
+    ghuser_mini:
+      layout: ghuser
+      header: # GitHub Info
+      api: https://api.github.com
+      username: ivitan # your github login username
+      avatar: false
 
 ######## Main ########
 breadcrumb:
