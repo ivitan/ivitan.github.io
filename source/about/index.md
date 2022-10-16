@@ -14,7 +14,6 @@ ghuser: true
 
 <img height="45px" alt="VITAN" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ming.svg">
 
-**Never Settle**
 
 {% navbar
 [订阅](/xml/atom.xml) 
