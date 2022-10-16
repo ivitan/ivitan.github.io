@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ivitan.com/posts/tmux.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/vimcopyppaste.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/wine.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLlock.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLmode.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/SQLnfs.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -225,22 +249,6 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/tmux.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/vimcopyppaste.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/wine.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/WinTask.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -250,18 +258,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
@@ -509,14 +505,6 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLlock.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLmode.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -530,26 +518,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/SQLexam.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
@@ -801,6 +769,18 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/GitGame.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -838,6 +818,26 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/Adb.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
 </urlset> 
