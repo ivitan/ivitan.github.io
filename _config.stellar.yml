@@ -16,7 +16,7 @@ open_graph:
 ######## Sidebar ########
 sidebar:
   logo:
-    avatar: '[https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/ivitan.png](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
+    avatar: '[/assets/vitan/avatar/ivitan.png](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
     title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
   menu:
     post: '[主页](/)'
