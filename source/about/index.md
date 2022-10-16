@@ -10,9 +10,9 @@ header: true
 ghuser: true
 ---
 
-{% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg height:80px %}
+{% about avatar:/assets/logo/favicon.svg height:80px %}
 
-<img height="45px" alt="VITAN" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/ming.svg">
+<img height="45px" alt="VITAN" src="/assets/logo/ming.svg">
 
 
 {% navbar

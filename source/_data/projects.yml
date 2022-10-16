@@ -20,7 +20,7 @@ Shell:
   title: Shell
   tags: 脚本
   logo:
-    src: /assets/wiki/BASH.png
+    src: /assets/wiki/Bash.png
     small: 84px
     large: 120px
   description: Shell 脚本合集
