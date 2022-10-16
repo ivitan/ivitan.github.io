@@ -14,7 +14,7 @@ title: Dotfiles
 
 ## Windows
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200620100620.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/20200620100620.png)
 
 ### PowerShell
 
@@ -76,7 +76,7 @@ Config files: [`zshrc`](./Linux/Termux/zshrc)
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ivitan/DotFiles/master/Scripts/Termux.sh)"
 ```
 
-![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imagesTermuxDotfile.png)
+![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/imagesTermuxDotfile.png)
 
 ### Arch Linux WSL (for use on Windows)
 
