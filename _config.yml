@@ -107,7 +107,7 @@ jsdelivr_auto_fallback:
 
 inject:
   head:
-    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
+    - <link rel="shortcut icon" href="https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/favicon.svg">
     - <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEHQ8YBEN0"></script>
     - <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XEHQ8YBEN0');</script>
 
