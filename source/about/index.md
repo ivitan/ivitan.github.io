@@ -5,8 +5,9 @@ seo_title: 关于
 sidebar: [welcome, toc]
 toc_title: 关于
 comments: false
-breadcrumb: false
+breadcrumb: true
 header: true
+ghuser: true
 ---
 
 {% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg height:80px %}
