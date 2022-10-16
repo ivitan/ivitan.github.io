@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Scoop.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxRepo.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Tomcat.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/UbuntuAndroidStudio.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -113,6 +213,50 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/Shell.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonTips.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonType.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonWorldFrequency.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Qunar.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -213,111 +357,7 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Scoop.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/TermuxRepo.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Tomcat.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu18-SS-qt5.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/SQL-Command.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Shell.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
@@ -326,10 +366,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
@@ -565,46 +601,6 @@
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonTips.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonType.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonWorldFrequency.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Qunar.html</loc>
-    <lastmod>2022-10-16</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/HCNA_Note.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
@@ -826,6 +822,10 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/Grub.html</loc>
+    <lastmod>2022-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
     <lastmod>2022-10-16</lastmod>
   </url>
   <url>
