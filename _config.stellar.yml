@@ -41,6 +41,12 @@ sidebar:
       min_depth: 2
       max_depth: 5
       fallback: recent # Use a backup widget when toc does not exist.
+    # Github
+    ghuser:
+      layout: ghuser
+      api: https://api.github.com
+      username: ivitan # your github login username
+      avatar: true
 
 ######## Main ########
 breadcrumb:
