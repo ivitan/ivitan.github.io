@@ -5,7 +5,7 @@ title: wnmp
 ---
 
 <p align="center" class="has-mb-6">
-<img class="not-gallery-item" height="48" src="https://fastly.jsdelivr.net/gh/ivitan/Picture@master/imageslogo.svg">
+<img class="not-gallery-item" height="48" src="/assets/logo/favicon.svg">
 <br>
 <h2 align="center">WNMP</h2>
 <p align="center">Windows + Nginx1.1 + PHP7.2 + MySql5.7</p>
