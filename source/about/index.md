@@ -6,7 +6,7 @@ sidebar: [welcome, toc]
 toc_title: 关于
 comments: false
 breadcrumb: false
-header: false
+header: true
 ---
 
 {% about avatar:https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/vitan.svg height:80px %}
