@@ -8,7 +8,10 @@ subtitle: ⁣⁣⁣Never Settle  | ivitan.com
 description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
 author: VITAN
-language: zh-CN
+language:
+  - zh-CN
+  - en
+  - zh-TW
 timezone: Asia/Shanghai
 
 # URL
