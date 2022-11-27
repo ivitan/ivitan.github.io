@@ -2,7 +2,7 @@
 robots: 'index,nofollow'
 menu_id: more
 seo_title: 关于
-sidebar: [welcome, toc]
+sidebar: [ghuser_mini, toc]
 toc_title: 关于
 comments: false
 breadcrumb: true
