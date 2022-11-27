@@ -12,7 +12,6 @@ ghuser: true
 
 {% about avatar:/assets/logo/favicon.svg height:80px %}
 
-<img height="45px" alt="VITAN" src="/assets/logo/ming.svg">
 
 
 {% navbar
