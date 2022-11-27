@@ -27,7 +27,7 @@ sidebar:
     index: welcome, recent, ghuser_mini # for home/wiki/categories/tags/archives/404 pages
     page: welcome, toc # for pages using 'layout:page'
     post: toc, repo_info # for pages using 'layout:post'
-    wiki: toc, repo_info, wiki_more # for pages using 'layout:wiki'
+    wiki: toc, repo_info, related # for pages using 'layout:wiki'
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
