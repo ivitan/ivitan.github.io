@@ -1,86 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ivitan.com/posts/wine.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLmode.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLselect.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLview.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Scoop.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Shell.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/TTYD.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
@@ -126,6 +46,10 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -253,27 +177,127 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
+    <loc>https://ivitan.com/posts/wine.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
+    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLexam.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLfull.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLlock.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLmode.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLnfs.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLprocedure.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLrelAlg.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLselect.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQLview.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Scoop.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Shell.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -497,143 +521,7 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Note.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQL-Select.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLconstraints.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLexam.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLfull.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLfunDep.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLgrant.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/SQLlock.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Adb.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Batch.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CMD.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Cmder.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/CurlTips.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/DeleteMutiUser.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -685,19 +573,19 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/GitEmoji.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/GitManual.html</loc>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/GitLF.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitManual.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -725,11 +613,11 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/GithubTips.html</loc>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
+    <loc>https://ivitan.com/posts/GithubTips.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -829,6 +717,26 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Deb.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
@@ -838,6 +746,98 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/ADB-NetWork.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Adb.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/AdbMagisk.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Anti-WPS-ADs.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-MySQL.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-Nvidia.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-command.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinuxMongoDB.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/ArchNtfs.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Atom-Plugin.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/AtomCommands.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/BaiduPCS-Go.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Batch.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CMD.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CatEyeMovice.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Cmder.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Colorful-Man-Page.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CurlSocks5.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/CurlTips.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/DataTransformation.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/DeleteGoogleAdSense.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
 </urlset> 
