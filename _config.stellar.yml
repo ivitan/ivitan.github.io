@@ -1,6 +1,6 @@
 ######## Stellar info ########
 stellar:
-  version: '1.7.0'
+  version: '1.16.2'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
@@ -9,7 +9,7 @@ stellar:
 
 ######## head tags ########
 open_graph:
-  enable: true
+  enable: false
   github_id: ivitan
 
 
@@ -23,52 +23,29 @@ sidebar:
     wiki: '[项目](/wiki/)'
     about: '[关于](/about/)'
   # Sidebar widgets
-  widget_layout:
-    index: [welcome, recent, ghuser_mini] # for home/wiki/categories/tags/archives/404 pages
-    page: [welcome, toc] # for pages using 'layout:page'
-    post: [toc, repo_info] # for pages using 'layout:post'
-    wiki: [toc, repo_info, wiki_more] # for pages using 'layout:wiki'
-  widgets:
-    # Recent update
-    recent:
-      layout: recent
-      rss: /xml/atom.xml # npm i hexo-generator-feed
-      limit: 10 # Count of posts
-    # TOC (valid only in layout:post/wiki)
-    toc:
-      layout: toc
-      list_number: false
-      min_depth: 2
-      max_depth: 5
-      fallback: recent # Use a backup widget when toc does not exist.
-    # Github
-    ghuser:
-      layout: ghuser
-      api: https://api.github.com
-      username: ivitan # your github login username
-      avatar: true
-    ghuser_mini:
-      layout: ghuser
-      header: # GitHub Info
-      api: https://api.github.com
-      username: ivitan # your github login username
-      avatar: false
+  widget:
+    index: welcome, recent, ghuser_mini # for home/wiki/categories/tags/archives/404 pages
+    page: welcome, toc # for pages using 'layout:page'
+    post: toc, repo_info # for pages using 'layout:post'
+    wiki: toc, repo_info, wiki_more # for pages using 'layout:wiki'
 
-######## Main ########
-breadcrumb:
-  home: home # config.title / config.author / home or custom content
+######## Index ########
+post-index: # 近期发布 分类 标签 归档 and ...
+  # '朋友文章': /friends/rss/
 
 ######## Article ########
 article:
-  # 如果没有指定封面，是否根据 tags 作为关键词搜索封面？
+  # 如果没有指定封面，是否根据 tags 作为关键词搜索封面图片？
   auto_cover: false # search from https://source.unsplash.com/
+  # 如果没有指定横幅，是否根据 tags 作为关键词搜索横幅图片？
+  auto_banner: false # search from https://source.unsplash.com/
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
   auto_excerpt: 200
   # 分类颜色
   category_color:
-    '新闻稿': '#DA0F47'
+    '探索号': '#f44336'
   # 文章许可协议
-  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议'
+  license: '本文采用[署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/)许可协议，转载请注明出处。'
   # 分享
   share: # [wechat, weibo, email, link]
   # 相关文章，需要安装插件 (for layout: post)
@@ -76,35 +53,58 @@ article:
   related_posts:
     enable: false
     max_count: 5
-    auto_cover: true # 如果没有封面就根据 tags 作为关键词搜索封面，开了此项将不会自动从文章中提取首张图片作为封面了。
-
 
 
 ######## Comments ########
 comments:
-  service: valine # beaudar, utterances, valine, twikoo
-  valine:
-    js: https://fastly.jsdelivr.net/gh/XuxuGood/simple-blog-cdn@main/js/Valine.min.js
-    appId: D33WPBHpBw2CjwdWpFvpUhDm-MdYXbMMI
-    appKey: MzQtKvSeVPU4nS4ljd3zlbMp
-    placeholder:
-    requiredFields: [nick, mail]
-    enableQQ: true # Unstable avatar link
-    recordIP: false # Record commenter IP
-    avatar: robohash # gravatar style https://valine.js.org/avatar
-    pageSize: 10 # comment list page size
-    lang: zh-cn
-    highlight: true
-    mathJax: false
-    tagMeta: [博主, 小伙伴, 访客] # 标签要显示的文字,默认'博主,小伙伴,访客'
-    metaPlaceholder:
-      nick: "昵称/QQ号(必填)"
-      mail: "邮箱（必填，完全保密）"
-      link: "网址(https://)"
-    master: #md5加密后的博主邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
-    friends: #md5加密后的小伙伴邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
+  service: waline # beaudar, utterances, valine, twikoo
+    waline:
+    js: https://unpkg.com/@waline/client@v2/dist/waline.js
+    css: https://unpkg.com/@waline/client@v2/dist/waline.css
+    # Waline server address url, you should set this to your own link
+    serverURL: https://waline-vitan.vercel.app
+
+    # If false, comment count will only be displayed in post page, not in home page
+    commentCount: true
+
+   # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
+    pageview: false
+
+    # Custom locales
+    # locale:
+    #   placeholder: Welcome to comment # Comment box placeholder
+
+    # Custom emoji
+    # emoji:
+    #   - https://unpkg.com/@waline/emojis@1.1.0/weibo
+    #   - https://unpkg.com/@waline/emojis@1.1.0/alus
+    #   - https://unpkg.com/@waline/emojis@1.1.0/bilibili
+    #   - https://unpkg.com/@waline/emojis@1.1.0/qq
+    #   - https://unpkg.com/@waline/emojis@1.1.0/tieba
+    #   - https://unpkg.com/@waline/emojis@1.1.0/tw-emoji
+    #   - https://unpkg.com/@waline/emojis@1.1.0/bmoji
+
+    # Comment infomation, valid meta are nick, mail and link
+    # meta:
+    #   - nick
+    #   - mail
+    #   - link
+
+    # Set required meta field, e.g.: [nick] | [nick, mail]
+    # requiredMeta:
+    #   - nick
+
+    # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
+    # lang: zh-CN
+
+    # Word limit, no limit when setting to 0
+    # wordLimit: 0
+
+    # Whether enable login, can choose from 'enable', 'disable' and 'force'
+    # login: enable
+
+    # comment per page
+    # pageSize: 10
 
 ######## Footer ########
 footer:
@@ -137,32 +137,42 @@ footer:
     #   - '[GitHub](/)'
   content: | # 支持 Markdown 格式
     本站由 [VITAN](/) 使用 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 主题创建。
+    本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+  # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
+
 
 ######## Tag Plugins ########
 tag_plugins:
   # {% note text %}
   note:
-    default_color: '' # light, dark, red, orange, yellow, green, cyan, blue, purple
+    default_color: '' # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
   # {% checkbox %}
   checkbox:
     interactive: false # enable interactive for user
   # {% quot %}
   quot:
     default: # 可以自行配置多种图标方案
-      prefix: https://s2.loli.net/2022/01/04/vsTB5pGrIHfPxSj.png
-      suffix: https://s2.loli.net/2022/01/04/NORdtjlAhifZSns.png
+      prefix: https://bu.dusays.com/2022/10/24/63567d3e092ff.png
+      suffix: https://bu.dusays.com/2022/10/24/63567d3e0ab55.png
     hashtag:
-      prefix: https://s2.loli.net/2022/01/04/UvHcsa73jQPnobq.png
+      prefix: https://bu.dusays.com/2022/10/24/63567d3e07da3.png
   # {% emoji %}
   emoji:
-    default: https://fastly.jsdelivr.net/gh/volantis-x/cdn-emoji/qq/%s.gif
+    default: https://fastly.jsdelivr.net/gh/cdn-x/emoji/qq/%s.gif
     twemoji: https://fastly.jsdelivr.net/gh/twitter/twemoji/assets/svg/%s.svg
-    qq: https://fastly.jsdelivr.net/gh/volantis-x/cdn-emoji/qq/%s.gif
-    aru: https://fastly.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/%s.gif
-    tieba: https://fastly.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%s.png
+    qq: https://fastly.jsdelivr.net/gh/cdn-x/emoji/qq/%s.gif
+    aru: https://fastly.jsdelivr.net/gh/cdn-x/emoji/aru-l/%s.gif
+    tieba: https://fastly.jsdelivr.net/gh/cdn-x/emoji/tieba/%s.png
+    blobcat: https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png
   # {% image %}
   image:
     fancybox: # true, false
+  # {% timeline %}
+  timeline:
+    max-height: 80vh
+  # {% mark %}
+  mark:
+    default_color: dark # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
 
 
 ######## JS Plugins ########
@@ -171,10 +181,17 @@ plugins:
   # jquery
   jquery: https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
 
-  # issues api
-  sitesjs: /js/plugins/sites.js
-  friendsjs: /js/plugins/friends.js
+  # stellar api
+  stellar:
+    sites: /js/plugins/sites.js
+    friends: /js/plugins/friends.js
+    ghinfo: /js/plugins/ghinfo.js
+    timeline: /js/plugins/timeline.js
+    linkcard: /js/plugins/linkcard.js
+    fcircle: /js/plugins/fcircle.js
 
+  marked: https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js
+  
   ## optional plugins ##
   # preload
   preload:
@@ -206,8 +223,8 @@ plugins:
     js: https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
     css: https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
     # 可以处理评论区的图片（不支持 iframe 类评论系统）例如：
-    # 使用valine评论可以写: .vcontent img:not(.vemoji)
     # 使用twikoo评论可以写: .tk-content img:not([class*="emo"])
+    # 使用waline评论可以写: #waline_container .vcontent img
     selector: .swiper-slide img # 多个选择器用英文逗号隔开
 
   # swiper
@@ -220,24 +237,75 @@ plugins:
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
   heti:
-    enable: false
+    enable: false # 此插件会和代码块冲突，仅适用于纯中文博主。
     css: https://unpkg.com/heti/umd/heti.min.css
     js: https://unpkg.com/heti/umd/heti-addon.min.js
 
+  # MathJax
+  # 需在Markdown文件开头加入mathjax: true
+  # 推荐使用Pandoc: npm uninstall hexo-renderer-marked --save & npm install hexo-renderer-pandoc --save
+  mathjax:
+    enable: false
+    cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+  # Katex - The fastest math typesetting library for the web
+  # https://katex.org/docs/autorender.html
+  # https://github.com/KaTeX/KaTeX
+  # 使用 hexo-renderer-markdown-it-plus 作为公式渲染器：npm uninstall hexo-renderer-marked --save npm install hexo-renderer-markdown-it-plus --save
+  katex:
+    enable: false
+    min_css: <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    min_js: <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    auto_render_min_js: <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"onload="renderMathInElement(document.body);"></script>
 
 style:
   darkmode: auto # auto / always / false
-  theme:
-    light: '#f8f8f8'
-    dark: '#232222'
+  smooth_scroll: true # true / false
+  font-size: 16px
+  font-family:
+    logo: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
+    body: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
+    code: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
+  text-align: left
+  color:
+    common:
+      theme: '#1BCDFC' # 主题色
+      accent: '#ff5722' # 强调色
+      link: '#2196f3' # 超链接颜色
+      button: '#1BCDFC' # 按钮颜色
+      hover: '#ff5722' # 按钮高亮颜色
+    light:
+      background: '#F8F9FA' # 浅色背景颜色
+      block: '#F0F1F2' # 块背景颜色
+      card: white # 卡片背景颜色
+      title: '#000' # 标题文本颜色
+      text: '#333' # 正文文本颜色
+      code: '#f33a00' # 行内代码颜色
+    dark:
+      background: '#313438' # 深色背景颜色
+      background-mobile: black # 移动端深色背景（OLED调成纯黑可以省电）
+      block: '#2B2F33' # 块背景颜色
+      card: '#464D57' # 卡片背景颜色
+      title: '#fff' # 标题文本颜色
+      text: '#eee' # 正文文本颜色
+      code: '#ff7043' # 行内代码颜色
   animated_avatar:
     animate: auto # auto, always
     background: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp
   codeblock:
     scrollbar: 4px
+    highlightjs_theme: https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css
+  loading:
+    loading: 正在加载
+    error: 加载失败，请稍后重试。
 
 default:
   avatar: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg
   link: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/link/8f277b4ee0ecd.svg
   cover: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/cover/76b86c0226ffd.svg
   image: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg
+
+api_host:
+  ghapi: https://api.github.com
+  ghraw: https://raw.githubusercontent.com
+  gist: https://gist.github.com
