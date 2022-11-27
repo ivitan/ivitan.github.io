@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ivitan.com/posts/Shell.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/Termux.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
@@ -150,6 +194,22 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
+    <lastmod>2022-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -321,47 +381,19 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Shell.html</loc>
+    <loc>https://ivitan.com/posts/Git-error.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <loc>https://ivitan.com/posts/GitLF.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
@@ -657,22 +689,6 @@
     <lastmod>2022-11-27</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
@@ -822,22 +838,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/Git-common-command.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Git-error.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitEmoji.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    <lastmod>2022-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitLF.html</loc>
     <lastmod>2022-11-27</lastmod>
   </url>
 </urlset> 
