@@ -47,87 +47,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLview.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SSH.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Scoop.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Shell.html</loc>
     
     <lastmod>2022-11-28</lastmod>
@@ -578,6 +497,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/PythonKMean.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
     
     <lastmod>2022-11-28</lastmod>
@@ -903,6 +831,87 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtransaction.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLview.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQlprocEx.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SSH.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Scoop.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyAnjuke.html</loc>
+    
+    <lastmod>2022-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ScrapyCommand.html</loc>
     
     <lastmod>2022-11-28</lastmod>
     
@@ -1479,15 +1488,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonIO.html</loc>
-    
-    <lastmod>2022-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonKMean.html</loc>
     
     <lastmod>2022-11-28</lastmod>
     
