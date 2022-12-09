@@ -24,8 +24,8 @@ sidebar:
     about: '[关于](/about/)'
   # Sidebar widgets
   widget:
-    index: welcome, search, recent, ghuser_mini # for home/wiki/categories/tags/archives/404 pages
-    page: welcome, toc # for pages using 'layout:page'
+    index: recent,search, ghuser_mini # for home/wiki/categories/tags/archives/404 pages
+    page: toc # for pages using 'layout:page'
     post: toc, repo_info # for pages using 'layout:post'
     wiki: toc, repo_info, related # for pages using 'layout:wiki'
 
