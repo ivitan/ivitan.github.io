@@ -5,8 +5,8 @@ seo_title: 关于
 sidebar: ghuser, toc
 toc_title: 关于
 comments: false
-breadcrumb: true
-header: false
+breadcrumb: false
+header: true
 ghuser: true
 ---
 
