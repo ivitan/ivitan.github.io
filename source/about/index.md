@@ -6,7 +6,7 @@ sidebar: ghuser, toc
 toc_title: 关于
 comments: false
 breadcrumb: true
-header: true
+header: false
 ghuser: true
 ---
 

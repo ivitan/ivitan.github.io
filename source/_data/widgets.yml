@@ -51,6 +51,13 @@ ghuser:
   avatar: true # show avatar or not
   menu: true # show menu or not
 
+ghuser_mini:
+  layout: ghuser
+  api: https://api.github.com
+  username: ivitan # your github login username
+  avatar: false # show avatar or not
+  menu: false # show menu or not
+
 tagcloud:
   layout: tagcloud
   title: 标签云
