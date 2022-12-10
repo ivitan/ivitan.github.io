@@ -1,6 +1,6 @@
 ######## Stellar info ########
 stellar:
-  version: '1.16.2'
+  version: '1.17.2'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
@@ -9,7 +9,7 @@ stellar:
 
 ######## head tags ########
 open_graph:
-  enable: false
+  enable: true
   github_id: ivitan
 
 
@@ -23,15 +23,31 @@ sidebar:
     wiki: '[项目](/wiki/)'
     about: '[关于](/about/)'
   # Sidebar widgets
-  widget:
-    index: recent,search, ghuser_mini # for home/wiki/categories/tags/archives/404 pages
-    page: toc # for pages using 'layout:page'
-    post: toc, repo_info # for pages using 'layout:post'
-    wiki: toc, repo_info, related # for pages using 'layout:wiki'
+  widgets:
+    #### 自动生成的页面 ####
+    # 主页
+    home: search, recent, ghuser_mini # for home
+    # 博客索引页
+    blog_index: search_blog, recent # for categories/tags/archives
+    # 文档索引页
+    wiki_index: search_docs, recent # for wiki
+    # 其它（404）
+    others: search, recent # for 404 and ...
+    #### 手动创建的页面 ####
+    # 文章内页
+    post: toc, ghrepo, search, ghissues # for pages using 'layout:post'
+    # 文档内页
+    wiki: search, ghrepo, toc, ghissues, related # for pages using 'layout:wiki'
+    # 其它 layout:page 的页面
+    page: toc, search # for custom pages using 'layout:page' 
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
   # '朋友文章': /friends/rss/
+
+######## Main ########
+breadcrumb:
+  home: home # config.title / config.author / home or custom content
 
 ######## Article ########
 article:
@@ -54,6 +70,14 @@ article:
     enable: false
     max_count: 5
 
+
+search:
+  service: local_search # local_search, todo...
+  local_search: # 在 front-matter 中设置 indexing:false 来避免被搜索索引
+    field: all # post, page, all
+    path: /search.json # 搜索文件存放位置
+    content: true # 是否搜索内容
+    codeblock: true # 是否搜索代码块（需要content: true)
 
 ######## Comments ########
 comments:
