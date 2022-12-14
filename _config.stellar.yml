@@ -1,6 +1,6 @@
 ######## Stellar info ########
 stellar:
-  version: '1.17.2'
+  version: '1.18.1'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
@@ -26,7 +26,7 @@ sidebar:
   widgets:
     #### 自动生成的页面 ####
     # 主页
-    home: recent, search, ghuser_mini # for home
+    home:  search, recent,ghuser_mini # for home
     # 博客索引页
     blog_index: search_blog, recent # for categories/tags/archives
     # 文档索引页
