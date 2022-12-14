@@ -86,7 +86,7 @@ comments:
     js: https://unpkg.com/@waline/client@v2/dist/waline.js
     css: https://unpkg.com/@waline/client@v2/dist/waline.css
     # Waline server address url, you should set this to your own link
-    serverURL: https://waline-vitan.vercel.app
+    serverURL: https://comment.ivitan.com
 
     # If false, comment count will only be displayed in post page, not in home page
     commentCount: true
