@@ -28,14 +28,14 @@ sidebar:
     # 主页
     home:  search, recent,ghuser_mini # for home
     # 博客索引页
-    blog_index: search_blog, recent # for categories/tags/archives
+    blog_index: search_post, recent # for categories/tags/archives
     # 文档索引页
     wiki_index: search_docs, recent # for wiki
     # 其它（404）
     others: search, recent # for 404 and ...
     #### 手动创建的页面 ####
     # 文章内页
-    post: search_blog, toc, ghrepo # for pages using 'layout:post'
+    post: search_post, toc, ghrepo # for pages using 'layout:post'
     # 文档内页
     wiki: search, ghrepo, toc, related # for pages using 'layout:wiki'
     # 其它 layout:page 的页面

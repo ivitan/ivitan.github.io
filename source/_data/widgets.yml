@@ -7,9 +7,9 @@ search:
   layout: search
   filter: auto # auto or 'path'
 
-search_blog:
+search_post:
   layout: search
-  filter: /blog/ # auto or 'path'
+  filter: /posts/ # auto or 'path'
   placeholder: 文章搜索
 
 search_docs:
