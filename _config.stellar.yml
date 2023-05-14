@@ -286,7 +286,7 @@ plugins:
   # AI 摘要
   # https://github.com/zhheo/Post-Abstract-AI
   tianli_gpt:
-    enable: true
+    enable: false
     field: post # all, post, wiki
     api: 5Q5mpqRK5DkwT1X9Gi5e
 
