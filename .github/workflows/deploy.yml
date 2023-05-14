@@ -24,6 +24,7 @@ jobs:
 
     - name: Generate Public Files
       run: |
+        rm -rf package-lock.json
         npm i
         npm install hexo-cli -g
         hexo clean && hexo generate
