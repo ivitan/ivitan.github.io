@@ -6,7 +6,6 @@ stellar:
   cdn_css: # Use cdn links instead of /css/main.css
   cdn_js: # Use cdn links instead of /js/main.js
 
-
 ######## head tags ########
 open_graph:
   enable: true
@@ -137,7 +136,6 @@ footer:
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 
-
 ######## Tag Plugins ########
 tag_plugins:
   # {% ablock %} / {% note %}
@@ -191,12 +189,13 @@ plugins:
     timeline: /js/plugins/timeline.js
     linkcard: /js/plugins/linkcard.js
     fcircle: /js/plugins/fcircle.js
+    weibo: /js/plugins/weibo.js
 
   marked: https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js
-  
+
   ## optional plugins ##
   # preload
-   preload:
+  preload:
     enable: true
     service: flying_pages # instant_page, flying_pages
     instant_page: https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js
@@ -218,7 +217,7 @@ plugins:
     interval: 100 # ms
     scale: 1 # 0.1~1
 
-  # https://fancyapps.com/docs/ui/fancybox/
+ # https://fancyapps.com/docs/ui/fancybox/
   # available for {% image xxx %}
   fancybox:
     enable: true
@@ -234,6 +233,7 @@ plugins:
     enable: true
     css: https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css
     js: https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js
+
 
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
@@ -259,7 +259,15 @@ plugins:
     min_js: <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
     auto_render_min_js: <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"onload="renderMathInElement(document.body);"></script>
 
-
+  # Mermaid - markdwon to flow chart, seq chart, class chart ...
+  # 需要安装 npm install --save hexo-filter-mermaid-diagrams
+  # 使用时 需要在Markdown文件开头加入 mermaid: true
+  # 使用示例：
+  # ```mermaid
+  # graph LR
+  #   A(Section A) -->|option 1| B(Section A)
+  #   B -->|option 2| C(Section C)
+  # ```
   mermaid:
     enable: false
     # js: https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js
@@ -274,7 +282,7 @@ plugins:
     js: /js/plugins/copycode.js
     default_text: 'Copy'
     success_text: 'Copied'
-
+  
   # AI 摘要
   # https://github.com/zhheo/Post-Abstract-AI
   tianli_gpt:
