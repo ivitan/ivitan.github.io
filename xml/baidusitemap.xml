@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
     <lastmod>2023-08-29</lastmod>
   </url>
@@ -158,10 +154,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
     <lastmod>2023-08-29</lastmod>
   </url>
   <url>
@@ -361,23 +353,7 @@
     <lastmod>2023-08-29</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    <lastmod>2023-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
     <lastmod>2023-08-29</lastmod>
   </url>
   <url>
@@ -669,6 +645,10 @@
     <lastmod>2023-08-29</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
     <lastmod>2023-08-29</lastmod>
   </url>
@@ -838,6 +818,26 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/GitManual.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    <lastmod>2023-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
     <lastmod>2023-08-29</lastmod>
   </url>
 </urlset> 

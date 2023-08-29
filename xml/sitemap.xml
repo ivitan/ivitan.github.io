@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/assets/Picture/images/index.html</loc>
     
     <lastmod>2023-08-29</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    <loc>https://ivitan.com/assets/Picture/README.html</loc>
     
     <lastmod>2023-08-29</lastmod>
     
@@ -866,43 +866,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
-    
-    <lastmod>2023-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
-    
-    <lastmod>2023-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    
-    <lastmod>2023-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    
-    <lastmod>2023-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
     
     <lastmod>2023-08-29</lastmod>
     
@@ -1559,6 +1523,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/AAPT.html</loc>
     
     <lastmod>2023-08-29</lastmod>
@@ -1938,6 +1911,51 @@
   
   <url>
     <loc>https://ivitan.com/posts/GitManual.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
+    
+    <lastmod>2023-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
     
     <lastmod>2023-08-29</lastmod>
     
