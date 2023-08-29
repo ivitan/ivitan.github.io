@@ -237,7 +237,7 @@ vim ../usr/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js
 
 - 修改如下
 
-![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/5b3044e8a329d.jpg)
+![](/assets/Picture/images/5b3044e8a329d.jpg)
 
 # 安装 Hexo
 ```sh

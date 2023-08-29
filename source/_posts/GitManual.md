@@ -497,7 +497,7 @@ git flow release finish v1.1.0
 
 ## Git flow schema
 
-![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/git-flow.png)
+![](/assets/Picture/images/git-flow.png)
 
 
 # 子模块
@@ -576,7 +576,7 @@ git rm -r --cached .
 
 # Git 思维导图
 
-![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/images/Gitmap.jpg)
+![](/assets/Picture/images/Gitmap.jpg)
 
 ---
 **Via**

@@ -16,7 +16,7 @@ date: 2021-06-13 23:52:59
 
 # 失败分析
 
-![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/imagesGoogleAdsenseError.png)
+![](/assets/Picture/imagesGoogleAdsenseError.png)
 
 1. 网站内容不合规
 2. 提示有另一个账号
@@ -37,4 +37,4 @@ date: 2021-06-13 23:52:59
 
 # 成果
 
-![](https://fastly.jsdelivr.net/gh/ivitan/Picture@master/imagesAdsenseBingo.png)
+![](/assets/Picture/imagesAdsenseBingo.png)
