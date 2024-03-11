@@ -1,0 +1,1 @@
+utils.jq(()=>{for(var e=document.getElementsByClassName("ds-mdrender"),t=0;t<e.length;t++){const s=e[t];var r=s.getAttribute("src")+"?t="+(new Date).getTime();utils.request(s,r,function(e){s.innerHTML=marked.parse(resp.data)})}});
