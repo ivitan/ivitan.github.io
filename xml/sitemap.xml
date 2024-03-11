@@ -56,16 +56,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/assets/Picture/README.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -84,15 +75,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLtrigger.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -227,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -236,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -254,6 +236,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -263,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -290,15 +281,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/TermuxRepo.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -317,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -326,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme.html</loc>
+    <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -371,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
+    <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -380,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
+    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -479,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Wine-dpi.html</loc>
+    <loc>https://ivitan.com/posts/WindowsShortcut.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -488,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/WindowsShortcut.html</loc>
+    <loc>https://ivitan.com/posts/Wine-dpi.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -569,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/wine.html</loc>
+    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -578,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA.html</loc>
+    <loc>https://ivitan.com/posts/wine.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -596,16 +578,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/N1Box.html</loc>
+    <loc>https://ivitan.com/assets/Picture/README.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -668,7 +641,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/OpenSourceSearch.html</loc>
+    <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -677,7 +650,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PermissionDenied.html</loc>
+    <loc>https://ivitan.com/posts/OpenSourceSearch.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -704,7 +677,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
+    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -713,7 +686,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PowerShell-Theme.html</loc>
+    <loc>https://ivitan.com/posts/PixelDiag.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -803,7 +776,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonExcel.html</loc>
+    <loc>https://ivitan.com/posts/PythonDateTypes.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -812,7 +785,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonDateTypes.html</loc>
+    <loc>https://ivitan.com/posts/PythonExcel.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -848,7 +821,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
+    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -857,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
+    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -920,7 +893,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonTips.html</loc>
+    <loc>https://ivitan.com/posts/PythonType.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -929,7 +902,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonType.html</loc>
+    <loc>https://ivitan.com/posts/PythonTips.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -983,6 +956,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/RaspberryPiCloud.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/RaspberryReview.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -993,15 +975,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/RegressionValidation.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/RaspberryPiCloud.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1163,6 +1136,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SQLstyle.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/CMD.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -1172,7 +1154,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CatEOF.html</loc>
+    <loc>https://ivitan.com/posts/CSSselector.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1181,7 +1163,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CSSselector.html</loc>
+    <loc>https://ivitan.com/posts/CatEOF.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1334,7 +1316,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Git-Token.html</loc>
+    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1343,7 +1325,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Git-Tips.html</loc>
+    <loc>https://ivitan.com/posts/Git-Token.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1496,7 +1478,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
+    <loc>https://ivitan.com/posts/Grub.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1505,7 +1487,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Grub.html</loc>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1523,7 +1505,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
+    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1532,7 +1514,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
+    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1685,6 +1667,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Linux-Commands.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -1695,15 +1686,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1739,15 +1721,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/LinuxDir.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -1757,7 +1730,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
+    <loc>https://ivitan.com/posts/LinuxHome.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1767,6 +1740,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/Markdown-Plus.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxPythonChromedriver.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -1793,6 +1775,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/MySQLPassword.html</loc>
     
     <lastmod>2024-03-11</lastmod>
@@ -1802,7 +1793,16 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
+    <loc>https://ivitan.com/posts/N1Box.html</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
     
     <lastmod>2024-03-11</lastmod>
     
@@ -2057,13 +2057,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/Shell/</loc>
-    <lastmod>2024-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/tags/HTML/</loc>
     <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -2079,6 +2072,13 @@
   
   <url>
     <loc>https://ivitan.com/tags/Web/</loc>
+    <lastmod>2024-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/tags/Shell/</loc>
     <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
