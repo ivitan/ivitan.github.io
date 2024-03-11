@@ -4,7 +4,7 @@
 <br>
 <a href="https://ivitan.com">Preview</a> 
 
-# Screenshots
+# 截图 Screenshots
 
 ![](https://cdn.jsdelivr.net/gh/ivitan/Picture@master/images/20200706084124.png)
 
