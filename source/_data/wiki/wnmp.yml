@@ -1,0 +1,15 @@
+name: wnmp
+title: 环境
+tags: 环境
+icon: /assets/wiki/HTML.png
+cover:  /assets/wiki/HTML.png
+description:  Windows + Nginx1.1 + PHP7.2 + MySql5.7
+repo: ivitan/Shell
+search:
+  filter: /wiki/Shell/
+  placeholder: 在 Shell 中搜索...
+leftbar: 
+  - tree
+  - timeline_stellar_releases
+  - related
+base_dir: /wiki/wnmp/
