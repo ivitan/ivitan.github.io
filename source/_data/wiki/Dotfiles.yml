@@ -1,0 +1,16 @@
+name: Dotfiles
+title: Dotfiles
+subtitle:  '各个系统的配置文件。'
+tags: 环境
+icon: /assets/wiki/Linux.png
+cover: /assets/wiki/Linux.png
+description: 各个系统的配置文件。
+repo: ivitan/Dotfiles
+search:
+  filter: /wiki/Dotfiles/
+  placeholder: 在 Dotfiles 中搜索...
+leftbar: 
+  - tree
+  - timeline_stellar_releases
+  - related
+base_dir: /wiki/Dotfiles/
