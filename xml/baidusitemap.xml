@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
+    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
+    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Termux.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/TermuxNote.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -13,11 +61,15 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Tomcat.html</loc>
+    <loc>https://ivitan.com/posts/TermuxPython.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/Ubuntu-Nodejs.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Tomcat.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -41,15 +93,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/UbuntuJava.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
+    <loc>https://ivitan.com/posts/UsbDriver.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -61,11 +109,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Vim-utf-8.html</loc>
+    <loc>https://ivitan.com/posts/Vim-Mooc.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Visualization.html</loc>
+    <loc>https://ivitan.com/posts/Vim-utf-8.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -73,11 +121,15 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Win10-Share-WiFI.html</loc>
+    <loc>https://ivitan.com/posts/Visualization.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/WNMP.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Win10-Share-WiFI.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -137,7 +189,47 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/PythonType.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/PythonTips.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -149,11 +241,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/RaspberryGitServer.html</loc>
+    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Raspberry-LCD.html</loc>
+    <loc>https://ivitan.com/posts/RaspberryGitServer.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -173,6 +265,10 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/SQL-Exists.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
@@ -185,10 +281,6 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQL-Command.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/SQLconstraint.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
@@ -197,11 +289,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLexam.html</loc>
+    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLexercise.html</loc>
+    <loc>https://ivitan.com/posts/SQLexam.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -253,11 +345,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLview.html</loc>
+    <loc>https://ivitan.com/posts/SQLtest.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/SQLtest.html</loc>
+    <loc>https://ivitan.com/posts/SQLview.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -285,55 +377,63 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Spyder-1.html</loc>
+    <loc>https://ivitan.com/posts/GitGame.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Sync.html</loc>
+    <loc>https://ivitan.com/posts/GitLF.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TTYD.html</loc>
+    <loc>https://ivitan.com/posts/GitManual.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-ADB.html</loc>
+    <loc>https://ivitan.com/posts/GitNote.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo.html</loc>
+    <loc>https://ivitan.com/posts/GitPull.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd.html</loc>
+    <loc>https://ivitan.com/posts/GitReset.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error.html</loc>
+    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk.html</loc>
+    <loc>https://ivitan.com/posts/GithubActions.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-R.html</loc>
+    <loc>https://ivitan.com/posts/GitTips.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux-game-tools.html</loc>
+    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Termux.html</loc>
+    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TermuxConfig.html</loc>
+    <loc>https://ivitan.com/posts/GithubTips.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/TermuxLinux.html</loc>
+    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/Grub.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/H3C.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -341,11 +441,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
+    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Hexo-Command.html</loc>
+    <loc>https://ivitan.com/posts/HTMLTag.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -357,15 +457,15 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/HexoAction.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/HexoDevices.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/HexoGithubCoding.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/HexoAction.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -381,11 +481,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Java-basic-datatypes.html</loc>
+    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/IrisSklearn.html</loc>
+    <loc>https://ivitan.com/posts/Java-basic-datatypes.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -417,10 +517,6 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/Linux-DNS.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
@@ -429,11 +525,15 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
+    <loc>https://ivitan.com/posts/Linux-DHCP.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/Linux-Win-Time.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/LinuxAnds.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -457,11 +557,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
+    <loc>https://ivitan.com/posts/Markdown.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/Markdown.html</loc>
+    <loc>https://ivitan.com/posts/MatplotlibZh.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -469,19 +569,19 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/N1Box.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://ivitan.com/posts/MySQLbasic.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/NetWork.html</loc>
+    <loc>https://ivitan.com/posts/N1Box.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/NerdTree.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
+    <loc>https://ivitan.com/posts/NetWork.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -549,11 +649,11 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/PythonCommonlyUse.html</loc>
+    <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
-    <loc>https://ivitan.com/posts/PythonBeautifulSoup.html</loc>
+    <loc>https://ivitan.com/posts/PythonCommonlyUse.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -574,46 +674,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/PythonKMean.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonMatplotlib.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonNumpy.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonPandas.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonRegex.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonRequest.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSQL.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSelenium.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSeleniumMa.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonSklearnImage.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/PythonTips.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -741,15 +801,15 @@
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
+    <loc>https://ivitan.com/posts/FireWall.html</loc>
+    <lastmod>2024-03-11</lastmod>
+  </url>
+  <url>
     <loc>https://ivitan.com/posts/GPT-MBR.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://ivitan.com/posts/Git-Change.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/FireWall.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
   <url>
@@ -774,66 +834,6 @@
   </url>
   <url>
     <loc>https://ivitan.com/posts/GitEmoji.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitLF.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitGame.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitManual.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitNote.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitPull.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitReset.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitSOCKS4.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GitTips.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GithubActions.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GithubSecret.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GithubTips.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GogsOnPi.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/GoogleAdSense.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/Grub.html</loc>
-    <lastmod>2024-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://ivitan.com/posts/H3C.html</loc>
     <lastmod>2024-03-11</lastmod>
   </url>
 </urlset> 
