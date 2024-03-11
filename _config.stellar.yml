@@ -3,8 +3,8 @@ stellar:
   version: '1.27.0'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
-  cdn_css: # Use cdn links instead of /css/main.css
-  cdn_js: # Use cdn links instead of /js/main.js
+  main_css: /css/main.css
+  main_js: /js/main.js
 
 ######## head tags ########
 open_graph:
@@ -13,11 +13,12 @@ open_graph:
 
 
 ######## Sidebar ########
-sidebar:
-  logo:
-    avatar: '[/assets/avatar/ivitan.png](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
-    title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
-
+# 左上角显示的 logo 区域，包含图标、大标题、副标题
+logo:
+  avatar: '[/assets/avatar/ivitan.png](/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
+  title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
+  subtitle: '{config.subtitle}' # '文字1 | 文字2' (鼠标放上去会切换到文字2)
+  
 # 侧边栏主功能导航菜单
 menubar:
   columns: 4 # 一行多少个
@@ -32,11 +33,13 @@ menubar:
       icon: solar:documents-bold-duotone
       title: 博客
       url: /
+
     - id: wiki
       theme: '#3DC550'
       icon: solar:notebook-bookmark-bold-duotone
       title: 项目
       url: /wiki/
+      
     - id: explore
       theme: '#FA6400'
       icon: solar:planet-bold-duotone
