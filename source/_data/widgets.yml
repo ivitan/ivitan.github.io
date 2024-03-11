@@ -35,6 +35,10 @@ recent:
   rss:  /xml/atom.xml # npm i hexo-generator-feed
   limit: 5 # Count of posts
 
+# 页面树（与当前页面强关联的上下篇文章列表）
+tree:
+  layout: tree
+
 # TOC (valid only in layout:post/wiki)
 toc:
   layout: toc
@@ -58,6 +62,11 @@ ghuser_mini:
   avatar: false # show avatar or not
   menu: false # show menu or not
 
+# 本文作者组件，需要先配置作者信息: authors.yml
+author:
+  layout: author
+  avatar: true
+
 tagcloud:
   layout: tagcloud
   title: 标签云
@@ -71,9 +80,3 @@ tagcloud:
   start_color: # 开始的颜色。您可使用十六进位值（#b700ff），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
   end_color: # 结束的颜色。您可使用十六进位值（#b700ff），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
   show_count: false # 显示每个标签的文章总数
-
-welcome:
-  layout: markdown
-  title: 欢迎你：
-  content: | # support markdown
-    ivitan.com
