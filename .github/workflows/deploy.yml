@@ -31,10 +31,11 @@ jobs:
     - name: Deploy Hexo
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }}
+        personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         external_repository: ivitan/ivitan.github.io
         publish_branch: master
         publish_dir: ./public
         commit_message: ${{ github.event.head_commit.message }}
         user_name: 'Vitan'
+
         user_email: 'vitan.me@gmail.com'
