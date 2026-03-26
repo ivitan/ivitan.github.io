@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "7.3.0"
+    "version": "6.3.0"
   },
   "dependencies": {
-    "hexo": "^7.3.0",
+    "hexo": "^6.3.0",
     "hexo-theme-stellar": "^1.33.1",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
