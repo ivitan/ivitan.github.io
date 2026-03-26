@@ -3,7 +3,7 @@ name: Hexo Deploy
 on:
   push:
     branches: 
-      - source # 当你向 source 分支推送代码时触发
+      - source # 源码分支
 
 jobs:
   build: 
@@ -11,11 +11,12 @@ jobs:
     name: auto deploy
     
     steps:
-    - name: Checkout Source Branch
+    - name: Checkout Source
       uses: actions/checkout@v4
       with:
         ref: source
-        submodules: false # 关键：跳过报错的 .gitmodules 配置
+        # 既然是 npm 安装主题，不需要处理子模块
+        submodules: false 
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -23,27 +24,22 @@ jobs:
         node-version: "20"
         cache: 'npm'
 
-    - name: Clone Your Custom Indigo Theme
-      # 强制拉取你自己的主题仓库，确保 Hexo 渲染时有模板可用
-      run: |
-        mkdir -p themes
-        rm -rf themes/indigo
-        git clone --depth 1 https://github.com/ivitan/indigo.git themes/indigo
+    - name: Install Dependencies
+      # 这一步会根据你的 package.json 自动安装 hexo、stellar 主题和渲染器
+      run: npm install
 
-    - name: Install Dependencies and Generate
+    - name: Generate Public Files
       run: |
-        npm install
         npx hexo clean
         npx hexo generate
 
-    - name: Deploy to Master Branch
+    - name: Deploy to Master
       uses: peaceiris/actions-gh-pages@v3
       with:
-        # 使用 GitHub 自动生成的 Token，无需手动配置 Secret
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        # 你的个人主页必须部署到 master 分支才能正常显示
         publish_branch: master
         publish_dir: ./public
+        cname: ivitan.com
         commit_message: "Auto deploy: ${{ github.event.head_commit.message }}"
         user_name: 'Vitan'
         user_email: 'vitan.me@gmail.com'
