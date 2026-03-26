@@ -3,40 +3,45 @@ name: Hexo Deploy
 on:
   push:
     branches: 
-      - source # 只有 source 分支有变动时才触发
+      - source # 当你向 source 分支推送代码时触发
 
 jobs:
   build: 
     runs-on: ubuntu-latest
+    name: auto deploy
     
     steps:
-    - name: Checkout Source
+    - name: Checkout Source Branch
       uses: actions/checkout@v4
       with:
         ref: source
-        submodules: 'recursive' # 关键：递归拉取主题子模块
-        fetch-depth: 0          # 拉取完整历史，避免某些插件报错
+        submodules: false # 关键：跳过报错的 .gitmodules 配置
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'      # 使用当前的长期支持版
-        cache: 'npm'            # 开启缓存，加快后续部署速度
+        node-version: "20"
+        cache: 'npm'
 
-    - name: Install & Generate
+    - name: Clone Your Custom Indigo Theme
+      # 强制拉取你自己的主题仓库，确保 Hexo 渲染时有模板可用
+      run: |
+        mkdir -p themes
+        rm -rf themes/indigo
+        git clone --depth 1 https://github.com/ivitan/indigo.git themes/indigo
+
+    - name: Install Dependencies and Generate
       run: |
         npm install
-        git rm --cached themes/indigo
-        git submodule add https://github.com/ivitan/indigo
         npx hexo clean
         npx hexo generate
 
-    - name: Deploy to Master
+    - name: Deploy to Master Branch
       uses: peaceiris/actions-gh-pages@v3
       with:
-        # 建议使用系统自带的 GITHUB_TOKEN，更安全且无需手动维护
+        # 使用 GitHub 自动生成的 Token，无需手动配置 Secret
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        # 你的仓库是个人主页，必须部署到 master 分支
+        # 你的个人主页必须部署到 master 分支才能正常显示
         publish_branch: master
         publish_dir: ./public
         commit_message: "Auto deploy: ${{ github.event.head_commit.message }}"
