@@ -26,6 +26,8 @@ jobs:
     - name: Install & Generate
       run: |
         npm install
+        git rm --cached themes/indigo
+        git submodule add https://github.com/A-limon/hexo-theme-indigo.git themes/indigo
         npx hexo clean
         npx hexo generate
 
