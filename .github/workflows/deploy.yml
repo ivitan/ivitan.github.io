@@ -5,34 +5,36 @@ on:
     branches: [source]
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Source
-      uses: actions/checkout@v4
+      - name: Checkout Source
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: "20" # 升级至最新稳定 LTS
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22" # 使用最新的长期支持版本 (LTS)
+          cache: 'npm'
 
-    - name: Install & Build
-      run: |
-        # 强制删除旧的锁文件，防止版本死锁导致构建出的文件为空
-        rm -f package-lock.json
-        npm install --force
-        npx hexo clean
-        npx hexo generate
-        
-        # 验证构建结果：Stellar 首页必须包含渲染后的 HTML 标签
-        echo "--- 检查首页渲染逻辑 ---"
-        grep -q "<html" public/index.html && echo "Render Success" || echo "Render Failed: Empty Content"
+      - name: Rebuild Dependencies
+        run: |
+          # 彻底清除旧环境残留
+          rm -f package-lock.json
+          # 使用 --force 忽略旧插件的 Peer Dependency 冲突
+          npm install --force
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: master
-        publish_dir: ./public
-        cname: ivitan.com
+      - name: Build
+        run: |
+          npx hexo clean
+          npx hexo generate
+          # 诊断：如果 index.html 小于 1KB，说明渲染仍有问题
+          ls -lh public/index.html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./public
+          cname: ivitan.com
