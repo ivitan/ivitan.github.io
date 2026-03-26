@@ -1,79 +1,45 @@
 name: Hexo Deploy
 
-
-
-# 触发条件
-
 on:
-
   push:
-
-    branches: 
-
+    branches:
       - source
 
-
-
 jobs:
-
-  build: 
-
-    runs-on: ubuntu-latest # 运行环境为最新版 Ubuntu
-
-    name: auto deploy
-
-    
-
+  build:
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          ref: source
 
-    - name: Setup Node.js 24.x
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: 'npm'
 
-      uses: actions/setup-node@master
+      - name: Install Dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --force
 
-      with:
+      - name: Build
+        run: |
+          npx hexo clean
+          npx hexo generate
+          # 检查是否生成了 HTML
+          ls -lh public/index.html
 
-        node-version: "24.x"
-
-
-
-    - name: Checkout Repository source branch
-
-      uses: actions/checkout@v2
-
-      with:
-
-        ref: source
-
-
-
-    - name: Generate Public Files
-
-      run: |
-
-        npm i
-
-        npm install hexo-cli -g
-
-        hexo clean && hexo generate
-
-
-
-    - name: Deploy Hexo
-
-      uses: peaceiris/actions-gh-pages@v3
-
-      with:
-
-        deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }}
-
-        external_repository: ivitan/ivitan.github.io
-
-        publish_branch: master
-
-        publish_dir: ./public
-
-        commit_message: ${{ github.event.head_commit.message }}
-
-        user_name: 'Vitan'
-
-        user_email: 'vitan.me@gmail.com'
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # 核心：使用内置 Token，不需要配置 Secrets
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./public
+          cname: ivitan.com
+          user_name: 'Vitan'
+          user_email: 'vitan.me@gmail.com'
+          force_orphan: true
