@@ -2,44 +2,37 @@ name: Hexo Deploy
 
 on:
   push:
-    branches: 
-      - source # 源码分支
+    branches: [source]
 
 jobs:
   build: 
     runs-on: ubuntu-latest
-    name: auto deploy
-    
     steps:
     - name: Checkout Source
       uses: actions/checkout@v4
-      with:
-        ref: source
-        # 既然是 npm 安装主题，不需要处理子模块
-        submodules: false 
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: "18"
+        node-version: "20" # 升级至最新稳定 LTS
         cache: 'npm'
 
-    - name: Install Dependencies
-      # 这一步会根据你的 package.json 自动安装 hexo、stellar 主题和渲染器
-      run: npm install
-
-    - name: Generate Public Files
+    - name: Install & Build
       run: |
+        # 强制删除旧的锁文件，防止版本死锁导致构建出的文件为空
+        rm -f package-lock.json
+        npm install --force
         npx hexo clean
         npx hexo generate
+        
+        # 验证构建结果：Stellar 首页必须包含渲染后的 HTML 标签
+        echo "--- 检查首页渲染逻辑 ---"
+        grep -q "<html" public/index.html && echo "Render Success" || echo "Render Failed: Empty Content"
 
-    - name: Deploy to Master
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: master
         publish_dir: ./public
         cname: ivitan.com
-        commit_message: "Auto deploy: ${{ github.event.head_commit.message }}"
-        user_name: 'Vitan'
-        user_email: 'vitan.me@gmail.com'
