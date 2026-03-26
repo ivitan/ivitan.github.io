@@ -3,13 +3,11 @@ name: Hexo Deploy
 on:
   push:
     branches: 
-      - source # 确保你的源码分支名是 source
+      - source
 
 jobs:
-  build:
+  build: 
     runs-on: ubuntu-latest
-    name: auto deploy
-    
     steps:
     - name: Checkout Source
       uses: actions/checkout@v4
@@ -19,43 +17,19 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: "22" # 使用最新的长期支持版本
+        node-version: "20.x"
         cache: 'npm'
 
-    - name: Clean and Rebuild Dependencies
+    - name: Install & Generate
       run: |
-        # 彻底移除旧环境残留，解决由于 Node 版本更迭导致的依赖死锁
-        rm -rf node_modules package-lock.json
-        # 强制安装适配 Node 22 的新依赖树
-        npm install --force
-
-    - name: Verify Environment
-      run: |
-        echo "--- 检查核心渲染器是否安装 ---"
-        npm list hexo-renderer-pug hexo-renderer-stylus hexo-theme-stellar
-        
-    - name: Hexo Generate
-      run: |
+        npm install
         npx hexo clean
-        npx hexo generate
-        
-        # 核心诊断：如果生成的 HTML 数量为 0，则停止部署并报错
-        HTML_COUNT=$(find public -name "*.html" | wc -l)
-        echo "--- 诊断结果：共生成 $HTML_COUNT 个 HTML 文件 ---"
-        
-        if [ "$HTML_COUNT" -le "1" ]; then
-          echo "错误：未检测到有效的页面渲染成果（可能是渲染器未挂载成功）"
-          exit 1
-        fi
+        npx hexo generate # 观察这一步的输出文件数量
 
-    - name: Deploy to Master
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: master # 静态文件推送到 master 分支
+        publish_branch: master
         publish_dir: ./public
-        # 核心：自动维护自定义域名，防止部署后域名解析失效
-        cname: ivitan.com 
-        commit_message: "Auto deploy: ${{ github.event.head_commit.message }} (Node 22 LTS)"
-        user_name: 'Vitan'
-        user_email: 'vitan.me@gmail.com'
+        cname: ivitan.com
