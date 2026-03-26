@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 ## 修正点 2：确保 URL 末尾没有斜杠，root 为 /
 url: https://ivitan.com
 root: /
-permalink: posts/:title/
+permalink: posts/:title.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true
