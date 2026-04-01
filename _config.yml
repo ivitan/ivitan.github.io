@@ -3,7 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 維袒
+title: 維坦
+avatar: /assets/avatar/ivitan.png
+favicon: /assets/logo/favicon.svg
 subtitle: ⁣⁣⁣Never Settle | ivitan.com
 description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
