@@ -1,4 +1,5 @@
-# Hexo Configuration
+
+#Hexo  Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -10,22 +11,23 @@ subtitle: ⁣⁣⁣Never Settle | ivitan.com
 description: Vitan's Personal Website.
 keywords: Coder,Linux,Web,Blog...
 author: VITAN
-# 修正点 1：初步排除多语言干扰，先设为单语言。成功后再尝试列表形式。
-language: zh-CN 
+language:
+  - zh-CN
+  - en
+  - zh-TW
 timezone: Asia/Shanghai
 
 # URL
-## 修正点 2：确保 URL 末尾没有斜杠，root 为 /
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://ivitan.com
 root: /
 permalink: posts/:title.html
-permalink_defaults:
+permalink_defaults: :title.html
 pretty_urls:
   trailing_index: true
-  # 修正点 3：Stellar 主题建议关闭 trailing_html 以保证链接整洁
-  trailing_html: false 
+  trailing_html: true
 
-# Directory  
+  # Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
@@ -33,7 +35,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: ':lang'
-skip_render: [] # 修正点 4：避免使用 null，空数组更安全
+skip_render: null
 
 # Writing
 new_post_name: ':title.md'
@@ -71,49 +73,53 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-category_map: 
-tag_map: 
+category_map: null
+tag_map: null
 meta_generator: true
 
 # Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+time_format: 'HH:mm:ss'
 
 # Pagination
+## Set per_page to 0 to disable pagination
 updated_option: mtime
 per_page: 10
 pagination_dir: page
-include:
-exclude:
-ignore:
+include: null
+exclude: null
+ignore: null
 
-# Plugins - RSS & Sitemap
+#Rss Sitemap
 feed:
   type: atom
-  path: xml/atom.xml # 去掉前面的 / 避免路径解析问题
+  path: /xml/atom.xml
 
+# Sitemap
 sitemap:
-  path: xml/sitemap.xml
-
+  path: /xml/sitemap.xml
 baidusitemap:
-  path: xml/baidusitemap.xml
+  path: /xml/baidusitemap.xml
 
-# 插件配置
 jsdelivr_auto_fallback:
   enable: true
   add_defer: true
 
-# 注入配置
 inject:
   head:
     - <link rel="shortcut icon" href="/assets/logo/favicon.svg">
     - <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEHQ8YBEN0"></script>
     - <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XEHQ8YBEN0');</script>
 
+
 # Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
 theme: stellar
 
 deploy:
-    type: git
-    repo: https://github.com/ivitan/ivitan.github.io.git
-    branch: master
+  type: git
+  repo: https://github.com/ivitan/ivitan.github.io.git
