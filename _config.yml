@@ -21,16 +21,16 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://ivitan.com
 root: /
-permalink: posts/:title.html
-permalink_defaults: :title.html
+permalink: posts/:title/
+permalink_defaults: 
 pretty_urls:
   trailing_index: true
-  trailing_html: true
+  trailing_html: false
 
-  # Directory
+# Directory
 source_dir: source
 public_dir: public
-tag_dir: tags
+tag_dir: tags	
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code

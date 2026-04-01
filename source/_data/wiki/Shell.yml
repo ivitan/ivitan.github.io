@@ -8,8 +8,6 @@ repo: ivitan/Shell
 search:
   filter: /wiki/Shell/
   placeholder: 在 Shell 中搜索...
-leftbar: 
-  - tree
-  - timeline_stellar_releases
-  - related
 base_dir: /wiki/Shell/
+tree:
+  - index

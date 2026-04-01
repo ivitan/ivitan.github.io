@@ -1,5 +1,4 @@
 ---
-layout: wiki
 wiki: Shell
 title: Shell
 ---

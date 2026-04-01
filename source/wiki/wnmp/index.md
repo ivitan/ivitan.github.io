@@ -1,5 +1,4 @@
 ---
-layout: wiki
 wiki: wnmp
 title: wnmp
 ---
