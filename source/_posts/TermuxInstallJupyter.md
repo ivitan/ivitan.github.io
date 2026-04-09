@@ -29,7 +29,7 @@ pkg install python-psutil -y
 
 这一步是解决刚才遇到的 Cargo SSL 网络中断（unexpected eof）和 Rust 编译器找不到目标架构（ANDROID_API_LEVEL）的核心秘籍。
 
-``Bash
+```Bash
 export CARGO_HTTP_MULTIPLEXING=false
 export ANDROID_API_LEVEL=24
 ```
