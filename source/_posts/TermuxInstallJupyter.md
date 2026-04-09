@@ -11,19 +11,19 @@ categories: Diary
 # 在 Termux 中安装 Jupyter 的步骤
 ## 第一步：更新系统环境
 
-``Bash
+```Bash
 pkg update && pkg upgrade -y
-``
+```
 ## 第二步：安装编译器与系统依赖
 
-``bash
+```bash
 pkg install python clang build-essential rust binutils libzmq libcrypt openssl ca-certificates -y
-``
+```
 ## 第三步：安装 Termux 预编译的 Python 包
 
-``Bash
+```Bash
 pkg install python-psutil -y
-``
+```
 
 ## 第四步：配置环境变量（关键）
 
