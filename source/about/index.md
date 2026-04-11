@@ -14,12 +14,13 @@ ghuser: true
 
 <img height="45px" alt="VITAN" src="/assets/logo/ming.svg">
 
-
+<!
 {% navbar
 [订阅](/xml/atom.xml) 
 [邮箱](mailto:vitanyeung@gmail.com)
 [Github](https://github.com/ivitan)
 [Tools](https://tools.ivitan.com) %}
+>
 
 {% endabout %}
 
