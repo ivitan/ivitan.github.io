@@ -1,5 +1,5 @@
----
-robots: 'index,nofollow'
+
+ts: 'index,nofollow'
 menu_id: more
 seo_title: 关于
 sidebar: ghuser, toc
@@ -16,9 +16,10 @@ ghuser: true
 
 
 {% navbar
-[Subscribe](/xml/atom.xml) 
-[Email](mailto:vitanyeung@gmail.com)
+[订阅](/xml/atom.xml) 
+[邮箱](mailto:vitanyeung@gmail.com)
 [Github](https://github.com/ivitan)
-[Tools](https://pan.ivitan.com) %}{% endabout %}i
-    
+[Tools](https://tools.ivitan.com) %}
+
 {% endabout %}
+
