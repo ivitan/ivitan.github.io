@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, VITAN</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-04-11T12:11:30.446Z</updated>
+  <updated>2026-04-11T12:16:21.504Z</updated>
   <entry>
     <author>
       <name>VITAN</name>
@@ -28,7 +28,7 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-04-11T12:11:30.446Z</updated>
+    <updated>2026-04-11T12:16:21.504Z</updated>
   </entry>
   <entry>
     <author>
@@ -45,7 +45,7 @@
       <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure>]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-04-11T12:11:30.438Z</updated>
+    <updated>2026-04-11T12:16:21.498Z</updated>
   </entry>
   <entry>
     <author>
@@ -66,7 +66,7 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.496Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,7 +86,7 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.497Z</updated>
   </entry>
   <entry>
     <author>
@@ -107,7 +107,7 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.497Z</updated>
   </entry>
   <entry>
     <author>
@@ -125,7 +125,7 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.496Z</updated>
   </entry>
   <entry>
     <author>
@@ -143,7 +143,7 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.497Z</updated>
   </entry>
   <entry>
     <author>
@@ -162,7 +162,7 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-04-11T12:11:30.447Z</updated>
+    <updated>2026-04-11T12:16:21.505Z</updated>
   </entry>
   <entry>
     <author>
@@ -183,7 +183,7 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-04-11T12:11:30.438Z</updated>
+    <updated>2026-04-11T12:16:21.498Z</updated>
   </entry>
   <entry>
     <author>
@@ -202,7 +202,7 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-04-11T12:11:30.439Z</updated>
+    <updated>2026-04-11T12:16:21.499Z</updated>
   </entry>
   <entry>
     <author>
@@ -221,7 +221,7 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.496Z</updated>
   </entry>
   <entry>
     <author>
@@ -241,7 +241,7 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.496Z</updated>
   </entry>
   <entry>
     <author>
@@ -261,7 +261,7 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-04-11T12:11:30.438Z</updated>
+    <updated>2026-04-11T12:16:21.498Z</updated>
   </entry>
   <entry>
     <author>
@@ -281,7 +281,7 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-04-11T12:11:30.439Z</updated>
+    <updated>2026-04-11T12:16:21.498Z</updated>
   </entry>
   <entry>
     <author>
@@ -302,7 +302,7 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-04-11T12:11:30.446Z</updated>
+    <updated>2026-04-11T12:16:21.504Z</updated>
   </entry>
   <entry>
     <author>
@@ -321,7 +321,7 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-04-11T12:11:30.436Z</updated>
+    <updated>2026-04-11T12:16:21.496Z</updated>
   </entry>
   <entry>
     <author>
@@ -342,7 +342,7 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-04-11T12:11:30.446Z</updated>
+    <updated>2026-04-11T12:16:21.504Z</updated>
   </entry>
   <entry>
     <author>
@@ -361,7 +361,7 @@
       <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
     </summary>
     <title>RaspberryPi Review</title>
-    <updated>2026-04-11T12:11:30.443Z</updated>
+    <updated>2026-04-11T12:16:21.501Z</updated>
   </entry>
   <entry>
     <author>
@@ -381,7 +381,7 @@
 </blockquote>]]>
     </summary>
     <title>CentOS 7 部署 Tomcat 8</title>
-    <updated>2026-04-11T12:11:30.447Z</updated>
+    <updated>2026-04-11T12:16:21.505Z</updated>
   </entry>
   <entry>
     <author>
@@ -399,6 +399,6 @@
       <![CDATA[<p>CentOS 7 防火墙命令</p>]]>
     </summary>
     <title>Centos 7 防火墙</title>
-    <updated>2026-04-11T12:11:30.437Z</updated>
+    <updated>2026-04-11T12:16:21.497Z</updated>
   </entry>
 </feed>
