@@ -52,9 +52,6 @@ menubar:
 comments:
   service: waline # beaudar, utterances, valine, twikoo
   waline:
-    js: https://unpkg.com/@waline/client@2.14.1/dist/waline.js
-    css: https://unpkg.com/@waline/client@2.14.1/dist/waline.css
-
     # Waline server address url, you should set this to your own link
     serverURL: https://comment.ivitan.com
 
