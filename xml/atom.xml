@@ -10,7 +10,27 @@
   <rights>All rights reserved 2026, VITAN</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-04-12T04:32:53.768Z</updated>
+  <updated>2026-04-12T08:49:45.394Z</updated>
+  <entry>
+    <author>
+      <name>VITAN</name>
+    </author>
+    <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
+    <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
+    <category term="Android" scheme="https://ivitan.com/tags/Android/"/>
+    <category term="Termux" scheme="https://ivitan.com/tags/Termux/"/>
+    <content>
+      <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙虾）</h1><h2 id="获取存储权限"><a href="#获取存储权限" class="headerlink" title="获取存储权限"></a>获取存储权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage </span><br></pre></td></tr></table></figure><h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://raw.githubusercontent.com/iyeoh88-svg/openclaw-android/main/install.sh</span><br><span class="line"><span class="built_in">chmod</span> +x install.sh</span><br><span class="line">./install.shˋ</span><br></pre></td></tr></table></figure><h2 id="进入与配置"><a href="#进入与配置" class="headerlink" title="进入与配置"></a>进入与配置</h2><h3 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proot-distro login debian --user openclaw </span><br></pre></td></tr></table></figure><h3 id="配置聊天软件"><a href="#配置聊天软件" class="headerlink" title="配置聊天软件"></a>配置聊天软件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw onboard</span><br></pre></td></tr></table></figure><h3 id="启动网关"><a href="#启动网关" class="headerlink" title="启动网关"></a>启动网关</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw gateway --verbose </span><br></pre></td></tr></table></figure><h3 id="获取Token"><a href="#获取Token" class="headerlink" title="获取Token"></a>获取Token</h3><p>新建Termux会话，执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw dashboard</span><br></pre></td></tr></table></figure><p>  获取如：<code>http://localhost:18789/#token=xxx</code> 的地址后再次启动<br>  <code>start-claw</code>访问</p>]]>
+    </content>
+    <id>https://ivitan.com/posts/TermuxInstallOpenClaw/</id>
+    <link href="https://ivitan.com/posts/TermuxInstallOpenClaw/"/>
+    <published>2026-04-12T08:44:01.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙]]>
+    </summary>
+    <title>Termux Instal lOpenClaw</title>
+    <updated>2026-04-12T08:49:45.394Z</updated>
+  </entry>
   <entry>
     <author>
       <name>VITAN</name>
@@ -28,7 +48,7 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-04-12T04:32:53.768Z</updated>
+    <updated>2026-04-12T08:49:45.394Z</updated>
   </entry>
   <entry>
     <author>
@@ -45,7 +65,7 @@
       <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure>]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-04-12T04:32:53.760Z</updated>
+    <updated>2026-04-12T08:49:45.386Z</updated>
   </entry>
   <entry>
     <author>
@@ -66,7 +86,7 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,7 +106,7 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -107,7 +127,7 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-04-12T04:32:53.760Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -125,7 +145,7 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -143,7 +163,7 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -162,7 +182,7 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-04-12T04:32:53.769Z</updated>
+    <updated>2026-04-12T08:49:45.394Z</updated>
   </entry>
   <entry>
     <author>
@@ -183,7 +203,7 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-04-12T04:32:53.760Z</updated>
+    <updated>2026-04-12T08:49:45.386Z</updated>
   </entry>
   <entry>
     <author>
@@ -202,7 +222,7 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-04-12T04:32:53.762Z</updated>
+    <updated>2026-04-12T08:49:45.387Z</updated>
   </entry>
   <entry>
     <author>
@@ -221,7 +241,7 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -241,7 +261,7 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -261,7 +281,7 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-04-12T04:32:53.760Z</updated>
+    <updated>2026-04-12T08:49:45.386Z</updated>
   </entry>
   <entry>
     <author>
@@ -281,7 +301,7 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-04-12T04:32:53.761Z</updated>
+    <updated>2026-04-12T08:49:45.387Z</updated>
   </entry>
   <entry>
     <author>
@@ -302,7 +322,7 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-04-12T04:32:53.768Z</updated>
+    <updated>2026-04-12T08:49:45.394Z</updated>
   </entry>
   <entry>
     <author>
@@ -321,7 +341,7 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.385Z</updated>
   </entry>
   <entry>
     <author>
@@ -342,7 +362,7 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-04-12T04:32:53.768Z</updated>
+    <updated>2026-04-12T08:49:45.394Z</updated>
   </entry>
   <entry>
     <author>
@@ -361,7 +381,7 @@
       <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
     </summary>
     <title>RaspberryPi Review</title>
-    <updated>2026-04-12T04:32:53.765Z</updated>
+    <updated>2026-04-12T08:49:45.391Z</updated>
   </entry>
   <entry>
     <author>
@@ -381,24 +401,6 @@
 </blockquote>]]>
     </summary>
     <title>CentOS 7 部署 Tomcat 8</title>
-    <updated>2026-04-12T04:32:53.769Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>VITAN</name>
-    </author>
-    <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
-    <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
-    <content>
-      <![CDATA[<p>CentOS 7 防火墙命令</p><span id="more"></span><h1 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 关闭</span><br><span class="line">systemctl stop firewalld.service </span><br><span class="line"># 禁止开机自启</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line"></span><br><span class="line"># 重启</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><h1 id="开启端口"><a href="#开启端口" class="headerlink" title="开启端口"></a>开启端口</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><ul><li>-zone # 作用域</li><li>-add-port&#x3D;80&#x2F;tcp # 添加端口，格式为：端口&#x2F;通讯协议</li><li>-permanent # 永久生效，没有此参数重启后失效</li></ul><h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 查看状态</span><br><span class="line">firewall-cmd --state</span><br><span class="line"># 重新载入配置</span><br><span class="line">firewall-cmd --reload</span><br><span class="line"># 列出支持的zone</span><br><span class="line">firewall-cmd --get-zones</span><br><span class="line"># 列出支持的服务</span><br><span class="line">firewall-cmd --get-services</span><br><span class="line"># 查看ftp服务是否支持，返回yes或者no</span><br><span class="line">firewall-cmd --query-service ftp</span><br><span class="line"># 临时开放ftp服务</span><br><span class="line">firewall-cmd --add-service=ftp</span><br><span class="line"># 永久开放ftp服务</span><br><span class="line">firewall-cmd --add-service=ftp --permanent</span><br><span class="line"># 永久移除ftp服务</span><br><span class="line">firewall-cmd --remove-service=ftp --permanent</span><br><span class="line"># 永久添加80端口 </span><br><span class="line">firewall-cmd --add-port=80/tcp --permanent</span><br><span class="line"># 查看规则</span><br><span class="line">iptables -L -n </span><br><span class="line"></span><br><span class="line">firewall-cmd --help</span><br></pre></td></tr></table></figure><h1 id="切换为-iptables"><a href="#切换为-iptables" class="headerlink" title="切换为 iptables"></a>切换为 iptables</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">service firewalld stop</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line"></span><br><span class="line">yum install iptables-services -y</span><br><span class="line">yum install iptables* -y</span><br></pre></td></tr></table></figure><h2 id="添加规则"><a href="#添加规则" class="headerlink" title="添加规则"></a>添加规则</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/iptables</span><br><span class="line"></span><br><span class="line"># 重启</span><br><span class="line">systemctl restart iptables.service </span><br><span class="line"># 开机启动</span><br><span class="line">systemctl enable iptables.service </span><br></pre></td></tr></table></figure>]]>
-    </content>
-    <id>https://ivitan.com/posts/FireWall/</id>
-    <link href="https://ivitan.com/posts/FireWall/"/>
-    <published>2020-06-19T06:02:05.000Z</published>
-    <summary>
-      <![CDATA[<p>CentOS 7 防火墙命令</p>]]>
-    </summary>
-    <title>Centos 7 防火墙</title>
-    <updated>2026-04-12T04:32:53.759Z</updated>
+    <updated>2026-04-12T08:49:45.395Z</updated>
   </entry>
 </feed>
