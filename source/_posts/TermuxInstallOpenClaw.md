@@ -29,9 +29,10 @@ proot-distro login debian --user openclaw
 openclaw onboard
 ```
 
-### 启动网关
+### 启动网关&设置
 ```BASH
 openclaw gateway --verbose 
+openclaw setup
 ```
 ### 获取Token
 新建Termux会话，执行
