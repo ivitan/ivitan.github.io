@@ -26,7 +26,8 @@ menubar:
     # id: 页面中高亮的 menu_id 
     # theme: 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
     # icon: 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
-    # title: 标题
+
+  # title: 标题
     # url: 点击跳转到哪，支持相对路径和绝对路径
     - id: post
       theme: '#1BCDFC'
@@ -57,3 +58,8 @@ comments:
     # Waline server address url, you should set this to your own link
     serverURL: https://comment.ivitan.com
 
+    lang: zh-CN # 语言设置，支持多种语言，如 zh-CN（简体中文）、en-US（英语）、fr-FR（法语）、zh-TW（中国台湾）、jp-JP（中国日本）等
+    emoji: [] # 自定义表情包，支持添加自定义表情包的路径
+    dark: auto  # 主题模式，支持 auto（自动）、light（浅色）、dark（深色）
+    wordLimit: 0  # 评论字数限制，默认为 0，表示不限制
+    meta: [nick, mail]  # 评论者需要填写的信息字段，可选字段包括 nick（昵称）、mail（邮箱）、link（个人网站）
