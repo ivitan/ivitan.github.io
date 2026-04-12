@@ -1,5 +1,5 @@
 ---
-title: Termux Instal lOpenClaw
+title: Termux Install OpenClaw
 date: 2026-04-12 16:44:01
 tags:
 - Termux
