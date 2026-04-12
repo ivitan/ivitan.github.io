@@ -17,7 +17,7 @@ termux-setup-storage
 ```BASH
 curl -O https://raw.githubusercontent.com/iyeoh88-svg/openclaw-android/main/install.sh
 chmod +x install.sh
-./install.shˋ
+./install.sh
 ```
 ## 进入与配置
 ### 进入系统
