@@ -32,13 +32,13 @@ menubar:
     - id: post
       theme: '#1BCDFC'
       icon: solar:documents-bold-duotone
-      title: 博客
+      title: 主页
       url: /
 
     - id: wiki
       theme: '#3DC550'
       icon: solar:notebook-bookmark-bold-duotone
-      title: 项目
+      title: 文档
       url: /wiki/
       
     - id: explore
