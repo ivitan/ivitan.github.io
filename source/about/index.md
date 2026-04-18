@@ -17,7 +17,7 @@ ghuser: true
 <!--
 {% navbar
 [订阅](/xml/atom.xml) 
-[邮箱](mailto:vitanyeung@gmail.com)
+[邮箱](mailto:admin@ivitan.com)
 [Github](https://github.com/ivitan)
 [Tools](https://tools.ivitan.com) %}
 -->
