@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, VITAN</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-04-28T13:26:39.376Z</updated>
+  <updated>2026-04-28T13:31:01.599Z</updated>
   <entry>
     <author>
       <name>VITAN</name>
@@ -20,7 +20,7 @@
     <category term="Web" scheme="https://ivitan.com/tags/Web/"/>
     <category term="Docker" scheme="https://ivitan.com/tags/Docker/"/>
     <content>
-      <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-OrangeTV-OpenList"><a href="#🚀-低配服务器极简部署笔记-OrangeTV-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (OrangeTV &amp; OpenList)"></a>🚀 低配服务器极简部署笔记 (OrangeTV &amp; OpenList)</h1><h2 id="一、-环境准备"><a href="#一、-环境准备" class="headerlink" title="一、 环境准备"></a>一、 环境准备</h2><ul><li>系统: Ubuntu 22.04 LTS (纯净版)</li><li>硬件: 2 vCPU &#x2F; 900MB RAM &#x2F; 30GB Disk</li><li>关键策略: 开启 Swap 虚拟内存、全 Docker 化、Nginx 反向代理、自动化 SSL。</li></ul><h1 id="二、核心部署步骤"><a href="#二、核心部署步骤" class="headerlink" title="二、核心部署步骤"></a>二、核心部署步骤</h1><h2 id="1-开启-2GB-虚拟内存"><a href="#1-开启-2GB-虚拟内存" class="headerlink" title="1. 开启 2GB 虚拟内存"></a>1. 开启 2GB 虚拟内存</h2><ul><li>防止内存溢出导致容器崩溃。</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fallocate -l 2G /swapfile</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br><span class="line"><span class="built_in">sudo</span> swapon /swapfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/swapfile none swap sw 0 0&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure><h2 id="2-安装基础环境"><a href="#2-安装基础环境" class="headerlink" title="2. 安装基础环境"></a>2. 安装基础环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br><span class="line"><span class="built_in">sudo</span> apt install docker.io nginx python3-certbot-nginx -y</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> --now docker nginx</span><br></pre></td></tr></table></figure><h2 id="3-部署-OrangeTV-Upstash-云数据库版"><a href="#3-部署-OrangeTV-Upstash-云数据库版" class="headerlink" title="3. 部署 OrangeTV (Upstash 云数据库版)"></a>3. 部署 OrangeTV (Upstash 云数据库版)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name orangetv --restart always \</span><br><span class="line">  --log-opt max-size=5m --log-opt max-file=1 \</span><br><span class="line">  -p 3000:3000 \</span><br><span class="line">  -e USERNAME=<span class="string">&quot;admin&quot;</span> \</span><br><span class="line">  -e PASSWORD=<span class="string">&quot;你的密码&quot;</span> \</span><br><span class="line">  -e NEXT_PUBLIC_STORAGE_TYPE=<span class="string">&quot;upstash&quot;</span> \</span><br><span class="line">  -e UPSTASH_URL=<span class="string">&quot;你的URL&quot;</span> \</span><br><span class="line">  -e UPSTASH_TOKEN=<span class="string">&quot;你的TOKEN&quot;</span> \</span><br><span class="line">  ghcr.io/djteang/orangetv:latest</span><br></pre></td></tr></table></figure><h3 id="4-部署-OpenList"><a href="#4-部署-OpenList" class="headerlink" title="4. 部署 OpenList"></a>4. 部署 OpenList</h3><ul><li><strong>注意：</strong> 必须先处理目录权限，否则会报 502&#x2F;Restarting 错误。</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建目录并赋予权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /opt/openlist/data</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> -R 777 /opt/openlist/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署容器</span></span><br><span class="line"><span class="built_in">sudo</span> docker run -d --name openlist --restart always --user root \</span><br><span class="line">  --log-opt max-size=5m --log-opt max-file=1 \</span><br><span class="line">  -p 5244:5244 \</span><br><span class="line">  -v /opt/openlist/data:/opt/openlist/data \</span><br><span class="line">  -e PUID=0 -e PGID=0 -e TZ=<span class="string">&quot;Asia/Shanghai&quot;</span> \</span><br><span class="line">  openlistteam/openlist:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置 admin 密码命令</span></span><br><span class="line"><span class="built_in">sudo</span> docker <span class="built_in">exec</span> -it openlist ./openlist admin <span class="built_in">set</span> 你的新密码</span><br></pre></td></tr></table></figure><h1 id="三、-网络与安全配置"><a href="#三、-网络与安全配置" class="headerlink" title="三、 网络与安全配置"></a>三、 网络与安全配置</h1><h2 id="1-Nginx-反向代理"><a href="#1-Nginx-反向代理" class="headerlink" title="1. Nginx 反向代理"></a>1. Nginx 反向代理</h2><h3 id="创建配置"><a href="#创建配置" class="headerlink" title="创建配置"></a>创建配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/nginx/sites-available/media_srv`</span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> tv.xxx.com; <span class="comment"># 替换域名</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:3000;</span><br><span class="line">        <span class="attribute">include</span> proxy_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> pan.xxx.com; <span class="comment"># 替换域名</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:5244;</span><br><span class="line">        <span class="attribute">include</span> proxy_params;</span><br><span class="line">        <span class="attribute">client_max_body_size</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="启用配置"><a href="#启用配置" class="headerlink" title="启用配置"></a>启用配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /etc/nginx/sites-available/media_srv /etc/nginx/sites-enabled/</span><br><span class="line"><span class="built_in">sudo</span> nginx -t &amp;&amp; <span class="built_in">sudo</span> systemctl restart nginx</span><br></pre></td></tr></table></figure><h2 id="2-自动化-SSL-证书"><a href="#2-自动化-SSL-证书" class="headerlink" title="2. 自动化 SSL 证书"></a>2. 自动化 SSL 证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot --nginx -d tv.xxx.com -d pan.xxx.com</span><br><span class="line"><span class="comment"># 过程中选择数字 &quot;2&quot; 以开启自动重定向 HTTPS</span></span><br></pre></td></tr></table></figure><h1 id="四、-常用维护命令"><a href="#四、-常用维护命令" class="headerlink" title="四、 常用维护命令"></a>四、 常用维护命令</h1><table><thead><tr><th align="left">任务</th><th align="left">命令</th></tr></thead><tbody><tr><td align="left">查看容器状态</td><td align="left">docker ps</td></tr><tr><td align="left">实时查看内存</td><td align="left">docker stats</td></tr><tr><td align="left">查看系统资源</td><td align="left">free -h</td></tr><tr><td align="left">清理冗余镜像</td><td align="left">docker system prune -f</td></tr><tr><td align="left">测试证书续期</td><td align="left">sudo certbot renew –dry-run</td></tr></tbody></table><h1 id="五、-避坑总结"><a href="#五、-避坑总结" class="headerlink" title="五、 避坑总结"></a>五、 避坑总结</h1><ol><li><strong>权限问题</strong>：OpenList 必须对挂载目录有写入权限，使用 <code>chmod 777</code> 和 <code>--user root</code> 是低配环境最稳妥方案。</li><li><strong>502 错误</strong>：通常是后端容器处于 <code>Restarting</code> 状态，请检查 <code>docker logs openlist</code>。</li><li><strong>域名解析</strong>：必须确保 GCP 防火墙已放行 80&#x2F;443 端口，且域名 A 记录已生效。</li></ol>]]>
+      <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-OrangeTV-OpenList"><a href="#🚀-低配服务器极简部署笔记-OrangeTV-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (OrangeTV &amp; OpenList)"></a>🚀 低配服务器极简部署笔记 (OrangeTV &amp; OpenList)</h1><h2 id="一、-环境准备"><a href="#一、-环境准备" class="headerlink" title="一、 环境准备"></a>一、 环境准备</h2><ul><li>系统: Ubuntu 22.04 LTS (纯净版)</li><li>硬件: 2 vCPU &#x2F; 900MB RAM &#x2F; 30GB Disk</li><li>关键策略: 开启 Swap 虚拟内存、全 Docker 化、Nginx 反向代理、自动化 SSL。</li></ul><h1 id="二、核心部署步骤"><a href="#二、核心部署步骤" class="headerlink" title="二、核心部署步骤"></a>二、核心部署步骤</h1><h2 id="1-开启-2GB-虚拟内存"><a href="#1-开启-2GB-虚拟内存" class="headerlink" title="1. 开启 2GB 虚拟内存"></a>1. 开启 2GB 虚拟内存</h2><ul><li>防止内存溢出导致容器崩溃。</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fallocate -l 2G /swapfile</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br><span class="line"><span class="built_in">sudo</span> swapon /swapfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/swapfile none swap sw 0 0&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure><h2 id="2-安装基础环境"><a href="#2-安装基础环境" class="headerlink" title="2. 安装基础环境"></a>2. 安装基础环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br><span class="line"><span class="built_in">sudo</span> apt install docker.io nginx python3-certbot-nginx -y</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> --now docker nginx</span><br></pre></td></tr></table></figure><h2 id="3-部署-OrangeTV-Upstash-云数据库版"><a href="#3-部署-OrangeTV-Upstash-云数据库版" class="headerlink" title="3. 部署 OrangeTV (Upstash 云数据库版)"></a>3. 部署 OrangeTV (Upstash 云数据库版)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -d --name orangetv --restart always \</span><br><span class="line">  --log-opt max-size=5m --log-opt max-file=1 \</span><br><span class="line">  -p 3000:3000 \</span><br><span class="line">  -e USERNAME=<span class="string">&quot;admin&quot;</span> \</span><br><span class="line">  -e PASSWORD=<span class="string">&quot;你的密码&quot;</span> \</span><br><span class="line">  -e NEXT_PUBLIC_STORAGE_TYPE=<span class="string">&quot;upstash&quot;</span> \</span><br><span class="line">  -e UPSTASH_URL=<span class="string">&quot;你的URL&quot;</span> \</span><br><span class="line">  -e UPSTASH_TOKEN=<span class="string">&quot;你的TOKEN&quot;</span> \</span><br><span class="line">  ghcr.io/djteang/orangetv:latest</span><br></pre></td></tr></table></figure><h3 id="4-部署-OpenList"><a href="#4-部署-OpenList" class="headerlink" title="4. 部署 OpenList"></a>4. 部署 OpenList</h3><ul><li><strong>注意：</strong> 必须先处理目录权限，否则会报 502&#x2F;Restarting 错误。</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建目录并赋予权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /opt/openlist/data</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> -R 777 /opt/openlist/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署容器</span></span><br><span class="line"><span class="built_in">sudo</span> docker run -d --name openlist --restart always --user root \</span><br><span class="line">  --log-opt max-size=5m --log-opt max-file=1 \</span><br><span class="line">  -p 5244:5244 \</span><br><span class="line">  -v /opt/openlist/data:/opt/openlist/data \</span><br><span class="line">  -e PUID=0 -e PGID=0 -e TZ=<span class="string">&quot;Asia/Shanghai&quot;</span> \</span><br><span class="line">  openlistteam/openlist:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置 admin 密码命令</span></span><br><span class="line"><span class="built_in">sudo</span> docker <span class="built_in">exec</span> -it openlist ./openlist admin <span class="built_in">set</span> 你的新密码</span><br></pre></td></tr></table></figure><h1 id="三、-网络与安全配置"><a href="#三、-网络与安全配置" class="headerlink" title="三、 网络与安全配置"></a>三、 网络与安全配置</h1><h2 id="1-Nginx-反向代理"><a href="#1-Nginx-反向代理" class="headerlink" title="1. Nginx 反向代理"></a>1. Nginx 反向代理</h2><h3 id="创建配置"><a href="#创建配置" class="headerlink" title="创建配置"></a>创建配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/nginx/sites-available/media_srv`</span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> tv.xxx.com; <span class="comment"># 替换域名</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:3000;</span><br><span class="line">        <span class="attribute">include</span> proxy_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> pan.xxx.com; <span class="comment"># 替换域名</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:5244;</span><br><span class="line">        <span class="attribute">include</span> proxy_params;</span><br><span class="line">        <span class="attribute">client_max_body_size</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="启用配置"><a href="#启用配置" class="headerlink" title="启用配置"></a>启用配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /etc/nginx/sites-available/media_srv /etc/nginx/sites-enabled/</span><br><span class="line"><span class="built_in">sudo</span> nginx -t &amp;&amp; <span class="built_in">sudo</span> systemctl restart nginx</span><br></pre></td></tr></table></figure><h2 id="2-自动化-SSL-证书"><a href="#2-自动化-SSL-证书" class="headerlink" title="2. 自动化 SSL 证书"></a>2. 自动化 SSL 证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot --nginx -d tv.xxx.com -d pan.xxx.com</span><br><span class="line"><span class="comment"># 过程中选择数字 &quot;2&quot; 以开启自动重定向 HTTPS</span></span><br></pre></td></tr></table></figure><h1 id="四、-常用维护命令"><a href="#四、-常用维护命令" class="headerlink" title="四、 常用维护命令"></a>四、 常用维护命令</h1><table><thead><tr><th align="left">任务</th><th align="left">命令</th></tr></thead><tbody><tr><td align="left">查看容器状态</td><td align="left">docker ps</td></tr><tr><td align="left">实时查看内存</td><td align="left">docker stats</td></tr><tr><td align="left">查看系统资源</td><td align="left">free -h</td></tr><tr><td align="left">清理冗余镜像</td><td align="left">docker system prune -f</td></tr><tr><td align="left">测试证书续期</td><td align="left">sudo certbot renew –dry-run</td></tr></tbody></table><h1 id="五、-避坑总结"><a href="#五、-避坑总结" class="headerlink" title="五、 避坑总结"></a>五、 避坑总结</h1><ol><li><strong>权限问题</strong>：OpenList 必须对挂载目录有写入权限，使用 <code>chmod 777</code> 和 <code>--user root</code> 是低配环境最稳妥方案。</li><li><strong>502 错误</strong>：通常是后端容器处于 <code>Restarting</code> 状态，请检查 <code>docker logs openlist</code>。</li><li><strong>域名解析</strong>：必须确保 GCP 防火墙已放行 80&#x2F;443 端口，且域名 A 记录已生效。</li></ol>]]>
     </content>
     <id>https://ivitan.com/posts/CloudDocker/</id>
     <link href="https://ivitan.com/posts/CloudDocker/"/>
@@ -29,7 +29,7 @@
       <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-OrangeTV-OpenList"><a href="#🚀-低配服务器极简部署笔记-OrangeTV-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (OrangeTV &am]]>
     </summary>
     <title>低配服务器极简 Docker 容器部署笔记</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -49,7 +49,7 @@
       <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙]]>
     </summary>
     <title>Termux Install OpenClaw</title>
-    <updated>2026-04-28T13:26:39.386Z</updated>
+    <updated>2026-04-28T13:31:01.607Z</updated>
   </entry>
   <entry>
     <author>
@@ -68,7 +68,7 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-04-28T13:26:39.386Z</updated>
+    <updated>2026-04-28T13:31:01.607Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,7 +85,7 @@
       <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure>]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-04-28T13:26:39.378Z</updated>
+    <updated>2026-04-28T13:31:01.601Z</updated>
   </entry>
   <entry>
     <author>
@@ -106,7 +106,7 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -126,7 +126,7 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-04-28T13:26:39.377Z</updated>
+    <updated>2026-04-28T13:31:01.600Z</updated>
   </entry>
   <entry>
     <author>
@@ -147,7 +147,7 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-04-28T13:26:39.377Z</updated>
+    <updated>2026-04-28T13:31:01.600Z</updated>
   </entry>
   <entry>
     <author>
@@ -165,7 +165,7 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -183,7 +183,7 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-04-28T13:26:39.377Z</updated>
+    <updated>2026-04-28T13:31:01.600Z</updated>
   </entry>
   <entry>
     <author>
@@ -202,7 +202,7 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-04-28T13:26:39.387Z</updated>
+    <updated>2026-04-28T13:31:01.607Z</updated>
   </entry>
   <entry>
     <author>
@@ -223,7 +223,7 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-04-28T13:26:39.378Z</updated>
+    <updated>2026-04-28T13:31:01.601Z</updated>
   </entry>
   <entry>
     <author>
@@ -242,7 +242,7 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-04-28T13:26:39.379Z</updated>
+    <updated>2026-04-28T13:31:01.602Z</updated>
   </entry>
   <entry>
     <author>
@@ -261,7 +261,7 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -281,7 +281,7 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -301,7 +301,7 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-04-28T13:26:39.378Z</updated>
+    <updated>2026-04-28T13:31:01.601Z</updated>
   </entry>
   <entry>
     <author>
@@ -321,7 +321,7 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-04-28T13:26:39.379Z</updated>
+    <updated>2026-04-28T13:31:01.601Z</updated>
   </entry>
   <entry>
     <author>
@@ -342,7 +342,7 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-04-28T13:26:39.386Z</updated>
+    <updated>2026-04-28T13:31:01.607Z</updated>
   </entry>
   <entry>
     <author>
@@ -361,7 +361,7 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-04-28T13:26:39.376Z</updated>
+    <updated>2026-04-28T13:31:01.599Z</updated>
   </entry>
   <entry>
     <author>
@@ -382,7 +382,7 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-04-28T13:26:39.386Z</updated>
+    <updated>2026-04-28T13:31:01.607Z</updated>
   </entry>
   <entry>
     <author>
@@ -401,6 +401,6 @@
       <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
     </summary>
     <title>RaspberryPi Review</title>
-    <updated>2026-04-28T13:26:39.383Z</updated>
+    <updated>2026-04-28T13:31:01.604Z</updated>
   </entry>
 </feed>
