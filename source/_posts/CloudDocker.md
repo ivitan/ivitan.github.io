@@ -41,7 +41,7 @@ sudo systemctl enable --now docker nginx
 ```
 ## 3. 部署 OrangeTV (Upstash 云数据库版)
 ```Bash
-docker run -d --name orangetv --restart always \
+sudo docker run -d --name orangetv --restart always \
   --log-opt max-size=5m --log-opt max-file=1 \
   -p 3000:3000 \
   -e USERNAME="admin" \
