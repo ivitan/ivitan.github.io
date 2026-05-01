@@ -9,7 +9,7 @@ categories:
 - Diary
 ---
 
-# 🚀 低配服务器极简部署笔记 (OrangeTV & OpenList)
+# 🚀 低配服务器极简部署笔记 (Moontvplus & OpenList)
 
 ## 一、环境准备
 
@@ -39,7 +39,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install docker.io nginx python3-certbot-nginx -y
 sudo systemctl enable --now docker nginx
 ```
-### 3. 部署 OrangeTV (Upstash 云数据库版)
+### 3. 部署 Moontvplus (Upstash 云数据库版)
 ```Bash
 sudo docker run -d --name orangetv --restart always \
   --log-opt max-size=5m --log-opt max-file=1 \
@@ -49,7 +49,7 @@ sudo docker run -d --name orangetv --restart always \
   -e NEXT_PUBLIC_STORAGE_TYPE="upstash" \
   -e UPSTASH_URL="你的URL" \
   -e UPSTASH_TOKEN="你的TOKEN" \
-  ghcr.io/djteang/orangetv:latest
+   ghcr.io/mtvpls/moontvplus:latest
 ```
 
 ### 4. 部署 OpenList
@@ -126,3 +126,43 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 1.  **权限问题**：OpenList 必须对挂载目录有写入权限，使用 `chmod 777` 和 `--user root` 是低配环境最稳妥方案。
 2.  **502 错误**：通常是后端容器处于 `Restarting` 状态，请检查 `docker logs openlist`。
 3.  **域名解析**：必须确保 GCP 防火墙已放行 80/443 端口，且域名 A 记录已生效。
+
+
+## 更新容器镜像
+
+### 1. 拉取最新镜像
+
+```Bash
+sudo docker pull ghcr.io/mtvpls/moontvplus:latest
+
+```
+
+### 2. 删除旧容器
+
+```Baah
+sudo docker pull ghcr.io/mtvpls/moontvplus:latest
+```
+
+### 3. 用同样的参数重新启动
+
+```Bash
+sudo docker run -d --name moontv-core \
+  --restart on-failure \
+  --log-opt max-size=5m --log-opt max-file=1 \
+  -p 3000:3000 \
+  -e USERNAME="admin" \
+  -e PASSWORD="你的密码" \
+  -e NEXT_PUBLIC_STORAGE_TYPE="upstash" \
+  -e UPSTASH_URL="你的URL" \
+  -e UPSTASH_TOKEN="你的TOKEN" \
+  ghcr.io/mtvpls/moontvplus:latest
+```
+
+### 4. 🧹 更新后的清理
+
+```Bash
+sudo docker image prune -f
+```
+
+
+
