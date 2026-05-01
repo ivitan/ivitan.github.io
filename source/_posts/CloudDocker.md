@@ -71,7 +71,7 @@ sudo docker run -d --name openlist --restart always --user root \
 # 重置 admin 密码命令
 sudo docker exec -it openlist ./openlist admin set 你的新密码
 ```
-## 三、 网络与安全配置
+## 三、网络与安全配置
 
 ### 1. Nginx 反向代理
 - 创建配置
@@ -101,6 +101,7 @@ server {
 
 
 - 启用配置
+
 ```Bash
 sudo ln -s /etc/nginx/sites-available/media_srv /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl restart nginx
@@ -111,7 +112,7 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 # 过程中选择数字 "2" 以开启自动重定向 HTTPS
 ```
 
-## 四、 常用维护命令
+## 四、常用维护命令
 
 |任务|命令|
 |:--|:--|
@@ -121,14 +122,14 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 |清理冗余镜像|docker system prune -f|
 |测试证书续期|sudo certbot renew --dry-run|
 
-## 五、 避坑总结
+## 五、避坑总结
 
 1.  **权限问题**：OpenList 必须对挂载目录有写入权限，使用 `chmod 777` 和 `--user root` 是低配环境最稳妥方案。
 2.  **502 错误**：通常是后端容器处于 `Restarting` 状态，请检查 `docker logs openlist`。
 3.  **域名解析**：必须确保 GCP 防火墙已放行 80/443 端口，且域名 A 记录已生效。
 
 
-## 更新容器镜像
+## 六、更新容器镜像
 
 ### 1. 拉取最新镜像
 
