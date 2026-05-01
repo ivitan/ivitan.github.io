@@ -135,7 +135,6 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 
 ```Bash
 sudo docker pull ghcr.io/mtvpls/moontvplus:latest
-
 ```
 
 ### 2. 删除旧容器
