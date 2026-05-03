@@ -16,8 +16,18 @@ categories:
 - 系统: Ubuntu 22.04 LTS (纯净版)
 - 硬件: 2 vCPU / 900MB RAM / 30GB Disk
 - 关键策略: 开启 Swap 虚拟内存、全 Docker 化、Nginx 反向代理、自动化 SSL。
+- 开启 BBR
 
-  
+```Bash
+audo echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+sudo echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+
+sysctl -p #保存生效
+
+#验证是否生效
+sysctl net.ipv4.tcp_available_congestion_control
+# 输出应包含 bbr
+```
 
 ## 二、核心部署步骤
 
