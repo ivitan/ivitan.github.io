@@ -19,13 +19,13 @@ categories:
 - 开启 BBR
 
 ```Bash
-audo echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+sudo echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 sudo echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 
-sysctl -p #保存生效
+sudo sysctl -p #保存生效
 
 #验证是否生效
-sysctl net.ipv4.tcp_available_congestion_control
+sudo sysctl net.ipv4.tcp_available_congestion_control
 # 输出应包含 bbr
 ```
 
