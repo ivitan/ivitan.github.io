@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <author>
-    <name>VITAN</name>
+    <name>維坦</name>
   </author>
   <generator uri="https://hexo.io/">Hexo</generator>
   <id>https://ivitan.com/</id>
   <link href="https://ivitan.com/" rel="alternate"/>
   <link href="https://ivitan.com/xml/atom.xml" rel="self"/>
-  <rights>All rights reserved 2026, VITAN</rights>
+  <rights>All rights reserved 2026, 維坦</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-05-04T12:45:59.684Z</updated>
+  <updated>2026-05-04T13:43:43.709Z</updated>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -29,11 +29,11 @@
       <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-Moontvplus-OpenList"><a href="#🚀-低配服务器极简部署笔记-Moontvplus-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (Moontvpl]]>
     </summary>
     <title>低配服务器极简 Docker 容器部署笔记</title>
-    <updated>2026-05-04T12:45:59.684Z</updated>
+    <updated>2026-05-04T13:43:43.709Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -49,11 +49,11 @@
       <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙]]>
     </summary>
     <title>Termux Install OpenClaw</title>
-    <updated>2026-05-04T12:45:59.694Z</updated>
+    <updated>2026-05-04T13:43:43.719Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -68,11 +68,11 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-05-04T12:45:59.694Z</updated>
+    <updated>2026-05-04T13:43:43.719Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Github" scheme="https://ivitan.com/tags/Github/"/>
     <content>
@@ -85,11 +85,11 @@
       <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure>]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-05-04T12:45:59.685Z</updated>
+    <updated>2026-05-04T13:43:43.710Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -106,11 +106,11 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-05-04T12:45:59.683Z</updated>
+    <updated>2026-05-04T13:43:43.708Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Android" scheme="https://ivitan.com/tags/Android/"/>
@@ -126,11 +126,11 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-05-04T12:45:59.684Z</updated>
+    <updated>2026-05-04T13:43:43.709Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -147,11 +147,11 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-05-04T12:45:59.684Z</updated>
+    <updated>2026-05-04T13:43:43.710Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Windows" scheme="https://ivitan.com/tags/Windows/"/>
@@ -165,11 +165,11 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-05-04T12:45:59.683Z</updated>
+    <updated>2026-05-04T13:43:43.708Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Windows" scheme="https://ivitan.com/tags/Windows/"/>
@@ -183,11 +183,11 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-05-04T12:45:59.684Z</updated>
+    <updated>2026-05-04T13:43:43.709Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -202,11 +202,11 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-05-04T12:45:59.694Z</updated>
+    <updated>2026-05-04T13:43:43.719Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Hexo" scheme="https://ivitan.com/tags/Hexo/"/>
@@ -223,11 +223,11 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-05-04T12:45:59.685Z</updated>
+    <updated>2026-05-04T13:43:43.711Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Android" scheme="https://ivitan.com/tags/Android/"/>
@@ -242,11 +242,11 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-05-04T12:45:59.686Z</updated>
+    <updated>2026-05-04T13:43:43.712Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -261,11 +261,11 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-05-04T12:45:59.683Z</updated>
+    <updated>2026-05-04T13:43:43.708Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Diary" scheme="https://ivitan.com/categories/Diary/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -281,11 +281,11 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-05-04T12:45:59.683Z</updated>
+    <updated>2026-05-04T13:43:43.708Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -301,11 +301,11 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-05-04T12:45:59.685Z</updated>
+    <updated>2026-05-04T13:43:43.710Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -321,11 +321,11 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-05-04T12:45:59.686Z</updated>
+    <updated>2026-05-04T13:43:43.711Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -342,11 +342,11 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-05-04T12:45:59.693Z</updated>
+    <updated>2026-05-04T13:43:43.718Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -361,11 +361,11 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-05-04T12:45:59.683Z</updated>
+    <updated>2026-05-04T13:43:43.708Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -382,11 +382,11 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-05-04T12:45:59.693Z</updated>
+    <updated>2026-05-04T13:43:43.718Z</updated>
   </entry>
   <entry>
     <author>
-      <name>VITAN</name>
+      <name>維坦</name>
     </author>
     <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
     <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
@@ -401,6 +401,6 @@
       <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
     </summary>
     <title>RaspberryPi Review</title>
-    <updated>2026-05-04T12:45:59.690Z</updated>
+    <updated>2026-05-04T13:43:43.715Z</updated>
   </entry>
 </feed>
