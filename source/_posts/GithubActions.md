@@ -29,44 +29,49 @@ Name: HEXO_DEPLOY_PUB
 Value: id_rsa  的值
 
 # 使用
+
 ```yaml
 name: Hexo Deploy
 
 on:
   push:
     branches: 
-      - source
+      - source # 触发分支：当 source 分支有更新时执行
+
+# 【关键点】必须赋予 GITHUB_TOKEN 写入权限，否则无法推送代码
+permissions:
+  contents: write
 
 jobs:
   build: 
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     name: auto deploy
     
     steps:
-    - name: Setup Node.js 12.x
-      uses: actions/setup-node@master
-      with:
-        node-version: "12.x"
-
-    - name: Checkout Repository source branch
-      uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v4
       with:
         ref: source
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "25"
+
     - name: Generate Public Files
       run: |
-        npm i
-        npm install hexo-cli -g
-        hexo clean && hexo generate
+        npm install
+        npx hexo clean
+        npx hexo generate
 
+    # 部署到当前仓库（使用 GITHUB_TOKEN）
     - name: Deploy Hexo
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }}
-        external_repository: ivitan/ivitan.github.io
-        publish_branch: master
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: master # 部署到当前仓库的 master 分支 (或者改为 gh-pages)
         publish_dir: ./public
         commit_message: ${{ github.event.head_commit.message }}
-        user_name: 'Vitan'
-        user_email: 'vitan.me@gmail.com'
-    ```
+        user_name: 'yourname'
+        user_email: 'yourname@mail.com'
+```
