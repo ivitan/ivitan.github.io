@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivitan.com/wiki/Dotfiles/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/wiki/Shell/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -21,6 +12,15 @@
   
   <url>
     <loc>https://ivitan.com/wiki/wnmp/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/wiki/Dotfiles/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -65,6 +65,15 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/sudo-password-hint/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/sudo-su-different/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -92,15 +101,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/wine/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -110,25 +110,16 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/%E5%88%A0%E9%99%A4eufi%E5%88%86%E5%8C%BA/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/about/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/UbuntuJava/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/UsbDriver/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -164,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Vim-utf-8/</loc>
+    <loc>https://ivitan.com/posts/Vim/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -173,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Vim/</loc>
+    <loc>https://ivitan.com/posts/Vim-utf-8/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -192,6 +183,42 @@
   
   <url>
     <loc>https://ivitan.com/posts/WNMP/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Win10-Share-WiFI/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/WinTask/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Windows-OpenSSH/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/WindowsShortcut/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -227,33 +254,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Windows-OpenSSH/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/WinTask/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/linux-WeChat-QQ/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/spyder/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -263,43 +263,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/sudo-password-hint/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Win10-Share-WiFI/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/WindowsShortcut/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Hexo/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Httpd/</loc>
+    <loc>https://ivitan.com/posts/linux-WeChat-QQ/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -344,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/TermuxInstallJupyter/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/TermuxInstallOpenClaw/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -372,6 +327,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/TermuxPython/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/TermuxInstallJupyter/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -407,34 +371,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Termux-Openjdk/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Termux-Npm-Error/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/TermuxNote/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Ubuntu-Theme/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -452,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuAndroidStudio/</loc>
+    <loc>https://ivitan.com/posts/Ubuntu-Theme/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -461,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/UbuntuEclipse/</loc>
+    <loc>https://ivitan.com/posts/UbuntuAndroidStudio/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -479,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtest/</loc>
+    <loc>https://ivitan.com/posts/UbuntuEclipse/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -488,7 +425,16 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLtransaction/</loc>
+    <loc>https://ivitan.com/posts/UsbDriver/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/UbuntuJava/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -498,6 +444,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLtrigger/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/SQLtransaction/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -524,15 +479,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SSH/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Scoop/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -551,25 +497,16 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/SSH/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/ScrapyCommand/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Shell/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Spyder-1/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -587,7 +524,43 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/Shell/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/TTYD/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Spyder-1/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Hexo/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Termux-Httpd/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -605,7 +578,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLlock/</loc>
+    <loc>https://ivitan.com/posts/Termux-Npm-Error/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -614,7 +587,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLmode/</loc>
+    <loc>https://ivitan.com/posts/Termux-Openjdk/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -624,33 +597,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/SQLnfs/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLgrant/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLrelAlg/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/SQLstyle/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -677,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RegressionValidation/</loc>
+    <loc>https://ivitan.com/posts/SQLrelAlg/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -686,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Command/</loc>
+    <loc>https://ivitan.com/posts/SQLstyle/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -695,7 +641,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQL-Exists/</loc>
+    <loc>https://ivitan.com/posts/SQLtest/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -740,7 +686,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/SQLexam/</loc>
+    <loc>https://ivitan.com/posts/SQL-Exists/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -776,7 +722,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonMatplotlib/</loc>
+    <loc>https://ivitan.com/posts/SQLgrant/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -785,7 +731,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonNumpy/</loc>
+    <loc>https://ivitan.com/posts/SQLlock/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -794,7 +740,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonPandas/</loc>
+    <loc>https://ivitan.com/posts/SQLexam/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -803,7 +749,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonRegex/</loc>
+    <loc>https://ivitan.com/posts/SQLmode/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -813,6 +759,33 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonRequest/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSQL/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSelenium/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonSeleniumMa/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -857,15 +830,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonSelenium/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/Qunar/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -902,24 +866,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/RaspberryReview/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PythonSeleniumMa/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/RaspberryIp/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -929,7 +875,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonSQL/</loc>
+    <loc>https://ivitan.com/posts/RaspberryReview/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -938,7 +884,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/OpenSourceSearch/</loc>
+    <loc>https://ivitan.com/posts/RegressionValidation/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -947,52 +893,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PermissionDenied/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PicGo/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PixelDiag/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PowerShell-Theme/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PyData/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/PyQuery/</loc>
+    <loc>https://ivitan.com/posts/SQL-Command/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1010,15 +911,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PySpiderMaoTuYing/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/PycharmShortcut/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -1028,7 +920,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonCommonlyUse/</loc>
+    <loc>https://ivitan.com/posts/PythonBeautifulSoup/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1046,7 +938,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PipInstall/</loc>
+    <loc>https://ivitan.com/posts/PythonCommonlyUse/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1056,6 +948,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/PythonDateTime/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PythonDateTypes/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1082,7 +983,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonBeautifulSoup/</loc>
+    <loc>https://ivitan.com/posts/PySpiderMaoTuYing/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1100,7 +1001,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/PythonDateTypes/</loc>
+    <loc>https://ivitan.com/posts/PythonNumpy/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1109,7 +1010,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Deb/</loc>
+    <loc>https://ivitan.com/posts/PythonPandas/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1118,7 +1019,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-DNS/</loc>
+    <loc>https://ivitan.com/posts/PythonRegex/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1127,61 +1028,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Linux-Win-Time/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxAnds/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxHome/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LinuxPythonChromedriver/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Linux-DHCP/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Markdown-Plus/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Linux-Commands/</loc>
+    <loc>https://ivitan.com/posts/PythonMatplotlib/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1262,15 +1109,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/LinuxDir/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/NpmMirror/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -1298,7 +1136,295 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/OpenSourceSearch/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/Oh-My-ZSH-complete/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PicGo/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PipInstall/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PermissionDenied/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PixelDiag/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PowerShell-Theme/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PyQuery/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/PyData/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Java-basic-datatypes/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Java-variable-types/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/JavaString/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/JupyterTheme/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Kodi/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LAMP/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/JavaControl/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Commands/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-DNS/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Deb/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-DHCP/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Linux-Win-Time/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxAnds/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxDir/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxHome/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/LinuxPythonChromedriver/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Markdown-Plus/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubActions/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GogsOnPi/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubTips/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Grub/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GithubSecret/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GoogleAdSense/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/H3C/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1370,7 +1496,25 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/HexoSEO/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/HexoGithubCoding/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/HighlightJs/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1397,7 +1541,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HexoSEO/</loc>
+    <loc>https://ivitan.com/posts/FireWall/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1406,7 +1550,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/HighlightJs/</loc>
+    <loc>https://ivitan.com/posts/GPT-MBR/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1415,7 +1559,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Java-variable-types/</loc>
+    <loc>https://ivitan.com/posts/Git-Change/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1424,7 +1568,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/JavaControl/</loc>
+    <loc>https://ivitan.com/posts/Git-Tips/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1433,7 +1577,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/JavaString/</loc>
+    <loc>https://ivitan.com/posts/Git-Token/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1442,34 +1586,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/JupyterTheme/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Kodi/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/LAMP/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Java-basic-datatypes/</loc>
+    <loc>https://ivitan.com/posts/Git-common-command/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1479,6 +1596,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/Git-error/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Git-Commit/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1514,7 +1640,25 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/GitManual/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/GitNote/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/GitPull/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1550,79 +1694,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/GithubActions/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GithubSecret/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GithubTips/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitManual/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GogsOnPi/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Grub/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/H3C/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GoogleAdSense/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GitPull/</loc>
+    <loc>https://ivitan.com/posts/ADB-APK/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1640,15 +1712,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ADB-APK/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ADB-NetWork/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -1658,16 +1721,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Anti-WPS-ADs/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/ArchLinux-command/</loc>
+    <loc>https://ivitan.com/posts/Adb/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1685,7 +1739,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinux/</loc>
+    <loc>https://ivitan.com/posts/Anti-WPS-ADs/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1694,7 +1748,34 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Adb/</loc>
+    <loc>https://ivitan.com/posts/ArchLinux-MySQL/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-Nvidia/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux-command/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/ArchLinux/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1730,15 +1811,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/Batch/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/AtomCommands/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -1748,7 +1820,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinux-MySQL/</loc>
+    <loc>https://ivitan.com/posts/Batch/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1757,25 +1829,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/ArchLinux-Nvidia/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/BaiduPCS-Go/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/CSSselector/</loc>
+    <loc>https://ivitan.com/posts/CMD/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1793,7 +1847,34 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/posts/BaiduPCS-Go/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/posts/CatEyeMovice/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/CSSselector/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/Cmder/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1820,16 +1901,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CMD/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Cmder/</loc>
+    <loc>https://ivitan.com/posts/CurlSocks5/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1839,6 +1911,15 @@
   
   <url>
     <loc>https://ivitan.com/posts/CurlTips/</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/posts/DataTransformation/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -1883,24 +1964,6 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/posts/CurlSocks5/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/DataTransformation/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivitan.com/posts/ExcelFunction/</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -1911,69 +1974,6 @@
   
   <url>
     <loc>https://ivitan.com/posts/FTX/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/FireWall/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/GPT-MBR/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Change/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Commit/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Tips/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-common-command/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/posts/Git-Token/</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -2012,14 +2012,21 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/ArchLinux/</loc>
+    <loc>https://ivitan.com/tags/ADB/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/ADB/</loc>
+    <loc>https://ivitan.com/tags/MySQL/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/tags/ArchLinux/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2061,7 +2068,7 @@
   </url>
   
   <url>
-    <loc>https://ivitan.com/tags/MySQL/</loc>
+    <loc>https://ivitan.com/tags/Shell/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2069,6 +2076,20 @@
   
   <url>
     <loc>https://ivitan.com/tags/Termux/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/tags/WebCrawler/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivitan.com/tags/Python/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2090,27 +2111,6 @@
   
   <url>
     <loc>https://ivitan.com/tags/Web/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/Shell/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/WebCrawler/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/Python/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2166,6 +2166,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/tags/Ununtu/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/tags/RaspberryPi/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -2181,13 +2188,6 @@
   
   <url>
     <loc>https://ivitan.com/tags/Network/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivitan.com/tags/Ununtu/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2264,6 +2264,13 @@
   </url>
   
   <url>
+    <loc>https://ivitan.com/tags/OpenSSH/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ivitan.com/tags/Wine/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -2277,24 +2284,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://ivitan.com/tags/OpenSSH/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://ivitan.com/categories/Coding/</loc>
+    <loc>https://ivitan.com/categories/Diary/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ivitan.com/categories/Diary/</loc>
+    <loc>https://ivitan.com/categories/Coding/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
