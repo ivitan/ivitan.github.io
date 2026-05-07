@@ -8,7 +8,7 @@ title: Shell
 <h2 align="center">Vitan's Shell Scripts</h2>
 </p>
 
-## Termux Config
+## Termux 一键配置
 ### via curl
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ivitan/Shell/master/Termux/Termux.sh)"
