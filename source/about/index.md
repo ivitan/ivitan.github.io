@@ -26,6 +26,6 @@ ghuser: true
 
 
 ## Github
-<img src="https://github-readme-stats-ten-gilt.vercel.app/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" width="495" style="border-radius: 5px;">
+<img src="https://github-readme-stats-ten-gilt.vercel.app/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" align="left" width="495" style="border-radius: 5px;">
 <br/>
-<img src="https://github-readme-stats-ten-gilt.vercel.app/api?username=ivitan&count_private=true&show_icons=true&theme=radical&include_all_commits=true" width="495" style="border-radius: 5px;">
+<img src="https://github-readme-stats-ten-gilt.vercel.app/api?username=ivitan&count_private=true&show_icons=true&theme=radical&include_all_commits=true" align="left" width="495" style="border-radius: 5px;">
