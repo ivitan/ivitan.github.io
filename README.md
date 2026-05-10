@@ -1,9 +1,10 @@
-<p align="center">
-  <a href="https://ivitan.com" target="_blank">
-    <img height="48" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imageslogo.svg">
+<div align="center">
+  <a href="https://ivitan.com" target="_blank" rel="noopener noreferrer">
+    <img height="48" src="https://cdn.jsdelivr.net/gh/ivitan/Picture@master/imageslogo.svg" alt="Vitan's personal website">
   </a>
-  <br>Vitan's personal website.
-</p>
+  <br>
+  Vitan's personal website.
+</div>
 
 ---
 
