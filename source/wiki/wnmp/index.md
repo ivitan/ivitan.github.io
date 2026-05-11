@@ -27,5 +27,14 @@ title: wnmp
 ```
 
 ## 使用
-运行：Start.bat
-停止：Stop.bat
+- 运行
+
+```bat
+Start.bat
+```
+
+- 停止
+
+```bat
+Stop.bat
+```
