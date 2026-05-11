@@ -1,6 +1,6 @@
 nameme: Dotfiles
 title: Dotfiles
-subtitle:  '各个系统的配置文件。'
+subtitle:  '各个系统的配置文件'
 tags: 环境
 icon: /assets/wiki/Linux.png
 cover: /assets/wiki/Linux.png
@@ -12,3 +12,4 @@ search:
 base_dir: /wiki/Dotfiles/
 tree:
   - index
+license: true
