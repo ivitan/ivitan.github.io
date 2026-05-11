@@ -16,3 +16,4 @@ leftbar:
 base_dir: /wiki/wnmp/
 tree:
     - index
+license: true
