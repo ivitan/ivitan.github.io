@@ -11,4 +11,4 @@ search:
 base_dir: /wiki/Shell/
 tree:
   - index
-license: true
+license: false
