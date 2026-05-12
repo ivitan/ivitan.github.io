@@ -25,6 +25,7 @@ ghuser: true
 
 ## Github
 <img src="https://stats.ivitan.com/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" align="left" width="495" style="border-radius: 5px;">
-</br>
-</br>
+
+---
+
 <img src="https://stats.ivitan.com/api?username=ivitan&count_private=true&show_icons=true&theme=radical&include_all_commits=true" align="left" width="495" style="border-radius: 5px;">
