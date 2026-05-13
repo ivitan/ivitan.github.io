@@ -4,15 +4,11 @@ date: 2022-05-08 01:03:47
 tags: Github
 ---
 
-# Github Actions
+# Hexo Github Actions
 
-## 生成 SSH Key
-```ssh
-ssh-keygen -t rsa -b 4096 -C "emal@gmail.com"
-```
+> 检测source分支改动，自动Deploy到master分支
 
-<!--more-->
-
+# 步骤
 ## 在仓库设置中修改（全局配置）
 - 进入你的 GitHub 仓库。
 - 点击 Settings -> Actions -> General。
@@ -22,7 +18,7 @@ ssh-keygen -t rsa -b 4096 -C "emal@gmail.com"
 
 ## 使用
 
-```yaml
+```yaml /.github/workflows/deploy.yml
 name: Hexo Deploy
 
 on:
