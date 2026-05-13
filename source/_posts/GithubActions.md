@@ -13,22 +13,14 @@ ssh-keygen -t rsa -b 4096 -C "emal@gmail.com"
 
 <!--more-->
 
-## 添加 Key 到 GitHub
+## 在仓库设置中修改（全局配置）
+- 进入你的 GitHub 仓库。
+- 点击 Settings -> Actions -> General。
+- 滚动到页面底部的 Workflow permissions 部分。
+- 选择 Read and write permissions。
+- 点击 Save。
 
-### 公钥
-
-仓库 --> Secrets --> Actions --> New repository secert
-
-Name: HEXO_DEPLOY_KEY
-Value: id_rsa.pub 的值
-
-## 私钥
-仓库 --> Settings --> Deploy keys --> Add deploy key
-
-Name: HEXO_DEPLOY_PUB
-Value: id_rsa  的值
-
-# 使用
+## 使用
 
 ```yaml
 name: Hexo Deploy
