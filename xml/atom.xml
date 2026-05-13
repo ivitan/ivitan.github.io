@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, 維坦</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-05-13T06:51:39.248Z</updated>
+  <updated>2026-05-13T07:00:15.172Z</updated>
   <entry>
     <author>
       <name>維坦</name>
@@ -29,7 +29,7 @@
       <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-Moontvplus-OpenList"><a href="#🚀-低配服务器极简部署笔记-Moontvplus-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (Moontvpl]]>
     </summary>
     <title>低配服务器极简 Docker 容器部署笔记</title>
-    <updated>2026-05-13T06:51:39.248Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -49,7 +49,7 @@
       <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙]]>
     </summary>
     <title>Termux Install OpenClaw</title>
-    <updated>2026-05-13T06:51:39.257Z</updated>
+    <updated>2026-05-13T07:00:15.178Z</updated>
   </entry>
   <entry>
     <author>
@@ -68,7 +68,7 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-05-13T06:51:39.257Z</updated>
+    <updated>2026-05-13T07:00:15.178Z</updated>
   </entry>
   <entry>
     <author>
@@ -76,7 +76,7 @@
     </author>
     <category term="Github" scheme="https://ivitan.com/tags/Github/"/>
     <content>
-      <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="添加-Key-到-GitHub"><a href="#添加-Key-到-GitHub" class="headerlink" title="添加 Key 到 GitHub"></a>添加 Key 到 GitHub</h2><h3 id="公钥"><a href="#公钥" class="headerlink" title="公钥"></a>公钥</h3><p>仓库 –&gt; Secrets –&gt; Actions –&gt; New repository secert</p><p>Name: HEXO_DEPLOY_KEY<br>Value: id_rsa.pub 的值</p><h2 id="私钥"><a href="#私钥" class="headerlink" title="私钥"></a>私钥</h2><p>仓库 –&gt; Settings –&gt; Deploy keys –&gt; Add deploy key</p><p>Name: HEXO_DEPLOY_PUB<br>Value: id_rsa  的值</p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">Deploy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="string">source</span> <span class="comment"># 触发分支：当 source 分支有更新时执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 【关键点】必须赋予 GITHUB_TOKEN 写入权限，否则无法推送代码</span></span><br><span class="line"><span class="attr">permissions:</span></span><br><span class="line">  <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span> </span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">auto</span> <span class="string">deploy</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">Repository</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">ref:</span> <span class="string">source</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="string">&quot;25&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span> <span class="string">Public</span> <span class="string">Files</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        npm install</span></span><br><span class="line"><span class="string">        npx hexo clean</span></span><br><span class="line"><span class="string">        npx hexo generate</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="comment"># 部署到当前仓库（使用 GITHUB_TOKEN）</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">publish_branch:</span> <span class="string">master</span> <span class="comment"># 部署到当前仓库的 master 分支 (或者改为 gh-pages)</span></span><br><span class="line">        <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">        <span class="attr">commit_message:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.event.head_commit.message</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">user_name:</span> <span class="string">&#x27;yourname&#x27;</span></span><br><span class="line">        <span class="attr">user_email:</span> <span class="string">&#x27;yourname@mail.com&#x27;</span></span><br></pre></td></tr></table></figure>]]>
+      <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="在仓库设置中修改（全局配置）"><a href="#在仓库设置中修改（全局配置）" class="headerlink" title="在仓库设置中修改（全局配置）"></a>在仓库设置中修改（全局配置）</h2><ul><li>进入你的 GitHub 仓库。</li><li>点击 Settings -&gt; Actions -&gt; General。</li><li>滚动到页面底部的 Workflow permissions 部分。</li><li>选择 Read and write permissions。</li><li>点击 Save。</li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">Deploy</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="string">source</span> <span class="comment"># 触发分支：当 source 分支有更新时执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 【关键点】必须赋予 GITHUB_TOKEN 写入权限，否则无法推送代码</span></span><br><span class="line"><span class="attr">permissions:</span></span><br><span class="line">  <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span> </span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">auto</span> <span class="string">deploy</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">Repository</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">ref:</span> <span class="string">source</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="string">&quot;25&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span> <span class="string">Public</span> <span class="string">Files</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        npm install</span></span><br><span class="line"><span class="string">        npx hexo clean</span></span><br><span class="line"><span class="string">        npx hexo generate</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="comment"># 部署到当前仓库（使用 GITHUB_TOKEN）</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v4</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">publish_branch:</span> <span class="string">master</span> <span class="comment"># 部署到当前仓库的 master 分支 (或者改为 gh-pages)</span></span><br><span class="line">        <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">        <span class="attr">commit_message:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.event.head_commit.message</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">user_name:</span> <span class="string">&#x27;yourname&#x27;</span></span><br><span class="line">        <span class="attr">user_email:</span> <span class="string">&#x27;yourname@mail.com&#x27;</span></span><br></pre></td></tr></table></figure>]]>
     </content>
     <id>https://ivitan.com/posts/GithubActions/</id>
     <link href="https://ivitan.com/posts/GithubActions/"/>
@@ -85,7 +85,7 @@
       <![CDATA[<h1 id="Github-Actions"><a href="#Github-Actions" class="headerlink" title="Github Actions"></a>Github Actions</h1><h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;emal@gmail.com&quot;</span><br></pre></td></tr></table></figure>]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-05-13T06:51:39.249Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -106,7 +106,7 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-05-13T06:51:39.247Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -126,7 +126,7 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-05-13T06:51:39.248Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -147,7 +147,7 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-05-13T06:51:39.248Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -165,7 +165,7 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-05-13T06:51:39.247Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -183,7 +183,7 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-05-13T06:51:39.248Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -202,7 +202,7 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-05-13T06:51:39.258Z</updated>
+    <updated>2026-05-13T07:00:15.178Z</updated>
   </entry>
   <entry>
     <author>
@@ -223,7 +223,7 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-05-13T06:51:39.249Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -242,7 +242,7 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-05-13T06:51:39.250Z</updated>
+    <updated>2026-05-13T07:00:15.173Z</updated>
   </entry>
   <entry>
     <author>
@@ -261,7 +261,7 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-05-13T06:51:39.247Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -281,7 +281,7 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-05-13T06:51:39.247Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -301,7 +301,7 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-05-13T06:51:39.249Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -321,7 +321,7 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-05-13T06:51:39.250Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -342,7 +342,7 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-05-13T06:51:39.257Z</updated>
+    <updated>2026-05-13T07:00:15.178Z</updated>
   </entry>
   <entry>
     <author>
@@ -361,7 +361,7 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-05-13T06:51:39.247Z</updated>
+    <updated>2026-05-13T07:00:15.172Z</updated>
   </entry>
   <entry>
     <author>
@@ -382,7 +382,7 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-05-13T06:51:39.257Z</updated>
+    <updated>2026-05-13T07:00:15.178Z</updated>
   </entry>
   <entry>
     <author>
@@ -401,6 +401,6 @@
       <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
     </summary>
     <title>RaspberryPi Review</title>
-    <updated>2026-05-13T06:51:39.254Z</updated>
+    <updated>2026-05-13T07:00:15.175Z</updated>
   </entry>
 </feed>
