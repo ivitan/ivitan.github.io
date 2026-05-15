@@ -150,7 +150,7 @@ sudo docker pull ghcr.io/mtvpls/moontvplus:latest
 ### 2. 删除旧容器
 
 ```Baah
-sudo docker pull ghcr.io/mtvpls/moontvplus:latest
+sudo docker rm -f moontv-core
 ```
 
 ### 3. 用同样的参数重新启动
