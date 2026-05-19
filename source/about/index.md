@@ -24,8 +24,12 @@ ghuser: true
 {% endabout %}
 
 ## Github
-<a href="https://ivitan.com/" lign="left"><img src="https://img.shields.io/github/stars/ivitan" lign="left"/></a>
-![Visitors](https://api.visitorbadge.io/api/visitors?path=https://github.com/ivitan&label=visitors&labelColor=%23363636&countColor=%231e90ff&style=plastic)
-<img src="https://stats.ivitan.com/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" align="left" width="495" style="border-radius: 5px;">
-
-<img src="https://stats.ivitan.com/api?username=ivitan&count_private=true&show_icons=true&theme=radical&include_all_commits=true" align="left" width="495" style="border-radius: 5px;">
+<div align="left">
+  <a href="https://ivitan.com/"><img src="https://img.shields.io/github/stars/ivitan" alt="Stars"/></a>
+  <img src="https://api.visitorbadge.io/api/visitors?path=https://github.com/ivitan&label=visitors&labelColor=%23363636&countColor=%231e90ff&style=plastic" alt="Visitors"/>
+</div>
+<div align="left">
+  <img src="https://stats.ivitan.com/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" width="495" style="border-radius: 5px;">
+  <br/>
+  <img src="https://stats.ivitan.com/api?username=ivitan&count_private=true&show_icons=true&theme=radical&include_all_commits=true" width="495" style="border-radius: 5px;">
+</div>
