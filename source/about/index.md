@@ -26,7 +26,6 @@ ghuser: true
 ## Github
 <div align="left">
   <a href="https://ivitan.com/"><img src="https://img.shields.io/github/stars/ivitan" alt="Stars"/></a>
-  <img src="https://api.visitorbadge.io/api/visitors?path=https://github.com/ivitan&label=visitors&labelColor=%23363636&countColor=%231e90ff&style=plastic" alt="Visitors"/>
 </div>
 <div align="left">
   <img src="https://stats.ivitan.com/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" width="495" style="border-radius: 5px;">
