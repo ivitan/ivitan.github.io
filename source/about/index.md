@@ -24,7 +24,7 @@ ghuser: true
 {% endabout %}
 
 ## Github
-<a href="https://ivitan.com/" ><img src="https://img.shields.io/github/stars/ivitan" /></a>
+<a href="https://ivitan.com/" lign="left"><img src="https://img.shields.io/github/stars/ivitan" lign="left"/></a>
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https://github.com/ivitan&label=visitors&labelColor=%23363636&countColor=%231e90ff&style=plastic)
 <img src="https://stats.ivitan.com/api/top-langs/?username=ivitan&layout=compact&hide=css,scss,shell,html&langs_count=8&show_icons=true&theme=radical" align="left" width="495" style="border-radius: 5px;">
 
