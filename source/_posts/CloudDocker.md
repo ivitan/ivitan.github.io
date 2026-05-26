@@ -51,7 +51,8 @@ sudo systemctl enable --now docker nginx
 ```
 ### 3. 部署 Moontvplus (Upstash 云数据库版)
 ```Bash
-sudo docker run -d --name orangetv --restart always \
+sudo docker run -d --name moontv-core \
+  --restart on-failure \
   --log-opt max-size=5m --log-opt max-file=1 \
   -p 3000:3000 \
   -e USERNAME="admin" \
@@ -59,7 +60,7 @@ sudo docker run -d --name orangetv --restart always \
   -e NEXT_PUBLIC_STORAGE_TYPE="upstash" \
   -e UPSTASH_URL="你的URL" \
   -e UPSTASH_TOKEN="你的TOKEN" \
-   ghcr.io/mtvpls/moontvplus:latest
+  ghcr.io/mtvpls/moontvplus:latest
 ```
 
 ### 4. 部署 OpenList
