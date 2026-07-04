@@ -142,3 +142,18 @@ function gtst() {
     "D:\\Program Files\\cmder\\vendor\\init.bat"
 ]
 ```
+
+# 其他环境变量设置
+> 通过系统属性添加环境变量设置 将其自带的 git 给到 cmd、powershell 也能调用
+
+1. 找到 Git 路径：首先，找到你的 Cmder 解压目录如 'D:\Cmder\vendor\git-for-windows\cmd'
+
+2. 打开系统环境变量
+
+按 Win + R，输入 'sysdm.cpl' 并回车,切换到“高级”选项卡，点击“环境变量”编辑 PATH 变量：
+
+3. 在“系统变量”区域，找到并双击 Path 变量，点击“新建”，将第一步找到的完整路径粘贴进去
+
+4. 如果还想在 CMD 中直接输入 cmder 来启动程序，可以把 Cmder 的主目录 D:\Cmder 也加到 PATH 里
+
+5. 保存并验证：点击“确定”保存所有窗口。然后新开一个 CMD 或 PowerShell 窗口，输入 git --version，如果正确显示版本号，就说明配置成功了
