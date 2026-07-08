@@ -5,7 +5,7 @@ on:
     branches: 
       - source # 触发分支：当 source 分支有更新时执行
 
-# 【关键点】必须赋予 GITHUB_TOKEN 写入权限，否则无法推送代码
+# 必须赋予 GITHUB_TOKEN 写入权限，否则无法推送代码
 permissions:
   contents: write
 
@@ -23,20 +23,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: "25"
+        node-version: "22" # 稳定的 Node.js 22 LTS 版本
+        cache: 'npm'       # 开启 npm 缓存
 
     - name: Generate Public Files
       run: |
-        npm install
+        # 【修复】强制指定官方源，无视 package-lock.json 或 .npmrc 中潜伏的腾讯云镜像
+        npm install --registry=https://registry.npmjs.org/
         npx hexo clean
         npx hexo generate
 
-    # 部署到当前仓库（使用 GITHUB_TOKEN）
+    # 部署到当前仓库
     - name: Deploy Hexo
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: master # 部署到当前仓库的 master 分支 (或者改为 gh-pages)
+        publish_branch: master # 部署到目标分支 (master)
         publish_dir: ./public
         commit_message: ${{ github.event.head_commit.message }}
         user_name: 'Vitan'
