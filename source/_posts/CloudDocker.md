@@ -142,7 +142,7 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 
 ## 六、更新容器镜像
 
-### 1. 拉取最新镜像
+### 1. 拉取最新moontvplus镜像
 
 ```Bash
 sudo docker pull ghcr.io/mtvpls/moontvplus:latest
@@ -174,6 +174,25 @@ sudo docker run -d --name moontv-core \
 ```Bash
 sudo docker image prune -f
 ```
+### 拉取最新openlist镜像
 
+```bash
+sudo docker pull openlistteam/openlist:latest
+```
 
+```bash
+sudo docker rm -f openlist
+```
 
+```docker
+sudo docker run -d --name openlist --restart always --user root \
+  --log-opt max-size=5m --log-opt max-file=1 \
+  -p 5244:5244 \
+  -v /opt/openlist/data:/opt/openlist/data \
+  -e PUID=0 -e PGID=0 -e TZ="Asia/Shanghai" \
+  openlistteam/openlist:latest
+```
+
+```bash
+sudo docker image prune -f
+```
