@@ -142,19 +142,21 @@ sudo certbot --nginx -d tv.xxx.com -d pan.xxx.com
 
 ## 六、更新容器镜像
 
-### 1. 拉取最新moontvplus镜像
+### 更新 moontvplus
+
+#### 1. 拉取最新moontvplus镜像
 
 ```Bash
 sudo docker pull ghcr.io/mtvpls/moontvplus:latest
 ```
 
-### 2. 删除旧容器
+#### 2. 删除旧容器
 
 ```Baah
 sudo docker rm -f moontv-core
 ```
 
-### 3. 用同样的参数重新启动
+#### 3. 用同样的参数重新启动
 
 ```Bash
 sudo docker run -d --name moontv-core \
@@ -169,21 +171,23 @@ sudo docker run -d --name moontv-core \
   ghcr.io/mtvpls/moontvplus:latest
 ```
 
-### 4. 🧹 更新后的清理
+#### 4. 🧹 更新后的清理
 
 ```Bash
 sudo docker image prune -f
 ```
-### 拉取最新openlist镜像
 
+### 更新 openlist
+#### 1. 拉取最新镜像
 ```bash
 sudo docker pull openlistteam/openlist:latest
 ```
 
+#### 2. 删除旧容器
 ```bash
 sudo docker rm -f openlist
 ```
-
+#### 3. 重新部署镜像
 ```docker
 sudo docker run -d --name openlist --restart always --user root \
   --log-opt max-size=5m --log-opt max-file=1 \
@@ -193,6 +197,7 @@ sudo docker run -d --name openlist --restart always --user root \
   openlistteam/openlist:latest
 ```
 
+#### 4. 更新后清理镜像缓存
 ```bash
 sudo docker image prune -f
 ```
