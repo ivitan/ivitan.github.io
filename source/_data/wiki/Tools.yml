@@ -1,0 +1,14 @@
+name: Tools
+title: Tools
+tags: 实用工具箱
+icon:  /assets/wiki/Tools.svg
+cover:  /assets/wiki/Tools.svg
+description:  实用小工具
+repo: ivitan/tools
+search:
+  filter: /wiki/tools/
+  placeholder: 在 Tools 中搜索...
+base_dir: /wiki/Tools/
+tree:
+  - index
+license: false
