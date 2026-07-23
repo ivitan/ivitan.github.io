@@ -1,9 +1,9 @@
 name: Tools
 title: Tools
-tags: 实用工具箱
+tags: 工具
 icon:  /assets/wiki/Tools.svg
 cover:  /assets/wiki/Tools.svg
-description:  实用小工具
+description:  实用 Web 小工具
 repo: ivitan/tools
 search:
   filter: /wiki/Tools/
