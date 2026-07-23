@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- 工具箱主体 -->
+    <path d="M30 60H170V160H30V60Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    
+    <!-- 工具箱内部 -->
+    <path d="M30 60H170V90H30V60Z" fill="#2980b9"/>
+    
+    <!-- 工具箱提手 -->
+    <path d="M70 40C70 37.2386 72.2386 35 75 35H125C127.761 35 130 37.2386 130 40V60H70V40Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    
+    <!-- 工具箱分隔 -->
+    <path d="M100 90V160" stroke="#2980b9" stroke-width="2"/>
+    <path d="M30 120H170" stroke="#2980b9" stroke-width="2"/>
+    
+    <!-- 锤子 -->
+    <g transform="translate(50, 100)">
+        <rect x="-5" y="-25" width="10" height="40" fill="#95a5a6"/>
+        <rect x="-15" y="-35" width="30" height="10" fill="#7f8c8d"/>
+    </g>
+    
+    <!-- 扳手 -->
+    <g transform="translate(120, 110)">
+        <path d="M0 -15C8.284 -15 15 -8.284 15 0C15 8.284 8.284 15 0 15C-8.284 15 -15 8.284 -15 0C-15 -8.284 -8.284 -15 0 -15Z" fill="#95a5a6"/>
+        <rect x="-3" y="-30" width="6" height="45" fill="#95a5a6"/>
+    </g>
+    
+    <!-- 螺丝刀 -->
+    <g transform="translate(50, 140)">
+        <rect x="-3" y="-20" width="6" height="40" fill="#7f8c8d"/>
+        <rect x="-5" y="-25" width="10" height="5" fill="#95a5a6"/>
+    </g>
+    
+    <!-- 钳子 -->
+    <g transform="translate(140, 140)">
+        <path d="M-15 0C-15 -10 -5 -15 0 -15C5 -15 15 -10 15 0C15 10 5 15 0 15C-5 15 -15 10 -15 0Z" fill="#7f8c8d"/>
+        <rect x="-15" y="0" width="30" height="5" fill="#95a5a6"/>
+    </g>
+</svg>
