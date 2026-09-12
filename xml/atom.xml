@@ -10,7 +10,25 @@
   <rights>All rights reserved 2026, 維坦</rights>
   <subtitle>⁣⁣⁣Never Settle | ivitan.com</subtitle>
   <title>維坦</title>
-  <updated>2026-09-06T12:20:02.356Z</updated>
+  <updated>2026-09-12T12:51:10.046Z</updated>
+  <entry>
+    <author>
+      <name>維坦</name>
+    </author>
+    <category term="Linux" scheme="https://ivitan.com/categories/Linux/"/>
+    <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
+    <content>
+      <![CDATA[<h1 id="Linux-高频命令"><a href="#Linux-高频命令" class="headerlink" title="Linux 高频命令"></a>Linux 高频命令</h1><h2 id="📄-文件查看和处理命令"><a href="#📄-文件查看和处理命令" class="headerlink" title="📄 文件查看和处理命令"></a>📄 文件查看和处理命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>cat file1</code></td><td align="left">查看文件内容</td></tr><tr><td align="left"><code>cat -n file1</code></td><td align="left">查看内容并标示行数</td></tr><tr><td align="left"><code>tac file1</code></td><td align="left">从最后一行开始反向查看文件内容</td></tr><tr><td align="left"><code>head -2 file1</code></td><td align="left">查看文件前两行</td></tr><tr><td align="left"><code>tail -2 file1</code></td><td align="left">查看文件后两行</td></tr><tr><td align="left"><code>tail -f /log/msg</code></td><td align="left">实时查看文件新增内容</td></tr><tr><td align="left"><code>more file1</code></td><td align="left">分页查看长文件内容（仅支持正向翻页）</td></tr><tr><td align="left"><code>less file1</code></td><td align="left">分页查看长文件内容（支持正反双向翻页）</td></tr><tr><td align="left"><code>grep code hello.txt</code></td><td align="left">在文件hello.txt中查找关键词code</td></tr><tr><td align="left"><code>grep ^sheep hello.txt</code></td><td align="left">在文件hello.txt中查找以sheep开头的内容</td></tr><tr><td align="left"><code>grep [0-9] hello.txt</code></td><td align="left">选择hello.txt文件中所有包含数字的行</td></tr><tr><td align="left"><code>sed &#39;s/s1/s2/g&#39; hello.txt</code></td><td align="left">将hello.txt文件中的s1替换成s2</td></tr><tr><td align="left"><code>sed -e &#39;s/s1//g&#39; hello.txt</code></td><td align="left">从文档中删除词汇s1并保留剩余内容</td></tr><tr><td align="left"><code>sed &#39;/^$/d&#39; hello.txt</code></td><td align="left">从hello.txt文件中删除所有空白行</td></tr><tr><td align="left"><code>sed &#39;/ *#/d; /^$/d&#39; hello.txt</code></td><td align="left">从hello.txt文件中删除所有注释和空白行</td></tr><tr><td align="left"><code>sed -e &#39;1d&#39; hello.txt</code></td><td align="left">排除文件第一行输出内容</td></tr><tr><td align="left"><code>sed -n &#39;/s1/p&#39; hello.txt</code></td><td align="left">查看只包含关键词”s1”的行</td></tr><tr><td align="left"><code>sed -e &#39;s/ *$//&#39; hello.txt</code></td><td align="left">删除每一行最后的空白字符</td></tr><tr><td align="left"><code>sed -n &#39;1,5p;5q&#39; hello.txt</code></td><td align="left">查看文件第1到第5行内容</td></tr><tr><td align="left"><code>sed -n &#39;5p;5q&#39; hello.txt</code></td><td align="left">查看文件第5行内容</td></tr><tr><td align="left"><code>cat xxx.txt | awk &#39;NR%2==1&#39;</code></td><td align="left">查看文件奇数行（已补全缺失的管道符）</td></tr><tr><td align="left"><code>paste file1 file2</code></td><td align="left">合并两个文件的内容（按行拼接）</td></tr><tr><td align="left"><code>paste -d &#39;+&#39; file1 file2</code></td><td align="left">合并两个文件的内容，中间用”+”区分</td></tr><tr><td align="left"><code>sort file1 file2</code></td><td align="left">排序两个文件的内容</td></tr><tr><td align="left"><code>sort file1 file2 | uniq</code></td><td align="left">排序并去重（已补全缺失的管道符）</td></tr><tr><td align="left"><code>sort file1 file2 | uniq -u</code></td><td align="left">排序并只显示唯一的行</td></tr><tr><td align="left"><code>sort file1 file2 | uniq -d</code></td><td align="left">排序并只显示重复的行</td></tr><tr><td align="left"><code>comm -1 file1 file2</code></td><td align="left">比较两个文件，去除file1独有的内容</td></tr><tr><td align="left"><code>comm -2 file1 file2</code></td><td align="left">比较两个文件，去除file2独有的内容</td></tr><tr><td align="left"><code>comm -3 file1 file2</code></td><td align="left">比较两个文件，去除两文件共有的内容</td></tr></tbody></table><h2 id="🌐-网络和进程管理命令"><a href="#🌐-网络和进程管理命令" class="headerlink" title="🌐 网络和进程管理命令"></a>🌐 网络和进程管理命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>ifconfig</code></td><td align="left">查看网络接口属性</td></tr><tr><td align="left"><code>ifconfig eth0</code></td><td align="left">查看eth0网卡的配置</td></tr><tr><td align="left"><code>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</code></td><td align="left">配置eth0静态IP地址</td></tr><tr><td align="left"><code>dhclient eth0</code></td><td align="left">以DHCP模式启用eth0</td></tr><tr><td align="left"><code>ifup eth0</code></td><td align="left">启用eth0网络设备</td></tr><tr><td align="left"><code>ifdown eth0</code></td><td align="left">禁用eth0网络设备</td></tr><tr><td align="left"><code>route -n</code></td><td align="left">查看路由表</td></tr><tr><td align="left"><code>route add -net 0/0 gw Gateway_IP</code></td><td align="left">配置默认网关</td></tr><tr><td align="left"><code>route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1</code></td><td align="left">配置静态路由到达192.168.0.0&#x2F;16网络</td></tr><tr><td align="left"><code>route del 0/0 gw Gateway_IP</code></td><td align="left">删除静态路由</td></tr><tr><td align="left"><code>netstat -lntp</code></td><td align="left">查看所有监听端口</td></tr><tr><td align="left"><code>netstat -antp</code></td><td align="left">查看已经建立的TCP连接</td></tr><tr><td align="left"><code>netstat -lutp</code></td><td align="left">查看TCP&#x2F;UDP的状态信息</td></tr><tr><td align="left"><code>iptables -L</code></td><td align="left">查看iptables规则</td></tr><tr><td align="left"><code>hostname</code></td><td align="left">查看主机名</td></tr><tr><td align="left"><code>host www.ivitan.cn</code></td><td align="left">解析主机名对应的IP</td></tr><tr><td align="left"><code>nslookup www.ivitan.cn</code></td><td align="left">查询DNS记录，验证域名解析是否正常</td></tr><tr><td align="left"><code>ps -ef</code></td><td align="left">查看所有进程</td></tr><tr><td align="left"><code>ps -ef | grep vitan</code></td><td align="left">查找特定进程（已补全缺失的管道符）</td></tr><tr><td align="left"><code>kill -s name</code></td><td align="left">按进程名终止指定进程</td></tr><tr><td align="left"><code>kill -s pid</code></td><td align="left">按进程ID终止指定进程</td></tr><tr><td align="left"><code>top</code></td><td align="left">实时显示进程状态与系统资源占用</td></tr><tr><td align="left"><code>vmstat 1 20</code></td><td align="left">每1秒采集一次系统状态，共采集20次</td></tr><tr><td align="left"><code>iostat</code></td><td align="left">查看磁盘IO读写与CPU使用情况</td></tr><tr><td align="left"><code>sar -u 1 10</code></td><td align="left">查询CPU使用情况（1秒一次，共10次）</td></tr><tr><td align="left"><code>sar -d 1 10</code></td><td align="left">查询磁盘性能（1秒一次，共10次）</td></tr></tbody></table><h2 id="💽-磁盘和分区命令"><a href="#💽-磁盘和分区命令" class="headerlink" title="💽 磁盘和分区命令"></a>💽 磁盘和分区命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>fdisk -l</code></td><td align="left">查看所有磁盘分区</td></tr><tr><td align="left"><code>swapon -s</code></td><td align="left">查看所有交换分区</td></tr><tr><td align="left"><code>df -h</code></td><td align="left">查看磁盘使用情况及挂载点（易读格式）</td></tr><tr><td align="left"><code>df -hl</code></td><td align="left">同上</td></tr><tr><td align="left"><code>du -sh /dir</code></td><td align="left">查看指定目录的总大小</td></tr><tr><td align="left"><code>du -sk * | sort -rn</code></td><td align="left">降序显示当前目录下文件大小（已补全缺失的管道符）</td></tr><tr><td align="left"><code>mount /dev/hda2 /mnt/hda2</code></td><td align="left">挂载hda2分区到指定目录</td></tr><tr><td align="left"><code>mount -t ntfs /dev/sdc1 /mnt/usbhd1</code></td><td align="left">挂载NTFS格式的磁盘分区</td></tr><tr><td align="left"><code>mount -o loop xxx.iso /mnt/cdrom</code></td><td align="left">挂载ISO镜像文件</td></tr><tr><td align="left"><code>mount /dev/sda1 /mnt/usbdisk</code></td><td align="left">挂载USB闪存设备</td></tr><tr><td align="left"><code>umount -v /dev/sda1</code></td><td align="left">通过设备名卸载磁盘</td></tr><tr><td align="left"><code>umount -v /mnt/mymnt</code></td><td align="left">通过挂载点卸载磁盘</td></tr><tr><td align="left"><code>fuser -km /mnt/hda1</code></td><td align="left">强制卸载磁盘（慎用，会强制终止占用进程）</td></tr></tbody></table><h2 id="📊-系统信息和性能查看命令"><a href="#📊-系统信息和性能查看命令" class="headerlink" title="📊 系统信息和性能查看命令"></a>📊 系统信息和性能查看命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>uname -a</code></td><td align="left">查看内核&#x2F;OS&#x2F;CPU信息</td></tr><tr><td align="left"><code>uname -r</code></td><td align="left">查看内核版本</td></tr><tr><td align="left"><code>uname -m</code></td><td align="left">查看处理器架构</td></tr><tr><td align="left"><code>arch</code></td><td align="left">查看处理器架构</td></tr><tr><td align="left"><code>hostname</code></td><td align="left">查看计算机名</td></tr><tr><td align="left"><code>cat /proc/version</code></td><td align="left">查看linux版本信息</td></tr><tr><td align="left"><code>cat /proc/cpuinfo</code></td><td align="left">查看CPU详细信息</td></tr><tr><td align="left"><code>grep MemTotal /proc/meminfo</code></td><td align="left">查看内存总量</td></tr><tr><td align="left"><code>grep MemFree /proc/meminfo</code></td><td align="left">查看空闲内存量</td></tr><tr><td align="left"><code>free -m</code></td><td align="left">查看内存用量和交换区用量（单位MB）</td></tr><tr><td align="left"><code>cat /proc/interrupts</code></td><td align="left">查看系统中断信息</td></tr><tr><td align="left"><code>cat /proc/loadavg</code></td><td align="left">查看系统负载</td></tr><tr><td align="left"><code>uptime</code></td><td align="left">查看系统运行时间、在线用户数、负载</td></tr><tr><td align="left"><code>env</code></td><td align="left">查看系统的环境变量</td></tr><tr><td align="left"><code>lsusb -tv</code></td><td align="left">查看系统USB设备信息</td></tr><tr><td align="left"><code>lspci -tv</code></td><td align="left">查看系统PCI设备信息</td></tr><tr><td align="left"><code>lsmod</code></td><td align="left">查看已加载的系统模块</td></tr><tr><td align="left"><code>who</code></td><td align="left">显示当前登录系统的用户</td></tr><tr><td align="left"><code>who am i</code></td><td align="left">显示当前用户登录时的用户名</td></tr><tr><td align="left"><code>whoami</code></td><td align="left">显示当前用户名</td></tr><tr><td align="left"><code>date</code></td><td align="left">显示系统日期时间</td></tr><tr><td align="left"><code>cal 2021</code></td><td align="left">显示2021年日历表</td></tr></tbody></table><h2 id="🛠️-系统服务命令"><a href="#🛠️-系统服务命令" class="headerlink" title="🛠️ 系统服务命令"></a>🛠️ 系统服务命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>chkconfig --list</code></td><td align="left">列出系统服务</td></tr><tr><td align="left"><code>service &lt;服务名&gt; status</code></td><td align="left">查看某个服务（低版本Linux系统适用）</td></tr><tr><td align="left"><code>systemctl status &lt;服务名&gt;</code></td><td align="left">查看某个服务（systemd架构系统标准工具）</td></tr><tr><td align="left"><code>service &lt;服务名&gt; start</code></td><td align="left">启动某个服务（低版本Linux系统适用）</td></tr><tr><td align="left"><code>systemctl start &lt;服务名&gt;</code></td><td align="left">启动某个服务（systemd架构系统标准工具）</td></tr><tr><td align="left"><code>service &lt;服务名&gt; stop</code></td><td align="left">终止某个服务（低版本Linux系统适用）</td></tr><tr><td align="left"><code>systemctl stop &lt;服务名&gt;</code></td><td align="left">终止某个服务（systemd架构系统标准工具）</td></tr><tr><td align="left"><code>service &lt;服务名&gt; restart</code></td><td align="left">重启某个服务（低版本Linux系统适用）</td></tr><tr><td align="left"><code>systemctl restart &lt;服务名&gt;</code></td><td align="left">重启某个服务（systemd架构系统标准工具）</td></tr><tr><td align="left"><code>systemctl enable &lt;服务名&gt;</code></td><td align="left">开启服务自启动</td></tr><tr><td align="left"><code>systemctl disable &lt;服务名&gt;</code></td><td align="left">关闭服务自启动</td></tr></tbody></table><h2 id="📦-打包和解压命令"><a href="#📦-打包和解压命令" class="headerlink" title="📦 打包和解压命令"></a>📦 打包和解压命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>zip xxx.zip file</code></td><td align="left">压缩至zip包</td></tr><tr><td align="left"><code>zip -r xxx.zip file1 file2 dir1</code></td><td align="left">将多个文件+目录压成zip包</td></tr><tr><td align="left"><code>unzip xxx.zip</code></td><td align="left">解压zip包</td></tr><tr><td align="left"><code>tar -cvf xxx.tar file</code></td><td align="left">创建非压缩tar包</td></tr><tr><td align="left"><code>tar -cvf xxx.tar file1 file2 dir1</code></td><td align="left">将多个文件+目录打tar包</td></tr><tr><td align="left"><code>tar -tf xxx.tar</code></td><td align="left">查看tar包的内容</td></tr><tr><td align="left"><code>tar -xvf xxx.tar</code></td><td align="left">解压tar包</td></tr><tr><td align="left"><code>tar -xvf xxx.tar -C /dir</code></td><td align="left">将tar包解压至指定目录</td></tr><tr><td align="left"><code>gzip filename</code></td><td align="left">压缩文件</td></tr><tr><td align="left"><code>gzip -9 filename</code></td><td align="left">最大程度压缩文件</td></tr><tr><td align="left"><code>gunzip xxx.gz</code></td><td align="left">解压gzip压缩包</td></tr><tr><td align="left"><code>tar -cvfz xxx.tar.gz dir</code></td><td align="left">创建gzip压缩包</td></tr><tr><td align="left"><code>tar -zxvf xxx.tar.gz</code></td><td align="left">解压gzip压缩包</td></tr><tr><td align="left"><code>bzip2 filename</code></td><td align="left">压缩文件</td></tr><tr><td align="left"><code>bunzip2 xxx.bz2</code></td><td align="left">解压bz2压缩包</td></tr><tr><td align="left"><code>tar -cvfj xxx.tar.bz2 dir</code></td><td align="left">创建bz2压缩包</td></tr><tr><td align="left"><code>tar -jxvf xxx.tar.bz2</code></td><td align="left">解压bz2压缩包</td></tr></tbody></table><h2 id="👥-用户和用户组命令"><a href="#👥-用户和用户组命令" class="headerlink" title="👥 用户和用户组命令"></a>👥 用户和用户组命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>groupadd group_name</code></td><td align="left">创建用户组</td></tr><tr><td align="left"><code>groupmod -n new_name old_name</code></td><td align="left">重命名用户组</td></tr><tr><td align="left"><code>groupdel group_name</code></td><td align="left">删除用户组</td></tr><tr><td align="left"><code>useradd codesheep</code></td><td align="left">创建用户</td></tr><tr><td align="left"><code>usermod -g group_name user_name</code></td><td align="left">修改用户的主组</td></tr><tr><td align="left"><code>usermod -aG group_name user_name</code></td><td align="left">将用户添加到附加组</td></tr><tr><td align="left"><code>usermod -s /bin/ksh -d /home/codepig -g dev codesheep</code></td><td align="left">修改用户codesheep的登录Shell、主目录以及主组</td></tr><tr><td align="left"><code>userdel -r codesheep</code></td><td align="left">删除用户（同步删除主目录）</td></tr><tr><td align="left"><code>groups test</code></td><td align="left">查看test用户所在的组</td></tr><tr><td align="left"><code>su - user_name</code></td><td align="left">完整切换到目标用户环境</td></tr><tr><td align="left"><code>passwd</code></td><td align="left">修改当前用户口令</td></tr><tr><td align="left"><code>passwd codesheep</code></td><td align="left">修改指定用户的口令</td></tr><tr><td align="left"><code>w</code></td><td align="left">查看活动用户</td></tr><tr><td align="left"><code>id codesheep</code></td><td align="left">查看指定用户信息</td></tr><tr><td align="left"><code>last</code></td><td align="left">查看用户登录日志</td></tr><tr><td align="left"><code>crontab -l</code></td><td align="left">查看当前用户的计划任务</td></tr><tr><td align="left"><code>cut -d: -f1 /etc/passwd</code></td><td align="left">查看系统所有用户</td></tr><tr><td align="left"><code>cut -d: -f1 /etc/group</code></td><td align="left">查看系统所有组</td></tr></tbody></table><h2 id="⚡-关机-重启-注销命令"><a href="#⚡-关机-重启-注销命令" class="headerlink" title="⚡ 关机&#x2F;重启&#x2F;注销命令"></a>⚡ 关机&#x2F;重启&#x2F;注销命令</h2><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>shutdown -h now</code></td><td align="left">即刻关机</td></tr><tr><td align="left"><code>shutdown -h 10</code></td><td align="left">10分钟后关机</td></tr><tr><td align="left"><code>shutdown -h 11:00</code></td><td align="left">11:00定时关机</td></tr><tr><td align="left"><code>shutdown -h +10</code></td><td align="left">10分钟后关机</td></tr><tr><td align="left"><code>shutdown -c</code></td><td align="left">取消预定的关机&#x2F;重启任务</td></tr><tr><td align="left"><code>shutdown -r now</code></td><td align="left">立即重启</td></tr><tr><td align="left"><code>shutdown -r 10</code></td><td align="left">10分钟之后重启</td></tr><tr><td align="left"><code>shutdown -r 11:00</code></td><td align="left">11:00定时重启</td></tr><tr><td align="left"><code>reboot</code></td><td align="left">立即重启</td></tr><tr><td align="left"><code>init 6</code></td><td align="left">重启</td></tr><tr><td align="left"><code>init 0</code></td><td align="left">立刻关机</td></tr><tr><td align="left"><code>telinit 0</code></td><td align="left">关机</td></tr><tr><td align="left"><code>poweroff</code></td><td align="left">立刻关机</td></tr><tr><td align="left"><code>halt</code></td><td align="left">关机</td></tr><tr><td align="left"><code>sync</code></td><td align="left">将内存buff数据同步到磁盘</td></tr><tr><td align="left"><code>logout</code></td><td align="left">退出当前登录Shell</td></tr></tbody></table><h2 id="📥-包管理命令"><a href="#📥-包管理命令" class="headerlink" title="📥 包管理命令"></a>📥 包管理命令</h2><h3 id="RPM-包管理（RedHat系发行版通用基础命令）"><a href="#RPM-包管理（RedHat系发行版通用基础命令）" class="headerlink" title="RPM 包管理（RedHat系发行版通用基础命令）"></a>RPM 包管理（RedHat系发行版通用基础命令）</h3><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>rpm -qa</code></td><td align="left">查看已安装的rpm包</td></tr><tr><td align="left"><code>rpm -q pkg_name</code></td><td align="left">查询指定rpm包</td></tr><tr><td align="left"><code>rpm -qf filename</code></td><td align="left">查看某个文件属于哪个包</td></tr><tr><td align="left"><code>rpm -qi pkg_name</code></td><td align="left">查看包的详细信息</td></tr><tr><td align="left"><code>rpm -ql pkg_name</code></td><td align="left">查看包安装了哪些文件</td></tr><tr><td align="left"><code>rpm -qc pkg_name</code></td><td align="left">查看已安装rpm包提供的配置文件</td></tr><tr><td align="left"><code>rpm -qd pkg_name</code></td><td align="left">查询包提供的文档</td></tr><tr><td align="left"><code>rpm -q --whatprovides xxx</code></td><td align="left">显示xxx功能由哪个包提供</td></tr><tr><td align="left"><code>rpm -q --whatrequires xxx</code></td><td align="left">显示xxx功能被哪个程序包依赖</td></tr><tr><td align="left"><code>rpm -qR pkg_name</code></td><td align="left">查询包的依赖关系</td></tr><tr><td align="left"><code>rpm -q --changelog xxx</code></td><td align="left">显示xxx包的更改记录</td></tr><tr><td align="left"><code>rpm -ivh xxx.rpm</code></td><td align="left">安装rpm包</td></tr><tr><td align="left"><code>rpm -ivh --test xxx.rpm</code></td><td align="left">测试安装rpm包</td></tr><tr><td align="left"><code>rpm -ivh --nodeps xxx.rpm</code></td><td align="left">安装rpm包时忽略依赖关系</td></tr><tr><td align="left"><code>rpm -Uvh pkg_name</code></td><td align="left">升级rpm包（未安装则自动安装）</td></tr><tr><td align="left"><code>rpm -Fvh pkg_name</code></td><td align="left">升级已安装的rpm包</td></tr><tr><td align="left"><code>rpm -e xxx</code></td><td align="left">卸载程序包</td></tr><tr><td align="left"><code>rpm -V pkg_name</code></td><td align="left">RPM包详细信息校验</td></tr></tbody></table><h3 id="YUM-包管理（RedHat系发行版：CentOS、RHEL等适用）"><a href="#YUM-包管理（RedHat系发行版：CentOS、RHEL等适用）" class="headerlink" title="YUM 包管理（RedHat系发行版：CentOS、RHEL等适用）"></a>YUM 包管理（RedHat系发行版：CentOS、RHEL等适用）</h3><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>yum repolist enabled</code></td><td align="left">显示可用的源仓库</td></tr><tr><td align="left"><code>yum search pkg_name</code></td><td align="left">搜索软件包</td></tr><tr><td align="left"><code>yum list</code></td><td align="left">显示所有程序包</td></tr><tr><td align="left"><code>yum list installed</code></td><td align="left">查看当前系统已安装包</td></tr><tr><td align="left"><code>yum list updates</code></td><td align="left">查看可以更新的包列表</td></tr><tr><td align="left"><code>yum check-update</code></td><td align="left">查看可升级的软件包</td></tr><tr><td align="left"><code>yum install pkg_name</code></td><td align="left">下载并安装软件包（自动处理依赖）</td></tr><tr><td align="left"><code>yum install --downloadonly pkg_name</code></td><td align="left">只下载软件包不安装</td></tr><tr><td align="left"><code>yum update</code></td><td align="left">更新所有软件包</td></tr><tr><td align="left"><code>yum update pkg_name</code></td><td align="left">升级指定软件包</td></tr><tr><td align="left"><code>yum deplist pkg_name</code></td><td align="left">列出软件包依赖关系</td></tr><tr><td align="left"><code>yum remove pkg_name</code></td><td align="left">删除软件包</td></tr><tr><td align="left"><code>yum clean all</code></td><td align="left">清除所有缓存</td></tr><tr><td align="left"><code>yum clean packages</code></td><td align="left">清除缓存的软件包</td></tr><tr><td align="left"><code>yum clean headers</code></td><td align="left">清除缓存的header</td></tr></tbody></table><h3 id="DPKG-包管理（Debian系发行版通用基础命令）"><a href="#DPKG-包管理（Debian系发行版通用基础命令）" class="headerlink" title="DPKG 包管理（Debian系发行版通用基础命令）"></a>DPKG 包管理（Debian系发行版通用基础命令）</h3><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>dpkg -l</code></td><td align="left">查看系统中已安装deb包</td></tr><tr><td align="left"><code>dpkg -l pkg_name</code></td><td align="left">显示包的大致信息</td></tr><tr><td align="left"><code>dpkg -s pkg_name</code></td><td align="left">查看包的详细信息</td></tr><tr><td align="left"><code>dpkg -L pkg_name</code></td><td align="left">查看deb包安装的文件</td></tr><tr><td align="left"><code>dpkg -c xxx.deb</code></td><td align="left">列出deb包的内容</td></tr><tr><td align="left"><code>dpkg --unpack xxx.deb</code></td><td align="left">解开deb包的内容</td></tr><tr><td align="left"><code>dpkg -i xxx.deb</code></td><td align="left">安装或更新deb包（需手动解决依赖）</td></tr><tr><td align="left"><code>dpkg -r pkg_name</code></td><td align="left">移除deb包（保留配置）</td></tr><tr><td align="left"><code>dpkg -P pkg_name</code></td><td align="left">移除deb包且不保留配置</td></tr></tbody></table><h3 id="APT-软件工具（Debian系发行版：Ubuntu、Debian等适用）"><a href="#APT-软件工具（Debian系发行版：Ubuntu、Debian等适用）" class="headerlink" title="APT 软件工具（Debian系发行版：Ubuntu、Debian等适用）"></a>APT 软件工具（Debian系发行版：Ubuntu、Debian等适用）</h3><table><thead><tr><th align="left">常用命令</th><th align="left">作用</th></tr></thead><tbody><tr><td align="left"><code>apt-cache search pkg_name</code></td><td align="left">搜索程序包</td></tr><tr><td align="left"><code>apt-cache show pkg_name</code></td><td align="left">获取包的概览信息</td></tr><tr><td align="left"><code>apt-get update</code></td><td align="left">更新包索引信息</td></tr><tr><td align="left"><code>apt-get install pkg_name</code></td><td align="left">安装&#x2F;升级软件包（自动处理依赖）</td></tr><tr><td align="left"><code>apt-get upgrade</code></td><td align="left">更新已安装软件包</td></tr><tr><td align="left"><code>apt-get remove pkg_name</code></td><td align="left">卸载软件（不包括配置）</td></tr><tr><td align="left"><code>apt-get purge pkg_name</code></td><td align="left">卸载软件（包括配置）</td></tr><tr><td align="left"><code>apt-get clean</code></td><td align="left">清理缓存</td></tr></tbody></table><h2 id="💡-核心注意事项"><a href="#💡-核心注意事项" class="headerlink" title="💡 核心注意事项"></a>💡 核心注意事项</h2><ul><li><strong>命令版本适配</strong>：<code>service</code>命令多用于低版本Linux系统，<code>systemctl</code>是systemd架构系统的标准服务管理工具，需根据系统版本选择。</li><li><strong>包管理体系差异</strong>：<ul><li>RPM&#x2F;YUM体系适用于RedHat系发行版（CentOS、RHEL等），DPKG&#x2F;APT体系适用于Debian系发行版（Ubuntu、Debian等），二者命令不互通。</li><li>YUM&#x2F;APT可自动处理包依赖，RPM&#x2F;DPKG基础命令需手动解决依赖问题，复杂环境建议使用上层工具。</li></ul></li><li><strong>高风险操作提示</strong>：强制卸载磁盘、kill进程、删除系统包类命令执行前需确认操作对象，避免误删核心组件导致业务受损。</li><li><strong>性能排查技巧</strong>：<code>vmstat</code>、<code>iostat</code>、<code>sar</code> 三类命令搭配使用可实现系统性能的多维度全面排查。</li><li><strong>日常优化建议</strong>：定期执行包管理缓存清理命令。<br>Linux_Commands_CheatSheet.md<br>目前显示的是“Linux_Commands_CheatSheet.md”。</li></ul>]]>
+    </content>
+    <id>https://ivitan.com/posts/TopLinuxCommam/</id>
+    <link href="https://ivitan.com/posts/TopLinuxCommam/"/>
+    <published>2026-09-11T03:15:52.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="Linux-高频命令"><a href="#Linux-高频命令" class="headerlink" title="Linux 高频命令"></a>Linux 高频命令</h1><h2 id="📄-文件查看和处理命令"><a href="#📄-文件查看和处]]>
+    </summary>
+    <title>Linux 高频命令</title>
+    <updated>2026-09-12T12:51:10.046Z</updated>
+  </entry>
   <entry>
     <author>
       <name>維坦</name>
@@ -29,7 +47,7 @@
       <![CDATA[<h1 id="🚀-低配服务器极简部署笔记-Moontvplus-OpenList"><a href="#🚀-低配服务器极简部署笔记-Moontvplus-OpenList" class="headerlink" title="🚀 低配服务器极简部署笔记 (Moontvpl]]>
     </summary>
     <title>低配服务器极简 Docker 容器部署笔记</title>
-    <updated>2026-09-06T12:20:02.356Z</updated>
+    <updated>2026-09-12T12:51:10.040Z</updated>
   </entry>
   <entry>
     <author>
@@ -49,7 +67,7 @@
       <![CDATA[<h1 id="Termux-安装-OpenClaw（龙虾）"><a href="#Termux-安装-OpenClaw（龙虾）" class="headerlink" title="Termux 安装 OpenClaw（龙虾）"></a>Termux 安装 OpenClaw（龙]]>
     </summary>
     <title>Termux Install OpenClaw</title>
-    <updated>2026-09-06T12:20:02.366Z</updated>
+    <updated>2026-09-12T12:51:10.046Z</updated>
   </entry>
   <entry>
     <author>
@@ -68,7 +86,7 @@
       <![CDATA[<h1 id="在-Termux-中安装-Jupyter-的步骤"><a href="#在-Termux-中安装-Jupyter-的步骤" class="headerlink" title="在 Termux 中安装 Jupyter 的步骤"></a>在 Termux 中安装 J]]>
     </summary>
     <title>Termux install  Jupyter</title>
-    <updated>2026-09-06T12:20:02.366Z</updated>
+    <updated>2026-09-12T12:51:10.046Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,7 +103,7 @@
       <![CDATA[<h1 id="Hexo-Github-Actions"><a href="#Hexo-Github-Actions" class="headerlink" title="Hexo Github Actions"></a>Hexo Github Actions</h1><bloc]]>
     </summary>
     <title>Hexo Github Actions</title>
-    <updated>2026-09-06T12:20:02.358Z</updated>
+    <updated>2026-09-12T12:51:10.041Z</updated>
   </entry>
   <entry>
     <author>
@@ -106,7 +124,7 @@
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plaintext"><table><tr><]]>
     </summary>
     <title>ADB 提取系统 APK</title>
-    <updated>2026-09-06T12:20:02.355Z</updated>
+    <updated>2026-09-12T12:51:10.039Z</updated>
   </entry>
   <entry>
     <author>
@@ -126,7 +144,7 @@
 </blockquote>]]>
     </summary>
     <title>一键关闭多用户状态栏头像</title>
-    <updated>2026-09-06T12:20:02.356Z</updated>
+    <updated>2026-09-12T12:51:10.040Z</updated>
   </entry>
   <entry>
     <author>
@@ -147,7 +165,7 @@
 </blockquote>]]>
     </summary>
     <title>Github 不再支持密码验证解决方案</title>
-    <updated>2026-09-06T12:20:02.357Z</updated>
+    <updated>2026-09-12T12:51:10.040Z</updated>
   </entry>
   <entry>
     <author>
@@ -165,7 +183,7 @@
       <![CDATA[<p>关闭大部分 WPS 广告</p>]]>
     </summary>
     <title>如何关闭大部分 WPS 广告</title>
-    <updated>2026-09-06T12:20:02.355Z</updated>
+    <updated>2026-09-12T12:51:10.039Z</updated>
   </entry>
   <entry>
     <author>
@@ -183,7 +201,7 @@
       <![CDATA[<p>安装 Windows 时 GPT 与 MBR 互换</p>]]>
     </summary>
     <title>安装 Windows 时 GPT 与 MBR 互换</title>
-    <updated>2026-09-06T12:20:02.357Z</updated>
+    <updated>2026-09-12T12:51:10.040Z</updated>
   </entry>
   <entry>
     <author>
@@ -202,7 +220,7 @@
       <![CDATA[<p>Bintray 库已关闭，如何解决？</p>]]>
     </summary>
     <title>Termux 的 Bintray 库已关闭，解决办法</title>
-    <updated>2026-09-06T12:20:02.366Z</updated>
+    <updated>2026-09-12T12:51:10.046Z</updated>
   </entry>
   <entry>
     <author>
@@ -223,7 +241,7 @@
 </blockquote>]]>
     </summary>
     <title>你网站的 Google Adsense 为什么不通过？</title>
-    <updated>2026-09-06T12:20:02.358Z</updated>
+    <updated>2026-09-12T12:51:10.041Z</updated>
   </entry>
   <entry>
     <author>
@@ -242,7 +260,7 @@
       <![CDATA[<p>Kodi 设置中文并添加 IPTV 源</p>]]>
     </summary>
     <title>Kodi 设置中文并添加 IPTV 源</title>
-    <updated>2026-09-06T12:20:02.359Z</updated>
+    <updated>2026-09-12T12:51:10.041Z</updated>
   </entry>
   <entry>
     <author>
@@ -261,7 +279,7 @@
       <![CDATA[<p>一加 9 Pro 刷了 OxygenOS 后有时连上了WiFi但是无WiFi图标，有时还有感叹号</p>]]>
     </summary>
     <title>无需 root 解决 android 网络的感叹号</title>
-    <updated>2026-09-06T12:20:02.355Z</updated>
+    <updated>2026-09-12T12:51:10.039Z</updated>
   </entry>
   <entry>
     <author>
@@ -281,7 +299,7 @@
       <![CDATA[<p>修补 boot 刷 Magisk</p>]]>
     </summary>
     <title>Adb 修补 boot 刷 Magisk</title>
-    <updated>2026-09-06T12:20:02.355Z</updated>
+    <updated>2026-09-12T12:51:10.039Z</updated>
   </entry>
   <entry>
     <author>
@@ -301,7 +319,7 @@
       <![CDATA[<p>Python 项目调用 Github Actions 中的 Secrets</p>]]>
     </summary>
     <title>Python 项目调用 Github Actions 中的 Secrets</title>
-    <updated>2026-09-06T12:20:02.358Z</updated>
+    <updated>2026-09-12T12:51:10.041Z</updated>
   </entry>
   <entry>
     <author>
@@ -321,7 +339,7 @@
       <![CDATA[<p>利用 Github Action 自动部署 Hexo。</p>]]>
     </summary>
     <title>利用 Github Action 自动部署 Hexo</title>
-    <updated>2026-09-06T12:20:02.358Z</updated>
+    <updated>2026-09-12T12:51:10.041Z</updated>
   </entry>
   <entry>
     <author>
@@ -342,7 +360,7 @@
 </blockquote>]]>
     </summary>
     <title>利用 ttyd 在 Web 上共享终端</title>
-    <updated>2026-09-06T12:20:02.365Z</updated>
+    <updated>2026-09-12T12:51:10.046Z</updated>
   </entry>
   <entry>
     <author>
@@ -361,7 +379,7 @@
       <![CDATA[<p>个人常用 AAPT 查询 APK 信息命令</p>]]>
     </summary>
     <title>AAPT 查询 APK 信息</title>
-    <updated>2026-09-06T12:20:02.355Z</updated>
+    <updated>2026-09-12T12:51:10.039Z</updated>
   </entry>
   <entry>
     <author>
@@ -382,25 +400,6 @@
 <p>zsh:&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;usr&#x2F;bin&#x2F;hexo: bad interpreter: &#x2F;usr&]]>
     </summary>
     <title>解决 Termux 上 Hexo 无法运行</title>
-    <updated>2026-09-06T12:20:02.365Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>維坦</name>
-    </author>
-    <category term="Coding" scheme="https://ivitan.com/categories/Coding/"/>
-    <category term="Linux" scheme="https://ivitan.com/tags/Linux/"/>
-    <category term="RaspberryPi" scheme="https://ivitan.com/tags/RaspberryPi/"/>
-    <content>
-      <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p><span id="more"></span><h1 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h1><p>官网下载镜像，并使用烧录工具烧录。</p><h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>在 <code>boot</code> 中新建文件</p><figure class="highlight plaintext"><figcaption><span>wps_supplicant.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">ssid=&quot;SSID_Name&quot;</span><br><span class="line">psk=&quot;password&quot;</span><br><span class="line">key_mgmt=WPA-PSK</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>在 <code>boot</code> 中新建名为 <code>ssh</code> 的无后缀的空白文件。</p><h1 id="开机获取-IP"><a href="#开机获取-IP" class="headerlink" title="开机获取 IP"></a>开机获取 IP</h1><p>开机后会自动连接预埋的 WiFI。然后就可以使用 Ping Tool 、Fing.app 或者到路由器后台查看树莓派的 IP 啦。然后就可以 SSH 连接树莓派。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@ip</span><br><span class="line">raspberry # 初始密码</span><br></pre></td></tr></table></figure><h1 id="系统相关配置"><a href="#系统相关配置" class="headerlink" title="系统相关配置"></a>系统相关配置</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure><h2 id="开启-VNC"><a href="#开启-VNC" class="headerlink" title="开启 VNC"></a>开启 VNC</h2><p>选择：“5 Interfacing Options”</p><h2 id="固定-IP"><a href="#固定-IP" class="headerlink" title="固定 IP"></a>固定 IP</h2><figure class="highlight plaintext"><figcaption><span>/etc/dhcpcd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface wlan0</span><br><span class="line">static ip_address=10.1.1.22/24</span><br><span class="line">static routers=10.1.1.1</span><br></pre></td></tr></table></figure>]]>
-    </content>
-    <id>https://ivitan.com/posts/RaspberryReview/</id>
-    <link href="https://ivitan.com/posts/RaspberryReview/"/>
-    <published>2020-07-25T08:35:11.000Z</published>
-    <summary>
-      <![CDATA[<p>重新拾起吃灰的 RaspberryPi 3B+ ，无显示器如何玩？</p>]]>
-    </summary>
-    <title>RaspberryPi Review</title>
-    <updated>2026-09-06T12:20:02.362Z</updated>
+    <updated>2026-09-12T12:51:10.046Z</updated>
   </entry>
 </feed>
