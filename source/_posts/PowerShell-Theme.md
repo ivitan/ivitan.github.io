@@ -341,18 +341,48 @@ oh-my-posh config edit      # 用 $env:EDITOR 指定的编辑器打开
 # 主题名区分大小写，写 Paradox 会渲染成 CONFIG NOT FOUND；也可换成 json 绝对路径
 $ompTheme = 'paradox'
 
-if ($PSVersionTable.PSEdition -eq 'Core') {
-    oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
+# 定位可执行文件。Windows Terminal 继承的 PATH 里有 %LOCALAPPDATA%\Microsoft\WindowsApps，
+# 但 VSCode / 计划任务 / SSH 继承下来的 PATH 可能没有 → 直接写 oh-my-posh 会报「术语不被识别」
+$ompExe = (Get-Command oh-my-posh.exe -ErrorAction SilentlyContinue).Source
+if (-not $ompExe) {
+    $ompExe = @(
+        "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe"   # winget / Microsoft Store
+        "$env:LOCALAPPDATA\Programs\oh-my-posh\oh-my-posh.exe"
+        "$env:ProgramFiles\oh-my-posh\oh-my-posh.exe"
+        "$env:USERPROFILE\scoop\shims\oh-my-posh.exe"
+    ) | Where-Object { Test-Path $_ } | Select-Object -First 1
+
+    if ($ompExe) {
+        $ompDir = Split-Path $ompExe -Parent
+        # 必须补回 PATH：init 生成的 prompt 函数是用裸名 oh-my-posh.exe 调用的
+        $env:PATH = $ompDir + ';' + $env:PATH
+        # 留一份现场，方便查这个宿主到底缺了哪些路径
+        try {
+            "host=$($Host.Name) / $($PSVersionTable.PSVersion) / $ompExe`nPATH=`n" + (($env:PATH -split ';') -join "`n") |
+                Set-Content (Join-Path $env:TEMP 'omp-profile-fallback.log') -Encoding UTF8
+        }
+        catch { }
+    }
+}
+
+if ($ompExe) {
+    if ($PSVersionTable.PSEdition -eq 'Core') {
+        & $ompExe init pwsh --config $ompTheme | Invoke-Expression
+    }
+    else {
+        # 5.1 必须用 powershell 这个 shell 名，写成 pwsh 拿到的是错误的初始化脚本
+        & $ompExe init powershell --config $ompTheme | Invoke-Expression
+    }
 }
 else {
-    # 5.1 必须用 powershell 这个 shell 名，写成 pwsh 拿到的是错误的初始化脚本
-    oh-my-posh init powershell --config $ompTheme | Invoke-Expression
+    Write-Host '[profile] 没找到 oh-my-posh，提示符保持默认。装好后重开窗口即可：' -ForegroundColor Yellow
+    Write-Host '          winget install --id JanDeDobbeleer.OhMyPosh -e' -ForegroundColor DarkGray
 }
 
 # 启动偏慢时，改用缓存模式（快 100~200ms，升级 omp 后需重新生成）：
 # $ompInit = Join-Path $env:TEMP 'omp-init.ps1'
 # if ($PSVersionTable.PSEdition -eq 'Core') { $ompShell = 'pwsh' } else { $ompShell = 'powershell' }
-# oh-my-posh init $ompShell --config $ompTheme --print | Out-File $ompInit -Encoding utf8
+# & $ompExe init $ompShell --config $ompTheme --print | Out-File $ompInit -Encoding utf8
 # . $ompInit
 
 # ==================== 编码 ====================
@@ -371,9 +401,13 @@ $psrl = (Get-Command Set-PSReadLineOption).Parameters
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -EditMode Windows
 
-if ($psrl.ContainsKey('PredictionSource')) {
-    Set-PSReadLineOption -PredictionSource History
-    Set-PSReadLineOption -PredictionViewStyle ListView
+if ($psrl.ContainsKey('PredictionSource') -and -not [Console]::IsOutputRedirected) {
+    # 输出被重定向、或宿主不支持虚拟终端时（IDE 内置终端偶尔如此）会抛异常，忽略即可
+    try {
+        Set-PSReadLineOption -PredictionSource History -ErrorAction Stop
+        Set-PSReadLineOption -PredictionViewStyle ListView -ErrorAction Stop
+    }
+    catch { }
 }
 
 # ==================== 基础别名 ====================
@@ -466,6 +500,40 @@ Install-Module PSReadLine -Scope CurrentUser -Force
 ```
 
 装完 `Get-Module PSReadLine -ListAvailable` 应该能看到 2.3.x，模板里的 `ContainsKey('PredictionSource')` 探测会自动放行那两行设置。
+
+### 为什么 VSCode 内置终端会报「术语 'oh-my-posh' 不会被识别」
+
+同一份配置，Windows Terminal 里一切正常，VSCode 里第一行就报红 —— 问题不在配置，在这个进程继承到的 `PATH`。
+
+- `oh-my-posh` 以 Microsoft Store / winget 方式安装时，可用的入口是 `%LOCALAPPDATA%\Microsoft\WindowsApps\oh-my-posh.exe`（一个 0 字节的 App Execution Alias），**只有 PATH 里包含 WindowsApps 时才能用裸名调用**。
+- VSCode 启动内置终端时用的是 **VSCode 进程自己的环境变量**。如果 VSCode 是从一个 PATH 被裁剪过的进程里拉起来的（旧终端、快捷方式、便携启动器、自更新后的重启），这份 PATH 里就可能没有 WindowsApps。
+- 而 VSCode 找 `pwsh.exe` 并不依赖 PATH，它会自己扫已知安装位置，于是 shell 照常启动、`$PROFILE` 照常加载，唯独 `oh-my-posh` 找不到 —— 这就是「Shell 能开、只有提示符报错」的成因。
+
+在报错的那个终端里跑两句就能确认：
+
+```powershell
+$env:PATH -split ';' | Select-String 'WindowsApps'          # 没有输出 = PATH 里确实没有
+& "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe" --version   # 能出版本号 = 文件在，只是找不到
+```
+
+三种修法，第一种最稳（本文模板已内置）：
+
+1. **在 `$PROFILE` 里兜底**：`Get-Command` 找不到就按已知路径找，并把目录补回 `$env:PATH`。换任何宿主都不用再管。
+2. **从开始菜单重新启动 VSCode**：让它重新读一次环境变量。
+3. **在 VSCode 设置里固定 shell 绝对路径**：用 `terminal.integrated.profiles.windows`，别让它自己猜。
+
+```jsonc
+// settings.json
+"terminal.integrated.profiles.windows": {
+  "PowerShell 7": {
+    "path": "C:\\Users\\<你>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+    "args": ["-NoLogo"]
+  }
+},
+"terminal.integrated.defaultProfile.windows": "PowerShell 7"
+```
+
+> 只把 `$ompExe` 换成绝对路径是不够的：`oh-my-posh init` 生成的 prompt 函数内部用**裸名**调用（`$global:_ompExecutable = 'oh-my-posh.exe'`），所以必须把所在目录补进 `PATH`。这也解释了为什么报错只出现一次（加载时），但提示符如果真能渲染出来，每次重绘都会再失败一次。
 
 ## 9. Windows Terminal 侧配置
 
@@ -610,6 +678,7 @@ oh-my-posh toggle <segment>                          # 临时开关某个 segmen
 | 提示符显示 `CONFIG NOT FOUND` | 主题名打错或大小写不对（`Paradox`） | 改全小写 `paradox`；此错误**不报异常**、退出码仍为 0 |
 | 加了 `-NoLogo` 还是显示版本横幅 | 看的是旧标签页，或从快捷方式直接起的 pwsh | 新开标签页；快捷方式目标里也加 `-NoLogo` |
 | `oh-my-posh 无法识别` | PATH 未刷新 | 新开窗口；检查 `WindowsApps` 在 PATH |
+| **VSCode 终端**报「术语 'oh-my-posh' 不会被识别」，WT 里正常 | VSCode 进程继承的 PATH 不含 `%LOCALAPPDATA%\Microsoft\WindowsApps` | 用带兜底的模板（见 8 节）；或重启 VSCode / 在 `terminal.integrated.profiles.windows` 里固定 shell 绝对路径 |
 | 提示符有颜色但图标是问号 | 字体装了但没选中（选中的是普通版） | 字体名要带 `Nerd Font` 后缀 |
 | 中文变成乱码 | 5.1 编码 + 文件无 BOM | 另存为 UTF-8 with BOM，或改用 PS7 |
 | 配置改了没反应 | 改的是另一个 `$PROFILE` | 打印 `$PROFILE` 确认路径，注意 5.1 / 7 分离 |
@@ -674,7 +743,7 @@ oh-my-posh toggle <segment>                          # 临时开关某个 segmen
 
 ### 完整脚本
 
-540 行，整段复制存成 `Install-TerminalTheme.ps1` 即可运行，不依赖其他文件。
+574 行，整段复制存成 `Install-TerminalTheme.ps1` 即可运行，不依赖其他文件。
 
 ```powershell
 <#
@@ -946,18 +1015,48 @@ $profileTemplate = @'
 # 主题名区分大小写，写 Paradox 会渲染成 CONFIG NOT FOUND；也可换成 json 绝对路径
 $ompTheme = '{{THEME}}'
 
-if ($PSVersionTable.PSEdition -eq 'Core') {
-    oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
+# 定位可执行文件。Windows Terminal 继承的 PATH 里有 %LOCALAPPDATA%\Microsoft\WindowsApps，
+# 但 VSCode / 计划任务 / SSH 继承下来的 PATH 可能没有 → 直接写 oh-my-posh 会报「术语不被识别」
+$ompExe = (Get-Command oh-my-posh.exe -ErrorAction SilentlyContinue).Source
+if (-not $ompExe) {
+    $ompExe = @(
+        "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe"   # winget / Microsoft Store
+        "$env:LOCALAPPDATA\Programs\oh-my-posh\oh-my-posh.exe"
+        "$env:ProgramFiles\oh-my-posh\oh-my-posh.exe"
+        "$env:USERPROFILE\scoop\shims\oh-my-posh.exe"
+    ) | Where-Object { Test-Path $_ } | Select-Object -First 1
+
+    if ($ompExe) {
+        $ompDir = Split-Path $ompExe -Parent
+        # 必须补回 PATH：init 生成的 prompt 函数是用裸名 oh-my-posh.exe 调用的
+        $env:PATH = $ompDir + ';' + $env:PATH
+        # 留一份现场，方便查这个宿主到底缺了哪些路径
+        try {
+            "host=$($Host.Name) / $($PSVersionTable.PSVersion) / $ompExe`nPATH=`n" + (($env:PATH -split ';') -join "`n") |
+                Set-Content (Join-Path $env:TEMP 'omp-profile-fallback.log') -Encoding UTF8
+        }
+        catch { }
+    }
+}
+
+if ($ompExe) {
+    if ($PSVersionTable.PSEdition -eq 'Core') {
+        & $ompExe init pwsh --config $ompTheme | Invoke-Expression
+    }
+    else {
+        # 5.1 必须用 powershell 这个 shell 名，写成 pwsh 拿到的是错误的初始化脚本
+        & $ompExe init powershell --config $ompTheme | Invoke-Expression
+    }
 }
 else {
-    # 5.1 必须用 powershell 这个 shell 名，写成 pwsh 拿到的是错误的初始化脚本
-    oh-my-posh init powershell --config $ompTheme | Invoke-Expression
+    Write-Host '[profile] 没找到 oh-my-posh，提示符保持默认。装好后重开窗口即可：' -ForegroundColor Yellow
+    Write-Host '          winget install --id JanDeDobbeleer.OhMyPosh -e' -ForegroundColor DarkGray
 }
 
 # 启动偏慢时，改用缓存模式（升级 omp 后需重新生成）：
 # $ompInit = Join-Path $env:TEMP 'omp-init.ps1'
 # if ($PSVersionTable.PSEdition -eq 'Core') { $ompShell = 'pwsh' } else { $ompShell = 'powershell' }
-# oh-my-posh init $ompShell --config $ompTheme --print | Out-File $ompInit -Encoding utf8
+# & $ompExe init $ompShell --config $ompTheme --print | Out-File $ompInit -Encoding utf8
 # . $ompInit
 
 # ==================== 编码 ====================
@@ -976,9 +1075,13 @@ $psrl = (Get-Command Set-PSReadLineOption).Parameters
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -EditMode Windows
 
-if ($psrl.ContainsKey('PredictionSource')) {
-    Set-PSReadLineOption -PredictionSource History
-    Set-PSReadLineOption -PredictionViewStyle ListView
+if ($psrl.ContainsKey('PredictionSource') -and -not [Console]::IsOutputRedirected) {
+    # 输出被重定向、或宿主不支持虚拟终端时（IDE 内置终端偶尔如此）会抛异常，忽略即可
+    try {
+        Set-PSReadLineOption -PredictionSource History -ErrorAction Stop
+        Set-PSReadLineOption -PredictionViewStyle ListView -ErrorAction Stop
+    }
+    catch { }
 }
 
 # ==================== 自定义函数 ====================
