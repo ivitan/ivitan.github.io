@@ -9,360 +9,115 @@ author:
 toc: true
 date: 2020-06-04 09:25:32
 ---
-旧文写于 2020 年，里面三条核心命令在今天全部失效。这篇按 2026 年的实际环境重写，覆盖从零安装到排错的完整流程。
+旧文写于 2020 年，三条核心命令全部失效。这篇按 2026 年的实际环境重写。
 
-文中所有命令都在下面这套环境里跑通过：
+**四步搞定**：
 
-| 组件 | 版本 |
-| --- | --- |
-| PowerShell | 7.7.0（Core）+ 5.1.26100（Desktop） |
-| oh-my-posh | 32.0.0 |
-| Windows Terminal | 自带 `themes` 字段的新版 |
-| 主题 | `paradox`（旧文的 Paradox） |
-| 字体 | MesloLGM Nerd Font 3.4.0 |
-
-## 0. 为什么必须重写
-
-oh-my-posh 在 2021 年做了一次彻底的架构变更：从一个 **PowerShell 模块** 变成了一个 **独立的 Go 二进制程序**。PowerShell Gallery 上那个同名模块早就停在旧版本，装上也不能用。
-
-于是旧文这三条命令，今天执行的结果是：
-
-| 旧命令 | 现在的结果 |
-| --- | --- |
-| `Install-Module oh-my-posh` | 装到的是废弃的旧模块，导入即报错 |
-| `Set-Theme Paradox` | `Set-Theme : 无法将"Set-Theme"项识别为 cmdlet` |
-| `Import-Module Get-ChildItemColor` | 该模块多年未维护，PS7 下告警甚至报错 |
-| `Get-PoshThemes` | 该 cmdlet 随模块一起消失 |
-| `colortool -d OneHalfDark` | ConColortool 已废弃，Windows Terminal 有自己的配色方案 |
-
-替代关系一句话说清：**`Set-Theme X` → `oh-my-posh init pwsh --config X`**。
-
-## 1. 先理清四层结构
-
-很多人配不明白，是因为把四件不同的事混成一件。一条漂亮的提示符由四层拼起来，各改各的：
-
-| 层 | 由谁负责 | 改什么 |
+| 步骤 | 做什么 | 命令 |
 | --- | --- | --- |
-| 终端宿主 | Windows Terminal | 背景色、配色方案、字体、窗口外观 |
-| Shell | PowerShell 7 | 语法、执行策略、`$PROFILE` |
-| 提示符渲染器 | oh-my-posh | 显示哪些信息、用什么图标、什么颜色 |
-| 字形字体 | Nerd Font | 让图标和特殊符号能"画出来" |
+| 1 | 装 PowerShell 7 | `winget install --id Microsoft.PowerShell -e` |
+| 2 | 装 oh-my-posh | `winget install --id JanDeDobbeleer.OhMyPosh -e` |
+| 3 | 装 Nerd 字体 | `oh-my-posh font install` |
+| 4 | 写 `$PROFILE` | 见第 3 节 |
 
-关键推论：
+文中命令均在 PowerShell 7.7.0 + oh-my-posh 32.0.0 + `paradox` 主题下实测通过。
 
-- **改了 oh-my-posh 主题但没装 Nerd Font → 满屏方框**，这不是主题坏了。
-- **改了 Windows Terminal 配色但提示符没变 → 正常**，主题归 oh-my-posh 管。
-- PS 5.1 和 PS 7 读的是**两个不同的 `$PROFILE`**，只配一个另一个不生效。
-
-## 2. 环境检查
-
-开一个 PowerShell 窗口，整段粘进去：
-
-```powershell
-"PowerShell : $($PSVersionTable.PSVersion)"
-"pwsh       : " + (Get-Command pwsh -ErrorAction SilentlyContinue).Source
-"oh-my-posh : " + (Get-Command oh-my-posh -ErrorAction SilentlyContinue).Source
-"winget     : " + (Get-Command winget -ErrorAction SilentlyContinue).Source
-"WT         : " + (Get-Command wt -ErrorAction SilentlyContinue).Source
-"profile(5.1): $($PROFILE.CurrentUserCurrentHost)"
-"profile(7)  : $([Environment]::GetFolderPath('MyDocuments'))\PowerShell\Microsoft.PowerShell_profile.ps1"
-```
-
-对照下面三种情况决定从哪一步开始：
-
-- 没有 `pwsh` → 从第 3 步开始
-- 有 `pwsh` 没有 `oh-my-posh` → 从第 4 步开始
-- 两者都有、提示符没美化 → 从第 6 步开始
-
-## 3. 第一步：安装 PowerShell 7
-
-PowerShell 7 与系统自带的 5.1 **并存**，不会覆盖，命令分别是 `pwsh` 和 `powershell`。5.1 已经只做安全修复，新特性全在 7 上，没有理由不装。
+## 1. 装 PowerShell 7
 
 ```powershell
 winget install --id Microsoft.PowerShell -e
 ```
 
-备选方式：
+Windows 自带的那个是 **Windows PowerShell 5.1**（`powershell.exe`），2016 年后只修 bug 不加功能。PowerShell 7（`pwsh.exe`）是独立安装的另一条线，两者并存不冲突。
+
+装完先确认：
 
 ```powershell
-# 微软商店
-winget install --id Microsoft.PowerShell --source msstore
-
-# 或直接下载 MSI
-# https://github.com/PowerShell/PowerShell/releases
+pwsh -v      # 应该输出 7.x
 ```
 
-装完**新开一个窗口**，验证：
-
-```powershell
-pwsh -NoLogo -Command '$PSVersionTable.PSVersion'
-```
-
-版本升级：
-
-```powershell
-winget upgrade --id Microsoft.PowerShell -e
-```
-
-> 后面所有命令默认在 `pwsh`（7）里执行。只有明确标注 5.1 的地方才用 `powershell`。
-
-## 4. 第二步：安装 oh-my-posh
+## 2. 装 oh-my-posh 和字体
 
 ```powershell
 winget install --id JanDeDobbeleer.OhMyPosh -e
+oh-my-posh font install          # 交互式，选 Meslo 或 CaskaydiaCove
 ```
 
-备选方式：
+`oh-my-posh` 自 2021 年 v3 起**不再是 PowerShell 模块**，而是一个独立的 Go 程序。所以 `Install-Module oh-my-posh` 装到的是废弃版本，别再用了。
+
+字体装完要**完全退出 Windows Terminal 再打开**（关标签页不算），否则字体列表里刷不出来。
+
+### 字体下载失败（国内网络）
+
+`oh-my-posh font install` 会去 GitHub 拉包，很可能超时。走镜像：
 
 ```powershell
-# Scoop（如果你已经用 Scoop 管开发工具）
-scoop install main/oh-my-posh
-
-# 官方安装脚本
-Set-ExecutionPolicy Bypass -Scope Process -Force
-irm https://ohmyposh.dev/install.ps1 | iex
-
-# Chocolatey
-choco install oh-my-posh
+curl.exe -L -o "$env:TEMP\Meslo.zip" "https://gh-proxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
 ```
 
-验证与升级：
+解压后取 `MesloLGMNerdFont-*.ttf`（4 个），复制到 `%LOCALAPPDATA%\Microsoft\Windows\Fonts`，再写注册表：
 
 ```powershell
-oh-my-posh --version
-winget upgrade --id JanDeDobbeleer.OhMyPosh -e
+$dir = "$env:LOCALAPPDATA\Microsoft\Windows\Fonts"
+$key = 'HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts'
+Get-ChildItem "$env:TEMP\Meslo" -Filter 'MesloLGMNerdFont-*.ttf' | ForEach-Object {
+    $style = $_.BaseName -replace '^MesloLGMNerdFont-','' -replace 'BoldItalic','Bold Italic'
+    Copy-Item $_.FullName "$dir\$($_.Name)" -Force
+    New-ItemProperty -Path $key -Name "MesloLGM Nerd Font $style (TrueType)" -Value "$dir\$($_.Name)" -PropertyType String -Force | Out-Null
+}
 ```
 
-如果报 `无法将"oh-my-posh"项识别为 cmdlet`，说明 PATH 没刷新，**新开窗口**即可；再不行检查 `C:\Users\<你>\AppData\Local\Microsoft\WindowsApps` 是否在 PATH 里。
+不需要管理员权限。装完注销重登一次更保险。
 
-顺手关掉启动时的升级提示（会联网，能省几十毫秒）：
+## 3. 写 `$PROFILE`
 
-```powershell
-oh-my-posh disable notice
-```
+### 路径
 
-## 5. 第三步：安装 Nerd 字体
+5.1 和 7 读的是**两个不同的文件**，只配一个另一个不生效：
 
-这一步不做，后面全是方框。
-
-```powershell
-oh-my-posh font install            # 交互式列表，方向键选择
-oh-my-posh font list               # 只看不装
-```
-
-推荐三选一：
-
-| 字体 | 适用 |
+| Shell | 路径 |
 | --- | --- |
-| `Meslo`（MesloLGM Nerd Font） | oh-my-posh 官方默认搭配，图标最全 |
-| `CaskaydiaCove`（Cascadia Code 改版） | 有编程连字，Windows 原生味道 |
-| `Sarasa Term SC`（更纱黑体） | **中文注释/路径对齐最好**，Nerd 版本叫 `Sarasa Term SC Nerd Font` |
+| PowerShell 7 | `%USERPROFILE%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` |
+| 5.1 | `%USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` |
 
-中文环境下我更推荐 Sarasa：等宽汉字不会被挤成半角，中英混排不会错位。它不在 `font install` 列表里时，去 [Sarasa Gothic Releases](https://github.com/be5invis/Sarasa-Gothic/releases) 下载 `Sarasa-TTC-*.7z`，解压后全选字体右键"安装"。
+在对应 Shell 里执行 `$PROFILE` 会直接打印路径，别手拼。
 
-装完字体**必须重启 Windows Terminal**（不是新开标签页，是退出进程），否则字体列表里看不到。
+### 模板
 
-### 国内网络：`font install` 下载失败怎么办
-
-`oh-my-posh font install` 是从 GitHub Releases 拉包，国内大概率超时（表现：一条输出都没有，退出码 `70`）。`winget install DEVCOM.JetBrainsMonoNerdFont` 同理，它的安装包 URL 也指向 GitHub。
-
-两个可用的绕行方式：
-
-**方式一：走 gh 镜像下载**（实测可用，107MB 约 33 秒）
+整段复制，改掉 `$ompTheme` 即可：
 
 ```powershell
-# 镜像前缀 + 原始 Release 地址
-curl.exe -L -o "$env:TEMP\Meslo.zip" `
-  "https://gh-proxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
-
-Expand-Archive "$env:TEMP\Meslo.zip" -DestinationPath "$env:TEMP\MesloFonts" -Force
-```
-
-**方式二：装到当前用户（不需要管理员）**
-
-解压后在解压目录里跑，只装 `MesloLGM Nerd Font` 这一族（4 个文件，约 11MB，别把 72 个全装进去）：
-
-```powershell
-$fontDir = "$env:LOCALAPPDATA\Microsoft\Windows\Fonts"
-$key     = 'HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts'
-if (!(Test-Path $fontDir)) { New-Item -ItemType Directory -Path $fontDir -Force | Out-Null }
-
-Get-ChildItem "$env:TEMP\MesloFonts" -Recurse -Filter 'MesloLGMNerdFont-*.ttf' | ForEach-Object {
-    $style = ($_.BaseName -replace '^MesloLGMNerdFont-','')
-    if ($style -eq 'BoldItalic') { $style = 'Bold Italic' }
-    $target = Join-Path $fontDir $_.Name
-    Copy-Item $_.FullName $target -Force
-    New-ItemProperty -Path $key -Name "MesloLGM Nerd Font $style (TrueType)" `
-                     -Value $target -PropertyType String -Force | Out-Null
+# ==================== PATH 自愈 ====================
+# VSCode / 计划任务等宿主继承的 PATH 是启动时的快照，新装的 Python、Node 看不到。
+# 补回注册表用户 PATH 中缺失且存在的目录；必须插到最前，避开 WindowsApps 里的
+# 0 字节幽灵别名（python.exe 这类空壳会以 9009 抢占命令）。
+$__have = @($env:PATH -split ';' | Where-Object { $_ } | ForEach-Object { $_.TrimEnd('\') })
+$__need = @()
+foreach ($__e in ([Environment]::GetEnvironmentVariable('PATH', 'User') -split ';')) {
+    if (-not $__e) { continue }
+    $__x = [Environment]::ExpandEnvironmentVariables($__e).TrimEnd('\')
+    if (-not (Test-Path -LiteralPath $__x)) { continue }
+    if ($__have -contains $__x) { continue }
+    $__need += $__x
+    $__have += $__x
 }
-```
+if ($__need.Count -gt 0) { $env:PATH = ($__need -join ';') + ';' + $env:PATH }
+Remove-Variable __have, __need, __e, __x -ErrorAction SilentlyContinue
 
-这就是 Windows 安装"仅为当前用户"字体的等价做法：文件放进用户字体目录 + HKCU 注册表登记。
-
-⚠️ 这样装的字体有时**需要注销重登一次**才会被应用枚举到（字体缓存是在登录时建的）。重启 WT 后如果还是方框，注销重登即可。
-
-### 在 Windows Terminal 里指定字体
-
-打开设置（`Ctrl + ,`）→ 左下角"打开 JSON 文件"，在 `profiles.defaults` 里加：
-
-```json
-"profiles": {
-  "defaults": {
-    "font": {
-      "face": "MesloLGM Nerd Font",
-      "size": 11
-    }
-  }
-}
-```
-
-写成 `defaults` 就对所有 profile 生效。想只给 PowerShell 7 单独设，就写到 `list` 里那个 GUID 为 PowerShell 的条目下。
-
-## 6. 第四步：写 `$PROFILE`
-
-### 路径别搞错
-
-| Shell | `$PROFILE` 实际路径 |
-| --- | --- |
-| PowerShell 7（pwsh） | `C:\Users\<你>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` |
-| Windows PowerShell 5.1 | `C:\Users\<你>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` |
-
-`$PROFILE` 还有几个变体（`CurrentUserAllHosts`、`AllUsersAllHosts`），日常只用 `CurrentUserCurrentHost` 就够。想跨 5.1 / 7 共用一份配置，就写 `CurrentUserAllHosts` 那个。
-
-### 创建并打开
-
-```powershell
-if (!(Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
-notepad $PROFILE
-```
-
-### 最小可用版（先跑通这个）
-
-```powershell
-oh-my-posh init pwsh --config jandedobbeleer | Invoke-Expression
-```
-
-保存后重载：
-
-```powershell
-. $PROFILE
-```
-
-提示符变了就说明链路通了。**注意 shell 名要和 Shell 对上**：
-
-- `pwsh` 里用 `oh-my-posh init pwsh ...`
-- 5.1 里必须用 `oh-my-posh init powershell ...`（写成 pwsh 会拿到错误的初始化脚本）
-
-## 7. 主题怎么选
-
-新版把几十个主题**内置在 exe 里**，不需要下载 json 文件，直接写名字：
-
-```powershell
-oh-my-posh init pwsh --config jandedobbeleer | Invoke-Expression   # 默认风格，信息全
-oh-my-posh init pwsh --config paradox          | Invoke-Expression   # 两行 powerline，旧文同款
-oh-my-posh init pwsh --config atomic           | Invoke-Expression   # 极简
-oh-my-posh init pwsh --config montys           | Invoke-Expression
-oh-my-posh init pwsh --config powerlevel10k_rainbow | Invoke-Expression
-```
-
-> ⚠️ **主题名区分大小写**，而且写错不会报错：`--config Paradox`（大写 P）会渲染成 `CONFIG NOT FOUND` 这一串字，退出码依然是 `0`，很难察觉。一律用小写。
-
-不想改配置文件也能预览效果：
-
-```powershell
-oh-my-posh print primary --config paradox
-```
-
-完整主题清单与在线预览：[ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes)。
-
-### 旧文的 `Set-Theme Paradox` 对应哪个
-
-就是现在的 `paradox`，老主题在 v3 全部迁成了 json，名字和视觉都保留了。两行结构、powerline 箭头、蓝色 `❯` 收尾都对得上：
-
-```powershell
-oh-my-posh init pwsh --config paradox | Invoke-Expression
-```
-
-它一共 6 个 powerline 段，加一行独立的提示符行：
-
-| 段 | 背景色 | 前景色 | 内容 | 出现条件 |
-| --- | --- | --- | --- | --- |
-| root | `#ffe9aa` | `#100e23` | ⚡ | 仅管理员窗口 |
-| session | `#ffffff` | `#100e23` | `user@host` | 总是 |
-| path | `#91ddff` | `#100e23` | `~ › WorkBuddy` | 总是 |
-| git | `#95ffa4` | `#193549` | 分支名 | 在 git 仓库里 |
-| python | `#906cff` | `#100e23` | 版本号 / venv 名 | 检测到 Python |
-| status | `#ff8080` | `#ffffff` | ✓ / ✗ | 上条命令的退出状态 |
-
-第二行是 `"newline": true` 加一个 `text` 段：`❯`，颜色 `#007ACC`。
-
-`git`、`python`、`status` 三段是按条件出现的，所以在普通目录里只看得到白底和浅蓝底两段，别以为配置没生效。
-
-### 把主题导出成自己的 json
-
-想要微调（改颜色、加 segment），就导出再改 —— **注意要带 `--config` 指定导哪个主题**，不带的话导出的是当前默认配置：
-
-```powershell
-oh-my-posh config export --config paradox --output "$env:USERPROFILE\.config\oh-my-posh\paradox.omp.json"
-```
-
-导完把配置指向文件本身，之后改 json 就生效（改内置名是改不动的，内置主题编译在 exe 里）：
-
-```powershell
-$ompTheme = "$env:USERPROFILE\.config\oh-my-posh\paradox.omp.json"
-```
-
-图形化编辑：
-
-```powershell
-oh-my-posh config edit      # 用 $env:EDITOR 指定的编辑器打开
-```
-
-### 一个必加的 segment：瞬时提示符
-
-命令执行完后，历史输出的提示符折叠成一行，屏幕干净很多。在主题 json 顶层加：
-
-```json
-"transient_prompt": {
-  "template": "{{ .Shell }} ❯ ",
-  "foreground": "#9aa5b1",
-  "background": "transparent"
-}
-```
-
-> 注意：旧教程里的 `Enable-PoshTransientPrompt` 这个 cmdlet 也已经不存在了，现在纯配置驱动。
-
-## 8. 完整 `$PROFILE` 模板
-
-把旧文自带的别名、函数都保留并修正了两个 bug（`Set-Alias grlz grlz` 自引用、curl 别名重复删除），直接复制：
-
-```powershell
 # ==================== oh-my-posh ====================
-# 主题名区分大小写，写 Paradox 会渲染成 CONFIG NOT FOUND；也可换成 json 绝对路径
+# 主题名区分大小写，写 Paradox 会渲染成 CONFIG NOT FOUND 且不报错
 $ompTheme = 'paradox'
 
-# 定位可执行文件。Windows Terminal 继承的 PATH 里有 %LOCALAPPDATA%\Microsoft\WindowsApps，
-# 但 VSCode / 计划任务 / SSH 继承下来的 PATH 可能没有 → 直接写 oh-my-posh 会报「术语不被识别」
 $ompExe = (Get-Command oh-my-posh.exe -ErrorAction SilentlyContinue).Source
 if (-not $ompExe) {
     $ompExe = @(
-        "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe"   # winget / Microsoft Store
+        "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe"
         "$env:LOCALAPPDATA\Programs\oh-my-posh\oh-my-posh.exe"
         "$env:ProgramFiles\oh-my-posh\oh-my-posh.exe"
         "$env:USERPROFILE\scoop\shims\oh-my-posh.exe"
     ) | Where-Object { Test-Path $_ } | Select-Object -First 1
-
-    if ($ompExe) {
-        $ompDir = Split-Path $ompExe -Parent
-        # 必须补回 PATH：init 生成的 prompt 函数是用裸名 oh-my-posh.exe 调用的
-        $env:PATH = $ompDir + ';' + $env:PATH
-        # 留一份现场，方便查这个宿主到底缺了哪些路径
-        try {
-            "host=$($Host.Name) / $($PSVersionTable.PSVersion) / $ompExe`nPATH=`n" + (($env:PATH -split ';') -join "`n") |
-                Set-Content (Join-Path $env:TEMP 'omp-profile-fallback.log') -Encoding UTF8
-        }
-        catch { }
-    }
+    # prompt 函数内部用裸名调用，所以必须把目录补回 PATH，只换绝对路径不够
+    if ($ompExe) { $env:PATH = (Split-Path $ompExe -Parent) + ';' + $env:PATH }
 }
 
 if ($ompExe) {
@@ -370,380 +125,111 @@ if ($ompExe) {
         & $ompExe init pwsh --config $ompTheme | Invoke-Expression
     }
     else {
-        # 5.1 必须用 powershell 这个 shell 名，写成 pwsh 拿到的是错误的初始化脚本
+        # 5.1 必须用 powershell 这个 shell 名
         & $ompExe init powershell --config $ompTheme | Invoke-Expression
     }
 }
-else {
-    Write-Host '[profile] 没找到 oh-my-posh，提示符保持默认。装好后重开窗口即可：' -ForegroundColor Yellow
-    Write-Host '          winget install --id JanDeDobbeleer.OhMyPosh -e' -ForegroundColor DarkGray
-}
-
-# 启动偏慢时，改用缓存模式（快 100~200ms，升级 omp 后需重新生成）：
-# $ompInit = Join-Path $env:TEMP 'omp-init.ps1'
-# if ($PSVersionTable.PSEdition -eq 'Core') { $ompShell = 'pwsh' } else { $ompShell = 'powershell' }
-# & $ompExe init $ompShell --config $ompTheme --print | Out-File $ompInit -Encoding utf8
-# . $ompInit
-
-# ==================== 编码 ====================
-$env:PYTHONIOENCODING = 'utf-8'
-# 5.1 下建议保留，PS7 一般不需要
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-
-# ==================== 模块 ====================
-Import-Module Terminal-Icons -ErrorAction Ignore
-Import-Module posh-git       -ErrorAction Ignore   # 可选，omp 自带 git segment
 
 # ==================== PSReadLine ====================
-# 5.1 自带 2.0.0：没有 PredictionSource / PredictionViewStyle（2.2 才加入），所以要探测
-$psrl = (Get-Command Set-PSReadLineOption).Parameters
-
+# 5.1 自带 2.0.0，没有 PredictionSource（2.2 才有），先探测再设
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadLineOption -EditMode Windows
-
+$psrl = (Get-Command Set-PSReadLineOption).Parameters
 if ($psrl.ContainsKey('PredictionSource') -and -not [Console]::IsOutputRedirected) {
-    # 输出被重定向、或宿主不支持虚拟终端时（IDE 内置终端偶尔如此）会抛异常，忽略即可
     try {
-        Set-PSReadLineOption -PredictionSource History -ErrorAction Stop
-        Set-PSReadLineOption -PredictionViewStyle ListView -ErrorAction Stop
+        Set-PSReadLineOption -PredictionSource History
+        Set-PSReadLineOption -PredictionViewStyle ListView
     }
     catch { }
 }
 
-# ==================== 基础别名 ====================
-Set-Alias open Invoke-Item
-Set-Alias ll   Get-ChildItem
-Set-Alias code Vscode
+# ==================== 编码 ====================
+$env:PYTHONIOENCODING = 'utf-8'
 
-# ==================== 自定义函数 ====================
-function GoBack      { Set-Location .. }
-function GitStat     { git status }
-function Vscode      { code . }
-function GetMyIp     { curl -L https://tool.lu/ip }        # PS7 有真 curl；5.1 会自动选 Invoke-WebRequest
-function UpdateScoop { scoop update; scoop update * }      # 没装 scoop 就删掉这行和对应别名
-function HexoServe   { hexo clean; hexo g; hexo s }
-
-function GitLogPretty {
-    git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
-}
-
-# ==================== Git 快捷提交 ====================
-# 用法：gadd 修改说明 / gcap 提交说明
-function GitAdd { git add .; git commit -m "⚡ ADD: $args" }
-function GitCap { git add .; git commit -m "$args"; git push }
-
-function GitNew { GitCap "📦 NEW: $args" }
-function GitImp { GitCap "👌 IMPROVE: $args" }
-function GitFix { GitCap "🐛 FIX: $args" }
-function GitRlz { GitCap "🚀 RELEASE: $args" }
-function GitDoc { GitCap "📖 DOC: $args" }
-function GitTst { GitCap "✅ TEST: $args" }
-
-# ==================== 函数对应的别名 ====================
-Set-Alias ..   GoBack
-Set-Alias glola GitLogPretty
-Set-Alias gst   GitStat
-Set-Alias myip  GetMyIp
-Set-Alias suu   UpdateScoop
-Set-Alias vitan HexoServe
-Set-Alias gadd  GitAdd
-Set-Alias gcap  GitCap
-Set-Alias gnew  GitNew
-Set-Alias gimp  GitImp
-Set-Alias gfix  GitFix
-Set-Alias grlz  GitRlz      # 旧文这里写成了 Set-Alias grlz grlz，自引用会报错
-Set-Alias gdoc  GitDoc
-Set-Alias gtst  GitTst
+# 你自己的别名和函数加在这行下面
 ```
 
-### 两个坑提前说
+### 两个必踩的坑
 
-1. **文件编码必须 UTF-8**。5.1 读无 BOM 的 UTF-8 会把 emoji 变成乱码（旧文里那个 `<F0><9F><93><A6>` 就是这个原因）。用记事本另存为时选 "UTF-8 with BOM"，PS7 则 UTF-8 无 BOM 也可以。
-2. **执行策略**。如果重载时报"禁止运行脚本"：
+**文件必须存成 UTF-8 with BOM。** 5.1 读无 BOM 的 UTF-8 会按 GBK 解析，中文乱码不算完，`@'...'@` 这类结构还可能直接语法报错。VS Code 右下角编码 → `Save with Encoding` → `UTF-8 with BOM`。
 
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
+**主题名区分大小写。** `--config Paradox` 会渲染成 `CONFIG NOT FOUND`，但**退出码仍然是 0**，静默失败，光看报错发现不了。
 
-### 让 5.1 也用上
+## 4. Windows Terminal 配置
 
-5.1 的 `$PROFILE` 路径不同，别复制错：
-
-```powershell
-# 在 powershell（不是 pwsh）里执行
-if (!(Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
-code $PROFILE
-```
-
-上面这份模板**本身就是版本自适应的**（靠 `$PSVersionTable.PSEdition` 和参数探测两个判断），所以同一份内容可以直接放到两个路径，5.1 和 7 都能跑，不用维护两套。
-
-两个路径，别复制错：
-
-| Shell | 路径 |
-| --- | --- |
-| PowerShell 7 | `C:\Users\<你>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` |
-| Windows PowerShell 5.1 | `C:\Users\<你>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` |
-
-```powershell
-# 在 powershell（不是 pwsh）里执行
-if (!(Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
-code $PROFILE           # 或 notepad $PROFILE
-```
-
-5.1 特有的两个注意点：
-
-1. **文件必须存成 UTF-8 with BOM**，否则配置里的 emoji（`⚡ 📦 🚀`）会变成乱码。
-2. **想要 5.1 也有历史预测（灰色补全）**，得把 PSReadLine 升级到 ≥ 2.2（自带的是 2.0.0）：
-
-```powershell
-Install-Module PSReadLine -Scope CurrentUser -Force
-```
-
-装完 `Get-Module PSReadLine -ListAvailable` 应该能看到 2.3.x，模板里的 `ContainsKey('PredictionSource')` 探测会自动放行那两行设置。
-
-### 为什么 VSCode 内置终端会报「术语 'oh-my-posh' 不会被识别」
-
-同一份配置，Windows Terminal 里一切正常，VSCode 里第一行就报红 —— 问题不在配置，在这个进程继承到的 `PATH`。
-
-- `oh-my-posh` 以 Microsoft Store / winget 方式安装时，可用的入口是 `%LOCALAPPDATA%\Microsoft\WindowsApps\oh-my-posh.exe`（一个 0 字节的 App Execution Alias），**只有 PATH 里包含 WindowsApps 时才能用裸名调用**。
-- VSCode 启动内置终端时用的是 **VSCode 进程自己的环境变量**。如果 VSCode 是从一个 PATH 被裁剪过的进程里拉起来的（旧终端、快捷方式、便携启动器、自更新后的重启），这份 PATH 里就可能没有 WindowsApps。
-- 而 VSCode 找 `pwsh.exe` 并不依赖 PATH，它会自己扫已知安装位置，于是 shell 照常启动、`$PROFILE` 照常加载，唯独 `oh-my-posh` 找不到 —— 这就是「Shell 能开、只有提示符报错」的成因。
-
-在报错的那个终端里跑两句就能确认：
-
-```powershell
-$env:PATH -split ';' | Select-String 'WindowsApps'          # 没有输出 = PATH 里确实没有
-& "$env:LOCALAPPDATA\Microsoft\WindowsApps\oh-my-posh.exe" --version   # 能出版本号 = 文件在，只是找不到
-```
-
-三种修法，第一种最稳（本文模板已内置）：
-
-1. **在 `$PROFILE` 里兜底**：`Get-Command` 找不到就按已知路径找，并把目录补回 `$env:PATH`。换任何宿主都不用再管。
-2. **从开始菜单重新启动 VSCode**：让它重新读一次环境变量。
-3. **在 VSCode 设置里固定 shell 绝对路径**：用 `terminal.integrated.profiles.windows`，别让它自己猜。
-
-```jsonc
-// settings.json
-"terminal.integrated.profiles.windows": {
-  "PowerShell 7": {
-    "path": "C:\\Users\\<你>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
-    "args": ["-NoLogo"]
-  }
-},
-"terminal.integrated.defaultProfile.windows": "PowerShell 7"
-```
-
-> 只把 `$ompExe` 换成绝对路径是不够的：`oh-my-posh init` 生成的 prompt 函数内部用**裸名**调用（`$global:_ompExecutable = 'oh-my-posh.exe'`），所以必须把所在目录补进 `PATH`。这也解释了为什么报错只出现一次（加载时），但提示符如果真能渲染出来，每次重绘都会再失败一次。
-
-## 9. Windows Terminal 侧配置
-
-`Ctrl + ,` → 左下角"打开 JSON 文件"，文件实际位置：
+`Ctrl + ,` → 左下角「打开 JSON 文件」，实际路径：
 
 ```
 %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 ```
 
-改之前先备份（改坏了能回滚）：
-
-```powershell
-Copy-Item ".\settings.json" ".\settings.json.bak" -Force
-```
-
-一份可直接用的最小配置（保留原有 `keybindings`、`newTabMenu` 不动即可）：
-
-```json
+```jsonc
 {
-  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",   // PowerShell 7
   "profiles": {
     "defaults": {
       "font": { "face": "MesloLGM Nerd Font", "size": 11 },
       "colorScheme": "One Half Dark",
       "opacity": 92,
       "useAcrylic": true,
-      "padding": "8, 8, 8, 8",
-      "scrollbarState": "hidden"
+      "padding": "8, 8, 8, 8"
     },
     "list": [
-      {
-        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-        "hidden": false,
-        "name": "PowerShell 7"
-      }
+      { "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}", "name": "PowerShell 7", "commandline": "pwsh.exe -NoLogo" }
     ]
-  },
-  "schemes": [],
-  "themes": []
+  }
 }
 ```
 
-常用 profile 的固定 GUID（手写 JSON 时靠它指认，别自己编）：
+- `defaultProfile` 必须指向 PS7，否则每次开的是 5.1，会以为配置没生效。这是最高频的「不生效」原因。
+- `-NoLogo` 用来关掉每次启动的 `PowerShell 7.7.0` 横幅。它由 `pwsh` 在 profile 加载**之前**打印，写进 `$PROFILE` 拦不住，只能加启动参数。
+- 不写 `commandline` 时 WT 会自动补 `pwsh.exe`；需要带参数时才显式写。
+- 改完热重载，新开标签页生效。JSON 语法错误会导致整份配置被忽略。
 
-| Shell | GUID |
-| --- | --- |
-| PowerShell 7 | `{574e775e-4f2a-5b96-ac1e-a2962a402336}` |
-| Windows PowerShell 5.1 | `{61c54bbd-c2c6-5271-96e7-009a87ff44bf}` |
-| 命令提示符 | `{0caa0dad-35be-5f56-a8ff-afceeeaa6101}` |
-
-要点：
-
-- **`defaultProfile` 一定要指向 PowerShell 7**，否则你每次开的是 5.1，会怀疑配置没生效（这是最高频的"配置不生效"原因）。
-- 不写 `commandline` 时 WT 会自动补成 `pwsh.exe`；但**需要带启动参数时（比如 `-NoLogo`）必须显式写**。写 `pwsh.exe` 而不是绝对路径，升级后不会失效。
-- `profiles.defaults` 是对所有 profile 生效的公共项，字体、配色、透明度都放这里，别逐个 profile 写。
-- 配色方案（colorScheme）走 WT 内置列表：`Campbell`、`One Half Dark`、`Solarized Dark`、`Dracula` 等。`colortool` 那套 conhost 时代的方案已经不需要了。
-- `schemes` 数组可以自己加配色，字段是 `background`、`foreground`、`cursorColor` 加 `black/red/green/...` 十六个色位。
-- 改完保存，WT 会热重载；**语法错误会导致整份配置被忽略**（界面会弹提示，别忽略它）。
-
-### 关掉启动横幅（`PowerShell 7.7.0` / `Type 'help' to get help.`）
-
-横幅是 `pwsh` **启动瞬间**打印的，早于 `$PROFILE` 加载，所以写进 profile 拦不住它（`Clear-Host` 也不行，会把首个提示符一起刷掉）。唯一正解是启动参数 `-NoLogo`。
-
-**改哪份文件：**
-
-```
-%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
-```
-
-```powershell
-code "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-```
-
-在 `profiles.list` 里**按 GUID 找** PowerShell 7 那一项（`name` 可能被改过，GUID 不会变）：
-
-```json
-"list": [
-    {
-        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "name": "Windows PowerShell"
-    },
-    {
-        "commandline": "pwsh.exe -NoLogo",
-        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-        "name": "PowerShell 7"
-    },
-    {
-        "commandline": "%SystemRoot%\\System32\\cmd.exe",
-        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "name": "命令提示符"
-    }
-]
-```
-
-**不想碰 JSON 的图形界面路径：**
-
-1. `Ctrl + ,` 打开设置
-2. 左侧列表点 **PowerShell 7**
-3. 「常规」页里找到 **命令行 / Command line** 输入框
-4. 填 `pwsh.exe -NoLogo`，右下角 **保存**
-
-这个输入框改的就是上面那个 `commandline` 字段，两条路等价。
-
-三个注意点：
-
-- 只影响**新建的标签页**，已经开着的窗口不会变（配置本身是热重载的）。
-- 从 **Win+R / 桌面快捷方式**直接起 `pwsh` 不经过 WT，横幅照样出现，得在快捷方式目标的命令行里也加 `-NoLogo`。
-- Windows Terminal **Preview** 版的目录名是 `Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe`，别找错。
-
-## 10. 性能与进阶
-
-**感觉提示符卡顿**，按顺序试：
-
-```powershell
-oh-my-posh disable notice     # 关升级检查（联网）
-oh-my-posh cache clear        # 清缓存后重建
-oh-my-posh debug              # 打印每个 segment 的耗时，直接看出谁是元凶
-```
-
-`oh-my-posh debug` 是最有效的：它会列出每个 segment 的渲染毫秒数，`git`、`sysinfo`、`spotify` 这类 segment 最容易拖慢。把不用的从主题 json 里删掉即可。
-
-**其它常用命令**：
-
-```powershell
-oh-my-posh config export --output ./theme.omp.json   # 导出当前配置
-oh-my-posh config edit                               # 编辑
-oh-my-posh get shell                                 # 当前 shell 名
-oh-my-posh get width                                 # 终端宽度
-oh-my-posh toggle <segment>                          # 临时开关某个 segment
-```
-
-**想在 Claude Code / Copilot CLI 的状态栏也用它**（v32 新增能力）：`oh-my-posh claude`、`oh-my-posh copilot` 会直接渲染成对应 CLI 的状态栏文本。
-
-## 11. 排错对照表
+## 5. 排错
 
 | 症状 | 原因 | 处理 |
 | --- | --- | --- |
-| 满屏方框 `□■` | 字体不是 Nerd Font，或 WT 没重启 | `oh-my-posh font install` 后退出 WT 重开，确认 `font.face` 写对 |
-| `Set-Theme 无法识别` | 在跑旧教程的模块命令 | 删掉，改 `oh-my-posh init pwsh --config X \| Invoke-Expression` |
-| `找不到与参数名称"PredictionSource"匹配的参数` | 5.1 自带 PSReadLine 2.0.0，该参数 2.2 才有 | 用模板里的 `ContainsKey` 探测写法，或 `Install-Module PSReadLine -Scope CurrentUser -Force` |
-| 提示符显示 `CONFIG NOT FOUND` | 主题名打错或大小写不对（`Paradox`） | 改全小写 `paradox`；此错误**不报异常**、退出码仍为 0 |
-| 加了 `-NoLogo` 还是显示版本横幅 | 看的是旧标签页，或从快捷方式直接起的 pwsh | 新开标签页；快捷方式目标里也加 `-NoLogo` |
-| `oh-my-posh 无法识别` | PATH 未刷新 | 新开窗口；检查 `WindowsApps` 在 PATH |
-| **VSCode 终端**报「术语 'oh-my-posh' 不会被识别」，WT 里正常 | VSCode 进程继承的 PATH 不含 `%LOCALAPPDATA%\Microsoft\WindowsApps` | 用带兜底的模板（见 8 节）；或重启 VSCode / 在 `terminal.integrated.profiles.windows` 里固定 shell 绝对路径 |
-| 提示符有颜色但图标是问号 | 字体装了但没选中（选中的是普通版） | 字体名要带 `Nerd Font` 后缀 |
-| 中文变成乱码 | 5.1 编码 + 文件无 BOM | 另存为 UTF-8 with BOM，或改用 PS7 |
-| 配置改了没反应 | 改的是另一个 `$PROFILE` | 打印 `$PROFILE` 确认路径，注意 5.1 / 7 分离 |
-| WT 开出来还是老界面 | `defaultProfile` 指向 5.1 | 把默认 profile 改成 PowerShell 7 |
-| 重载报"禁止运行脚本" | 执行策略 | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
-| 启动明显变慢 | segment 太多或联网检查 | `oh-my-posh debug` 定位 + `disable notice` + 用 `--print` 缓存 |
+| 满屏方框 | 字体不是 Nerd Font，或 WT 没重启 | 装字体后退出 WT 重开；字体名要带 `Nerd Font` 后缀 |
+| `Set-Theme` 识别不了 | 在跑旧教程 | 改成 `oh-my-posh init pwsh --config X \| Invoke-Expression` |
+| 提示符是 `CONFIG NOT FOUND` | 主题名大小写错 | 改全小写；此错误不报异常、退出码为 0 |
+| `找不到 PredictionSource 参数` | 5.1 自带 PSReadLine 2.0.0 | 用模板里的 `ContainsKey` 探测，或 `Install-Module PSReadLine -Scope CurrentUser -Force` |
+| 加了 `-NoLogo` 还有横幅 | 看的是旧标签页 | 新开标签页；从快捷方式直起 pwsh 的也要加 |
+| VSCode 终端里 `oh-my-posh` / `python` 找不到，WT 正常 | VSCode 进程的 PATH 是启动快照 | 模板里的 PATH 自愈段；或完全退出 VSCode 重开 |
+| `python` 能"找到"但报 9009 | 命中了 WindowsApps 的 0 字节幽灵别名 | 真 Python 目录插到 PATH 最前，或在「应用执行别名」里关掉 |
+| 中文乱码 | 5.1 编码 + 无 BOM | 存成 UTF-8 with BOM，或改用 PS7 |
+| 改配置没反应 | 改的是另一个 `$PROFILE` | 打印 `$PROFILE` 确认路径 |
+| 启动慢 | segment 太多或联网检查 | `oh-my-posh debug` 看每个 segment 耗时；`oh-my-posh disable notice` |
 
-## 12. 旧文命令迁移速查
+## 6. 旧文命令对照
 
-| 2020 版 | 2026 版 |
+| 2020 版 | 现在 |
 | --- | --- |
 | `Install-Module oh-my-posh` | `winget install --id JanDeDobbeleer.OhMyPosh -e` |
-| `Import-Module oh-my-posh` | 删除（不再是模块） |
-| `Set-Theme Paradox` | `oh-my-posh init pwsh --config paradox \| Invoke-Expression` |
-| `Get-PoshThemes` | `oh-my-posh print primary --config <名字>` 或官网主题库 |
-| `Import-Module Get-ChildItemColor` | `Import-Module Terminal-Icons` |
-| `Set-Alias ls Get-ChildItemColorFormatWide` | 用 `Terminal-Icons`，`ls` 保持原生 |
-| `Enable-PoshTransientPrompt` | 主题 json 里加 `transient_prompt` 块 |
-| `scoop install colortool` + `colortool -d` | Windows Terminal `colorScheme` |
-| 手动下载 Nerd Font 解压 | `oh-my-posh font install` |
-| `Import-Module posh-git` | 可选保留，omp 自带 git segment |
+| `Set-Theme Paradox` | `oh-my-posh init pwsh --config paradox` |
+| `Get-PoshThemes` | 已随模块消失，改看[官网主题库](https://ohmyposh.dev/docs/themes) |
+| `Import-Module Get-ChildItemColor` | `Install-Module Terminal-Icons` |
+| `colortool -d xxx` | Windows Terminal 设置里直接选 `colorScheme` |
 
-## 13. 一键部署脚本
+## 7. 一键脚本
 
-上面所有步骤都固化成了 `Install-TerminalTheme.ps1`，适合换机器、重装系统、或者安利给同事。
+上面所有步骤固化成了 `Install-TerminalTheme.ps1`，重装系统或换机器时直接跑：
 
 ```powershell
-# 先看要做什么，不写任何文件
-.\Install-TerminalTheme.ps1 -DryRun
-
-# 正式执行
-.\Install-TerminalTheme.ps1 -Theme paradox -Font Meslo
+.\Install-TerminalTheme.ps1 -DryRun      # 先看要做什么
+.\Install-TerminalTheme.ps1              # 执行
+.\Install-TerminalTheme.ps1 -Upgrade     # 顺带升级 oh-my-posh
 ```
 
-### 它做六件事
+幂等设计：已装的东西跳过，profile 内容一致则跳过，WT 配置逐项比对、无变化零写入。
 
-| 步骤 | 行为 | 幂等策略 |
-| --- | --- | --- |
-| 1 | 环境检查（winget 是否可用） | 只读 |
-| 2 | 装 PowerShell 7 | 已有 `pwsh` 就跳过 |
-| 3 | 装 oh-my-posh | 已有就跳过，`-Upgrade` 时才升级 |
-| 4 | 装 Nerd 字体 | 注册表里查到字体族就跳过 |
-| 5 | 写两份 `$PROFILE`（UTF-8 with BOM） | 内容一致则跳过 |
-| 6 | 修补 WT `settings.json` | 逐项比对，全一致则完全不写 |
-
-### 参数
-
-| 参数 | 说明 |
-| --- | --- |
-| `-Theme` | 主题名，默认 `paradox`（脚本会自动转小写并校验渲染） |
-| `-Font` | `Meslo` / `CaskaydiaCove` / `None`，默认 `Meslo` |
-| `-DryRun` | 只打印，不落盘 |
-| `-Upgrade` | 顺带升级 oh-my-posh |
-
-### 几个设计上的取舍
-
-- **所有写入前都备份**，文件名带时间戳（`settings.json.bak-20260812-082942`），出问题直接覆盖回去。
-- **字体有两条路**：先试 `oh-my-posh font install`，失败（GitHub 不通，退出码 70）自动降级到 gh 镜像下载 + 用户级注册表安装，全程不需要管理员。
-- **WT 配置逐项比对**，已经是目标状态就一个字节都不写 —— 否则每次重跑都会用 `ConvertTo-Json` 把你手写的格式刷成机器格式。
-- **主题名强制转小写**，并在结尾用 `oh-my-posh print primary` 真渲染一次，检查是否出现 `CONFIG NOT FOUND`。
-- 脚本自己**必须存成 UTF-8 with BOM**，否则 5.1 会按 GBK 解析，中文字符串把引号吃掉，报一堆语法错误 —— 这个坑我踩过。
+脚本本身也必须存成 **UTF-8 with BOM**，否则 5.1 解析中文注释时会报一屏「意外的标记」。
 
 ### 完整脚本
 
-574 行，整段复制存成 `Install-TerminalTheme.ps1` 即可运行，不依赖其他文件。
+点开复制，存成 `Install-TerminalTheme.ps1` 就能跑。**必须存成 UTF-8 with BOM**，否则 5.1 解析中文注释会报错。
+
+<details>
+<summary>展开查看完整脚本（603 行）</summary>
 
 ```powershell
 <#
@@ -1010,6 +496,35 @@ $profileTemplate = @'
 # 由 Install-TerminalTheme.ps1 生成
 # 修改后重载： . $PROFILE
 # ============================================================
+
+# ==================== PATH 自愈 ====================
+# 宿主进程（VSCode / 计划任务 / SSH / 远程会话）的 PATH 是它「启动那一刻」的快照。
+# 之后新装的工具（Python、Node、JDK…）只写进了注册表，这些进程看不到，症状是：
+#   Windows Terminal 里 python 正常，VSCode 内置终端报「不是内部或外部命令」。
+# 下面把注册表用户 PATH 里缺失、且真实存在的目录补回来。
+#
+# 必须插到「最前」而不是追加到末尾：%LOCALAPPDATA%\Microsoft\WindowsApps 下常有
+# 0 字节的 python.exe 应用执行别名（幽灵别名，运行直接返回 9009），若真 Python
+# 排在它后面，命令会被这个空壳抢走。
+$__have = @($env:PATH -split ';' | Where-Object { $_ } | ForEach-Object { $_.TrimEnd('\') })
+$__need = @()
+foreach ($__e in ([Environment]::GetEnvironmentVariable('PATH', 'User') -split ';')) {
+    if (-not $__e) { continue }
+    $__x = [Environment]::ExpandEnvironmentVariables($__e).TrimEnd('\')
+    if (-not (Test-Path -LiteralPath $__x)) { continue }
+    if ($__have -contains $__x) { continue }
+    $__need += $__x
+    $__have += $__x
+}
+if ($__need.Count -gt 0) {
+    $env:PATH = ($__need -join ';') + ';' + $env:PATH
+    try {
+        (@('time=' + (Get-Date).ToString('yyyy-MM-dd HH:mm:ss'), 'host=' + $Host.Name, 'ps=' + $PSVersionTable.PSVersion, 'prepended=') + $__need + @('full=') + ($env:PATH -split ';')) |
+            Set-Content -Path (Join-Path $env:TEMP 'profile-path-heal.log') -Encoding UTF8
+    }
+    catch { }
+}
+Remove-Variable __have, __need, __e, __x -ErrorAction SilentlyContinue
 
 # ==================== oh-my-posh ====================
 # 主题名区分大小写，写 Paradox 会渲染成 CONFIG NOT FOUND；也可换成 json 绝对路径
@@ -1322,30 +837,10 @@ Write-Host '  新开标签  完全退出 Windows Terminal 后重开（字体需�
 Write-Host '  字体异常  注销重登一次' -ForegroundColor DarkGray
 ```
 
-### 从网页复制时别忘了 BOM
+</details>
 
-上面这段直接粘进 VS Code 存盘，默认是 **UTF-8 无 BOM**，5.1 会按 GBK 解析、中文全乱并报一堆「意外的标记」。两种修法：
+## 参考
 
-**VS Code**：右下角编码 → `Save with Encoding` → `UTF-8 with BOM`。
-
-**已经有文件了**，跑一次就地转换：
-
-```powershell
-$p = '.\Install-TerminalTheme.ps1'
-$txt = [IO.File]::ReadAllText($p, (New-Object System.Text.UTF8Encoding($false)))
-[IO.File]::WriteAllText($p, $txt, (New-Object System.Text.UTF8Encoding($true)))
-
-# 核对前三字节，应为 EF BB BF
-([IO.File]::ReadAllBytes($p)[0..2] | ForEach-Object { $_.ToString('X2') }) -join ' '
-```
-
-存好后先 `-DryRun` 跑一遍确认无误，再正式执行。
-
-## 14. 参考
-
-- oh-my-posh 官网：[ohmyposh.dev](https://ohmyposh.dev)
-- 主题库：[ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes)
-- 仓库：[github.com/JanDeDobbeleer/oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
-- Nerd Fonts：[nerdfonts.com](https://www.nerdfonts.com)
-- Sarasa Gothic：[github.com/be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic/releases)
-- PowerShell 7 发布页：[github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)
+- [oh-my-posh 官方文档](https://ohmyposh.dev/docs/)
+- [Nerd Fonts 官网](https://www.nerdfonts.com/)
+- [Windows Terminal 文档](https://aka.ms/terminal-documentation)
